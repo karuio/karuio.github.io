@@ -1,4 +1,4 @@
-# 研究员长文 · 内容格式
+# 他山 · 内容格式
 
 本站沿用 [xnews](https://github.com/joeseesun/xnews) 的文章 JSON 契约，并增加必填字段 `sector`（行业标签，与跟踪名单中的分组一致）。写作规则见 `EDITORIAL_PROMPT.md`。
 

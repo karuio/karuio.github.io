@@ -4,7 +4,7 @@ import json
 from xml.sax.saxutils import escape
 
 SITE = 'https://karuio.github.io'
-PUBLISHER = {'@type': 'Organization', '@id': SITE + '/#publisher', 'name': '研究员长文', 'url': SITE + '/', 'description': '选定研究员的 X 长帖，忠实中文改写'}
+PUBLISHER = {'@type': 'Organization', '@id': SITE + '/#publisher', 'name': '他山', 'url': SITE + '/', 'description': '选定研究员的 X 长帖，忠实中文改写'}
 
 
 def metadata(title, description, canonical, article=None, image=''):
@@ -16,7 +16,7 @@ def metadata(title, description, canonical, article=None, image=''):
     if image:
         image = SITE + image if image.startswith('/') else image
         tags += [f'<meta property="og:image" content="{html.escape(image, quote=True)}">', f'<meta name="twitter:image" content="{html.escape(image, quote=True)}">']
-    graph = [PUBLISHER, {'@type': 'WebSite', '@id': SITE + '/#website', 'name': '研究员长文', 'url': SITE + '/', 'inLanguage': 'zh-CN', 'publisher': {'@id': SITE + '/#publisher'}}]
+    graph = [PUBLISHER, {'@type': 'WebSite', '@id': SITE + '/#website', 'name': '他山', 'url': SITE + '/', 'inLanguage': 'zh-CN', 'publisher': {'@id': SITE + '/#publisher'}}]
     page = {'@type': 'WebPage', '@id': url + '#page', 'url': url, 'name': title, 'description': description, 'inLanguage': 'zh-CN', 'isPartOf': {'@id': SITE + '/#website'}}
     if article:
         source = article['source']

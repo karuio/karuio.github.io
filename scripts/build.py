@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build 研究员长文 static site from content/articles/*.json → public/.
+"""Build 他山 static site from content/articles/*.json → public/.
 
 Adapted from joeseesun/xnews (MIT). Branding, sector filters and the
 researcher directory are local additions; keep the upstream license notice.
@@ -25,8 +25,8 @@ from search_metadata import metadata, discovery_files
 from source_markdown import render_source_markdown, render_markdown, paragraph_end, normalize_paragraph
 
 SITE_URL = "https://karuio.github.io"
-SITE_NAME = "研究员长文"
-SITE_SUB = "选定研究员的 X 长帖 · 忠实中文改写"
+SITE_NAME = "他山"
+SITE_SUB = "他山之石，可以攻玉 · 研究员 X 长文中文改写"
 RESEARCHERS = ROOT / "content" / "researchers.json"
 SECTOR_ORDER = [
     "AI",
@@ -152,7 +152,7 @@ def shell(title: str, body_main: str, *, description: str = "", active: str = "h
     canonical_tag = f'<link rel="canonical" href="{html.escape(canon)}">' if canonical != "/404" else ""
     is_list = active in ("home", "archive") and canonical in ("/", "/archive")
     dialog = '''<dialog class="reader-sheet" id="reader-sheet" aria-labelledby="sheet-label">
-  <header class="sheet-bar"><button type="button" class="sheet-close" data-close-sheet><span aria-hidden="true">×</span>返回选刊</button><span class="sheet-brand" id="sheet-label">研究员长文 · 阅读</span><a href="/" data-sheet-permalink target="_blank" rel="noopener noreferrer">独立页面 ↗</a></header>
+  <header class="sheet-bar"><button type="button" class="sheet-close" data-close-sheet><span aria-hidden="true">×</span>返回选刊</button><span class="sheet-brand" id="sheet-label">他山 · 阅读</span><a href="/" data-sheet-permalink target="_blank" rel="noopener noreferrer">独立页面 ↗</a></header>
   <div class="sheet-scroll" tabindex="-1"></div>
 </dialog>''' if is_list else ""
     def current(route):
@@ -182,7 +182,7 @@ def shell(title: str, body_main: str, *, description: str = "", active: str = "h
 <body>
 <a class="skip" href="#main">跳到正文</a>
 <header class="site-header">
-  <a class="brand" href="/" aria-label="研究员长文首页"><span class="brand-wordmark" aria-hidden="true"><svg class="brand-mark" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="9" y="6" width="21" height="29" rx="2"/><path d="M15 16h9M15 22h9M15 28h6"/></svg><span class="brand-name">研究员长文<span class="brand-period">。</span></span></span><span class="brand-sub">选定研究员<span>X 长帖 · 中文改写</span></span></a>
+  <a class="brand" href="/" aria-label="他山首页"><span class="brand-wordmark" aria-hidden="true"><svg class="brand-mark" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="9" y="6" width="21" height="29" rx="2"/><path d="M15 16h9M15 22h9M15 28h6"/></svg><span class="brand-name">他山<span class="brand-period">。</span></span></span><span class="brand-sub">选定研究员<span>X 长帖 · 中文改写</span></span></a>
   <div class="header-side"><nav class="site-nav" aria-label="主导航"><a href="/"{current('home')}>精选</a><a class="archive-nav" href="/archive"{current('archive')}>往期</a><a href="/researchers"{current('researchers')}>研究员</a><a href="/feed.xml" aria-label="订阅全文 RSS">订阅 RSS <span aria-hidden="true">↗</span></a></nav><button type="button" class="icon-button" id="theme-btn" aria-label="切换为暗色主题" aria-pressed="false"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg></button></div>
 </header>
 <main class="site-main" id="main">
@@ -536,7 +536,7 @@ def render_article(a: dict) -> str:
     related = f'<a href="{html.escape(src["related_url"], quote=True)}" target="_blank" rel="noopener noreferrer">相关链接 ↗</a>' if src.get("related_url") else ""
     return f'''<article class="article-reader" data-article-id="{html.escape(a['id'], quote=True)}">
 <a class="article-back" href="/">← 返回选刊</a>
-<header class="article-header"><p class="article-kicker">{html.escape(kicker)}</p><h1>{html.escape(a['title'])}</h1><p class="article-dek">{html.escape(a.get('dek') or '')}</p><div class="article-meta"><time datetime="{html.escape(ingested_date(a), quote=True)}">本站收录 {fmt_date(ingested_date(a))}</time><span>原文发布 {fmt_date(source_date(a))}</span><span>原作者：{html.escape(src.get('author') or '')}</span><span>中文改写：<a href="/about">研究员长文</a></span><span>{' · '.join(html.escape(t) for t in a.get('tags') or [])}</span></div></header>
+<header class="article-header"><p class="article-kicker">{html.escape(kicker)}</p><h1>{html.escape(a['title'])}</h1><p class="article-dek">{html.escape(a.get('dek') or '')}</p><div class="article-meta"><time datetime="{html.escape(ingested_date(a), quote=True)}">本站收录 {fmt_date(ingested_date(a))}</time><span>原文发布 {fmt_date(source_date(a))}</span><span>原作者：{html.escape(src.get('author') or '')}</span><span>中文改写：<a href="/about">他山</a></span><span>{' · '.join(html.escape(t) for t in a.get('tags') or [])}</span></div></header>
 <nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="{source_url}" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
 <section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose">{render_rewrite(a)}</div></section>
 {render_original_section(a)}
@@ -740,7 +740,7 @@ def build() -> None:
 
     latest = ingested_date(articles[0])
     heading = f'''<section class="edition-line"><div><p class="edition-kicker">THE EDIT <span aria-hidden="true">/</span> 近期精选</p><h1 tabindex="-1">读完研究员自己写的长帖。</h1><p class="edition-description">跟踪选定账号新发的长帖、串帖和 X Article，写成忠实的中文，并保留原文与链接。</p></div><div class="edition-meta"><span class="edition-label">最新收录</span><time datetime="{html.escape(latest, quote=True)}">{html.escape(latest.replace('-', '.'))}</time><span class="edition-note">按行业筛选 · 原文始终可对账</span></div></section>'''
-    home = heading + discovery_tools(articles) + f'<section class="news-grid" id="news-grid" data-news-grid aria-label="研究员长文选刊">{build_feed_items(articles)}</section>' + discovery_empty()
+    home = heading + discovery_tools(articles) + f'<section class="news-grid" id="news-grid" data-news-grid aria-label="他山选刊">{build_feed_items(articles)}</section>' + discovery_empty()
     (PUBLIC / "index.html").write_text(
         shell(f"{SITE_NAME}", home, description=SITE_SUB, active="home", canonical="/"), encoding="utf-8",
     )

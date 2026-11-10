@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:qiaomu="https://qiaomu.ai/ns/rss/1.0">
   <channel>
-    <title>研究员长文</title>
+    <title>他山</title>
     <link>https://karuio.github.io/</link>
-    <description>选定研究员的 X 长帖 · 忠实中文改写</description>
+    <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Nov 2026 15:42:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 15:53:37 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>宝玉：Sutton 本人出来说明，《苦涩的教训》批判的是硬编码人类知识</title>
