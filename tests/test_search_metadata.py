@@ -12,11 +12,11 @@ class SearchMetadata(unittest.TestCase):
         articles = list((ROOT / 'content/articles').glob('*.json'))
         tree = ET.parse(ROOT / 'public/sitemap.xml')
         urls = [u.text for u in tree.findall('.//{*}loc')]
-        expected = {'http://127.0.0.1:33206' + route for route in ['/', '/archive', '/about', '/researchers']}
-        expected.update('http://127.0.0.1:33206/a/' + p.stem for p in articles)
+        expected = {'https://karuio.github.io' + route for route in ['/', '/archive', '/about', '/researchers']}
+        expected.update('https://karuio.github.io/a/' + p.stem for p in articles)
         self.assertEqual(set(urls), expected)
         self.assertEqual(len(urls), len(expected))
-        self.assertIn('Sitemap: http://127.0.0.1:33206/sitemap.xml', (ROOT / 'public/robots.txt').read_text())
+        self.assertIn('Sitemap: https://karuio.github.io/sitemap.xml', (ROOT / 'public/robots.txt').read_text())
         self.assertNotIn('lastmod', (ROOT / 'public/sitemap.xml').read_text())
 
     def test_article_metadata_describes_visible_source_and_preserves_dates(self):
