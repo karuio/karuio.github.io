@@ -182,7 +182,7 @@ def shell(title: str, body_main: str, *, description: str = "", active: str = "h
 <body>
 <a class="skip" href="#main">跳到正文</a>
 <header class="site-header">
-  <a class="brand" href="/" aria-label="他山首页"><span class="brand-wordmark" aria-hidden="true"><svg class="brand-mark" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="9" y="6" width="21" height="29" rx="2"/><path d="M15 16h9M15 22h9M15 28h6"/></svg><span class="brand-name">他山<span class="brand-period">。</span></span></span><span class="brand-sub">选定研究员<span>X 长帖 · 中文改写</span></span></a>
+  <a class="brand" href="/" aria-label="他山首页"><span class="brand-wordmark" aria-hidden="true"><svg class="brand-mark" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="9" y="6" width="21" height="29" rx="2"/><path d="M15 16h9M15 22h9M15 28h6"/></svg><span class="brand-name">他山</span></span><span class="brand-sub">选定研究员<span>X 长帖 · 中文改写</span></span></a>
   <div class="header-side"><nav class="site-nav" aria-label="主导航"><a href="/"{current('home')}>精选</a><a class="archive-nav" href="/archive"{current('archive')}>往期</a><a href="/researchers"{current('researchers')}>研究员</a><a href="/feed.xml" aria-label="订阅全文 RSS">订阅 RSS <span aria-hidden="true">↗</span></a></nav><button type="button" class="icon-button" id="theme-btn" aria-label="切换为暗色主题" aria-pressed="false"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg></button></div>
 </header>
 <main class="site-main" id="main">
@@ -739,7 +739,7 @@ def build() -> None:
     )
 
     latest = ingested_date(articles[0])
-    heading = f'''<section class="edition-line"><div><p class="edition-kicker">THE EDIT <span aria-hidden="true">/</span> 近期精选</p><h1 tabindex="-1">读完研究员自己写的长帖。</h1><p class="edition-description">跟踪选定账号新发的长帖、串帖和 X Article，写成忠实的中文，并保留原文与链接。</p></div><div class="edition-meta"><span class="edition-label">最新收录</span><time datetime="{html.escape(latest, quote=True)}">{html.escape(latest.replace('-', '.'))}</time><span class="edition-note">按行业筛选 · 原文始终可对账</span></div></section>'''
+    heading = f'''<section class="edition-line"><div><p class="edition-kicker">THE EDIT <span aria-hidden="true">/</span> 近期精选</p><h1 tabindex="-1">他山之石，可以攻玉</h1><p class="edition-description">跟踪选定账号新发的长帖、串帖和 X Article，写成忠实的中文，并保留原文与链接。</p></div><div class="edition-meta"><span class="edition-label">最新收录</span><time datetime="{html.escape(latest, quote=True)}">{html.escape(latest.replace('-', '.'))}</time><span class="edition-note">按行业筛选 · 原文始终可对账</span></div></section>'''
     home = heading + discovery_tools(articles) + f'<section class="news-grid" id="news-grid" data-news-grid aria-label="他山选刊">{build_feed_items(articles)}</section>' + discovery_empty()
     (PUBLIC / "index.html").write_text(
         shell(f"{SITE_NAME}", home, description=SITE_SUB, active="home", canonical="/"), encoding="utf-8",
