@@ -1,0 +1,16 @@
+node_modules/
+.wrangler/
+.dev.vars
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+
+# Local public-media investigation scratch; not content or deployment input.
+.media-qa/
+
+# Local browser verification and screenshots.
+.qa-ui/
+
+screenshots/
+qa/

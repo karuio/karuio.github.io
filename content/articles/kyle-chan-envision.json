@@ -1,0 +1,29 @@
+{
+  "id": "kyle-chan-envision",
+  "date": "2026-11-08",
+  "published_at": "2026-11-08T09:05:01+00:00",
+  "ingested_at": "2026-11-10T21:10:00+08:00",
+  "sector": "中国产业/对华战略",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/kyleichan/status/2119355501201043912",
+    "author": "Kyle Chan",
+    "handle": "kyleichan",
+    "title_en": "For this massive data center, China's Envision built the:"
+  },
+  "title": "Kyle Chan：远景这一座数据中心，自己做了风电、储能和变压器",
+  "dek": "他用一份供应链清单说明中国公司如何把清洁能源和算力设施做成同一套系统，并引用了 SemiAnalysis 的相关讨论。",
+  "tags": [
+    "中国产业",
+    "数据中心",
+    "清洁能源"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "For this massive data center, China's Envision built the:",
+    "text_md": "For this massive data center, China's Envision built the:\n- Wind farms\n- Blade factory\n- Dedicated power line\n- Low-voltage power modules\n- 800V solid-state transformer\n- Battery storage system\n- Prefabricated substation",
+    "media": []
+  },
+  "body_md": "Kyle Chan 在讨论一座大规模数据中心时写道，中国公司远景自己建造了整串相关设施。\n\n他列出的清单是：风电场、叶片工厂、专用输电线路、低压电力模块、800 伏固态变压器、电池储能系统，以及预制变电站。\n\n这份清单是他对相关报道和讨论的概括，用来说明远景如何把发电、输电、储能和数据中心电源做成同一套系统。原帖引用了 SemiAnalysis 的讨论作为语境。具体产能、投资额和项目地点，他这条帖子里没有展开，因此这里也不补充。\n\n同一周，他还发表了长文《China’s tech Swiss Army knives》，讨论中国科技公司同时自研模型、芯片和机器人的趋势。那篇完整文章在 High Capacity 上，本条只改写他关于远景数据中心供应链的这条原帖。\n",
+  "rewrite_media": []
+}

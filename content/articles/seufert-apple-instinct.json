@@ -1,0 +1,29 @@
+{
+  "id": "seufert-apple-instinct",
+  "date": "2026-11-09",
+  "published_at": "2026-11-09T01:59:45+00:00",
+  "ingested_at": "2026-11-10T21:14:00+08:00",
+  "sector": "消费互联网/能源数据中心",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/eric_seufert/status/2119610865364201815",
+    "author": "Eric Seufert",
+    "handle": "eric_seufert",
+    "title_en": "Apple should not buy Instinct."
+  },
+  "title": "Eric Seufert：苹果不该买 Instinct，他认为 Agent 本身已经是大宗商品",
+  "dek": "亚马逊刚让购物版 Alexa 走短信后，他认为苹果已经拥有这条接口，并购并不会带来自己做不到的优势。",
+  "tags": [
+    "消费互联网",
+    "Agent",
+    "苹果"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Apple should not buy Instinct.",
+    "text_md": "Apple should not buy Instinct.\n\nAmazon just announced that it will allow customers to communicate with its own agent, Alexa for Shopping, via SMS. Apple already owns that interface.\n\nAgents are commodities. Perplexity’s Computer, OpenClaw, Instinct, Muse. ByteDance will offer one, as will Google and Microsoft.\n\nAn agent can be built by a motivated team in a matter of weeks; no small development feat, but not an insurmountable hurdle by any means.\n\nDistribution and privileged access to data / platform functionality is what differentiates agents. Apple has that, and buying Instinct provides it with no obvious strategic advantage that it couldn't build itself. Siri already has agentic functionality and can connect to iOS apps with the native App Intents API.\n\nEverything one could argue about the logic of Apple buying Instinct applied 12 months ago with respect to Perplexity. Commodity agentic functionality is not inherently valuable; it’s unlocked with platform reach. M&A is not a prudent growth strategy in this space.",
+    "media": []
+  },
+  "body_md": "Eric Seufert 的判断很直接：苹果不该收购 Instinct。\n\n他的起点是亚马逊刚刚宣布，用户可以通过短信和自家代理 Alexa for Shopping 沟通。他认为，苹果已经拥有这条接口。\n\n在他看来，Agent 本身已经是大宗商品。他点名 Perplexity 的 Computer、OpenClaw、Instinct、Muse，并认为字节跳动、谷歌和微软也都会提供类似产品。\n\n一支有动力的团队，用几周时间就能做出一个 Agent。他承认这不是小事，但远谈不上跨越不了的门槛。\n\n真正把 Agent 区分开来的，是分发能力，以及对数据和平台功能的特权访问。苹果已经具备这些。收购 Instinct，在他看来不会带来苹果自己做不到的明显战略优势。Siri 已经有代理能力，也可以通过原生的 App Intents API 连接 iOS 应用。\n\n他还说，今天用来论证苹果该买 Instinct 的理由，12 个月前同样适用于收购 Perplexity。商品化的代理功能本身没有固有价值，它要靠平台覆盖面才能打开。因此他认为，在这个领域，并购不是审慎的增长策略。\n",
+  "rewrite_media": []
+}

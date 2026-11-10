@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:qiaomu="https://qiaomu.ai/ns/rss/1.0">
+  <channel>
+    <title>研究员长文</title>
+    <link>https://karuio.github.io/</link>
+    <description>选定研究员的 X 长帖 · 忠实中文改写</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 10 Nov 2026 15:42:37 +0000</lastBuildDate>
+    <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>宝玉：Sutton 本人出来说明，《苦涩的教训》批判的是硬编码人类知识</title>
+      <link>https://karuio.github.io/a/dotey-bitter-lesson</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dotey-bitter-lesson</guid>
+      <pubDate>Tue, 10 Nov 2026 06:24:22 +0000</pubDate>
+      <author>宝玉</author>
+      <description><![CDATA[<p><em>他引用 Sutton 和 Prashant Rai 的帖子，把“堆算力就够了”和“算法层面的新方法”区分开来。</em></p>
+<h2>中文改写</h2>
+<p>宝玉写道，X 上最近有一段关于《苦涩的教训》的讨论。在他看来，今天不少大语言模型的支持者常把这篇文献当成依据，主张只要不断堆算力和数据就够了，不需要新算法。他引用了作者 Sutton 本人的帖子，以及 Prashant Rai 的回复，认为这两条是对上述解读的纠偏。</p>
+<p>他概括原文的意思：AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。</p>
+<p>可是这段历史经常被读成「唯算力论」，也就是只要加大数据量、加大模型参数和算力，就能实现 AGI。这是宝玉对流行解读的概括。</p>
+<p>他引用 Sutton 的原话：光靠暴力计算不足以实现真正的智能，需要巧妙的新方法。Sutton 还说，在他看来，AI 这门科学还远未终结。</p>
+<p>宝玉介绍说，Prashant Rai 是芬兰的自动化博士，做非公路场景的自动驾驶。Rai 的解读是：《苦涩的教训》常常被误解成反对算法上的精巧创新，它真正反对的是把人类自己的小聪明硬编码进系统里。</p>
+<p>宝玉认为这句话区分了两种不同的「聪明」。</p>
+<p>一种是他把错误的聪明，说成把人类知识硬编码进去。比如人类觉得自己懂国际象棋，就把棋谱口诀写进代码；觉得自己懂语法，就用复杂的句法树规则教 AI 说话；在自动驾驶里写满几万条 if-else 规则。他认为这才是《苦涩的教训》批判的对象。按他的说法，这种做法上限极低，一旦算力上来，端到端的神经网络会把这些人工规则压过去。</p>
+<p>另一种是他认为正确的聪明，也就是在算法与架构层面的创新。例如设计出能够随着算力增长而不断变强的通用学习机制，包括反向传播、卷积神经网络、Transformer、蒙特卡洛树搜索和时序差分学习。</p>
+<p>他认为这些才是 Sutton 所呼吁的「巧妙的新方法」。他还写道，如果没有 Transformer 这个算法和架构上的创新，就算有十万张 H100，也训不出 ChatGPT。「十万张 H100」和「训不出 ChatGPT」是他用来说明问题的判断，并不是一项单独核实过的实验。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_dotey_bitter"><img src="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。</em></p>
+<figure data-media-id="img_dotey_bitter"><img src="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。</p>
+<p>今天很多大语言模型信徒们经常拿着《苦涩的教训》当圣经，认为“只要无脑堆算力、堆数据就够了，不需要什么新算法”。而作者 Sutton 本人的这条推文，以及 Prashant Rai 的精辟回复，正是对这种解读的一种纠偏。</p>
+<p>《苦涩的教训》讲的是 AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。</p>
+<p>但这经常被解读为“唯算力论”，认为只要加大数据量、加大模型参数和算力就能实现 AGI。</p>
+<p>作者 Sutton 这次发推：</p>
+<blockquote>
+<p>“光靠暴力计算（Brute force computation）不足以实现真正的智能。我们需要巧妙的新方法（Clever new methods）。在我看来，AI 这门科学还远未终结。”</p>
+</blockquote>
+<p>Prashant Rai（芬兰的自动化博士，做非公路场景的自动驾驶）的转发，也可以看作是一种解读：</p>
+<blockquote>
+<p>“《苦涩的教训》常常被误解为是在反对‘算法上的精巧创新’，但它真正反对的，其实是把人类自己的小聪明‘硬编码（Hardcoding）’进系统里。”</p>
+</blockquote>
+<p>这句话极其精准地切中了问题的要害，区分了两种截然不同的“聪明”：</p>
+<p>一种是错误的聪明，也就是把人类的知识硬编码进去。</p>
+<p>比如说人类觉得自己懂国际象棋，于是把棋谱口诀写进代码；人类觉得自己懂语法，于是搞出复杂的句法树规则教 AI 说话；自动驾驶里人类写满几万条 if-else 规则。</p>
+<p>这才是《苦涩的教训》批判的对象。这种做法上限极低，一旦算力上来，端到端的神经网络直接把这些人工规则碾得粉碎。</p>
+<p>另一种是正确的聪明，是在算法与架构层面的精巧创新。</p>
+<p>比如说设计出能够随着算力增长而不断变强（Scale with compute）的通用学习机制。像反向传播算法（Backpropagation）、卷积神经网络（CNN）、Transformer 架构、蒙特卡洛树搜索（MCTS）、时序差分学习（TD Learning）都是属于这种。</p>
+<p>这些正是 Sutton 所呼吁的“巧妙的新方法”。没有 Transformer 这个极其精巧的算法/架构创新，给你十万张 H100 显卡，你也训不出 ChatGPT。</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2120039846118821976">https://x.com/dotey/status/2120039846118821976</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他引用 Sutton 和 Prashant Rai 的帖子，把“堆算力就够了”和“算法层面的新方法”区分开来。</em></p>
+<h2>中文改写</h2>
+<p>宝玉写道，X 上最近有一段关于《苦涩的教训》的讨论。在他看来，今天不少大语言模型的支持者常把这篇文献当成依据，主张只要不断堆算力和数据就够了，不需要新算法。他引用了作者 Sutton 本人的帖子，以及 Prashant Rai 的回复，认为这两条是对上述解读的纠偏。</p>
+<p>他概括原文的意思：AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。</p>
+<p>可是这段历史经常被读成「唯算力论」，也就是只要加大数据量、加大模型参数和算力，就能实现 AGI。这是宝玉对流行解读的概括。</p>
+<p>他引用 Sutton 的原话：光靠暴力计算不足以实现真正的智能，需要巧妙的新方法。Sutton 还说，在他看来，AI 这门科学还远未终结。</p>
+<p>宝玉介绍说，Prashant Rai 是芬兰的自动化博士，做非公路场景的自动驾驶。Rai 的解读是：《苦涩的教训》常常被误解成反对算法上的精巧创新，它真正反对的是把人类自己的小聪明硬编码进系统里。</p>
+<p>宝玉认为这句话区分了两种不同的「聪明」。</p>
+<p>一种是他把错误的聪明，说成把人类知识硬编码进去。比如人类觉得自己懂国际象棋，就把棋谱口诀写进代码；觉得自己懂语法，就用复杂的句法树规则教 AI 说话；在自动驾驶里写满几万条 if-else 规则。他认为这才是《苦涩的教训》批判的对象。按他的说法，这种做法上限极低，一旦算力上来，端到端的神经网络会把这些人工规则压过去。</p>
+<p>另一种是他认为正确的聪明，也就是在算法与架构层面的创新。例如设计出能够随着算力增长而不断变强的通用学习机制，包括反向传播、卷积神经网络、Transformer、蒙特卡洛树搜索和时序差分学习。</p>
+<p>他认为这些才是 Sutton 所呼吁的「巧妙的新方法」。他还写道，如果没有 Transformer 这个算法和架构上的创新，就算有十万张 H100，也训不出 ChatGPT。「十万张 H100」和「训不出 ChatGPT」是他用来说明问题的判断，并不是一项单独核实过的实验。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_dotey_bitter"><img src="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。</em></p>
+<figure data-media-id="img_dotey_bitter"><img src="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。</p>
+<p>今天很多大语言模型信徒们经常拿着《苦涩的教训》当圣经，认为“只要无脑堆算力、堆数据就够了，不需要什么新算法”。而作者 Sutton 本人的这条推文，以及 Prashant Rai 的精辟回复，正是对这种解读的一种纠偏。</p>
+<p>《苦涩的教训》讲的是 AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。</p>
+<p>但这经常被解读为“唯算力论”，认为只要加大数据量、加大模型参数和算力就能实现 AGI。</p>
+<p>作者 Sutton 这次发推：</p>
+<blockquote>
+<p>“光靠暴力计算（Brute force computation）不足以实现真正的智能。我们需要巧妙的新方法（Clever new methods）。在我看来，AI 这门科学还远未终结。”</p>
+</blockquote>
+<p>Prashant Rai（芬兰的自动化博士，做非公路场景的自动驾驶）的转发，也可以看作是一种解读：</p>
+<blockquote>
+<p>“《苦涩的教训》常常被误解为是在反对‘算法上的精巧创新’，但它真正反对的，其实是把人类自己的小聪明‘硬编码（Hardcoding）’进系统里。”</p>
+</blockquote>
+<p>这句话极其精准地切中了问题的要害，区分了两种截然不同的“聪明”：</p>
+<p>一种是错误的聪明，也就是把人类的知识硬编码进去。</p>
+<p>比如说人类觉得自己懂国际象棋，于是把棋谱口诀写进代码；人类觉得自己懂语法，于是搞出复杂的句法树规则教 AI 说话；自动驾驶里人类写满几万条 if-else 规则。</p>
+<p>这才是《苦涩的教训》批判的对象。这种做法上限极低，一旦算力上来，端到端的神经网络直接把这些人工规则碾得粉碎。</p>
+<p>另一种是正确的聪明，是在算法与架构层面的精巧创新。</p>
+<p>比如说设计出能够随着算力增长而不断变强（Scale with compute）的通用学习机制。像反向传播算法（Backpropagation）、卷积神经网络（CNN）、Transformer 架构、蒙特卡洛树搜索（MCTS）、时序差分学习（TD Learning）都是属于这种。</p>
+<p>这些正是 Sutton 所呼吁的“巧妙的新方法”。没有 Transformer 这个极其精巧的算法/架构创新，给你十万张 H100 显卡，你也训不出 ChatGPT。</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2120039846118821976">https://x.com/dotey/status/2120039846118821976</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。", "url": "https://x.com/dotey/status/2120039846118821976", "lang": "zh", "html": "<h2>在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。</h2>\n<figure data-media-id=\"img_dotey_bitter\"><img src=\"https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>在 X 上有一点好就是总能看到大神们论道，比如这一段关于“苦涩的教训”的讨论。</p>\n<p>今天很多大语言模型信徒们经常拿着《苦涩的教训》当圣经，认为“只要无脑堆算力、堆数据就够了，不需要什么新算法”。而作者 Sutton 本人的这条推文，以及 Prashant Rai 的精辟回复，正是对这种解读的一种纠偏。</p>\n<p>《苦涩的教训》讲的是 AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。</p>\n<p>但这经常被解读为“唯算力论”，认为只要加大数据量、加大模型参数和算力就能实现 AGI。</p>\n<p>作者 Sutton 这次发推：</p>\n<blockquote>\n<p>“光靠暴力计算（Brute force computation）不足以实现真正的智能。我们需要巧妙的新方法（Clever new methods）。在我看来，AI 这门科学还远未终结。”</p>\n</blockquote>\n<p>Prashant Rai（芬兰的自动化博士，做非公路场景的自动驾驶）的转发，也可以看作是一种解读：</p>\n<blockquote>\n<p>“《苦涩的教训》常常被误解为是在反对‘算法上的精巧创新’，但它真正反对的，其实是把人类自己的小聪明‘硬编码（Hardcoding）’进系统里。”</p>\n</blockquote>\n<p>这句话极其精准地切中了问题的要害，区分了两种截然不同的“聪明”：</p>\n<p>一种是错误的聪明，也就是把人类的知识硬编码进去。</p>\n<p>比如说人类觉得自己懂国际象棋，于是把棋谱口诀写进代码；人类觉得自己懂语法，于是搞出复杂的句法树规则教 AI 说话；自动驾驶里人类写满几万条 if-else 规则。</p>\n<p>这才是《苦涩的教训》批判的对象。这种做法上限极低，一旦算力上来，端到端的神经网络直接把这些人工规则碾得粉碎。</p>\n<p>另一种是正确的聪明，是在算法与架构层面的精巧创新。</p>\n<p>比如说设计出能够随着算力增长而不断变强（Scale with compute）的通用学习机制。像反向传播算法（Backpropagation）、卷积神经网络（CNN）、Transformer 架构、蒙特卡洛树搜索（MCTS）、时序差分学习（TD Learning）都是属于这种。</p>\n<p>这些正是 Sutton 所呼吁的“巧妙的新方法”。没有 Transformer 这个极其精巧的算法/架构创新，给你十万张 H100 显卡，你也训不出 ChatGPT。</p>\n<p>原文链接：<a href=\"https://x.com/dotey/status/2120039846118821976\">https://x.com/dotey/status/2120039846118821976</a></p>"}, "rewrite": {"title": "宝玉：Sutton 本人出来说明，《苦涩的教训》批判的是硬编码人类知识", "markdown": "宝玉写道，X 上最近有一段关于《苦涩的教训》的讨论。在他看来，今天不少大语言模型的支持者常把这篇文献当成依据，主张只要不断堆算力和数据就够了，不需要新算法。他引用了作者 Sutton 本人的帖子，以及 Prashant Rai 的回复，认为这两条是对上述解读的纠偏。\n\n他概括原文的意思：AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。\n\n可是这段历史经常被读成「唯算力论」，也就是只要加大数据量、加大模型参数和算力，就能实现 AGI。这是宝玉对流行解读的概括。\n\n他引用 Sutton 的原话：光靠暴力计算不足以实现真正的智能，需要巧妙的新方法。Sutton 还说，在他看来，AI 这门科学还远未终结。\n\n宝玉介绍说，Prashant Rai 是芬兰的自动化博士，做非公路场景的自动驾驶。Rai 的解读是：《苦涩的教训》常常被误解成反对算法上的精巧创新，它真正反对的是把人类自己的小聪明硬编码进系统里。\n\n宝玉认为这句话区分了两种不同的「聪明」。\n\n一种是他把错误的聪明，说成把人类知识硬编码进去。比如人类觉得自己懂国际象棋，就把棋谱口诀写进代码；觉得自己懂语法，就用复杂的句法树规则教 AI 说话；在自动驾驶里写满几万条 if-else 规则。他认为这才是《苦涩的教训》批判的对象。按他的说法，这种做法上限极低，一旦算力上来，端到端的神经网络会把这些人工规则压过去。\n\n另一种是他认为正确的聪明，也就是在算法与架构层面的创新。例如设计出能够随着算力增长而不断变强的通用学习机制，包括反向传播、卷积神经网络、Transformer、蒙特卡洛树搜索和时序差分学习。\n\n他认为这些才是 Sutton 所呼吁的「巧妙的新方法」。他还写道，如果没有 Transformer 这个算法和架构上的创新，就算有十万张 H100，也训不出 ChatGPT。「十万张 H100」和「训不出 ChatGPT」是他用来说明问题的判断，并不是一项单独核实过的实验。\n\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原帖配图](<https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg>)", "html": "<p>宝玉写道，X 上最近有一段关于《苦涩的教训》的讨论。在他看来，今天不少大语言模型的支持者常把这篇文献当成依据，主张只要不断堆算力和数据就够了，不需要新算法。他引用了作者 Sutton 本人的帖子，以及 Prashant Rai 的回复，认为这两条是对上述解读的纠偏。</p>\n<p>他概括原文的意思：AI 历史上那些依赖人类专家知识的精巧设计，最终都败给了利用海量算力的通用学习方法。</p>\n<p>可是这段历史经常被读成「唯算力论」，也就是只要加大数据量、加大模型参数和算力，就能实现 AGI。这是宝玉对流行解读的概括。</p>\n<p>他引用 Sutton 的原话：光靠暴力计算不足以实现真正的智能，需要巧妙的新方法。Sutton 还说，在他看来，AI 这门科学还远未终结。</p>\n<p>宝玉介绍说，Prashant Rai 是芬兰的自动化博士，做非公路场景的自动驾驶。Rai 的解读是：《苦涩的教训》常常被误解成反对算法上的精巧创新，它真正反对的是把人类自己的小聪明硬编码进系统里。</p>\n<p>宝玉认为这句话区分了两种不同的「聪明」。</p>\n<p>一种是他把错误的聪明，说成把人类知识硬编码进去。比如人类觉得自己懂国际象棋，就把棋谱口诀写进代码；觉得自己懂语法，就用复杂的句法树规则教 AI 说话；在自动驾驶里写满几万条 if-else 规则。他认为这才是《苦涩的教训》批判的对象。按他的说法，这种做法上限极低，一旦算力上来，端到端的神经网络会把这些人工规则压过去。</p>\n<p>另一种是他认为正确的聪明，也就是在算法与架构层面的创新。例如设计出能够随着算力增长而不断变强的通用学习机制，包括反向传播、卷积神经网络、Transformer、蒙特卡洛树搜索和时序差分学习。</p>\n<p>他认为这些才是 Sutton 所呼吁的「巧妙的新方法」。他还写道，如果没有 Transformer 这个算法和架构上的创新，就算有十万张 H100，也训不出 ChatGPT。「十万张 H100」和「训不出 ChatGPT」是他用来说明问题的判断，并不是一项单独核实过的实验。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_dotey_bitter\"><img src=\"https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvhryQW0AA641-.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>李继刚：用「产品原子」解释自己为何从 ChatGPT 切到 Grok Bot</title>
+      <link>https://karuio.github.io/a/lijigang-product-atoms</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/lijigang-product-atoms</guid>
+      <pubDate>Tue, 10 Nov 2026 04:40:39 +0000</pubDate>
+      <author>李继刚</author>
+      <description><![CDATA[<p><em>他把最小产品单位分成会话、项目和角色三类，认为真正拉开体验的是连续性沉淀在哪里。</em></p>
+<h2>中文改写</h2>
+<p>李继刚写道，自己最近已经从 ChatGPT 完全切换到了 Grok Bot。他认为两边的体验差异很微妙，于是试着用「产品原子」这个视角来分析。</p>
+<p>他把产品原子定义成：用户在这个产品里创建、命名、分享、归档、删除的最小单位。</p>
+<p>用这个视角看 Agent，他大致分成三类。</p>
+<p>第一类以对话为原子，也就是 session。主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。</p>
+<p>第二类以项目为原子，也就是 project。主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话。使用者先拉开抽屉，再在里面接着聊。</p>
+<p>第三类以角色为原子，也就是 bot。主界面像一张组织架构图，每一个角色有职责、有记忆，和它相关的事都在同一个会话里接着聊。</p>
+<p>他认为，产品对「原子」的不同定义，会带来体验上的一系列变化。他最想讨论的是「连续性」。</p>
+<p>用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是他自己。他写道，自己就是最大的「记忆池」。</p>
+<p>用 Project 时，资料和指令可以写入文档，一部分记忆就被让渡出去了。</p>
+<p>用 Bot 时，连续性沉淀到了一个个 Bot 身上。</p>
+<p>他也提到，虽然每类产品都有 Memory 功能，但同样一个词，在不同的「原子」产品里，作用差异还是很大。</p>
+<p>如何切分各个 bot 的职责边界，他认为是以角色为原子的产品里一个很关键的课题。他建议参照 Herbert Simon 在论文《The Architecture of Complexity》中提出的近可分解性，也就是 near-decomposability：层内交互强，层间交互弱。</p>
+
+<h2>原文</h2>
+<p><em>最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。</em></p>
+<p>最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。</p>
+<p>先给「产品原子」做个定义：产品原子是用户在这个产品里创建、命名、分享、归档、删除的最小单位。</p>
+<p>用这个视角看 Agent，大致可以分成三类：</p>
+<ol>
+<li>
+<p>以对话为原子（session）：主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。</p>
+</li>
+<li>
+<p>以项目为原子（project）：主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话，先拉开抽屉，再在里面接着聊。</p>
+</li>
+<li>
+<p>以角色为原子（bot）：主界面像一张组织架构图，每一个是有职责、有记忆的角色，和它相关的事都在同一个会话里接着聊。</p>
+</li>
+</ol>
+<p>产品对「原子」的不同定义，带来体验上的一系列变化，我觉得最值得关注的是「连续性」：</p>
+<p>用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是我自己。我就是最大的「记忆池」。</p>
+<p>用 Project 时，资料和指令可以写入文档，让渡了一部分记忆出去。</p>
+<p>用 Bot 时，连续性沉淀到了一个个 Bot 身上。</p>
+<p>（虽然每类产品，都有 Memory 功能，但同样一个词，在不同的「原子」产品中的作用差异还是蛮大的。）</p>
+<p>关于以角色为原子的产品，如何「切分」各个 bot 的职责边界，是个很关键的课题，可以参照 Simon 在论文《The Architecture of Complexity》中提出的近可分解性（near-decomposability）：层内交互强，层间交互弱。</p>
+<p><strong>原文链接：</strong><a href="https://x.com/lijigang/status/2120013746974212464">https://x.com/lijigang/status/2120013746974212464</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他把最小产品单位分成会话、项目和角色三类，认为真正拉开体验的是连续性沉淀在哪里。</em></p>
+<h2>中文改写</h2>
+<p>李继刚写道，自己最近已经从 ChatGPT 完全切换到了 Grok Bot。他认为两边的体验差异很微妙，于是试着用「产品原子」这个视角来分析。</p>
+<p>他把产品原子定义成：用户在这个产品里创建、命名、分享、归档、删除的最小单位。</p>
+<p>用这个视角看 Agent，他大致分成三类。</p>
+<p>第一类以对话为原子，也就是 session。主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。</p>
+<p>第二类以项目为原子，也就是 project。主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话。使用者先拉开抽屉，再在里面接着聊。</p>
+<p>第三类以角色为原子，也就是 bot。主界面像一张组织架构图，每一个角色有职责、有记忆，和它相关的事都在同一个会话里接着聊。</p>
+<p>他认为，产品对「原子」的不同定义，会带来体验上的一系列变化。他最想讨论的是「连续性」。</p>
+<p>用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是他自己。他写道，自己就是最大的「记忆池」。</p>
+<p>用 Project 时，资料和指令可以写入文档，一部分记忆就被让渡出去了。</p>
+<p>用 Bot 时，连续性沉淀到了一个个 Bot 身上。</p>
+<p>他也提到，虽然每类产品都有 Memory 功能，但同样一个词，在不同的「原子」产品里，作用差异还是很大。</p>
+<p>如何切分各个 bot 的职责边界，他认为是以角色为原子的产品里一个很关键的课题。他建议参照 Herbert Simon 在论文《The Architecture of Complexity》中提出的近可分解性，也就是 near-decomposability：层内交互强，层间交互弱。</p>
+
+<h2>原文</h2>
+<p><em>最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。</em></p>
+<p>最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。</p>
+<p>先给「产品原子」做个定义：产品原子是用户在这个产品里创建、命名、分享、归档、删除的最小单位。</p>
+<p>用这个视角看 Agent，大致可以分成三类：</p>
+<ol>
+<li>
+<p>以对话为原子（session）：主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。</p>
+</li>
+<li>
+<p>以项目为原子（project）：主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话，先拉开抽屉，再在里面接着聊。</p>
+</li>
+<li>
+<p>以角色为原子（bot）：主界面像一张组织架构图，每一个是有职责、有记忆的角色，和它相关的事都在同一个会话里接着聊。</p>
+</li>
+</ol>
+<p>产品对「原子」的不同定义，带来体验上的一系列变化，我觉得最值得关注的是「连续性」：</p>
+<p>用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是我自己。我就是最大的「记忆池」。</p>
+<p>用 Project 时，资料和指令可以写入文档，让渡了一部分记忆出去。</p>
+<p>用 Bot 时，连续性沉淀到了一个个 Bot 身上。</p>
+<p>（虽然每类产品，都有 Memory 功能，但同样一个词，在不同的「原子」产品中的作用差异还是蛮大的。）</p>
+<p>关于以角色为原子的产品，如何「切分」各个 bot 的职责边界，是个很关键的课题，可以参照 Simon 在论文《The Architecture of Complexity》中提出的近可分解性（near-decomposability）：层内交互强，层间交互弱。</p>
+<p><strong>原文链接：</strong><a href="https://x.com/lijigang/status/2120013746974212464">https://x.com/lijigang/status/2120013746974212464</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。", "url": "https://x.com/lijigang/status/2120013746974212464", "lang": "zh", "html": "<h2>最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。</h2>\n\n<p>最近从 ChatGPT 完全切换到了 Grok Bot，两者的体验差异很微妙，我尝试从「产品原子」的视角来分析下。</p>\n<p>先给「产品原子」做个定义：产品原子是用户在这个产品里创建、命名、分享、归档、删除的最小单位。</p>\n<p>用这个视角看 Agent，大致可以分成三类：</p>\n<ol>\n<li>\n<p>以对话为原子（session）：主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。</p>\n</li>\n<li>\n<p>以项目为原子（project）：主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话，先拉开抽屉，再在里面接着聊。</p>\n</li>\n<li>\n<p>以角色为原子（bot）：主界面像一张组织架构图，每一个是有职责、有记忆的角色，和它相关的事都在同一个会话里接着聊。</p>\n</li>\n</ol>\n<p>产品对「原子」的不同定义，带来体验上的一系列变化，我觉得最值得关注的是「连续性」：</p>\n<p>用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是我自己。我就是最大的「记忆池」。</p>\n<p>用 Project 时，资料和指令可以写入文档，让渡了一部分记忆出去。</p>\n<p>用 Bot 时，连续性沉淀到了一个个 Bot 身上。</p>\n<p>（虽然每类产品，都有 Memory 功能，但同样一个词，在不同的「原子」产品中的作用差异还是蛮大的。）</p>\n<p>关于以角色为原子的产品，如何「切分」各个 bot 的职责边界，是个很关键的课题，可以参照 Simon 在论文《The Architecture of Complexity》中提出的近可分解性（near-decomposability）：层内交互强，层间交互弱。</p>\n<p>原文链接：<a href=\"https://x.com/lijigang/status/2120013746974212464\">https://x.com/lijigang/status/2120013746974212464</a></p>"}, "rewrite": {"title": "李继刚：用「产品原子」解释自己为何从 ChatGPT 切到 Grok Bot", "markdown": "李继刚写道，自己最近已经从 ChatGPT 完全切换到了 Grok Bot。他认为两边的体验差异很微妙，于是试着用「产品原子」这个视角来分析。\n\n他把产品原子定义成：用户在这个产品里创建、命名、分享、归档、删除的最小单位。\n\n用这个视角看 Agent，他大致分成三类。\n\n第一类以对话为原子，也就是 session。主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。\n\n第二类以项目为原子，也就是 project。主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话。使用者先拉开抽屉，再在里面接着聊。\n\n第三类以角色为原子，也就是 bot。主界面像一张组织架构图，每一个角色有职责、有记忆，和它相关的事都在同一个会话里接着聊。\n\n他认为，产品对「原子」的不同定义，会带来体验上的一系列变化。他最想讨论的是「连续性」。\n\n用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是他自己。他写道，自己就是最大的「记忆池」。\n\n用 Project 时，资料和指令可以写入文档，一部分记忆就被让渡出去了。\n\n用 Bot 时，连续性沉淀到了一个个 Bot 身上。\n\n他也提到，虽然每类产品都有 Memory 功能，但同样一个词，在不同的「原子」产品里，作用差异还是很大。\n\n如何切分各个 bot 的职责边界，他认为是以角色为原子的产品里一个很关键的课题。他建议参照 Herbert Simon 在论文《The Architecture of Complexity》中提出的近可分解性，也就是 near-decomposability：层内交互强，层间交互弱。\n", "html": "<p>李继刚写道，自己最近已经从 ChatGPT 完全切换到了 Grok Bot。他认为两边的体验差异很微妙，于是试着用「产品原子」这个视角来分析。</p>\n<p>他把产品原子定义成：用户在这个产品里创建、命名、分享、归档、删除的最小单位。</p>\n<p>用这个视角看 Agent，他大致分成三类。</p>\n<p>第一类以对话为原子，也就是 session。主界面像一条按时间倒排的聊天流水，新对话不断把旧的往下推，几周前聊过的事要靠搜索才找得回来。</p>\n<p>第二类以项目为原子，也就是 project。主界面像一个文件柜，每个抽屉装着一个项目的资料、说明和一叠对话。使用者先拉开抽屉，再在里面接着聊。</p>\n<p>第三类以角色为原子，也就是 bot。主界面像一张组织架构图，每一个角色有职责、有记忆，和它相关的事都在同一个会话里接着聊。</p>\n<p>他认为，产品对「原子」的不同定义，会带来体验上的一系列变化。他最想讨论的是「连续性」。</p>\n<p>用 ChatGPT 时，从一个对话走到下一个对话，中间唯一不断的是他自己。他写道，自己就是最大的「记忆池」。</p>\n<p>用 Project 时，资料和指令可以写入文档，一部分记忆就被让渡出去了。</p>\n<p>用 Bot 时，连续性沉淀到了一个个 Bot 身上。</p>\n<p>他也提到，虽然每类产品都有 Memory 功能，但同样一个词，在不同的「原子」产品里，作用差异还是很大。</p>\n<p>如何切分各个 bot 的职责边界，他认为是以角色为原子的产品里一个很关键的课题。他建议参照 Herbert Simon 在论文《The Architecture of Complexity》中提出的近可分解性，也就是 near-decomposability：层内交互强，层间交互弱。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Gavin Baker：他说，拦下英伟达 GPU 的，越来越多是北京而不是华盛顿</title>
+      <link>https://karuio.github.io/a/gavin-baker-china-blocks-nvidia</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/gavin-baker-china-blocks-nvidia</guid>
+      <pubDate>Mon, 09 Nov 2026 21:43:43 +0000</pubDate>
+      <author>Gavin Baker</author>
+      <description><![CDATA[<p><em>他引用路透社关于约 60 万颗 H200 滞留香港的报道，并认为向中国出售非前沿芯片仍是对美国有利的政策。</em></p>
+<h2>中文改写</h2>
+<p>Gavin Baker 写给那些认为拜登政府和特朗普政府允许较弱 GPU 对华出口是错误的人。他想讨论的是：从 2025 年夏天开始，阻拦英伟达 GPU 进入中国的，越来越多是中国自己，而不只是华盛顿。</p>
+<p>按他的叙述，商务部长 Lutnick 曾说，目标是让中国开发者“上瘾”于美国技术栈。其后数周内，北京开始施压大型科技公司停止采购 H20，接着要求它们停止采购 RTX Pro 6000D，派海关人员到港口查处英伟达芯片进口，并禁止新建的国家资助数据中心使用外国 AI 芯片。</p>
+<p>至于数量，他转述路透社上周的报道称，大约 60 万颗 H200 滞留在香港，原因是北京不愿大规模批准进口这款芯片。在他看来，H200 在规模化产品上仍优于中国本国产业。上述数字和报道细节来自他的转述，本站未对照路透社原文逐句核对。</p>
+<p>他反问：如果允许出口这些较弱 GPU 是一项让中国占便宜的政策错误，那为什么出面阻拦的是中国？</p>
+<p>他自己的判断是，中国明白，一旦在 AI 硬件上依赖美国，无论芯片放在中国境内，还是通过东南亚云（其中包括美国超大规模云厂商在东南亚的可用区）远程调用，美国在未来冲突中都会握有很大杠杆。他认为，能够立刻关掉云，才是最大的杠杆。</p>
+<p>他也承认，中国的 AI 实验室仍想要英伟达芯片。他写道，H200 服务器的灰色市场价格在过去一年大约涨到了三倍。可这正好说明问题：北京愿意给本国实验室施加实际成本，以避免依赖美国 GPU。在他看来，北京把 GPU 进口看成对自身雄心的威胁，而不是礼物。</p>
+<p>因此他认为，向中国出售落后于美国前沿水平的 GPU，让中国开发者继续留在美国 GPU 体系上，并减少中国另建一套美国无法影响、日后还可能与对手分享的 AI 硬件生态，这其实是一项对美国有利的国防政策。让它们使用东南亚的云，在他看来可能更聪明，因为云很容易被关掉。</p>
+<p>他强调，这是自己一贯的看法。他也说，自己在网上的对华立场已经偏鹰派，因此不再去中国旅行。</p>
+<p>他还指出，拜登政府和特朗普政府都曾基于这些理由允许较弱 GPU 对华出口。按他的说法，中国是在特朗普任内才意识到这项政策对自己的风险，并开始限制 GPU。</p>
+<p>H20 给他的教训是：一款被刻意削弱的芯片，并不能把中国留在美国的技术栈上。他认为，北京是在判断国产芯片已经追上 H20 和 RTX Pro 6000D 之后，才对这两款产品采取行动。所以他推测，如果中国日后发展出可与俄罗斯、伊朗和朝鲜分享的替代硬件生态，回头看会觉得 2025 年向中国提供 B30A，可能比后来逐案批准 H200 更聪明。他补充说，H200 已经不是前沿产品：在 Vera Rubin 已全规模投产的前提下，它比美国实验室正在采购的芯片落后两代。Vera Rubin 的投产进度是他的陈述。</p>
+<p>他把这些点和黄仁勋的游说联系在一起：黄仁勋一直推动的立场，被两届美国政府采纳，而且在他看来，随着中国实验室越来越多把混合专家架构适配到国产硬件上，这个立场每个月都显得更站得住。他称，有报道说 DeepSeek 把 V4 的早期权限给了华为和寒武纪，而不是英伟达和 AMD；一个由华为牵头的团队此后还在昇腾芯片上对 V4-Pro 做了后训练。这些都是他转述的“据报”内容。</p>
+<p>最后他说，如果美国将来在 AI 上落后于中国，那些在美国国内加速催生这套替代硬件生态的对华强硬派，应该承担相当一部分责任。这是他的政策评论，不是已经发生的事实。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_baker_gpu"><img src="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China</em></p>
+<figure data-media-id="img_baker_gpu"><img src="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China:</p>
+<p>Since the summer of 2025, it has increasingly been <em>China</em>, not just DC, blocking Nvidia GPUs in China. Within weeks of Secretary Lutnick saying the goal was to get Chinese developers "addicted" to the American technology stack, Beijing began pressuring its tech giants to stop buying the H20. Then it ordered them to stop buying the RTX Pro 6000D, sent customs teams to the ports to crack down on Nvidia chip imports, and barred foreign AI chips from new state-funded data centers. And as of last week, Reuters reports that roughly 600,000 H200s are sitting in Hong Kong because Beijing won't approve large-scale imports of a chip that is still better than anything China's own industry makes at scale.</p>
+<p>If allowing the export of these less powerful GPUs was a policy mistake that <em>advantaged</em> China, then why is <em>China</em> the one blocking them?</p>
+<p>From my perspective, China understands that if they are dependent on American AI hardware - either on the ground in China or accessed remotely via the wide range of southeast Asian clouds (which include SE Asian availability zones from the largest American hyperscalers) - then we have immense leverage over them in any future conflict. Being able to turn off the clouds instantly is actually the greatest leverage.</p>
+<p>Yes, Chinese AI labs still want Nvidia chips. Gray market prices for H200 servers have roughly tripled over the past year. But that is exactly the point. Beijing is willing to impose real costs on its own AI labs to avoid dependence on American GPUs, which tells you how Beijing views GPU imports: not as a gift, but as a threat to its own ambitions.</p>
+<p>Maybe, just maybe, selling China GPUs that trail our own state of the art, so that Chinese developers stay “addicted” to American GPUs and China doesn't build an alternative AI hardware ecosystem that we have no control or influence over <em>and</em> that China could share over time with our adversaries, was actually a smart, pro-American national defense policy. And letting them access southeast Asian clouds might be an even smarter policy as so easy to turn clouds off.</p>
+<p>I believed and still believed it was smart policy. And I say this as someone whose posts here are hawkish enough on China that I won't travel there anymore.</p>
+<p>And note that both the Biden and Trump administration allowed the export of less powerful GPUs to China for all of these reasons. It was only under the Trump administration that China woke up to the risk of what was actually a pretty smart, pro-national defense policy and then China began restricting GPUs.</p>
+<p>The lesson of the H20 is that a deliberately crippled chip doesn't keep China on our stack. Beijing moved against the H20 and RTX Pro 6000D as it concluded that domestic Chinese chips had caught up to them. So if China develops an alternative AI hardware ecosystem that it shares with Russia, Iran and North Korea, we will look back and think it would have been even smarter to offer China the B30A in 2025 instead of the H200s we eventually approved case-by-case. Especially given the H200 is not the frontier: with Vera Rubin now in full production, it is two generations behind what American labs are buying.</p>
+<p>All of this is to say that Jensen has been consistently lobbying for a position that was adapted by both the Biden <em>and</em> Trump admins <em>and</em> looks smarter every month that goes by as Chinese labs increasingly adapt their MoE architectures to domestic Chinese hardware. DeepSeek reportedly gave Huawei and Cambricon early access to V4 instead of Nvidia and AMD, and a Huawei-led team has since post-trained V4-Pro on Ascend chips.</p>
+<p>And if America <em>ever</em> falls behind China in AI, the China hawks here in America who helped accelerate the creation of this alternative Chinese AI hardware ecosystem will deserve a significant share of the blame.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/GavinSBaker/status/2119908820608798745">https://x.com/GavinSBaker/status/2119908820608798745</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他引用路透社关于约 60 万颗 H200 滞留香港的报道，并认为向中国出售非前沿芯片仍是对美国有利的政策。</em></p>
+<h2>中文改写</h2>
+<p>Gavin Baker 写给那些认为拜登政府和特朗普政府允许较弱 GPU 对华出口是错误的人。他想讨论的是：从 2025 年夏天开始，阻拦英伟达 GPU 进入中国的，越来越多是中国自己，而不只是华盛顿。</p>
+<p>按他的叙述，商务部长 Lutnick 曾说，目标是让中国开发者“上瘾”于美国技术栈。其后数周内，北京开始施压大型科技公司停止采购 H20，接着要求它们停止采购 RTX Pro 6000D，派海关人员到港口查处英伟达芯片进口，并禁止新建的国家资助数据中心使用外国 AI 芯片。</p>
+<p>至于数量，他转述路透社上周的报道称，大约 60 万颗 H200 滞留在香港，原因是北京不愿大规模批准进口这款芯片。在他看来，H200 在规模化产品上仍优于中国本国产业。上述数字和报道细节来自他的转述，本站未对照路透社原文逐句核对。</p>
+<p>他反问：如果允许出口这些较弱 GPU 是一项让中国占便宜的政策错误，那为什么出面阻拦的是中国？</p>
+<p>他自己的判断是，中国明白，一旦在 AI 硬件上依赖美国，无论芯片放在中国境内，还是通过东南亚云（其中包括美国超大规模云厂商在东南亚的可用区）远程调用，美国在未来冲突中都会握有很大杠杆。他认为，能够立刻关掉云，才是最大的杠杆。</p>
+<p>他也承认，中国的 AI 实验室仍想要英伟达芯片。他写道，H200 服务器的灰色市场价格在过去一年大约涨到了三倍。可这正好说明问题：北京愿意给本国实验室施加实际成本，以避免依赖美国 GPU。在他看来，北京把 GPU 进口看成对自身雄心的威胁，而不是礼物。</p>
+<p>因此他认为，向中国出售落后于美国前沿水平的 GPU，让中国开发者继续留在美国 GPU 体系上，并减少中国另建一套美国无法影响、日后还可能与对手分享的 AI 硬件生态，这其实是一项对美国有利的国防政策。让它们使用东南亚的云，在他看来可能更聪明，因为云很容易被关掉。</p>
+<p>他强调，这是自己一贯的看法。他也说，自己在网上的对华立场已经偏鹰派，因此不再去中国旅行。</p>
+<p>他还指出，拜登政府和特朗普政府都曾基于这些理由允许较弱 GPU 对华出口。按他的说法，中国是在特朗普任内才意识到这项政策对自己的风险，并开始限制 GPU。</p>
+<p>H20 给他的教训是：一款被刻意削弱的芯片，并不能把中国留在美国的技术栈上。他认为，北京是在判断国产芯片已经追上 H20 和 RTX Pro 6000D 之后，才对这两款产品采取行动。所以他推测，如果中国日后发展出可与俄罗斯、伊朗和朝鲜分享的替代硬件生态，回头看会觉得 2025 年向中国提供 B30A，可能比后来逐案批准 H200 更聪明。他补充说，H200 已经不是前沿产品：在 Vera Rubin 已全规模投产的前提下，它比美国实验室正在采购的芯片落后两代。Vera Rubin 的投产进度是他的陈述。</p>
+<p>他把这些点和黄仁勋的游说联系在一起：黄仁勋一直推动的立场，被两届美国政府采纳，而且在他看来，随着中国实验室越来越多把混合专家架构适配到国产硬件上，这个立场每个月都显得更站得住。他称，有报道说 DeepSeek 把 V4 的早期权限给了华为和寒武纪，而不是英伟达和 AMD；一个由华为牵头的团队此后还在昇腾芯片上对 V4-Pro 做了后训练。这些都是他转述的“据报”内容。</p>
+<p>最后他说，如果美国将来在 AI 上落后于中国，那些在美国国内加速催生这套替代硬件生态的对华强硬派，应该承担相当一部分责任。这是他的政策评论，不是已经发生的事实。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_baker_gpu"><img src="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China</em></p>
+<figure data-media-id="img_baker_gpu"><img src="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China:</p>
+<p>Since the summer of 2025, it has increasingly been <em>China</em>, not just DC, blocking Nvidia GPUs in China. Within weeks of Secretary Lutnick saying the goal was to get Chinese developers "addicted" to the American technology stack, Beijing began pressuring its tech giants to stop buying the H20. Then it ordered them to stop buying the RTX Pro 6000D, sent customs teams to the ports to crack down on Nvidia chip imports, and barred foreign AI chips from new state-funded data centers. And as of last week, Reuters reports that roughly 600,000 H200s are sitting in Hong Kong because Beijing won't approve large-scale imports of a chip that is still better than anything China's own industry makes at scale.</p>
+<p>If allowing the export of these less powerful GPUs was a policy mistake that <em>advantaged</em> China, then why is <em>China</em> the one blocking them?</p>
+<p>From my perspective, China understands that if they are dependent on American AI hardware - either on the ground in China or accessed remotely via the wide range of southeast Asian clouds (which include SE Asian availability zones from the largest American hyperscalers) - then we have immense leverage over them in any future conflict. Being able to turn off the clouds instantly is actually the greatest leverage.</p>
+<p>Yes, Chinese AI labs still want Nvidia chips. Gray market prices for H200 servers have roughly tripled over the past year. But that is exactly the point. Beijing is willing to impose real costs on its own AI labs to avoid dependence on American GPUs, which tells you how Beijing views GPU imports: not as a gift, but as a threat to its own ambitions.</p>
+<p>Maybe, just maybe, selling China GPUs that trail our own state of the art, so that Chinese developers stay “addicted” to American GPUs and China doesn't build an alternative AI hardware ecosystem that we have no control or influence over <em>and</em> that China could share over time with our adversaries, was actually a smart, pro-American national defense policy. And letting them access southeast Asian clouds might be an even smarter policy as so easy to turn clouds off.</p>
+<p>I believed and still believed it was smart policy. And I say this as someone whose posts here are hawkish enough on China that I won't travel there anymore.</p>
+<p>And note that both the Biden and Trump administration allowed the export of less powerful GPUs to China for all of these reasons. It was only under the Trump administration that China woke up to the risk of what was actually a pretty smart, pro-national defense policy and then China began restricting GPUs.</p>
+<p>The lesson of the H20 is that a deliberately crippled chip doesn't keep China on our stack. Beijing moved against the H20 and RTX Pro 6000D as it concluded that domestic Chinese chips had caught up to them. So if China develops an alternative AI hardware ecosystem that it shares with Russia, Iran and North Korea, we will look back and think it would have been even smarter to offer China the B30A in 2025 instead of the H200s we eventually approved case-by-case. Especially given the H200 is not the frontier: with Vera Rubin now in full production, it is two generations behind what American labs are buying.</p>
+<p>All of this is to say that Jensen has been consistently lobbying for a position that was adapted by both the Biden <em>and</em> Trump admins <em>and</em> looks smarter every month that goes by as Chinese labs increasingly adapt their MoE architectures to domestic Chinese hardware. DeepSeek reportedly gave Huawei and Cambricon early access to V4 instead of Nvidia and AMD, and a Huawei-led team has since post-trained V4-Pro on Ascend chips.</p>
+<p>And if America <em>ever</em> falls behind China in AI, the China hawks here in America who helped accelerate the creation of this alternative Chinese AI hardware ecosystem will deserve a significant share of the blame.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/GavinSBaker/status/2119908820608798745">https://x.com/GavinSBaker/status/2119908820608798745</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China", "url": "https://x.com/GavinSBaker/status/2119908820608798745", "lang": "en", "html": "<h2>Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China</h2>\n<figure data-media-id=\"img_baker_gpu\"><img src=\"https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Something that merits more discussion amongst those who believe it was a mistake by both the Biden and Trump administrations to allow the export of less powerful GPUs to China:</p>\n<p>Since the summer of 2025, it has increasingly been <em>China</em>, not just DC, blocking Nvidia GPUs in China. Within weeks of Secretary Lutnick saying the goal was to get Chinese developers \"addicted\" to the American technology stack, Beijing began pressuring its tech giants to stop buying the H20. Then it ordered them to stop buying the RTX Pro 6000D, sent customs teams to the ports to crack down on Nvidia chip imports, and barred foreign AI chips from new state-funded data centers. And as of last week, Reuters reports that roughly 600,000 H200s are sitting in Hong Kong because Beijing won't approve large-scale imports of a chip that is still better than anything China's own industry makes at scale.</p>\n<p>If allowing the export of these less powerful GPUs was a policy mistake that <em>advantaged</em> China, then why is <em>China</em> the one blocking them?</p>\n<p>From my perspective, China understands that if they are dependent on American AI hardware - either on the ground in China or accessed remotely via the wide range of southeast Asian clouds (which include SE Asian availability zones from the largest American hyperscalers) - then we have immense leverage over them in any future conflict. Being able to turn off the clouds instantly is actually the greatest leverage.</p>\n<p>Yes, Chinese AI labs still want Nvidia chips. Gray market prices for H200 servers have roughly tripled over the past year. But that is exactly the point. Beijing is willing to impose real costs on its own AI labs to avoid dependence on American GPUs, which tells you how Beijing views GPU imports: not as a gift, but as a threat to its own ambitions.</p>\n<p>Maybe, just maybe, selling China GPUs that trail our own state of the art, so that Chinese developers stay “addicted” to American GPUs and China doesn't build an alternative AI hardware ecosystem that we have no control or influence over <em>and</em> that China could share over time with our adversaries, was actually a smart, pro-American national defense policy. And letting them access southeast Asian clouds might be an even smarter policy as so easy to turn clouds off.</p>\n<p>I believed and still believed it was smart policy. And I say this as someone whose posts here are hawkish enough on China that I won't travel there anymore.</p>\n<p>And note that both the Biden and Trump administration allowed the export of less powerful GPUs to China for all of these reasons. It was only under the Trump administration that China woke up to the risk of what was actually a pretty smart, pro-national defense policy and then China began restricting GPUs.</p>\n<p>The lesson of the H20 is that a deliberately crippled chip doesn't keep China on our stack. Beijing moved against the H20 and RTX Pro 6000D as it concluded that domestic Chinese chips had caught up to them. So if China develops an alternative AI hardware ecosystem that it shares with Russia, Iran and North Korea, we will look back and think it would have been even smarter to offer China the B30A in 2025 instead of the H200s we eventually approved case-by-case. Especially given the H200 is not the frontier: with Vera Rubin now in full production, it is two generations behind what American labs are buying.</p>\n<p>All of this is to say that Jensen has been consistently lobbying for a position that was adapted by both the Biden <em>and</em> Trump admins <em>and</em> looks smarter every month that goes by as Chinese labs increasingly adapt their MoE architectures to domestic Chinese hardware. DeepSeek reportedly gave Huawei and Cambricon early access to V4 instead of Nvidia and AMD, and a Huawei-led team has since post-trained V4-Pro on Ascend chips.</p>\n<p>And if America <em>ever</em> falls behind China in AI, the China hawks here in America who helped accelerate the creation of this alternative Chinese AI hardware ecosystem will deserve a significant share of the blame.</p>\n<p>原文链接：<a href=\"https://x.com/GavinSBaker/status/2119908820608798745\">https://x.com/GavinSBaker/status/2119908820608798745</a></p>"}, "rewrite": {"title": "Gavin Baker：他说，拦下英伟达 GPU 的，越来越多是北京而不是华盛顿", "markdown": "Gavin Baker 写给那些认为拜登政府和特朗普政府允许较弱 GPU 对华出口是错误的人。他想讨论的是：从 2025 年夏天开始，阻拦英伟达 GPU 进入中国的，越来越多是中国自己，而不只是华盛顿。\n\n按他的叙述，商务部长 Lutnick 曾说，目标是让中国开发者“上瘾”于美国技术栈。其后数周内，北京开始施压大型科技公司停止采购 H20，接着要求它们停止采购 RTX Pro 6000D，派海关人员到港口查处英伟达芯片进口，并禁止新建的国家资助数据中心使用外国 AI 芯片。\n\n至于数量，他转述路透社上周的报道称，大约 60 万颗 H200 滞留在香港，原因是北京不愿大规模批准进口这款芯片。在他看来，H200 在规模化产品上仍优于中国本国产业。上述数字和报道细节来自他的转述，本站未对照路透社原文逐句核对。\n\n他反问：如果允许出口这些较弱 GPU 是一项让中国占便宜的政策错误，那为什么出面阻拦的是中国？\n\n他自己的判断是，中国明白，一旦在 AI 硬件上依赖美国，无论芯片放在中国境内，还是通过东南亚云（其中包括美国超大规模云厂商在东南亚的可用区）远程调用，美国在未来冲突中都会握有很大杠杆。他认为，能够立刻关掉云，才是最大的杠杆。\n\n他也承认，中国的 AI 实验室仍想要英伟达芯片。他写道，H200 服务器的灰色市场价格在过去一年大约涨到了三倍。可这正好说明问题：北京愿意给本国实验室施加实际成本，以避免依赖美国 GPU。在他看来，北京把 GPU 进口看成对自身雄心的威胁，而不是礼物。\n\n因此他认为，向中国出售落后于美国前沿水平的 GPU，让中国开发者继续留在美国 GPU 体系上，并减少中国另建一套美国无法影响、日后还可能与对手分享的 AI 硬件生态，这其实是一项对美国有利的国防政策。让它们使用东南亚的云，在他看来可能更聪明，因为云很容易被关掉。\n\n他强调，这是自己一贯的看法。他也说，自己在网上的对华立场已经偏鹰派，因此不再去中国旅行。\n\n他还指出，拜登政府和特朗普政府都曾基于这些理由允许较弱 GPU 对华出口。按他的说法，中国是在特朗普任内才意识到这项政策对自己的风险，并开始限制 GPU。\n\nH20 给他的教训是：一款被刻意削弱的芯片，并不能把中国留在美国的技术栈上。他认为，北京是在判断国产芯片已经追上 H20 和 RTX Pro 6000D 之后，才对这两款产品采取行动。所以他推测，如果中国日后发展出可与俄罗斯、伊朗和朝鲜分享的替代硬件生态，回头看会觉得 2025 年向中国提供 B30A，可能比后来逐案批准 H200 更聪明。他补充说，H200 已经不是前沿产品：在 Vera Rubin 已全规模投产的前提下，它比美国实验室正在采购的芯片落后两代。Vera Rubin 的投产进度是他的陈述。\n\n他把这些点和黄仁勋的游说联系在一起：黄仁勋一直推动的立场，被两届美国政府采纳，而且在他看来，随着中国实验室越来越多把混合专家架构适配到国产硬件上，这个立场每个月都显得更站得住。他称，有报道说 DeepSeek 把 V4 的早期权限给了华为和寒武纪，而不是英伟达和 AMD；一个由华为牵头的团队此后还在昇腾芯片上对 V4-Pro 做了后训练。这些都是他转述的“据报”内容。\n\n最后他说，如果美国将来在 AI 上落后于中国，那些在美国国内加速催生这套替代硬件生态的对华强硬派，应该承担相当一部分责任。这是他的政策评论，不是已经发生的事实。\n\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原帖配图](<https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg>)", "html": "<p>Gavin Baker 写给那些认为拜登政府和特朗普政府允许较弱 GPU 对华出口是错误的人。他想讨论的是：从 2025 年夏天开始，阻拦英伟达 GPU 进入中国的，越来越多是中国自己，而不只是华盛顿。</p>\n<p>按他的叙述，商务部长 Lutnick 曾说，目标是让中国开发者“上瘾”于美国技术栈。其后数周内，北京开始施压大型科技公司停止采购 H20，接着要求它们停止采购 RTX Pro 6000D，派海关人员到港口查处英伟达芯片进口，并禁止新建的国家资助数据中心使用外国 AI 芯片。</p>\n<p>至于数量，他转述路透社上周的报道称，大约 60 万颗 H200 滞留在香港，原因是北京不愿大规模批准进口这款芯片。在他看来，H200 在规模化产品上仍优于中国本国产业。上述数字和报道细节来自他的转述，本站未对照路透社原文逐句核对。</p>\n<p>他反问：如果允许出口这些较弱 GPU 是一项让中国占便宜的政策错误，那为什么出面阻拦的是中国？</p>\n<p>他自己的判断是，中国明白，一旦在 AI 硬件上依赖美国，无论芯片放在中国境内，还是通过东南亚云（其中包括美国超大规模云厂商在东南亚的可用区）远程调用，美国在未来冲突中都会握有很大杠杆。他认为，能够立刻关掉云，才是最大的杠杆。</p>\n<p>他也承认，中国的 AI 实验室仍想要英伟达芯片。他写道，H200 服务器的灰色市场价格在过去一年大约涨到了三倍。可这正好说明问题：北京愿意给本国实验室施加实际成本，以避免依赖美国 GPU。在他看来，北京把 GPU 进口看成对自身雄心的威胁，而不是礼物。</p>\n<p>因此他认为，向中国出售落后于美国前沿水平的 GPU，让中国开发者继续留在美国 GPU 体系上，并减少中国另建一套美国无法影响、日后还可能与对手分享的 AI 硬件生态，这其实是一项对美国有利的国防政策。让它们使用东南亚的云，在他看来可能更聪明，因为云很容易被关掉。</p>\n<p>他强调，这是自己一贯的看法。他也说，自己在网上的对华立场已经偏鹰派，因此不再去中国旅行。</p>\n<p>他还指出，拜登政府和特朗普政府都曾基于这些理由允许较弱 GPU 对华出口。按他的说法，中国是在特朗普任内才意识到这项政策对自己的风险，并开始限制 GPU。</p>\n<p>H20 给他的教训是：一款被刻意削弱的芯片，并不能把中国留在美国的技术栈上。他认为，北京是在判断国产芯片已经追上 H20 和 RTX Pro 6000D 之后，才对这两款产品采取行动。所以他推测，如果中国日后发展出可与俄罗斯、伊朗和朝鲜分享的替代硬件生态，回头看会觉得 2025 年向中国提供 B30A，可能比后来逐案批准 H200 更聪明。他补充说，H200 已经不是前沿产品：在 Vera Rubin 已全规模投产的前提下，它比美国实验室正在采购的芯片落后两代。Vera Rubin 的投产进度是他的陈述。</p>\n<p>他把这些点和黄仁勋的游说联系在一起：黄仁勋一直推动的立场，被两届美国政府采纳，而且在他看来，随着中国实验室越来越多把混合专家架构适配到国产硬件上，这个立场每个月都显得更站得住。他称，有报道说 DeepSeek 把 V4 的早期权限给了华为和寒武纪，而不是英伟达和 AMD；一个由华为牵头的团队此后还在昇腾芯片上对 V4-Pro 做了后训练。这些都是他转述的“据报”内容。</p>\n<p>最后他说，如果美国将来在 AI 上落后于中国，那些在美国国内加速催生这套替代硬件生态的对华强硬派，应该承担相当一部分责任。这是他的政策评论，不是已经发生的事实。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_baker_gpu\"><img src=\"https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWtt1iHaEAA5iCK.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Brad Setser 读中国 10 月贸易数据：按他的口径，全年不含黄金顺差有望超过 1.5 万亿美元</title>
+      <link>https://karuio.github.io/a/setser-china-october-trade</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/setser-china-october-trade</guid>
+      <pubDate>Tue, 10 Nov 2026 03:57:27 +0000</pubDate>
+      <author>Brad Setser</author>
+      <description><![CDATA[<p><em>他强调 10 月相对 9 月回落并不意外，真正值得看的是同比顺差、汽车出口和中美双边数字之间的裂口。</em></p>
+<h2>中文改写</h2>
+<p>Brad Setser 写了一串关于中国 10 月贸易数据的帖子。他说，中国数据有一个特点：10 月相对 9 月通常偏弱。他原文里的比较对象写成了“compared to September and October”，这里按他的原文保留。因此，10 月出口低于 9 月、顺差环比下降，在他看来并不意外。</p>
+<p>进口同比大增，他认为很好解释，而且主要不是来自汽车。他的理由是芯片价格大幅上涨，中国仍进口大量芯片；原油进口量在 10 月回升，按美元计，石油进口 10 月比 9 月多了 100 亿美元。他还提到，2025 年 9 月是一个较低的基数。</p>
+<p>即便月度顺差相对 2026 年 9 月回落，同比仍增加了 170 亿美元。因此他认为，过去 12 个月顺差合计仍在上升，并有望在今年达到 1.3 万亿美元。他同时注明，还没有 10 月黄金进口数据，但按他的口径，不含黄金的顺差很容易超过 1.5 万亿美元。这些都是他根据已公布贸易数据做的推算。</p>
+<p>为了估计实际数量，他使用自己的方法：假设进出口价格与上月相比没有变化。按这个方法，出口和进口数量同比都显得很强。汽车出口同比仍然强劲。他写道，10 月的车辆出口约 1300 万、轿车出口约 1200 万，这个规模“巨大”。这里的 13m / 12m 是他的表述，应理解为他对当月规模的概括，本站未对照海关原始分类表重算。</p>
+<p>过去 12 个月合计来看，他认为出口（汽车数量从车辆数据推断）仍在上升，进口仍在下降。</p>
+<p>把进口数量单独放大后，汽车进口讲述的故事，和他看到的名义进口同比上升并不一样。因为他强调，中国进口大量芯片和石油，而这两样东西的价格都明显上涨。</p>
+<p>他接着比较每月汽车出口和每月国内销量，并认为汽车出口的环比增速已经放缓。这与出口从指数式增长转为线性增长是一致的。可即便是线性增长，按他的说法，每年 300 万到 400 万辆的增量仍然极端；作为对照，德国汽车净出口（指出口本身，不是增量）还不到 200 万辆。</p>
+<p>按过去 12 个月合计，他看到中国对欧盟和英国的出口仍在较快增长。香港的目的地“可能是任何人”，但他明确认为其中包含一部分最终运往美国的货物。</p>
+<p>公开串帖里，作者在第 8 条之后直接写到对欧英出口，随后编号跳到 11/ 和 12/12，没有检索到单独编号为 9/ 或 10/ 的续帖。</p>
+<p>他写道，自己很好奇，当中美双边逆差再次扩大变得明显时，特朗普总统会如何反应。他也提醒，美国数字和中国数字之间的裂口异常大，他怀疑中国数字更准确。这是他的判断。</p>
+<p>最后他说，这个对比并不完全公平，因为价格已经上涨；但按美国数据，中国对美出口的美元金额已经回到“解放日”之前的水平。这里的“解放日”是他原帖中的说法，用来指美国加征关税前后的那个时点。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_setser_01"><img src="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_02"><img src="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_03"><img src="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_04"><img src="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_05"><img src="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_06"><img src="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_07"><img src="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_08"><img src="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_eu"><img src="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_11"><img src="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_12"><img src="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>A couple of words on China&#x27;s October trade data</em></p>
+<figure data-media-id="img_setser_01"><img src="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_02"><img src="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_03"><img src="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_04"><img src="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_05"><img src="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_06"><img src="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_07"><img src="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_08"><img src="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_eu"><img src="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_11"><img src="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_12"><img src="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>A couple of words on China's October trade data --</p>
+<p>One of the quirks of the Chinese data is the October is a month of relative weakness compared to September and October, so it isn't a surprise that October exports were down v September (and the surplus was down m/m)</p>
+<p>1/</p>
+<p>The strong y/y growth in imports is easily explained (hint, it isn't coming from autos). Chip prices are way up &amp; China still imports a lot of chips. Crude import volumes recovered in October (in $ terms, oil imports jumped $10b Oct v Sept)</p>
+<ul>
+<li>Sept 25 = low base</li>
+</ul>
+<p>2/</p>
+<p>y/y the monthly surplus was up $17b (even with the fall v September 26) so the trailing 12m sum of the surplus is trending up and on track to hit $1.3 trillion this year.</p>
+<p>(no data on October gold imports, but ex gold the surplus will easily top $1.5 trillion)</p>
+<p>3/</p>
+<p>My "assume no change in export or import prices from the previous month to estimate volumes" methodology points to strong y/y growth in both export and import volumes.</p>
+<p>y/y growth in vehicle exports remained strong.   13m vehicle exports/ 12m car exports = huge for October</p>
+<p>4/</p>
+<p>And the trailing 12m sum of exports (cars inferred from vehicles) is still heading up -- and imports are still heading down</p>
+<p>5/</p>
+<p>Here is a close up on import volumes --</p>
+<p>Auto imports obviously tell a different story than the y/y increase in nominal imports (b/c China imports a lot of chips and oil and the price of both was way up)</p>
+<p>6/</p>
+<p>And here is monthly auto exports v monthly domestic sales --</p>
+<p>7/</p>
+<p>So the m/m pace of export growth for cars does seem to have decelerated -- which is consistent with moving to linear not exponential growth of auto exports</p>
+<p>but linear growth at a 3m -4m annual pace is still insane (German net auto exports -- exports, not growth -- are under 2m cars)</p>
+<p>8/</p>
+<p>on a trailing 12m basis China's exports to both the EU and the UK are growing at a solid clip --</p>
+<p>HK could be anyone by the way, but clearly includes some goods destined for the US</p>
+<p>And I am curious how President Trump will react when it comes obvious that the bilateral deficit with China is growing again ...</p>
+<p>(note the unusually large gap between the US and Chinese numbers; I suspect the Chinese numbers are more accurate)</p>
+<p>11/</p>
+<p>It isn't an entirely fair comparison (prices have gone up) but China's exports to the US in dollar terms are back at their pre-liberation day levels in the US data.</p>
+<p>Just sayin'</p>
+<p>12/12</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2120002873669153166">https://x.com/Brad_Setser/status/2120002873669153166</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他强调 10 月相对 9 月回落并不意外，真正值得看的是同比顺差、汽车出口和中美双边数字之间的裂口。</em></p>
+<h2>中文改写</h2>
+<p>Brad Setser 写了一串关于中国 10 月贸易数据的帖子。他说，中国数据有一个特点：10 月相对 9 月通常偏弱。他原文里的比较对象写成了“compared to September and October”，这里按他的原文保留。因此，10 月出口低于 9 月、顺差环比下降，在他看来并不意外。</p>
+<p>进口同比大增，他认为很好解释，而且主要不是来自汽车。他的理由是芯片价格大幅上涨，中国仍进口大量芯片；原油进口量在 10 月回升，按美元计，石油进口 10 月比 9 月多了 100 亿美元。他还提到，2025 年 9 月是一个较低的基数。</p>
+<p>即便月度顺差相对 2026 年 9 月回落，同比仍增加了 170 亿美元。因此他认为，过去 12 个月顺差合计仍在上升，并有望在今年达到 1.3 万亿美元。他同时注明，还没有 10 月黄金进口数据，但按他的口径，不含黄金的顺差很容易超过 1.5 万亿美元。这些都是他根据已公布贸易数据做的推算。</p>
+<p>为了估计实际数量，他使用自己的方法：假设进出口价格与上月相比没有变化。按这个方法，出口和进口数量同比都显得很强。汽车出口同比仍然强劲。他写道，10 月的车辆出口约 1300 万、轿车出口约 1200 万，这个规模“巨大”。这里的 13m / 12m 是他的表述，应理解为他对当月规模的概括，本站未对照海关原始分类表重算。</p>
+<p>过去 12 个月合计来看，他认为出口（汽车数量从车辆数据推断）仍在上升，进口仍在下降。</p>
+<p>把进口数量单独放大后，汽车进口讲述的故事，和他看到的名义进口同比上升并不一样。因为他强调，中国进口大量芯片和石油，而这两样东西的价格都明显上涨。</p>
+<p>他接着比较每月汽车出口和每月国内销量，并认为汽车出口的环比增速已经放缓。这与出口从指数式增长转为线性增长是一致的。可即便是线性增长，按他的说法，每年 300 万到 400 万辆的增量仍然极端；作为对照，德国汽车净出口（指出口本身，不是增量）还不到 200 万辆。</p>
+<p>按过去 12 个月合计，他看到中国对欧盟和英国的出口仍在较快增长。香港的目的地“可能是任何人”，但他明确认为其中包含一部分最终运往美国的货物。</p>
+<p>公开串帖里，作者在第 8 条之后直接写到对欧英出口，随后编号跳到 11/ 和 12/12，没有检索到单独编号为 9/ 或 10/ 的续帖。</p>
+<p>他写道，自己很好奇，当中美双边逆差再次扩大变得明显时，特朗普总统会如何反应。他也提醒，美国数字和中国数字之间的裂口异常大，他怀疑中国数字更准确。这是他的判断。</p>
+<p>最后他说，这个对比并不完全公平，因为价格已经上涨；但按美国数据，中国对美出口的美元金额已经回到“解放日”之前的水平。这里的“解放日”是他原帖中的说法，用来指美国加征关税前后的那个时点。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_setser_01"><img src="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_02"><img src="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_03"><img src="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_04"><img src="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_05"><img src="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_06"><img src="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_07"><img src="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_08"><img src="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_eu"><img src="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_11"><img src="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_12"><img src="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>A couple of words on China&#x27;s October trade data</em></p>
+<figure data-media-id="img_setser_01"><img src="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_02"><img src="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_03"><img src="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_04"><img src="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFIXdawAACmrq.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_05"><img src="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_06"><img src="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_07"><img src="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_08"><img src="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_eu"><img src="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_11"><img src="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_12"><img src="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>A couple of words on China's October trade data --</p>
+<p>One of the quirks of the Chinese data is the October is a month of relative weakness compared to September and October, so it isn't a surprise that October exports were down v September (and the surplus was down m/m)</p>
+<p>1/</p>
+<p>The strong y/y growth in imports is easily explained (hint, it isn't coming from autos). Chip prices are way up &amp; China still imports a lot of chips. Crude import volumes recovered in October (in $ terms, oil imports jumped $10b Oct v Sept)</p>
+<ul>
+<li>Sept 25 = low base</li>
+</ul>
+<p>2/</p>
+<p>y/y the monthly surplus was up $17b (even with the fall v September 26) so the trailing 12m sum of the surplus is trending up and on track to hit $1.3 trillion this year.</p>
+<p>(no data on October gold imports, but ex gold the surplus will easily top $1.5 trillion)</p>
+<p>3/</p>
+<p>My "assume no change in export or import prices from the previous month to estimate volumes" methodology points to strong y/y growth in both export and import volumes.</p>
+<p>y/y growth in vehicle exports remained strong.   13m vehicle exports/ 12m car exports = huge for October</p>
+<p>4/</p>
+<p>And the trailing 12m sum of exports (cars inferred from vehicles) is still heading up -- and imports are still heading down</p>
+<p>5/</p>
+<p>Here is a close up on import volumes --</p>
+<p>Auto imports obviously tell a different story than the y/y increase in nominal imports (b/c China imports a lot of chips and oil and the price of both was way up)</p>
+<p>6/</p>
+<p>And here is monthly auto exports v monthly domestic sales --</p>
+<p>7/</p>
+<p>So the m/m pace of export growth for cars does seem to have decelerated -- which is consistent with moving to linear not exponential growth of auto exports</p>
+<p>but linear growth at a 3m -4m annual pace is still insane (German net auto exports -- exports, not growth -- are under 2m cars)</p>
+<p>8/</p>
+<p>on a trailing 12m basis China's exports to both the EU and the UK are growing at a solid clip --</p>
+<p>HK could be anyone by the way, but clearly includes some goods destined for the US</p>
+<p>And I am curious how President Trump will react when it comes obvious that the bilateral deficit with China is growing again ...</p>
+<p>(note the unusually large gap between the US and Chinese numbers; I suspect the Chinese numbers are more accurate)</p>
+<p>11/</p>
+<p>It isn't an entirely fair comparison (prices have gone up) but China's exports to the US in dollar terms are back at their pre-liberation day levels in the US data.</p>
+<p>Just sayin'</p>
+<p>12/12</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2120002873669153166">https://x.com/Brad_Setser/status/2120002873669153166</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "A couple of words on China's October trade data", "url": "https://x.com/Brad_Setser/status/2120002873669153166", "lang": "en", "html": "<h2>A couple of words on China&#x27;s October trade data</h2>\n<figure data-media-id=\"img_setser_01\"><img src=\"https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_02\"><img src=\"https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_03\"><img src=\"https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_04\"><img src=\"https://pbs.twimg.com/media/HWvFIXdawAACmrq.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvFIXdawAACmrq.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_05\"><img src=\"https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_06\"><img src=\"https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_07\"><img src=\"https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_08\"><img src=\"https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_eu\"><img src=\"https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_11\"><img src=\"https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_12\"><img src=\"https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>A couple of words on China's October trade data --</p>\n<p>One of the quirks of the Chinese data is the October is a month of relative weakness compared to September and October, so it isn't a surprise that October exports were down v September (and the surplus was down m/m)</p>\n<p>1/</p>\n<p>The strong y/y growth in imports is easily explained (hint, it isn't coming from autos). Chip prices are way up &amp; China still imports a lot of chips. Crude import volumes recovered in October (in $ terms, oil imports jumped $10b Oct v Sept)</p>\n<ul>\n<li>Sept 25 = low base</li>\n</ul>\n<p>2/</p>\n<p>y/y the monthly surplus was up $17b (even with the fall v September 26) so the trailing 12m sum of the surplus is trending up and on track to hit $1.3 trillion this year.</p>\n<p>(no data on October gold imports, but ex gold the surplus will easily top $1.5 trillion)</p>\n<p>3/</p>\n<p>My \"assume no change in export or import prices from the previous month to estimate volumes\" methodology points to strong y/y growth in both export and import volumes.</p>\n<p>y/y growth in vehicle exports remained strong.   13m vehicle exports/ 12m car exports = huge for October</p>\n<p>4/</p>\n<p>And the trailing 12m sum of exports (cars inferred from vehicles) is still heading up -- and imports are still heading down</p>\n<p>5/</p>\n<p>Here is a close up on import volumes --</p>\n<p>Auto imports obviously tell a different story than the y/y increase in nominal imports (b/c China imports a lot of chips and oil and the price of both was way up)</p>\n<p>6/</p>\n<p>And here is monthly auto exports v monthly domestic sales --</p>\n<p>7/</p>\n<p>So the m/m pace of export growth for cars does seem to have decelerated -- which is consistent with moving to linear not exponential growth of auto exports</p>\n<p>but linear growth at a 3m -4m annual pace is still insane (German net auto exports -- exports, not growth -- are under 2m cars)</p>\n<p>8/</p>\n<p>on a trailing 12m basis China's exports to both the EU and the UK are growing at a solid clip --</p>\n<p>HK could be anyone by the way, but clearly includes some goods destined for the US</p>\n<p>And I am curious how President Trump will react when it comes obvious that the bilateral deficit with China is growing again ...</p>\n<p>(note the unusually large gap between the US and Chinese numbers; I suspect the Chinese numbers are more accurate)</p>\n<p>11/</p>\n<p>It isn't an entirely fair comparison (prices have gone up) but China's exports to the US in dollar terms are back at their pre-liberation day levels in the US data.</p>\n<p>Just sayin'</p>\n<p>12/12</p>\n<p>原文链接：<a href=\"https://x.com/Brad_Setser/status/2120002873669153166\">https://x.com/Brad_Setser/status/2120002873669153166</a></p>"}, "rewrite": {"title": "Brad Setser 读中国 10 月贸易数据：按他的口径，全年不含黄金顺差有望超过 1.5 万亿美元", "markdown": "Brad Setser 写了一串关于中国 10 月贸易数据的帖子。他说，中国数据有一个特点：10 月相对 9 月通常偏弱。他原文里的比较对象写成了“compared to September and October”，这里按他的原文保留。因此，10 月出口低于 9 月、顺差环比下降，在他看来并不意外。\n\n进口同比大增，他认为很好解释，而且主要不是来自汽车。他的理由是芯片价格大幅上涨，中国仍进口大量芯片；原油进口量在 10 月回升，按美元计，石油进口 10 月比 9 月多了 100 亿美元。他还提到，2025 年 9 月是一个较低的基数。\n\n即便月度顺差相对 2026 年 9 月回落，同比仍增加了 170 亿美元。因此他认为，过去 12 个月顺差合计仍在上升，并有望在今年达到 1.3 万亿美元。他同时注明，还没有 10 月黄金进口数据，但按他的口径，不含黄金的顺差很容易超过 1.5 万亿美元。这些都是他根据已公布贸易数据做的推算。\n\n为了估计实际数量，他使用自己的方法：假设进出口价格与上月相比没有变化。按这个方法，出口和进口数量同比都显得很强。汽车出口同比仍然强劲。他写道，10 月的车辆出口约 1300 万、轿车出口约 1200 万，这个规模“巨大”。这里的 13m / 12m 是他的表述，应理解为他对当月规模的概括，本站未对照海关原始分类表重算。\n\n过去 12 个月合计来看，他认为出口（汽车数量从车辆数据推断）仍在上升，进口仍在下降。\n\n把进口数量单独放大后，汽车进口讲述的故事，和他看到的名义进口同比上升并不一样。因为他强调，中国进口大量芯片和石油，而这两样东西的价格都明显上涨。\n\n他接着比较每月汽车出口和每月国内销量，并认为汽车出口的环比增速已经放缓。这与出口从指数式增长转为线性增长是一致的。可即便是线性增长，按他的说法，每年 300 万到 400 万辆的增量仍然极端；作为对照，德国汽车净出口（指出口本身，不是增量）还不到 200 万辆。\n\n按过去 12 个月合计，他看到中国对欧盟和英国的出口仍在较快增长。香港的目的地“可能是任何人”，但他明确认为其中包含一部分最终运往美国的货物。\n\n公开串帖里，作者在第 8 条之后直接写到对欧英出口，随后编号跳到 11/ 和 12/12，没有检索到单独编号为 9/ 或 10/ 的续帖。\n\n他写道，自己很好奇，当中美双边逆差再次扩大变得明显时，特朗普总统会如何反应。他也提醒，美国数字和中国数字之间的裂口异常大，他怀疑中国数字更准确。这是他的判断。\n\n最后他说，这个对比并不完全公平，因为价格已经上涨；但按美国数据，中国对美出口的美元金额已经回到“解放日”之前的水平。这里的“解放日”是他原帖中的说法，用来指美国加征关税前后的那个时点。\n\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原帖配图](<https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvFIXdawAACmrq.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg>)", "html": "<p>Brad Setser 写了一串关于中国 10 月贸易数据的帖子。他说，中国数据有一个特点：10 月相对 9 月通常偏弱。他原文里的比较对象写成了“compared to September and October”，这里按他的原文保留。因此，10 月出口低于 9 月、顺差环比下降，在他看来并不意外。</p>\n<p>进口同比大增，他认为很好解释，而且主要不是来自汽车。他的理由是芯片价格大幅上涨，中国仍进口大量芯片；原油进口量在 10 月回升，按美元计，石油进口 10 月比 9 月多了 100 亿美元。他还提到，2025 年 9 月是一个较低的基数。</p>\n<p>即便月度顺差相对 2026 年 9 月回落，同比仍增加了 170 亿美元。因此他认为，过去 12 个月顺差合计仍在上升，并有望在今年达到 1.3 万亿美元。他同时注明，还没有 10 月黄金进口数据，但按他的口径，不含黄金的顺差很容易超过 1.5 万亿美元。这些都是他根据已公布贸易数据做的推算。</p>\n<p>为了估计实际数量，他使用自己的方法：假设进出口价格与上月相比没有变化。按这个方法，出口和进口数量同比都显得很强。汽车出口同比仍然强劲。他写道，10 月的车辆出口约 1300 万、轿车出口约 1200 万，这个规模“巨大”。这里的 13m / 12m 是他的表述，应理解为他对当月规模的概括，本站未对照海关原始分类表重算。</p>\n<p>过去 12 个月合计来看，他认为出口（汽车数量从车辆数据推断）仍在上升，进口仍在下降。</p>\n<p>把进口数量单独放大后，汽车进口讲述的故事，和他看到的名义进口同比上升并不一样。因为他强调，中国进口大量芯片和石油，而这两样东西的价格都明显上涨。</p>\n<p>他接着比较每月汽车出口和每月国内销量，并认为汽车出口的环比增速已经放缓。这与出口从指数式增长转为线性增长是一致的。可即便是线性增长，按他的说法，每年 300 万到 400 万辆的增量仍然极端；作为对照，德国汽车净出口（指出口本身，不是增量）还不到 200 万辆。</p>\n<p>按过去 12 个月合计，他看到中国对欧盟和英国的出口仍在较快增长。香港的目的地“可能是任何人”，但他明确认为其中包含一部分最终运往美国的货物。</p>\n<p>公开串帖里，作者在第 8 条之后直接写到对欧英出口，随后编号跳到 11/ 和 12/12，没有检索到单独编号为 9/ 或 10/ 的续帖。</p>\n<p>他写道，自己很好奇，当中美双边逆差再次扩大变得明显时，特朗普总统会如何反应。他也提醒，美国数字和中国数字之间的裂口异常大，他怀疑中国数字更准确。这是他的判断。</p>\n<p>最后他说，这个对比并不完全公平，因为价格已经上涨；但按美国数据，中国对美出口的美元金额已经回到“解放日”之前的水平。这里的“解放日”是他原帖中的说法，用来指美国加征关税前后的那个时点。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_setser_01\"><img src=\"https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_02\"><img src=\"https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_03\"><img src=\"https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_04\"><img src=\"https://pbs.twimg.com/media/HWvFIXdawAACmrq.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvFIXdawAACmrq.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_05\"><img src=\"https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_06\"><img src=\"https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_07\"><img src=\"https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_08\"><img src=\"https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_eu\"><img src=\"https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_11\"><img src=\"https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_12\"><img src=\"https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Dan Nystedt：台积电 10 月营收创新高，按公司汇率指引约合 184.6 亿美元</title>
+      <link>https://karuio.github.io/a/dnystedt-tsmc-october-revenue</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dnystedt-tsmc-october-revenue</guid>
+      <pubDate>Tue, 10 Nov 2026 06:09:40 +0000</pubDate>
+      <author>Dan Nystedt</author>
+      <description><![CDATA[<p><em>他汇总了台积电的月营收声明，并注明美元数字来自公司第四季汇率假设，不是台积电自己公布的美元口径。</em></p>
+<h2>中文改写</h2>
+<p>Dan Nystedt 根据台积电的月营收披露写道，公司 10 月营收同比增长 59.7%，达到新台币 5868.9 亿元，再创单月新高。他把这归因于全球与 AI 相关的芯片制造需求仍然强劲。此前的单月纪录是 8 月的新台币 5148.1 亿元。</p>
+<p>他特别说明，台积电自己没有提供美元数字。他帖子里的约 184.6 亿美元，是按公司第四季汇率指引换算出来的。</p>
+<p>1 到 10 月合计，营收同比增长 43.3%，达到新台币 4.49 万亿元。他认为，这仍大致沿着全年约 44% 增长的指引推进。</p>
+<p>第三条续帖解释了数据来源：台湾证券交易所要求上市公司申报月营收。他也给出了换算所用的汇率假设：1 美元兑新台币 31.8 元，这是台积电对第四季的外汇指引。台积电对第四季营收的指引是 523 亿美元到 543 亿美元。</p>
+<p>这些数字来自他对公司披露和交易所申报制度的转述，本站未打开台积电原始公告逐项核对。</p>
+
+<h2>原文</h2>
+<p><em>TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion</em></p>
+<p>TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion (US$18.46B) amid robust global AI-related chip manufacturing demand.</p>
+<p>The previous record was NT$514.81 billion in August.</p>
+<p>TSMC did not provide a US$ figure. The above is based on its forex guidance for the 4th quarter. 1/3 $TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor</p>
+<p>2/3 TSMC’s January through October revenue rose 43.3% year-on-year to NT$4.49 trillion, continuing to track full-year guidance for ~44% growth.</p>
+<p>$TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor</p>
+<p>3/3: The Taiwan Stock Exchange requires companies to file monthly revenue statements.</p>
+<p>The above US$ figures are based on TSMC’s foreign exchange rate guidance for the 4th quarter: US$1 = NT$31.8</p>
+<p>TSMC 4th quarter revenue guide: US$52.3 billion - $54.3 billion</p>
+<p>New Taiwan dollar</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dnystedt/status/2120036146461941768">https://x.com/dnystedt/status/2120036146461941768</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他汇总了台积电的月营收声明，并注明美元数字来自公司第四季汇率假设，不是台积电自己公布的美元口径。</em></p>
+<h2>中文改写</h2>
+<p>Dan Nystedt 根据台积电的月营收披露写道，公司 10 月营收同比增长 59.7%，达到新台币 5868.9 亿元，再创单月新高。他把这归因于全球与 AI 相关的芯片制造需求仍然强劲。此前的单月纪录是 8 月的新台币 5148.1 亿元。</p>
+<p>他特别说明，台积电自己没有提供美元数字。他帖子里的约 184.6 亿美元，是按公司第四季汇率指引换算出来的。</p>
+<p>1 到 10 月合计，营收同比增长 43.3%，达到新台币 4.49 万亿元。他认为，这仍大致沿着全年约 44% 增长的指引推进。</p>
+<p>第三条续帖解释了数据来源：台湾证券交易所要求上市公司申报月营收。他也给出了换算所用的汇率假设：1 美元兑新台币 31.8 元，这是台积电对第四季的外汇指引。台积电对第四季营收的指引是 523 亿美元到 543 亿美元。</p>
+<p>这些数字来自他对公司披露和交易所申报制度的转述，本站未打开台积电原始公告逐项核对。</p>
+
+<h2>原文</h2>
+<p><em>TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion</em></p>
+<p>TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion (US$18.46B) amid robust global AI-related chip manufacturing demand.</p>
+<p>The previous record was NT$514.81 billion in August.</p>
+<p>TSMC did not provide a US$ figure. The above is based on its forex guidance for the 4th quarter. 1/3 $TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor</p>
+<p>2/3 TSMC’s January through October revenue rose 43.3% year-on-year to NT$4.49 trillion, continuing to track full-year guidance for ~44% growth.</p>
+<p>$TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor</p>
+<p>3/3: The Taiwan Stock Exchange requires companies to file monthly revenue statements.</p>
+<p>The above US$ figures are based on TSMC’s foreign exchange rate guidance for the 4th quarter: US$1 = NT$31.8</p>
+<p>TSMC 4th quarter revenue guide: US$52.3 billion - $54.3 billion</p>
+<p>New Taiwan dollar</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dnystedt/status/2120036146461941768">https://x.com/dnystedt/status/2120036146461941768</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion", "url": "https://x.com/dnystedt/status/2120036146461941768", "lang": "en", "html": "<h2>TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion</h2>\n\n<p>TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion (US$18.46B) amid robust global AI-related chip manufacturing demand.</p>\n<p>The previous record was NT$514.81 billion in August.</p>\n<p>TSMC did not provide a US$ figure. The above is based on its forex guidance for the 4th quarter. 1/3 $TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor</p>\n<p>2/3 TSMC’s January through October revenue rose 43.3% year-on-year to NT$4.49 trillion, continuing to track full-year guidance for ~44% growth.</p>\n<p>$TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor</p>\n<p>3/3: The Taiwan Stock Exchange requires companies to file monthly revenue statements.</p>\n<p>The above US$ figures are based on TSMC’s foreign exchange rate guidance for the 4th quarter: US$1 = NT$31.8</p>\n<p>TSMC 4th quarter revenue guide: US$52.3 billion - $54.3 billion</p>\n<p>New Taiwan dollar</p>\n<p>原文链接：<a href=\"https://x.com/dnystedt/status/2120036146461941768\">https://x.com/dnystedt/status/2120036146461941768</a></p>"}, "rewrite": {"title": "Dan Nystedt：台积电 10 月营收创新高，按公司汇率指引约合 184.6 亿美元", "markdown": "Dan Nystedt 根据台积电的月营收披露写道，公司 10 月营收同比增长 59.7%，达到新台币 5868.9 亿元，再创单月新高。他把这归因于全球与 AI 相关的芯片制造需求仍然强劲。此前的单月纪录是 8 月的新台币 5148.1 亿元。\n\n他特别说明，台积电自己没有提供美元数字。他帖子里的约 184.6 亿美元，是按公司第四季汇率指引换算出来的。\n\n1 到 10 月合计，营收同比增长 43.3%，达到新台币 4.49 万亿元。他认为，这仍大致沿着全年约 44% 增长的指引推进。\n\n第三条续帖解释了数据来源：台湾证券交易所要求上市公司申报月营收。他也给出了换算所用的汇率假设：1 美元兑新台币 31.8 元，这是台积电对第四季的外汇指引。台积电对第四季营收的指引是 523 亿美元到 543 亿美元。\n\n这些数字来自他对公司披露和交易所申报制度的转述，本站未打开台积电原始公告逐项核对。\n", "html": "<p>Dan Nystedt 根据台积电的月营收披露写道，公司 10 月营收同比增长 59.7%，达到新台币 5868.9 亿元，再创单月新高。他把这归因于全球与 AI 相关的芯片制造需求仍然强劲。此前的单月纪录是 8 月的新台币 5148.1 亿元。</p>\n<p>他特别说明，台积电自己没有提供美元数字。他帖子里的约 184.6 亿美元，是按公司第四季汇率指引换算出来的。</p>\n<p>1 到 10 月合计，营收同比增长 43.3%，达到新台币 4.49 万亿元。他认为，这仍大致沿着全年约 44% 增长的指引推进。</p>\n<p>第三条续帖解释了数据来源：台湾证券交易所要求上市公司申报月营收。他也给出了换算所用的汇率假设：1 美元兑新台币 31.8 元，这是台积电对第四季的外汇指引。台积电对第四季营收的指引是 523 亿美元到 543 亿美元。</p>\n<p>这些数字来自他对公司披露和交易所申报制度的转述，本站未打开台积电原始公告逐项核对。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Tomasz Tunguz：按他的粗算，美国可能在 2028 到 2030 年间变成 token 净进口国</title>
+      <link>https://karuio.github.io/a/ttunguz-token-importer</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/ttunguz-token-importer</guid>
+      <pubDate>Mon, 09 Nov 2026 16:14:05 +0000</pubDate>
+      <author>Tomasz Tunguz</author>
+      <description><![CDATA[<p><em>这篇 X Article 把数据中心建设放缓和 GPU 租金上涨放在一起，讨论美国会不会像进口稀土一样开始进口算力产出。</em></p>
+<h2>中文改写</h2>
+<p>Tomasz Tunguz 在一篇 X Article 里提出：AI 需求已经快于供给，美国国内数据中心建设又在放缓，美国很快会消费比自己生产更多的 token。到那时，美国会变成 token 净进口国，就像它现在是稀土净进口国一样。</p>
+<p>这是他的分析框架，不是已经发生的贸易统计。他写了一个基础模型，估计这个转折会出现在 2028 年到 2030 年之间，具体取决于有多少规划中的设施被取消。</p>
+<p>按他非常粗略的估计，在新数据中心陆续上线的前提下，现有体系大约能承接每年 2.5 倍的 token 增长。超过这个速度后，芯片和模型效率的提升就无法抵消国内需求增长。</p>
+<p>他给出了三档情景：如果 45% 的规划项目无法接入电网，进口会在 2028 年开始；把取消比例降到 20%，时间会推迟到 2029 年；即便所有提议中的设施都按时建成，缺口仍会在 2030 年出现。这些年份都来自他的模型，本站未复核其假设和计算。</p>
+<p>他也指出，所有物理模型都假设算力价格保持不变。现实中，供给一紧，价格就会跳升。到目前为止，他认为需求对价格非常不敏感。过去两个季度，短期 GPU 租金从每小时 5 美元升到超过 13 美元；Anthropic 以溢价签下了数十亿美元的突发算力；总需求几乎没有眨眼，买家只是付了这笔过路费。GPU 租金和 Anthropic 订单金额是他文中的陈述。</p>
+<p>他接着问，价格要高到什么程度，人们才会退缩。是那些烧掉资本去预训练下一代前沿模型的实验室？是每周烧掉数亿 token、用 vibe-coding 做定制应用的企业团队？还是被要求为自动代理订阅每月支付 40 美元的消费者？40 美元是他举例用的价格，不是已核实的市场均价。</p>
+<p>他认为，肯定存在某个价格，会让需求放慢，现有数据中心容量也就够用了。可如果只靠稀缺定价来压需求，就否认了一个基本的市场事实：生产成本更低时，需求会高出几个数量级。如果美国不建设足够的电力和设施去满足这部分需求，token 就会在别处生产，然后再被进口进来。</p>
+<p>自 GPT 3.5 以来几乎不受约束的增长，在他看来接下来会受到调节。真正起作用的，会是这个国家关于数据中心该建多少、建多大、用多少电、建在哪里的公共选择。他认为，这些即将到来的限制，会重新塑造创业生态。原文同时发布在 tomtunguz.com。文章里提到的图表，此次未能取得可引用的媒体地址。</p>
+
+<h2>原文</h2>
+<p><em>When Does the US Become a Net Importer of Tokens?</em></p>
+<p>With AI demand outpacing supply, &amp; domestic data center construction slowing, soon the US will consume more tokens than it produces.
+At that point, the US will become a net importer of tokens, just like it is a net importer of rare earth metals. A basic model estimates this switch between 2028 &amp; 2030, depending on how many planned facilities get cancelled.
+Very roughly, the current systems, with new data centers coming online, can manage 2.5x annual token growth. Above that rate, chip &amp; model efficiency gains can no longer offset domestic demand growth:</p>
+<p>If 45% of planned projects fail to connect, imports start by 2028. Cut cancellations to 20%, &amp; the deadline slips to 2029. Even if every proposed facility gets built on time, the gap still opens by 2030.</p>
+<p>Every physical model assumes the price of compute stays constant. In reality, when supply chokes, prices spike. So far, demand has proven remarkably price-inelastic. Over the past two quarters, short-term GPU rental prices surged from $5 to more than $13 per hour, Anthropic signed billions in burst compute at premium rates, &amp; overall demand barely blinked. Buyers simply paid the toll.
+At what price do people balk? Is it the model labs burning through capital to pre-train the next frontier? The enterprises financing vibe-coding teams that burn hundreds of millions of tokens a week building custom apps? Or consumers asked to pay $40 a month for an autonomous agent subscription?
+Surely there is some price at which demand will slow &amp; current data center capacity will suffice. But throttling demand through scarcity pricing denies the basic market reality : at a lower cost of production, demand would be orders of magnitude higher. If we do not build the domestic power and facilities to satisfy that demand, tokens will simply be produced elsewhere &amp; imported.
+The uninhibited growth since GPT 3.5 will be modulated not by lack of access to data, nor algorithmic limits, nor GPU manufacturing speed, but by the broader values of the country. The forthcoming limits on the quantity, size, electrical consumption, &amp; location of data centers will reshape Startupland.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2119825864997425462">https://x.com/ttunguz/status/2119825864997425462</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/when-does-the-us-become-a-net-importer-of-tokens/">https://tomtunguz.com/when-does-the-us-become-a-net-importer-of-tokens/</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>这篇 X Article 把数据中心建设放缓和 GPU 租金上涨放在一起，讨论美国会不会像进口稀土一样开始进口算力产出。</em></p>
+<h2>中文改写</h2>
+<p>Tomasz Tunguz 在一篇 X Article 里提出：AI 需求已经快于供给，美国国内数据中心建设又在放缓，美国很快会消费比自己生产更多的 token。到那时，美国会变成 token 净进口国，就像它现在是稀土净进口国一样。</p>
+<p>这是他的分析框架，不是已经发生的贸易统计。他写了一个基础模型，估计这个转折会出现在 2028 年到 2030 年之间，具体取决于有多少规划中的设施被取消。</p>
+<p>按他非常粗略的估计，在新数据中心陆续上线的前提下，现有体系大约能承接每年 2.5 倍的 token 增长。超过这个速度后，芯片和模型效率的提升就无法抵消国内需求增长。</p>
+<p>他给出了三档情景：如果 45% 的规划项目无法接入电网，进口会在 2028 年开始；把取消比例降到 20%，时间会推迟到 2029 年；即便所有提议中的设施都按时建成，缺口仍会在 2030 年出现。这些年份都来自他的模型，本站未复核其假设和计算。</p>
+<p>他也指出，所有物理模型都假设算力价格保持不变。现实中，供给一紧，价格就会跳升。到目前为止，他认为需求对价格非常不敏感。过去两个季度，短期 GPU 租金从每小时 5 美元升到超过 13 美元；Anthropic 以溢价签下了数十亿美元的突发算力；总需求几乎没有眨眼，买家只是付了这笔过路费。GPU 租金和 Anthropic 订单金额是他文中的陈述。</p>
+<p>他接着问，价格要高到什么程度，人们才会退缩。是那些烧掉资本去预训练下一代前沿模型的实验室？是每周烧掉数亿 token、用 vibe-coding 做定制应用的企业团队？还是被要求为自动代理订阅每月支付 40 美元的消费者？40 美元是他举例用的价格，不是已核实的市场均价。</p>
+<p>他认为，肯定存在某个价格，会让需求放慢，现有数据中心容量也就够用了。可如果只靠稀缺定价来压需求，就否认了一个基本的市场事实：生产成本更低时，需求会高出几个数量级。如果美国不建设足够的电力和设施去满足这部分需求，token 就会在别处生产，然后再被进口进来。</p>
+<p>自 GPT 3.5 以来几乎不受约束的增长，在他看来接下来会受到调节。真正起作用的，会是这个国家关于数据中心该建多少、建多大、用多少电、建在哪里的公共选择。他认为，这些即将到来的限制，会重新塑造创业生态。原文同时发布在 tomtunguz.com。文章里提到的图表，此次未能取得可引用的媒体地址。</p>
+
+<h2>原文</h2>
+<p><em>When Does the US Become a Net Importer of Tokens?</em></p>
+<p>With AI demand outpacing supply, &amp; domestic data center construction slowing, soon the US will consume more tokens than it produces.
+At that point, the US will become a net importer of tokens, just like it is a net importer of rare earth metals. A basic model estimates this switch between 2028 &amp; 2030, depending on how many planned facilities get cancelled.
+Very roughly, the current systems, with new data centers coming online, can manage 2.5x annual token growth. Above that rate, chip &amp; model efficiency gains can no longer offset domestic demand growth:</p>
+<p>If 45% of planned projects fail to connect, imports start by 2028. Cut cancellations to 20%, &amp; the deadline slips to 2029. Even if every proposed facility gets built on time, the gap still opens by 2030.</p>
+<p>Every physical model assumes the price of compute stays constant. In reality, when supply chokes, prices spike. So far, demand has proven remarkably price-inelastic. Over the past two quarters, short-term GPU rental prices surged from $5 to more than $13 per hour, Anthropic signed billions in burst compute at premium rates, &amp; overall demand barely blinked. Buyers simply paid the toll.
+At what price do people balk? Is it the model labs burning through capital to pre-train the next frontier? The enterprises financing vibe-coding teams that burn hundreds of millions of tokens a week building custom apps? Or consumers asked to pay $40 a month for an autonomous agent subscription?
+Surely there is some price at which demand will slow &amp; current data center capacity will suffice. But throttling demand through scarcity pricing denies the basic market reality : at a lower cost of production, demand would be orders of magnitude higher. If we do not build the domestic power and facilities to satisfy that demand, tokens will simply be produced elsewhere &amp; imported.
+The uninhibited growth since GPT 3.5 will be modulated not by lack of access to data, nor algorithmic limits, nor GPU manufacturing speed, but by the broader values of the country. The forthcoming limits on the quantity, size, electrical consumption, &amp; location of data centers will reshape Startupland.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2119825864997425462">https://x.com/ttunguz/status/2119825864997425462</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/when-does-the-us-become-a-net-importer-of-tokens/">https://tomtunguz.com/when-does-the-us-become-a-net-importer-of-tokens/</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "When Does the US Become a Net Importer of Tokens?", "url": "https://x.com/ttunguz/status/2119825864997425462", "lang": "en", "html": "<h2>When Does the US Become a Net Importer of Tokens?</h2>\n\n<p>With AI demand outpacing supply, &amp; domestic data center construction slowing, soon the US will consume more tokens than it produces.\nAt that point, the US will become a net importer of tokens, just like it is a net importer of rare earth metals. A basic model estimates this switch between 2028 &amp; 2030, depending on how many planned facilities get cancelled.\nVery roughly, the current systems, with new data centers coming online, can manage 2.5x annual token growth. Above that rate, chip &amp; model efficiency gains can no longer offset domestic demand growth:</p>\n<p>If 45% of planned projects fail to connect, imports start by 2028. Cut cancellations to 20%, &amp; the deadline slips to 2029. Even if every proposed facility gets built on time, the gap still opens by 2030.</p>\n<p>Every physical model assumes the price of compute stays constant. In reality, when supply chokes, prices spike. So far, demand has proven remarkably price-inelastic. Over the past two quarters, short-term GPU rental prices surged from $5 to more than $13 per hour, Anthropic signed billions in burst compute at premium rates, &amp; overall demand barely blinked. Buyers simply paid the toll.\nAt what price do people balk? Is it the model labs burning through capital to pre-train the next frontier? The enterprises financing vibe-coding teams that burn hundreds of millions of tokens a week building custom apps? Or consumers asked to pay $40 a month for an autonomous agent subscription?\nSurely there is some price at which demand will slow &amp; current data center capacity will suffice. But throttling demand through scarcity pricing denies the basic market reality : at a lower cost of production, demand would be orders of magnitude higher. If we do not build the domestic power and facilities to satisfy that demand, tokens will simply be produced elsewhere &amp; imported.\nThe uninhibited growth since GPT 3.5 will be modulated not by lack of access to data, nor algorithmic limits, nor GPU manufacturing speed, but by the broader values of the country. The forthcoming limits on the quantity, size, electrical consumption, &amp; location of data centers will reshape Startupland.\nOriginally published on tomtunguz.com.</p>\n<p>原文链接：<a href=\"https://x.com/ttunguz/status/2119825864997425462\">https://x.com/ttunguz/status/2119825864997425462</a></p>\n<p>相关链接：<a href=\"https://tomtunguz.com/when-does-the-us-become-a-net-importer-of-tokens/\">https://tomtunguz.com/when-does-the-us-become-a-net-importer-of-tokens/</a></p>"}, "rewrite": {"title": "Tomasz Tunguz：按他的粗算，美国可能在 2028 到 2030 年间变成 token 净进口国", "markdown": "Tomasz Tunguz 在一篇 X Article 里提出：AI 需求已经快于供给，美国国内数据中心建设又在放缓，美国很快会消费比自己生产更多的 token。到那时，美国会变成 token 净进口国，就像它现在是稀土净进口国一样。\n\n这是他的分析框架，不是已经发生的贸易统计。他写了一个基础模型，估计这个转折会出现在 2028 年到 2030 年之间，具体取决于有多少规划中的设施被取消。\n\n按他非常粗略的估计，在新数据中心陆续上线的前提下，现有体系大约能承接每年 2.5 倍的 token 增长。超过这个速度后，芯片和模型效率的提升就无法抵消国内需求增长。\n\n他给出了三档情景：如果 45% 的规划项目无法接入电网，进口会在 2028 年开始；把取消比例降到 20%，时间会推迟到 2029 年；即便所有提议中的设施都按时建成，缺口仍会在 2030 年出现。这些年份都来自他的模型，本站未复核其假设和计算。\n\n他也指出，所有物理模型都假设算力价格保持不变。现实中，供给一紧，价格就会跳升。到目前为止，他认为需求对价格非常不敏感。过去两个季度，短期 GPU 租金从每小时 5 美元升到超过 13 美元；Anthropic 以溢价签下了数十亿美元的突发算力；总需求几乎没有眨眼，买家只是付了这笔过路费。GPU 租金和 Anthropic 订单金额是他文中的陈述。\n\n他接着问，价格要高到什么程度，人们才会退缩。是那些烧掉资本去预训练下一代前沿模型的实验室？是每周烧掉数亿 token、用 vibe-coding 做定制应用的企业团队？还是被要求为自动代理订阅每月支付 40 美元的消费者？40 美元是他举例用的价格，不是已核实的市场均价。\n\n他认为，肯定存在某个价格，会让需求放慢，现有数据中心容量也就够用了。可如果只靠稀缺定价来压需求，就否认了一个基本的市场事实：生产成本更低时，需求会高出几个数量级。如果美国不建设足够的电力和设施去满足这部分需求，token 就会在别处生产，然后再被进口进来。\n\n自 GPT 3.5 以来几乎不受约束的增长，在他看来接下来会受到调节。真正起作用的，会是这个国家关于数据中心该建多少、建多大、用多少电、建在哪里的公共选择。他认为，这些即将到来的限制，会重新塑造创业生态。原文同时发布在 tomtunguz.com。文章里提到的图表，此次未能取得可引用的媒体地址。\n", "html": "<p>Tomasz Tunguz 在一篇 X Article 里提出：AI 需求已经快于供给，美国国内数据中心建设又在放缓，美国很快会消费比自己生产更多的 token。到那时，美国会变成 token 净进口国，就像它现在是稀土净进口国一样。</p>\n<p>这是他的分析框架，不是已经发生的贸易统计。他写了一个基础模型，估计这个转折会出现在 2028 年到 2030 年之间，具体取决于有多少规划中的设施被取消。</p>\n<p>按他非常粗略的估计，在新数据中心陆续上线的前提下，现有体系大约能承接每年 2.5 倍的 token 增长。超过这个速度后，芯片和模型效率的提升就无法抵消国内需求增长。</p>\n<p>他给出了三档情景：如果 45% 的规划项目无法接入电网，进口会在 2028 年开始；把取消比例降到 20%，时间会推迟到 2029 年；即便所有提议中的设施都按时建成，缺口仍会在 2030 年出现。这些年份都来自他的模型，本站未复核其假设和计算。</p>\n<p>他也指出，所有物理模型都假设算力价格保持不变。现实中，供给一紧，价格就会跳升。到目前为止，他认为需求对价格非常不敏感。过去两个季度，短期 GPU 租金从每小时 5 美元升到超过 13 美元；Anthropic 以溢价签下了数十亿美元的突发算力；总需求几乎没有眨眼，买家只是付了这笔过路费。GPU 租金和 Anthropic 订单金额是他文中的陈述。</p>\n<p>他接着问，价格要高到什么程度，人们才会退缩。是那些烧掉资本去预训练下一代前沿模型的实验室？是每周烧掉数亿 token、用 vibe-coding 做定制应用的企业团队？还是被要求为自动代理订阅每月支付 40 美元的消费者？40 美元是他举例用的价格，不是已核实的市场均价。</p>\n<p>他认为，肯定存在某个价格，会让需求放慢，现有数据中心容量也就够用了。可如果只靠稀缺定价来压需求，就否认了一个基本的市场事实：生产成本更低时，需求会高出几个数量级。如果美国不建设足够的电力和设施去满足这部分需求，token 就会在别处生产，然后再被进口进来。</p>\n<p>自 GPT 3.5 以来几乎不受约束的增长，在他看来接下来会受到调节。真正起作用的，会是这个国家关于数据中心该建多少、建多大、用多少电、建在哪里的公共选择。他认为，这些即将到来的限制，会重新塑造创业生态。原文同时发布在 tomtunguz.com。文章里提到的图表，此次未能取得可引用的媒体地址。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Eric Seufert：苹果不该买 Instinct，他认为 Agent 本身已经是大宗商品</title>
+      <link>https://karuio.github.io/a/seufert-apple-instinct</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/seufert-apple-instinct</guid>
+      <pubDate>Mon, 09 Nov 2026 01:59:45 +0000</pubDate>
+      <author>Eric Seufert</author>
+      <description><![CDATA[<p><em>亚马逊刚让购物版 Alexa 走短信后，他认为苹果已经拥有这条接口，并购并不会带来自己做不到的优势。</em></p>
+<h2>中文改写</h2>
+<p>Eric Seufert 的判断很直接：苹果不该收购 Instinct。</p>
+<p>他的起点是亚马逊刚刚宣布，用户可以通过短信和自家代理 Alexa for Shopping 沟通。他认为，苹果已经拥有这条接口。</p>
+<p>在他看来，Agent 本身已经是大宗商品。他点名 Perplexity 的 Computer、OpenClaw、Instinct、Muse，并认为字节跳动、谷歌和微软也都会提供类似产品。</p>
+<p>一支有动力的团队，用几周时间就能做出一个 Agent。他承认这不是小事，但远谈不上跨越不了的门槛。</p>
+<p>真正把 Agent 区分开来的，是分发能力，以及对数据和平台功能的特权访问。苹果已经具备这些。收购 Instinct，在他看来不会带来苹果自己做不到的明显战略优势。Siri 已经有代理能力，也可以通过原生的 App Intents API 连接 iOS 应用。</p>
+<p>他还说，今天用来论证苹果该买 Instinct 的理由，12 个月前同样适用于收购 Perplexity。商品化的代理功能本身没有固有价值，它要靠平台覆盖面才能打开。因此他认为，在这个领域，并购不是审慎的增长策略。</p>
+
+<h2>原文</h2>
+<p><em>Apple should not buy Instinct.</em></p>
+<p>Apple should not buy Instinct.</p>
+<p>Amazon just announced that it will allow customers to communicate with its own agent, Alexa for Shopping, via SMS. Apple already owns that interface.</p>
+<p>Agents are commodities. Perplexity’s Computer, OpenClaw, Instinct, Muse. ByteDance will offer one, as will Google and Microsoft.</p>
+<p>An agent can be built by a motivated team in a matter of weeks; no small development feat, but not an insurmountable hurdle by any means.</p>
+<p>Distribution and privileged access to data / platform functionality is what differentiates agents. Apple has that, and buying Instinct provides it with no obvious strategic advantage that it couldn't build itself. Siri already has agentic functionality and can connect to iOS apps with the native App Intents API.</p>
+<p>Everything one could argue about the logic of Apple buying Instinct applied 12 months ago with respect to Perplexity. Commodity agentic functionality is not inherently valuable; it’s unlocked with platform reach. M&amp;A is not a prudent growth strategy in this space.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/eric_seufert/status/2119610865364201815">https://x.com/eric_seufert/status/2119610865364201815</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>亚马逊刚让购物版 Alexa 走短信后，他认为苹果已经拥有这条接口，并购并不会带来自己做不到的优势。</em></p>
+<h2>中文改写</h2>
+<p>Eric Seufert 的判断很直接：苹果不该收购 Instinct。</p>
+<p>他的起点是亚马逊刚刚宣布，用户可以通过短信和自家代理 Alexa for Shopping 沟通。他认为，苹果已经拥有这条接口。</p>
+<p>在他看来，Agent 本身已经是大宗商品。他点名 Perplexity 的 Computer、OpenClaw、Instinct、Muse，并认为字节跳动、谷歌和微软也都会提供类似产品。</p>
+<p>一支有动力的团队，用几周时间就能做出一个 Agent。他承认这不是小事，但远谈不上跨越不了的门槛。</p>
+<p>真正把 Agent 区分开来的，是分发能力，以及对数据和平台功能的特权访问。苹果已经具备这些。收购 Instinct，在他看来不会带来苹果自己做不到的明显战略优势。Siri 已经有代理能力，也可以通过原生的 App Intents API 连接 iOS 应用。</p>
+<p>他还说，今天用来论证苹果该买 Instinct 的理由，12 个月前同样适用于收购 Perplexity。商品化的代理功能本身没有固有价值，它要靠平台覆盖面才能打开。因此他认为，在这个领域，并购不是审慎的增长策略。</p>
+
+<h2>原文</h2>
+<p><em>Apple should not buy Instinct.</em></p>
+<p>Apple should not buy Instinct.</p>
+<p>Amazon just announced that it will allow customers to communicate with its own agent, Alexa for Shopping, via SMS. Apple already owns that interface.</p>
+<p>Agents are commodities. Perplexity’s Computer, OpenClaw, Instinct, Muse. ByteDance will offer one, as will Google and Microsoft.</p>
+<p>An agent can be built by a motivated team in a matter of weeks; no small development feat, but not an insurmountable hurdle by any means.</p>
+<p>Distribution and privileged access to data / platform functionality is what differentiates agents. Apple has that, and buying Instinct provides it with no obvious strategic advantage that it couldn't build itself. Siri already has agentic functionality and can connect to iOS apps with the native App Intents API.</p>
+<p>Everything one could argue about the logic of Apple buying Instinct applied 12 months ago with respect to Perplexity. Commodity agentic functionality is not inherently valuable; it’s unlocked with platform reach. M&amp;A is not a prudent growth strategy in this space.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/eric_seufert/status/2119610865364201815">https://x.com/eric_seufert/status/2119610865364201815</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Apple should not buy Instinct.", "url": "https://x.com/eric_seufert/status/2119610865364201815", "lang": "en", "html": "<h2>Apple should not buy Instinct.</h2>\n\n<p>Apple should not buy Instinct.</p>\n<p>Amazon just announced that it will allow customers to communicate with its own agent, Alexa for Shopping, via SMS. Apple already owns that interface.</p>\n<p>Agents are commodities. Perplexity’s Computer, OpenClaw, Instinct, Muse. ByteDance will offer one, as will Google and Microsoft.</p>\n<p>An agent can be built by a motivated team in a matter of weeks; no small development feat, but not an insurmountable hurdle by any means.</p>\n<p>Distribution and privileged access to data / platform functionality is what differentiates agents. Apple has that, and buying Instinct provides it with no obvious strategic advantage that it couldn't build itself. Siri already has agentic functionality and can connect to iOS apps with the native App Intents API.</p>\n<p>Everything one could argue about the logic of Apple buying Instinct applied 12 months ago with respect to Perplexity. Commodity agentic functionality is not inherently valuable; it’s unlocked with platform reach. M&amp;A is not a prudent growth strategy in this space.</p>\n<p>原文链接：<a href=\"https://x.com/eric_seufert/status/2119610865364201815\">https://x.com/eric_seufert/status/2119610865364201815</a></p>"}, "rewrite": {"title": "Eric Seufert：苹果不该买 Instinct，他认为 Agent 本身已经是大宗商品", "markdown": "Eric Seufert 的判断很直接：苹果不该收购 Instinct。\n\n他的起点是亚马逊刚刚宣布，用户可以通过短信和自家代理 Alexa for Shopping 沟通。他认为，苹果已经拥有这条接口。\n\n在他看来，Agent 本身已经是大宗商品。他点名 Perplexity 的 Computer、OpenClaw、Instinct、Muse，并认为字节跳动、谷歌和微软也都会提供类似产品。\n\n一支有动力的团队，用几周时间就能做出一个 Agent。他承认这不是小事，但远谈不上跨越不了的门槛。\n\n真正把 Agent 区分开来的，是分发能力，以及对数据和平台功能的特权访问。苹果已经具备这些。收购 Instinct，在他看来不会带来苹果自己做不到的明显战略优势。Siri 已经有代理能力，也可以通过原生的 App Intents API 连接 iOS 应用。\n\n他还说，今天用来论证苹果该买 Instinct 的理由，12 个月前同样适用于收购 Perplexity。商品化的代理功能本身没有固有价值，它要靠平台覆盖面才能打开。因此他认为，在这个领域，并购不是审慎的增长策略。\n", "html": "<p>Eric Seufert 的判断很直接：苹果不该收购 Instinct。</p>\n<p>他的起点是亚马逊刚刚宣布，用户可以通过短信和自家代理 Alexa for Shopping 沟通。他认为，苹果已经拥有这条接口。</p>\n<p>在他看来，Agent 本身已经是大宗商品。他点名 Perplexity 的 Computer、OpenClaw、Instinct、Muse，并认为字节跳动、谷歌和微软也都会提供类似产品。</p>\n<p>一支有动力的团队，用几周时间就能做出一个 Agent。他承认这不是小事，但远谈不上跨越不了的门槛。</p>\n<p>真正把 Agent 区分开来的，是分发能力，以及对数据和平台功能的特权访问。苹果已经具备这些。收购 Instinct，在他看来不会带来苹果自己做不到的明显战略优势。Siri 已经有代理能力，也可以通过原生的 App Intents API 连接 iOS 应用。</p>\n<p>他还说，今天用来论证苹果该买 Instinct 的理由，12 个月前同样适用于收购 Perplexity。商品化的代理功能本身没有固有价值，它要靠平台覆盖面才能打开。因此他认为，在这个领域，并购不是审慎的增长策略。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Alex Johnson：银行业已经碰到 Agent，但会上的人还没想清楚该怎么对待它</title>
+      <link>https://karuio.github.io/a/alex-johnson-agentic-readiness</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/alex-johnson-agentic-readiness</guid>
+      <pubDate>Tue, 10 Nov 2026 04:21:28 +0000</pubDate>
+      <author>Alex Johnson</author>
+      <description><![CDATA[<p><em>他参加了 EJF Ventures 在蒙大拿举办的闭门会，把会上争议最多的问题整理成一份清单，并链到自己的复盘文章。</em></p>
+<h2>中文改写</h2>
+<p>Alex Johnson 写道，自己上周参加了 Agentic Readiness Summit。这是 EJF Ventures 在蒙大拿一座牧场举办的闭门聚会。会议组织者提出的问题很简单：金融服务业准备好迎接代理式 AI 了吗？</p>
+<p>参加讨论的有银行人士、金融科技从业者、数据科学家和前监管官员。他觉得答案要复杂得多，也更含糊。</p>
+<p>会上有一个共识：代理式 AI 已经到来，并且已经对行业产生了可以察觉的影响。他在括号里特别写了“thanks Muse!”。但对于这对银行、金融科技公司和监管机构到底意味着什么，以及它们应该做什么，共识就要少得多。</p>
+<p>他把会上争议最多的问题列了出来：银行是否应该拦截第三方 AI 代理？这种拦截长期看是否可行？AI 代理是否已经在违反消费者保护法律？监管机构会不会在某个时点决定认真对待？行业有没有可能就第三方代理的读写权限形成统一标准，还是竞争压力会让标准努力继续四分五裂？在代理式 AI 的年代，关系型银行业务到底是什么？当这些关系要经过概率性软件中介时，社区银行还能不能靠关系形成差异？如果一家银行想用 AI 代理转守为攻，那又会是什么样子？</p>
+<p>这些问题都是会上提出并争论的题目，不是他已经给出的确定答案。他认为最好的活动会留下比答案更多的问题，而这次显然如此。</p>
+<p>如果想看他整理的会后要点，他写了一篇复盘，发布在 Fintech Takes 上。</p>
+
+<h2>原文</h2>
+<p><em>Last week, I had the privilege of participating in the Agentic Readiness Summit</em></p>
+<p>Last week, I had the privilege of participating in the Agentic Readiness Summit, an invite-only gathering hosted by the folks at EJF Ventures at a ranch in Montana.</p>
+<p>Our organizing question was a simple one: Is the financial services industry ready for agentic AI?</p>
+<p>The answer to this question — debated by bankers, fintech operators, data scientists, and former regulators — was a bit more complex and nuanced.</p>
+<p>Everyone agreed that agentic AI was already here; already having a noticeable impact on the industry (thanks Muse!) But there was much less agreement about what, exactly, that meant for banks, fintech companies, and regulatory agencies. And, more importantly, what they should do about it.</p>
+<p>Should banks block third-party AI agents? Is that even a viable long-term solution? Are AI agents already violating consumer protection laws? And will regulators, at some point, choose to care about that? Is it possible for the industry to come together on a standard for governing third-party agentic read/write access? Or will competitive pressures keep standards initiatives fractured? What exactly is relationship banking, in the age of agentic AI? And can community banks still differentiate themselves through relationships when those relationships are intermediated through probabilistic software? If a bank wanted to go on offense with AI agents, what would that even look like?</p>
+<p>The best events are those that produce more questions than answers, and this event definitely did that.</p>
+<p>If you’re curious to dig further into the takeaways from the event, I wrote a recap here: https://t.co/j78wnVQBFc</p>
+<p><strong>原文链接：</strong><a href="https://x.com/AlexH_Johnson/status/2120008918139273518">https://x.com/AlexH_Johnson/status/2120008918139273518</a></p>
+<p><strong>相关链接：</strong><a href="https://fintechtakes.com/p/are-we-ready-for-ai-agents">https://fintechtakes.com/p/are-we-ready-for-ai-agents</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他参加了 EJF Ventures 在蒙大拿举办的闭门会，把会上争议最多的问题整理成一份清单，并链到自己的复盘文章。</em></p>
+<h2>中文改写</h2>
+<p>Alex Johnson 写道，自己上周参加了 Agentic Readiness Summit。这是 EJF Ventures 在蒙大拿一座牧场举办的闭门聚会。会议组织者提出的问题很简单：金融服务业准备好迎接代理式 AI 了吗？</p>
+<p>参加讨论的有银行人士、金融科技从业者、数据科学家和前监管官员。他觉得答案要复杂得多，也更含糊。</p>
+<p>会上有一个共识：代理式 AI 已经到来，并且已经对行业产生了可以察觉的影响。他在括号里特别写了“thanks Muse!”。但对于这对银行、金融科技公司和监管机构到底意味着什么，以及它们应该做什么，共识就要少得多。</p>
+<p>他把会上争议最多的问题列了出来：银行是否应该拦截第三方 AI 代理？这种拦截长期看是否可行？AI 代理是否已经在违反消费者保护法律？监管机构会不会在某个时点决定认真对待？行业有没有可能就第三方代理的读写权限形成统一标准，还是竞争压力会让标准努力继续四分五裂？在代理式 AI 的年代，关系型银行业务到底是什么？当这些关系要经过概率性软件中介时，社区银行还能不能靠关系形成差异？如果一家银行想用 AI 代理转守为攻，那又会是什么样子？</p>
+<p>这些问题都是会上提出并争论的题目，不是他已经给出的确定答案。他认为最好的活动会留下比答案更多的问题，而这次显然如此。</p>
+<p>如果想看他整理的会后要点，他写了一篇复盘，发布在 Fintech Takes 上。</p>
+
+<h2>原文</h2>
+<p><em>Last week, I had the privilege of participating in the Agentic Readiness Summit</em></p>
+<p>Last week, I had the privilege of participating in the Agentic Readiness Summit, an invite-only gathering hosted by the folks at EJF Ventures at a ranch in Montana.</p>
+<p>Our organizing question was a simple one: Is the financial services industry ready for agentic AI?</p>
+<p>The answer to this question — debated by bankers, fintech operators, data scientists, and former regulators — was a bit more complex and nuanced.</p>
+<p>Everyone agreed that agentic AI was already here; already having a noticeable impact on the industry (thanks Muse!) But there was much less agreement about what, exactly, that meant for banks, fintech companies, and regulatory agencies. And, more importantly, what they should do about it.</p>
+<p>Should banks block third-party AI agents? Is that even a viable long-term solution? Are AI agents already violating consumer protection laws? And will regulators, at some point, choose to care about that? Is it possible for the industry to come together on a standard for governing third-party agentic read/write access? Or will competitive pressures keep standards initiatives fractured? What exactly is relationship banking, in the age of agentic AI? And can community banks still differentiate themselves through relationships when those relationships are intermediated through probabilistic software? If a bank wanted to go on offense with AI agents, what would that even look like?</p>
+<p>The best events are those that produce more questions than answers, and this event definitely did that.</p>
+<p>If you’re curious to dig further into the takeaways from the event, I wrote a recap here: https://t.co/j78wnVQBFc</p>
+<p><strong>原文链接：</strong><a href="https://x.com/AlexH_Johnson/status/2120008918139273518">https://x.com/AlexH_Johnson/status/2120008918139273518</a></p>
+<p><strong>相关链接：</strong><a href="https://fintechtakes.com/p/are-we-ready-for-ai-agents">https://fintechtakes.com/p/are-we-ready-for-ai-agents</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Last week, I had the privilege of participating in the Agentic Readiness Summit", "url": "https://x.com/AlexH_Johnson/status/2120008918139273518", "lang": "en", "html": "<h2>Last week, I had the privilege of participating in the Agentic Readiness Summit</h2>\n\n<p>Last week, I had the privilege of participating in the Agentic Readiness Summit, an invite-only gathering hosted by the folks at EJF Ventures at a ranch in Montana.</p>\n<p>Our organizing question was a simple one: Is the financial services industry ready for agentic AI?</p>\n<p>The answer to this question — debated by bankers, fintech operators, data scientists, and former regulators — was a bit more complex and nuanced.</p>\n<p>Everyone agreed that agentic AI was already here; already having a noticeable impact on the industry (thanks Muse!) But there was much less agreement about what, exactly, that meant for banks, fintech companies, and regulatory agencies. And, more importantly, what they should do about it.</p>\n<p>Should banks block third-party AI agents? Is that even a viable long-term solution? Are AI agents already violating consumer protection laws? And will regulators, at some point, choose to care about that? Is it possible for the industry to come together on a standard for governing third-party agentic read/write access? Or will competitive pressures keep standards initiatives fractured? What exactly is relationship banking, in the age of agentic AI? And can community banks still differentiate themselves through relationships when those relationships are intermediated through probabilistic software? If a bank wanted to go on offense with AI agents, what would that even look like?</p>\n<p>The best events are those that produce more questions than answers, and this event definitely did that.</p>\n<p>If you’re curious to dig further into the takeaways from the event, I wrote a recap here: https://t.co/j78wnVQBFc</p>\n<p>原文链接：<a href=\"https://x.com/AlexH_Johnson/status/2120008918139273518\">https://x.com/AlexH_Johnson/status/2120008918139273518</a></p>\n<p>相关链接：<a href=\"https://fintechtakes.com/p/are-we-ready-for-ai-agents\">https://fintechtakes.com/p/are-we-ready-for-ai-agents</a></p>"}, "rewrite": {"title": "Alex Johnson：银行业已经碰到 Agent，但会上的人还没想清楚该怎么对待它", "markdown": "Alex Johnson 写道，自己上周参加了 Agentic Readiness Summit。这是 EJF Ventures 在蒙大拿一座牧场举办的闭门聚会。会议组织者提出的问题很简单：金融服务业准备好迎接代理式 AI 了吗？\n\n参加讨论的有银行人士、金融科技从业者、数据科学家和前监管官员。他觉得答案要复杂得多，也更含糊。\n\n会上有一个共识：代理式 AI 已经到来，并且已经对行业产生了可以察觉的影响。他在括号里特别写了“thanks Muse!”。但对于这对银行、金融科技公司和监管机构到底意味着什么，以及它们应该做什么，共识就要少得多。\n\n他把会上争议最多的问题列了出来：银行是否应该拦截第三方 AI 代理？这种拦截长期看是否可行？AI 代理是否已经在违反消费者保护法律？监管机构会不会在某个时点决定认真对待？行业有没有可能就第三方代理的读写权限形成统一标准，还是竞争压力会让标准努力继续四分五裂？在代理式 AI 的年代，关系型银行业务到底是什么？当这些关系要经过概率性软件中介时，社区银行还能不能靠关系形成差异？如果一家银行想用 AI 代理转守为攻，那又会是什么样子？\n\n这些问题都是会上提出并争论的题目，不是他已经给出的确定答案。他认为最好的活动会留下比答案更多的问题，而这次显然如此。\n\n如果想看他整理的会后要点，他写了一篇复盘，发布在 Fintech Takes 上。\n", "html": "<p>Alex Johnson 写道，自己上周参加了 Agentic Readiness Summit。这是 EJF Ventures 在蒙大拿一座牧场举办的闭门聚会。会议组织者提出的问题很简单：金融服务业准备好迎接代理式 AI 了吗？</p>\n<p>参加讨论的有银行人士、金融科技从业者、数据科学家和前监管官员。他觉得答案要复杂得多，也更含糊。</p>\n<p>会上有一个共识：代理式 AI 已经到来，并且已经对行业产生了可以察觉的影响。他在括号里特别写了“thanks Muse!”。但对于这对银行、金融科技公司和监管机构到底意味着什么，以及它们应该做什么，共识就要少得多。</p>\n<p>他把会上争议最多的问题列了出来：银行是否应该拦截第三方 AI 代理？这种拦截长期看是否可行？AI 代理是否已经在违反消费者保护法律？监管机构会不会在某个时点决定认真对待？行业有没有可能就第三方代理的读写权限形成统一标准，还是竞争压力会让标准努力继续四分五裂？在代理式 AI 的年代，关系型银行业务到底是什么？当这些关系要经过概率性软件中介时，社区银行还能不能靠关系形成差异？如果一家银行想用 AI 代理转守为攻，那又会是什么样子？</p>\n<p>这些问题都是会上提出并争论的题目，不是他已经给出的确定答案。他认为最好的活动会留下比答案更多的问题，而这次显然如此。</p>\n<p>如果想看他整理的会后要点，他写了一篇复盘，发布在 Fintech Takes 上。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>The Humanoid Hub：Archon 发布 Anchor 1，用人身上几个关键点控制全身动作</title>
+      <link>https://karuio.github.io/a/humanoid-hub-anchor-1</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/humanoid-hub-anchor-1</guid>
+      <pubDate>Tue, 10 Nov 2026 06:33:52 +0000</pubDate>
+      <author>The Humanoid Hub</author>
+      <description><![CDATA[<p><em>这则行业报道称，新控制器跳过在线关节空间重定向，并计划在 2026 年底前后公开权重和部署代码。</em></p>
+<h2>中文改写</h2>
+<p>行业账号 The Humanoid Hub 报道称，Archon Robotics 发布了 Anchor 1，这是一个用于人形机器人操作的全身控制器。</p>
+<p>按它的介绍，这套系统把稀疏的人体目标点转换成精确、稳定的机器人动作，目标点包括骨盆、手腕和脚踝。它跳过在线关节空间重定向，以避免一个常见误差来源。</p>
+<p>它还把动作编码和反馈校正分开，想同时得到准确跟踪和平滑运动。</p>
+<p>该账号写道，在真实机器人上，Anchor 1 的跟踪误差最低、任务成功率最高，对照基线包括 MimicLite、ScaleBFM 和 SONIC，并且能更高效地采集遥操作数据。这些比较结果来自这则报道对论文或公司说法的转述，本站未核对其实验设置，也没有观看原帖所附视频。</p>
+<p>权重和部署代码预计在 2026 年底前后公布。这也是报道中的预期时间，不是已经发生的发布。原帖配有视频，此次未能取得可播放的媒体地址，请通过原文链接观看。续帖还指向了 Archon 的技术博客。</p>
+
+<h2>原文</h2>
+<p><em>Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.</em></p>
+<p>Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.</p>
+<p>It turns sparse human targets (pelvis, wrists, ankles) into precise, stable robot motion, skipping online joint-space retargeting to avoid a common source of error.</p>
+<p>It also separates motion encoding from feedback correction, pairing accurate tracking with smooth movement.</p>
+<p>On a real robot, Anchor 1 posts the lowest tracking errors and highest task success against baselines including MimicLite, ScaleBFM, and SONIC, and collects teleoperation data more efficiently.</p>
+<p>Weights and deployment code expected late 2026.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/TheHumanoidHub/status/2120042235819401394">https://x.com/TheHumanoidHub/status/2120042235819401394</a></p>
+<p><strong>相关链接：</strong><a href="https://www.archon.tech/research/anchor1">https://www.archon.tech/research/anchor1</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>这则行业报道称，新控制器跳过在线关节空间重定向，并计划在 2026 年底前后公开权重和部署代码。</em></p>
+<h2>中文改写</h2>
+<p>行业账号 The Humanoid Hub 报道称，Archon Robotics 发布了 Anchor 1，这是一个用于人形机器人操作的全身控制器。</p>
+<p>按它的介绍，这套系统把稀疏的人体目标点转换成精确、稳定的机器人动作，目标点包括骨盆、手腕和脚踝。它跳过在线关节空间重定向，以避免一个常见误差来源。</p>
+<p>它还把动作编码和反馈校正分开，想同时得到准确跟踪和平滑运动。</p>
+<p>该账号写道，在真实机器人上，Anchor 1 的跟踪误差最低、任务成功率最高，对照基线包括 MimicLite、ScaleBFM 和 SONIC，并且能更高效地采集遥操作数据。这些比较结果来自这则报道对论文或公司说法的转述，本站未核对其实验设置，也没有观看原帖所附视频。</p>
+<p>权重和部署代码预计在 2026 年底前后公布。这也是报道中的预期时间，不是已经发生的发布。原帖配有视频，此次未能取得可播放的媒体地址，请通过原文链接观看。续帖还指向了 Archon 的技术博客。</p>
+
+<h2>原文</h2>
+<p><em>Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.</em></p>
+<p>Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.</p>
+<p>It turns sparse human targets (pelvis, wrists, ankles) into precise, stable robot motion, skipping online joint-space retargeting to avoid a common source of error.</p>
+<p>It also separates motion encoding from feedback correction, pairing accurate tracking with smooth movement.</p>
+<p>On a real robot, Anchor 1 posts the lowest tracking errors and highest task success against baselines including MimicLite, ScaleBFM, and SONIC, and collects teleoperation data more efficiently.</p>
+<p>Weights and deployment code expected late 2026.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/TheHumanoidHub/status/2120042235819401394">https://x.com/TheHumanoidHub/status/2120042235819401394</a></p>
+<p><strong>相关链接：</strong><a href="https://www.archon.tech/research/anchor1">https://www.archon.tech/research/anchor1</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.", "url": "https://x.com/TheHumanoidHub/status/2120042235819401394", "lang": "en", "html": "<h2>Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.</h2>\n\n<p>Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.</p>\n<p>It turns sparse human targets (pelvis, wrists, ankles) into precise, stable robot motion, skipping online joint-space retargeting to avoid a common source of error.</p>\n<p>It also separates motion encoding from feedback correction, pairing accurate tracking with smooth movement.</p>\n<p>On a real robot, Anchor 1 posts the lowest tracking errors and highest task success against baselines including MimicLite, ScaleBFM, and SONIC, and collects teleoperation data more efficiently.</p>\n<p>Weights and deployment code expected late 2026.</p>\n<p>原文链接：<a href=\"https://x.com/TheHumanoidHub/status/2120042235819401394\">https://x.com/TheHumanoidHub/status/2120042235819401394</a></p>\n<p>相关链接：<a href=\"https://www.archon.tech/research/anchor1\">https://www.archon.tech/research/anchor1</a></p>"}, "rewrite": {"title": "The Humanoid Hub：Archon 发布 Anchor 1，用人身上几个关键点控制全身动作", "markdown": "行业账号 The Humanoid Hub 报道称，Archon Robotics 发布了 Anchor 1，这是一个用于人形机器人操作的全身控制器。\n\n按它的介绍，这套系统把稀疏的人体目标点转换成精确、稳定的机器人动作，目标点包括骨盆、手腕和脚踝。它跳过在线关节空间重定向，以避免一个常见误差来源。\n\n它还把动作编码和反馈校正分开，想同时得到准确跟踪和平滑运动。\n\n该账号写道，在真实机器人上，Anchor 1 的跟踪误差最低、任务成功率最高，对照基线包括 MimicLite、ScaleBFM 和 SONIC，并且能更高效地采集遥操作数据。这些比较结果来自这则报道对论文或公司说法的转述，本站未核对其实验设置，也没有观看原帖所附视频。\n\n权重和部署代码预计在 2026 年底前后公布。这也是报道中的预期时间，不是已经发生的发布。原帖配有视频，此次未能取得可播放的媒体地址，请通过原文链接观看。续帖还指向了 Archon 的技术博客。\n", "html": "<p>行业账号 The Humanoid Hub 报道称，Archon Robotics 发布了 Anchor 1，这是一个用于人形机器人操作的全身控制器。</p>\n<p>按它的介绍，这套系统把稀疏的人体目标点转换成精确、稳定的机器人动作，目标点包括骨盆、手腕和脚踝。它跳过在线关节空间重定向，以避免一个常见误差来源。</p>\n<p>它还把动作编码和反馈校正分开，想同时得到准确跟踪和平滑运动。</p>\n<p>该账号写道，在真实机器人上，Anchor 1 的跟踪误差最低、任务成功率最高，对照基线包括 MimicLite、ScaleBFM 和 SONIC，并且能更高效地采集遥操作数据。这些比较结果来自这则报道对论文或公司说法的转述，本站未核对其实验设置，也没有观看原帖所附视频。</p>\n<p>权重和部署代码预计在 2026 年底前后公布。这也是报道中的预期时间，不是已经发生的发布。原帖配有视频，此次未能取得可播放的媒体地址，请通过原文链接观看。续帖还指向了 Archon 的技术博客。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Lenny Rachitsky 发布 The Next 50：用招聘和融资数据列出 50 家早期创业公司</title>
+      <link>https://karuio.github.io/a/lennysan-next-50</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/lennysan-next-50</guid>
+      <pubDate>Tue, 10 Nov 2026 00:55:29 +0000</pubDate>
+      <author>Lenny Rachitsky</author>
+      <description><![CDATA[<p><em>入选标准包括 2023 年之后成立、种子轮或 A 轮、估值低于 10 亿美元，以及最近一个季度人数仍在增长。</em></p>
+<h2>中文改写</h2>
+<p>Lenny Rachitsky 写道，加入一艘火箭船的最好时间，是在所有人都知道它之前。他为此发布了 The Next 50：一份他认为最值得关注、也最值得尝试加入的 50 家早期创业公司名单。</p>
+<p>“最热门”是他和团队按自己的数据规则排出的结果，并不是独立的行业排名。他使用 Harmonic 的数据，审视每一家早期创业公司，并按人数增长、近期融资和投资人关注度排序，然后选出前 50 名。完整名单发布在 lennysjobs.com/next50。</p>
+<p>名单计划每季度更新。他也欢迎大家反馈，还应该考虑哪些因素。</p>
+<p>这和已有的 Lenny 100 是分开的。Lenny 100 追踪的是人才密度高、在做更宏大问题的知名公司，地址是 lennysjobs.com/lenny100。</p>
+<p>他在跟帖里说明了目的：帮助读者判断该去哪里找工作。为了把范围限定在顶级早期公司，他们只看同时满足这些条件的创业公司：</p>
+<ol>
+<li>足够早：2023 年或以后成立，处于种子轮或 A 轮，估值低于 10 亿美元。</li>
+<li>刚融到钱：过去六个月有融资，累计融资至少 500 万美元。</li>
+<li>有顶级投资人：资本结构里至少有一家领先的风险投资机构。</li>
+<li>仍在增长：员工人数在 10 到 250 人之间，且过去 90 天人数上升。</li>
+</ol>
+<p>本季度入选的 50 家公司，他在跟帖里按顺序点了名，从 A Security、Act、Aegis AI 一直到 Wafer 和 Watchtower Labs。具体名单以原帖和网站页面为准。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_lenny_next50"><img src="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_gif"><img src="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg" alt="原帖动图封面"><figcaption><a href="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>I’m excited to launch The Next 50</em></p>
+<figure data-media-id="img_lenny_next50"><img src="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_gif"><img src="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg" alt="原帖动图封面"><figcaption><a href="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>The best time to join a rocketship is before everyone knows about it.</p>
+<p>I’m excited to launch The Next 50: the 50 hottest early-stage startups to keep an eye on (and try to join).</p>
+<p>Using @harmonic_ai’s data, the juiciest startup dataset out there, we looked at every early-stage startup and ranked them on headcount growth, recent funding, and investor interest.</p>
+<p>We then picked the top 50.</p>
+<p>Here's the full list: https://www.lennysjobs.com/next50</p>
+<p>We’ll update it quarterly, and I’d love your feedback on what other factors we should consider.</p>
+<p>P.S. This is in addition to the Lenny 100, the top 100 well-known companies with the highest talent density, tackling the most ambitious problems: https://www.lennysjobs.com/lenny100</p>
+<p>My goal here is to help you figure out where to go try to get a job.</p>
+<p>To keep this focused on top early-stage startups, we only look at startups that are:</p>
+<ol>
+<li>Early: founded in 2023 or later, at Seed or Series A, and valued under $1B</li>
+<li>Freshly funded: raised in the last six months, with at least $5M raised in total</li>
+<li>Backed by top investors: at least one leading venture firm on the cap table</li>
+<li>Growing: 10-250 employees, and headcount up over the last 90 days</li>
+</ol>
+<p>Here's who made The Next 50 this quarter:</p>
+<ol>
+<li>A Security</li>
+<li>Act</li>
+<li>Aegis AI</li>
+<li>@air__security</li>
+<li>Ande</li>
+<li>@arca_wealth</li>
+<li>@arrakistech</li>
+<li>Baba</li>
+<li>Collate</li>
+<li>@ConductAI</li>
+<li>Corner Health</li>
+<li>@DecadeWealth</li>
+<li>@DominionDynamic</li>
+<li>Endra</li>
+<li>@Enigma_AI</li>
+<li>@useflai</li>
+<li>@foundryrobotics</li>
+<li>@fragmentdata</li>
+<li>@hone</li>
+<li>@inherentlabs</li>
+<li>@KeenableAI</li>
+<li>Light</li>
+<li>@trymelius</li>
+<li>@Midstreamhlth</li>
+<li>Nebex</li>
+<li>@neo_ai_security</li>
+<li>@newcore_id</li>
+<li>Pax</li>
+<li>@heypocketai</li>
+<li>@poetichq</li>
+<li>Prosper AI</li>
+<li>@ProximalHQ</li>
+<li>@qualitateio</li>
+<li>@RoadrunnerAI</li>
+<li>@runlayer</li>
+<li>@straikerai</li>
+<li>@tar_hq</li>
+<li>@tastelabs</li>
+<li>Telepatia</li>
+<li>@TerraFirma_Inc</li>
+<li>Tessera Labs</li>
+<li>@tolmohq</li>
+<li>@trajectorylabs</li>
+<li>@transfyrai</li>
+<li>@traysartech</li>
+<li>@Ultraroboticsco</li>
+<li>@ValsAI</li>
+<li>@viktor_com</li>
+<li>Wafer</li>
+<li>@watchtowerlabs</li>
+</ol>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2119957080492966371">https://x.com/lennysan/status/2119957080492966371</a></p>
+<p><strong>相关链接：</strong><a href="https://www.lennysjobs.com/next50">https://www.lennysjobs.com/next50</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>入选标准包括 2023 年之后成立、种子轮或 A 轮、估值低于 10 亿美元，以及最近一个季度人数仍在增长。</em></p>
+<h2>中文改写</h2>
+<p>Lenny Rachitsky 写道，加入一艘火箭船的最好时间，是在所有人都知道它之前。他为此发布了 The Next 50：一份他认为最值得关注、也最值得尝试加入的 50 家早期创业公司名单。</p>
+<p>“最热门”是他和团队按自己的数据规则排出的结果，并不是独立的行业排名。他使用 Harmonic 的数据，审视每一家早期创业公司，并按人数增长、近期融资和投资人关注度排序，然后选出前 50 名。完整名单发布在 lennysjobs.com/next50。</p>
+<p>名单计划每季度更新。他也欢迎大家反馈，还应该考虑哪些因素。</p>
+<p>这和已有的 Lenny 100 是分开的。Lenny 100 追踪的是人才密度高、在做更宏大问题的知名公司，地址是 lennysjobs.com/lenny100。</p>
+<p>他在跟帖里说明了目的：帮助读者判断该去哪里找工作。为了把范围限定在顶级早期公司，他们只看同时满足这些条件的创业公司：</p>
+<ol>
+<li>足够早：2023 年或以后成立，处于种子轮或 A 轮，估值低于 10 亿美元。</li>
+<li>刚融到钱：过去六个月有融资，累计融资至少 500 万美元。</li>
+<li>有顶级投资人：资本结构里至少有一家领先的风险投资机构。</li>
+<li>仍在增长：员工人数在 10 到 250 人之间，且过去 90 天人数上升。</li>
+</ol>
+<p>本季度入选的 50 家公司，他在跟帖里按顺序点了名，从 A Security、Act、Aegis AI 一直到 Wafer 和 Watchtower Labs。具体名单以原帖和网站页面为准。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_lenny_next50"><img src="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_gif"><img src="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg" alt="原帖动图封面"><figcaption><a href="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>I’m excited to launch The Next 50</em></p>
+<figure data-media-id="img_lenny_next50"><img src="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_gif"><img src="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg" alt="原帖动图封面"><figcaption><a href="https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>The best time to join a rocketship is before everyone knows about it.</p>
+<p>I’m excited to launch The Next 50: the 50 hottest early-stage startups to keep an eye on (and try to join).</p>
+<p>Using @harmonic_ai’s data, the juiciest startup dataset out there, we looked at every early-stage startup and ranked them on headcount growth, recent funding, and investor interest.</p>
+<p>We then picked the top 50.</p>
+<p>Here's the full list: https://www.lennysjobs.com/next50</p>
+<p>We’ll update it quarterly, and I’d love your feedback on what other factors we should consider.</p>
+<p>P.S. This is in addition to the Lenny 100, the top 100 well-known companies with the highest talent density, tackling the most ambitious problems: https://www.lennysjobs.com/lenny100</p>
+<p>My goal here is to help you figure out where to go try to get a job.</p>
+<p>To keep this focused on top early-stage startups, we only look at startups that are:</p>
+<ol>
+<li>Early: founded in 2023 or later, at Seed or Series A, and valued under $1B</li>
+<li>Freshly funded: raised in the last six months, with at least $5M raised in total</li>
+<li>Backed by top investors: at least one leading venture firm on the cap table</li>
+<li>Growing: 10-250 employees, and headcount up over the last 90 days</li>
+</ol>
+<p>Here's who made The Next 50 this quarter:</p>
+<ol>
+<li>A Security</li>
+<li>Act</li>
+<li>Aegis AI</li>
+<li>@air__security</li>
+<li>Ande</li>
+<li>@arca_wealth</li>
+<li>@arrakistech</li>
+<li>Baba</li>
+<li>Collate</li>
+<li>@ConductAI</li>
+<li>Corner Health</li>
+<li>@DecadeWealth</li>
+<li>@DominionDynamic</li>
+<li>Endra</li>
+<li>@Enigma_AI</li>
+<li>@useflai</li>
+<li>@foundryrobotics</li>
+<li>@fragmentdata</li>
+<li>@hone</li>
+<li>@inherentlabs</li>
+<li>@KeenableAI</li>
+<li>Light</li>
+<li>@trymelius</li>
+<li>@Midstreamhlth</li>
+<li>Nebex</li>
+<li>@neo_ai_security</li>
+<li>@newcore_id</li>
+<li>Pax</li>
+<li>@heypocketai</li>
+<li>@poetichq</li>
+<li>Prosper AI</li>
+<li>@ProximalHQ</li>
+<li>@qualitateio</li>
+<li>@RoadrunnerAI</li>
+<li>@runlayer</li>
+<li>@straikerai</li>
+<li>@tar_hq</li>
+<li>@tastelabs</li>
+<li>Telepatia</li>
+<li>@TerraFirma_Inc</li>
+<li>Tessera Labs</li>
+<li>@tolmohq</li>
+<li>@trajectorylabs</li>
+<li>@transfyrai</li>
+<li>@traysartech</li>
+<li>@Ultraroboticsco</li>
+<li>@ValsAI</li>
+<li>@viktor_com</li>
+<li>Wafer</li>
+<li>@watchtowerlabs</li>
+</ol>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2119957080492966371">https://x.com/lennysan/status/2119957080492966371</a></p>
+<p><strong>相关链接：</strong><a href="https://www.lennysjobs.com/next50">https://www.lennysjobs.com/next50</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "I’m excited to launch The Next 50", "url": "https://x.com/lennysan/status/2119957080492966371", "lang": "en", "html": "<h2>I’m excited to launch The Next 50</h2>\n<figure data-media-id=\"img_lenny_next50\"><img src=\"https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_gif\"><img src=\"https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg\" alt=\"原帖动图封面\"><figcaption><a href=\"https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>The best time to join a rocketship is before everyone knows about it.</p>\n<p>I’m excited to launch The Next 50: the 50 hottest early-stage startups to keep an eye on (and try to join).</p>\n<p>Using @harmonic_ai’s data, the juiciest startup dataset out there, we looked at every early-stage startup and ranked them on headcount growth, recent funding, and investor interest.</p>\n<p>We then picked the top 50.</p>\n<p>Here's the full list: https://www.lennysjobs.com/next50</p>\n<p>We’ll update it quarterly, and I’d love your feedback on what other factors we should consider.</p>\n<p>P.S. This is in addition to the Lenny 100, the top 100 well-known companies with the highest talent density, tackling the most ambitious problems: https://www.lennysjobs.com/lenny100</p>\n<p>My goal here is to help you figure out where to go try to get a job.</p>\n<p>To keep this focused on top early-stage startups, we only look at startups that are:</p>\n<ol>\n<li>Early: founded in 2023 or later, at Seed or Series A, and valued under $1B</li>\n<li>Freshly funded: raised in the last six months, with at least $5M raised in total</li>\n<li>Backed by top investors: at least one leading venture firm on the cap table</li>\n<li>Growing: 10-250 employees, and headcount up over the last 90 days</li>\n</ol>\n<p>Here's who made The Next 50 this quarter:</p>\n<ol>\n<li>A Security</li>\n<li>Act</li>\n<li>Aegis AI</li>\n<li>@air__security</li>\n<li>Ande</li>\n<li>@arca_wealth</li>\n<li>@arrakistech</li>\n<li>Baba</li>\n<li>Collate</li>\n<li>@ConductAI</li>\n<li>Corner Health</li>\n<li>@DecadeWealth</li>\n<li>@DominionDynamic</li>\n<li>Endra</li>\n<li>@Enigma_AI</li>\n<li>@useflai</li>\n<li>@foundryrobotics</li>\n<li>@fragmentdata</li>\n<li>@hone</li>\n<li>@inherentlabs</li>\n<li>@KeenableAI</li>\n<li>Light</li>\n<li>@trymelius</li>\n<li>@Midstreamhlth</li>\n<li>Nebex</li>\n<li>@neo_ai_security</li>\n<li>@newcore_id</li>\n<li>Pax</li>\n<li>@heypocketai</li>\n<li>@poetichq</li>\n<li>Prosper AI</li>\n<li>@ProximalHQ</li>\n<li>@qualitateio</li>\n<li>@RoadrunnerAI</li>\n<li>@runlayer</li>\n<li>@straikerai</li>\n<li>@tar_hq</li>\n<li>@tastelabs</li>\n<li>Telepatia</li>\n<li>@TerraFirma_Inc</li>\n<li>Tessera Labs</li>\n<li>@tolmohq</li>\n<li>@trajectorylabs</li>\n<li>@transfyrai</li>\n<li>@traysartech</li>\n<li>@Ultraroboticsco</li>\n<li>@ValsAI</li>\n<li>@viktor_com</li>\n<li>Wafer</li>\n<li>@watchtowerlabs</li>\n</ol>\n<p>原文链接：<a href=\"https://x.com/lennysan/status/2119957080492966371\">https://x.com/lennysan/status/2119957080492966371</a></p>\n<p>相关链接：<a href=\"https://www.lennysjobs.com/next50\">https://www.lennysjobs.com/next50</a></p>"}, "rewrite": {"title": "Lenny Rachitsky 发布 The Next 50：用招聘和融资数据列出 50 家早期创业公司", "markdown": "Lenny Rachitsky 写道，加入一艘火箭船的最好时间，是在所有人都知道它之前。他为此发布了 The Next 50：一份他认为最值得关注、也最值得尝试加入的 50 家早期创业公司名单。\n\n“最热门”是他和团队按自己的数据规则排出的结果，并不是独立的行业排名。他使用 Harmonic 的数据，审视每一家早期创业公司，并按人数增长、近期融资和投资人关注度排序，然后选出前 50 名。完整名单发布在 lennysjobs.com/next50。\n\n名单计划每季度更新。他也欢迎大家反馈，还应该考虑哪些因素。\n\n这和已有的 Lenny 100 是分开的。Lenny 100 追踪的是人才密度高、在做更宏大问题的知名公司，地址是 lennysjobs.com/lenny100。\n\n他在跟帖里说明了目的：帮助读者判断该去哪里找工作。为了把范围限定在顶级早期公司，他们只看同时满足这些条件的创业公司：\n\n1. 足够早：2023 年或以后成立，处于种子轮或 A 轮，估值低于 10 亿美元。\n2. 刚融到钱：过去六个月有融资，累计融资至少 500 万美元。\n3. 有顶级投资人：资本结构里至少有一家领先的风险投资机构。\n4. 仍在增长：员工人数在 10 到 250 人之间，且过去 90 天人数上升。\n\n本季度入选的 50 家公司，他在跟帖里按顺序点了名，从 A Security、Act、Aegis AI 一直到 Wafer 和 Watchtower Labs。具体名单以原帖和网站页面为准。\n\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原帖配图](<https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png>)\n\n![原帖动图封面](<https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg>)", "html": "<p>Lenny Rachitsky 写道，加入一艘火箭船的最好时间，是在所有人都知道它之前。他为此发布了 The Next 50：一份他认为最值得关注、也最值得尝试加入的 50 家早期创业公司名单。</p>\n<p>“最热门”是他和团队按自己的数据规则排出的结果，并不是独立的行业排名。他使用 Harmonic 的数据，审视每一家早期创业公司，并按人数增长、近期融资和投资人关注度排序，然后选出前 50 名。完整名单发布在 lennysjobs.com/next50。</p>\n<p>名单计划每季度更新。他也欢迎大家反馈，还应该考虑哪些因素。</p>\n<p>这和已有的 Lenny 100 是分开的。Lenny 100 追踪的是人才密度高、在做更宏大问题的知名公司，地址是 lennysjobs.com/lenny100。</p>\n<p>他在跟帖里说明了目的：帮助读者判断该去哪里找工作。为了把范围限定在顶级早期公司，他们只看同时满足这些条件的创业公司：</p>\n<ol>\n<li>足够早：2023 年或以后成立，处于种子轮或 A 轮，估值低于 10 亿美元。</li>\n<li>刚融到钱：过去六个月有融资，累计融资至少 500 万美元。</li>\n<li>有顶级投资人：资本结构里至少有一家领先的风险投资机构。</li>\n<li>仍在增长：员工人数在 10 到 250 人之间，且过去 90 天人数上升。</li>\n</ol>\n<p>本季度入选的 50 家公司，他在跟帖里按顺序点了名，从 A Security、Act、Aegis AI 一直到 Wafer 和 Watchtower Labs。具体名单以原帖和网站页面为准。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_lenny_next50\"><img src=\"https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_gif\"><img src=\"https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg\" alt=\"原帖动图封面\"><figcaption><a href=\"https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Kyle Chan：远景这一座数据中心，自己做了风电、储能和变压器</title>
+      <link>https://karuio.github.io/a/kyle-chan-envision</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/kyle-chan-envision</guid>
+      <pubDate>Sun, 08 Nov 2026 09:05:01 +0000</pubDate>
+      <author>Kyle Chan</author>
+      <description><![CDATA[<p><em>他用一份供应链清单说明中国公司如何把清洁能源和算力设施做成同一套系统，并引用了 SemiAnalysis 的相关讨论。</em></p>
+<h2>中文改写</h2>
+<p>Kyle Chan 在讨论一座大规模数据中心时写道，中国公司远景自己建造了整串相关设施。</p>
+<p>他列出的清单是：风电场、叶片工厂、专用输电线路、低压电力模块、800 伏固态变压器、电池储能系统，以及预制变电站。</p>
+<p>这份清单是他对相关报道和讨论的概括，用来说明远景如何把发电、输电、储能和数据中心电源做成同一套系统。原帖引用了 SemiAnalysis 的讨论作为语境。具体产能、投资额和项目地点，他这条帖子里没有展开，因此这里也不补充。</p>
+<p>同一周，他还发表了长文《China’s tech Swiss Army knives》，讨论中国科技公司同时自研模型、芯片和机器人的趋势。那篇完整文章在 High Capacity 上，本条只改写他关于远景数据中心供应链的这条原帖。</p>
+
+<h2>原文</h2>
+<p><em>For this massive data center, China&#x27;s Envision built the:</em></p>
+<p>For this massive data center, China's Envision built the:</p>
+<ul>
+<li>Wind farms</li>
+<li>Blade factory</li>
+<li>Dedicated power line</li>
+<li>Low-voltage power modules</li>
+<li>800V solid-state transformer</li>
+<li>Battery storage system</li>
+<li>Prefabricated substation</li>
+</ul>
+<p><strong>原文链接：</strong><a href="https://x.com/kyleichan/status/2119355501201043912">https://x.com/kyleichan/status/2119355501201043912</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他用一份供应链清单说明中国公司如何把清洁能源和算力设施做成同一套系统，并引用了 SemiAnalysis 的相关讨论。</em></p>
+<h2>中文改写</h2>
+<p>Kyle Chan 在讨论一座大规模数据中心时写道，中国公司远景自己建造了整串相关设施。</p>
+<p>他列出的清单是：风电场、叶片工厂、专用输电线路、低压电力模块、800 伏固态变压器、电池储能系统，以及预制变电站。</p>
+<p>这份清单是他对相关报道和讨论的概括，用来说明远景如何把发电、输电、储能和数据中心电源做成同一套系统。原帖引用了 SemiAnalysis 的讨论作为语境。具体产能、投资额和项目地点，他这条帖子里没有展开，因此这里也不补充。</p>
+<p>同一周，他还发表了长文《China’s tech Swiss Army knives》，讨论中国科技公司同时自研模型、芯片和机器人的趋势。那篇完整文章在 High Capacity 上，本条只改写他关于远景数据中心供应链的这条原帖。</p>
+
+<h2>原文</h2>
+<p><em>For this massive data center, China&#x27;s Envision built the:</em></p>
+<p>For this massive data center, China's Envision built the:</p>
+<ul>
+<li>Wind farms</li>
+<li>Blade factory</li>
+<li>Dedicated power line</li>
+<li>Low-voltage power modules</li>
+<li>800V solid-state transformer</li>
+<li>Battery storage system</li>
+<li>Prefabricated substation</li>
+</ul>
+<p><strong>原文链接：</strong><a href="https://x.com/kyleichan/status/2119355501201043912">https://x.com/kyleichan/status/2119355501201043912</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "For this massive data center, China's Envision built the:", "url": "https://x.com/kyleichan/status/2119355501201043912", "lang": "en", "html": "<h2>For this massive data center, China&#x27;s Envision built the:</h2>\n\n<p>For this massive data center, China's Envision built the:</p>\n<ul>\n<li>Wind farms</li>\n<li>Blade factory</li>\n<li>Dedicated power line</li>\n<li>Low-voltage power modules</li>\n<li>800V solid-state transformer</li>\n<li>Battery storage system</li>\n<li>Prefabricated substation</li>\n</ul>\n<p>原文链接：<a href=\"https://x.com/kyleichan/status/2119355501201043912\">https://x.com/kyleichan/status/2119355501201043912</a></p>"}, "rewrite": {"title": "Kyle Chan：远景这一座数据中心，自己做了风电、储能和变压器", "markdown": "Kyle Chan 在讨论一座大规模数据中心时写道，中国公司远景自己建造了整串相关设施。\n\n他列出的清单是：风电场、叶片工厂、专用输电线路、低压电力模块、800 伏固态变压器、电池储能系统，以及预制变电站。\n\n这份清单是他对相关报道和讨论的概括，用来说明远景如何把发电、输电、储能和数据中心电源做成同一套系统。原帖引用了 SemiAnalysis 的讨论作为语境。具体产能、投资额和项目地点，他这条帖子里没有展开，因此这里也不补充。\n\n同一周，他还发表了长文《China’s tech Swiss Army knives》，讨论中国科技公司同时自研模型、芯片和机器人的趋势。那篇完整文章在 High Capacity 上，本条只改写他关于远景数据中心供应链的这条原帖。\n", "html": "<p>Kyle Chan 在讨论一座大规模数据中心时写道，中国公司远景自己建造了整串相关设施。</p>\n<p>他列出的清单是：风电场、叶片工厂、专用输电线路、低压电力模块、800 伏固态变压器、电池储能系统，以及预制变电站。</p>\n<p>这份清单是他对相关报道和讨论的概括，用来说明远景如何把发电、输电、储能和数据中心电源做成同一套系统。原帖引用了 SemiAnalysis 的讨论作为语境。具体产能、投资额和项目地点，他这条帖子里没有展开，因此这里也不补充。</p>\n<p>同一周，他还发表了长文《China’s tech Swiss Army knives》，讨论中国科技公司同时自研模型、芯片和机器人的趋势。那篇完整文章在 High Capacity 上，本条只改写他关于远景数据中心供应链的这条原帖。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Eric Topol：司美格鲁肽在一项 HFpEF 合并肥胖的随机试验中改善了左心房和舒张功能</title>
+      <link>https://karuio.github.io/a/topol-semaglutide-hfpef</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/topol-semaglutide-hfpef</guid>
+      <pubDate>Sun, 08 Nov 2026 22:35:04 +0000</pubDate>
+      <author>Eric Topol</author>
+      <description><![CDATA[<p><em>他在美国心脏协会年会上转述两项 Nature Medicine 研究，其中一项还报告半数以上参与者症状得到缓解。</em></p>
+<h2>中文改写</h2>
+<p>Eric Topol 在美国心脏协会科学年会期间转述两项发表于《Nature Medicine》的研究。这是他对论文结果的概括，本站未打开论文全文逐项核对。</p>
+<p>第一项是一项随机试验，对象是射血分数保留的心衰（HFpEF）并合并肥胖的患者。他写道，司美格鲁肽（Ozempic）改善了左心房功能和舒张功能，评估方式是磁共振成像。</p>
+<p>第二项链接对应的研究结果，按他的转述，是半数以上参与者的症状得到缓解。原帖把“缓解”写成 remission of symptoms，没有在这条帖子里给出具体量表、随访时间或对照组数字。</p>
+<p>两条论文链接分别是 nature.com 上的 s41591-026-04787-8 和 s41591-026-04762-3。若需核对照组设计、安全性和绝对效应大小，仍应以论文原文为准。</p>
+
+<h2>原文</h2>
+<p><em>Semaglutide (Ozempic) improved left atrial and diastolic function</em></p>
+<p>Semaglutide (Ozempic) improved left atrial and diastolic function in a randomized trial of patients with preserved ejection fraction heart failure (HFpEF) and obesity (via MRI)
+And achieved remission of symptoms in more than half of participants  (2nd link)
+#AHA26 and @NatureMedicine
+https://www.nature.com/articles/s41591-026-04787-8
+https://www.nature.com/articles/s41591-026-04762-3</p>
+<p><strong>原文链接：</strong><a href="https://x.com/EricTopol/status/2119559354374332902">https://x.com/EricTopol/status/2119559354374332902</a></p>
+<p><strong>相关链接：</strong><a href="https://www.nature.com/articles/s41591-026-04787-8">https://www.nature.com/articles/s41591-026-04787-8</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他在美国心脏协会年会上转述两项 Nature Medicine 研究，其中一项还报告半数以上参与者症状得到缓解。</em></p>
+<h2>中文改写</h2>
+<p>Eric Topol 在美国心脏协会科学年会期间转述两项发表于《Nature Medicine》的研究。这是他对论文结果的概括，本站未打开论文全文逐项核对。</p>
+<p>第一项是一项随机试验，对象是射血分数保留的心衰（HFpEF）并合并肥胖的患者。他写道，司美格鲁肽（Ozempic）改善了左心房功能和舒张功能，评估方式是磁共振成像。</p>
+<p>第二项链接对应的研究结果，按他的转述，是半数以上参与者的症状得到缓解。原帖把“缓解”写成 remission of symptoms，没有在这条帖子里给出具体量表、随访时间或对照组数字。</p>
+<p>两条论文链接分别是 nature.com 上的 s41591-026-04787-8 和 s41591-026-04762-3。若需核对照组设计、安全性和绝对效应大小，仍应以论文原文为准。</p>
+
+<h2>原文</h2>
+<p><em>Semaglutide (Ozempic) improved left atrial and diastolic function</em></p>
+<p>Semaglutide (Ozempic) improved left atrial and diastolic function in a randomized trial of patients with preserved ejection fraction heart failure (HFpEF) and obesity (via MRI)
+And achieved remission of symptoms in more than half of participants  (2nd link)
+#AHA26 and @NatureMedicine
+https://www.nature.com/articles/s41591-026-04787-8
+https://www.nature.com/articles/s41591-026-04762-3</p>
+<p><strong>原文链接：</strong><a href="https://x.com/EricTopol/status/2119559354374332902">https://x.com/EricTopol/status/2119559354374332902</a></p>
+<p><strong>相关链接：</strong><a href="https://www.nature.com/articles/s41591-026-04787-8">https://www.nature.com/articles/s41591-026-04787-8</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Semaglutide (Ozempic) improved left atrial and diastolic function", "url": "https://x.com/EricTopol/status/2119559354374332902", "lang": "en", "html": "<h2>Semaglutide (Ozempic) improved left atrial and diastolic function</h2>\n\n<p>Semaglutide (Ozempic) improved left atrial and diastolic function in a randomized trial of patients with preserved ejection fraction heart failure (HFpEF) and obesity (via MRI)\nAnd achieved remission of symptoms in more than half of participants  (2nd link)\n#AHA26 and @NatureMedicine\nhttps://www.nature.com/articles/s41591-026-04787-8\nhttps://www.nature.com/articles/s41591-026-04762-3</p>\n<p>原文链接：<a href=\"https://x.com/EricTopol/status/2119559354374332902\">https://x.com/EricTopol/status/2119559354374332902</a></p>\n<p>相关链接：<a href=\"https://www.nature.com/articles/s41591-026-04787-8\">https://www.nature.com/articles/s41591-026-04787-8</a></p>"}, "rewrite": {"title": "Eric Topol：司美格鲁肽在一项 HFpEF 合并肥胖的随机试验中改善了左心房和舒张功能", "markdown": "Eric Topol 在美国心脏协会科学年会期间转述两项发表于《Nature Medicine》的研究。这是他对论文结果的概括，本站未打开论文全文逐项核对。\n\n第一项是一项随机试验，对象是射血分数保留的心衰（HFpEF）并合并肥胖的患者。他写道，司美格鲁肽（Ozempic）改善了左心房功能和舒张功能，评估方式是磁共振成像。\n\n第二项链接对应的研究结果，按他的转述，是半数以上参与者的症状得到缓解。原帖把“缓解”写成 remission of symptoms，没有在这条帖子里给出具体量表、随访时间或对照组数字。\n\n两条论文链接分别是 nature.com 上的 s41591-026-04787-8 和 s41591-026-04762-3。若需核对照组设计、安全性和绝对效应大小，仍应以论文原文为准。\n", "html": "<p>Eric Topol 在美国心脏协会科学年会期间转述两项发表于《Nature Medicine》的研究。这是他对论文结果的概括，本站未打开论文全文逐项核对。</p>\n<p>第一项是一项随机试验，对象是射血分数保留的心衰（HFpEF）并合并肥胖的患者。他写道，司美格鲁肽（Ozempic）改善了左心房功能和舒张功能，评估方式是磁共振成像。</p>\n<p>第二项链接对应的研究结果，按他的转述，是半数以上参与者的症状得到缓解。原帖把“缓解”写成 remission of symptoms，没有在这条帖子里给出具体量表、随访时间或对照组数字。</p>\n<p>两条论文链接分别是 nature.com 上的 s41591-026-04787-8 和 s41591-026-04762-3。若需核对照组设计、安全性和绝对效应大小，仍应以论文原文为准。</p>\n"}}]]></qiaomu:versions>
+    </item>
+  </channel>
+</rss>

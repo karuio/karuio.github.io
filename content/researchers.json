@@ -1,0 +1,256 @@
+{
+  "researchers": [
+    {
+      "name": "Andrej Karpathy",
+      "handle": "karpathy",
+      "sector": "AI",
+      "focus": "写 LLM 能力、编程 Agent 和自己的实验。",
+      "url": "https://x.com/karpathy"
+    },
+    {
+      "name": "Simon Willison",
+      "handle": "simonw",
+      "sector": "AI",
+      "focus": "写模型实测和工程实践。",
+      "url": "https://x.com/simonw"
+    },
+    {
+      "name": "Ethan Mollick",
+      "handle": "emollick",
+      "sector": "AI",
+      "focus": "写 AI 使用实验和能力边界。",
+      "url": "https://x.com/emollick"
+    },
+    {
+      "name": "Zvi Mowshowitz",
+      "handle": "TheZvi",
+      "sector": "AI",
+      "focus": "写 AI 进展和风险评论，常发 X Article。",
+      "url": "https://x.com/TheZvi"
+    },
+    {
+      "name": "宝玉",
+      "handle": "dotey",
+      "sector": "AI",
+      "focus": "把海外长帖改写成中文，并加上自己的判断。",
+      "url": "https://x.com/dotey"
+    },
+    {
+      "name": "李继刚",
+      "handle": "lijigang",
+      "sector": "AI",
+      "focus": "写原创长文，用框架把产品和认知问题讲清楚。",
+      "url": "https://x.com/lijigang"
+    },
+    {
+      "name": "Dylan Patel",
+      "handle": "dylan522p",
+      "sector": "投资/宏观",
+      "focus": "SemiAnalysis 创始人，写 AI 基建和芯片。",
+      "url": "https://x.com/dylan522p"
+    },
+    {
+      "name": "Gavin Baker",
+      "handle": "GavinSBaker",
+      "sector": "投资/宏观",
+      "focus": "写芯片出口、中美算力和英伟达的长分析。",
+      "url": "https://x.com/GavinSBaker"
+    },
+    {
+      "name": "Michael Pettis",
+      "handle": "michaelxpettis",
+      "sector": "投资/宏观",
+      "focus": "写中国宏观、贸易顺差和经济再平衡。",
+      "url": "https://x.com/michaelxpettis"
+    },
+    {
+      "name": "洪灝",
+      "handle": "HAOHONG_CFA",
+      "sector": "投资/宏观",
+      "focus": "写中国股市、政策和流动性，以英文为主。",
+      "url": "https://x.com/HAOHONG_CFA"
+    },
+    {
+      "name": "Brad Setser",
+      "handle": "Brad_Setser",
+      "sector": "投资/宏观",
+      "focus": "写贸易、资本流动和汇率，分析以数据为依据。",
+      "url": "https://x.com/Brad_Setser"
+    },
+    {
+      "name": "Aswath Damodaran",
+      "handle": "AswathDamodaran",
+      "sector": "投资/宏观",
+      "focus": "写估值框架，近期拆解过所谓的 AI 交易。",
+      "url": "https://x.com/AswathDamodaran"
+    },
+    {
+      "name": "Dan Nystedt",
+      "handle": "dnystedt",
+      "sector": "半导体",
+      "focus": "常驻台北，写台积电营收、台湾芯片出口和供应链传闻。",
+      "url": "https://x.com/dnystedt"
+    },
+    {
+      "name": "Chipstrat",
+      "handle": "chipstrat",
+      "sector": "半导体",
+      "focus": "Austin Lyons 的研究刊，常发半导体长文。",
+      "url": "https://x.com/chipstrat"
+    },
+    {
+      "name": "Vikram Sekar",
+      "handle": "vikramskr",
+      "sector": "半导体",
+      "focus": "独立分析师，偏系统和能耗。",
+      "url": "https://x.com/vikramskr"
+    },
+    {
+      "name": "Tomasz Tunguz",
+      "handle": "ttunguz",
+      "sector": "SaaS/云",
+      "focus": "常发 X Article，内容从 SaaS 写到算力融资和数据中心电力。",
+      "url": "https://x.com/ttunguz"
+    },
+    {
+      "name": "Jamin Ball",
+      "handle": "jaminball",
+      "sector": "SaaS/云",
+      "focus": "Altimeter 合伙人，写云软件和 Agent Cloud。",
+      "url": "https://x.com/jaminball"
+    },
+    {
+      "name": "App Economy Insights",
+      "handle": "EconomyApp",
+      "sector": "SaaS/云",
+      "focus": "用图表拆解科技公司财报。",
+      "url": "https://x.com/EconomyApp"
+    },
+    {
+      "name": "Eric Seufert",
+      "handle": "eric_seufert",
+      "sector": "消费互联网/能源数据中心",
+      "focus": "写移动广告、应用商店和 agent 电商。",
+      "url": "https://x.com/eric_seufert"
+    },
+    {
+      "name": "TheValueist",
+      "handle": "TheValueist",
+      "sector": "消费互联网/能源数据中心",
+      "focus": "写 TMT、半导体、电力和数据中心，信息密度高。",
+      "url": "https://x.com/TheValueist"
+    },
+    {
+      "name": "Bruce Booth",
+      "handle": "LifeSciVC",
+      "sector": "生物医药",
+      "focus": "Atlas 生物科技投资人，写 AI 制药与生命科学。",
+      "url": "https://x.com/LifeSciVC"
+    },
+    {
+      "name": "Eric Topol",
+      "handle": "EricTopol",
+      "sector": "生物医药",
+      "focus": "常用串帖解读 GLP-1、心衰、基因编辑等方向的重要论文。",
+      "url": "https://x.com/EricTopol"
+    },
+    {
+      "name": "Javier Blas",
+      "handle": "JavierBlas",
+      "sector": "能源/大宗",
+      "focus": "彭博大宗商品专栏作者，写油气和航运。",
+      "url": "https://x.com/JavierBlas"
+    },
+    {
+      "name": "Rory Johnston",
+      "handle": "Rory_Johnston",
+      "sector": "能源/大宗",
+      "focus": "写 Commodity Context，主要分析油市和贸易流。",
+      "url": "https://x.com/Rory_Johnston"
+    },
+    {
+      "name": "Jesse Jenkins",
+      "handle": "JesseJenkins",
+      "sector": "能源/大宗",
+      "focus": "普林斯顿能源系统学者，写电网和数据中心用电。",
+      "url": "https://x.com/JesseJenkins"
+    },
+    {
+      "name": "Alex Johnson",
+      "handle": "AlexH_Johnson",
+      "sector": "金融科技",
+      "focus": "写 Fintech Takes，关注 AI agent 如何冲击银行业。",
+      "url": "https://x.com/AlexH_Johnson"
+    },
+    {
+      "name": "Simon Taylor",
+      "handle": "sytaylor",
+      "sector": "金融科技",
+      "focus": "写支付、加密和银行。",
+      "url": "https://x.com/sytaylor"
+    },
+    {
+      "name": "Michael Kofman",
+      "handle": "KofmanMichael",
+      "sector": "防务/航天/工业",
+      "focus": "卡内基研究员，研究俄乌战争和俄军。",
+      "url": "https://x.com/KofmanMichael"
+    },
+    {
+      "name": "Casey Handmer",
+      "handle": "CJHandmer",
+      "sector": "防务/航天/工业",
+      "focus": "写能源、工业和航天交叉领域。",
+      "url": "https://x.com/CJHandmer"
+    },
+    {
+      "name": "Kyle Chan",
+      "handle": "kyleichan",
+      "sector": "中国产业/对华战略",
+      "focus": "写 High Capacity，研究中国产业和科技。",
+      "url": "https://x.com/kyleichan"
+    },
+    {
+      "name": "Rush Doshi",
+      "handle": "RushDoshi",
+      "sector": "中国产业/对华战略",
+      "focus": "研究对华战略，常写稀土、出口管制和关税。",
+      "url": "https://x.com/RushDoshi"
+    },
+    {
+      "name": "Chris Paxton",
+      "handle": "chris_j_paxton",
+      "sector": "机器人",
+      "focus": "Agility Robotics 研究员，常发带判断的技术点评。",
+      "url": "https://x.com/chris_j_paxton"
+    },
+    {
+      "name": "Sergey Levine",
+      "handle": "svlevine",
+      "sector": "机器人",
+      "focus": "常解读 VLA 模型和真实世界强化学习的论文。",
+      "url": "https://x.com/svlevine"
+    },
+    {
+      "name": "Yuke Zhu",
+      "handle": "yukez",
+      "sector": "机器人",
+      "focus": "UT Austin 与英伟达 GEAR 研究员，写世界动作模型等研究。",
+      "url": "https://x.com/yukez"
+    },
+    {
+      "name": "The Humanoid Hub",
+      "handle": "TheHumanoidHub",
+      "sector": "机器人",
+      "focus": "人形机器人行业媒体号，有现场报道和论文摘要。",
+      "url": "https://x.com/TheHumanoidHub"
+    },
+    {
+      "name": "Lenny Rachitsky",
+      "handle": "lennysan",
+      "sector": "消费/产品",
+      "focus": "写产品、增长和职业建议。",
+      "url": "https://x.com/lennysan"
+    }
+  ]
+}

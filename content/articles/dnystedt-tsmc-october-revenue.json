@@ -1,0 +1,29 @@
+{
+  "id": "dnystedt-tsmc-october-revenue",
+  "date": "2026-11-10",
+  "published_at": "2026-11-10T06:09:40+00:00",
+  "ingested_at": "2026-11-10T21:16:00+08:00",
+  "sector": "半导体",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/dnystedt/status/2120036146461941768",
+    "author": "Dan Nystedt",
+    "handle": "dnystedt",
+    "title_en": "TSMC’s October revenue rose 59.7% year-on-year"
+  },
+  "title": "Dan Nystedt：台积电 10 月营收创新高，按公司汇率指引约合 184.6 亿美元",
+  "dek": "他汇总了台积电的月营收声明，并注明美元数字来自公司第四季汇率假设，不是台积电自己公布的美元口径。",
+  "tags": [
+    "台积电",
+    "半导体",
+    "营收"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion",
+    "text_md": "TSMC’s October revenue rose 59.7% year-on-year to a fresh record high NT$586.89 billion (US$18.46B) amid robust global AI-related chip manufacturing demand.\n\nThe previous record was NT$514.81 billion in August.\n\nTSMC did not provide a US$ figure. The above is based on its forex guidance for the 4th quarter. 1/3 $TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor\n\n2/3 TSMC’s January through October revenue rose 43.3% year-on-year to NT$4.49 trillion, continuing to track full-year guidance for ~44% growth.\n\n$TSM $AAPL $NVDA $AMD $AVGO $QCOM #semiconductors #semiconductor\n\n3/3: The Taiwan Stock Exchange requires companies to file monthly revenue statements.\n\nThe above US$ figures are based on TSMC’s foreign exchange rate guidance for the 4th quarter: US$1 = NT$31.8\n\nTSMC 4th quarter revenue guide: US$52.3 billion - $54.3 billion\n\nNew Taiwan dollar",
+    "media": []
+  },
+  "body_md": "Dan Nystedt 根据台积电的月营收披露写道，公司 10 月营收同比增长 59.7%，达到新台币 5868.9 亿元，再创单月新高。他把这归因于全球与 AI 相关的芯片制造需求仍然强劲。此前的单月纪录是 8 月的新台币 5148.1 亿元。\n\n他特别说明，台积电自己没有提供美元数字。他帖子里的约 184.6 亿美元，是按公司第四季汇率指引换算出来的。\n\n1 到 10 月合计，营收同比增长 43.3%，达到新台币 4.49 万亿元。他认为，这仍大致沿着全年约 44% 增长的指引推进。\n\n第三条续帖解释了数据来源：台湾证券交易所要求上市公司申报月营收。他也给出了换算所用的汇率假设：1 美元兑新台币 31.8 元，这是台积电对第四季的外汇指引。台积电对第四季营收的指引是 523 亿美元到 543 亿美元。\n\n这些数字来自他对公司披露和交易所申报制度的转述，本站未打开台积电原始公告逐项核对。\n",
+  "rewrite_media": []
+}

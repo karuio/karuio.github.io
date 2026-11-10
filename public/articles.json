@@ -1,0 +1,170 @@
+[
+  {
+    "id": "dotey-bitter-lesson",
+    "date": "2026-11-10",
+    "title": "宝玉：Sutton 本人出来说明，《苦涩的教训》批判的是硬编码人类知识",
+    "dek": "他引用 Sutton 和 Prashant Rai 的帖子，把“堆算力就够了”和“算法层面的新方法”区分开来。",
+    "url": "/a/dotey-bitter-lesson",
+    "source_url": "https://x.com/dotey/status/2120039846118821976",
+    "tags": [
+      "AI",
+      "算法",
+      "算力"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "lijigang-product-atoms",
+    "date": "2026-11-10",
+    "title": "李继刚：用「产品原子」解释自己为何从 ChatGPT 切到 Grok Bot",
+    "dek": "他把最小产品单位分成会话、项目和角色三类，认为真正拉开体验的是连续性沉淀在哪里。",
+    "url": "/a/lijigang-product-atoms",
+    "source_url": "https://x.com/lijigang/status/2120013746974212464",
+    "tags": [
+      "AI",
+      "产品",
+      "Agent"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "gavin-baker-china-blocks-nvidia",
+    "date": "2026-11-09",
+    "title": "Gavin Baker：他说，拦下英伟达 GPU 的，越来越多是北京而不是华盛顿",
+    "dek": "他引用路透社关于约 60 万颗 H200 滞留香港的报道，并认为向中国出售非前沿芯片仍是对美国有利的政策。",
+    "url": "/a/gavin-baker-china-blocks-nvidia",
+    "source_url": "https://x.com/GavinSBaker/status/2119908820608798745",
+    "tags": [
+      "芯片",
+      "中美",
+      "英伟达"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "setser-china-october-trade",
+    "date": "2026-11-10",
+    "title": "Brad Setser 读中国 10 月贸易数据：按他的口径，全年不含黄金顺差有望超过 1.5 万亿美元",
+    "dek": "他强调 10 月相对 9 月回落并不意外，真正值得看的是同比顺差、汽车出口和中美双边数字之间的裂口。",
+    "url": "/a/setser-china-october-trade",
+    "source_url": "https://x.com/Brad_Setser/status/2120002873669153166",
+    "tags": [
+      "中国宏观",
+      "贸易",
+      "汽车出口"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "dnystedt-tsmc-october-revenue",
+    "date": "2026-11-10",
+    "title": "Dan Nystedt：台积电 10 月营收创新高，按公司汇率指引约合 184.6 亿美元",
+    "dek": "他汇总了台积电的月营收声明，并注明美元数字来自公司第四季汇率假设，不是台积电自己公布的美元口径。",
+    "url": "/a/dnystedt-tsmc-october-revenue",
+    "source_url": "https://x.com/dnystedt/status/2120036146461941768",
+    "tags": [
+      "台积电",
+      "半导体",
+      "营收"
+    ],
+    "sector": "半导体"
+  },
+  {
+    "id": "ttunguz-token-importer",
+    "date": "2026-11-09",
+    "title": "Tomasz Tunguz：按他的粗算，美国可能在 2028 到 2030 年间变成 token 净进口国",
+    "dek": "这篇 X Article 把数据中心建设放缓和 GPU 租金上涨放在一起，讨论美国会不会像进口稀土一样开始进口算力产出。",
+    "url": "/a/ttunguz-token-importer",
+    "source_url": "https://x.com/ttunguz/status/2119825864997425462",
+    "tags": [
+      "SaaS",
+      "数据中心",
+      "算力"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
+    "id": "seufert-apple-instinct",
+    "date": "2026-11-09",
+    "title": "Eric Seufert：苹果不该买 Instinct，他认为 Agent 本身已经是大宗商品",
+    "dek": "亚马逊刚让购物版 Alexa 走短信后，他认为苹果已经拥有这条接口，并购并不会带来自己做不到的优势。",
+    "url": "/a/seufert-apple-instinct",
+    "source_url": "https://x.com/eric_seufert/status/2119610865364201815",
+    "tags": [
+      "消费互联网",
+      "Agent",
+      "苹果"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
+    "id": "alex-johnson-agentic-readiness",
+    "date": "2026-11-10",
+    "title": "Alex Johnson：银行业已经碰到 Agent，但会上的人还没想清楚该怎么对待它",
+    "dek": "他参加了 EJF Ventures 在蒙大拿举办的闭门会，把会上争议最多的问题整理成一份清单，并链到自己的复盘文章。",
+    "url": "/a/alex-johnson-agentic-readiness",
+    "source_url": "https://x.com/AlexH_Johnson/status/2120008918139273518",
+    "tags": [
+      "金融科技",
+      "Agent",
+      "银行"
+    ],
+    "sector": "金融科技"
+  },
+  {
+    "id": "humanoid-hub-anchor-1",
+    "date": "2026-11-10",
+    "title": "The Humanoid Hub：Archon 发布 Anchor 1，用人身上几个关键点控制全身动作",
+    "dek": "这则行业报道称，新控制器跳过在线关节空间重定向，并计划在 2026 年底前后公开权重和部署代码。",
+    "url": "/a/humanoid-hub-anchor-1",
+    "source_url": "https://x.com/TheHumanoidHub/status/2120042235819401394",
+    "tags": [
+      "机器人",
+      "人形机器人",
+      "控制"
+    ],
+    "sector": "机器人"
+  },
+  {
+    "id": "lennysan-next-50",
+    "date": "2026-11-10",
+    "title": "Lenny Rachitsky 发布 The Next 50：用招聘和融资数据列出 50 家早期创业公司",
+    "dek": "入选标准包括 2023 年之后成立、种子轮或 A 轮、估值低于 10 亿美元，以及最近一个季度人数仍在增长。",
+    "url": "/a/lennysan-next-50",
+    "source_url": "https://x.com/lennysan/status/2119957080492966371",
+    "tags": [
+      "产品",
+      "创业",
+      "招聘"
+    ],
+    "sector": "消费/产品"
+  },
+  {
+    "id": "kyle-chan-envision",
+    "date": "2026-11-08",
+    "title": "Kyle Chan：远景这一座数据中心，自己做了风电、储能和变压器",
+    "dek": "他用一份供应链清单说明中国公司如何把清洁能源和算力设施做成同一套系统，并引用了 SemiAnalysis 的相关讨论。",
+    "url": "/a/kyle-chan-envision",
+    "source_url": "https://x.com/kyleichan/status/2119355501201043912",
+    "tags": [
+      "中国产业",
+      "数据中心",
+      "清洁能源"
+    ],
+    "sector": "中国产业/对华战略"
+  },
+  {
+    "id": "topol-semaglutide-hfpef",
+    "date": "2026-11-08",
+    "title": "Eric Topol：司美格鲁肽在一项 HFpEF 合并肥胖的随机试验中改善了左心房和舒张功能",
+    "dek": "他在美国心脏协会年会上转述两项 Nature Medicine 研究，其中一项还报告半数以上参与者症状得到缓解。",
+    "url": "/a/topol-semaglutide-hfpef",
+    "source_url": "https://x.com/EricTopol/status/2119559354374332902",
+    "tags": [
+      "生物医药",
+      "GLP-1",
+      "心衰"
+    ],
+    "sector": "生物医药"
+  }
+]

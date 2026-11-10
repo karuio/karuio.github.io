@@ -1,0 +1,56 @@
+{
+  "id": "lennysan-next-50",
+  "date": "2026-11-10",
+  "published_at": "2026-11-10T00:55:29+00:00",
+  "ingested_at": "2026-11-10T21:11:00+08:00",
+  "sector": "消费/产品",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/lennysan/status/2119957080492966371",
+    "author": "Lenny Rachitsky",
+    "handle": "lennysan",
+    "title_en": "The Next 50: the 50 hottest early-stage startups",
+    "related_url": "https://www.lennysjobs.com/next50"
+  },
+  "title": "Lenny Rachitsky 发布 The Next 50：用招聘和融资数据列出 50 家早期创业公司",
+  "dek": "入选标准包括 2023 年之后成立、种子轮或 A 轮、估值低于 10 亿美元，以及最近一个季度人数仍在增长。",
+  "tags": [
+    "产品",
+    "创业",
+    "招聘"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "I’m excited to launch The Next 50",
+    "text_md": "The best time to join a rocketship is before everyone knows about it.\n\nI’m excited to launch The Next 50: the 50 hottest early-stage startups to keep an eye on (and try to join).\n\nUsing @harmonic_ai’s data, the juiciest startup dataset out there, we looked at every early-stage startup and ranked them on headcount growth, recent funding, and investor interest.\n\nWe then picked the top 50.\n\nHere's the full list: https://www.lennysjobs.com/next50\n\nWe’ll update it quarterly, and I’d love your feedback on what other factors we should consider.\n\nP.S. This is in addition to the Lenny 100, the top 100 well-known companies with the highest talent density, tackling the most ambitious problems: https://www.lennysjobs.com/lenny100\n\nMy goal here is to help you figure out where to go try to get a job.\n\nTo keep this focused on top early-stage startups, we only look at startups that are:\n1. Early: founded in 2023 or later, at Seed or Series A, and valued under $1B\n2. Freshly funded: raised in the last six months, with at least $5M raised in total\n3. Backed by top investors: at least one leading venture firm on the cap table\n4. Growing: 10-250 employees, and headcount up over the last 90 days\n\nHere's who made The Next 50 this quarter:\n\n1. A Security\n2. Act\n3. Aegis AI\n4. @air__security\n5. Ande\n6. @arca_wealth\n7. @arrakistech\n8. Baba\n9. Collate\n10. @ConductAI\n11. Corner Health\n12. @DecadeWealth\n13. @DominionDynamic\n14. Endra\n15. @Enigma_AI\n16. @useflai\n17. @foundryrobotics\n18. @fragmentdata\n19. @hone\n20. @inherentlabs\n21. @KeenableAI\n22. Light\n23. @trymelius\n24. @Midstreamhlth\n25. Nebex\n26. @neo_ai_security\n27. @newcore_id\n28. Pax\n29. @heypocketai\n30. @poetichq\n31. Prosper AI\n32. @ProximalHQ\n33. @qualitateio\n34. @RoadrunnerAI\n35. @runlayer\n36. @straikerai\n37. @tar_hq\n38. @tastelabs\n39. Telepatia\n40. @TerraFirma_Inc\n41. Tessera Labs\n42. @tolmohq\n43. @trajectorylabs\n44. @transfyrai\n45. @traysartech\n46. @Ultraroboticsco\n47. @ValsAI\n48. @viktor_com\n49. Wafer\n50. @watchtowerlabs",
+    "media": [
+      {
+        "id": "img_lenny_next50",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWuc-8saoAA3qm7.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_gif",
+        "type": "image",
+        "url": "https://pbs.twimg.com/tweet_video_thumb/HWuXtB6bMAA_x4C.jpg",
+        "alt": "原帖动图封面"
+      }
+    ]
+  },
+  "body_md": "Lenny Rachitsky 写道，加入一艘火箭船的最好时间，是在所有人都知道它之前。他为此发布了 The Next 50：一份他认为最值得关注、也最值得尝试加入的 50 家早期创业公司名单。\n\n“最热门”是他和团队按自己的数据规则排出的结果，并不是独立的行业排名。他使用 Harmonic 的数据，审视每一家早期创业公司，并按人数增长、近期融资和投资人关注度排序，然后选出前 50 名。完整名单发布在 lennysjobs.com/next50。\n\n名单计划每季度更新。他也欢迎大家反馈，还应该考虑哪些因素。\n\n这和已有的 Lenny 100 是分开的。Lenny 100 追踪的是人才密度高、在做更宏大问题的知名公司，地址是 lennysjobs.com/lenny100。\n\n他在跟帖里说明了目的：帮助读者判断该去哪里找工作。为了把范围限定在顶级早期公司，他们只看同时满足这些条件的创业公司：\n\n1. 足够早：2023 年或以后成立，处于种子轮或 A 轮，估值低于 10 亿美元。\n2. 刚融到钱：过去六个月有融资，累计融资至少 500 万美元。\n3. 有顶级投资人：资本结构里至少有一家领先的风险投资机构。\n4. 仍在增长：员工人数在 10 到 250 人之间，且过去 90 天人数上升。\n\n本季度入选的 50 家公司，他在跟帖里按顺序点了名，从 A Security、Act、Aegis AI 一直到 Wafer 和 Watchtower Labs。具体名单以原帖和网站页面为准。\n",
+  "rewrite_media": [
+    {
+      "media_id": "img_lenny_next50",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_lenny_gif",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

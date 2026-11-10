@@ -1,0 +1,30 @@
+{
+  "id": "topol-semaglutide-hfpef",
+  "date": "2026-11-08",
+  "published_at": "2026-11-08T22:35:04+00:00",
+  "ingested_at": "2026-11-10T21:09:00+08:00",
+  "sector": "生物医药",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/EricTopol/status/2119559354374332902",
+    "author": "Eric Topol",
+    "handle": "EricTopol",
+    "title_en": "Semaglutide (Ozempic) improved left atrial and diastolic function",
+    "related_url": "https://www.nature.com/articles/s41591-026-04787-8"
+  },
+  "title": "Eric Topol：司美格鲁肽在一项 HFpEF 合并肥胖的随机试验中改善了左心房和舒张功能",
+  "dek": "他在美国心脏协会年会上转述两项 Nature Medicine 研究，其中一项还报告半数以上参与者症状得到缓解。",
+  "tags": [
+    "生物医药",
+    "GLP-1",
+    "心衰"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Semaglutide (Ozempic) improved left atrial and diastolic function",
+    "text_md": "Semaglutide (Ozempic) improved left atrial and diastolic function in a randomized trial of patients with preserved ejection fraction heart failure (HFpEF) and obesity (via MRI)\nAnd achieved remission of symptoms in more than half of participants  (2nd link)\n#AHA26 and @NatureMedicine \nhttps://www.nature.com/articles/s41591-026-04787-8\nhttps://www.nature.com/articles/s41591-026-04762-3",
+    "media": []
+  },
+  "body_md": "Eric Topol 在美国心脏协会科学年会期间转述两项发表于《Nature Medicine》的研究。这是他对论文结果的概括，本站未打开论文全文逐项核对。\n\n第一项是一项随机试验，对象是射血分数保留的心衰（HFpEF）并合并肥胖的患者。他写道，司美格鲁肽（Ozempic）改善了左心房功能和舒张功能，评估方式是磁共振成像。\n\n第二项链接对应的研究结果，按他的转述，是半数以上参与者的症状得到缓解。原帖把“缓解”写成 remission of symptoms，没有在这条帖子里给出具体量表、随访时间或对照组数字。\n\n两条论文链接分别是 nature.com 上的 s41591-026-04787-8 和 s41591-026-04762-3。若需核对照组设计、安全性和绝对效应大小，仍应以论文原文为准。\n",
+  "rewrite_media": []
+}

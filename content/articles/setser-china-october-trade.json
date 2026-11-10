@@ -1,0 +1,163 @@
+{
+  "id": "setser-china-october-trade",
+  "date": "2026-11-10",
+  "published_at": "2026-11-10T03:57:27+00:00",
+  "ingested_at": "2026-11-10T21:17:00+08:00",
+  "sector": "投资/宏观",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/Brad_Setser/status/2120002873669153166",
+    "author": "Brad Setser",
+    "handle": "Brad_Setser",
+    "title_en": "A couple of words on China's October trade data"
+  },
+  "title": "Brad Setser 读中国 10 月贸易数据：按他的口径，全年不含黄金顺差有望超过 1.5 万亿美元",
+  "dek": "他强调 10 月相对 9 月回落并不意外，真正值得看的是同比顺差、汽车出口和中美双边数字之间的裂口。",
+  "tags": [
+    "中国宏观",
+    "贸易",
+    "汽车出口"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "A couple of words on China's October trade data",
+    "text_md": "A couple of words on China's October trade data --\n\nOne of the quirks of the Chinese data is the October is a month of relative weakness compared to September and October, so it isn't a surprise that October exports were down v September (and the surplus was down m/m)\n\n1/\n\nThe strong y/y growth in imports is easily explained (hint, it isn't coming from autos). Chip prices are way up & China still imports a lot of chips. Crude import volumes recovered in October (in $ terms, oil imports jumped $10b Oct v Sept)\n\n+ Sept 25 = low base\n\n2/\n\ny/y the monthly surplus was up $17b (even with the fall v September 26) so the trailing 12m sum of the surplus is trending up and on track to hit $1.3 trillion this year.\n\n(no data on October gold imports, but ex gold the surplus will easily top $1.5 trillion)\n\n3/\n\nMy \"assume no change in export or import prices from the previous month to estimate volumes\" methodology points to strong y/y growth in both export and import volumes.\n\n y/y growth in vehicle exports remained strong.   13m vehicle exports/ 12m car exports = huge for October\n\n4/\n\nAnd the trailing 12m sum of exports (cars inferred from vehicles) is still heading up -- and imports are still heading down\n\n5/\n\nHere is a close up on import volumes --\n\nAuto imports obviously tell a different story than the y/y increase in nominal imports (b/c China imports a lot of chips and oil and the price of both was way up)\n\n6/\n\nAnd here is monthly auto exports v monthly domestic sales --\n\n7/\n\nSo the m/m pace of export growth for cars does seem to have decelerated -- which is consistent with moving to linear not exponential growth of auto exports\n\nbut linear growth at a 3m -4m annual pace is still insane (German net auto exports -- exports, not growth -- are under 2m cars)\n\n8/\n\non a trailing 12m basis China's exports to both the EU and the UK are growing at a solid clip --\n\nHK could be anyone by the way, but clearly includes some goods destined for the US\n\nAnd I am curious how President Trump will react when it comes obvious that the bilateral deficit with China is growing again ...\n\n(note the unusually large gap between the US and Chinese numbers; I suspect the Chinese numbers are more accurate)\n\n11/\n\nIt isn't an entirely fair comparison (prices have gone up) but China's exports to the US in dollar terms are back at their pre-liberation day levels in the US data.\n\nJust sayin'\n\n12/12",
+    "media": [
+      {
+        "id": "img_setser_01",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvDW4Na4AAkLqE.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_02",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvD5lKaoAAXUV-.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_03",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvEiV8bEAAmD7J.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_04",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvFIXdawAACmrq.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_05",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvFeqQbAAA8vH9.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_06",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvF7OtboAAlX2T.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_07",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvGJHKa4AAgMZa.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_08",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvGxFaakAAkEW5.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_eu",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvHOOlbIAAbde8.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_11",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvHw4caAAAZyOg.png",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_setser_12",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWvIem1awAApBnJ.jpg",
+        "alt": "原帖配图"
+      }
+    ]
+  },
+  "body_md": "Brad Setser 写了一串关于中国 10 月贸易数据的帖子。他说，中国数据有一个特点：10 月相对 9 月通常偏弱。他原文里的比较对象写成了“compared to September and October”，这里按他的原文保留。因此，10 月出口低于 9 月、顺差环比下降，在他看来并不意外。\n\n进口同比大增，他认为很好解释，而且主要不是来自汽车。他的理由是芯片价格大幅上涨，中国仍进口大量芯片；原油进口量在 10 月回升，按美元计，石油进口 10 月比 9 月多了 100 亿美元。他还提到，2025 年 9 月是一个较低的基数。\n\n即便月度顺差相对 2026 年 9 月回落，同比仍增加了 170 亿美元。因此他认为，过去 12 个月顺差合计仍在上升，并有望在今年达到 1.3 万亿美元。他同时注明，还没有 10 月黄金进口数据，但按他的口径，不含黄金的顺差很容易超过 1.5 万亿美元。这些都是他根据已公布贸易数据做的推算。\n\n为了估计实际数量，他使用自己的方法：假设进出口价格与上月相比没有变化。按这个方法，出口和进口数量同比都显得很强。汽车出口同比仍然强劲。他写道，10 月的车辆出口约 1300 万、轿车出口约 1200 万，这个规模“巨大”。这里的 13m / 12m 是他的表述，应理解为他对当月规模的概括，本站未对照海关原始分类表重算。\n\n过去 12 个月合计来看，他认为出口（汽车数量从车辆数据推断）仍在上升，进口仍在下降。\n\n把进口数量单独放大后，汽车进口讲述的故事，和他看到的名义进口同比上升并不一样。因为他强调，中国进口大量芯片和石油，而这两样东西的价格都明显上涨。\n\n他接着比较每月汽车出口和每月国内销量，并认为汽车出口的环比增速已经放缓。这与出口从指数式增长转为线性增长是一致的。可即便是线性增长，按他的说法，每年 300 万到 400 万辆的增量仍然极端；作为对照，德国汽车净出口（指出口本身，不是增量）还不到 200 万辆。\n\n按过去 12 个月合计，他看到中国对欧盟和英国的出口仍在较快增长。香港的目的地“可能是任何人”，但他明确认为其中包含一部分最终运往美国的货物。\n\n公开串帖里，作者在第 8 条之后直接写到对欧英出口，随后编号跳到 11/ 和 12/12，没有检索到单独编号为 9/ 或 10/ 的续帖。\n\n他写道，自己很好奇，当中美双边逆差再次扩大变得明显时，特朗普总统会如何反应。他也提醒，美国数字和中国数字之间的裂口异常大，他怀疑中国数字更准确。这是他的判断。\n\n最后他说，这个对比并不完全公平，因为价格已经上涨；但按美国数据，中国对美出口的美元金额已经回到“解放日”之前的水平。这里的“解放日”是他原帖中的说法，用来指美国加征关税前后的那个时点。\n",
+  "rewrite_media": [
+    {
+      "media_id": "img_setser_01",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_02",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_03",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_04",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_05",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_06",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_07",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_08",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_eu",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_11",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_setser_12",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

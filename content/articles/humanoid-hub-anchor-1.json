@@ -1,0 +1,30 @@
+{
+  "id": "humanoid-hub-anchor-1",
+  "date": "2026-11-10",
+  "published_at": "2026-11-10T06:33:52+00:00",
+  "ingested_at": "2026-11-10T21:12:00+08:00",
+  "sector": "机器人",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/TheHumanoidHub/status/2120042235819401394",
+    "author": "The Humanoid Hub",
+    "handle": "TheHumanoidHub",
+    "title_en": "Archon Robotics introduced Anchor 1",
+    "related_url": "https://www.archon.tech/research/anchor1"
+  },
+  "title": "The Humanoid Hub：Archon 发布 Anchor 1，用人身上几个关键点控制全身动作",
+  "dek": "这则行业报道称，新控制器跳过在线关节空间重定向，并计划在 2026 年底前后公开权重和部署代码。",
+  "tags": [
+    "机器人",
+    "人形机器人",
+    "控制"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.",
+    "text_md": "Archon Robotics introduced Anchor 1, a whole-body controller for humanoid manipulation.\n\nIt turns sparse human targets (pelvis, wrists, ankles) into precise, stable robot motion, skipping online joint-space retargeting to avoid a common source of error.\n\nIt also separates motion encoding from feedback correction, pairing accurate tracking with smooth movement.\n\nOn a real robot, Anchor 1 posts the lowest tracking errors and highest task success against baselines including MimicLite, ScaleBFM, and SONIC, and collects teleoperation data more efficiently.\n\nWeights and deployment code expected late 2026.",
+    "media": []
+  },
+  "body_md": "行业账号 The Humanoid Hub 报道称，Archon Robotics 发布了 Anchor 1，这是一个用于人形机器人操作的全身控制器。\n\n按它的介绍，这套系统把稀疏的人体目标点转换成精确、稳定的机器人动作，目标点包括骨盆、手腕和脚踝。它跳过在线关节空间重定向，以避免一个常见误差来源。\n\n它还把动作编码和反馈校正分开，想同时得到准确跟踪和平滑运动。\n\n该账号写道，在真实机器人上，Anchor 1 的跟踪误差最低、任务成功率最高，对照基线包括 MimicLite、ScaleBFM 和 SONIC，并且能更高效地采集遥操作数据。这些比较结果来自这则报道对论文或公司说法的转述，本站未核对其实验设置，也没有观看原帖所附视频。\n\n权重和部署代码预计在 2026 年底前后公布。这也是报道中的预期时间，不是已经发生的发布。原帖配有视频，此次未能取得可播放的媒体地址，请通过原文链接观看。续帖还指向了 Archon 的技术博客。\n",
+  "rewrite_media": []
+}

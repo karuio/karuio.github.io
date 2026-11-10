@@ -1,0 +1,22 @@
+{
+  "name": "researcher-longform",
+  "private": true,
+  "version": "1.0.0",
+  "description": "X News \u2014 overseas founder posts & AI videos, rewritten in Qiaomu Chinese",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "deploy": "bash scripts/deploy_vps.sh",
+    "deploy:worker": "env -u CLOUDFLARE_API_TOKEN wrangler deploy",
+    "preview": "python3 scripts/preview.py",
+    "test:static": "python3 -m unittest discover -s tests -p \"test_*.py\"",
+    "test:reader": "node --test tests/reader-state.test.cjs",
+    "test": "npm run build && npm run test:static",
+    "test:browser": "npm run build && node tests/browser-smoke.cjs"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "jsdom": "^26.1.0",
+    "playwright": "^1.65.0"
+  }
+}
