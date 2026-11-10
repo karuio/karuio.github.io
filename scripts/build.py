@@ -739,7 +739,7 @@ def build() -> None:
     )
 
     latest = ingested_date(articles[0])
-    heading = f'''<section class="edition-line"><div><p class="edition-kicker">THE EDIT <span aria-hidden="true">/</span> 近期精选</p><h1 tabindex="-1">他山之石，可以攻玉</h1><p class="edition-description">跟踪选定账号新发的长帖、串帖和 X Article，写成忠实的中文，并保留原文与链接。</p></div><div class="edition-meta"><span class="edition-label">最新收录</span><time datetime="{html.escape(latest, quote=True)}">{html.escape(latest.replace('-', '.'))}</time><span class="edition-note">按行业筛选 · 原文始终可对账</span></div></section>'''
+    heading = f'''<section class="edition-line"><div><p class="edition-kicker">THE EDIT <span aria-hidden="true">/</span> 近期精选</p><h1 tabindex="-1">听见远处的思考</h1><p class="edition-description">跟踪选定账号新发的长帖、串帖和 X Article，写成忠实的中文，并保留原文与链接。</p></div><div class="edition-meta"><span class="edition-label">最新收录</span><time datetime="{html.escape(latest, quote=True)}">{html.escape(latest.replace('-', '.'))}</time><span class="edition-note">按行业筛选 · 原文始终可对账</span></div></section>'''
     home = heading + discovery_tools(articles) + f'<section class="news-grid" id="news-grid" data-news-grid aria-label="他山选刊">{build_feed_items(articles)}</section>' + discovery_empty()
     (PUBLIC / "index.html").write_text(
         shell(f"{SITE_NAME}", home, description=SITE_SUB, active="home", canonical="/"), encoding="utf-8",
