@@ -1,0 +1,44 @@
+{
+  "id": "sytaylor-airwallex-alta",
+  "date": "2026-11-10",
+  "published_at": "2026-11-10T15:07:51+00:00",
+  "ingested_at": "2026-11-11T08:40:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2120171585772335236",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M"
+  },
+  "title": "Simon Taylor：Airwallex CEO 联合创办的支付链 Alta 融资 8000 万美元，难点在中立性",
+  "dek": "Alta 先用代币化资产优化 Airwallex 自己的跨境资金池；他追问的是，竞争对手会不会在这条链上结算。",
+  "tags": [
+    "支付",
+    "区块链",
+    "稳定币",
+    "Airwallex"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M",
+    "text_md": "🚨 BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M\n\nThe chain is called Alta. Index Ventures led a $47.5M Series A today, after a $32.5M seed co-led by Airwallex and its founders' fund, Capital 49.\n\n---\n\nAlta is built for banks and payment companies. Payments stay private between the two parties, and each institution's sanctions and policy checks run as part of the payment.\n\nAlta says it will reach 200 countries and 90 currencies by connecting to Airwallex's local payout network.\n\n---\n\nZhang once said of crypto \"you cannot be faster than instant\", and for Airwallex customers he had a point. Airwallex pays out fast because it holds pools of local currency around the world.\n\nHolding that cash is expensive. Alta's first product will fund each market just in time and keep the rest in yield-bearing tokenized assets until it's needed.\n\nAirwallex holds those pools, so its own treasury is the first one Alta can improve.\n\nSort of like how most banks started with internal treasury for their tokenization services.\n\n---\n\nAlta calls itself neutral infrastructure for banks and payment providers, and Airwallex is the only named user so far.\n\nWould Wise, Nium or a bank settle on a chain that a rival's CEO co-founded?\n\nAlta's privacy design would hide a rival's payments from Airwallex. The rival would still be growing a network Airwallex helped fund.\n\n---\n\nIt can be done.\n\nVisa faced the same question. Bank of America ran BankAmericard until 1970, then handed control to the banks that issued the card. Those banks formed the company that became Visa.\n\nIf a payments chain pitches you, I'd ask three things:\n\n- Who is live on it besides the sponsor?\n- Who pays out in local currency on your corridors?\n- Who controls the rules as it grows?\n\nAlta gets a head start from Airwallex's payout network. And in stablecoins that's a HUGE leg up.\n\nI'm watching for the second named customer. And how banks and non banks start to get value from it.",
+    "media": [
+      {
+        "id": "img_sytaylor_alta",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg",
+        "alt": "原帖配图"
+      }
+    ]
+  },
+  "body_md": "Airwallex 首席执行官 Jack Zhang 联合创办了一条区块链，名叫 Alta，累计融资 8000 万美元。Simon Taylor 写道，Index Ventures 当天领投了 4750 万美元的 A 轮；此前的 3250 万美元种子轮，由 Airwallex 和其创始人基金 Capital 49 联合领投。\n\nAlta 面向银行和支付公司。按他的描述，付款信息只在交易双方之间可见，每家机构自己的制裁筛查和合规策略检查，作为付款流程的一部分直接执行。Alta 称，接入 Airwallex 的本地出款网络后，可以覆盖 200 个国家和 90 种货币。\n\n## 第一个产品：先优化 Airwallex 自己的资金池\n\nJack Zhang 以前评价加密货币时说过，“你不可能比即时更快”。Taylor 认为，对 Airwallex 的客户来说这话有道理：Airwallex 出款快，是因为它在全球各地预先存着本地货币资金池。\n\n问题在于，囤着这些现金成本很高。Alta 的第一个产品，是在每个市场需要时才即时注资，其余资金先放在能生息的代币化资产里，用到时再取。资金池在 Airwallex 手里，所以 Alta 最先能优化的就是 Airwallex 自己的资金管理。Taylor 把这比作多数银行做代币化服务时，也是先从内部资金管理开始。\n\n## 竞争对手会不会上这条链\n\n他提出的疑问是中立性。Alta 自称是银行和支付机构的中立基础设施，但目前公开点名的用户只有 Airwallex 一家。Wise、Nium 或者某家银行，会愿意在竞争对手 CEO 联合创办的链上做结算吗？Alta 的隐私设计可以让 Airwallex 看不到对手的付款，但对手用得越多，壮大的仍是 Airwallex 出资扶起来的网络。\n\n他认为这件事能做成，并举了 Visa 的先例：美国银行（Bank of America）运营 BankAmericard 到 1970 年，之后把控制权交给发卡银行，这些银行组建的公司后来成了 Visa。\n\n他给被支付链找上门的机构列了三个问题：除了发起方，还有谁已经在链上实际运行？在你的业务通道上，谁负责本地货币出款？网络扩大以后，规则由谁控制？\n\n他的结论是，Alta 借 Airwallex 的出款网络起步，在稳定币领域这是很大的先发优势。接下来他要看的是第二个公开点名的客户，以及银行和非银行机构怎样从这条链上获得价值。\n",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_alta",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

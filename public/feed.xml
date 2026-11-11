@@ -5,8 +5,390 @@
     <link>https://karuio.github.io/</link>
     <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 10 Nov 2026 16:03:10 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 00:20:51 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>宝玉整理：Gemini 4 Carbon 正式开放，API 引入价到 11 月 30 日，普通用户需订 Ultra</title>
+      <link>https://karuio.github.io/a/dotey-gemini-4-carbon-launch</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dotey-gemini-4-carbon-launch</guid>
+      <pubDate>Tue, 10 Nov 2026 16:28:08 +0000</pubDate>
+      <author>宝玉</author>
+      <description><![CDATA[<p><em>单价与 Argon 相同但更耗 Token；评测成绩多为厂商自报，另有一条可拉起多 agent 协作的 /swarm 命令。</em></p>
+<h2>中文改写</h2>
+<p>Google 11 月 10 日正式开放 Gemini 4 Carbon。宝玉根据 Google 官方博客和开发者文档整理了这次上线的细节：付费 API 当天可用，引入价持续到 11 月 30 日；普通用户要订每月 99.99 美元起的 Google AI Ultra 才能用。10 月 28 日 Carbon 首次亮相时，只开放给通过审查的网络安全防御团队。</p>
+<p>Google 的定位是：Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍是大多数写代码和知识工作的首选。</p>
+<h2>订阅门槛：Ultra 才能用，Pro 用不了</h2>
+<p>普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。Ultra 有两档：每月 99.99 美元，用量是 Pro 的 5 倍；每月 199.99 美元，用量是 Pro 的 20 倍。</p>
+<p>每月 19.99 美元的 Pro 用不了 Carbon。宝玉指出，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 仍是 Argon。</p>
+<p>他拿 Anthropic 前一天发布的 Claude Fable 5.2 做对比：价位差不多，Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，但平时要另外按量付费。</p>
+<h2>API 单价和 Argon 相同，12 月 1 日起翻倍</h2>
+<p>开发者通过 Gemini API 付费层调用，AI Studio 和 Android Studio 里都能用，模型名 <code>gemini-4-carbon</code>，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。宝玉提到，两周前官方没说引入期到哪天，这次定了下来。</p>
+<p>单价相同，账单未必相同。官方文档写明，Carbon 每轮思考消耗的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半，是 GPT-6 Astra（10 / 50 美元）的五分之二。</p>
+<p>企业可以在 Gemini for business 里使用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。宝玉认为，这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。</p>
+<h2>和 Argon 怎么分工</h2>
+<p>官方建议：日常写功能、边聊边改代码用 Argon，速度快也省钱；复杂的根因排查、架构设计、从大量文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 对自家模型的建议也类似，大多数任务先用 Opus 5.5，任务更大、更开放时再换 Fable。</p>
+<p>写网页应用时，Carbon 会反复构建、检查，既看代码，也看页面实际渲染出来的效果，发现错误自己修，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个展示埃菲尔铁塔建造过程的 3D 展览。</p>
+<p>Google 推文里说 Carbon 在数据缺失或有问题时会提醒用户、不会瞎猜。Google 用一套 375 个任务的诚实度测试衡量这一点：Carbon 通过 92%，Argon 是 70%；遇到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没有把样品混匀，帮实验室提高了实验的可重复性。</p>
+<h2>和 Fable 5.2、GPT-6 Astra 的评测对比</h2>
+<p>两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。Fable 5.2 发布后榜首易主：Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。</p>
+<p>Google 这次挑选的几个第三方评测都在强调成本。在 Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档得 53.9%，每个任务花 2.12 美元；其他厂商中最好的 Fable 5.2 开 Max 档得 51.5%，每个任务 4.64 美元，贵了一倍多。</p>
+<p>Artificial Analysis 和 Google 合作推出的新评测 MKA，考察 AI agent 阅读含图表、工程图纸的复杂文件来完成工作：Fable 5.2 得 57%，Carbon 54% 排第二。Google 说 Carbon 每个任务的花费不到第一名的六分之一。</p>
+<p>写代码方面各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但宝玉查看时，Cursor 官网榜单还没列出 Carbon，排第一的是开 Max 档的 Fable 5.2，60.0%。Anthropic 公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。</p>
+<h2>/swarm：一条命令拉起一组 agent</h2>
+<p>Antigravity 同时预览了 <code>/swarm</code> 命令。输入 <code>/swarm</code> 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 <code>@parser</code>、<code>@api-tests</code>；每两到四个干活的 agent 配一个“验证员”，负责看改动、跑测试，发现问题就退回去改。</p>
+<p>所有 agent 在一块共享留言板上沟通，用户能在侧边面板实时看到谁在做什么，也能点进任意一个 agent 介入。没有任务的 agent 会休眠，不消耗 Token。每个 agent 可以指定不同模型，Google 建议让 Carbon 担任协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。</p>
+<p><code>/swarm</code> 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 <code>/swarm</code> 消耗额度比普通对话快得多。</p>
+<h2>哪些数字能独立核对</h2>
+<p>宝玉特别注明：上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余都是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没有单独说明。本站没有另行打开 Google 博客和文档逐项核对。打算切换的开发者，可以先按自己的任务实测 Token 用量，再比较 12 月 1 日涨价后的实际账单。</p>
+
+<h2>原文</h2>
+<p><em>Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起</em></p>
+<p>Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起</p>
+<p>Google 11 月 10 日把 Gemini 4 Carbon 开放给付费开发者、企业和 Google AI Ultra 订阅用户。10 月 28 日 Carbon 首次亮相时，只给通过审查的网络安全防御团队用，这次是正式上线。</p>
+<p>Google 说 Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍然是大多数写代码和知识工作的首选。</p>
+<p>【谁能用，要多少钱】</p>
+<p>普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。</p>
+<p>Ultra 有两档：每月 99.99 美元（用量是 Pro 的 5 倍）和 199.99 美元（20 倍）。</p>
+<p>每月 19.99 美元的 Pro 用不了，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 还是 Argon。</p>
+<p>Anthropic 昨天发布的 Claude Fable 5.2 价位差不多：Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，平时要另外按量付费。</p>
+<p>开发者走 Gemini API 的付费层，AI Studio 和 Android Studio 里都能调用，模型名 gemini-4-carbon，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。两周前官方没说引入期到哪天，现在定了。</p>
+<p>单价一样，账单不一定一样。官方文档写明，Carbon 每轮思考用的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半、GPT-6 Astra（10 / 50 美元）的五分之二。</p>
+<p>企业可以在 Gemini for business 里用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。</p>
+<p>【比 Argon 强在哪】</p>
+<p>官方建议的分工是：日常写功能、边聊边改代码用 Argon，快也省；复杂的根因排查、架构设计、从一大堆文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 给自家模型的建议也类似，大多数活先用 Opus 5.5，任务更大更开放再换 Fable。</p>
+<p>写网页应用时，Carbon 会反复构建、检查：既看代码，也看页面实际渲染出来的样子，发现错误自己改，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个埃菲尔铁塔建造过程的 3D 展览。</p>
+<p>推文说的“数据缺失或有问题时会提醒你，不会瞎猜”，Google 用一套 375 个任务的诚实度测试来衡量：Carbon 通过 92%，Argon 是 70%；碰到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没把样品混匀，帮实验室提高了实验的可重复性。</p>
+<p>【跟 Fable 5.2、GPT-6 Astra 比】</p>
+<p>两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。昨天 Fable 5.2 发布后，榜首换了人：现在 Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。</p>
+<p>Google 这次挑的几个第三方评测都在强调便宜。Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档 53.9%，每个任务花 2.12 美元；别家最好的 Fable 5.2 开 Max 档 51.5%，每个任务 4.64 美元，贵一倍多。</p>
+<p>Artificial Analysis 和 Google 合作推出的新评测 MKA，考 AI agent 读带图表、工程图纸的复杂文件干活，Fable 5.2 57%，Carbon 54% 排第二，Google 说 Carbon 每个任务的花费不到第一名的六分之一。</p>
+<p>写代码各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但 Cursor 官网榜单目前还没列出 Carbon，排第一的是 Fable 5.2 开 Max 档，60.0%。Anthropic 昨天公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。</p>
+<p>【/swarm：一句话拉起一支 agent 团队】</p>
+<p>Antigravity 同时预览了 /swarm 命令。输入 /swarm 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 @parser、@api-tests；每两到四个干活的 agent 配一个“验证员”，看改动、跑测试，发现问题退回去改。</p>
+<p>所有 agent 在一块共享留言板上沟通，你在侧边面板里能实时看到谁在干什么，也能点进任何一个 agent 插手。没活干的 agent 会休眠，不消耗 Token。</p>
+<p>每个 agent 可以指定不同的模型。Google 建议让 Carbon 当协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。</p>
+<p>/swarm 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 /swarm 烧额度比普通对话快得多。</p>
+<p>上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没单独写。</p>
+<p>来源：
+Google 官方博客《Gemini 4 Carbon is now available》
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+开发者文档《What's new in Gemini 4 Carbon》（价格、与 Argon 的区别）
+https://aistudio.google.com/docs/whats-new-gemini-4-carbon</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2120191790774960630">https://x.com/dotey/status/2120191790774960630</a></p>
+<p><strong>相关链接：</strong><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/">https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>单价与 Argon 相同但更耗 Token；评测成绩多为厂商自报，另有一条可拉起多 agent 协作的 /swarm 命令。</em></p>
+<h2>中文改写</h2>
+<p>Google 11 月 10 日正式开放 Gemini 4 Carbon。宝玉根据 Google 官方博客和开发者文档整理了这次上线的细节：付费 API 当天可用，引入价持续到 11 月 30 日；普通用户要订每月 99.99 美元起的 Google AI Ultra 才能用。10 月 28 日 Carbon 首次亮相时，只开放给通过审查的网络安全防御团队。</p>
+<p>Google 的定位是：Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍是大多数写代码和知识工作的首选。</p>
+<h2>订阅门槛：Ultra 才能用，Pro 用不了</h2>
+<p>普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。Ultra 有两档：每月 99.99 美元，用量是 Pro 的 5 倍；每月 199.99 美元，用量是 Pro 的 20 倍。</p>
+<p>每月 19.99 美元的 Pro 用不了 Carbon。宝玉指出，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 仍是 Argon。</p>
+<p>他拿 Anthropic 前一天发布的 Claude Fable 5.2 做对比：价位差不多，Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，但平时要另外按量付费。</p>
+<h2>API 单价和 Argon 相同，12 月 1 日起翻倍</h2>
+<p>开发者通过 Gemini API 付费层调用，AI Studio 和 Android Studio 里都能用，模型名 <code>gemini-4-carbon</code>，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。宝玉提到，两周前官方没说引入期到哪天，这次定了下来。</p>
+<p>单价相同，账单未必相同。官方文档写明，Carbon 每轮思考消耗的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半，是 GPT-6 Astra（10 / 50 美元）的五分之二。</p>
+<p>企业可以在 Gemini for business 里使用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。宝玉认为，这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。</p>
+<h2>和 Argon 怎么分工</h2>
+<p>官方建议：日常写功能、边聊边改代码用 Argon，速度快也省钱；复杂的根因排查、架构设计、从大量文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 对自家模型的建议也类似，大多数任务先用 Opus 5.5，任务更大、更开放时再换 Fable。</p>
+<p>写网页应用时，Carbon 会反复构建、检查，既看代码，也看页面实际渲染出来的效果，发现错误自己修，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个展示埃菲尔铁塔建造过程的 3D 展览。</p>
+<p>Google 推文里说 Carbon 在数据缺失或有问题时会提醒用户、不会瞎猜。Google 用一套 375 个任务的诚实度测试衡量这一点：Carbon 通过 92%，Argon 是 70%；遇到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没有把样品混匀，帮实验室提高了实验的可重复性。</p>
+<h2>和 Fable 5.2、GPT-6 Astra 的评测对比</h2>
+<p>两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。Fable 5.2 发布后榜首易主：Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。</p>
+<p>Google 这次挑选的几个第三方评测都在强调成本。在 Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档得 53.9%，每个任务花 2.12 美元；其他厂商中最好的 Fable 5.2 开 Max 档得 51.5%，每个任务 4.64 美元，贵了一倍多。</p>
+<p>Artificial Analysis 和 Google 合作推出的新评测 MKA，考察 AI agent 阅读含图表、工程图纸的复杂文件来完成工作：Fable 5.2 得 57%，Carbon 54% 排第二。Google 说 Carbon 每个任务的花费不到第一名的六分之一。</p>
+<p>写代码方面各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但宝玉查看时，Cursor 官网榜单还没列出 Carbon，排第一的是开 Max 档的 Fable 5.2，60.0%。Anthropic 公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。</p>
+<h2>/swarm：一条命令拉起一组 agent</h2>
+<p>Antigravity 同时预览了 <code>/swarm</code> 命令。输入 <code>/swarm</code> 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 <code>@parser</code>、<code>@api-tests</code>；每两到四个干活的 agent 配一个“验证员”，负责看改动、跑测试，发现问题就退回去改。</p>
+<p>所有 agent 在一块共享留言板上沟通，用户能在侧边面板实时看到谁在做什么，也能点进任意一个 agent 介入。没有任务的 agent 会休眠，不消耗 Token。每个 agent 可以指定不同模型，Google 建议让 Carbon 担任协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。</p>
+<p><code>/swarm</code> 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 <code>/swarm</code> 消耗额度比普通对话快得多。</p>
+<h2>哪些数字能独立核对</h2>
+<p>宝玉特别注明：上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余都是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没有单独说明。本站没有另行打开 Google 博客和文档逐项核对。打算切换的开发者，可以先按自己的任务实测 Token 用量，再比较 12 月 1 日涨价后的实际账单。</p>
+
+<h2>原文</h2>
+<p><em>Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起</em></p>
+<p>Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起</p>
+<p>Google 11 月 10 日把 Gemini 4 Carbon 开放给付费开发者、企业和 Google AI Ultra 订阅用户。10 月 28 日 Carbon 首次亮相时，只给通过审查的网络安全防御团队用，这次是正式上线。</p>
+<p>Google 说 Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍然是大多数写代码和知识工作的首选。</p>
+<p>【谁能用，要多少钱】</p>
+<p>普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。</p>
+<p>Ultra 有两档：每月 99.99 美元（用量是 Pro 的 5 倍）和 199.99 美元（20 倍）。</p>
+<p>每月 19.99 美元的 Pro 用不了，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 还是 Argon。</p>
+<p>Anthropic 昨天发布的 Claude Fable 5.2 价位差不多：Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，平时要另外按量付费。</p>
+<p>开发者走 Gemini API 的付费层，AI Studio 和 Android Studio 里都能调用，模型名 gemini-4-carbon，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。两周前官方没说引入期到哪天，现在定了。</p>
+<p>单价一样，账单不一定一样。官方文档写明，Carbon 每轮思考用的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半、GPT-6 Astra（10 / 50 美元）的五分之二。</p>
+<p>企业可以在 Gemini for business 里用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。</p>
+<p>【比 Argon 强在哪】</p>
+<p>官方建议的分工是：日常写功能、边聊边改代码用 Argon，快也省；复杂的根因排查、架构设计、从一大堆文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 给自家模型的建议也类似，大多数活先用 Opus 5.5，任务更大更开放再换 Fable。</p>
+<p>写网页应用时，Carbon 会反复构建、检查：既看代码，也看页面实际渲染出来的样子，发现错误自己改，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个埃菲尔铁塔建造过程的 3D 展览。</p>
+<p>推文说的“数据缺失或有问题时会提醒你，不会瞎猜”，Google 用一套 375 个任务的诚实度测试来衡量：Carbon 通过 92%，Argon 是 70%；碰到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没把样品混匀，帮实验室提高了实验的可重复性。</p>
+<p>【跟 Fable 5.2、GPT-6 Astra 比】</p>
+<p>两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。昨天 Fable 5.2 发布后，榜首换了人：现在 Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。</p>
+<p>Google 这次挑的几个第三方评测都在强调便宜。Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档 53.9%，每个任务花 2.12 美元；别家最好的 Fable 5.2 开 Max 档 51.5%，每个任务 4.64 美元，贵一倍多。</p>
+<p>Artificial Analysis 和 Google 合作推出的新评测 MKA，考 AI agent 读带图表、工程图纸的复杂文件干活，Fable 5.2 57%，Carbon 54% 排第二，Google 说 Carbon 每个任务的花费不到第一名的六分之一。</p>
+<p>写代码各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但 Cursor 官网榜单目前还没列出 Carbon，排第一的是 Fable 5.2 开 Max 档，60.0%。Anthropic 昨天公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。</p>
+<p>【/swarm：一句话拉起一支 agent 团队】</p>
+<p>Antigravity 同时预览了 /swarm 命令。输入 /swarm 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 @parser、@api-tests；每两到四个干活的 agent 配一个“验证员”，看改动、跑测试，发现问题退回去改。</p>
+<p>所有 agent 在一块共享留言板上沟通，你在侧边面板里能实时看到谁在干什么，也能点进任何一个 agent 插手。没活干的 agent 会休眠，不消耗 Token。</p>
+<p>每个 agent 可以指定不同的模型。Google 建议让 Carbon 当协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。</p>
+<p>/swarm 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 /swarm 烧额度比普通对话快得多。</p>
+<p>上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没单独写。</p>
+<p>来源：
+Google 官方博客《Gemini 4 Carbon is now available》
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/
+开发者文档《What's new in Gemini 4 Carbon》（价格、与 Argon 的区别）
+https://aistudio.google.com/docs/whats-new-gemini-4-carbon</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2120191790774960630">https://x.com/dotey/status/2120191790774960630</a></p>
+<p><strong>相关链接：</strong><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/">https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起", "url": "https://x.com/dotey/status/2120191790774960630", "lang": "zh", "html": "<h2>Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起</h2>\n\n<p>Google 正式开放 Gemini 4 Carbon：付费 API 今天可用，引入价到 11 月 30 日；普通用户要订 Ultra，每月 99.99 美元起</p>\n<p>Google 11 月 10 日把 Gemini 4 Carbon 开放给付费开发者、企业和 Google AI Ultra 订阅用户。10 月 28 日 Carbon 首次亮相时，只给通过审查的网络安全防御团队用，这次是正式上线。</p>\n<p>Google 说 Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍然是大多数写代码和知识工作的首选。</p>\n<p>【谁能用，要多少钱】</p>\n<p>普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。</p>\n<p>Ultra 有两档：每月 99.99 美元（用量是 Pro 的 5 倍）和 199.99 美元（20 倍）。</p>\n<p>每月 19.99 美元的 Pro 用不了，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 还是 Argon。</p>\n<p>Anthropic 昨天发布的 Claude Fable 5.2 价位差不多：Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，平时要另外按量付费。</p>\n<p>开发者走 Gemini API 的付费层，AI Studio 和 Android Studio 里都能调用，模型名 gemini-4-carbon，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。两周前官方没说引入期到哪天，现在定了。</p>\n<p>单价一样，账单不一定一样。官方文档写明，Carbon 每轮思考用的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半、GPT-6 Astra（10 / 50 美元）的五分之二。</p>\n<p>企业可以在 Gemini for business 里用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。</p>\n<p>【比 Argon 强在哪】</p>\n<p>官方建议的分工是：日常写功能、边聊边改代码用 Argon，快也省；复杂的根因排查、架构设计、从一大堆文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 给自家模型的建议也类似，大多数活先用 Opus 5.5，任务更大更开放再换 Fable。</p>\n<p>写网页应用时，Carbon 会反复构建、检查：既看代码，也看页面实际渲染出来的样子，发现错误自己改，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个埃菲尔铁塔建造过程的 3D 展览。</p>\n<p>推文说的“数据缺失或有问题时会提醒你，不会瞎猜”，Google 用一套 375 个任务的诚实度测试来衡量：Carbon 通过 92%，Argon 是 70%；碰到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没把样品混匀，帮实验室提高了实验的可重复性。</p>\n<p>【跟 Fable 5.2、GPT-6 Astra 比】</p>\n<p>两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。昨天 Fable 5.2 发布后，榜首换了人：现在 Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。</p>\n<p>Google 这次挑的几个第三方评测都在强调便宜。Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档 53.9%，每个任务花 2.12 美元；别家最好的 Fable 5.2 开 Max 档 51.5%，每个任务 4.64 美元，贵一倍多。</p>\n<p>Artificial Analysis 和 Google 合作推出的新评测 MKA，考 AI agent 读带图表、工程图纸的复杂文件干活，Fable 5.2 57%，Carbon 54% 排第二，Google 说 Carbon 每个任务的花费不到第一名的六分之一。</p>\n<p>写代码各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但 Cursor 官网榜单目前还没列出 Carbon，排第一的是 Fable 5.2 开 Max 档，60.0%。Anthropic 昨天公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。</p>\n<p>【/swarm：一句话拉起一支 agent 团队】</p>\n<p>Antigravity 同时预览了 /swarm 命令。输入 /swarm 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 @parser、@api-tests；每两到四个干活的 agent 配一个“验证员”，看改动、跑测试，发现问题退回去改。</p>\n<p>所有 agent 在一块共享留言板上沟通，你在侧边面板里能实时看到谁在干什么，也能点进任何一个 agent 插手。没活干的 agent 会休眠，不消耗 Token。</p>\n<p>每个 agent 可以指定不同的模型。Google 建议让 Carbon 当协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。</p>\n<p>/swarm 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 /swarm 烧额度比普通对话快得多。</p>\n<p>上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没单独写。</p>\n<p>来源：\nGoogle 官方博客《Gemini 4 Carbon is now available》\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\n开发者文档《What's new in Gemini 4 Carbon》（价格、与 Argon 的区别）\nhttps://aistudio.google.com/docs/whats-new-gemini-4-carbon</p>\n<p>原文链接：<a href=\"https://x.com/dotey/status/2120191790774960630\">https://x.com/dotey/status/2120191790774960630</a></p>\n<p>相关链接：<a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\">https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/</a></p>"}, "rewrite": {"title": "宝玉整理：Gemini 4 Carbon 正式开放，API 引入价到 11 月 30 日，普通用户需订 Ultra", "markdown": "Google 11 月 10 日正式开放 Gemini 4 Carbon。宝玉根据 Google 官方博客和开发者文档整理了这次上线的细节：付费 API 当天可用，引入价持续到 11 月 30 日；普通用户要订每月 99.99 美元起的 Google AI Ultra 才能用。10 月 28 日 Carbon 首次亮相时，只开放给通过审查的网络安全防御团队。\n\nGoogle 的定位是：Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍是大多数写代码和知识工作的首选。\n\n## 订阅门槛：Ultra 才能用，Pro 用不了\n\n普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。Ultra 有两档：每月 99.99 美元，用量是 Pro 的 5 倍；每月 199.99 美元，用量是 Pro 的 20 倍。\n\n每月 19.99 美元的 Pro 用不了 Carbon。宝玉指出，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 仍是 Argon。\n\n他拿 Anthropic 前一天发布的 Claude Fable 5.2 做对比：价位差不多，Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，但平时要另外按量付费。\n\n## API 单价和 Argon 相同，12 月 1 日起翻倍\n\n开发者通过 Gemini API 付费层调用，AI Studio 和 Android Studio 里都能用，模型名 `gemini-4-carbon`，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。宝玉提到，两周前官方没说引入期到哪天，这次定了下来。\n\n单价相同，账单未必相同。官方文档写明，Carbon 每轮思考消耗的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半，是 GPT-6 Astra（10 / 50 美元）的五分之二。\n\n企业可以在 Gemini for business 里使用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。宝玉认为，这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。\n\n## 和 Argon 怎么分工\n\n官方建议：日常写功能、边聊边改代码用 Argon，速度快也省钱；复杂的根因排查、架构设计、从大量文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 对自家模型的建议也类似，大多数任务先用 Opus 5.5，任务更大、更开放时再换 Fable。\n\n写网页应用时，Carbon 会反复构建、检查，既看代码，也看页面实际渲染出来的效果，发现错误自己修，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个展示埃菲尔铁塔建造过程的 3D 展览。\n\nGoogle 推文里说 Carbon 在数据缺失或有问题时会提醒用户、不会瞎猜。Google 用一套 375 个任务的诚实度测试衡量这一点：Carbon 通过 92%，Argon 是 70%；遇到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没有把样品混匀，帮实验室提高了实验的可重复性。\n\n## 和 Fable 5.2、GPT-6 Astra 的评测对比\n\n两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。Fable 5.2 发布后榜首易主：Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。\n\nGoogle 这次挑选的几个第三方评测都在强调成本。在 Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档得 53.9%，每个任务花 2.12 美元；其他厂商中最好的 Fable 5.2 开 Max 档得 51.5%，每个任务 4.64 美元，贵了一倍多。\n\nArtificial Analysis 和 Google 合作推出的新评测 MKA，考察 AI agent 阅读含图表、工程图纸的复杂文件来完成工作：Fable 5.2 得 57%，Carbon 54% 排第二。Google 说 Carbon 每个任务的花费不到第一名的六分之一。\n\n写代码方面各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但宝玉查看时，Cursor 官网榜单还没列出 Carbon，排第一的是开 Max 档的 Fable 5.2，60.0%。Anthropic 公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。\n\n## /swarm：一条命令拉起一组 agent\n\nAntigravity 同时预览了 `/swarm` 命令。输入 `/swarm` 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 `@parser`、`@api-tests`；每两到四个干活的 agent 配一个“验证员”，负责看改动、跑测试，发现问题就退回去改。\n\n所有 agent 在一块共享留言板上沟通，用户能在侧边面板实时看到谁在做什么，也能点进任意一个 agent 介入。没有任务的 agent 会休眠，不消耗 Token。每个 agent 可以指定不同模型，Google 建议让 Carbon 担任协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。\n\n`/swarm` 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 `/swarm` 消耗额度比普通对话快得多。\n\n## 哪些数字能独立核对\n\n宝玉特别注明：上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余都是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没有单独说明。本站没有另行打开 Google 博客和文档逐项核对。打算切换的开发者，可以先按自己的任务实测 Token 用量，再比较 12 月 1 日涨价后的实际账单。\n", "html": "<p>Google 11 月 10 日正式开放 Gemini 4 Carbon。宝玉根据 Google 官方博客和开发者文档整理了这次上线的细节：付费 API 当天可用，引入价持续到 11 月 30 日；普通用户要订每月 99.99 美元起的 Google AI Ultra 才能用。10 月 28 日 Carbon 首次亮相时，只开放给通过审查的网络安全防御团队。</p>\n<p>Google 的定位是：Carbon 是它目前最强的模型，留给最难的长任务；四周前发布的 Gemini 4 Argon，仍是大多数写代码和知识工作的首选。</p>\n<h2>订阅门槛：Ultra 才能用，Pro 用不了</h2>\n<p>普通用户要订 Google AI Ultra，才能在 Gemini App、Google 搜索的 AI 模式、Antigravity 和 AI Studio 里用 Carbon，目前在逐步推送。Ultra 有两档：每月 99.99 美元，用量是 Pro 的 5 倍；每月 199.99 美元，用量是 Pro 的 20 倍。</p>\n<p>每月 19.99 美元的 Pro 用不了 Carbon。宝玉指出，Antigravity 官方模型表里 Pro 一栏写的是不支持，Pro 用户能用的最强 Gemini 仍是 Argon。</p>\n<p>他拿 Anthropic 前一天发布的 Claude Fable 5.2 做对比：价位差不多，Max（100 美元）和 Ultra（200 美元）套餐含 Fable，最多用掉每周额度的一半；20 美元的 Pro 也能用，但平时要另外按量付费。</p>\n<h2>API 单价和 Argon 相同，12 月 1 日起翻倍</h2>\n<p>开发者通过 Gemini API 付费层调用，AI Studio 和 Android Studio 里都能用，模型名 <code>gemini-4-carbon</code>，免费层没有。价格和 Argon 一样：11 月 30 日前是引入价，每百万 Token 输入 2 美元、输出 10 美元；12 月 1 日起翻倍到 4 美元和 20 美元。宝玉提到，两周前官方没说引入期到哪天，这次定了下来。</p>\n<p>单价相同，账单未必相同。官方文档写明，Carbon 每轮思考消耗的 Token 比 Argon 多，响应也更慢，同一个任务跑下来会更贵。按单价算，涨价后的 Carbon 和 Claude Opus 5.5（4 / 20 美元）持平，是 Fable 5.2（8 / 40 美元）的一半，是 GPT-6 Astra（10 / 50 美元）的五分之二。</p>\n<p>企业可以在 Gemini for business 里使用。参加 Google 科研计划的科学家（1 万个名额，Antigravity 最高用量档免费 6 个月）这次也能用上 Carbon。网络安全防御团队仍要申请 Fairwind 计划，才能用到去掉网络安全限制的“Carbon for cyber”，上面的价格只适用于公开版。宝玉认为，这和 Anthropic 把同一个模型分成 Fable（带护栏）和 Mythos（只给审核过的机构）是一个思路。</p>\n<h2>和 Argon 怎么分工</h2>\n<p>官方建议：日常写功能、边聊边改代码用 Argon，速度快也省钱；复杂的根因排查、架构设计、从大量文档里综合信息、科学证明和安全审计交给 Carbon。Anthropic 对自家模型的建议也类似，大多数任务先用 Opus 5.5，任务更大、更开放时再换 Fable。</p>\n<p>写网页应用时，Carbon 会反复构建、检查，既看代码，也看页面实际渲染出来的效果，发现错误自己修，直到交出能跑的完整应用。Google 的演示里有它做的 3D 游戏，还有一个展示埃菲尔铁塔建造过程的 3D 展览。</p>\n<p>Google 推文里说 Carbon 在数据缺失或有问题时会提醒用户、不会瞎猜。Google 用一套 375 个任务的诚实度测试衡量这一点：Carbon 通过 92%，Argon 是 70%；遇到缺失的实验数据，98% 的情况下不会自己编；实验方法有缺陷时，68% 的情况会指出来。Google 举的例子是，只给 Carbon 实验记录和原始数据，它从异常数据里推断出仪器没有把样品混匀，帮实验室提高了实验的可重复性。</p>\n<h2>和 Fable 5.2、GPT-6 Astra 的评测对比</h2>\n<p>两周前，Carbon 在第三方评测机构 Artificial Analysis 的综合榜上排第一。Fable 5.2 发布后榜首易主：Fable 5.2 65 分，Carbon 60 分，Claude Opus 5.5 59 分，GPT-6 Astra 57 分（v5.0.1 版，各取最高档）。</p>\n<p>Google 这次挑选的几个第三方评测都在强调成本。在 Zapier 的业务流程自动化评测 AutomationBench 上，Carbon 开 High 档得 53.9%，每个任务花 2.12 美元；其他厂商中最好的 Fable 5.2 开 Max 档得 51.5%，每个任务 4.64 美元，贵了一倍多。</p>\n<p>Artificial Analysis 和 Google 合作推出的新评测 MKA，考察 AI agent 阅读含图表、工程图纸的复杂文件来完成工作：Fable 5.2 得 57%，Carbon 54% 排第二。Google 说 Carbon 每个任务的花费不到第一名的六分之一。</p>\n<p>写代码方面各家说法不一。Google 说 Carbon 在 Cursor 的 CursorBench 4.0 上排第一，但宝玉查看时，Cursor 官网榜单还没列出 Carbon，排第一的是开 Max 档的 Fable 5.2，60.0%。Anthropic 公布的 FrontierCode 2.0 成绩里，Fable 5.2 开 Xhigh 档 49.1%，GPT-6 Astra 42.8%，Carbon 41.1%。</p>\n<h2>/swarm：一条命令拉起一组 agent</h2>\n<p>Antigravity 同时预览了 <code>/swarm</code> 命令。输入 <code>/swarm</code> 加任务描述，当前对话就变成“协调员”：它把任务拆成互不冲突的几块，比如一个文件或一个包一块，每块配一个有名字的 agent，比如 <code>@parser</code>、<code>@api-tests</code>；每两到四个干活的 agent 配一个“验证员”，负责看改动、跑测试，发现问题就退回去改。</p>\n<p>所有 agent 在一块共享留言板上沟通，用户能在侧边面板实时看到谁在做什么，也能点进任意一个 agent 介入。没有任务的 agent 会休眠，不消耗 Token。每个 agent 可以指定不同模型，Google 建议让 Carbon 担任协调员、架构师和审查员，改文件、写常规代码交给更快更便宜的模型。</p>\n<p><code>/swarm</code> 目前在 Antigravity App 和命令行工具里推送，Pro 和 Ultra 用户都能用，只是 Pro 用户选不到 Carbon。官方文档提醒，每个 agent 都单独消耗额度，用 <code>/swarm</code> 消耗额度比普通对话快得多。</p>\n<h2>哪些数字能独立核对</h2>\n<p>宝玉特别注明：上面的评测成绩，除 Artificial Analysis 综合榜和 Zapier 榜单能在对方官网核对外，其余都是 Google 或 Anthropic 自己公布的；Gemini App 里用 Carbon 有多少额度，官方没有单独说明。本站没有另行打开 Google 博客和文档逐项核对。打算切换的开发者，可以先按自己的任务实测 Token 用量，再比较 12 月 1 日涨价后的实际账单。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Lenny Rachitsky 第五份科技就业报告：产品经理岗位近四年最多，工程岗位增长停滞</title>
+      <link>https://karuio.github.io/a/lennysan-tech-job-market-2026</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/lennysan-tech-job-market-2026</guid>
+      <pubDate>Tue, 10 Nov 2026 17:47:14 +0000</pubDate>
+      <author>Lenny Rachitsky</author>
+      <description><![CDATA[<p><em>科技公司开放的工程岗位同比只增 2.5%，产品经理空缺比 2023 年低点高 75%，移动和前端岗位一年近乎减半。</em></p>
+<h2>中文改写</h2>
+<p>Lenny Rachitsky 每半年整理一次科技行业的招聘和职位空缺数据，这是第五份。他说这一份是至今最出乎他意料的一次，结论有七条：产品经理在 AI 时代需求最旺；工程师需求停滞；设计岗位空缺创历史新低；每个岗位现在都要求 AI 技能；科技工作在向旧金山湾区集中；远程岗位创历史新低；科技就业市场整体增长很快，但增长主要发生在软件以外。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_main"><img src="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>工程岗位：同比增速从 29% 降到 2.5%</h2>
+<p>工程师这一条，他给了三年的同比数字：科技公司开放的工程岗位，2024 年同比增长 29%，2025 年增长 15%，2026 年只增长 2.5%。他写道，这是他开始跟踪以来工程岗位第一次停止增长，现在科技公司开放的工程岗位甚至比今年 3 月还少。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_eng"><img src="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>产品经理：空缺比 2023 年低点高 75%</h2>
+<p>产品经理的数据方向相反。外界一直在讨论 AI 会不会让产品经理变得多余，他的数据显示，开放的产品经理岗位处在近四年来的最高点，比 2023 年 3 月的低点高出 75%。2023 年初以来，产品经理岗位的增速快过其他所有核心产品岗位。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_pm"><img src="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>工程师内部在分化</h2>
+<p>工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_fde"><img src="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_mobile"><img src="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>设计师和招聘专员</h2>
+<p>设计这一块，他指出对 Figma 使用经验的需求在过去三年其实还在增长。但从今年春天起，Claude 已经成为设计师招聘描述里第二常被提到的技能。他的判断是，设计师未必会放弃 Figma，但他们开始越来越多地用其他工具。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_design"><img src="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>还有一个他称为“惊人”的数字：科技公司招聘专员的职位空缺处在有记录以来的最高水平，比 2023 年增长了 300%。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_recruiter"><img src="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>数据边界</h2>
+<p>以上内容来自 Lenny 在 X 上的主帖和六条引用主帖的续帖。完整报告在他的 newsletter 上，本站没有打开报告全文，所以数据口径（统计哪些公司、空缺数据来源）以原报告为准。他在主帖里提到的湾区集中、远程岗位减少、软件以外增长更快三点，X 帖子里没有展开具体数字。</p>
+<p>对正在找工作或规划团队的人，这组数据值得对照自己的岗位类型看：同样叫“工程师”，前置部署和移动、前端的走势差别很大；设计岗位则开始把 AI 工具经验写进要求。</p>
+
+<h2>原文</h2>
+<p><em>STATE OF THE TECH JOB MARKET IN 2026</em></p>
+<figure data-media-id="img_lenny_jobs_main"><img src="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_eng"><img src="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_pm"><img src="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_fde"><img src="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_mobile"><img src="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_design"><img src="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_recruiter"><img src="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>STATE OF THE TECH JOB MARKET IN 2026</p>
+<p>Twice a year, I dig into trends in hiring and job openings. This is the fifth report I've done, and the most surprising yet:</p>
+<ol>
+<li>PMs are winning in the AI era</li>
+<li>Engineering demand has stalled</li>
+<li>Design openings are at a record low</li>
+<li>Every role now requires AI skills</li>
+<li>Tech jobs are concentrating in the Bay Area</li>
+<li>Remote roles are at a record low</li>
+<li>The tech job market is growing fast, but mostly outside of software (gasp!)</li>
+</ol>
+<p>Full report here: https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late</p>
+<p><strong>Follow-up post (quoting the report post), https://x.com/lennysan/status/2120222674119262434</strong></p>
+<p>For the first time since I started tracking, engineering job openings have stalled.</p>
+<p>Year-over-year growth in open eng roles at tech companies:</p>
+<ul>
+<li>2024: +29%</li>
+<li>2025: +15%</li>
+<li>2026: +2.5%</li>
+</ul>
+<p>There are fewer open eng roles at tech companies today than there were in March.</p>
+<p>More here: https://www.lennysnewsletter.com/i/224206488/takeaway-2-demand-for-engineers-is-plateauing</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120233740026974287</strong></p>
+<p>Narrative violation: Product managers are benefiting most in the AI era</p>
+<p>There’s been a lot of talk about AI replacing product managers (“who needs ’em!”). But so far, the data is showing the exact opposite.</p>
+<p>There are more open PM roles than at any point in nearly four years, up 75% from the March 2023 low, and PM openings have grown faster than any other core product role since the start of 2023.</p>
+<p>More here: https://www.lennysnewsletter.com/i/224206488/takeaway-1-product-managers-seem-to-be-benefiting-most-in-the-ai-era</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120244660123902315</strong></p>
+<p>Forward Deployed Engineering job openings are exploding</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120259172902256711</strong></p>
+<p>Narrative violation: Demand for experience with @Figma has actually grown over the past three years</p>
+<p>BUT, as of this spring, Claude is now the second most mentioned skill in designer JDs.</p>
+<p>Times, they are a-changin’.</p>
+<p>Designers may not be dropping Figma, but for the first time in a long time, designers are increasingly reaching for other tools too.</p>
+<p>More data here: https://www.lennysnewsletter.com/i/224206488/takeaway-4-everybody-now-needs-to-ai</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120274852766703938</strong></p>
+<p>Engineering is changing: FDE is ascendant while mobile and front-end roles are disappearing.</p>
+<p>Open mobile and front-end engineers jobs have been nearly halved in the past year!</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120305088162050172</strong></p>
+<p>Wild stat: Tech recruiter openings are at the highest levels they've ever been at, up 300% in since 2023</p>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2120211695453028770">https://x.com/lennysan/status/2120211695453028770</a></p>
+<p><strong>相关链接：</strong><a href="https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late">https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>科技公司开放的工程岗位同比只增 2.5%，产品经理空缺比 2023 年低点高 75%，移动和前端岗位一年近乎减半。</em></p>
+<h2>中文改写</h2>
+<p>Lenny Rachitsky 每半年整理一次科技行业的招聘和职位空缺数据，这是第五份。他说这一份是至今最出乎他意料的一次，结论有七条：产品经理在 AI 时代需求最旺；工程师需求停滞；设计岗位空缺创历史新低；每个岗位现在都要求 AI 技能；科技工作在向旧金山湾区集中；远程岗位创历史新低；科技就业市场整体增长很快，但增长主要发生在软件以外。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_main"><img src="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>工程岗位：同比增速从 29% 降到 2.5%</h2>
+<p>工程师这一条，他给了三年的同比数字：科技公司开放的工程岗位，2024 年同比增长 29%，2025 年增长 15%，2026 年只增长 2.5%。他写道，这是他开始跟踪以来工程岗位第一次停止增长，现在科技公司开放的工程岗位甚至比今年 3 月还少。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_eng"><img src="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>产品经理：空缺比 2023 年低点高 75%</h2>
+<p>产品经理的数据方向相反。外界一直在讨论 AI 会不会让产品经理变得多余，他的数据显示，开放的产品经理岗位处在近四年来的最高点，比 2023 年 3 月的低点高出 75%。2023 年初以来，产品经理岗位的增速快过其他所有核心产品岗位。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_pm"><img src="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>工程师内部在分化</h2>
+<p>工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_fde"><img src="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_mobile"><img src="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>设计师和招聘专员</h2>
+<p>设计这一块，他指出对 Figma 使用经验的需求在过去三年其实还在增长。但从今年春天起，Claude 已经成为设计师招聘描述里第二常被提到的技能。他的判断是，设计师未必会放弃 Figma，但他们开始越来越多地用其他工具。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_design"><img src="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>还有一个他称为“惊人”的数字：科技公司招聘专员的职位空缺处在有记录以来的最高水平，比 2023 年增长了 300%。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_lenny_jobs_recruiter"><img src="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>数据边界</h2>
+<p>以上内容来自 Lenny 在 X 上的主帖和六条引用主帖的续帖。完整报告在他的 newsletter 上，本站没有打开报告全文，所以数据口径（统计哪些公司、空缺数据来源）以原报告为准。他在主帖里提到的湾区集中、远程岗位减少、软件以外增长更快三点，X 帖子里没有展开具体数字。</p>
+<p>对正在找工作或规划团队的人，这组数据值得对照自己的岗位类型看：同样叫“工程师”，前置部署和移动、前端的走势差别很大；设计岗位则开始把 AI 工具经验写进要求。</p>
+
+<h2>原文</h2>
+<p><em>STATE OF THE TECH JOB MARKET IN 2026</em></p>
+<figure data-media-id="img_lenny_jobs_main"><img src="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_eng"><img src="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_pm"><img src="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_fde"><img src="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWye866boAAjTWb.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_mobile"><img src="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_design"><img src="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_lenny_jobs_recruiter"><img src="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>STATE OF THE TECH JOB MARKET IN 2026</p>
+<p>Twice a year, I dig into trends in hiring and job openings. This is the fifth report I've done, and the most surprising yet:</p>
+<ol>
+<li>PMs are winning in the AI era</li>
+<li>Engineering demand has stalled</li>
+<li>Design openings are at a record low</li>
+<li>Every role now requires AI skills</li>
+<li>Tech jobs are concentrating in the Bay Area</li>
+<li>Remote roles are at a record low</li>
+<li>The tech job market is growing fast, but mostly outside of software (gasp!)</li>
+</ol>
+<p>Full report here: https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late</p>
+<p><strong>Follow-up post (quoting the report post), https://x.com/lennysan/status/2120222674119262434</strong></p>
+<p>For the first time since I started tracking, engineering job openings have stalled.</p>
+<p>Year-over-year growth in open eng roles at tech companies:</p>
+<ul>
+<li>2024: +29%</li>
+<li>2025: +15%</li>
+<li>2026: +2.5%</li>
+</ul>
+<p>There are fewer open eng roles at tech companies today than there were in March.</p>
+<p>More here: https://www.lennysnewsletter.com/i/224206488/takeaway-2-demand-for-engineers-is-plateauing</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120233740026974287</strong></p>
+<p>Narrative violation: Product managers are benefiting most in the AI era</p>
+<p>There’s been a lot of talk about AI replacing product managers (“who needs ’em!”). But so far, the data is showing the exact opposite.</p>
+<p>There are more open PM roles than at any point in nearly four years, up 75% from the March 2023 low, and PM openings have grown faster than any other core product role since the start of 2023.</p>
+<p>More here: https://www.lennysnewsletter.com/i/224206488/takeaway-1-product-managers-seem-to-be-benefiting-most-in-the-ai-era</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120244660123902315</strong></p>
+<p>Forward Deployed Engineering job openings are exploding</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120259172902256711</strong></p>
+<p>Narrative violation: Demand for experience with @Figma has actually grown over the past three years</p>
+<p>BUT, as of this spring, Claude is now the second most mentioned skill in designer JDs.</p>
+<p>Times, they are a-changin’.</p>
+<p>Designers may not be dropping Figma, but for the first time in a long time, designers are increasingly reaching for other tools too.</p>
+<p>More data here: https://www.lennysnewsletter.com/i/224206488/takeaway-4-everybody-now-needs-to-ai</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120274852766703938</strong></p>
+<p>Engineering is changing: FDE is ascendant while mobile and front-end roles are disappearing.</p>
+<p>Open mobile and front-end engineers jobs have been nearly halved in the past year!</p>
+<p><strong>Follow-up post, https://x.com/lennysan/status/2120305088162050172</strong></p>
+<p>Wild stat: Tech recruiter openings are at the highest levels they've ever been at, up 300% in since 2023</p>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2120211695453028770">https://x.com/lennysan/status/2120211695453028770</a></p>
+<p><strong>相关链接：</strong><a href="https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late">https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "STATE OF THE TECH JOB MARKET IN 2026", "url": "https://x.com/lennysan/status/2120211695453028770", "lang": "en", "html": "<h2>STATE OF THE TECH JOB MARKET IN 2026</h2>\n<figure data-media-id=\"img_lenny_jobs_main\"><img src=\"https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_eng\"><img src=\"https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_pm\"><img src=\"https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_fde\"><img src=\"https://pbs.twimg.com/media/HWye866boAAjTWb.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWye866boAAjTWb.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_mobile\"><img src=\"https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_design\"><img src=\"https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_recruiter\"><img src=\"https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>STATE OF THE TECH JOB MARKET IN 2026</p>\n<p>Twice a year, I dig into trends in hiring and job openings. This is the fifth report I've done, and the most surprising yet:</p>\n<ol>\n<li>PMs are winning in the AI era</li>\n<li>Engineering demand has stalled</li>\n<li>Design openings are at a record low</li>\n<li>Every role now requires AI skills</li>\n<li>Tech jobs are concentrating in the Bay Area</li>\n<li>Remote roles are at a record low</li>\n<li>The tech job market is growing fast, but mostly outside of software (gasp!)</li>\n</ol>\n<p>Full report here: https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late</p>\n<p><strong>Follow-up post (quoting the report post), https://x.com/lennysan/status/2120222674119262434</strong></p>\n<p>For the first time since I started tracking, engineering job openings have stalled.</p>\n<p>Year-over-year growth in open eng roles at tech companies:</p>\n<ul>\n<li>2024: +29%</li>\n<li>2025: +15%</li>\n<li>2026: +2.5%</li>\n</ul>\n<p>There are fewer open eng roles at tech companies today than there were in March.</p>\n<p>More here: https://www.lennysnewsletter.com/i/224206488/takeaway-2-demand-for-engineers-is-plateauing</p>\n<p><strong>Follow-up post, https://x.com/lennysan/status/2120233740026974287</strong></p>\n<p>Narrative violation: Product managers are benefiting most in the AI era</p>\n<p>There’s been a lot of talk about AI replacing product managers (“who needs ’em!”). But so far, the data is showing the exact opposite.</p>\n<p>There are more open PM roles than at any point in nearly four years, up 75% from the March 2023 low, and PM openings have grown faster than any other core product role since the start of 2023.</p>\n<p>More here: https://www.lennysnewsletter.com/i/224206488/takeaway-1-product-managers-seem-to-be-benefiting-most-in-the-ai-era</p>\n<p><strong>Follow-up post, https://x.com/lennysan/status/2120244660123902315</strong></p>\n<p>Forward Deployed Engineering job openings are exploding</p>\n<p><strong>Follow-up post, https://x.com/lennysan/status/2120259172902256711</strong></p>\n<p>Narrative violation: Demand for experience with @Figma has actually grown over the past three years</p>\n<p>BUT, as of this spring, Claude is now the second most mentioned skill in designer JDs.</p>\n<p>Times, they are a-changin’.</p>\n<p>Designers may not be dropping Figma, but for the first time in a long time, designers are increasingly reaching for other tools too.</p>\n<p>More data here: https://www.lennysnewsletter.com/i/224206488/takeaway-4-everybody-now-needs-to-ai</p>\n<p><strong>Follow-up post, https://x.com/lennysan/status/2120274852766703938</strong></p>\n<p>Engineering is changing: FDE is ascendant while mobile and front-end roles are disappearing.</p>\n<p>Open mobile and front-end engineers jobs have been nearly halved in the past year!</p>\n<p><strong>Follow-up post, https://x.com/lennysan/status/2120305088162050172</strong></p>\n<p>Wild stat: Tech recruiter openings are at the highest levels they've ever been at, up 300% in since 2023</p>\n<p>原文链接：<a href=\"https://x.com/lennysan/status/2120211695453028770\">https://x.com/lennysan/status/2120211695453028770</a></p>\n<p>相关链接：<a href=\"https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late\">https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late</a></p>"}, "rewrite": {"title": "Lenny Rachitsky 第五份科技就业报告：产品经理岗位近四年最多，工程岗位增长停滞", "markdown": "Lenny Rachitsky 每半年整理一次科技行业的招聘和职位空缺数据，这是第五份。他说这一份是至今最出乎他意料的一次，结论有七条：产品经理在 AI 时代需求最旺；工程师需求停滞；设计岗位空缺创历史新低；每个岗位现在都要求 AI 技能；科技工作在向旧金山湾区集中；远程岗位创历史新低；科技就业市场整体增长很快，但增长主要发生在软件以外。\n\n![原帖配图](<https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg>)\n\n## 工程岗位：同比增速从 29% 降到 2.5%\n\n工程师这一条，他给了三年的同比数字：科技公司开放的工程岗位，2024 年同比增长 29%，2025 年增长 15%，2026 年只增长 2.5%。他写道，这是他开始跟踪以来工程岗位第一次停止增长，现在科技公司开放的工程岗位甚至比今年 3 月还少。\n\n![原帖配图](<https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg>)\n\n## 产品经理：空缺比 2023 年低点高 75%\n\n产品经理的数据方向相反。外界一直在讨论 AI 会不会让产品经理变得多余，他的数据显示，开放的产品经理岗位处在近四年来的最高点，比 2023 年 3 月的低点高出 75%。2023 年初以来，产品经理岗位的增速快过其他所有核心产品岗位。\n\n![原帖配图](<https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg>)\n\n## 工程师内部在分化\n\n工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。\n\n![原帖配图](<https://pbs.twimg.com/media/HWye866boAAjTWb.jpg>)\n\n![原帖配图](<https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg>)\n\n## 设计师和招聘专员\n\n设计这一块，他指出对 Figma 使用经验的需求在过去三年其实还在增长。但从今年春天起，Claude 已经成为设计师招聘描述里第二常被提到的技能。他的判断是，设计师未必会放弃 Figma，但他们开始越来越多地用其他工具。\n\n![原帖配图](<https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg>)\n\n还有一个他称为“惊人”的数字：科技公司招聘专员的职位空缺处在有记录以来的最高水平，比 2023 年增长了 300%。\n\n![原帖配图](<https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg>)\n\n## 数据边界\n\n以上内容来自 Lenny 在 X 上的主帖和六条引用主帖的续帖。完整报告在他的 newsletter 上，本站没有打开报告全文，所以数据口径（统计哪些公司、空缺数据来源）以原报告为准。他在主帖里提到的湾区集中、远程岗位减少、软件以外增长更快三点，X 帖子里没有展开具体数字。\n\n对正在找工作或规划团队的人，这组数据值得对照自己的岗位类型看：同样叫“工程师”，前置部署和移动、前端的走势差别很大；设计岗位则开始把 AI 工具经验写进要求。\n", "html": "<p>Lenny Rachitsky 每半年整理一次科技行业的招聘和职位空缺数据，这是第五份。他说这一份是至今最出乎他意料的一次，结论有七条：产品经理在 AI 时代需求最旺；工程师需求停滞；设计岗位空缺创历史新低；每个岗位现在都要求 AI 技能；科技工作在向旧金山湾区集中；远程岗位创历史新低；科技就业市场整体增长很快，但增长主要发生在软件以外。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_lenny_jobs_main\"><img src=\"https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>工程岗位：同比增速从 29% 降到 2.5%</h2>\n<p>工程师这一条，他给了三年的同比数字：科技公司开放的工程岗位，2024 年同比增长 29%，2025 年增长 15%，2026 年只增长 2.5%。他写道，这是他开始跟踪以来工程岗位第一次停止增长，现在科技公司开放的工程岗位甚至比今年 3 月还少。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_lenny_jobs_eng\"><img src=\"https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>产品经理：空缺比 2023 年低点高 75%</h2>\n<p>产品经理的数据方向相反。外界一直在讨论 AI 会不会让产品经理变得多余，他的数据显示，开放的产品经理岗位处在近四年来的最高点，比 2023 年 3 月的低点高出 75%。2023 年初以来，产品经理岗位的增速快过其他所有核心产品岗位。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_lenny_jobs_pm\"><img src=\"https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>工程师内部在分化</h2>\n<p>工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_lenny_jobs_fde\"><img src=\"https://pbs.twimg.com/media/HWye866boAAjTWb.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWye866boAAjTWb.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_lenny_jobs_mobile\"><img src=\"https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>设计师和招聘专员</h2>\n<p>设计这一块，他指出对 Figma 使用经验的需求在过去三年其实还在增长。但从今年春天起，Claude 已经成为设计师招聘描述里第二常被提到的技能。他的判断是，设计师未必会放弃 Figma，但他们开始越来越多地用其他工具。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_lenny_jobs_design\"><img src=\"https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>还有一个他称为“惊人”的数字：科技公司招聘专员的职位空缺处在有记录以来的最高水平，比 2023 年增长了 300%。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_lenny_jobs_recruiter\"><img src=\"https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>数据边界</h2>\n<p>以上内容来自 Lenny 在 X 上的主帖和六条引用主帖的续帖。完整报告在他的 newsletter 上，本站没有打开报告全文，所以数据口径（统计哪些公司、空缺数据来源）以原报告为准。他在主帖里提到的湾区集中、远程岗位减少、软件以外增长更快三点，X 帖子里没有展开具体数字。</p>\n<p>对正在找工作或规划团队的人，这组数据值得对照自己的岗位类型看：同样叫“工程师”，前置部署和移动、前端的走势差别很大；设计岗位则开始把 AI 工具经验写进要求。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Simon Taylor：Airwallex CEO 联合创办的支付链 Alta 融资 8000 万美元，难点在中立性</title>
+      <link>https://karuio.github.io/a/sytaylor-airwallex-alta</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/sytaylor-airwallex-alta</guid>
+      <pubDate>Tue, 10 Nov 2026 15:07:51 +0000</pubDate>
+      <author>Simon Taylor</author>
+      <description><![CDATA[<p><em>Alta 先用代币化资产优化 Airwallex 自己的跨境资金池；他追问的是，竞争对手会不会在这条链上结算。</em></p>
+<h2>中文改写</h2>
+<p>Airwallex 首席执行官 Jack Zhang 联合创办了一条区块链，名叫 Alta，累计融资 8000 万美元。Simon Taylor 写道，Index Ventures 当天领投了 4750 万美元的 A 轮；此前的 3250 万美元种子轮，由 Airwallex 和其创始人基金 Capital 49 联合领投。</p>
+<p>Alta 面向银行和支付公司。按他的描述，付款信息只在交易双方之间可见，每家机构自己的制裁筛查和合规策略检查，作为付款流程的一部分直接执行。Alta 称，接入 Airwallex 的本地出款网络后，可以覆盖 200 个国家和 90 种货币。</p>
+<h2>第一个产品：先优化 Airwallex 自己的资金池</h2>
+<p>Jack Zhang 以前评价加密货币时说过，“你不可能比即时更快”。Taylor 认为，对 Airwallex 的客户来说这话有道理：Airwallex 出款快，是因为它在全球各地预先存着本地货币资金池。</p>
+<p>问题在于，囤着这些现金成本很高。Alta 的第一个产品，是在每个市场需要时才即时注资，其余资金先放在能生息的代币化资产里，用到时再取。资金池在 Airwallex 手里，所以 Alta 最先能优化的就是 Airwallex 自己的资金管理。Taylor 把这比作多数银行做代币化服务时，也是先从内部资金管理开始。</p>
+<h2>竞争对手会不会上这条链</h2>
+<p>他提出的疑问是中立性。Alta 自称是银行和支付机构的中立基础设施，但目前公开点名的用户只有 Airwallex 一家。Wise、Nium 或者某家银行，会愿意在竞争对手 CEO 联合创办的链上做结算吗？Alta 的隐私设计可以让 Airwallex 看不到对手的付款，但对手用得越多，壮大的仍是 Airwallex 出资扶起来的网络。</p>
+<p>他认为这件事能做成，并举了 Visa 的先例：美国银行（Bank of America）运营 BankAmericard 到 1970 年，之后把控制权交给发卡银行，这些银行组建的公司后来成了 Visa。</p>
+<p>他给被支付链找上门的机构列了三个问题：除了发起方，还有谁已经在链上实际运行？在你的业务通道上，谁负责本地货币出款？网络扩大以后，规则由谁控制？</p>
+<p>他的结论是，Alta 借 Airwallex 的出款网络起步，在稳定币领域这是很大的先发优势。接下来他要看的是第二个公开点名的客户，以及银行和非银行机构怎样从这条链上获得价值。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_sytaylor_alta"><img src="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M</em></p>
+<figure data-media-id="img_sytaylor_alta"><img src="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>🚨 BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M</p>
+<p>The chain is called Alta. Index Ventures led a $47.5M Series A today, after a $32.5M seed co-led by Airwallex and its founders' fund, Capital 49.</p>
+<hr>
+<p>Alta is built for banks and payment companies. Payments stay private between the two parties, and each institution's sanctions and policy checks run as part of the payment.</p>
+<p>Alta says it will reach 200 countries and 90 currencies by connecting to Airwallex's local payout network.</p>
+<hr>
+<p>Zhang once said of crypto "you cannot be faster than instant", and for Airwallex customers he had a point. Airwallex pays out fast because it holds pools of local currency around the world.</p>
+<p>Holding that cash is expensive. Alta's first product will fund each market just in time and keep the rest in yield-bearing tokenized assets until it's needed.</p>
+<p>Airwallex holds those pools, so its own treasury is the first one Alta can improve.</p>
+<p>Sort of like how most banks started with internal treasury for their tokenization services.</p>
+<hr>
+<p>Alta calls itself neutral infrastructure for banks and payment providers, and Airwallex is the only named user so far.</p>
+<p>Would Wise, Nium or a bank settle on a chain that a rival's CEO co-founded?</p>
+<p>Alta's privacy design would hide a rival's payments from Airwallex. The rival would still be growing a network Airwallex helped fund.</p>
+<hr>
+<p>It can be done.</p>
+<p>Visa faced the same question. Bank of America ran BankAmericard until 1970, then handed control to the banks that issued the card. Those banks formed the company that became Visa.</p>
+<p>If a payments chain pitches you, I'd ask three things:</p>
+<ul>
+<li>Who is live on it besides the sponsor?</li>
+<li>Who pays out in local currency on your corridors?</li>
+<li>Who controls the rules as it grows?</li>
+</ul>
+<p>Alta gets a head start from Airwallex's payout network. And in stablecoins that's a HUGE leg up.</p>
+<p>I'm watching for the second named customer. And how banks and non banks start to get value from it.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2120171585772335236">https://x.com/sytaylor/status/2120171585772335236</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Alta 先用代币化资产优化 Airwallex 自己的跨境资金池；他追问的是，竞争对手会不会在这条链上结算。</em></p>
+<h2>中文改写</h2>
+<p>Airwallex 首席执行官 Jack Zhang 联合创办了一条区块链，名叫 Alta，累计融资 8000 万美元。Simon Taylor 写道，Index Ventures 当天领投了 4750 万美元的 A 轮；此前的 3250 万美元种子轮，由 Airwallex 和其创始人基金 Capital 49 联合领投。</p>
+<p>Alta 面向银行和支付公司。按他的描述，付款信息只在交易双方之间可见，每家机构自己的制裁筛查和合规策略检查，作为付款流程的一部分直接执行。Alta 称，接入 Airwallex 的本地出款网络后，可以覆盖 200 个国家和 90 种货币。</p>
+<h2>第一个产品：先优化 Airwallex 自己的资金池</h2>
+<p>Jack Zhang 以前评价加密货币时说过，“你不可能比即时更快”。Taylor 认为，对 Airwallex 的客户来说这话有道理：Airwallex 出款快，是因为它在全球各地预先存着本地货币资金池。</p>
+<p>问题在于，囤着这些现金成本很高。Alta 的第一个产品，是在每个市场需要时才即时注资，其余资金先放在能生息的代币化资产里，用到时再取。资金池在 Airwallex 手里，所以 Alta 最先能优化的就是 Airwallex 自己的资金管理。Taylor 把这比作多数银行做代币化服务时，也是先从内部资金管理开始。</p>
+<h2>竞争对手会不会上这条链</h2>
+<p>他提出的疑问是中立性。Alta 自称是银行和支付机构的中立基础设施，但目前公开点名的用户只有 Airwallex 一家。Wise、Nium 或者某家银行，会愿意在竞争对手 CEO 联合创办的链上做结算吗？Alta 的隐私设计可以让 Airwallex 看不到对手的付款，但对手用得越多，壮大的仍是 Airwallex 出资扶起来的网络。</p>
+<p>他认为这件事能做成，并举了 Visa 的先例：美国银行（Bank of America）运营 BankAmericard 到 1970 年，之后把控制权交给发卡银行，这些银行组建的公司后来成了 Visa。</p>
+<p>他给被支付链找上门的机构列了三个问题：除了发起方，还有谁已经在链上实际运行？在你的业务通道上，谁负责本地货币出款？网络扩大以后，规则由谁控制？</p>
+<p>他的结论是，Alta 借 Airwallex 的出款网络起步，在稳定币领域这是很大的先发优势。接下来他要看的是第二个公开点名的客户，以及银行和非银行机构怎样从这条链上获得价值。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_sytaylor_alta"><img src="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M</em></p>
+<figure data-media-id="img_sytaylor_alta"><img src="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>🚨 BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M</p>
+<p>The chain is called Alta. Index Ventures led a $47.5M Series A today, after a $32.5M seed co-led by Airwallex and its founders' fund, Capital 49.</p>
+<hr>
+<p>Alta is built for banks and payment companies. Payments stay private between the two parties, and each institution's sanctions and policy checks run as part of the payment.</p>
+<p>Alta says it will reach 200 countries and 90 currencies by connecting to Airwallex's local payout network.</p>
+<hr>
+<p>Zhang once said of crypto "you cannot be faster than instant", and for Airwallex customers he had a point. Airwallex pays out fast because it holds pools of local currency around the world.</p>
+<p>Holding that cash is expensive. Alta's first product will fund each market just in time and keep the rest in yield-bearing tokenized assets until it's needed.</p>
+<p>Airwallex holds those pools, so its own treasury is the first one Alta can improve.</p>
+<p>Sort of like how most banks started with internal treasury for their tokenization services.</p>
+<hr>
+<p>Alta calls itself neutral infrastructure for banks and payment providers, and Airwallex is the only named user so far.</p>
+<p>Would Wise, Nium or a bank settle on a chain that a rival's CEO co-founded?</p>
+<p>Alta's privacy design would hide a rival's payments from Airwallex. The rival would still be growing a network Airwallex helped fund.</p>
+<hr>
+<p>It can be done.</p>
+<p>Visa faced the same question. Bank of America ran BankAmericard until 1970, then handed control to the banks that issued the card. Those banks formed the company that became Visa.</p>
+<p>If a payments chain pitches you, I'd ask three things:</p>
+<ul>
+<li>Who is live on it besides the sponsor?</li>
+<li>Who pays out in local currency on your corridors?</li>
+<li>Who controls the rules as it grows?</li>
+</ul>
+<p>Alta gets a head start from Airwallex's payout network. And in stablecoins that's a HUGE leg up.</p>
+<p>I'm watching for the second named customer. And how banks and non banks start to get value from it.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2120171585772335236">https://x.com/sytaylor/status/2120171585772335236</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M", "url": "https://x.com/sytaylor/status/2120171585772335236", "lang": "en", "html": "<h2>BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M</h2>\n<figure data-media-id=\"img_sytaylor_alta\"><img src=\"https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>🚨 BREAKING: Airwallex CEO Jack Zhang co-founded a blockchain and it has raised $80M</p>\n<p>The chain is called Alta. Index Ventures led a $47.5M Series A today, after a $32.5M seed co-led by Airwallex and its founders' fund, Capital 49.</p>\n<hr>\n<p>Alta is built for banks and payment companies. Payments stay private between the two parties, and each institution's sanctions and policy checks run as part of the payment.</p>\n<p>Alta says it will reach 200 countries and 90 currencies by connecting to Airwallex's local payout network.</p>\n<hr>\n<p>Zhang once said of crypto \"you cannot be faster than instant\", and for Airwallex customers he had a point. Airwallex pays out fast because it holds pools of local currency around the world.</p>\n<p>Holding that cash is expensive. Alta's first product will fund each market just in time and keep the rest in yield-bearing tokenized assets until it's needed.</p>\n<p>Airwallex holds those pools, so its own treasury is the first one Alta can improve.</p>\n<p>Sort of like how most banks started with internal treasury for their tokenization services.</p>\n<hr>\n<p>Alta calls itself neutral infrastructure for banks and payment providers, and Airwallex is the only named user so far.</p>\n<p>Would Wise, Nium or a bank settle on a chain that a rival's CEO co-founded?</p>\n<p>Alta's privacy design would hide a rival's payments from Airwallex. The rival would still be growing a network Airwallex helped fund.</p>\n<hr>\n<p>It can be done.</p>\n<p>Visa faced the same question. Bank of America ran BankAmericard until 1970, then handed control to the banks that issued the card. Those banks formed the company that became Visa.</p>\n<p>If a payments chain pitches you, I'd ask three things:</p>\n<ul>\n<li>Who is live on it besides the sponsor?</li>\n<li>Who pays out in local currency on your corridors?</li>\n<li>Who controls the rules as it grows?</li>\n</ul>\n<p>Alta gets a head start from Airwallex's payout network. And in stablecoins that's a HUGE leg up.</p>\n<p>I'm watching for the second named customer. And how banks and non banks start to get value from it.</p>\n<p>原文链接：<a href=\"https://x.com/sytaylor/status/2120171585772335236\">https://x.com/sytaylor/status/2120171585772335236</a></p>"}, "rewrite": {"title": "Simon Taylor：Airwallex CEO 联合创办的支付链 Alta 融资 8000 万美元，难点在中立性", "markdown": "Airwallex 首席执行官 Jack Zhang 联合创办了一条区块链，名叫 Alta，累计融资 8000 万美元。Simon Taylor 写道，Index Ventures 当天领投了 4750 万美元的 A 轮；此前的 3250 万美元种子轮，由 Airwallex 和其创始人基金 Capital 49 联合领投。\n\nAlta 面向银行和支付公司。按他的描述，付款信息只在交易双方之间可见，每家机构自己的制裁筛查和合规策略检查，作为付款流程的一部分直接执行。Alta 称，接入 Airwallex 的本地出款网络后，可以覆盖 200 个国家和 90 种货币。\n\n## 第一个产品：先优化 Airwallex 自己的资金池\n\nJack Zhang 以前评价加密货币时说过，“你不可能比即时更快”。Taylor 认为，对 Airwallex 的客户来说这话有道理：Airwallex 出款快，是因为它在全球各地预先存着本地货币资金池。\n\n问题在于，囤着这些现金成本很高。Alta 的第一个产品，是在每个市场需要时才即时注资，其余资金先放在能生息的代币化资产里，用到时再取。资金池在 Airwallex 手里，所以 Alta 最先能优化的就是 Airwallex 自己的资金管理。Taylor 把这比作多数银行做代币化服务时，也是先从内部资金管理开始。\n\n## 竞争对手会不会上这条链\n\n他提出的疑问是中立性。Alta 自称是银行和支付机构的中立基础设施，但目前公开点名的用户只有 Airwallex 一家。Wise、Nium 或者某家银行，会愿意在竞争对手 CEO 联合创办的链上做结算吗？Alta 的隐私设计可以让 Airwallex 看不到对手的付款，但对手用得越多，壮大的仍是 Airwallex 出资扶起来的网络。\n\n他认为这件事能做成，并举了 Visa 的先例：美国银行（Bank of America）运营 BankAmericard 到 1970 年，之后把控制权交给发卡银行，这些银行组建的公司后来成了 Visa。\n\n他给被支付链找上门的机构列了三个问题：除了发起方，还有谁已经在链上实际运行？在你的业务通道上，谁负责本地货币出款？网络扩大以后，规则由谁控制？\n\n他的结论是，Alta 借 Airwallex 的出款网络起步，在稳定币领域这是很大的先发优势。接下来他要看的是第二个公开点名的客户，以及银行和非银行机构怎样从这条链上获得价值。\n\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原帖配图](<https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg>)", "html": "<p>Airwallex 首席执行官 Jack Zhang 联合创办了一条区块链，名叫 Alta，累计融资 8000 万美元。Simon Taylor 写道，Index Ventures 当天领投了 4750 万美元的 A 轮；此前的 3250 万美元种子轮，由 Airwallex 和其创始人基金 Capital 49 联合领投。</p>\n<p>Alta 面向银行和支付公司。按他的描述，付款信息只在交易双方之间可见，每家机构自己的制裁筛查和合规策略检查，作为付款流程的一部分直接执行。Alta 称，接入 Airwallex 的本地出款网络后，可以覆盖 200 个国家和 90 种货币。</p>\n<h2>第一个产品：先优化 Airwallex 自己的资金池</h2>\n<p>Jack Zhang 以前评价加密货币时说过，“你不可能比即时更快”。Taylor 认为，对 Airwallex 的客户来说这话有道理：Airwallex 出款快，是因为它在全球各地预先存着本地货币资金池。</p>\n<p>问题在于，囤着这些现金成本很高。Alta 的第一个产品，是在每个市场需要时才即时注资，其余资金先放在能生息的代币化资产里，用到时再取。资金池在 Airwallex 手里，所以 Alta 最先能优化的就是 Airwallex 自己的资金管理。Taylor 把这比作多数银行做代币化服务时，也是先从内部资金管理开始。</p>\n<h2>竞争对手会不会上这条链</h2>\n<p>他提出的疑问是中立性。Alta 自称是银行和支付机构的中立基础设施，但目前公开点名的用户只有 Airwallex 一家。Wise、Nium 或者某家银行，会愿意在竞争对手 CEO 联合创办的链上做结算吗？Alta 的隐私设计可以让 Airwallex 看不到对手的付款，但对手用得越多，壮大的仍是 Airwallex 出资扶起来的网络。</p>\n<p>他认为这件事能做成，并举了 Visa 的先例：美国银行（Bank of America）运营 BankAmericard 到 1970 年，之后把控制权交给发卡银行，这些银行组建的公司后来成了 Visa。</p>\n<p>他给被支付链找上门的机构列了三个问题：除了发起方，还有谁已经在链上实际运行？在你的业务通道上，谁负责本地货币出款？网络扩大以后，规则由谁控制？</p>\n<p>他的结论是，Alta 借 Airwallex 的出款网络起步，在稳定币领域这是很大的先发优势。接下来他要看的是第二个公开点名的客户，以及银行和非银行机构怎样从这条链上获得价值。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_sytaylor_alta\"><img src=\"https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HWxcqUFW0AEkWPE.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
     <item>
       <title>宝玉：Sutton 本人出来说明，《苦涩的教训》批判的是硬编码人类知识</title>
       <link>https://karuio.github.io/a/dotey-bitter-lesson</link>

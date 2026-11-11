@@ -1,5 +1,50 @@
 [
   {
+    "id": "dotey-gemini-4-carbon-launch",
+    "date": "2026-11-10",
+    "title": "宝玉整理：Gemini 4 Carbon 正式开放，API 引入价到 11 月 30 日，普通用户需订 Ultra",
+    "dek": "单价与 Argon 相同但更耗 Token；评测成绩多为厂商自报，另有一条可拉起多 agent 协作的 /swarm 命令。",
+    "url": "/a/dotey-gemini-4-carbon-launch",
+    "source_url": "https://x.com/dotey/status/2120191790774960630",
+    "tags": [
+      "Gemini",
+      "模型发布",
+      "定价",
+      "Agent"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "lennysan-tech-job-market-2026",
+    "date": "2026-11-10",
+    "title": "Lenny Rachitsky 第五份科技就业报告：产品经理岗位近四年最多，工程岗位增长停滞",
+    "dek": "科技公司开放的工程岗位同比只增 2.5%，产品经理空缺比 2023 年低点高 75%，移动和前端岗位一年近乎减半。",
+    "url": "/a/lennysan-tech-job-market-2026",
+    "source_url": "https://x.com/lennysan/status/2120211695453028770",
+    "tags": [
+      "就业",
+      "产品经理",
+      "工程师",
+      "AI"
+    ],
+    "sector": "消费/产品"
+  },
+  {
+    "id": "sytaylor-airwallex-alta",
+    "date": "2026-11-10",
+    "title": "Simon Taylor：Airwallex CEO 联合创办的支付链 Alta 融资 8000 万美元，难点在中立性",
+    "dek": "Alta 先用代币化资产优化 Airwallex 自己的跨境资金池；他追问的是，竞争对手会不会在这条链上结算。",
+    "url": "/a/sytaylor-airwallex-alta",
+    "source_url": "https://x.com/sytaylor/status/2120171585772335236",
+    "tags": [
+      "支付",
+      "区块链",
+      "稳定币",
+      "Airwallex"
+    ],
+    "sector": "金融科技"
+  },
+  {
     "id": "dotey-bitter-lesson",
     "date": "2026-11-10",
     "title": "宝玉：Sutton 本人出来说明，《苦涩的教训》批判的是硬编码人类知识",

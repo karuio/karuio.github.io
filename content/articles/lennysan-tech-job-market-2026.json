@@ -1,0 +1,117 @@
+{
+  "id": "lennysan-tech-job-market-2026",
+  "date": "2026-11-10",
+  "published_at": "2026-11-10T17:47:14+00:00",
+  "ingested_at": "2026-11-11T08:40:00+08:00",
+  "sector": "消费/产品",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/lennysan/status/2120211695453028770",
+    "author": "Lenny Rachitsky",
+    "handle": "lennysan",
+    "title_en": "STATE OF THE TECH JOB MARKET IN 2026",
+    "related_url": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late"
+  },
+  "title": "Lenny Rachitsky 第五份科技就业报告：产品经理岗位近四年最多，工程岗位增长停滞",
+  "dek": "科技公司开放的工程岗位同比只增 2.5%，产品经理空缺比 2023 年低点高 75%，移动和前端岗位一年近乎减半。",
+  "tags": [
+    "就业",
+    "产品经理",
+    "工程师",
+    "AI"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "STATE OF THE TECH JOB MARKET IN 2026",
+    "text_md": "STATE OF THE TECH JOB MARKET IN 2026\n\nTwice a year, I dig into trends in hiring and job openings. This is the fifth report I've done, and the most surprising yet:\n\n1. PMs are winning in the AI era\n2. Engineering demand has stalled\n3. Design openings are at a record low\n4. Every role now requires AI skills\n5. Tech jobs are concentrating in the Bay Area\n6. Remote roles are at a record low\n7. The tech job market is growing fast, but mostly outside of software (gasp!)\n\nFull report here: https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late\n\n**Follow-up post (quoting the report post), https://x.com/lennysan/status/2120222674119262434**\n\nFor the first time since I started tracking, engineering job openings have stalled.\n\nYear-over-year growth in open eng roles at tech companies:\n- 2024: +29%\n- 2025: +15%\n- 2026: +2.5%\n\nThere are fewer open eng roles at tech companies today than there were in March.\n\nMore here: https://www.lennysnewsletter.com/i/224206488/takeaway-2-demand-for-engineers-is-plateauing\n\n**Follow-up post, https://x.com/lennysan/status/2120233740026974287**\n\nNarrative violation: Product managers are benefiting most in the AI era\n\nThere’s been a lot of talk about AI replacing product managers (“who needs ’em!”). But so far, the data is showing the exact opposite.\n\nThere are more open PM roles than at any point in nearly four years, up 75% from the March 2023 low, and PM openings have grown faster than any other core product role since the start of 2023.\n\nMore here: https://www.lennysnewsletter.com/i/224206488/takeaway-1-product-managers-seem-to-be-benefiting-most-in-the-ai-era\n\n**Follow-up post, https://x.com/lennysan/status/2120244660123902315**\n\nForward Deployed Engineering job openings are exploding\n\n**Follow-up post, https://x.com/lennysan/status/2120259172902256711**\n\nNarrative violation: Demand for experience with @Figma has actually grown over the past three years\n\nBUT, as of this spring, Claude is now the second most mentioned skill in designer JDs.\n\nTimes, they are a-changin’.\n\nDesigners may not be dropping Figma, but for the first time in a long time, designers are increasingly reaching for other tools too.\n\nMore data here: https://www.lennysnewsletter.com/i/224206488/takeaway-4-everybody-now-needs-to-ai\n\n**Follow-up post, https://x.com/lennysan/status/2120274852766703938**\n\nEngineering is changing: FDE is ascendant while mobile and front-end roles are disappearing.\n\nOpen mobile and front-end engineers jobs have been nearly halved in the past year!\n\n**Follow-up post, https://x.com/lennysan/status/2120305088162050172**\n\nWild stat: Tech recruiter openings are at the highest levels they've ever been at, up 300% in since 2023",
+    "media": [
+      {
+        "id": "img_lenny_jobs_main",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWyBHqzbcAIN-wo.jpg",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_jobs_eng",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWyKIx7a4AAQX23.jpg",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_jobs_pm",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWyRxtxaIAADC4D.jpg",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_jobs_fde",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWye866boAAjTWb.jpg",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_jobs_mobile",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWy1FyYaMAA7rVs.jpg",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_jobs_design",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWynO-XaQAAP8tB.jpg",
+        "alt": "原帖配图"
+      },
+      {
+        "id": "img_lenny_jobs_recruiter",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HWzHvlgaIAA75-s.jpg",
+        "alt": "原帖配图"
+      }
+    ]
+  },
+  "body_md": "Lenny Rachitsky 每半年整理一次科技行业的招聘和职位空缺数据，这是第五份。他说这一份是至今最出乎他意料的一次，结论有七条：产品经理在 AI 时代需求最旺；工程师需求停滞；设计岗位空缺创历史新低；每个岗位现在都要求 AI 技能；科技工作在向旧金山湾区集中；远程岗位创历史新低；科技就业市场整体增长很快，但增长主要发生在软件以外。\n\n## 工程岗位：同比增速从 29% 降到 2.5%\n\n工程师这一条，他给了三年的同比数字：科技公司开放的工程岗位，2024 年同比增长 29%，2025 年增长 15%，2026 年只增长 2.5%。他写道，这是他开始跟踪以来工程岗位第一次停止增长，现在科技公司开放的工程岗位甚至比今年 3 月还少。\n\n## 产品经理：空缺比 2023 年低点高 75%\n\n产品经理的数据方向相反。外界一直在讨论 AI 会不会让产品经理变得多余，他的数据显示，开放的产品经理岗位处在近四年来的最高点，比 2023 年 3 月的低点高出 75%。2023 年初以来，产品经理岗位的增速快过其他所有核心产品岗位。\n\n## 工程师内部在分化\n\n工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。\n\n## 设计师和招聘专员\n\n设计这一块，他指出对 Figma 使用经验的需求在过去三年其实还在增长。但从今年春天起，Claude 已经成为设计师招聘描述里第二常被提到的技能。他的判断是，设计师未必会放弃 Figma，但他们开始越来越多地用其他工具。\n\n还有一个他称为“惊人”的数字：科技公司招聘专员的职位空缺处在有记录以来的最高水平，比 2023 年增长了 300%。\n\n## 数据边界\n\n以上内容来自 Lenny 在 X 上的主帖和六条引用主帖的续帖。完整报告在他的 newsletter 上，本站没有打开报告全文，所以数据口径（统计哪些公司、空缺数据来源）以原报告为准。他在主帖里提到的湾区集中、远程岗位减少、软件以外增长更快三点，X 帖子里没有展开具体数字。\n\n对正在找工作或规划团队的人，这组数据值得对照自己的岗位类型看：同样叫“工程师”，前置部署和移动、前端的走势差别很大；设计岗位则开始把 AI 工具经验写进要求。\n",
+  "rewrite_media": [
+    {
+      "media_id": "img_lenny_jobs_main",
+      "placement": "after_paragraph",
+      "after_md": "Lenny Rachitsky 每半年整理一次科技行业的招聘和职位空缺数据，这是第五份。他说这一份是至今最出乎他意料的一次，结论有七条：产品经理在 AI 时代需求最旺；工程师需求停滞；设计岗位空缺创历史新低；每个岗位现在都要求 AI 技能；科技工作在向旧金山湾区集中；远程岗位创历史新低；科技就业市场整体增长很快，但增长主要发生在软件以外。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_lenny_jobs_eng",
+      "placement": "after_paragraph",
+      "after_md": "工程师这一条，他给了三年的同比数字：科技公司开放的工程岗位，2024 年同比增长 29%，2025 年增长 15%，2026 年只增长 2.5%。他写道，这是他开始跟踪以来工程岗位第一次停止增长，现在科技公司开放的工程岗位甚至比今年 3 月还少。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_lenny_jobs_pm",
+      "placement": "after_paragraph",
+      "after_md": "产品经理的数据方向相反。外界一直在讨论 AI 会不会让产品经理变得多余，他的数据显示，开放的产品经理岗位处在近四年来的最高点，比 2023 年 3 月的低点高出 75%。2023 年初以来，产品经理岗位的增速快过其他所有核心产品岗位。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_lenny_jobs_fde",
+      "placement": "after_paragraph",
+      "after_md": "工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_lenny_jobs_mobile",
+      "placement": "after_paragraph",
+      "after_md": "工程岗位内部也在分化。他另发两条说，前置部署工程师（Forward Deployed Engineer，常驻客户现场做集成和交付的工程师）的职位空缺增长很快；与此同时，移动端和前端工程师的开放岗位在过去一年里几乎减半。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_lenny_jobs_design",
+      "placement": "after_paragraph",
+      "after_md": "设计这一块，他指出对 Figma 使用经验的需求在过去三年其实还在增长。但从今年春天起，Claude 已经成为设计师招聘描述里第二常被提到的技能。他的判断是，设计师未必会放弃 Figma，但他们开始越来越多地用其他工具。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_lenny_jobs_recruiter",
+      "placement": "after_paragraph",
+      "after_md": "还有一个他称为“惊人”的数字：科技公司招聘专员的职位空缺处在有记录以来的最高水平，比 2023 年增长了 300%。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}
