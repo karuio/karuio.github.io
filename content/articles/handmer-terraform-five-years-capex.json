@@ -1,0 +1,29 @@
+{
+  "id": "handmer-terraform-five-years-capex",
+  "date": "2026-11-11",
+  "published_at": "2026-11-11T07:52:20+00:00",
+  "ingested_at": "2026-11-12T08:40:00+08:00",
+  "sector": "防务/航天/工业",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/CJHandmer/status/2120424373094146083",
+    "author": "Casey Handmer",
+    "handle": "CJHandmer",
+    "title_en": "Today marks 5 years of @TerraformIndies"
+  },
+  "title": "Casey Handmer 写 Terraform 五周年：没有市场风险也没有技术风险，最大的风险是 capex",
+  "dek": "他的做法是先给每个系统定死物料成本上限，再想办法做出来；常见做法是先烧钱做原型，再花一笔钱把成本砍掉 95%。",
+  "tags": [
+    "硬科技创业",
+    "合成燃料",
+    "成本控制"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Today marks 5 years of @TerraformIndies",
+    "text_md": "Today marks 5 years of @TerraformIndies. We've come a long way, and I'm grateful to be building in the excellent company of our team and investors. \n\nSome actual content so @lulumeservey doesn't hate me...\n\nNot all hardware start ups face this issue but for us our major risk has always been about controlling capex. There's no market risk for oil and there's no tech risk for synthetic chemistry that has been around for a century, but producing oil for $2000/barrel earns a participation trophy. \n\nRather than spend a fortune building functional prototypes and then another fortune trying to figure out how to suck out 95% of the cost, I placed firm upper bounds on allowable BoM costs for each system, then set out to figure out how to get it done. Some of the early prototypes didn't work that well but we kept iterating and ultimately every cent and, more importantly, every second was spent figuring out how to do it the right way. The way that accelerates great value into the hands of our customers. \n\nHistory is unfortunately littered with expensive tech demos that spent millions teaching someone the wrong way to do something. At this point it seems unlikely that Terraform will die but if we do, it won't be because we spent our money on insurmountable tech debt. \n\nThe reason I'm sharing this is because it's always tempting to take the shortcut. To outsource some piece of mission critical kit or design, or to drop some gold plated component in that removes more value than it adds. Don't! The whole point is to spend your limited time on this Earth attacking the really hard problems. The things you want are on the other side of discomfort. \n\nHere's to the next five years!",
+    "media": []
+  },
+  "body_md": "Terraform Industries 成立满五年。创始人 Casey Handmer 在纪念帖里感谢了团队和投资人，然后说要写点“真正的内容”，免得 @lulumeservey 嫌弃他。\n\n## 风险集中在一个地方\n\n他说，不是所有硬件创业公司都这样，但对 Terraform 来说，最大的风险一直是控制资本开支（capex）。\n\n他的理由很直接：石油没有市场风险；他们用的合成化学已经存在了一个世纪，也没有技术风险。可如果生产出来的油要 2000 美元一桶，那只能拿个“参与奖”。在他看来，这门生意成不成，取决于成本能不能压下来。\n\n## 先定成本上限，再想办法做出来\n\n常见的路径是：先花一大笔钱做出能用的原型，再花另一大笔钱，想办法把 95% 的成本挤出去。\n\nHandmer 选了反过来的路。他给每个系统的物料成本（BoM）定了硬性上限，然后去想怎么在这个上限内做成。一些早期原型效果并不好，但他们持续迭代。按他的说法，最终每一分钱，更重要的是每一秒钟，都花在弄清楚“正确的做法”上，也就是能更快把价值交到客户手里的做法。\n\n## 昂贵的技术演示\n\n他写道，历史上到处是昂贵的技术演示：花了几百万美元，教会某人用错误的方式做一件事。他认为到了现在，Terraform 看起来不太可能死掉；就算真的失败，也不会是因为把钱花在了无法克服的技术债上。这是他对自己公司的判断。\n\n## 他想提醒同行的事\n\n他分享这些，是因为抄近路的诱惑一直都在：把某个关键设备或设计外包出去，或者塞进一个“镀金”部件，带走的价值比带来的还多。他的建议是：别这么做。人在世上的时间有限，就该用来攻克真正困难的问题；想要的东西，在不舒服的另一边。\n\n帖子最后，他举杯敬下一个五年。\n\n对做硬件的团队，这条帖子能直接拿来用的是一个顺序问题：在做第一台原型之前，先写下每个子系统可以接受的物料成本上限，把它当成设计约束，别等到量产前才当作优化目标去补。\n",
+  "rewrite_media": []
+}
