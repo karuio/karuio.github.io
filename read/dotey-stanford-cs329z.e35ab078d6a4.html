@@ -1,0 +1,53 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>宝玉整理：斯坦福 CS329Z 公开课程资料，第一份作业花几美元从零写一个“Claude Code” · 他山</title><meta name="robots" content="noindex"></head><body><article class="article-reader" data-article-id="dotey-stanford-cs329z">
+<a class="article-back" href="/">← 返回选刊</a>
+<header class="article-header"><p class="article-kicker">AI / X · @dotey / 长帖</p><h1>宝玉整理：斯坦福 CS329Z 公开课程资料，第一份作业花几美元从零写一个“Claude Code”</h1><p class="article-dek">讲座每天上 YouTube，两份作业 MIT 协议开源，测试全在仓库里，自学的人可以照着测试一项项做通。</p><div class="article-meta"><time datetime="2026-11-12">本站收录 2026年11月12日 · 周四</time><span>原文发布 2026年11月11日 · 周三</span><span>原作者：宝玉</span><span>中文改写：<a href="/about">他山</a></span><span>Agent · 课程 · harness · 评测</span></div></header>
+<nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="https://x.com/dotey/status/2120388990616433083" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
+<section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose"><p>斯坦福新课 CS329Z“AI agent 工程”（Engineering AI Agents）开始对外公开全部课程资料。宝玉整理了这件事：授课老师之一 Michael Ryan 11 月 10 日发帖说，讲座视频每天在 Stanford Online 的 YouTube 频道更新一讲；两份作业的代码仓库放上了 GitHub，用 MIT 协议，别的学校注明出处就能拿去上课。</p>
+<p>开课时并不是这样。课程页原本写的是，录像只放在斯坦福内部的 Canvas 平台给选课学生看，校外的人只能下载课件。宝玉发帖时，官方频道已经上了第 1 讲《什么是 agent 系统》和第 2 讲《写给 agent 开发者的大模型知识》，第 1 讲播放量过了 9 万；课程主页的课表也开始在每节课旁边挂视频链接。</p>
+<h2>第一份作业：自己写一个 agent harness</h2>
+<p>harness 是包在模型外面的那层程序：告诉模型有哪些工具，解析它的回复，替它执行命令，管理上下文。按宝玉的说法，Claude Code、Codex 都可以看成“一个模型加一个 harness”。</p>
+<p>作业不许用任何 agent 框架。课程只给一个最原始的接口：传进一串消息，返回一段文字，没有工具调用，也没有结构化输出，其余全靠自己写。</p>
+<p>前半部分是几条固定流程：给邮件判断优先级，生成每日摘要，手写 BM25 检索（一种按关键词打分的经典搜索算法），再在一份真实企业的邮件档案里做多跳问答。</p>
+<p>后半部分是给一家虚构的能源公司做内部助理。学生要自己设计工具调用格式，接入文档检索，给助理一个带沙盒限制的终端，对话太长时压缩上下文，跨会话记住用户的事，执行操作前让用户批准或否决。最后由大模型扮演的“模拟用户”和你的 agent 多轮对话，再由另一个模型打分。</p>
+<p>**对自学的人最有用的，是全套测试都在仓库里。**一开始所有测试都失败，任务就是让它们一个个通过。88 分自动评分里，有 48 分来自不调用模型的测试，跑多少遍都不花钱。另有几处判断题不给标准答案，比如一条命令输出太长时给模型看多少，压缩上下文时必须留下什么，哪些操作可以不问用户。这些要写一份设计说明，讲清楚自己的选择。</p>
+<h2>花多少钱</h2>
+<p>Michael Ryan 说，不到 5 美元的 API 额度就能做完。讲义里的数字更低：用参考答案跑一遍全部线上测试花了 0.05 美元，最后的模拟用户评测再花 0.18 美元。</p>
+<p>自己调试要反复跑，实际会比这多。好在每次调用都缓存在本地，同样的请求第二次不收钱。选课学生用课程发的 OpenRouter 密钥，校外的人得自己准备，默认模型是 <code>openai/gpt-6-luna</code>。</p>
+<h2>第二份作业：给 agent 出一道考题</h2>
+<p>第二份作业由 John Yang 设计。他是 SWE-bench 的共同作者，这套测试用真实的 GitHub 问题考 AI 会不会修 bug，各家发布编程模型时常拿它报成绩。</p>
+<p>作业教的是怎么出一道 Terminal-Bench 风格的题：给 agent 一段问题描述，让它在命令行环境里动手，最后用测试脚本判断做没做对。用到的工具 Harbor 出自 Terminal-Bench 团队，它规定一道题怎么打包（题面、Docker 环境、验证脚本），并负责启动 agent、跑验证、保存结果。</p>
+<p>作业先带学生用 Harbor 跑 SWE-bench Verified、Terminal-Bench 2.1 里的现成题目。占 70% 分数的部分是自己出一道题，用 mini-SWE-agent（一个只带 bash 工具的极简编程 agent）配 Gemini 3.8 Flash 跑五次，再分析这道题是否有效、贴近真实、能复现、有难度。需要装 Docker，准备 Gemini 或 OpenRouter 的密钥。</p>
+<p>两份作业的说明文件末尾都写了致谢：第一份是在 Claude Fable 5.1 的大量帮助下做出来的，第二份用了 Claude Opus 5.5。</p>
+<h2>课程的其他安排</h2>
+<p>课程由斯坦福计算机系的 Diyi Yang 和两位博士生 Michael Ryan、John Yang 共同讲授，第一届有 100 多名学生。这学期课表里还有 Andrew Ng 的炉边对谈，以及 SWE-bench 两位作者 Carlos Jimenez、Alexander Wettig（现在在 Anthropic）的客座讲座。Michael Ryan 说之后还会公开学生做的作品。主要资助方是 Laude Institute，Thinking Machines、Google Cloud、AWS 和 Harbor 给学生提供了 API 额度。</p>
+<p>想动手的人，可以先从第一份作业开始：克隆仓库，先跑不调用模型的那 48 分测试，几乎零成本就能把 harness 的骨架搭起来。宝玉特别提醒，照第二份作业讲义克隆仓库时，讲义里写的仓库名是 assignment2-harness，实际地址是 assignment2-evals。课程主页、两讲视频和两个仓库的链接都在原帖里。</p>
+</div></section>
+<section class="reader-panel" id="original" data-reader-panel="original" aria-label="原文">
+<h2 class="section-heading">原文</h2><h3 class="original-title">斯坦福 CS329Z 课程资料公开：讲座每天上 YouTube，两份作业开源，第一份教你花几美元从零写个“Claude Code”</h3>
+
+<div class="prose" lang="zh"><p>斯坦福 CS329Z 课程资料公开：讲座每天上 YouTube，两份作业开源，第一份教你花几美元从零写个“Claude Code”</p>
+<p>斯坦福新课 CS329Z“AI agent 工程”（Engineering AI Agents）开始对外公开全部课程资料。授课老师之一 Michael Ryan 11 月 10 日发帖说，讲座视频每天在 Stanford Online 的 YouTube 频道上一讲，两份作业的代码仓库也放到了 GitHub，都用 MIT 协议，别的学校注明出处就能拿去上课。</p>
+<p>开课时情况不一样。课程页写的是录像只放在斯坦福内部的 Canvas 平台给选课学生看，校外的人只能下载课件。现在官方频道已经上了第 1 讲《什么是 agent 系统》和第 2 讲《写给 agent 开发者的大模型知识》，第 1 讲播放量过了 9 万。课程主页的课表也开始在每节课旁边挂视频链接。</p>
+<p>【第一份作业：自己写一个 agent harness】</p>
+<p>harness 是包在模型外面的那层程序：告诉模型有哪些工具、解析它的回复、替它执行命令、管理上下文。Claude Code、Codex 都可以看成一个模型加一个 harness。</p>
+<p>作业不许用任何 agent 框架，课程只给一个最原始的接口：传进一串消息，返回一段文字，没有工具调用，也没有结构化输出，其余全靠自己写。</p>
+<p>前半部分做几条固定流程：给邮件判断优先级、生成每日摘要、手写 BM25 检索（一种按关键词打分的经典搜索算法），再在一份真实企业的邮件档案里做多跳问答。后半部分给一家虚构的能源公司做内部助理：自己设计工具调用格式，接入文档检索，给它一个带沙盒限制的终端，对话太长时压缩上下文，跨会话记住用户的事，执行操作前让用户批准或否决。最后由大模型扮演的“模拟用户”跟你的 agent 多轮对话，再由另一个模型打分。</p>
+<p>对自学的人来说，最有用的是全套测试都在仓库里。一开始所有测试都失败，你的任务就是让它们一个个通过。88 分自动评分里有 48 分来自不调用模型的测试，跑多少遍都不花钱。另有几处判断题作业不给标准答案，比如一条命令输出太长时给模型看多少、压缩上下文时必须留下什么、哪些操作可以不问用户，要求你写一份设计说明讲清楚自己的选择。</p>
+<p>Michael Ryan 说不到 5 美元的 API 额度就能做完。讲义里的数字更低：用参考答案跑一遍全部线上测试花了 0.05 美元，最后的模拟用户评测再花 0.18 美元。自己调试要反复跑，花得会比这多，好在每次调用都缓存在本地，同样的请求第二次不收钱。选课学生用课程发的 OpenRouter 密钥，校外的人得自己准备一个，默认模型是 openai/gpt-6-luna。</p>
+<p>【第二份作业：给 agent 出一道考题】</p>
+<p>第二份作业由 John Yang 设计。他是 SWE-bench 的共同作者，这套测试用真实的 GitHub 问题考 AI 会不会修 bug，各家发编程模型常拿它报成绩。</p>
+<p>作业教的是怎么出一道 Terminal-Bench 风格的题：给 agent 一段问题描述，让它在命令行环境里动手，最后用测试脚本判断做没做对。用的工具 Harbor 出自 Terminal-Bench 团队，它规定一道题怎么打包（题面、Docker 环境、验证脚本），并负责启动 agent、跑验证、保存结果。</p>
+<p>作业先带你用 Harbor 跑 SWE-bench Verified、Terminal-Bench 2.1 里的现成题目。占 70% 分数的部分是自己出一道题，用 mini-SWE-agent（一个只带 bash 工具的极简编程 agent）配 Gemini 3.8 Flash 跑五次，分析这道题是否有效、贴近真实、能复现、有难度。需要装 Docker，准备 Gemini 或 OpenRouter 的密钥。</p>
+<p>两份作业的说明文件末尾都写了致谢：第一份是在 Claude Fable 5.1 的大量帮助下做出来的，第二份用了 Claude Opus 5.5。</p>
+<p>【后面还有什么】</p>
+<p>课程由斯坦福计算机系的 Diyi Yang 和两位博士生 Michael Ryan、John Yang 共同讲授，第一届有 100 多名学生。这学期的课表里还有 Andrew Ng 的炉边对谈，还有 SWE-bench 两位作者 Carlos Jimenez、Alexander Wettig（现在在 Anthropic）的客座讲座。Michael Ryan 说之后还会公开学生做的作品。主要资助方是 Laude Institute，Thinking Machines、Google Cloud、AWS 和 Harbor 给学生提供了 API 额度。</p>
+<p>照着第二份作业讲义克隆仓库时注意，讲义里写的仓库名是 assignment2-harness，实际地址是 assignment2-evals。</p>
+<p>课程主页：https://t.co/y7KbVMdU2r
+第 1 讲视频：https://t.co/Ls8MuXXJNH
+第 2 讲视频：https://t.co/gs46i1u5FX
+作业一仓库：https://t.co/BzYDnPsmsN
+作业二仓库：https://t.co/dbAzZW2Zkt
+原帖：https://t.co/1tVnCAIpHY</p></div>
+</section>
+<footer class="source-box"><span>内容来自原作者；中文为忠实改写，非逐字翻译。作者主张与已核实事实分开书写。</span><div><a href="https://x.com/dotey/status/2120388990616433083" target="_blank" rel="noopener noreferrer">打开原文 ↗</a><a href="https://x.com/michaelryan207/status/2120216178371260589" target="_blank" rel="noopener noreferrer">相关链接 ↗</a></div></footer>
+</article></body></html>
