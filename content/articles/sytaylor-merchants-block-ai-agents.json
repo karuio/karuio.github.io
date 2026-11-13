@@ -1,0 +1,44 @@
+{
+  "id": "sytaylor-merchants-block-ai-agents",
+  "date": "2026-11-12",
+  "published_at": "2026-11-12T14:16:06+00:00",
+  "ingested_at": "2026-11-13T08:45:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2120883336914592088",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "United and eBay are now blocking personal AI agents like Meta's Muse."
+  },
+  "title": "Simon Taylor：United 和 eBay 开始拦截个人 AI 代理，他认为商家拦了几乎没损失",
+  "dek": "Uber 一周 3.2 亿次出行里代理只订了 4 次乘车和约 500 单外卖；在卡组织公布责任规则前，他预计更多商家会先拦再说。",
+  "tags": [
+    "AI 代理",
+    "电商",
+    "支付",
+    "反欺诈"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "United and eBay are now blocking personal AI agents like Meta's Muse.",
+    "text_md": "United and eBay are now blocking personal AI agents like Meta's Muse.\n\nAnd I think this is a zero-downside move. Expect more to follow.\n\n---\n\nThe news:\n\n1. United said it will ban unauthorized AI agents from booking its flights. The ban covers its app, its website, and bookings through travel agencies and aggregators. United says handing your login to an agent exposes your data and your MileagePlus miles.\n\n2. The Verge found on Tuesday that Muse can no longer browse eBay listings, and eBay has banned unapproved agents from placing orders since February.\n\nThey join Amazon, Target, JPMorgan, Schwab, Kohl's, and Neiman Marcus.\n\n---\n\nFor merchants, volume is so low that the cost of blocking is almost zero, even in canonical use cases like food delivery. \n\nUber reported that agents booked 4 Uber rides and about 500 Uber Eats orders in a week of 320M trips. Blocking costs a merchant almost nothing today.\n\n---\n\nThere are also three very good reasons why you'd block even with volume:\n\n1. An agent logging in with your password looks the same to a fraud team as a bot with a stolen card\n\n2. An agent that chooses where you buy turns the merchant into a commodity\n\n3. AI models are getting better at breaking into software (see Anthropic's Project Glasswing), so security teams want fewer unknown bots near customer accounts\n\nMerchants take on that risk for almost no sales. Block now, ask questions later.\n\n---\n\nThe smart merchants also know they need a happy path for agents at some point.\n\n- Walmart launched an Agent Gateway in beta\n\n- Shopify lets Muse check out through UCP, the protocol it built with Google\n\n- eBay is building its own gateway for agents it selects\n\nPAP, the Personal Agent Protocol from Meta and Sierra, gives an agent a login so the merchant knows which agent has arrived.\n\n---\n\nKnowing the agent is step one. The merchant also needs proof that a real person sent it and meant to buy that exact thing.\n\n@sardine launched Know Your Human to prove the human sent the agent, but we still need to know what the human intended to buy. The card networks have their protocols for sharing that data with merchants too, but they haven't published rules about who pays when things go wrong.\n\nUntil the card schemes publish a liability framework, I expect more blocks, and the first agents allowed in will be ones each merchant picked.\n\nBecause right now as a merchant, it looks like you'd be on the hook for refunds or chargebacks without any incremental sales. Until that changes. Nothing changes.",
+    "media": [
+      {
+        "id": "img_sytaylor_agents_01",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HW7kJeAXAAE2gNS.jpg",
+        "alt": "原帖配图"
+      }
+    ]
+  },
+  "body_md": "Uber 一周 3.2 亿次出行里，AI 代理只帮用户订了 4 次乘车、约 500 单 Uber Eats 外卖。Simon Taylor 用这组数字解释，为什么 United 和 eBay 开始拦截 Meta Muse 这类个人 AI 代理，而且他认为这么做对商家几乎没有坏处，后面还会有更多公司跟进。\n\n## 发生了什么\n\n他列了两条新闻：\n\n1. United 表示将禁止未经授权的 AI 代理预订它的航班，范围包括它的 App、官网，以及通过旅行社和比价平台的预订。United 的理由是，把登录信息交给代理，会让用户的数据和 MileagePlus 里程暴露在风险里。\n2. The Verge 周二发现，Muse 已经无法浏览 eBay 的商品页；而 eBay 从 2 月起就禁止未经批准的代理下单。\n\n在它们之前，Amazon、Target、JPMorgan、Schwab、Kohl's 和 Neiman Marcus 已经这么做了。\n\n## 量太小，拦了也不心疼\n\n他的第一层理由是成本。代理带来的交易量太低，就连外卖这种最典型的代理场景也是如此，所以商家今天拦截代理几乎没有代价。\n\n## 就算有量，也有三个理由要拦\n\n他认为，即使代理带来的交易多起来，商家也有三个很好的理由拦截：\n\n1. 用你的密码登录的代理，在反欺诈团队眼里，和拿着盗刷卡的机器人长得一样。\n2. 如果由代理决定你在哪里买东西，商家就会沦为可替换的货源。\n3. AI 模型攻破软件的能力越来越强（他举了 Anthropic 的 Project Glasswing），安全团队希望客户账户附近的陌生机器人越少越好。\n\n几乎没有销售额，却要承担这些风险。他的概括是：**先拦了再说。**\n\n## 聪明的商家在给代理修“正门”\n\n他也看到，聪明的商家知道迟早要给代理留一条顺畅的通道：\n\n- Walmart 推出了 Agent Gateway，处于测试阶段；\n- Shopify 允许 Muse 通过 UCP 结账，UCP 是 Shopify 和 Google 一起做的协议；\n- eBay 在为自己挑选的代理搭建专用通道。\n\nMeta 和 Sierra 推出的 PAP（Personal Agent Protocol，个人代理协议）给代理发一个登录身份，让商家知道来的是哪个代理。\n\n## 还缺一块：出了问题谁赔\n\n在他看来，认出代理只是第一步。商家还需要证明，背后确实有一个真人派出了这个代理，而且这个人确实想买这件具体的东西。\n\nSardine 推出了 Know Your Human，用来证明代理是真人派出的；但用户到底想买什么，仍然缺少证明。卡组织也有各自的协议，把这类数据分享给商家，但还没有公布出了问题由谁买单的规则。\n\n**他的判断是，在卡组织公布责任框架之前，会有更多商家拦截代理，最先被放进来的，会是各个商家自己挑选的代理。**按现在的规则，商家要为退款和拒付兜底，却拿不到任何新增销售。这一点不变，局面就不会变。\n\n对做代理产品的团队，这篇帖子给出的路线很具体：与其硬闯，不如先接入商家已经开放的通道（Walmart Agent Gateway、Shopify 的 UCP、eBay 的白名单），并关注卡组织何时公布代理交易的责任规则。文中各公司动态与 Uber 数据均为作者引述，本站未逐项核实。\n",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_agents_01",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}
