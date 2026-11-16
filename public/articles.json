@@ -1,5 +1,65 @@
 [
   {
+    "id": "jaminball-frontier-blinks",
+    "date": "2026-11-13",
+    "title": "Jamin Ball：前沿模型价格守了两个月就降了 20%，他认为是在让出提速的成本",
+    "dek": "Fable 5.2 和 Mythos 5.2 定价降到每百万 token 8/40 美元，模型快了约 30%，单 token 成本约降 23%。他拿 Databricks 和 Snowflake 类比，预计降价会持续。",
+    "url": "/a/jaminball-frontier-blinks",
+    "source_url": "https://x.com/jaminball/status/2121310809842479320",
+    "tags": [
+      "大模型定价",
+      "Anthropic",
+      "推理成本",
+      "云软件"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
+    "id": "setser-china-bop-reserve-gap",
+    "date": "2026-11-15",
+    "title": "Brad Setser：三季度国际收支说储备多了 470 亿美元，人民银行账上却少了 6 亿",
+    "dek": "今年以来两套口径已差约 1000 亿美元、累计约 6000 亿。他推测缺口来自储备利息，但这又和中国申报的 2% 对外资产收益率对不上。",
+    "url": "/a/setser-china-bop-reserve-gap",
+    "source_url": "https://x.com/Brad_Setser/status/2122039934609440858",
+    "tags": [
+      "中国宏观",
+      "国际收支",
+      "外汇储备",
+      "IMF"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "seufert-kuaishou-tragr",
+    "date": "2026-11-14",
+    "title": "Eric Seufert 推荐快手论文 TraGR：生成式推荐从猜下一个到猜一串",
+    "dek": "连续预测会让错误层层放大。快手的 TraGR 并行生成语义 ID、带上候选的概率加权汇总，离线排序质量比最强基线高 1.1% 到 21.4%，尚未上线。",
+    "url": "/a/seufert-kuaishou-tragr",
+    "source_url": "https://x.com/eric_seufert/status/2121616402796736995",
+    "tags": [
+      "推荐系统",
+      "生成式检索",
+      "快手",
+      "论文"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
+    "id": "ttunguz-no-service-for-bots",
+    "date": "2026-11-13",
+    "title": "Tomasz Tunguz：亚马逊和 United 拦 AI 代理，他认为原因写在利润表上",
+    "dek": "亚马逊广告利润约等于零售全部经营利润，United 的附加费超过经营利润。代理只买基础商品，靠引流品赚钱的商家就有动力拦。",
+    "url": "/a/ttunguz-no-service-for-bots",
+    "source_url": "https://x.com/ttunguz/status/2121286644359888969",
+    "tags": [
+      "AI 代理",
+      "电商",
+      "商业模式",
+      "Shopify"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
     "id": "setser-pboc-hidden-fx-assets",
     "date": "2026-11-12",
     "title": "Brad Setser：结汇和储备差了 1 万亿美元，人民银行要回答三个问题",

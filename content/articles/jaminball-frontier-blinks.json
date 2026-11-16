@@ -1,0 +1,45 @@
+{
+  "id": "jaminball-frontier-blinks",
+  "date": "2026-11-13",
+  "published_at": "2026-11-13T18:34:43+00:00",
+  "ingested_at": "2026-11-16T08:45:00+08:00",
+  "sector": "SaaS/云",
+  "source": {
+    "type": "x_article",
+    "url": "https://x.com/jaminball/status/2121310809842479320",
+    "author": "Jamin Ball",
+    "handle": "jaminball",
+    "title_en": "The Frontier Blinks",
+    "related_url": "https://cloudedjudgement.substack.com/p/clouded-judgement-111326-the-frontier"
+  },
+  "title": "Jamin Ball：前沿模型价格守了两个月就降了 20%，他认为是在让出提速的成本",
+  "dek": "Fable 5.2 和 Mythos 5.2 定价降到每百万 token 8/40 美元，模型快了约 30%，单 token 成本约降 23%。他拿 Databricks 和 Snowflake 类比，预计降价会持续。",
+  "tags": [
+    "大模型定价",
+    "Anthropic",
+    "推理成本",
+    "云软件"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "The Frontier Blinks",
+    "text_md": "From Clouded Judgement: The Frontier Blinks\nBack in September I tweeted that  the GPT 6 Astra pricing launched at $10 / $50 per million input / output tokens (which happened to be the same as the other leading frontier model pricing, Fable 5.1). Despite all of the pricing wars between the big labs, and pressure from cheaper open weight alternatives, it felt like “frontier” pricing was holding more steady. However, this only lasted 2 months! On Monday Anthropic released Fable 5.2 and Mythos 5.2 at $8 / $40 (a 20% cut to the then current frontier model pricing). Up until that point we’d seen steady price cuts to the lower end of the model spectrum, but the frontier has more pricing stability. So what’s changing? More competitive pressure? Something else? The new models are also ~30% faster (meaning if the same chip produces 30% more tokens per hour, the cost of each token falls about ~23%). this is the math - A chip costs the same to run per hour no matter how many tokens it produces, so if it makes 1.3x (30% more) as many tokens in that hour, each token carries 1/1.3 (about 77%) of the cost it used to, which is a 23% drop. Here, price fell 20%, so just about at the same rate. So this may just be the model provider passing through their efficiency gains. Of course - they didn’t have to! They could have just kept the frontier pricing, and generated better margins. BUT - we are in a land grab, so not totally surprising to see them pass through savings (if that is what’s going on).\nI think this is something that will continue. We’ve seen versions of this from database businesses like Databricks and Snowflake. They historically called out 3 different types of efficiency gains they passed on to customers in the form of price cuts. Storage compression, better underlying chips (newer Graviton instances), and faster query times. All 3 of this drove down the cost to serve / operate, and Databricks / Snowflake historically passed those efficiency gains off to customers. I think we’ll see the same thing from the model providers. They’ll drive efficiencies, and pass through savings to ucstomesr in the form of price cuts.",
+    "media": [
+      {
+        "id": "img_ball_frontier_cover",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HW-MAIDbIAAaa-q.jpg",
+        "alt": "原文封面图"
+      }
+    ]
+  },
+  "body_md": "9 月，GPT 6 Astra 上线时定价是每百万输入 token 10 美元、输出 token 50 美元，和当时另一款头部前沿模型 Fable 5.1 一样。Jamin Ball 当时发帖说，尽管大模型公司之间打价格战，还有更便宜的开放权重模型施压，“前沿”价位似乎守得比较稳。\n\n这个局面只维持了两个月。\n\n## Anthropic 先降了 20%\n\n按他的说法，本周一 Anthropic 发布 Fable 5.2 和 Mythos 5.2，定价每百万输入 8 美元、输出 40 美元，比当时的前沿价位低 20%。在此之前，降价一直集中在低端模型上，前沿模型的价格相对稳定。\n\n他问：变了什么？是竞争压力更大了，还是别的原因？\n\n## 降价幅度和提速带来的成本下降差不多\n\n他给出的线索是，新模型快了约 30%。他算了一笔账：一块芯片每小时的运行成本是固定的，不管产出多少 token。如果同一小时能产出 1.3 倍的 token，每个 token 分摊的成本就变成原来的 1/1.3，约 77%，相当于下降约 23%。\n\n价格降了 20%，和这个幅度大致相当。所以他认为，这可能只是模型厂商把效率提升让利给了用户。\n\n他也指出，厂商本可以不降价，维持前沿定价，赚更高的毛利。但现在处在抢地盘阶段，把节省下来的成本让出去（如果事实确实如此）并不意外。\n\n## 数据库公司走过的路\n\nBall 认为这种做法会持续。他拿 Databricks 和 Snowflake 做对照：这两家过去明确提到过三类效率提升，并以降价形式让给客户：\n\n1. 存储压缩；\n2. 更好的底层芯片（例如更新的 Graviton 实例）；\n3. 更快的查询速度。\n\n三者都压低了服务和运营成本，两家公司历来把这些收益让渡给客户。他预计模型厂商也会这样：持续提升效率，再通过降价把节省传给客户。\n\n## 怎么用这个判断\n\n如果在做模型采购或基于 API 搭产品，Ball 的思路提供了一个估算方法：新模型宣布的速度提升，可以粗略换算成单 token 成本的下降空间（提速 30% 对应成本降约 23%），再看厂商是否把它反映到价格上。按他的判断，前沿模型价格接下来更可能跟着效率继续往下走。这只是他根据一次降价做出的推断，Anthropic 降价的真实原因文中没有确认。\n",
+  "rewrite_media": [
+    {
+      "media_id": "img_ball_frontier_cover",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

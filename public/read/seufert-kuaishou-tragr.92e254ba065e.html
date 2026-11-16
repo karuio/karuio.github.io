@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>Eric Seufert 推荐快手论文 TraGR：生成式推荐从猜下一个到猜一串 · 他山</title><meta name="robots" content="noindex"></head><body><article class="article-reader" data-article-id="seufert-kuaishou-tragr">
+<a class="article-back" href="/">← 返回选刊</a>
+<header class="article-header"><p class="article-kicker">消费互联网/能源数据中心 / X · @eric_seufert / 长帖</p><h1>Eric Seufert 推荐快手论文 TraGR：生成式推荐从猜下一个到猜一串</h1><p class="article-dek">连续预测会让错误层层放大。快手的 TraGR 并行生成语义 ID、带上候选的概率加权汇总，离线排序质量比最强基线高 1.1% 到 21.4%，尚未上线。</p><div class="article-meta"><time datetime="2026-11-16">本站收录 2026年11月16日 · 周一</time><span>原文发布 2026年11月14日 · 周六</span><span>原作者：Eric Seufert</span><span>中文改写：<a href="/about">他山</a></span><span>推荐系统 · 生成式检索 · 快手 · 论文</span></div></header>
+<nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="https://x.com/eric_seufert/status/2121616402796736995" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
+<section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose"><p>生成式推荐让模型预测“用户下一个会点什么”，现在不少团队想把它往前推一步：一次预测用户接下来一连串的行为。Eric Seufert 周六早上推荐了快手的一篇论文，讲的就是这一步会遇到什么问题、怎么解决。</p>
+<h2>一连串预测，错误会层层放大</h2>
+<p>现在常见的做法是用语义 ID（semantic ID，SID）表示每个物品，让模型预测下一个物品的 SID。按 Seufert 的概括，把这种“下一个物品”的预测扩展到未来一整串交互，会出现一个问题：每一步预测都成为后续预测的上下文，前面错一步，后面跟着错；模型也只能沿一条路径走下去，用户可能有的其他行为带来的不确定性被忽略掉了。</p>
+<p>训练方式让这个错位更严重。训练时模型看到的是用户真实发生过的交互，推理时却只能拿自己的预测当依据往下猜。</p>
+<h2>TraGR 的做法</h2>
+<p>快手研究人员提出的框架叫 TraGR。Seufert 介绍了三处设计：</p>
+<ul>
+<li>每个物品的 SID token 并行生成，并在相邻两次预测之间更新一个“行为状态”；</li>
+<li>往前推演时，同时带上被选中的物品，以及其他候选物品按概率加权后的汇总，不只押一条路径；</li>
+<li>监督微调（SFT）之后，用模型自己生成的行为轨迹做后训练，奖励三件事：预测准确、行为转移有历史行为支持、前面的选择有助于后续预测。</li>
+</ul>
+<h2>离线结果</h2>
+<p>TraGR 还没有上线到生产环境。在四个公开数据集上的离线测试中，它在所有报告的指标组合上都超过了 13 种基线配置。以 MNDCG@10 衡量的排序质量，相对每个数据集上最强的基线提升了 1.1% 到 21.4%。</p>
+<p>这些都是论文给出的离线数字，线上效果还没有验证。论文题为《From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction》，Seufert 在跟帖里附了 arXiv 链接。</p>
+<h2>给做推荐系统的人</h2>
+<p>如果团队正在用语义 ID 做生成式推荐，并想从预测单个物品扩展到预测行为序列，这篇论文点出的两个坑可以先对照检查：自回归预测的误差累积，以及训练用真实数据、推理用自身预测之间的错位。TraGR 的并行生成、加权候选和自生成轨迹后训练是一种应对方案，不过目前只有离线证据。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><div class="original-media">
+<figure class="media-figure" data-media-id="img_seufert_tragr_01"><div class="media-frame"><img src="https://pbs.twimg.com/media/HXF-0iFWUAEllNK.jpg" data-original-src="https://pbs.twimg.com/media/HXF-0iFWUAEllNK.jpg" alt="原帖配图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/eric_seufert/status/2121616402796736995" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div></section></div></section>
+<section class="reader-panel" id="original" data-reader-panel="original" aria-label="原文">
+<h2 class="section-heading">原文</h2><h3 class="original-title">Compelling and insightful Saturday morning coffee read from Kuaishou on the ever-evolving topic of Generative Retrieval.</h3>
+<div class="original-media">
+<figure class="media-figure" data-media-id="img_seufert_tragr_01"><div class="media-frame"><img src="https://pbs.twimg.com/media/HXF-0iFWUAEllNK.jpg" data-original-src="https://pbs.twimg.com/media/HXF-0iFWUAEllNK.jpg" alt="原帖配图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/eric_seufert/status/2121616402796736995" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div>
+<div class="prose" lang="en"><p>Compelling and insightful Saturday morning coffee read from Kuaishou on the ever-evolving topic of Generative Retrieval.</p>
+<p>Extending next-item prediction with semantic IDs (SIDs) to a sequence of future interactions introduces a problem: each prediction becomes context for subsequent predictions, allowing errors to cascade and forcing uncertainty about alternative behaviors to be ignored. Training on observed interactions compounds this mismatch because, at inference, the model must predict on the basis of its own predictions.</p>
+<p>To address this, researchers from Kuaishou introduce TraGR, a framework that generates each item's semantic-ID tokens in parallel, updating a behavioral state between predicted interactions. The model projects forward both the selected item and a probability-weighted summary of alternatives. Following SFT, the researchers post-trained the model with its own generated trajectories, rewarding prediction accuracy, transitions supported by historical behavior, and earlier choices that improve subsequent predictions.</p>
+<p>TraGR isn't integrated into production, but across four public datasets in offline tests, it outperformed 13 baseline configurations on all reported metric combinations. Ranking quality as measured by MNDCG@10 improved by 1.1% - 21.4% relative to each dataset's strongest baseline.</p>
+<p>Paper linked below.</p>
+<p><strong>Follow-up post, https://x.com/eric_seufert/status/2121616405716234318</strong></p>
+<p>From Tokens to Behaviors: Rethinking Generative Recommendation for User Trajectory Prediction https://arxiv.org/pdf/2611.16159</p></div>
+</section>
+<footer class="source-box"><span>内容来自原作者；中文为忠实改写，非逐字翻译。作者主张与已核实事实分开书写。</span><div><a href="https://x.com/eric_seufert/status/2121616402796736995" target="_blank" rel="noopener noreferrer">打开原文 ↗</a><a href="https://arxiv.org/pdf/2611.16159" target="_blank" rel="noopener noreferrer">相关链接 ↗</a></div></footer>
+</article></body></html>
