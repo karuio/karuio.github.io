@@ -1,0 +1,81 @@
+{
+  "id": "setser-eu-china-auto-imports",
+  "date": "2026-11-16",
+  "published_at": "2026-11-16T17:10:10+00:00",
+  "ingested_at": "2026-11-17T08:40:00+08:00",
+  "sector": "投资/宏观",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/Brad_Setser/status/2122376696011837546",
+    "author": "Brad Setser",
+    "handle": "Brad_Setser",
+    "title_en": "Europe's trade deficit with China continues to grow",
+    "related_url": "https://www.cfr.org/articles/europes-china-auto-deal"
+  },
+  "title": "Brad Setser：欧盟 12 个月从中国进口整车超 150 万辆，他认为纯电也得设限",
+  "dek": "9 月数据显示欧盟对华出口低位企稳、进口继续增长。三季度中国车进口年化超 200 万辆、约占终端销售两成，混动将设 35 万辆上限，他认为现有反补贴税没起作用。",
+  "tags": [
+    "欧盟",
+    "中国出口",
+    "汽车",
+    "贸易保护"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Europe's trade deficit with China continues to grow (thread)",
+    "text_md": "Europe's trade deficit with China continues to grow -- the euro trade data for September suggests exports have stabilized at a low level while import growth continues\n\n1/\n\n**Thread post, https://x.com/Brad_Setser/status/2122377212338848099**\n\nThe number for autos tell a similar story, though in that sector exports are still falling --\n\nand there has been a big jump this year in imports of finished autos and automotive parts, including batteries (in HS 85)\n\n2/\n\n**Thread post, https://x.com/Brad_Setser/status/2122377649175802119**\n\nEU imports of actual cars topped 1.5 million in the 12ms to September -- \n\nIt is a huge increase, but it actually understates the swing in trade before the October agreement on safeguards\n\n3/\n\n**Thread post, https://x.com/Brad_Setser/status/2122378257748377941**\n\nIn q3, total imports from China were running at an over 2m annual pace (~20% of final sales) -- \n\nThat is what Michael Dunne called the tsunami \n\nimports of both battery electrics and hybrids topped 1m ...\n\n4/\n\n**Thread post, https://x.com/Brad_Setser/status/2122378833881972913**\n\nHybrid imports will now be capped at 350K a car -- a big reduction relative to the q3 annual pace.\n\n& I don't see how the EU can avoid a safeguard on battery electrics that limits imports there too.  The existing CVDs aren't working.\n\n5/5\n\nhttps://www.cfr.org/articles/europes-china-auto-deal",
+    "media": [
+      {
+        "id": "img_setser_euauto_01",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png",
+        "alt": "第 1 条帖子配图"
+      },
+      {
+        "id": "img_setser_euauto_02",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png",
+        "alt": "第 2 条帖子配图"
+      },
+      {
+        "id": "img_setser_euauto_03",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png",
+        "alt": "第 3 条帖子配图"
+      },
+      {
+        "id": "img_setser_euauto_04",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png",
+        "alt": "第 4 条帖子配图"
+      }
+    ]
+  },
+  "body_md": "欧盟对中国的贸易逆差还在扩大。Brad Setser 看了欧元区 9 月的贸易数据：对华出口已经在低位企稳，从中国的进口仍在增长。他接着用一条 5 帖的串帖，把重点放到了汽车上。\n\n## 汽车出口还在掉，进口大涨\n\n汽车的情况差不多，区别是这个行业的对华出口还在下降。今年从中国进口的整车和汽车零部件都大幅增加，零部件里包括归在 HS 85 章的电池。\n\n## 12 个月进口超过 150 万辆\n\n截至 9 月的 12 个月里，欧盟从中国进口的整车超过 150 万辆。Setser 说这已经是很大的增长，但仍然低估了 10 月保障措施协议达成之前的贸易变化幅度。\n\n## 三季度年化超过 200 万辆\n\n三季度，从中国进口的汽车总量按年化计算超过 200 万辆，约占终端销售的 20%。他说，这就是 Michael Dunne 所说的“海啸”。纯电车和混动车的进口都超过了 100 万辆，这一句他用省略号收尾。\n\n## 混动设限 35 万辆，纯电恐怕也躲不过\n\n按新安排，混动车进口今后的上限是 35 万辆（原帖这句写法有歧义，没有写清是每年），相比三季度的年化节奏是大幅压缩。\n\nSetser 说，他看不出欧盟怎样才能避免对纯电车也实施保障措施、限制进口。他的判断是，现有的反补贴税（CVD）没有起作用。\n\n最后一帖他附了美国外交关系委员会（CFR）网站上一篇关于欧洲与中国汽车协议的文章链接，本站没有打开核对其内容。",
+  "rewrite_media": [
+    {
+      "media_id": "img_setser_euauto_01",
+      "placement": "after_paragraph",
+      "after_md": "欧盟对中国的贸易逆差还在扩大。Brad Setser 看了欧元区 9 月的贸易数据：对华出口已经在低位企稳，从中国的进口仍在增长。他接着用一条 5 帖的串帖，把重点放到了汽车上。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_setser_euauto_02",
+      "placement": "after_paragraph",
+      "after_md": "汽车的情况差不多，区别是这个行业的对华出口还在下降。今年从中国进口的整车和汽车零部件都大幅增加，零部件里包括归在 HS 85 章的电池。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_setser_euauto_03",
+      "placement": "after_paragraph",
+      "after_md": "截至 9 月的 12 个月里，欧盟从中国进口的整车超过 150 万辆。Setser 说这已经是很大的增长，但仍然低估了 10 月保障措施协议达成之前的贸易变化幅度。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_setser_euauto_04",
+      "placement": "after_paragraph",
+      "after_md": "三季度，从中国进口的汽车总量按年化计算超过 200 万辆，约占终端销售的 20%。他说，这就是 Michael Dunne 所说的“海啸”。纯电车和混动车的进口都超过了 100 万辆，这一句他用省略号收尾。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

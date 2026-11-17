@@ -1,0 +1,93 @@
+{
+  "id": "ttunguz-two-pricing-strategies",
+  "date": "2026-11-16",
+  "published_at": "2026-11-16T21:50:25+00:00",
+  "ingested_at": "2026-11-17T08:40:00+08:00",
+  "sector": "SaaS/云",
+  "source": {
+    "type": "x_article",
+    "url": "https://x.com/ttunguz/status/2122447220293435647",
+    "author": "Tomasz Tunguz",
+    "handle": "ttunguz",
+    "title_en": "Strategic Decision or Structural Advantage?",
+    "related_url": "https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/"
+  },
+  "title": "Tomasz Tunguz：Anthropic 拿下高端 94%，OpenAI 靠降价 90% 拿下低端 81%",
+  "dek": "基于 Databricks 一万多家企业客户的 token 数据，两家在中档正面相撞，开源权重份额停在 31%。他追问 Luna 的低价是补贴还是结构性成本优势。",
+  "tags": [
+    "大模型定价",
+    "Anthropic",
+    "OpenAI",
+    "企业 AI"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Strategic Decision or Structural Advantage?",
+    "text_md": "OpenAI & Anthropic each hold roughly 90% market share of an AI segment, but those segments are different : Anthropic holds dominant share at the premium end (94%), & OpenAI at the low end (81%).\nAcross 10,000+ enterprises, that split raises a business question : is this a deliberate pricing strategy to capture different ends of the market, or a structural cost difference in how the two labs serve tokens?\n \nAnthropic sells a premium product & dominates the SOTA (state-of-the-art) tier. Anthropic's share of SOTA token volume rose from 81% in July to 94% on November 2, propelled by the September 21 rollout of Claude Opus 5.5.\n \nThe mid tier is where the two labs now collide directly. Across all Sonnet & Sol versions (Sonnet 5 & 5.5 vs GPT-6 Sol & 6.1 Sol), OpenAI climbed from 0% in July to 47% of mid-tier volume by November 2, & took 57% of the newest Sonnet 5.5 vs Sol 6/6.1 cohort within six weeks of launch.\n \nOpenAI pursued the opposite strategy, using aggressive price cuts on Luna to capture the high-volume floor. On July 30, OpenAI cut Luna pricing by 80% & then another 50% just a few months later, for a 90% total reduction.\nOn September 22, OpenAI launched GPT-6 Luna at $0.10 per 1m tokens. Its low-end share surged from 30% to 66% after the first cut, peaked at 84%, & finished at 81% on November 2.\n \nOpen-weight token share climbed every week from 7% in July to 33% in September, then stalled at 31% in the same week GPT-6 Luna & Sol cut prices by 50%.\nThat raises the strategic question in foundation models today : is Luna's pricing a short-term market-share subsidy, or a structural cost advantage in OpenAI's model architecture?\nOriginally published on tomtunguz.com.",
+    "media": [
+      {
+        "id": "img_tunguz_pricing_cover",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg",
+        "alt": "原文封面图"
+      },
+      {
+        "id": "img_tunguz_pricing_01",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg",
+        "alt": "原文配图"
+      },
+      {
+        "id": "img_tunguz_pricing_02",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg",
+        "alt": "原文配图"
+      },
+      {
+        "id": "img_tunguz_pricing_03",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg",
+        "alt": "原文配图"
+      },
+      {
+        "id": "img_tunguz_pricing_04",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg",
+        "alt": "原文配图"
+      }
+    ]
+  },
+  "body_md": "OpenAI 和 Anthropic 各自在企业 AI 的一个细分市场里拿下约九成份额，只是拿下的是两头：Anthropic 在高端占 94%，OpenAI 在低端占 81%。Tomasz Tunguz 用一万多家企业的数据提出一个问题：这是两家有意用定价分别吃下市场两端，还是两家实验室提供 token 的成本结构本来就不同？\n\n## 数据来自 Databricks 的企业客户\n\n这篇文章在 X 上发的是正文，博客版另有脚注。脚注说明，数据来自 Databricks AI Index，基于 Unity Gateway 十六周的遥测，周度份额序列截至 11 月 2 日。Tunguz 特别注明，这些数据反映的是 Databricks 自己的企业客户群（以数据平台和代理式编程负载为主），不代表整个企业 AI 市场。\n\n## 高端：Anthropic 从 81% 涨到 94%\n\nAnthropic 卖的是高端产品，在 SOTA（最先进模型）这一档占主导。它在 SOTA 档 token 用量里的份额，从 7 月的 81% 升到 11 月 2 日的 94%，推动力是 9 月 21 日推出的 Claude Opus 5.5。博客版摘要还提到，Anthropic 拿下了专有模型支出的 70%。\n\n按脚注的口径，SOTA 档比较的是 Anthropic 的前沿模型（Opus 4.8、Opus 5、Opus 5.5 和 Fable 5.1，11 月 2 日合计占全部专有模型 token 的 39.8%）和 OpenAI 的前沿模型（GPT 6 Astra 和 GPT 5.6 Sol，合计占 2.5%）。\n\n## 中档：两家正面相撞\n\n中档是两家直接交锋的地方。把所有 Sonnet 和 Sol 版本放在一起比（Sonnet 5、5.5 对 GPT-6 Sol、6.1 Sol），OpenAI 的中档用量份额从 7 月的 0% 升到 11 月 2 日的 47%。只看最新一代 Sonnet 5.5 对 Sol 6/6.1，OpenAI 在上线六周内就拿下了 57%。\n\n## 低端：OpenAI 靠降价拿下 81%\n\nOpenAI 走的是相反的路，用 Luna 的激进降价去抢用量最大的底层市场。7 月 30 日，OpenAI 把 Luna 的价格砍了 80%，几个月后又降了 50%，累计降幅 90%。\n\n脚注给了细节：7 月那次，GPT-5.6 Luna 的每百万输入/输出 token 价格从 1.00/6.00 美元降到 0.20/1.20 美元。OpenAI 当时称，GPU 内核改进让服务成本降低了 20%，推测解码让 token 生成效率提升了 15% 以上。\n\n9 月 22 日，OpenAI 推出 GPT-6 Luna，每百万 token 0.10 美元。脚注写明这是输入价，输出为 0.50 美元，缓存输入 0.01 美元，比 GPT-5.6 的促销价低 50%。Luna 在低端档的份额，第一次降价后从 30% 跳到 66%，最高到过 84%，11 月 2 日收在 81%。\n\n脚注还补了一个更宽的口径：把中档主力模型也算进去，OpenAI 在非 SOTA 部分的份额从 7 月 20 日的 13.6% 升到 11 月 2 日的 61.4%。\n\n## 开源权重模型的份额停在 31%\n\n开源权重模型的 token 份额从 7 月的 7% 起每周上涨，9 月涨到 33%。之后在 GPT-6 Luna 和 Sol 降价 50% 的同一周，停在了 31%。\n\n## 补贴，还是成本优势\n\nTunguz 认为，这就引出了基础模型眼下的战略问题：Luna 的定价是短期抢份额的补贴，还是 OpenAI 模型架构带来的结构性成本优势？他在文中没有给出答案。脚注里 OpenAI 自称的 20% 服务成本下降和 15% 以上的生成效率提升，是判断这个问题时能找到的一条线索，但只是 OpenAI 的说法，文中没有独立核实。",
+  "rewrite_media": [
+    {
+      "media_id": "img_tunguz_pricing_cover",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_tunguz_pricing_01",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_tunguz_pricing_02",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_tunguz_pricing_03",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_tunguz_pricing_04",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

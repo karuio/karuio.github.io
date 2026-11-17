@@ -1,0 +1,44 @@
+{
+  "id": "sytaylor-jpm-dbs-tokenized-deposits",
+  "date": "2026-11-16",
+  "published_at": "2026-11-16T10:53:32+00:00",
+  "ingested_at": "2026-11-17T08:40:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2122281910055444584",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "BREAKING: JPMorgan and DBS just linked their tokenized deposits."
+  },
+  "title": "Simon Taylor：摩根大通和星展打通代币化存款，他认为蚂蚁国际是能成的关键",
+  "dek": "两家银行的代币化存款首次互联，美元可在美国和新加坡之间即时划转。他用流动性覆盖率规则解释银行为何不愿持有彼此的代币，并认为下一步需要一种通用结算稳定币。",
+  "tags": [
+    "代币化存款",
+    "稳定币",
+    "跨境支付",
+    "银行监管"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "BREAKING: JPMorgan and DBS just linked their tokenized deposits.",
+    "text_md": "🚨 BREAKING: JPMorgan and DBS just linked their tokenized deposits.\n\nAnt International is the first client, and I think Ant is why it works.\n\nA tokenized deposit is a bank balance recorded on a blockchain. JPMorgan's blockchain unit, Kinexys, and DBS each ran their own and have now connected them. So a client of both can move USD between the US and Singapore instantly, weekends included.\n\n---\n\nThe fact that it's Ant matters.\n\nAnt runs its own blockchain treasury platform, Whale (great name), and already uses tokenized deposits at HSBC, Standard Chartered, OCBC, DBS and JPMorgan. More than a third of Ant's transactions ran on-chain through Whale in 2024.\n\nThe fact that Ant has its own chain (and is going after stablecoin licenses) is what makes this whole thing work.\n\n---\n\nTo understand why, you have to understand why banks don't want to hold each other's tokenized deposits.\n\nMeet the liquidity rule called the LCR (liquidity coverage ratio).\n\nThis rule is designed to make sure a bank keeps enough cash and government bonds to survive a 30-day run on the bank, and it sizes the pile a bank needs by assuming some share of every deposit leaves.\n\nFor example, it assumes:\n\n5% of insured retail deposits leave\n\n25% of a company's day-to-day cash account leaves\n\n100% of money owed to another bank leaves\n\nSo if DBS held $1 of JPMorgan's token, JPMorgan would need $1 of cash or government bonds behind it. DBS couldn't count the token as a safe asset either.\n\nThat gets expensive because the cash held isn't being used to fund lending or other activities.\n\n---\n\nAnt fixes this by being the sophisticated customer at both ends.\n\nIts balance falls at DBS and rises at JPMorgan, and the two banks settle with each other through Partior, a settlement network they both part-own. Each bank's token stays with its own client.\n\nI expect more of these two-bank links, and I expect each one to start with a big client that banks on both sides.\n\n---\n\nThe way to do this without the same sophisticated client on both ends is much more interesting.\n\nIf you don't want another middleman like Partior, you need some universal settlement asset that can sit between the two tokenized deposits. I think for a long time everyone assumed this would be CBDC, but that isn't happening any time soon.\n\nSo what about a bank-friendly stablecoin, like, say, OpenUSD (OUSD)?\n\nSwap from JPMD to OUSD Send OUSD Swap from OUSD to DBUSD\n\nThe middle of that can be any number of market makers, banks, or FX hubs.\n\n---\n\nLast week I spoke to a very senior banker who said: \"Simon, I'm finally with you on the need for a utility settlement stablecoin.\"\n\nIt's an idea whose time has come.",
+    "media": [
+      {
+        "id": "img_sytaylor_tokdep_01",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png",
+        "alt": "原帖配图"
+      }
+    ]
+  },
+  "body_md": "摩根大通和星展银行（DBS）把各自的代币化存款连了起来，第一个客户是蚂蚁国际。Simon Taylor 写道，他认为这件事能成，关键就在蚂蚁。\n\n代币化存款，就是记在区块链上的银行存款余额。摩根大通的区块链部门 Kinexys 和星展原本各自运营一套，现在两套接通了。同时在两家银行开户的客户，可以在美国和新加坡之间即时划转美元，周末也可以。\n\n## 蚂蚁自己就有一条链\n\n蚂蚁运营着自己的区块链资金管理平台 Whale（Taylor 顺带夸了一句这名字起得好），已经在汇丰、渣打、华侨银行（OCBC）、星展和摩根大通使用代币化存款。2024 年，蚂蚁超过三分之一的交易通过 Whale 在链上完成。\n\nTaylor 认为，蚂蚁有自己的链，又在争取稳定币牌照，这才是整件事能运转起来的原因。\n\n## 银行为什么不愿持有彼此的代币\n\n要理解这一点，得先看一条流动性规则：流动性覆盖率（LCR）。\n\n这条规则要求银行持有足够的现金和国债，扛得住 30 天的挤兑。具体要备多少，按“每类存款会流走多少比例”的假设来算。比如它假设：\n\n- 有存款保险的零售存款，流走 5%；\n- 企业日常经营账户里的现金，流走 25%；\n- 欠其他银行的钱，100% 流走。\n\n所以，如果星展持有 1 美元摩根大通的代币，摩根大通就得为它备足 1 美元现金或国债；星展这边也不能把这枚代币算作安全资产。\n\n成本就出在这里：留作备付的现金不能拿去放贷或做别的业务。\n\n## 蚂蚁在两头当那个成熟客户\n\n蚂蚁的办法是自己同时站在两端。它在星展的余额减少，在摩根大通的余额增加，两家银行再通过双方共同持股的结算网络 Partior 相互结算。每家银行的代币始终留在自己的客户手里。\n\nTaylor 预计会出现更多这样的双行互联，而且每一条都会从一个在两边都有账户的大客户起步。\n\n## 两端没有同一个大客户时怎么办\n\n他觉得更有意思的是另一种情况：两端没有同一个成熟客户。\n\n如果不想再多一个 Partior 这样的中间方，就需要一种通用的结算资产，夹在两种代币化存款之间。他说很长时间里大家都以为这个角色会由央行数字货币（CBDC）来担，但短期内不会发生。\n\n他提出的选项是一种对银行友好的稳定币，比如 OpenUSD（OUSD）。路径分三步：\n\n1. 把 JPMD 换成 OUSD；\n2. 发送 OUSD；\n3. 把 OUSD 换成 DBUSD。\n\n中间这一段，可以由任意数量的做市商、银行或外汇枢纽来承接。\n\n上周，一位非常资深的银行家对他说，自己终于认同 Taylor 的看法，确实需要一种公用事业式的结算稳定币。Taylor 的结论是：这个想法的时机到了。",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_tokdep_01",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

@@ -1,5 +1,65 @@
 [
   {
+    "id": "lennysan-muse-mona-sarantakos",
+    "date": "2026-11-16",
+    "title": "Lenny 访谈 Muse 产品负责人：10 人团队花七个月打磨信任，系统提示词必须人写",
+    "dek": "Meta 旗下 AI 助手 Muse 的产品负责人 Mona Sarantakos 讲了原型在董事会前崩溃、购物成了意外的头号场景、用代理群分析对话，以及她招 PM 先看品味。",
+    "url": "/a/lennysan-muse-mona-sarantakos",
+    "source_url": "https://x.com/lennysan/status/2122371313725808647",
+    "tags": [
+      "AI 助手",
+      "产品管理",
+      "Meta",
+      "AI 代理"
+    ],
+    "sector": "消费/产品"
+  },
+  {
+    "id": "setser-eu-china-auto-imports",
+    "date": "2026-11-16",
+    "title": "Brad Setser：欧盟 12 个月从中国进口整车超 150 万辆，他认为纯电也得设限",
+    "dek": "9 月数据显示欧盟对华出口低位企稳、进口继续增长。三季度中国车进口年化超 200 万辆、约占终端销售两成，混动将设 35 万辆上限，他认为现有反补贴税没起作用。",
+    "url": "/a/setser-eu-china-auto-imports",
+    "source_url": "https://x.com/Brad_Setser/status/2122376696011837546",
+    "tags": [
+      "欧盟",
+      "中国出口",
+      "汽车",
+      "贸易保护"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "sytaylor-jpm-dbs-tokenized-deposits",
+    "date": "2026-11-16",
+    "title": "Simon Taylor：摩根大通和星展打通代币化存款，他认为蚂蚁国际是能成的关键",
+    "dek": "两家银行的代币化存款首次互联，美元可在美国和新加坡之间即时划转。他用流动性覆盖率规则解释银行为何不愿持有彼此的代币，并认为下一步需要一种通用结算稳定币。",
+    "url": "/a/sytaylor-jpm-dbs-tokenized-deposits",
+    "source_url": "https://x.com/sytaylor/status/2122281910055444584",
+    "tags": [
+      "代币化存款",
+      "稳定币",
+      "跨境支付",
+      "银行监管"
+    ],
+    "sector": "金融科技"
+  },
+  {
+    "id": "ttunguz-two-pricing-strategies",
+    "date": "2026-11-16",
+    "title": "Tomasz Tunguz：Anthropic 拿下高端 94%，OpenAI 靠降价 90% 拿下低端 81%",
+    "dek": "基于 Databricks 一万多家企业客户的 token 数据，两家在中档正面相撞，开源权重份额停在 31%。他追问 Luna 的低价是补贴还是结构性成本优势。",
+    "url": "/a/ttunguz-two-pricing-strategies",
+    "source_url": "https://x.com/ttunguz/status/2122447220293435647",
+    "tags": [
+      "大模型定价",
+      "Anthropic",
+      "OpenAI",
+      "企业 AI"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
     "id": "jaminball-frontier-blinks",
     "date": "2026-11-13",
     "title": "Jamin Ball：前沿模型价格守了两个月就降了 20%，他认为是在让出提速的成本",

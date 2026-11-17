@@ -5,8 +5,512 @@
     <link>https://karuio.github.io/</link>
     <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 16 Nov 2026 00:18:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 00:18:18 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Lenny 访谈 Muse 产品负责人：10 人团队花七个月打磨信任，系统提示词必须人写</title>
+      <link>https://karuio.github.io/a/lennysan-muse-mona-sarantakos</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/lennysan-muse-mona-sarantakos</guid>
+      <pubDate>Mon, 16 Nov 2026 16:48:47 +0000</pubDate>
+      <author>Lenny Rachitsky</author>
+      <description><![CDATA[<p><em>Meta 旗下 AI 助手 Muse 的产品负责人 Mona Sarantakos 讲了原型在董事会前崩溃、购物成了意外的头号场景、用代理群分析对话，以及她招 PM 先看品味。</em></p>
+<h2>中文改写</h2>
+<p>Mona Sarantakos 是 Meta 旗下 AI 助手 Muse 的产品负责人，也是 Meta 超级智能实验室（Meta Superintelligence Labs）的产品副总裁。Lenny Rachitsky 称 Muse 是今年最成功的 AI 消费产品，在他引用的上一条帖子里，他写的是“史上增长最快的 AI 消费产品”。这是 Mona 第一次接受播客采访，Lenny 把访谈整理成了十条要点。</p>
+<h2>原型在董事会前一小时崩了</h2>
+<p>首席设计师 Alex（@AlexCornell）用几天时间做出了第一个能跑的原型，团队临时决定拿到董事会上展示。会前一小时，原型崩了。Alex 和一位工程师抢修，在会议开始前五分钟恢复。Mona 说：“在某个平行宇宙里，我们没搞定，Muse 可能就不会诞生。”</p>
+<h2>吉祥物 Jolly 原本只是占位符</h2>
+<p>如今已成标志的 Muse 形象 Jolly，最初只是个占位符。Alex 为第一个原型画了这个角色，叫它 Jolly Bot，名字来自他给女儿起的昵称。每隔几个月就有人说，不能拿一个毛绒玩具当 logo 上线。Mona 的说法是：“Jolly 就像我们的蟑螂，怎么都死不了。”上线前一周，团队和马克·扎克伯格拍板：Jolly 留下。</p>
+<p>她的理由是：和一个感觉如此私人的东西对话时，人最不想面对的就是一个企业 logo。</p>
+<h2>起点是 Nat Friedman 的一条消息</h2>
+<p>一月下旬的一个周四，Nat Friedman 在 Meta 内部给几个人发消息，说 OpenClaw 正在改变他对“什么是可能的”的全部看法，大家得试试。</p>
+<p>Mona 花了一个周末把它装在树莓派上（Mac Mini 卖断货了），给它开了自己邮箱、日历和家居自动化的权限。她丈夫当时说，这太不安全了。周一早上，它给她发来这一周的安排汇总，内容取自孩子学校那些她一向跟不上的邮件。她回复 Nat：“就是它了，我加入。”</p>
+<h2>最早动手，却用了七个月才上线</h2>
+<p>Muse 的工作比其他所有 AI 助手都开始得早，却花了七个月才上线。团队先想清楚产品是什么，几个月内就做出了完整可用的端到端版本，剩下的时间全花在可靠性、安全和信息安全上。内部口号是“Trust is a must”，意思是信任必不可少。</p>
+<h2>10 人核心团队，一日三餐一起吃</h2>
+<p>最初的 Muse 团队只有 10 个人。核心团队刻意保持小规模，让沟通和决策都很紧凑。他们在门洛帕克一栋楼里一块像图书馆的公共区域办公，每天三顿饭都一起吃。Mona 说：“那就像把闪电装进了瓶子。我想象不出这个产品能由别的团队做出来。”</p>
+<h2>购物成了没人预料到的头号场景</h2>
+<p>Mona 原本预测，主要场景会是个人效率、健康和个人理财。也有人押家居自动化，这在 OpenClaw 用户里很流行。结果内部测试者开始拿它购物。工程经理 @christinesed 成了最积极的内部试用者，每天早上提交购物相关的 bug 报告。Mona 说，他们的评测原本全放在别的方向上，于是团队开始专门搭建购物评测。</p>
+<h2>用“代理群”读用户对话</h2>
+<p>Muse 的对话又长又是多轮，现成工具都分析不了。团队就派成群的定制代理去读匿名化后的对话和反馈。这些代理群回报哪些地方好用、哪些地方坏了，细到“有 10 个人想在某个网站购物却被拦下”这种程度。Mona 说：“这让我怀疑我们以前到底是怎么做产品的。”</p>
+<h2>系统提示词必须由人来写</h2>
+<p>Mona 的原则是：“系统提示词不能用 AI 写，任何一部分都不行。”团队在其他地方到处用代理，包括帮忙写评测。但数据始终要有人审，因为“一旦不审，我们总会出问题”。</p>
+<h2>招产品经理，她先看品味</h2>
+<p>她现在招 PM，第一看的是产品品味。她同意一个说法：过去两年 PM 这个角色的变化，比此前二十年加起来还大。她现在可以想到一个点子，自己动手做出来，再拿着它进行一场真正的讨论，整个过程“在 24 小时之内”。</p>
+<p>在她看来，让 PM 脱颖而出的是三件事：代表客户，坚持高标准，以及能对一个爱上自己点子的工程师说：“这很酷，我很高兴你这么喜欢它。但我觉得没有别人会喜欢。”</p>
+<h2>下一步：从 App 走向随身设备</h2>
+<p>Muse 的下一个方向是“环境式存在”（ambient presence）。近期，Mona 想减少用户盯着代理干活的负担，她说：“如果我得一直看着代理，那还不如自己干。”她还想让 Muse 走出 App，进入眼镜和其他设备。</p>
+<p>但她没有声称知道这条路会通向哪里：“一年前，我绝不会像今天这样向你描述 Muse。”</p>
+<h2>访谈里还有什么</h2>
+<p>Lenny 在引用的那条帖子里列出了访谈的其他话题：竞争对手都在他们之后起步，他们为什么还是等了七个月才上线；真正能拉动 AI 代理激活率的两个杠杆；Nat Friedman、Alexandr Wang 和 @finkd 各自在产品上留下了什么印记；团队为什么比起仪表盘更依赖代理群；以及为什么品味成了 PM 最重要的技能。完整访谈在 YouTube 上，本站没有看过视频，以上内容只来自 Lenny 的两条帖子。</p>
+
+<h2>原文</h2>
+<p><em>My biggest takeaways from @mona_sarantakos, Head of Product for @Muse</em></p>
+<p>My biggest takeaways from @mona_sarantakos, Head of Product for @Muse, the most successful AI consumer product of the year:</p>
+<ol>
+<li>
+<p>The first Muse prototype broke an hour before the board meeting pitch. Lead designer @AlexCornell built the working prototype in a few days, and the team decided at the last minute to show it at a board meeting. An hour before, it broke. Alex and an engineer raced to fix it, and it came back five minutes before the meeting started. “In some alternate universe we didn’t figure this out and maybe Muse was never born.”</p>
+</li>
+<li>
+<p>Jolly, the now-iconic Muse avatar, was just a placeholder. Alex created the character for the first prototype and called it Jolly Bot, after his nickname for his daughter. Every few months, someone said they could never launch with a stuffed animal as the logo. “Jolly’s like our cockroach. It just never dies.” A week before launch, the team and Mark Zuckerberg made the call: “Jolly stays.” Mona’s reasoning: “When you’re talking to something that feels so personal, the last thing you want to talk to is a corporate logo.”</p>
+</li>
+<li>
+<p>Muse began with a ping from @natfriedman. On a Thursday in late January, Nat messaged a few people internally: OpenClaw was changing his whole view of what’s possible, and they needed to try it. Mona spent the weekend setting it up on a Raspberry Pi (Mac Minis were sold out) and gave it access to her email, calendar, and home automation. On Monday morning it sent her a summary of what was coming up that week, pulled from the school emails she never keeps up with. She pinged Nat back: “This is it.”</p>
+</li>
+<li>
+<p>Muse took seven months to launch, even though work started before every other AI assistant. After figuring out what the product was going to be, and building a fully functioning end-to-end version in a few months, the team spent the rest of the time on reliability, safety, and security. Their internal motto was “Trust is a must.”</p>
+</li>
+<li>
+<p>The original Muse team was just 10 people. The core team stayed small on purpose, to keep communication and decisions tight. They worked out of a library-like common area in a Menlo Park building and ate all three meals together each day. “It was like lightning in a bottle. I couldn’t have imagined this product being built with any other team.”</p>
+</li>
+<li>
+<p>The team didn't expect shopping to be one of Muse’s top use cases. Mona predicted that personal productivity, health, and personal finance would be the primary use cases. Others bet on home automation, which was big with OpenClaw users. Then internal testers started shopping. Engineering manager @christinesed became the top dogfooder, sending shopping bug reports every morning. “All of our evals have been somewhere else,” so the team started building shopping evals.</p>
+</li>
+<li>
+<p>The team uses “agent swarms” to surface user insights at scale. Muse conversations are long and multi-turn, and no existing tool could analyze them. So the team sends swarms of custom-built agents through anonymized conversations and feedback. The swarms report back what’s working and what’s breaking, down to the 10 people who tried to shop on one site and got blocked. Mona said, “It makes me wonder how we even built products before.”</p>
+</li>
+<li>
+<p>Muse’s system prompt has to be written by a person. “You cannot use an AI to write a system prompt, any part of it.” The team uses agents everywhere else, including to help write evals. But a human always reviews the data, because “when we don’t, we always have issues.”</p>
+</li>
+<li>
+<p>Product taste is now the first thing Mona looks for in a PM. She agrees that the PM role has changed more in the past two years than in the two decades before. She can now come up with an idea, build it herself, and have a real conversation about it “in a 24-hour cycle.” What sets a PM apart is representing the customer, holding a high bar, and telling an engineer who loves their own idea: “That’s really cool. I’m glad you really like it. I don’t think anyone else will.”</p>
+</li>
+<li>
+<p>The next frontier for Muse is ambient presence. Near term, Mona wants to cut the babysitting (“At the point where I’m babysitting an agent, I might as well do it myself”) and move Muse beyond the app into glasses and other devices. But she doesn’t claim to know where this goes: “A year ago, I would’ve never explained Muse to you the way that I did.”</p>
+</li>
+</ol>
+<p>Watch the conversation: https://www.youtube.com/watch?v=WY0cdD4gNoQ</p>
+<p><strong>Quoted post, https://x.com/lennysan/status/2121998648573837740</strong></p>
+<p>In late January, @natfriedman pinged a few people at @Meta. He’d been using OpenClaw, and told them they needed to try it.</p>
+<p>Mona Sarantakos couldn’t find a Mac Mini, so she spent the weekend setting it up on a Raspberry Pi and gave it access to her email and calendar. Her husband told her, “That is so not safe.”</p>
+<p>But by Monday morning, it had pulled together everything her kids had going on at school that week. She pinged Nat back: “This is it. I’m in.”</p>
+<p>The team spent the next seven months building something safe and simple enough for everyone. They called it @Muse. It became the fastest-growing AI consumer product ever.</p>
+<p>Mona is head of product for Muse and VP of product at Meta Superintelligence Labs. In her first podcast interview, she shares the inside story of how they built and launched Muse.</p>
+<p>We discuss:
+🔸 Why they waited seven months to launch, despite getting started before all of their competitors
+🔸 The two levers that actually move activation for an AI agent
+🔸 How @natfriedman, @alexandr_wang, and @finkd each left their imprint on the product
+🔸 Why the Muse team relies on "agent swarms" more than dashboards
+🔸 Why taste is now the most important PM skill</p>
+<p>Listen now 👇
+https://www.youtube.com/watch?v=WY0cdD4gNoQ</p>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2122371313725808647">https://x.com/lennysan/status/2122371313725808647</a></p>
+<p><strong>相关链接：</strong><a href="https://www.youtube.com/watch?v=WY0cdD4gNoQ">https://www.youtube.com/watch?v=WY0cdD4gNoQ</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Meta 旗下 AI 助手 Muse 的产品负责人 Mona Sarantakos 讲了原型在董事会前崩溃、购物成了意外的头号场景、用代理群分析对话，以及她招 PM 先看品味。</em></p>
+<h2>中文改写</h2>
+<p>Mona Sarantakos 是 Meta 旗下 AI 助手 Muse 的产品负责人，也是 Meta 超级智能实验室（Meta Superintelligence Labs）的产品副总裁。Lenny Rachitsky 称 Muse 是今年最成功的 AI 消费产品，在他引用的上一条帖子里，他写的是“史上增长最快的 AI 消费产品”。这是 Mona 第一次接受播客采访，Lenny 把访谈整理成了十条要点。</p>
+<h2>原型在董事会前一小时崩了</h2>
+<p>首席设计师 Alex（@AlexCornell）用几天时间做出了第一个能跑的原型，团队临时决定拿到董事会上展示。会前一小时，原型崩了。Alex 和一位工程师抢修，在会议开始前五分钟恢复。Mona 说：“在某个平行宇宙里，我们没搞定，Muse 可能就不会诞生。”</p>
+<h2>吉祥物 Jolly 原本只是占位符</h2>
+<p>如今已成标志的 Muse 形象 Jolly，最初只是个占位符。Alex 为第一个原型画了这个角色，叫它 Jolly Bot，名字来自他给女儿起的昵称。每隔几个月就有人说，不能拿一个毛绒玩具当 logo 上线。Mona 的说法是：“Jolly 就像我们的蟑螂，怎么都死不了。”上线前一周，团队和马克·扎克伯格拍板：Jolly 留下。</p>
+<p>她的理由是：和一个感觉如此私人的东西对话时，人最不想面对的就是一个企业 logo。</p>
+<h2>起点是 Nat Friedman 的一条消息</h2>
+<p>一月下旬的一个周四，Nat Friedman 在 Meta 内部给几个人发消息，说 OpenClaw 正在改变他对“什么是可能的”的全部看法，大家得试试。</p>
+<p>Mona 花了一个周末把它装在树莓派上（Mac Mini 卖断货了），给它开了自己邮箱、日历和家居自动化的权限。她丈夫当时说，这太不安全了。周一早上，它给她发来这一周的安排汇总，内容取自孩子学校那些她一向跟不上的邮件。她回复 Nat：“就是它了，我加入。”</p>
+<h2>最早动手，却用了七个月才上线</h2>
+<p>Muse 的工作比其他所有 AI 助手都开始得早，却花了七个月才上线。团队先想清楚产品是什么，几个月内就做出了完整可用的端到端版本，剩下的时间全花在可靠性、安全和信息安全上。内部口号是“Trust is a must”，意思是信任必不可少。</p>
+<h2>10 人核心团队，一日三餐一起吃</h2>
+<p>最初的 Muse 团队只有 10 个人。核心团队刻意保持小规模，让沟通和决策都很紧凑。他们在门洛帕克一栋楼里一块像图书馆的公共区域办公，每天三顿饭都一起吃。Mona 说：“那就像把闪电装进了瓶子。我想象不出这个产品能由别的团队做出来。”</p>
+<h2>购物成了没人预料到的头号场景</h2>
+<p>Mona 原本预测，主要场景会是个人效率、健康和个人理财。也有人押家居自动化，这在 OpenClaw 用户里很流行。结果内部测试者开始拿它购物。工程经理 @christinesed 成了最积极的内部试用者，每天早上提交购物相关的 bug 报告。Mona 说，他们的评测原本全放在别的方向上，于是团队开始专门搭建购物评测。</p>
+<h2>用“代理群”读用户对话</h2>
+<p>Muse 的对话又长又是多轮，现成工具都分析不了。团队就派成群的定制代理去读匿名化后的对话和反馈。这些代理群回报哪些地方好用、哪些地方坏了，细到“有 10 个人想在某个网站购物却被拦下”这种程度。Mona 说：“这让我怀疑我们以前到底是怎么做产品的。”</p>
+<h2>系统提示词必须由人来写</h2>
+<p>Mona 的原则是：“系统提示词不能用 AI 写，任何一部分都不行。”团队在其他地方到处用代理，包括帮忙写评测。但数据始终要有人审，因为“一旦不审，我们总会出问题”。</p>
+<h2>招产品经理，她先看品味</h2>
+<p>她现在招 PM，第一看的是产品品味。她同意一个说法：过去两年 PM 这个角色的变化，比此前二十年加起来还大。她现在可以想到一个点子，自己动手做出来，再拿着它进行一场真正的讨论，整个过程“在 24 小时之内”。</p>
+<p>在她看来，让 PM 脱颖而出的是三件事：代表客户，坚持高标准，以及能对一个爱上自己点子的工程师说：“这很酷，我很高兴你这么喜欢它。但我觉得没有别人会喜欢。”</p>
+<h2>下一步：从 App 走向随身设备</h2>
+<p>Muse 的下一个方向是“环境式存在”（ambient presence）。近期，Mona 想减少用户盯着代理干活的负担，她说：“如果我得一直看着代理，那还不如自己干。”她还想让 Muse 走出 App，进入眼镜和其他设备。</p>
+<p>但她没有声称知道这条路会通向哪里：“一年前，我绝不会像今天这样向你描述 Muse。”</p>
+<h2>访谈里还有什么</h2>
+<p>Lenny 在引用的那条帖子里列出了访谈的其他话题：竞争对手都在他们之后起步，他们为什么还是等了七个月才上线；真正能拉动 AI 代理激活率的两个杠杆；Nat Friedman、Alexandr Wang 和 @finkd 各自在产品上留下了什么印记；团队为什么比起仪表盘更依赖代理群；以及为什么品味成了 PM 最重要的技能。完整访谈在 YouTube 上，本站没有看过视频，以上内容只来自 Lenny 的两条帖子。</p>
+
+<h2>原文</h2>
+<p><em>My biggest takeaways from @mona_sarantakos, Head of Product for @Muse</em></p>
+<p>My biggest takeaways from @mona_sarantakos, Head of Product for @Muse, the most successful AI consumer product of the year:</p>
+<ol>
+<li>
+<p>The first Muse prototype broke an hour before the board meeting pitch. Lead designer @AlexCornell built the working prototype in a few days, and the team decided at the last minute to show it at a board meeting. An hour before, it broke. Alex and an engineer raced to fix it, and it came back five minutes before the meeting started. “In some alternate universe we didn’t figure this out and maybe Muse was never born.”</p>
+</li>
+<li>
+<p>Jolly, the now-iconic Muse avatar, was just a placeholder. Alex created the character for the first prototype and called it Jolly Bot, after his nickname for his daughter. Every few months, someone said they could never launch with a stuffed animal as the logo. “Jolly’s like our cockroach. It just never dies.” A week before launch, the team and Mark Zuckerberg made the call: “Jolly stays.” Mona’s reasoning: “When you’re talking to something that feels so personal, the last thing you want to talk to is a corporate logo.”</p>
+</li>
+<li>
+<p>Muse began with a ping from @natfriedman. On a Thursday in late January, Nat messaged a few people internally: OpenClaw was changing his whole view of what’s possible, and they needed to try it. Mona spent the weekend setting it up on a Raspberry Pi (Mac Minis were sold out) and gave it access to her email, calendar, and home automation. On Monday morning it sent her a summary of what was coming up that week, pulled from the school emails she never keeps up with. She pinged Nat back: “This is it.”</p>
+</li>
+<li>
+<p>Muse took seven months to launch, even though work started before every other AI assistant. After figuring out what the product was going to be, and building a fully functioning end-to-end version in a few months, the team spent the rest of the time on reliability, safety, and security. Their internal motto was “Trust is a must.”</p>
+</li>
+<li>
+<p>The original Muse team was just 10 people. The core team stayed small on purpose, to keep communication and decisions tight. They worked out of a library-like common area in a Menlo Park building and ate all three meals together each day. “It was like lightning in a bottle. I couldn’t have imagined this product being built with any other team.”</p>
+</li>
+<li>
+<p>The team didn't expect shopping to be one of Muse’s top use cases. Mona predicted that personal productivity, health, and personal finance would be the primary use cases. Others bet on home automation, which was big with OpenClaw users. Then internal testers started shopping. Engineering manager @christinesed became the top dogfooder, sending shopping bug reports every morning. “All of our evals have been somewhere else,” so the team started building shopping evals.</p>
+</li>
+<li>
+<p>The team uses “agent swarms” to surface user insights at scale. Muse conversations are long and multi-turn, and no existing tool could analyze them. So the team sends swarms of custom-built agents through anonymized conversations and feedback. The swarms report back what’s working and what’s breaking, down to the 10 people who tried to shop on one site and got blocked. Mona said, “It makes me wonder how we even built products before.”</p>
+</li>
+<li>
+<p>Muse’s system prompt has to be written by a person. “You cannot use an AI to write a system prompt, any part of it.” The team uses agents everywhere else, including to help write evals. But a human always reviews the data, because “when we don’t, we always have issues.”</p>
+</li>
+<li>
+<p>Product taste is now the first thing Mona looks for in a PM. She agrees that the PM role has changed more in the past two years than in the two decades before. She can now come up with an idea, build it herself, and have a real conversation about it “in a 24-hour cycle.” What sets a PM apart is representing the customer, holding a high bar, and telling an engineer who loves their own idea: “That’s really cool. I’m glad you really like it. I don’t think anyone else will.”</p>
+</li>
+<li>
+<p>The next frontier for Muse is ambient presence. Near term, Mona wants to cut the babysitting (“At the point where I’m babysitting an agent, I might as well do it myself”) and move Muse beyond the app into glasses and other devices. But she doesn’t claim to know where this goes: “A year ago, I would’ve never explained Muse to you the way that I did.”</p>
+</li>
+</ol>
+<p>Watch the conversation: https://www.youtube.com/watch?v=WY0cdD4gNoQ</p>
+<p><strong>Quoted post, https://x.com/lennysan/status/2121998648573837740</strong></p>
+<p>In late January, @natfriedman pinged a few people at @Meta. He’d been using OpenClaw, and told them they needed to try it.</p>
+<p>Mona Sarantakos couldn’t find a Mac Mini, so she spent the weekend setting it up on a Raspberry Pi and gave it access to her email and calendar. Her husband told her, “That is so not safe.”</p>
+<p>But by Monday morning, it had pulled together everything her kids had going on at school that week. She pinged Nat back: “This is it. I’m in.”</p>
+<p>The team spent the next seven months building something safe and simple enough for everyone. They called it @Muse. It became the fastest-growing AI consumer product ever.</p>
+<p>Mona is head of product for Muse and VP of product at Meta Superintelligence Labs. In her first podcast interview, she shares the inside story of how they built and launched Muse.</p>
+<p>We discuss:
+🔸 Why they waited seven months to launch, despite getting started before all of their competitors
+🔸 The two levers that actually move activation for an AI agent
+🔸 How @natfriedman, @alexandr_wang, and @finkd each left their imprint on the product
+🔸 Why the Muse team relies on "agent swarms" more than dashboards
+🔸 Why taste is now the most important PM skill</p>
+<p>Listen now 👇
+https://www.youtube.com/watch?v=WY0cdD4gNoQ</p>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2122371313725808647">https://x.com/lennysan/status/2122371313725808647</a></p>
+<p><strong>相关链接：</strong><a href="https://www.youtube.com/watch?v=WY0cdD4gNoQ">https://www.youtube.com/watch?v=WY0cdD4gNoQ</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "My biggest takeaways from @mona_sarantakos, Head of Product for @Muse", "url": "https://x.com/lennysan/status/2122371313725808647", "lang": "en", "html": "<h2>My biggest takeaways from @mona_sarantakos, Head of Product for @Muse</h2>\n\n<p>My biggest takeaways from @mona_sarantakos, Head of Product for @Muse, the most successful AI consumer product of the year:</p>\n<ol>\n<li>\n<p>The first Muse prototype broke an hour before the board meeting pitch. Lead designer @AlexCornell built the working prototype in a few days, and the team decided at the last minute to show it at a board meeting. An hour before, it broke. Alex and an engineer raced to fix it, and it came back five minutes before the meeting started. “In some alternate universe we didn’t figure this out and maybe Muse was never born.”</p>\n</li>\n<li>\n<p>Jolly, the now-iconic Muse avatar, was just a placeholder. Alex created the character for the first prototype and called it Jolly Bot, after his nickname for his daughter. Every few months, someone said they could never launch with a stuffed animal as the logo. “Jolly’s like our cockroach. It just never dies.” A week before launch, the team and Mark Zuckerberg made the call: “Jolly stays.” Mona’s reasoning: “When you’re talking to something that feels so personal, the last thing you want to talk to is a corporate logo.”</p>\n</li>\n<li>\n<p>Muse began with a ping from @natfriedman. On a Thursday in late January, Nat messaged a few people internally: OpenClaw was changing his whole view of what’s possible, and they needed to try it. Mona spent the weekend setting it up on a Raspberry Pi (Mac Minis were sold out) and gave it access to her email, calendar, and home automation. On Monday morning it sent her a summary of what was coming up that week, pulled from the school emails she never keeps up with. She pinged Nat back: “This is it.”</p>\n</li>\n<li>\n<p>Muse took seven months to launch, even though work started before every other AI assistant. After figuring out what the product was going to be, and building a fully functioning end-to-end version in a few months, the team spent the rest of the time on reliability, safety, and security. Their internal motto was “Trust is a must.”</p>\n</li>\n<li>\n<p>The original Muse team was just 10 people. The core team stayed small on purpose, to keep communication and decisions tight. They worked out of a library-like common area in a Menlo Park building and ate all three meals together each day. “It was like lightning in a bottle. I couldn’t have imagined this product being built with any other team.”</p>\n</li>\n<li>\n<p>The team didn't expect shopping to be one of Muse’s top use cases. Mona predicted that personal productivity, health, and personal finance would be the primary use cases. Others bet on home automation, which was big with OpenClaw users. Then internal testers started shopping. Engineering manager @christinesed became the top dogfooder, sending shopping bug reports every morning. “All of our evals have been somewhere else,” so the team started building shopping evals.</p>\n</li>\n<li>\n<p>The team uses “agent swarms” to surface user insights at scale. Muse conversations are long and multi-turn, and no existing tool could analyze them. So the team sends swarms of custom-built agents through anonymized conversations and feedback. The swarms report back what’s working and what’s breaking, down to the 10 people who tried to shop on one site and got blocked. Mona said, “It makes me wonder how we even built products before.”</p>\n</li>\n<li>\n<p>Muse’s system prompt has to be written by a person. “You cannot use an AI to write a system prompt, any part of it.” The team uses agents everywhere else, including to help write evals. But a human always reviews the data, because “when we don’t, we always have issues.”</p>\n</li>\n<li>\n<p>Product taste is now the first thing Mona looks for in a PM. She agrees that the PM role has changed more in the past two years than in the two decades before. She can now come up with an idea, build it herself, and have a real conversation about it “in a 24-hour cycle.” What sets a PM apart is representing the customer, holding a high bar, and telling an engineer who loves their own idea: “That’s really cool. I’m glad you really like it. I don’t think anyone else will.”</p>\n</li>\n<li>\n<p>The next frontier for Muse is ambient presence. Near term, Mona wants to cut the babysitting (“At the point where I’m babysitting an agent, I might as well do it myself”) and move Muse beyond the app into glasses and other devices. But she doesn’t claim to know where this goes: “A year ago, I would’ve never explained Muse to you the way that I did.”</p>\n</li>\n</ol>\n<p>Watch the conversation: https://www.youtube.com/watch?v=WY0cdD4gNoQ</p>\n<p><strong>Quoted post, https://x.com/lennysan/status/2121998648573837740</strong></p>\n<p>In late January, @natfriedman pinged a few people at @Meta. He’d been using OpenClaw, and told them they needed to try it.</p>\n<p>Mona Sarantakos couldn’t find a Mac Mini, so she spent the weekend setting it up on a Raspberry Pi and gave it access to her email and calendar. Her husband told her, “That is so not safe.”</p>\n<p>But by Monday morning, it had pulled together everything her kids had going on at school that week. She pinged Nat back: “This is it. I’m in.”</p>\n<p>The team spent the next seven months building something safe and simple enough for everyone. They called it @Muse. It became the fastest-growing AI consumer product ever.</p>\n<p>Mona is head of product for Muse and VP of product at Meta Superintelligence Labs. In her first podcast interview, she shares the inside story of how they built and launched Muse.</p>\n<p>We discuss:\n🔸 Why they waited seven months to launch, despite getting started before all of their competitors\n🔸 The two levers that actually move activation for an AI agent\n🔸 How @natfriedman, @alexandr_wang, and @finkd each left their imprint on the product\n🔸 Why the Muse team relies on \"agent swarms\" more than dashboards\n🔸 Why taste is now the most important PM skill</p>\n<p>Listen now 👇\nhttps://www.youtube.com/watch?v=WY0cdD4gNoQ</p>\n<p>原文链接：<a href=\"https://x.com/lennysan/status/2122371313725808647\">https://x.com/lennysan/status/2122371313725808647</a></p>\n<p>相关链接：<a href=\"https://www.youtube.com/watch?v=WY0cdD4gNoQ\">https://www.youtube.com/watch?v=WY0cdD4gNoQ</a></p>"}, "rewrite": {"title": "Lenny 访谈 Muse 产品负责人：10 人团队花七个月打磨信任，系统提示词必须人写", "markdown": "Mona Sarantakos 是 Meta 旗下 AI 助手 Muse 的产品负责人，也是 Meta 超级智能实验室（Meta Superintelligence Labs）的产品副总裁。Lenny Rachitsky 称 Muse 是今年最成功的 AI 消费产品，在他引用的上一条帖子里，他写的是“史上增长最快的 AI 消费产品”。这是 Mona 第一次接受播客采访，Lenny 把访谈整理成了十条要点。\n\n## 原型在董事会前一小时崩了\n\n首席设计师 Alex（@AlexCornell）用几天时间做出了第一个能跑的原型，团队临时决定拿到董事会上展示。会前一小时，原型崩了。Alex 和一位工程师抢修，在会议开始前五分钟恢复。Mona 说：“在某个平行宇宙里，我们没搞定，Muse 可能就不会诞生。”\n\n## 吉祥物 Jolly 原本只是占位符\n\n如今已成标志的 Muse 形象 Jolly，最初只是个占位符。Alex 为第一个原型画了这个角色，叫它 Jolly Bot，名字来自他给女儿起的昵称。每隔几个月就有人说，不能拿一个毛绒玩具当 logo 上线。Mona 的说法是：“Jolly 就像我们的蟑螂，怎么都死不了。”上线前一周，团队和马克·扎克伯格拍板：Jolly 留下。\n\n她的理由是：和一个感觉如此私人的东西对话时，人最不想面对的就是一个企业 logo。\n\n## 起点是 Nat Friedman 的一条消息\n\n一月下旬的一个周四，Nat Friedman 在 Meta 内部给几个人发消息，说 OpenClaw 正在改变他对“什么是可能的”的全部看法，大家得试试。\n\nMona 花了一个周末把它装在树莓派上（Mac Mini 卖断货了），给它开了自己邮箱、日历和家居自动化的权限。她丈夫当时说，这太不安全了。周一早上，它给她发来这一周的安排汇总，内容取自孩子学校那些她一向跟不上的邮件。她回复 Nat：“就是它了，我加入。”\n\n## 最早动手，却用了七个月才上线\n\nMuse 的工作比其他所有 AI 助手都开始得早，却花了七个月才上线。团队先想清楚产品是什么，几个月内就做出了完整可用的端到端版本，剩下的时间全花在可靠性、安全和信息安全上。内部口号是“Trust is a must”，意思是信任必不可少。\n\n## 10 人核心团队，一日三餐一起吃\n\n最初的 Muse 团队只有 10 个人。核心团队刻意保持小规模，让沟通和决策都很紧凑。他们在门洛帕克一栋楼里一块像图书馆的公共区域办公，每天三顿饭都一起吃。Mona 说：“那就像把闪电装进了瓶子。我想象不出这个产品能由别的团队做出来。”\n\n## 购物成了没人预料到的头号场景\n\nMona 原本预测，主要场景会是个人效率、健康和个人理财。也有人押家居自动化，这在 OpenClaw 用户里很流行。结果内部测试者开始拿它购物。工程经理 @christinesed 成了最积极的内部试用者，每天早上提交购物相关的 bug 报告。Mona 说，他们的评测原本全放在别的方向上，于是团队开始专门搭建购物评测。\n\n## 用“代理群”读用户对话\n\nMuse 的对话又长又是多轮，现成工具都分析不了。团队就派成群的定制代理去读匿名化后的对话和反馈。这些代理群回报哪些地方好用、哪些地方坏了，细到“有 10 个人想在某个网站购物却被拦下”这种程度。Mona 说：“这让我怀疑我们以前到底是怎么做产品的。”\n\n## 系统提示词必须由人来写\n\nMona 的原则是：“系统提示词不能用 AI 写，任何一部分都不行。”团队在其他地方到处用代理，包括帮忙写评测。但数据始终要有人审，因为“一旦不审，我们总会出问题”。\n\n## 招产品经理，她先看品味\n\n她现在招 PM，第一看的是产品品味。她同意一个说法：过去两年 PM 这个角色的变化，比此前二十年加起来还大。她现在可以想到一个点子，自己动手做出来，再拿着它进行一场真正的讨论，整个过程“在 24 小时之内”。\n\n在她看来，让 PM 脱颖而出的是三件事：代表客户，坚持高标准，以及能对一个爱上自己点子的工程师说：“这很酷，我很高兴你这么喜欢它。但我觉得没有别人会喜欢。”\n\n## 下一步：从 App 走向随身设备\n\nMuse 的下一个方向是“环境式存在”（ambient presence）。近期，Mona 想减少用户盯着代理干活的负担，她说：“如果我得一直看着代理，那还不如自己干。”她还想让 Muse 走出 App，进入眼镜和其他设备。\n\n但她没有声称知道这条路会通向哪里：“一年前，我绝不会像今天这样向你描述 Muse。”\n\n## 访谈里还有什么\n\nLenny 在引用的那条帖子里列出了访谈的其他话题：竞争对手都在他们之后起步，他们为什么还是等了七个月才上线；真正能拉动 AI 代理激活率的两个杠杆；Nat Friedman、Alexandr Wang 和 @finkd 各自在产品上留下了什么印记；团队为什么比起仪表盘更依赖代理群；以及为什么品味成了 PM 最重要的技能。完整访谈在 YouTube 上，本站没有看过视频，以上内容只来自 Lenny 的两条帖子。", "html": "<p>Mona Sarantakos 是 Meta 旗下 AI 助手 Muse 的产品负责人，也是 Meta 超级智能实验室（Meta Superintelligence Labs）的产品副总裁。Lenny Rachitsky 称 Muse 是今年最成功的 AI 消费产品，在他引用的上一条帖子里，他写的是“史上增长最快的 AI 消费产品”。这是 Mona 第一次接受播客采访，Lenny 把访谈整理成了十条要点。</p>\n<h2>原型在董事会前一小时崩了</h2>\n<p>首席设计师 Alex（@AlexCornell）用几天时间做出了第一个能跑的原型，团队临时决定拿到董事会上展示。会前一小时，原型崩了。Alex 和一位工程师抢修，在会议开始前五分钟恢复。Mona 说：“在某个平行宇宙里，我们没搞定，Muse 可能就不会诞生。”</p>\n<h2>吉祥物 Jolly 原本只是占位符</h2>\n<p>如今已成标志的 Muse 形象 Jolly，最初只是个占位符。Alex 为第一个原型画了这个角色，叫它 Jolly Bot，名字来自他给女儿起的昵称。每隔几个月就有人说，不能拿一个毛绒玩具当 logo 上线。Mona 的说法是：“Jolly 就像我们的蟑螂，怎么都死不了。”上线前一周，团队和马克·扎克伯格拍板：Jolly 留下。</p>\n<p>她的理由是：和一个感觉如此私人的东西对话时，人最不想面对的就是一个企业 logo。</p>\n<h2>起点是 Nat Friedman 的一条消息</h2>\n<p>一月下旬的一个周四，Nat Friedman 在 Meta 内部给几个人发消息，说 OpenClaw 正在改变他对“什么是可能的”的全部看法，大家得试试。</p>\n<p>Mona 花了一个周末把它装在树莓派上（Mac Mini 卖断货了），给它开了自己邮箱、日历和家居自动化的权限。她丈夫当时说，这太不安全了。周一早上，它给她发来这一周的安排汇总，内容取自孩子学校那些她一向跟不上的邮件。她回复 Nat：“就是它了，我加入。”</p>\n<h2>最早动手，却用了七个月才上线</h2>\n<p>Muse 的工作比其他所有 AI 助手都开始得早，却花了七个月才上线。团队先想清楚产品是什么，几个月内就做出了完整可用的端到端版本，剩下的时间全花在可靠性、安全和信息安全上。内部口号是“Trust is a must”，意思是信任必不可少。</p>\n<h2>10 人核心团队，一日三餐一起吃</h2>\n<p>最初的 Muse 团队只有 10 个人。核心团队刻意保持小规模，让沟通和决策都很紧凑。他们在门洛帕克一栋楼里一块像图书馆的公共区域办公，每天三顿饭都一起吃。Mona 说：“那就像把闪电装进了瓶子。我想象不出这个产品能由别的团队做出来。”</p>\n<h2>购物成了没人预料到的头号场景</h2>\n<p>Mona 原本预测，主要场景会是个人效率、健康和个人理财。也有人押家居自动化，这在 OpenClaw 用户里很流行。结果内部测试者开始拿它购物。工程经理 @christinesed 成了最积极的内部试用者，每天早上提交购物相关的 bug 报告。Mona 说，他们的评测原本全放在别的方向上，于是团队开始专门搭建购物评测。</p>\n<h2>用“代理群”读用户对话</h2>\n<p>Muse 的对话又长又是多轮，现成工具都分析不了。团队就派成群的定制代理去读匿名化后的对话和反馈。这些代理群回报哪些地方好用、哪些地方坏了，细到“有 10 个人想在某个网站购物却被拦下”这种程度。Mona 说：“这让我怀疑我们以前到底是怎么做产品的。”</p>\n<h2>系统提示词必须由人来写</h2>\n<p>Mona 的原则是：“系统提示词不能用 AI 写，任何一部分都不行。”团队在其他地方到处用代理，包括帮忙写评测。但数据始终要有人审，因为“一旦不审，我们总会出问题”。</p>\n<h2>招产品经理，她先看品味</h2>\n<p>她现在招 PM，第一看的是产品品味。她同意一个说法：过去两年 PM 这个角色的变化，比此前二十年加起来还大。她现在可以想到一个点子，自己动手做出来，再拿着它进行一场真正的讨论，整个过程“在 24 小时之内”。</p>\n<p>在她看来，让 PM 脱颖而出的是三件事：代表客户，坚持高标准，以及能对一个爱上自己点子的工程师说：“这很酷，我很高兴你这么喜欢它。但我觉得没有别人会喜欢。”</p>\n<h2>下一步：从 App 走向随身设备</h2>\n<p>Muse 的下一个方向是“环境式存在”（ambient presence）。近期，Mona 想减少用户盯着代理干活的负担，她说：“如果我得一直看着代理，那还不如自己干。”她还想让 Muse 走出 App，进入眼镜和其他设备。</p>\n<p>但她没有声称知道这条路会通向哪里：“一年前，我绝不会像今天这样向你描述 Muse。”</p>\n<h2>访谈里还有什么</h2>\n<p>Lenny 在引用的那条帖子里列出了访谈的其他话题：竞争对手都在他们之后起步，他们为什么还是等了七个月才上线；真正能拉动 AI 代理激活率的两个杠杆；Nat Friedman、Alexandr Wang 和 @finkd 各自在产品上留下了什么印记；团队为什么比起仪表盘更依赖代理群；以及为什么品味成了 PM 最重要的技能。完整访谈在 YouTube 上，本站没有看过视频，以上内容只来自 Lenny 的两条帖子。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Brad Setser：欧盟 12 个月从中国进口整车超 150 万辆，他认为纯电也得设限</title>
+      <link>https://karuio.github.io/a/setser-eu-china-auto-imports</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/setser-eu-china-auto-imports</guid>
+      <pubDate>Mon, 16 Nov 2026 17:10:10 +0000</pubDate>
+      <author>Brad Setser</author>
+      <description><![CDATA[<p><em>9 月数据显示欧盟对华出口低位企稳、进口继续增长。三季度中国车进口年化超 200 万辆、约占终端销售两成，混动将设 35 万辆上限，他认为现有反补贴税没起作用。</em></p>
+<h2>中文改写</h2>
+<p>欧盟对中国的贸易逆差还在扩大。Brad Setser 看了欧元区 9 月的贸易数据：对华出口已经在低位企稳，从中国的进口仍在增长。他接着用一条 5 帖的串帖，把重点放到了汽车上。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_01"><img src="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>汽车出口还在掉，进口大涨</h2>
+<p>汽车的情况差不多，区别是这个行业的对华出口还在下降。今年从中国进口的整车和汽车零部件都大幅增加，零部件里包括归在 HS 85 章的电池。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_02"><img src="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>12 个月进口超过 150 万辆</h2>
+<p>截至 9 月的 12 个月里，欧盟从中国进口的整车超过 150 万辆。Setser 说这已经是很大的增长，但仍然低估了 10 月保障措施协议达成之前的贸易变化幅度。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_03"><img src="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png" alt="第 3 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>三季度年化超过 200 万辆</h2>
+<p>三季度，从中国进口的汽车总量按年化计算超过 200 万辆，约占终端销售的 20%。他说，这就是 Michael Dunne 所说的“海啸”。纯电车和混动车的进口都超过了 100 万辆，这一句他用省略号收尾。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_04"><img src="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png" alt="第 4 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>混动设限 35 万辆，纯电恐怕也躲不过</h2>
+<p>按新安排，混动车进口今后的上限是 35 万辆（原帖这句写法有歧义，没有写清是每年），相比三季度的年化节奏是大幅压缩。</p>
+<p>Setser 说，他看不出欧盟怎样才能避免对纯电车也实施保障措施、限制进口。他的判断是，现有的反补贴税（CVD）没有起作用。</p>
+<p>最后一帖他附了美国外交关系委员会（CFR）网站上一篇关于欧洲与中国汽车协议的文章链接，本站没有打开核对其内容。</p>
+
+<h2>原文</h2>
+<p><em>Europe&#x27;s trade deficit with China continues to grow (thread)</em></p>
+<figure data-media-id="img_setser_euauto_01"><img src="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_euauto_02"><img src="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_euauto_03"><img src="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png" alt="第 3 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_euauto_04"><img src="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png" alt="第 4 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>Europe's trade deficit with China continues to grow -- the euro trade data for September suggests exports have stabilized at a low level while import growth continues</p>
+<p>1/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122377212338848099</strong></p>
+<p>The number for autos tell a similar story, though in that sector exports are still falling --</p>
+<p>and there has been a big jump this year in imports of finished autos and automotive parts, including batteries (in HS 85)</p>
+<p>2/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122377649175802119</strong></p>
+<p>EU imports of actual cars topped 1.5 million in the 12ms to September --</p>
+<p>It is a huge increase, but it actually understates the swing in trade before the October agreement on safeguards</p>
+<p>3/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122378257748377941</strong></p>
+<p>In q3, total imports from China were running at an over 2m annual pace (~20% of final sales) --</p>
+<p>That is what Michael Dunne called the tsunami</p>
+<p>imports of both battery electrics and hybrids topped 1m ...</p>
+<p>4/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122378833881972913</strong></p>
+<p>Hybrid imports will now be capped at 350K a car -- a big reduction relative to the q3 annual pace.</p>
+<p>&amp; I don't see how the EU can avoid a safeguard on battery electrics that limits imports there too.  The existing CVDs aren't working.</p>
+<p>5/5</p>
+<p>https://www.cfr.org/articles/europes-china-auto-deal</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2122376696011837546">https://x.com/Brad_Setser/status/2122376696011837546</a></p>
+<p><strong>相关链接：</strong><a href="https://www.cfr.org/articles/europes-china-auto-deal">https://www.cfr.org/articles/europes-china-auto-deal</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>9 月数据显示欧盟对华出口低位企稳、进口继续增长。三季度中国车进口年化超 200 万辆、约占终端销售两成，混动将设 35 万辆上限，他认为现有反补贴税没起作用。</em></p>
+<h2>中文改写</h2>
+<p>欧盟对中国的贸易逆差还在扩大。Brad Setser 看了欧元区 9 月的贸易数据：对华出口已经在低位企稳，从中国的进口仍在增长。他接着用一条 5 帖的串帖，把重点放到了汽车上。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_01"><img src="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>汽车出口还在掉，进口大涨</h2>
+<p>汽车的情况差不多，区别是这个行业的对华出口还在下降。今年从中国进口的整车和汽车零部件都大幅增加，零部件里包括归在 HS 85 章的电池。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_02"><img src="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>12 个月进口超过 150 万辆</h2>
+<p>截至 9 月的 12 个月里，欧盟从中国进口的整车超过 150 万辆。Setser 说这已经是很大的增长，但仍然低估了 10 月保障措施协议达成之前的贸易变化幅度。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_03"><img src="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png" alt="第 3 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>三季度年化超过 200 万辆</h2>
+<p>三季度，从中国进口的汽车总量按年化计算超过 200 万辆，约占终端销售的 20%。他说，这就是 Michael Dunne 所说的“海啸”。纯电车和混动车的进口都超过了 100 万辆，这一句他用省略号收尾。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_euauto_04"><img src="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png" alt="第 4 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>混动设限 35 万辆，纯电恐怕也躲不过</h2>
+<p>按新安排，混动车进口今后的上限是 35 万辆（原帖这句写法有歧义，没有写清是每年），相比三季度的年化节奏是大幅压缩。</p>
+<p>Setser 说，他看不出欧盟怎样才能避免对纯电车也实施保障措施、限制进口。他的判断是，现有的反补贴税（CVD）没有起作用。</p>
+<p>最后一帖他附了美国外交关系委员会（CFR）网站上一篇关于欧洲与中国汽车协议的文章链接，本站没有打开核对其内容。</p>
+
+<h2>原文</h2>
+<p><em>Europe&#x27;s trade deficit with China continues to grow (thread)</em></p>
+<figure data-media-id="img_setser_euauto_01"><img src="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_euauto_02"><img src="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_euauto_03"><img src="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png" alt="第 3 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_euauto_04"><img src="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png" alt="第 4 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>Europe's trade deficit with China continues to grow -- the euro trade data for September suggests exports have stabilized at a low level while import growth continues</p>
+<p>1/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122377212338848099</strong></p>
+<p>The number for autos tell a similar story, though in that sector exports are still falling --</p>
+<p>and there has been a big jump this year in imports of finished autos and automotive parts, including batteries (in HS 85)</p>
+<p>2/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122377649175802119</strong></p>
+<p>EU imports of actual cars topped 1.5 million in the 12ms to September --</p>
+<p>It is a huge increase, but it actually understates the swing in trade before the October agreement on safeguards</p>
+<p>3/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122378257748377941</strong></p>
+<p>In q3, total imports from China were running at an over 2m annual pace (~20% of final sales) --</p>
+<p>That is what Michael Dunne called the tsunami</p>
+<p>imports of both battery electrics and hybrids topped 1m ...</p>
+<p>4/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2122378833881972913</strong></p>
+<p>Hybrid imports will now be capped at 350K a car -- a big reduction relative to the q3 annual pace.</p>
+<p>&amp; I don't see how the EU can avoid a safeguard on battery electrics that limits imports there too.  The existing CVDs aren't working.</p>
+<p>5/5</p>
+<p>https://www.cfr.org/articles/europes-china-auto-deal</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2122376696011837546">https://x.com/Brad_Setser/status/2122376696011837546</a></p>
+<p><strong>相关链接：</strong><a href="https://www.cfr.org/articles/europes-china-auto-deal">https://www.cfr.org/articles/europes-china-auto-deal</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Europe's trade deficit with China continues to grow (thread)", "url": "https://x.com/Brad_Setser/status/2122376696011837546", "lang": "en", "html": "<h2>Europe&#x27;s trade deficit with China continues to grow (thread)</h2>\n<figure data-media-id=\"img_setser_euauto_01\"><img src=\"https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png\" alt=\"第 1 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_euauto_02\"><img src=\"https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png\" alt=\"第 2 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_euauto_03\"><img src=\"https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png\" alt=\"第 3 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_euauto_04\"><img src=\"https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png\" alt=\"第 4 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Europe's trade deficit with China continues to grow -- the euro trade data for September suggests exports have stabilized at a low level while import growth continues</p>\n<p>1/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2122377212338848099</strong></p>\n<p>The number for autos tell a similar story, though in that sector exports are still falling --</p>\n<p>and there has been a big jump this year in imports of finished autos and automotive parts, including batteries (in HS 85)</p>\n<p>2/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2122377649175802119</strong></p>\n<p>EU imports of actual cars topped 1.5 million in the 12ms to September --</p>\n<p>It is a huge increase, but it actually understates the swing in trade before the October agreement on safeguards</p>\n<p>3/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2122378257748377941</strong></p>\n<p>In q3, total imports from China were running at an over 2m annual pace (~20% of final sales) --</p>\n<p>That is what Michael Dunne called the tsunami</p>\n<p>imports of both battery electrics and hybrids topped 1m ...</p>\n<p>4/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2122378833881972913</strong></p>\n<p>Hybrid imports will now be capped at 350K a car -- a big reduction relative to the q3 annual pace.</p>\n<p>&amp; I don't see how the EU can avoid a safeguard on battery electrics that limits imports there too.  The existing CVDs aren't working.</p>\n<p>5/5</p>\n<p>https://www.cfr.org/articles/europes-china-auto-deal</p>\n<p>原文链接：<a href=\"https://x.com/Brad_Setser/status/2122376696011837546\">https://x.com/Brad_Setser/status/2122376696011837546</a></p>\n<p>相关链接：<a href=\"https://www.cfr.org/articles/europes-china-auto-deal\">https://www.cfr.org/articles/europes-china-auto-deal</a></p>"}, "rewrite": {"title": "Brad Setser：欧盟 12 个月从中国进口整车超 150 万辆，他认为纯电也得设限", "markdown": "欧盟对中国的贸易逆差还在扩大。Brad Setser 看了欧元区 9 月的贸易数据：对华出口已经在低位企稳，从中国的进口仍在增长。他接着用一条 5 帖的串帖，把重点放到了汽车上。\n\n![第 1 条帖子配图](<https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png>)\n\n## 汽车出口还在掉，进口大涨\n\n汽车的情况差不多，区别是这个行业的对华出口还在下降。今年从中国进口的整车和汽车零部件都大幅增加，零部件里包括归在 HS 85 章的电池。\n\n![第 2 条帖子配图](<https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png>)\n\n## 12 个月进口超过 150 万辆\n\n截至 9 月的 12 个月里，欧盟从中国进口的整车超过 150 万辆。Setser 说这已经是很大的增长，但仍然低估了 10 月保障措施协议达成之前的贸易变化幅度。\n\n![第 3 条帖子配图](<https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png>)\n\n## 三季度年化超过 200 万辆\n\n三季度，从中国进口的汽车总量按年化计算超过 200 万辆，约占终端销售的 20%。他说，这就是 Michael Dunne 所说的“海啸”。纯电车和混动车的进口都超过了 100 万辆，这一句他用省略号收尾。\n\n![第 4 条帖子配图](<https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png>)\n\n## 混动设限 35 万辆，纯电恐怕也躲不过\n\n按新安排，混动车进口今后的上限是 35 万辆（原帖这句写法有歧义，没有写清是每年），相比三季度的年化节奏是大幅压缩。\n\nSetser 说，他看不出欧盟怎样才能避免对纯电车也实施保障措施、限制进口。他的判断是，现有的反补贴税（CVD）没有起作用。\n\n最后一帖他附了美国外交关系委员会（CFR）网站上一篇关于欧洲与中国汽车协议的文章链接，本站没有打开核对其内容。", "html": "<p>欧盟对中国的贸易逆差还在扩大。Brad Setser 看了欧元区 9 月的贸易数据：对华出口已经在低位企稳，从中国的进口仍在增长。他接着用一条 5 帖的串帖，把重点放到了汽车上。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_euauto_01\"><img src=\"https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png\" alt=\"第 1 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQyV1rWwAA2Bau.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>汽车出口还在掉，进口大涨</h2>\n<p>汽车的情况差不多，区别是这个行业的对华出口还在下降。今年从中国进口的整车和汽车零部件都大幅增加，零部件里包括归在 HS 85 章的电池。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_euauto_02\"><img src=\"https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png\" alt=\"第 2 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQy0FKWcAEvBxv.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>12 个月进口超过 150 万辆</h2>\n<p>截至 9 月的 12 个月里，欧盟从中国进口的整车超过 150 万辆。Setser 说这已经是很大的增长，但仍然低估了 10 月保障措施协议达成之前的贸易变化幅度。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_euauto_03\"><img src=\"https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png\" alt=\"第 3 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQzF3yWkAAOeIH.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>三季度年化超过 200 万辆</h2>\n<p>三季度，从中国进口的汽车总量按年化计算超过 200 万辆，约占终端销售的 20%。他说，这就是 Michael Dunne 所说的“海啸”。纯电车和混动车的进口都超过了 100 万辆，这一句他用省略号收尾。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_euauto_04\"><img src=\"https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png\" alt=\"第 4 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXQzv2bXAAAs70m.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>混动设限 35 万辆，纯电恐怕也躲不过</h2>\n<p>按新安排，混动车进口今后的上限是 35 万辆（原帖这句写法有歧义，没有写清是每年），相比三季度的年化节奏是大幅压缩。</p>\n<p>Setser 说，他看不出欧盟怎样才能避免对纯电车也实施保障措施、限制进口。他的判断是，现有的反补贴税（CVD）没有起作用。</p>\n<p>最后一帖他附了美国外交关系委员会（CFR）网站上一篇关于欧洲与中国汽车协议的文章链接，本站没有打开核对其内容。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Simon Taylor：摩根大通和星展打通代币化存款，他认为蚂蚁国际是能成的关键</title>
+      <link>https://karuio.github.io/a/sytaylor-jpm-dbs-tokenized-deposits</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/sytaylor-jpm-dbs-tokenized-deposits</guid>
+      <pubDate>Mon, 16 Nov 2026 10:53:32 +0000</pubDate>
+      <author>Simon Taylor</author>
+      <description><![CDATA[<p><em>两家银行的代币化存款首次互联，美元可在美国和新加坡之间即时划转。他用流动性覆盖率规则解释银行为何不愿持有彼此的代币，并认为下一步需要一种通用结算稳定币。</em></p>
+<h2>中文改写</h2>
+<p>摩根大通和星展银行（DBS）把各自的代币化存款连了起来，第一个客户是蚂蚁国际。Simon Taylor 写道，他认为这件事能成，关键就在蚂蚁。</p>
+<p>代币化存款，就是记在区块链上的银行存款余额。摩根大通的区块链部门 Kinexys 和星展原本各自运营一套，现在两套接通了。同时在两家银行开户的客户，可以在美国和新加坡之间即时划转美元，周末也可以。</p>
+<h2>蚂蚁自己就有一条链</h2>
+<p>蚂蚁运营着自己的区块链资金管理平台 Whale（Taylor 顺带夸了一句这名字起得好），已经在汇丰、渣打、华侨银行（OCBC）、星展和摩根大通使用代币化存款。2024 年，蚂蚁超过三分之一的交易通过 Whale 在链上完成。</p>
+<p>Taylor 认为，蚂蚁有自己的链，又在争取稳定币牌照，这才是整件事能运转起来的原因。</p>
+<h2>银行为什么不愿持有彼此的代币</h2>
+<p>要理解这一点，得先看一条流动性规则：流动性覆盖率（LCR）。</p>
+<p>这条规则要求银行持有足够的现金和国债，扛得住 30 天的挤兑。具体要备多少，按“每类存款会流走多少比例”的假设来算。比如它假设：</p>
+<ul>
+<li>有存款保险的零售存款，流走 5%；</li>
+<li>企业日常经营账户里的现金，流走 25%；</li>
+<li>欠其他银行的钱，100% 流走。</li>
+</ul>
+<p>所以，如果星展持有 1 美元摩根大通的代币，摩根大通就得为它备足 1 美元现金或国债；星展这边也不能把这枚代币算作安全资产。</p>
+<p>成本就出在这里：留作备付的现金不能拿去放贷或做别的业务。</p>
+<h2>蚂蚁在两头当那个成熟客户</h2>
+<p>蚂蚁的办法是自己同时站在两端。它在星展的余额减少，在摩根大通的余额增加，两家银行再通过双方共同持股的结算网络 Partior 相互结算。每家银行的代币始终留在自己的客户手里。</p>
+<p>Taylor 预计会出现更多这样的双行互联，而且每一条都会从一个在两边都有账户的大客户起步。</p>
+<h2>两端没有同一个大客户时怎么办</h2>
+<p>他觉得更有意思的是另一种情况：两端没有同一个成熟客户。</p>
+<p>如果不想再多一个 Partior 这样的中间方，就需要一种通用的结算资产，夹在两种代币化存款之间。他说很长时间里大家都以为这个角色会由央行数字货币（CBDC）来担，但短期内不会发生。</p>
+<p>他提出的选项是一种对银行友好的稳定币，比如 OpenUSD（OUSD）。路径分三步：</p>
+<ol>
+<li>把 JPMD 换成 OUSD；</li>
+<li>发送 OUSD；</li>
+<li>把 OUSD 换成 DBUSD。</li>
+</ol>
+<p>中间这一段，可以由任意数量的做市商、银行或外汇枢纽来承接。</p>
+<p>上周，一位非常资深的银行家对他说，自己终于认同 Taylor 的看法，确实需要一种公用事业式的结算稳定币。Taylor 的结论是：这个想法的时机到了。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_sytaylor_tokdep_01"><img src="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>BREAKING: JPMorgan and DBS just linked their tokenized deposits.</em></p>
+<figure data-media-id="img_sytaylor_tokdep_01"><img src="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>🚨 BREAKING: JPMorgan and DBS just linked their tokenized deposits.</p>
+<p>Ant International is the first client, and I think Ant is why it works.</p>
+<p>A tokenized deposit is a bank balance recorded on a blockchain. JPMorgan's blockchain unit, Kinexys, and DBS each ran their own and have now connected them. So a client of both can move USD between the US and Singapore instantly, weekends included.</p>
+<hr>
+<p>The fact that it's Ant matters.</p>
+<p>Ant runs its own blockchain treasury platform, Whale (great name), and already uses tokenized deposits at HSBC, Standard Chartered, OCBC, DBS and JPMorgan. More than a third of Ant's transactions ran on-chain through Whale in 2024.</p>
+<p>The fact that Ant has its own chain (and is going after stablecoin licenses) is what makes this whole thing work.</p>
+<hr>
+<p>To understand why, you have to understand why banks don't want to hold each other's tokenized deposits.</p>
+<p>Meet the liquidity rule called the LCR (liquidity coverage ratio).</p>
+<p>This rule is designed to make sure a bank keeps enough cash and government bonds to survive a 30-day run on the bank, and it sizes the pile a bank needs by assuming some share of every deposit leaves.</p>
+<p>For example, it assumes:</p>
+<p>5% of insured retail deposits leave</p>
+<p>25% of a company's day-to-day cash account leaves</p>
+<p>100% of money owed to another bank leaves</p>
+<p>So if DBS held $1 of JPMorgan's token, JPMorgan would need $1 of cash or government bonds behind it. DBS couldn't count the token as a safe asset either.</p>
+<p>That gets expensive because the cash held isn't being used to fund lending or other activities.</p>
+<hr>
+<p>Ant fixes this by being the sophisticated customer at both ends.</p>
+<p>Its balance falls at DBS and rises at JPMorgan, and the two banks settle with each other through Partior, a settlement network they both part-own. Each bank's token stays with its own client.</p>
+<p>I expect more of these two-bank links, and I expect each one to start with a big client that banks on both sides.</p>
+<hr>
+<p>The way to do this without the same sophisticated client on both ends is much more interesting.</p>
+<p>If you don't want another middleman like Partior, you need some universal settlement asset that can sit between the two tokenized deposits. I think for a long time everyone assumed this would be CBDC, but that isn't happening any time soon.</p>
+<p>So what about a bank-friendly stablecoin, like, say, OpenUSD (OUSD)?</p>
+<p>Swap from JPMD to OUSD Send OUSD Swap from OUSD to DBUSD</p>
+<p>The middle of that can be any number of market makers, banks, or FX hubs.</p>
+<hr>
+<p>Last week I spoke to a very senior banker who said: "Simon, I'm finally with you on the need for a utility settlement stablecoin."</p>
+<p>It's an idea whose time has come.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2122281910055444584">https://x.com/sytaylor/status/2122281910055444584</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>两家银行的代币化存款首次互联，美元可在美国和新加坡之间即时划转。他用流动性覆盖率规则解释银行为何不愿持有彼此的代币，并认为下一步需要一种通用结算稳定币。</em></p>
+<h2>中文改写</h2>
+<p>摩根大通和星展银行（DBS）把各自的代币化存款连了起来，第一个客户是蚂蚁国际。Simon Taylor 写道，他认为这件事能成，关键就在蚂蚁。</p>
+<p>代币化存款，就是记在区块链上的银行存款余额。摩根大通的区块链部门 Kinexys 和星展原本各自运营一套，现在两套接通了。同时在两家银行开户的客户，可以在美国和新加坡之间即时划转美元，周末也可以。</p>
+<h2>蚂蚁自己就有一条链</h2>
+<p>蚂蚁运营着自己的区块链资金管理平台 Whale（Taylor 顺带夸了一句这名字起得好），已经在汇丰、渣打、华侨银行（OCBC）、星展和摩根大通使用代币化存款。2024 年，蚂蚁超过三分之一的交易通过 Whale 在链上完成。</p>
+<p>Taylor 认为，蚂蚁有自己的链，又在争取稳定币牌照，这才是整件事能运转起来的原因。</p>
+<h2>银行为什么不愿持有彼此的代币</h2>
+<p>要理解这一点，得先看一条流动性规则：流动性覆盖率（LCR）。</p>
+<p>这条规则要求银行持有足够的现金和国债，扛得住 30 天的挤兑。具体要备多少，按“每类存款会流走多少比例”的假设来算。比如它假设：</p>
+<ul>
+<li>有存款保险的零售存款，流走 5%；</li>
+<li>企业日常经营账户里的现金，流走 25%；</li>
+<li>欠其他银行的钱，100% 流走。</li>
+</ul>
+<p>所以，如果星展持有 1 美元摩根大通的代币，摩根大通就得为它备足 1 美元现金或国债；星展这边也不能把这枚代币算作安全资产。</p>
+<p>成本就出在这里：留作备付的现金不能拿去放贷或做别的业务。</p>
+<h2>蚂蚁在两头当那个成熟客户</h2>
+<p>蚂蚁的办法是自己同时站在两端。它在星展的余额减少，在摩根大通的余额增加，两家银行再通过双方共同持股的结算网络 Partior 相互结算。每家银行的代币始终留在自己的客户手里。</p>
+<p>Taylor 预计会出现更多这样的双行互联，而且每一条都会从一个在两边都有账户的大客户起步。</p>
+<h2>两端没有同一个大客户时怎么办</h2>
+<p>他觉得更有意思的是另一种情况：两端没有同一个成熟客户。</p>
+<p>如果不想再多一个 Partior 这样的中间方，就需要一种通用的结算资产，夹在两种代币化存款之间。他说很长时间里大家都以为这个角色会由央行数字货币（CBDC）来担，但短期内不会发生。</p>
+<p>他提出的选项是一种对银行友好的稳定币，比如 OpenUSD（OUSD）。路径分三步：</p>
+<ol>
+<li>把 JPMD 换成 OUSD；</li>
+<li>发送 OUSD；</li>
+<li>把 OUSD 换成 DBUSD。</li>
+</ol>
+<p>中间这一段，可以由任意数量的做市商、银行或外汇枢纽来承接。</p>
+<p>上周，一位非常资深的银行家对他说，自己终于认同 Taylor 的看法，确实需要一种公用事业式的结算稳定币。Taylor 的结论是：这个想法的时机到了。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_sytaylor_tokdep_01"><img src="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>BREAKING: JPMorgan and DBS just linked their tokenized deposits.</em></p>
+<figure data-media-id="img_sytaylor_tokdep_01"><img src="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png" alt="原帖配图"><figcaption><a href="https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>🚨 BREAKING: JPMorgan and DBS just linked their tokenized deposits.</p>
+<p>Ant International is the first client, and I think Ant is why it works.</p>
+<p>A tokenized deposit is a bank balance recorded on a blockchain. JPMorgan's blockchain unit, Kinexys, and DBS each ran their own and have now connected them. So a client of both can move USD between the US and Singapore instantly, weekends included.</p>
+<hr>
+<p>The fact that it's Ant matters.</p>
+<p>Ant runs its own blockchain treasury platform, Whale (great name), and already uses tokenized deposits at HSBC, Standard Chartered, OCBC, DBS and JPMorgan. More than a third of Ant's transactions ran on-chain through Whale in 2024.</p>
+<p>The fact that Ant has its own chain (and is going after stablecoin licenses) is what makes this whole thing work.</p>
+<hr>
+<p>To understand why, you have to understand why banks don't want to hold each other's tokenized deposits.</p>
+<p>Meet the liquidity rule called the LCR (liquidity coverage ratio).</p>
+<p>This rule is designed to make sure a bank keeps enough cash and government bonds to survive a 30-day run on the bank, and it sizes the pile a bank needs by assuming some share of every deposit leaves.</p>
+<p>For example, it assumes:</p>
+<p>5% of insured retail deposits leave</p>
+<p>25% of a company's day-to-day cash account leaves</p>
+<p>100% of money owed to another bank leaves</p>
+<p>So if DBS held $1 of JPMorgan's token, JPMorgan would need $1 of cash or government bonds behind it. DBS couldn't count the token as a safe asset either.</p>
+<p>That gets expensive because the cash held isn't being used to fund lending or other activities.</p>
+<hr>
+<p>Ant fixes this by being the sophisticated customer at both ends.</p>
+<p>Its balance falls at DBS and rises at JPMorgan, and the two banks settle with each other through Partior, a settlement network they both part-own. Each bank's token stays with its own client.</p>
+<p>I expect more of these two-bank links, and I expect each one to start with a big client that banks on both sides.</p>
+<hr>
+<p>The way to do this without the same sophisticated client on both ends is much more interesting.</p>
+<p>If you don't want another middleman like Partior, you need some universal settlement asset that can sit between the two tokenized deposits. I think for a long time everyone assumed this would be CBDC, but that isn't happening any time soon.</p>
+<p>So what about a bank-friendly stablecoin, like, say, OpenUSD (OUSD)?</p>
+<p>Swap from JPMD to OUSD Send OUSD Swap from OUSD to DBUSD</p>
+<p>The middle of that can be any number of market makers, banks, or FX hubs.</p>
+<hr>
+<p>Last week I spoke to a very senior banker who said: "Simon, I'm finally with you on the need for a utility settlement stablecoin."</p>
+<p>It's an idea whose time has come.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2122281910055444584">https://x.com/sytaylor/status/2122281910055444584</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "BREAKING: JPMorgan and DBS just linked their tokenized deposits.", "url": "https://x.com/sytaylor/status/2122281910055444584", "lang": "en", "html": "<h2>BREAKING: JPMorgan and DBS just linked their tokenized deposits.</h2>\n<figure data-media-id=\"img_sytaylor_tokdep_01\"><img src=\"https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>🚨 BREAKING: JPMorgan and DBS just linked their tokenized deposits.</p>\n<p>Ant International is the first client, and I think Ant is why it works.</p>\n<p>A tokenized deposit is a bank balance recorded on a blockchain. JPMorgan's blockchain unit, Kinexys, and DBS each ran their own and have now connected them. So a client of both can move USD between the US and Singapore instantly, weekends included.</p>\n<hr>\n<p>The fact that it's Ant matters.</p>\n<p>Ant runs its own blockchain treasury platform, Whale (great name), and already uses tokenized deposits at HSBC, Standard Chartered, OCBC, DBS and JPMorgan. More than a third of Ant's transactions ran on-chain through Whale in 2024.</p>\n<p>The fact that Ant has its own chain (and is going after stablecoin licenses) is what makes this whole thing work.</p>\n<hr>\n<p>To understand why, you have to understand why banks don't want to hold each other's tokenized deposits.</p>\n<p>Meet the liquidity rule called the LCR (liquidity coverage ratio).</p>\n<p>This rule is designed to make sure a bank keeps enough cash and government bonds to survive a 30-day run on the bank, and it sizes the pile a bank needs by assuming some share of every deposit leaves.</p>\n<p>For example, it assumes:</p>\n<p>5% of insured retail deposits leave</p>\n<p>25% of a company's day-to-day cash account leaves</p>\n<p>100% of money owed to another bank leaves</p>\n<p>So if DBS held $1 of JPMorgan's token, JPMorgan would need $1 of cash or government bonds behind it. DBS couldn't count the token as a safe asset either.</p>\n<p>That gets expensive because the cash held isn't being used to fund lending or other activities.</p>\n<hr>\n<p>Ant fixes this by being the sophisticated customer at both ends.</p>\n<p>Its balance falls at DBS and rises at JPMorgan, and the two banks settle with each other through Partior, a settlement network they both part-own. Each bank's token stays with its own client.</p>\n<p>I expect more of these two-bank links, and I expect each one to start with a big client that banks on both sides.</p>\n<hr>\n<p>The way to do this without the same sophisticated client on both ends is much more interesting.</p>\n<p>If you don't want another middleman like Partior, you need some universal settlement asset that can sit between the two tokenized deposits. I think for a long time everyone assumed this would be CBDC, but that isn't happening any time soon.</p>\n<p>So what about a bank-friendly stablecoin, like, say, OpenUSD (OUSD)?</p>\n<p>Swap from JPMD to OUSD Send OUSD Swap from OUSD to DBUSD</p>\n<p>The middle of that can be any number of market makers, banks, or FX hubs.</p>\n<hr>\n<p>Last week I spoke to a very senior banker who said: \"Simon, I'm finally with you on the need for a utility settlement stablecoin.\"</p>\n<p>It's an idea whose time has come.</p>\n<p>原文链接：<a href=\"https://x.com/sytaylor/status/2122281910055444584\">https://x.com/sytaylor/status/2122281910055444584</a></p>"}, "rewrite": {"title": "Simon Taylor：摩根大通和星展打通代币化存款，他认为蚂蚁国际是能成的关键", "markdown": "摩根大通和星展银行（DBS）把各自的代币化存款连了起来，第一个客户是蚂蚁国际。Simon Taylor 写道，他认为这件事能成，关键就在蚂蚁。\n\n代币化存款，就是记在区块链上的银行存款余额。摩根大通的区块链部门 Kinexys 和星展原本各自运营一套，现在两套接通了。同时在两家银行开户的客户，可以在美国和新加坡之间即时划转美元，周末也可以。\n\n## 蚂蚁自己就有一条链\n\n蚂蚁运营着自己的区块链资金管理平台 Whale（Taylor 顺带夸了一句这名字起得好），已经在汇丰、渣打、华侨银行（OCBC）、星展和摩根大通使用代币化存款。2024 年，蚂蚁超过三分之一的交易通过 Whale 在链上完成。\n\nTaylor 认为，蚂蚁有自己的链，又在争取稳定币牌照，这才是整件事能运转起来的原因。\n\n## 银行为什么不愿持有彼此的代币\n\n要理解这一点，得先看一条流动性规则：流动性覆盖率（LCR）。\n\n这条规则要求银行持有足够的现金和国债，扛得住 30 天的挤兑。具体要备多少，按“每类存款会流走多少比例”的假设来算。比如它假设：\n\n- 有存款保险的零售存款，流走 5%；\n- 企业日常经营账户里的现金，流走 25%；\n- 欠其他银行的钱，100% 流走。\n\n所以，如果星展持有 1 美元摩根大通的代币，摩根大通就得为它备足 1 美元现金或国债；星展这边也不能把这枚代币算作安全资产。\n\n成本就出在这里：留作备付的现金不能拿去放贷或做别的业务。\n\n## 蚂蚁在两头当那个成熟客户\n\n蚂蚁的办法是自己同时站在两端。它在星展的余额减少，在摩根大通的余额增加，两家银行再通过双方共同持股的结算网络 Partior 相互结算。每家银行的代币始终留在自己的客户手里。\n\nTaylor 预计会出现更多这样的双行互联，而且每一条都会从一个在两边都有账户的大客户起步。\n\n## 两端没有同一个大客户时怎么办\n\n他觉得更有意思的是另一种情况：两端没有同一个成熟客户。\n\n如果不想再多一个 Partior 这样的中间方，就需要一种通用的结算资产，夹在两种代币化存款之间。他说很长时间里大家都以为这个角色会由央行数字货币（CBDC）来担，但短期内不会发生。\n\n他提出的选项是一种对银行友好的稳定币，比如 OpenUSD（OUSD）。路径分三步：\n\n1. 把 JPMD 换成 OUSD；\n2. 发送 OUSD；\n3. 把 OUSD 换成 DBUSD。\n\n中间这一段，可以由任意数量的做市商、银行或外汇枢纽来承接。\n\n上周，一位非常资深的银行家对他说，自己终于认同 Taylor 的看法，确实需要一种公用事业式的结算稳定币。Taylor 的结论是：这个想法的时机到了。\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原帖配图](<https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png>)", "html": "<p>摩根大通和星展银行（DBS）把各自的代币化存款连了起来，第一个客户是蚂蚁国际。Simon Taylor 写道，他认为这件事能成，关键就在蚂蚁。</p>\n<p>代币化存款，就是记在区块链上的银行存款余额。摩根大通的区块链部门 Kinexys 和星展原本各自运营一套，现在两套接通了。同时在两家银行开户的客户，可以在美国和新加坡之间即时划转美元，周末也可以。</p>\n<h2>蚂蚁自己就有一条链</h2>\n<p>蚂蚁运营着自己的区块链资金管理平台 Whale（Taylor 顺带夸了一句这名字起得好），已经在汇丰、渣打、华侨银行（OCBC）、星展和摩根大通使用代币化存款。2024 年，蚂蚁超过三分之一的交易通过 Whale 在链上完成。</p>\n<p>Taylor 认为，蚂蚁有自己的链，又在争取稳定币牌照，这才是整件事能运转起来的原因。</p>\n<h2>银行为什么不愿持有彼此的代币</h2>\n<p>要理解这一点，得先看一条流动性规则：流动性覆盖率（LCR）。</p>\n<p>这条规则要求银行持有足够的现金和国债，扛得住 30 天的挤兑。具体要备多少，按“每类存款会流走多少比例”的假设来算。比如它假设：</p>\n<ul>\n<li>有存款保险的零售存款，流走 5%；</li>\n<li>企业日常经营账户里的现金，流走 25%；</li>\n<li>欠其他银行的钱，100% 流走。</li>\n</ul>\n<p>所以，如果星展持有 1 美元摩根大通的代币，摩根大通就得为它备足 1 美元现金或国债；星展这边也不能把这枚代币算作安全资产。</p>\n<p>成本就出在这里：留作备付的现金不能拿去放贷或做别的业务。</p>\n<h2>蚂蚁在两头当那个成熟客户</h2>\n<p>蚂蚁的办法是自己同时站在两端。它在星展的余额减少，在摩根大通的余额增加，两家银行再通过双方共同持股的结算网络 Partior 相互结算。每家银行的代币始终留在自己的客户手里。</p>\n<p>Taylor 预计会出现更多这样的双行互联，而且每一条都会从一个在两边都有账户的大客户起步。</p>\n<h2>两端没有同一个大客户时怎么办</h2>\n<p>他觉得更有意思的是另一种情况：两端没有同一个成熟客户。</p>\n<p>如果不想再多一个 Partior 这样的中间方，就需要一种通用的结算资产，夹在两种代币化存款之间。他说很长时间里大家都以为这个角色会由央行数字货币（CBDC）来担，但短期内不会发生。</p>\n<p>他提出的选项是一种对银行友好的稳定币，比如 OpenUSD（OUSD）。路径分三步：</p>\n<ol>\n<li>把 JPMD 换成 OUSD；</li>\n<li>发送 OUSD；</li>\n<li>把 OUSD 换成 DBUSD。</li>\n</ol>\n<p>中间这一段，可以由任意数量的做市商、银行或外汇枢纽来承接。</p>\n<p>上周，一位非常资深的银行家对他说，自己终于认同 Taylor 的看法，确实需要一种公用事业式的结算稳定币。Taylor 的结论是：这个想法的时机到了。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_sytaylor_tokdep_01\"><img src=\"https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png\" alt=\"原帖配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXPcJLRWUAAr8SJ.png\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Tomasz Tunguz：Anthropic 拿下高端 94%，OpenAI 靠降价 90% 拿下低端 81%</title>
+      <link>https://karuio.github.io/a/ttunguz-two-pricing-strategies</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/ttunguz-two-pricing-strategies</guid>
+      <pubDate>Mon, 16 Nov 2026 21:50:25 +0000</pubDate>
+      <author>Tomasz Tunguz</author>
+      <description><![CDATA[<p><em>基于 Databricks 一万多家企业客户的 token 数据，两家在中档正面相撞，开源权重份额停在 31%。他追问 Luna 的低价是补贴还是结构性成本优势。</em></p>
+<h2>中文改写</h2>
+<p>OpenAI 和 Anthropic 各自在企业 AI 的一个细分市场里拿下约九成份额，只是拿下的是两头：Anthropic 在高端占 94%，OpenAI 在低端占 81%。Tomasz Tunguz 用一万多家企业的数据提出一个问题：这是两家有意用定价分别吃下市场两端，还是两家实验室提供 token 的成本结构本来就不同？</p>
+<h2>数据来自 Databricks 的企业客户</h2>
+<p>这篇文章在 X 上发的是正文，博客版另有脚注。脚注说明，数据来自 Databricks AI Index，基于 Unity Gateway 十六周的遥测，周度份额序列截至 11 月 2 日。Tunguz 特别注明，这些数据反映的是 Databricks 自己的企业客户群（以数据平台和代理式编程负载为主），不代表整个企业 AI 市场。</p>
+<h2>高端：Anthropic 从 81% 涨到 94%</h2>
+<p>Anthropic 卖的是高端产品，在 SOTA（最先进模型）这一档占主导。它在 SOTA 档 token 用量里的份额，从 7 月的 81% 升到 11 月 2 日的 94%，推动力是 9 月 21 日推出的 Claude Opus 5.5。博客版摘要还提到，Anthropic 拿下了专有模型支出的 70%。</p>
+<p>按脚注的口径，SOTA 档比较的是 Anthropic 的前沿模型（Opus 4.8、Opus 5、Opus 5.5 和 Fable 5.1，11 月 2 日合计占全部专有模型 token 的 39.8%）和 OpenAI 的前沿模型（GPT 6 Astra 和 GPT 5.6 Sol，合计占 2.5%）。</p>
+<h2>中档：两家正面相撞</h2>
+<p>中档是两家直接交锋的地方。把所有 Sonnet 和 Sol 版本放在一起比（Sonnet 5、5.5 对 GPT-6 Sol、6.1 Sol），OpenAI 的中档用量份额从 7 月的 0% 升到 11 月 2 日的 47%。只看最新一代 Sonnet 5.5 对 Sol 6/6.1，OpenAI 在上线六周内就拿下了 57%。</p>
+<h2>低端：OpenAI 靠降价拿下 81%</h2>
+<p>OpenAI 走的是相反的路，用 Luna 的激进降价去抢用量最大的底层市场。7 月 30 日，OpenAI 把 Luna 的价格砍了 80%，几个月后又降了 50%，累计降幅 90%。</p>
+<p>脚注给了细节：7 月那次，GPT-5.6 Luna 的每百万输入/输出 token 价格从 1.00/6.00 美元降到 0.20/1.20 美元。OpenAI 当时称，GPU 内核改进让服务成本降低了 20%，推测解码让 token 生成效率提升了 15% 以上。</p>
+<p>9 月 22 日，OpenAI 推出 GPT-6 Luna，每百万 token 0.10 美元。脚注写明这是输入价，输出为 0.50 美元，缓存输入 0.01 美元，比 GPT-5.6 的促销价低 50%。Luna 在低端档的份额，第一次降价后从 30% 跳到 66%，最高到过 84%，11 月 2 日收在 81%。</p>
+<p>脚注还补了一个更宽的口径：把中档主力模型也算进去，OpenAI 在非 SOTA 部分的份额从 7 月 20 日的 13.6% 升到 11 月 2 日的 61.4%。</p>
+<h2>开源权重模型的份额停在 31%</h2>
+<p>开源权重模型的 token 份额从 7 月的 7% 起每周上涨，9 月涨到 33%。之后在 GPT-6 Luna 和 Sol 降价 50% 的同一周，停在了 31%。</p>
+<h2>补贴，还是成本优势</h2>
+<p>Tunguz 认为，这就引出了基础模型眼下的战略问题：Luna 的定价是短期抢份额的补贴，还是 OpenAI 模型架构带来的结构性成本优势？他在文中没有给出答案。脚注里 OpenAI 自称的 20% 服务成本下降和 15% 以上的生成效率提升，是判断这个问题时能找到的一条线索，但只是 OpenAI 的说法，文中没有独立核实。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_tunguz_pricing_cover"><img src="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_01"><img src="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_02"><img src="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_03"><img src="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_04"><img src="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Strategic Decision or Structural Advantage?</em></p>
+<figure data-media-id="img_tunguz_pricing_cover"><img src="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_01"><img src="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_02"><img src="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_03"><img src="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_04"><img src="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>OpenAI &amp; Anthropic each hold roughly 90% market share of an AI segment, but those segments are different : Anthropic holds dominant share at the premium end (94%), &amp; OpenAI at the low end (81%).
+Across 10,000+ enterprises, that split raises a business question : is this a deliberate pricing strategy to capture different ends of the market, or a structural cost difference in how the two labs serve tokens?</p>
+<p>Anthropic sells a premium product &amp; dominates the SOTA (state-of-the-art) tier. Anthropic's share of SOTA token volume rose from 81% in July to 94% on November 2, propelled by the September 21 rollout of Claude Opus 5.5.</p>
+<p>The mid tier is where the two labs now collide directly. Across all Sonnet &amp; Sol versions (Sonnet 5 &amp; 5.5 vs GPT-6 Sol &amp; 6.1 Sol), OpenAI climbed from 0% in July to 47% of mid-tier volume by November 2, &amp; took 57% of the newest Sonnet 5.5 vs Sol 6/6.1 cohort within six weeks of launch.</p>
+<p>OpenAI pursued the opposite strategy, using aggressive price cuts on Luna to capture the high-volume floor. On July 30, OpenAI cut Luna pricing by 80% &amp; then another 50% just a few months later, for a 90% total reduction.
+On September 22, OpenAI launched GPT-6 Luna at $0.10 per 1m tokens. Its low-end share surged from 30% to 66% after the first cut, peaked at 84%, &amp; finished at 81% on November 2.</p>
+<p>Open-weight token share climbed every week from 7% in July to 33% in September, then stalled at 31% in the same week GPT-6 Luna &amp; Sol cut prices by 50%.
+That raises the strategic question in foundation models today : is Luna's pricing a short-term market-share subsidy, or a structural cost advantage in OpenAI's model architecture?
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2122447220293435647">https://x.com/ttunguz/status/2122447220293435647</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/">https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>基于 Databricks 一万多家企业客户的 token 数据，两家在中档正面相撞，开源权重份额停在 31%。他追问 Luna 的低价是补贴还是结构性成本优势。</em></p>
+<h2>中文改写</h2>
+<p>OpenAI 和 Anthropic 各自在企业 AI 的一个细分市场里拿下约九成份额，只是拿下的是两头：Anthropic 在高端占 94%，OpenAI 在低端占 81%。Tomasz Tunguz 用一万多家企业的数据提出一个问题：这是两家有意用定价分别吃下市场两端，还是两家实验室提供 token 的成本结构本来就不同？</p>
+<h2>数据来自 Databricks 的企业客户</h2>
+<p>这篇文章在 X 上发的是正文，博客版另有脚注。脚注说明，数据来自 Databricks AI Index，基于 Unity Gateway 十六周的遥测，周度份额序列截至 11 月 2 日。Tunguz 特别注明，这些数据反映的是 Databricks 自己的企业客户群（以数据平台和代理式编程负载为主），不代表整个企业 AI 市场。</p>
+<h2>高端：Anthropic 从 81% 涨到 94%</h2>
+<p>Anthropic 卖的是高端产品，在 SOTA（最先进模型）这一档占主导。它在 SOTA 档 token 用量里的份额，从 7 月的 81% 升到 11 月 2 日的 94%，推动力是 9 月 21 日推出的 Claude Opus 5.5。博客版摘要还提到，Anthropic 拿下了专有模型支出的 70%。</p>
+<p>按脚注的口径，SOTA 档比较的是 Anthropic 的前沿模型（Opus 4.8、Opus 5、Opus 5.5 和 Fable 5.1，11 月 2 日合计占全部专有模型 token 的 39.8%）和 OpenAI 的前沿模型（GPT 6 Astra 和 GPT 5.6 Sol，合计占 2.5%）。</p>
+<h2>中档：两家正面相撞</h2>
+<p>中档是两家直接交锋的地方。把所有 Sonnet 和 Sol 版本放在一起比（Sonnet 5、5.5 对 GPT-6 Sol、6.1 Sol），OpenAI 的中档用量份额从 7 月的 0% 升到 11 月 2 日的 47%。只看最新一代 Sonnet 5.5 对 Sol 6/6.1，OpenAI 在上线六周内就拿下了 57%。</p>
+<h2>低端：OpenAI 靠降价拿下 81%</h2>
+<p>OpenAI 走的是相反的路，用 Luna 的激进降价去抢用量最大的底层市场。7 月 30 日，OpenAI 把 Luna 的价格砍了 80%，几个月后又降了 50%，累计降幅 90%。</p>
+<p>脚注给了细节：7 月那次，GPT-5.6 Luna 的每百万输入/输出 token 价格从 1.00/6.00 美元降到 0.20/1.20 美元。OpenAI 当时称，GPU 内核改进让服务成本降低了 20%，推测解码让 token 生成效率提升了 15% 以上。</p>
+<p>9 月 22 日，OpenAI 推出 GPT-6 Luna，每百万 token 0.10 美元。脚注写明这是输入价，输出为 0.50 美元，缓存输入 0.01 美元，比 GPT-5.6 的促销价低 50%。Luna 在低端档的份额，第一次降价后从 30% 跳到 66%，最高到过 84%，11 月 2 日收在 81%。</p>
+<p>脚注还补了一个更宽的口径：把中档主力模型也算进去，OpenAI 在非 SOTA 部分的份额从 7 月 20 日的 13.6% 升到 11 月 2 日的 61.4%。</p>
+<h2>开源权重模型的份额停在 31%</h2>
+<p>开源权重模型的 token 份额从 7 月的 7% 起每周上涨，9 月涨到 33%。之后在 GPT-6 Luna 和 Sol 降价 50% 的同一周，停在了 31%。</p>
+<h2>补贴，还是成本优势</h2>
+<p>Tunguz 认为，这就引出了基础模型眼下的战略问题：Luna 的定价是短期抢份额的补贴，还是 OpenAI 模型架构带来的结构性成本优势？他在文中没有给出答案。脚注里 OpenAI 自称的 20% 服务成本下降和 15% 以上的生成效率提升，是判断这个问题时能找到的一条线索，但只是 OpenAI 的说法，文中没有独立核实。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id="img_tunguz_pricing_cover"><img src="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_01"><img src="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_02"><img src="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_03"><img src="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_04"><img src="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Strategic Decision or Structural Advantage?</em></p>
+<figure data-media-id="img_tunguz_pricing_cover"><img src="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_01"><img src="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_02"><img src="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_03"><img src="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_pricing_04"><img src="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg" alt="原文配图"><figcaption><a href="https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>OpenAI &amp; Anthropic each hold roughly 90% market share of an AI segment, but those segments are different : Anthropic holds dominant share at the premium end (94%), &amp; OpenAI at the low end (81%).
+Across 10,000+ enterprises, that split raises a business question : is this a deliberate pricing strategy to capture different ends of the market, or a structural cost difference in how the two labs serve tokens?</p>
+<p>Anthropic sells a premium product &amp; dominates the SOTA (state-of-the-art) tier. Anthropic's share of SOTA token volume rose from 81% in July to 94% on November 2, propelled by the September 21 rollout of Claude Opus 5.5.</p>
+<p>The mid tier is where the two labs now collide directly. Across all Sonnet &amp; Sol versions (Sonnet 5 &amp; 5.5 vs GPT-6 Sol &amp; 6.1 Sol), OpenAI climbed from 0% in July to 47% of mid-tier volume by November 2, &amp; took 57% of the newest Sonnet 5.5 vs Sol 6/6.1 cohort within six weeks of launch.</p>
+<p>OpenAI pursued the opposite strategy, using aggressive price cuts on Luna to capture the high-volume floor. On July 30, OpenAI cut Luna pricing by 80% &amp; then another 50% just a few months later, for a 90% total reduction.
+On September 22, OpenAI launched GPT-6 Luna at $0.10 per 1m tokens. Its low-end share surged from 30% to 66% after the first cut, peaked at 84%, &amp; finished at 81% on November 2.</p>
+<p>Open-weight token share climbed every week from 7% in July to 33% in September, then stalled at 31% in the same week GPT-6 Luna &amp; Sol cut prices by 50%.
+That raises the strategic question in foundation models today : is Luna's pricing a short-term market-share subsidy, or a structural cost advantage in OpenAI's model architecture?
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2122447220293435647">https://x.com/ttunguz/status/2122447220293435647</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/">https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Strategic Decision or Structural Advantage?", "url": "https://x.com/ttunguz/status/2122447220293435647", "lang": "en", "html": "<h2>Strategic Decision or Structural Advantage?</h2>\n<figure data-media-id=\"img_tunguz_pricing_cover\"><img src=\"https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_01\"><img src=\"https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_02\"><img src=\"https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_03\"><img src=\"https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_04\"><img src=\"https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>OpenAI &amp; Anthropic each hold roughly 90% market share of an AI segment, but those segments are different : Anthropic holds dominant share at the premium end (94%), &amp; OpenAI at the low end (81%).\nAcross 10,000+ enterprises, that split raises a business question : is this a deliberate pricing strategy to capture different ends of the market, or a structural cost difference in how the two labs serve tokens?</p>\n<p>Anthropic sells a premium product &amp; dominates the SOTA (state-of-the-art) tier. Anthropic's share of SOTA token volume rose from 81% in July to 94% on November 2, propelled by the September 21 rollout of Claude Opus 5.5.</p>\n<p>The mid tier is where the two labs now collide directly. Across all Sonnet &amp; Sol versions (Sonnet 5 &amp; 5.5 vs GPT-6 Sol &amp; 6.1 Sol), OpenAI climbed from 0% in July to 47% of mid-tier volume by November 2, &amp; took 57% of the newest Sonnet 5.5 vs Sol 6/6.1 cohort within six weeks of launch.</p>\n<p>OpenAI pursued the opposite strategy, using aggressive price cuts on Luna to capture the high-volume floor. On July 30, OpenAI cut Luna pricing by 80% &amp; then another 50% just a few months later, for a 90% total reduction.\nOn September 22, OpenAI launched GPT-6 Luna at $0.10 per 1m tokens. Its low-end share surged from 30% to 66% after the first cut, peaked at 84%, &amp; finished at 81% on November 2.</p>\n<p>Open-weight token share climbed every week from 7% in July to 33% in September, then stalled at 31% in the same week GPT-6 Luna &amp; Sol cut prices by 50%.\nThat raises the strategic question in foundation models today : is Luna's pricing a short-term market-share subsidy, or a structural cost advantage in OpenAI's model architecture?\nOriginally published on tomtunguz.com.</p>\n<p>原文链接：<a href=\"https://x.com/ttunguz/status/2122447220293435647\">https://x.com/ttunguz/status/2122447220293435647</a></p>\n<p>相关链接：<a href=\"https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/\">https://tomtunguz.com/two-pricing-strategies-in-enterprise-ai/</a></p>"}, "rewrite": {"title": "Tomasz Tunguz：Anthropic 拿下高端 94%，OpenAI 靠降价 90% 拿下低端 81%", "markdown": "OpenAI 和 Anthropic 各自在企业 AI 的一个细分市场里拿下约九成份额，只是拿下的是两头：Anthropic 在高端占 94%，OpenAI 在低端占 81%。Tomasz Tunguz 用一万多家企业的数据提出一个问题：这是两家有意用定价分别吃下市场两端，还是两家实验室提供 token 的成本结构本来就不同？\n\n## 数据来自 Databricks 的企业客户\n\n这篇文章在 X 上发的是正文，博客版另有脚注。脚注说明，数据来自 Databricks AI Index，基于 Unity Gateway 十六周的遥测，周度份额序列截至 11 月 2 日。Tunguz 特别注明，这些数据反映的是 Databricks 自己的企业客户群（以数据平台和代理式编程负载为主），不代表整个企业 AI 市场。\n\n## 高端：Anthropic 从 81% 涨到 94%\n\nAnthropic 卖的是高端产品，在 SOTA（最先进模型）这一档占主导。它在 SOTA 档 token 用量里的份额，从 7 月的 81% 升到 11 月 2 日的 94%，推动力是 9 月 21 日推出的 Claude Opus 5.5。博客版摘要还提到，Anthropic 拿下了专有模型支出的 70%。\n\n按脚注的口径，SOTA 档比较的是 Anthropic 的前沿模型（Opus 4.8、Opus 5、Opus 5.5 和 Fable 5.1，11 月 2 日合计占全部专有模型 token 的 39.8%）和 OpenAI 的前沿模型（GPT 6 Astra 和 GPT 5.6 Sol，合计占 2.5%）。\n\n## 中档：两家正面相撞\n\n中档是两家直接交锋的地方。把所有 Sonnet 和 Sol 版本放在一起比（Sonnet 5、5.5 对 GPT-6 Sol、6.1 Sol），OpenAI 的中档用量份额从 7 月的 0% 升到 11 月 2 日的 47%。只看最新一代 Sonnet 5.5 对 Sol 6/6.1，OpenAI 在上线六周内就拿下了 57%。\n\n## 低端：OpenAI 靠降价拿下 81%\n\nOpenAI 走的是相反的路，用 Luna 的激进降价去抢用量最大的底层市场。7 月 30 日，OpenAI 把 Luna 的价格砍了 80%，几个月后又降了 50%，累计降幅 90%。\n\n脚注给了细节：7 月那次，GPT-5.6 Luna 的每百万输入/输出 token 价格从 1.00/6.00 美元降到 0.20/1.20 美元。OpenAI 当时称，GPU 内核改进让服务成本降低了 20%，推测解码让 token 生成效率提升了 15% 以上。\n\n9 月 22 日，OpenAI 推出 GPT-6 Luna，每百万 token 0.10 美元。脚注写明这是输入价，输出为 0.50 美元，缓存输入 0.01 美元，比 GPT-5.6 的促销价低 50%。Luna 在低端档的份额，第一次降价后从 30% 跳到 66%，最高到过 84%，11 月 2 日收在 81%。\n\n脚注还补了一个更宽的口径：把中档主力模型也算进去，OpenAI 在非 SOTA 部分的份额从 7 月 20 日的 13.6% 升到 11 月 2 日的 61.4%。\n\n## 开源权重模型的份额停在 31%\n\n开源权重模型的 token 份额从 7 月的 7% 起每周上涨，9 月涨到 33%。之后在 GPT-6 Luna 和 Sol 降价 50% 的同一周，停在了 31%。\n\n## 补贴，还是成本优势\n\nTunguz 认为，这就引出了基础模型眼下的战略问题：Luna 的定价是短期抢份额的补贴，还是 OpenAI 模型架构带来的结构性成本优势？他在文中没有给出答案。脚注里 OpenAI 自称的 20% 服务成本下降和 15% 以上的生成效率提升，是判断这个问题时能找到的一条线索，但只是 OpenAI 的说法，文中没有独立核实。\n\n### 原文附带媒体\n\n原文附带媒体；未核验其与具体段落的对应关系。\n\n![原文封面图](<https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg>)\n\n![原文配图](<https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg>)\n\n![原文配图](<https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg>)\n\n![原文配图](<https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg>)\n\n![原文配图](<https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg>)", "html": "<p>OpenAI 和 Anthropic 各自在企业 AI 的一个细分市场里拿下约九成份额，只是拿下的是两头：Anthropic 在高端占 94%，OpenAI 在低端占 81%。Tomasz Tunguz 用一万多家企业的数据提出一个问题：这是两家有意用定价分别吃下市场两端，还是两家实验室提供 token 的成本结构本来就不同？</p>\n<h2>数据来自 Databricks 的企业客户</h2>\n<p>这篇文章在 X 上发的是正文，博客版另有脚注。脚注说明，数据来自 Databricks AI Index，基于 Unity Gateway 十六周的遥测，周度份额序列截至 11 月 2 日。Tunguz 特别注明，这些数据反映的是 Databricks 自己的企业客户群（以数据平台和代理式编程负载为主），不代表整个企业 AI 市场。</p>\n<h2>高端：Anthropic 从 81% 涨到 94%</h2>\n<p>Anthropic 卖的是高端产品，在 SOTA（最先进模型）这一档占主导。它在 SOTA 档 token 用量里的份额，从 7 月的 81% 升到 11 月 2 日的 94%，推动力是 9 月 21 日推出的 Claude Opus 5.5。博客版摘要还提到，Anthropic 拿下了专有模型支出的 70%。</p>\n<p>按脚注的口径，SOTA 档比较的是 Anthropic 的前沿模型（Opus 4.8、Opus 5、Opus 5.5 和 Fable 5.1，11 月 2 日合计占全部专有模型 token 的 39.8%）和 OpenAI 的前沿模型（GPT 6 Astra 和 GPT 5.6 Sol，合计占 2.5%）。</p>\n<h2>中档：两家正面相撞</h2>\n<p>中档是两家直接交锋的地方。把所有 Sonnet 和 Sol 版本放在一起比（Sonnet 5、5.5 对 GPT-6 Sol、6.1 Sol），OpenAI 的中档用量份额从 7 月的 0% 升到 11 月 2 日的 47%。只看最新一代 Sonnet 5.5 对 Sol 6/6.1，OpenAI 在上线六周内就拿下了 57%。</p>\n<h2>低端：OpenAI 靠降价拿下 81%</h2>\n<p>OpenAI 走的是相反的路，用 Luna 的激进降价去抢用量最大的底层市场。7 月 30 日，OpenAI 把 Luna 的价格砍了 80%，几个月后又降了 50%，累计降幅 90%。</p>\n<p>脚注给了细节：7 月那次，GPT-5.6 Luna 的每百万输入/输出 token 价格从 1.00/6.00 美元降到 0.20/1.20 美元。OpenAI 当时称，GPU 内核改进让服务成本降低了 20%，推测解码让 token 生成效率提升了 15% 以上。</p>\n<p>9 月 22 日，OpenAI 推出 GPT-6 Luna，每百万 token 0.10 美元。脚注写明这是输入价，输出为 0.50 美元，缓存输入 0.01 美元，比 GPT-5.6 的促销价低 50%。Luna 在低端档的份额，第一次降价后从 30% 跳到 66%，最高到过 84%，11 月 2 日收在 81%。</p>\n<p>脚注还补了一个更宽的口径：把中档主力模型也算进去，OpenAI 在非 SOTA 部分的份额从 7 月 20 日的 13.6% 升到 11 月 2 日的 61.4%。</p>\n<h2>开源权重模型的份额停在 31%</h2>\n<p>开源权重模型的 token 份额从 7 月的 7% 起每周上涨，9 月涨到 33%。之后在 GPT-6 Luna 和 Sol 降价 50% 的同一周，停在了 31%。</p>\n<h2>补贴，还是成本优势</h2>\n<p>Tunguz 认为，这就引出了基础模型眼下的战略问题：Luna 的定价是短期抢份额的补贴，还是 OpenAI 模型架构带来的结构性成本优势？他在文中没有给出答案。脚注里 OpenAI 自称的 20% 服务成本下降和 15% 以上的生成效率提升，是判断这个问题时能找到的一条线索，但只是 OpenAI 的说法，文中没有独立核实。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文附带媒体；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_tunguz_pricing_cover\"><img src=\"https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRx0GRa4AEbdrA.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_01\"><img src=\"https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzG-akAAU5os.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_02\"><img src=\"https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzUHbsAANHXp.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_03\"><img src=\"https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzjRbgAEgCIj.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_pricing_04\"><img src=\"https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg\" alt=\"原文配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXRxzwjakAA6oaz.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
     <item>
       <title>Jamin Ball：前沿模型价格守了两个月就降了 20%，他认为是在让出提速的成本</title>
       <link>https://karuio.github.io/a/jaminball-frontier-blinks</link>
