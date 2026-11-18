@@ -1,5 +1,35 @@
 [
   {
+    "id": "doshi-china-misreading-moment",
+    "date": "2026-11-17",
+    "title": "Rush Doshi：深圳峰会前，中美一年缓和正被稀土撕开裂缝",
+    "dek": "他在《外交事务》撰文认为北京借缓和期扩大优势、稀土只交付约三分之二，1 月 10 日休战到期前，深圳和迈阿密两次会面是仅剩的窗口。",
+    "url": "/a/doshi-china-misreading-moment",
+    "source_url": "https://x.com/RushDoshi/status/2122832791473971491",
+    "tags": [
+      "中美关系",
+      "稀土",
+      "出口管制",
+      "贸易休战"
+    ],
+    "sector": "中国产业/对华战略"
+  },
+  {
+    "id": "dotey-gpt-6-2-astra-sol",
+    "date": "2026-11-17",
+    "title": "宝玉整理：OpenAI 发布 GPT-6.2 Astra 和 Sol，Plus 就能用旗舰，Astra API 降价 20%",
+    "dek": "主打同样的活少用 Token；Astra 单价与 Fable 5.2 相同，Agents' Last Exam 上花费只有其 5%，跑分均为 OpenAI 自报。",
+    "url": "/a/dotey-gpt-6-2-astra-sol",
+    "source_url": "https://x.com/dotey/status/2122755808689549335",
+    "tags": [
+      "OpenAI",
+      "模型发布",
+      "定价",
+      "Codex"
+    ],
+    "sector": "AI"
+  },
+  {
     "id": "lennysan-muse-mona-sarantakos",
     "date": "2026-11-16",
     "title": "Lenny 访谈 Muse 产品负责人：10 人团队花七个月打磨信任，系统提示词必须人写",

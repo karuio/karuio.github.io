@@ -1,0 +1,45 @@
+{
+  "id": "dotey-gpt-6-2-astra-sol",
+  "date": "2026-11-17",
+  "published_at": "2026-11-17T18:16:38+00:00",
+  "ingested_at": "2026-11-18T08:35:00+08:00",
+  "sector": "AI",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/dotey/status/2122755808689549335",
+    "author": "宝玉",
+    "handle": "dotey",
+    "title_en": "OpenAI 发布 GPT-6.2 Astra 和 Sol：Plus 及以上订阅直接能用，Astra API 降价 20%",
+    "related_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/"
+  },
+  "title": "宝玉整理：OpenAI 发布 GPT-6.2 Astra 和 Sol，Plus 就能用旗舰，Astra API 降价 20%",
+  "dek": "主打同样的活少用 Token；Astra 单价与 Fable 5.2 相同，Agents' Last Exam 上花费只有其 5%，跑分均为 OpenAI 自报。",
+  "tags": [
+    "OpenAI",
+    "模型发布",
+    "定价",
+    "Codex"
+  ],
+  "original": {
+    "lang": "zh",
+    "title": "OpenAI 发布 GPT-6.2 Astra 和 Sol：Plus 及以上订阅直接能用，Astra API 降价 20%",
+    "text_md": "OpenAI 发布 GPT-6.2 Astra 和 Sol：Plus 及以上订阅直接能用，Astra API 降价 20%\n\nOpenAI 11 月 17 日发布 GPT-6.2 的两款模型。Astra 是它最强的旗舰，接替 GPT-6 Astra，主要拿来和 Anthropic 的 Claude Fable 5.2 比；Sol 是日常干活的主力，接替 GPT-6.1 Sol。中间档的 GPT-6.1 Terra 和最便宜的 GPT-6 Luna 这次没更新。\n\nOpenAI 这次主打同样的活用更少的 Token：订阅额度更耐用，API 每个任务花得更少。\n\n【我能不能用，要不要另付钱】\n\n不用另付钱。OpenAI 博客说，Plus、Pro、企业版和教育版用户从今天起就能在 ChatGPT Work 和 Codex 里选这两个模型，帮助文档的名单里还多了 Business。普通聊天界面里没有，要进 Work 用；企业版和教育版要管理员先打开。\n\n额度比上一代略宽。按 OpenAI 文档的估算，Plus 用户每 5 小时大约能给 Astra 发 6 到 50 条消息（GPT-6 Astra 是 5 到 45 条），Sol 是 17 到 180 条（GPT-6.1 Sol 是 15 到 160 条）。Pro 目前没有 5 小时限制。\n\n放到三家一起看：Claude Fable 5.2 在 Claude 的 Pro 套餐里要按量另付费，Max、Ultra 这些更贵的套餐才含在额度里；Gemini 4 Carbon 在 Gemini App 里只给每月 99.99 美元起的 Ultra 用户。每月 20 美元的 Plus 就能用 OpenAI 的旗舰，是三家里门槛最低的。\n\n嫌慢可以开 Ultrafast 模式。官方文档说它的生成速度最高是标准模式的 4.5 倍，但要消耗 6 倍额度。每月 500 美元的 Pro 两个模型都能开，200 美元的 Pro 目前只能在 Sol 上开。\n\n【API 多少钱】\n\nAstra 每百万 Token 输入 8 美元、输出 40 美元，比 GPT-6 Astra 的 10 美元和 50 美元便宜 20%；缓存命中的输入从 1 美元降到 0.4 美元。Sol 维持 GPT-6.1 Sol 的 2 美元和 10 美元。\n\n单价上，Astra 和 Fable 5.2 一样，是 Claude Opus 5.5（4 美元和 20 美元）的两倍；Sol 和 Gemini 4 Carbon 现在的引入价持平，Carbon 12 月 1 日起涨到 4 美元和 20 美元。\n\n【比上一代和对手强在哪】\n\n最有代表性的是 Agents' Last Exam，测多步骤的职业工作。OpenAI 说 Astra 比 GPT-6 Astra 高 5.2 分，花费不到三分之一；比 Fable 5.2 高 5.5 分，花费只有 5%。两者单价相同，这个差距主要来自 Astra 完成任务用的 Token 少得多。\n\nOpenAI 还说 Astra 是“对科学家来说全世界最好的模型”：在终端里做科研任务的测试 Terminal-Bench-Science 上，它比 GPT-6 Astra 高 9 个百分点，花费不到三分之一。\n\n法律测试 Harvey LAB-AA 上，Astra 的通过率是 Fable 5.2 的两倍多，花费约六分之一。Artificial Analysis 组织的 3D 网页盲测里，Astra 以 1318 分排第一，Fable 5.2 是 1271 分，Sol 是 1259 分。\n\n做幻灯片是这次的重点：给 Astra 一份模板文件，甚至只给一张截图，它能照着原来的排版、配色、字号做新页面。\n\nSol 的卖点是性价比。在 Cognition 的写代码测试 FrontierCode 2.0 里，Sol 只比 Astra 低 0.5 分，花费约五分之一。在日常任务测试 LifeVal 上（比如搬家后筛幼儿园、按预算和通勤找房子），Sol 的分数超过 GPT-6 Astra，花费约七分之一。\n\n【安全上的变化】\n\nOpenAI 说这两款的网络安全能力达到它风险评估框架里最高的 Critical 档，所以上了更严的防护，代价是一部分正当的漏洞研究和安全测试也会被拒。经过审核的安全人员目前只能在 Daybreak 计划里用 GPT-6 系列的放宽版本，OpenAI 说会把 6.2 也加进去。\n\n用 Codex 的人要留意一个问题：在两项测试里，这两款模型比 GPT-6 Astra 更容易不提它被什么卡住了，比如要改的文件不见了、搜索工具用不了。OpenAI 说已经在 Codex 里加了指令，大幅减少这种情况，还在继续查原因。\n\n文中跑分都出自 OpenAI 的发布博客。其中 Fable 5.2 的 Agents' Last Exam 成绩去掉了 9 道用了备用模型的题；Terminal-Bench-Science 上，OpenAI 引用的是第三方测试框架里的 Fable 成绩，Anthropic 自己在 Claude Code 里测的是 74.6%。截至发稿，Artificial Analysis 官网榜单还没列出 GPT-6.2。\n\n原文：https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "media": [
+      {
+        "id": "vid_dotey_gpt62",
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2122755647766753280/vid/avc1/1280x720/dmWV3LyMkNZ-vz4A.mp4",
+        "poster": "https://pbs.twimg.com/amplify_video_thumb/2122755647766753280/img/pI_QucPpfAYuaSB4.jpg"
+      }
+    ]
+  },
+  "body_md": "OpenAI 11 月 17 日发布 GPT-6.2 的两款模型。宝玉根据 OpenAI 的发布博客和帮助文档，整理了能不能用、要花多少钱、强在哪里。\n\n**Astra** 是 OpenAI 最强的旗舰，接替 GPT-6 Astra，主要对标 Anthropic 的 Claude Fable 5.2；**Sol** 是日常干活的主力，接替 GPT-6.1 Sol。中间档的 GPT-6.1 Terra 和最便宜的 GPT-6 Luna 这次没更新。\n\n这次 OpenAI 主打**同样的活用更少的 Token**：订阅额度更耐用，API 每个任务花得更少。\n\n## 订阅用户不用另付钱，但要进 Work 用\n\nOpenAI 博客说，Plus、Pro、企业版和教育版用户从发布当天起就能在 ChatGPT Work 和 Codex 里选这两个模型，帮助文档的名单里还多了 Business。普通聊天界面里没有，要进 Work 才能用；企业版和教育版要管理员先打开。\n\n额度比上一代略宽。按 OpenAI 文档的估算，Plus 用户每 5 小时大约能给 Astra 发 6 到 50 条消息（GPT-6 Astra 是 5 到 45 条），Sol 是 17 到 180 条（GPT-6.1 Sol 是 15 到 160 条）。Pro 目前没有 5 小时限制。\n\n三家放在一起看：Claude Fable 5.2 在 Claude 的 Pro 套餐里要按量另付费，Max、Ultra 这些更贵的套餐才含在额度里；Gemini 4 Carbon 在 Gemini App 里只给每月 99.99 美元起的 Ultra 用户。宝玉的结论是，每月 20 美元的 Plus 就能用 OpenAI 的旗舰，**门槛是三家里最低的**。\n\n嫌慢可以开 Ultrafast 模式。官方文档说它的生成速度最高是标准模式的 4.5 倍，但要消耗 6 倍额度。每月 500 美元的 Pro 两个模型都能开，200 美元的 Pro 目前只能在 Sol 上开。\n\n## API：Astra 降价 20%，Sol 不变\n\nAstra 每百万 Token 输入 8 美元、输出 40 美元，比 GPT-6 Astra 的 10 美元和 50 美元便宜 20%；缓存命中的输入从 1 美元降到 0.4 美元。Sol 维持 GPT-6.1 Sol 的 2 美元和 10 美元。\n\n单价上，Astra 和 Fable 5.2 一样，是 Claude Opus 5.5（4 美元和 20 美元）的两倍；Sol 和 Gemini 4 Carbon 现在的引入价持平，Carbon 12 月 1 日起涨到 4 美元和 20 美元。\n\n## 跑分：差距主要来自少用 Token\n\n最有代表性的是 Agents' Last Exam，测的是多步骤的职业工作。OpenAI 说 Astra 比 GPT-6 Astra 高 5.2 分，花费不到三分之一；比 Fable 5.2 高 5.5 分，花费只有 5%。Astra 和 Fable 5.2 单价相同，所以这个花费差距**主要来自 Astra 完成任务用的 Token 少得多**。\n\nOpenAI 还称 Astra 是“对科学家来说全世界最好的模型”：在终端里做科研任务的测试 Terminal-Bench-Science 上，它比 GPT-6 Astra 高 9 个百分点，花费不到三分之一。\n\n法律测试 Harvey LAB-AA 上，Astra 的通过率是 Fable 5.2 的两倍多，花费约六分之一。Artificial Analysis 组织的 3D 网页盲测里，Astra 以 1318 分排第一，Fable 5.2 是 1271 分，Sol 是 1259 分。\n\n做幻灯片是这次的重点：给 Astra 一份模板文件，甚至只给一张截图，它能照着原来的排版、配色、字号做新页面。\n\nSol 的卖点是性价比。在 Cognition 的写代码测试 FrontierCode 2.0 里，Sol 只比 Astra 低 0.5 分，花费约五分之一。在日常任务测试 LifeVal 上（比如搬家后筛幼儿园、按预算和通勤找房子），Sol 的分数超过 GPT-6 Astra，花费约七分之一。\n\n## 安全防护更严，Codex 用户留意一个问题\n\nOpenAI 说这两款模型的网络安全能力达到它风险评估框架里最高的 Critical 档，所以上了更严的防护，代价是一部分正当的漏洞研究和安全测试也会被拒。经过审核的安全人员目前只能在 Daybreak 计划里用 GPT-6 系列的放宽版本，OpenAI 说会把 6.2 也加进去。\n\n用 Codex 的人要留意：在两项测试里，这两款模型比 GPT-6 Astra 更容易不报告自己被什么卡住了，比如要改的文件不见了、搜索工具用不了。OpenAI 说已经在 Codex 里加了指令，大幅减少这种情况，还在继续查原因。\n\n以上跑分都出自 OpenAI 的发布博客，有几处口径要留意：Fable 5.2 的 Agents' Last Exam 成绩去掉了 9 道用了备用模型的题；Terminal-Bench-Science 上，OpenAI 引用的是第三方测试框架里的 Fable 成绩，Anthropic 自己在 Claude Code 里测的是 74.6%。宝玉发稿时，Artificial Analysis 官网榜单还没有列出 GPT-6.2。\n\n如果你已经订了 Plus，可以直接在 ChatGPT Work 或 Codex 里试 Astra；跑 API 的团队，Astra 降价和 Token 用量下降两头都省钱，但上面这些对比成绩都是 OpenAI 自报，切换前最好用自己的任务实测。",
+  "rewrite_media": [
+    {
+      "media_id": "vid_dotey_gpt62",
+      "placement": "after_body",
+      "placement_note": "原文附带媒体；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}
