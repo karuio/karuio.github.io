@@ -1,0 +1,44 @@
+{
+  "id": "sytaylor-affirm-cr-payment-advice",
+  "date": "2026-11-18",
+  "published_at": "2026-11-18T19:55:05+00:00",
+  "ingested_at": "2026-11-19T08:11:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2123142973751955837",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "SUUUPER INTERESTING report by @Affirm and Consumer Reports found AI failed 51% of \"payment advice\" tests"
+  },
+  "title": "Simon Taylor：一份 Markdown 指令文件，让 AI 选付款方式的通过率从 48.6% 升到 71.8%",
+  "dek": "Affirm 和《消费者报告》测试发现 AI 在 51% 的付款建议测试里失败；开源指令文件让四个模型全部提高，Haiku 接近翻倍。但这仍是草案，只在模拟购物者上测过。",
+  "tags": [
+    "AI 代理",
+    "代理式支付",
+    "先买后付",
+    "模型评测"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "SUUUPER INTERESTING report by @Affirm and Consumer Reports found AI failed 51% of \"payment advice\" tests",
+    "text_md": "SUUUPER INTERESTING report by @Affirm and Consumer Reports found AI failed 51% of \"payment advice\" tests\n\nThey created a markdown file (on GitHub) that lifted the pass rate from 48.6% to 71.8%.\n\nEvery model passed more often with the file.\n\n- GPT-6.1 Sol went from 73.3% to 93.3%\n- Claude Sonnet 5.5 went from 53.3% to 71.7%\n- Claude Haiku 5.5 went from 37.8% to 71.1%\n- GPT-5.6 Luna went from 30.0% to 51.1%\n\nI love this data.\n\nClearly, there's a way to go before agents can get to good outcomes. But at least good we have data now.\n\n---\n\nToday, AI agents can shop and pay for you, but only 23% of US consumers trust AI to handle the payment (Visa Trust Index, September).\n\nEarlier this month Visa's benchmark showed agents failing 42.8% of shopping tests before checkout. Visa tested whether an agent buys the right thing.\n\nAffirm and CR tested whether it picks the right way to pay.\n\nAffirm CEO Max Levchin says \"figuring out the best way to pay for it is a different job.\"\n\nOne test case was a $1,200 purchase. Paying only the card's $40 minimum added $406 to $651 in interest, an installment plan cost a flat $60, and debit cost nothing.\n\n(Interesting that Affirm is backing this; clearly they see BNPL as better than cards)\n\n---\n\nConsumer Reports published its Consumer Finance AI Standard this summer. Affirm wrote an instruction file to meet it, and CR helped evaluate it.\n\nThe file walks an AI agent through five steps:\n\n- Gather the real terms for each way to pay\n- Compare costs on the same assumptions\n- Check what happens if you miss a payment or a promo rate ends\n- Rule out what doesn't fit\n- Recommend one, explain why, and wait for your yes\n\nThe agent can tell you to pay in full, wait, or not buy. The ranking has to ignore who pays the agent, and the file tells it to \"never manufacture a winner.\"\n\n---\n\nThey ran 30 scenarios on four models, three times each, with and without the file. A sponsored option and hidden instructions planted in a web page were among the traps.\n\nHaiku nearly doubled its pass rate, and with the file it scored about two points behind the top model without it. On this test, good instructions were worth about as much as a bigger model.\n\nMarkdown is how you get more from dumber models.\n\n---\n\nI love that they open-sourced the file. Anyone building an agent can read it, test it and argue with it. I can imagine it becoming a standard.\n\nIt's still a draft, tested on simulated shoppers. The scores grade the AI's answers, so the effect on real shoppers is unknown.\n\n---\n\nI wonder if this becomes an eval the AI labs hill climb, like Visa's benchmark?\n\nWhat happens if they're able to improve on that without the markdown file number? If the labs train against that, the model does the right thing with no file at all.\n\nIt would need more than 30 scenarios, with some kept private so models can't memorize them. Affirm and CR are asking for more test scenarios, so that could happen.\n\nBut still. Progress!",
+    "media": [
+      {
+        "id": "img_sytaylor_affirm_chart",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXbrRJ8agAAwGCj.jpg",
+        "alt": "图表：Will AI select the right payment method?（Affirm + Consumer Reports，2026 年 11 月），平均通过率 48.6% → 71.8%，四个模型有无文件的通过率对比"
+      }
+    ]
+  },
+  "body_md": "Affirm 和《消费者报告》（Consumer Reports，下称 CR）联合做了一项测试：让 AI 给出“付款建议”，结果 AI 在 51% 的测试里没通过。两家随后写了一份 Markdown 文件，放在 GitHub 上，把平均通过率从 48.6% 提高到 71.8%。Simon Taylor 在长帖里拆解了这份报告，他说自己非常喜欢这组数据。\n\n加上这份文件后，参与测试的每个模型通过率都提高了：\n\n- GPT-6.1 Sol：从 73.3% 升到 93.3%\n- Claude Sonnet 5.5：从 53.3% 升到 71.7%\n- Claude Haiku 5.5：从 37.8% 升到 71.1%\n- GPT-5.6 Luna：从 30.0% 升到 51.1%\n\n他的判断是，AI 代理要做到稳定给出好结果，显然还有很长的路，但至少现在有数据可看了。\n\n## 选对商品之外，还要选对付款方式\n\n今天 AI 代理已经能替人购物和付款，但根据 Visa 9 月的信任指数（Visa Trust Index），只有 23% 的美国消费者信任 AI 来处理付款。\n\n本月早些时候，Visa 的基准测试显示，AI 代理在结账前的购物测试里有 42.8% 失败。Visa 测的是代理有没有买对东西，Affirm 和 CR 测的是它有没有选对付款方式。Affirm CEO Max Levchin 的说法是：“想清楚用什么方式付款，是另一项工作。”\n\n其中一个测试案例是一笔 1200 美元的消费。如果每月只还信用卡 40 美元的最低还款额，利息会多出 406 到 651 美元；分期付款计划的固定费用是 60 美元；用借记卡则没有额外成本。\n\nTaylor 觉得 Affirm 出面支持这项研究很有意思，在他看来，Affirm 显然认为先买后付（BNPL）比信用卡更好。\n\n## 指令文件让代理分五步走\n\nCR 今年夏天发布了《消费金融 AI 标准》（Consumer Finance AI Standard）。Affirm 按这个标准写了一份指令文件，CR 协助做了评估。\n\n文件让 AI 代理按五步处理：\n\n1. 收集每种付款方式的真实条款；\n2. 在相同假设下比较成本；\n3. 检查错过还款或促销利率到期后会发生什么；\n4. 排除不合适的选项；\n5. 推荐一种，说明理由，然后等用户确认。\n\n代理可以建议用户全额付款、等一等，或者干脆不买。排序必须无视是谁在给代理付费，文件还要求代理“绝不凭空制造一个赢家”。\n\n## 好指令约等于一个更大的模型\n\n测试一共 30 个场景，在四个模型上各跑三次，分别比较有文件和没文件的情况。场景里设了陷阱，其中包括一个赞助商推广的选项，以及埋在网页里的隐藏指令。\n\nHaiku 的通过率接近翻倍。加上文件后，它的成绩只比表现最好的模型在不加文件时低约两个百分点。Taylor 据此说，在这项测试里，好的指令差不多抵得上一个更大的模型。他的说法是：Markdown 是让笨一点的模型发挥更多能力的办法。\n\n## 局限：草案、模拟购物者、只给答案打分\n\n他很欣赏两家把文件开源：任何做代理的人都能读它、测它、和它争论。他设想它可能会成为一种标准。\n\n但它还只是草案，测试对象是模拟购物者。分数评的是 AI 给出的答案，对真实购物者的影响还不知道。\n\n## 会不会变成实验室刷分的评测\n\nTaylor 还提出一个问题：这会不会像 Visa 的基准一样，变成 AI 实验室爬坡优化的评测？如果实验室能在不加 Markdown 文件的情况下把这个分数做上去，也就是针对它训练，那么模型不需要任何文件也能做对。\n\n他认为，要做到这一步，30 个场景不够，还得有一部分场景保密，防止模型背题。Affirm 和 CR 正在征集更多测试场景，所以这有可能实现。他的结论是：不管怎样，这是进步。\n\n做购物或支付代理的团队，可以先拿这份开源文件在自己的场景里跑一遍有文件和无文件的对照，同时记住 Taylor 提到的边界：30 个场景、模拟购物者、只评答案，数字不能直接当成真实用户的效果。",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_affirm_chart",
+      "placement": "after_paragraph",
+      "after_md": "他的判断是，AI 代理要做到稳定给出好结果，显然还有很长的路，但至少现在有数据可看了。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

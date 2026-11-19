@@ -1,5 +1,65 @@
 [
   {
+    "id": "setser-september-tic-us-equity-pull",
+    "date": "2026-11-18",
+    "title": "Brad Setser：9 月 TIC 数据的主线没变，全球资金仍被美股牢牢吸住",
+    "dek": "他认为外资对美国资产需求依旧强劲，债券流入近期回升；中国在美托管的国债和机构债只有按储备推算应有水平的一半左右，但托管地口径让“撤离美债”难以反驳，也无法排除只是换了托管地。",
+    "url": "/a/setser-september-tic-us-equity-pull",
+    "source_url": "https://x.com/Brad_Setser/status/2123192103794610576",
+    "tags": [
+      "美国国际资本流动",
+      "美债",
+      "中国外汇储备",
+      "国际收支"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "sytaylor-affirm-cr-payment-advice",
+    "date": "2026-11-18",
+    "title": "Simon Taylor：一份 Markdown 指令文件，让 AI 选付款方式的通过率从 48.6% 升到 71.8%",
+    "dek": "Affirm 和《消费者报告》测试发现 AI 在 51% 的付款建议测试里失败；开源指令文件让四个模型全部提高，Haiku 接近翻倍。但这仍是草案，只在模拟购物者上测过。",
+    "url": "/a/sytaylor-affirm-cr-payment-advice",
+    "source_url": "https://x.com/sytaylor/status/2123142973751955837",
+    "tags": [
+      "AI 代理",
+      "代理式支付",
+      "先买后付",
+      "模型评测"
+    ],
+    "sector": "金融科技"
+  },
+  {
+    "id": "thevalueist-anthropic-index-inclusion",
+    "date": "2026-11-18",
+    "title": "TheValueist：Anthropic 上市后的指数纳入时间表，标普 500 之外都开了快车道",
+    "dek": "他梳理 2026 年各指数商的规则改动：纳斯达克 100、罗素、富时、MSCI 都能在数个到十几个交易日内纳入，标普 500 拒绝放宽。Intropic 估算约 190 亿美元被动需求，对应约 600 亿美元流通盘，集中在 11 月 30 日至 12 月 21 日。",
+    "url": "/a/thevalueist-anthropic-index-inclusion",
+    "source_url": "https://x.com/TheValueist/status/2123123628216631611",
+    "tags": [
+      "Anthropic",
+      "IPO",
+      "指数纳入",
+      "被动资金"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
+    "id": "ttunguz-nvidia-neocloud-squeeze",
+    "date": "2026-11-18",
+    "title": "Tomasz Tunguz：英伟达收紧新云融资，等于把筹码还给自研芯片的云巨头",
+    "dek": "英伟达 Q3 数据中心收入 1076 亿美元，超大规模云厂商 601 亿、新云和企业 475 亿。非超大规模客户占比从 45.3% 回落到 44.1%，恰逢英伟达释放融资收紧信号。",
+    "url": "/a/ttunguz-nvidia-neocloud-squeeze",
+    "source_url": "https://x.com/ttunguz/status/2123128222854598980",
+    "tags": [
+      "英伟达",
+      "新云",
+      "AI 基础设施",
+      "自研芯片"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
     "id": "doshi-china-misreading-moment",
     "date": "2026-11-17",
     "title": "Rush Doshi：深圳峰会前，中美一年缓和正被稀土撕开裂缝",
