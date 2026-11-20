@@ -1,5 +1,50 @@
 [
   {
+    "id": "doshi-repurpose-china-select-committee",
+    "date": "2026-11-19",
+    "title": "Rush Doshi：民主党该保留众议院中国特别委员会，换成五项新任务",
+    "dek": "他和 Mike Wessel 主张把委员会转向国内复兴、防第二次中国冲击、人权、同盟和对华合作，理由是只有它能统筹国会的对华政策。",
+    "url": "/a/doshi-repurpose-china-select-committee",
+    "source_url": "https://x.com/RushDoshi/status/2123526356596310419",
+    "tags": [
+      "中美关系",
+      "美国国会",
+      "对华政策",
+      "中国冲击"
+    ],
+    "sector": "中国产业/对华战略"
+  },
+  {
+    "id": "dotey-claude-code-review",
+    "date": "2026-11-19",
+    "title": "宝玉整理：Claude Code 团队让 AI 接手代码审查，查出实质问题的 PR 从 16% 升到 54%",
+    "dek": "Anthropic 用历史事故做评测集调审查智能体，目标是九成 PR 合并时只需一个人；回滚少了 40%。数字均为 Morgan Lunt 在分享中给出的内部结果。",
+    "url": "/a/dotey-claude-code-review",
+    "source_url": "https://x.com/dotey/status/2123555597387813050",
+    "tags": [
+      "AI 编程",
+      "代码审查",
+      "Claude Code",
+      "智能体评测"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "thevalueist-ant-lockup-hedging",
+    "date": "2026-11-19",
+    "title": "TheValueist：Anthropic 首日承压，部分空头可能是锁定期里的老股东",
+    "dek": "流通盘约 7%，一年内 23 个解禁日、可卖上限累计 154.7 亿股；对冲禁令到 2027 年 6 月 1 日。老股东借卖空锁利是他的推断，没有直接证据。",
+    "url": "/a/thevalueist-ant-lockup-hedging",
+    "source_url": "https://x.com/TheValueist/status/2123519314850423001",
+    "tags": [
+      "Anthropic",
+      "IPO",
+      "锁定期",
+      "卖空"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
     "id": "setser-september-tic-us-equity-pull",
     "date": "2026-11-18",
     "title": "Brad Setser：9 月 TIC 数据的主线没变，全球资金仍被美股牢牢吸住",
