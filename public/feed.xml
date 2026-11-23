@@ -5,8 +5,714 @@
     <link>https://karuio.github.io/</link>
     <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Nov 2026 00:10:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:17:38 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>宝玉：Agent 说“验证完了”怎么才能信？先定验收标准，再让它拿截图证明</title>
+      <link>https://karuio.github.io/a/dotey-agent-verification</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dotey-agent-verification</guid>
+      <pubDate>Sun, 22 Nov 2026 20:37:32 +0000</pubDate>
+      <author>宝玉</author>
+      <description><![CDATA[<p><em>他不建议依赖多个 Agent 互相挑错，而是先给清晰的验收标准和能自验的环境，尽早用原型和方案文档验方向，让 Agent 交截图对比，人只盯 P0、P1 问题。</em></p>
+<h2>中文改写</h2>
+<p>Agent 信誓旦旦说“做好了、验证完了”，上线后才发现根本没做好；回头找它，它认错态度很好，下次照旧。宝玉在长帖里说，很多人都被这样坑过。</p>
+<p>他认为问题出在验证方式上：Agent 不知道什么叫“做好了”，人也没有低成本的办法确认它真的做好了。他分享了自己用 Agent 做验证的五条经验。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_dotey_agent_verify_infographic"><img src="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg" alt="信息图：The Agent says “I&#x27;m verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）"><figcaption><a href="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>一、别指望几个 Agent 互相挑错</h2>
+<p>对抗式验证，就是让另一个甚至多个 Agent 检查结果，执行的 Agent 按反馈修改，再检查、再修改，直到完成。</p>
+<p>宝玉说，这听起来很好，实际上经常无法收敛。模型不够聪明时，大部分情况越改越糟，还浪费大量 Token。</p>
+<p>原因在于<strong>缺少统一的验收标准</strong>。负责检查的 Agent 不一定掌握完整上下文，也不知道准确的验收标准，于是自作主张提一堆意见；执行的 Agent 照单全收，结果越改越偏。</p>
+<p>他后来在回复里补充：并不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要给出清晰、统一的验证标准。</p>
+<h2>二、先说清验收标准，再给它一个能自己验的环境</h2>
+<p>他举了做页面的例子。只说“帮我把这几个设计稿做成页面”，Agent 通常交出一个差不多的结果，有时出入还很大。</p>
+<p>换成“做成页面后，对网页截图，和设计稿对比，要求像素一个都不差”，Agent 做完就不会轻易交差：它会截图，自己写工具比对截图和设计稿的像素差异，返工，直到真的一个像素都不差。</p>
+<p>宝玉也说明，大多数时候并不需要像素级一致，有些偏差可以接受。关键是<strong>让它知道标准是什么，并且手里有办法自己去验</strong>。</p>
+<h2>三、越早验证，返工越便宜</h2>
+<p>尽早验证在传统软件工程里是常识，是大量教训换来的。他认为，Vibe Coding 让生成代码的成本大幅下降，非专业的人越来越多，大家渐渐忘了写代码之前还有三道关：</p>
+<p><strong>可行性分析</strong>：这个项目值不值得做，做出来有没有人用，投入产出比合不合算。</p>
+<p><strong>原型开发</strong>：先用模拟数据低成本做出能跑的基本交互，快速验证方向，不对就马上调整。他说现在 Agent 做原型已经很强，比如 Claude Design，或者本地版的 open-artifact（http://github.com/jimliu/open-artifact），做出来的东西和最终成品看起来差别不大，成本低得多，速度也快。</p>
+<p><strong>系统设计</strong>：技术选型、模块划分、数据结构、数据库设计、API Schema。设计没做好，系统也能跑，但以后维护成本要高不少。Agent 选的技术方案并不总是最好的，所以他建议动手实现之前先让它写一份技术方案文档，人大致看一遍：一方面能理解项目怎么实现，另一方面能及时纠正潜在问题，免得做完再返工。</p>
+<h2>四、让 Agent 交证据，把人的验收成本压到最低</h2>
+<p>宝玉认为人必须留在循环里，完全交给 AI，大概率只会得到 AI Slop。可人的验收能力是瓶颈，要确认的东西一多就很累。他举了自己最近用 Antigravity 的经历：跨 Workspace 每读一个文件都要手动确认一次，快把他逼崩溃了。</p>
+<p>所以要让人能快速判断结果对不对、快速指出哪里有问题。最简单的办法是让 Agent 提供截图、录屏或可视化的 HTML 报告。Agent 截图时自己也能发现一些问题，但截图最大的价值是让人一眼看出问题。他打了个比方：员工汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，老板显然更容易看后者。</p>
+<p>他现在最常用的几种做法：</p>
+<ul>
+<li>开发新功能，让它提供新功能的截图；</li>
+<li>修 bug，让它提供修改前后的截图对比；</li>
+<li>让它自己模拟 API 响应数据，动态生成不同场景的截图，完全不需要服务端配合。他坦言自己还没搞明白它是怎么模拟的。</li>
+</ul>
+<h2>五、代码审查只盯真正要紧的问题</h2>
+<p>Agent 生成代码太快，瓶颈已经转移到审查和验证上。宝玉认为代码审查不太可能再完全靠人，但人参与仍有意义，方式要调整：</p>
+<ul>
+<li><strong>PR 尽量小</strong>。Agent 审起来准确率更高，人也看得过来。</li>
+<li><strong>让 Agent 审，但不全信它的结论</strong>。审查结果要分级，人只盯 P0、P1 级问题，尤其是安全和性能问题，人工甄别，必要时让 Agent 解释，并在本地验证。</li>
+<li><strong>细枝末节放过去</strong>。代码规范、最佳实践这类问题不必太在意。</li>
+</ul>
+<h2>把“做好了”变成能检查的东西</h2>
+<p>宝玉总结说，这五条讲的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成人能检查的东西。动手之前告诉它什么叫做好了；动手之前先用原型和方案文档把方向验一遍；做完之后让它拿截图和对比来证明；人的精力只花在最要紧的问题上。</p>
+
+<h2>原文</h2>
+<p><em>Agent 说“验证完了”，怎么才能真的信它？</em></p>
+<figure data-media-id="img_dotey_agent_verify_infographic"><img src="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg" alt="信息图：The Agent says “I&#x27;m verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）"><figcaption><a href="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Agent 说“验证完了”，怎么才能真的信它？</p>
+<p>很多朋友都被 Agent 坑过：它信誓旦旦说做好了、验证完了，你信以为真，上线后发现压根没做好。被老板骂完回头找它，它认错态度很好，下次还是一样。</p>
+<p>问题出在我们让它验证的方式上：Agent 不知道什么叫“做好了”，你也没有低成本的办法确认它真的做好了。分享五条我在用 Agent 做验证时的经验。</p>
+<p>一、不要依赖对抗式验证</p>
+<p>对抗式验证就是让另一个甚至多个 Agent 来检查结果，执行的 Agent 根据反馈改进，再检查、再改进，直到完成为止。</p>
+<p>听起来很好，实际上经常无法收敛。尤其是不太聪明的模型，大部分时候是越改越糟，还浪费了很多 Token。</p>
+<p>原因是缺少统一的验收标准。负责检查的 Agent 并不一定知道完整的上下文，也不知道准确的验收标准，于是自作主张提一堆意见，执行的 Agent 再照单全收，结果就越改越偏。</p>
+<p>二、给出清晰的验收标准，再给一个能验收的环境</p>
+<p>举个例子，你把设计稿交给 Agent，说：“帮我把这几个设计稿做成页面”，通常它会给你一个差不多的结果，有时候出入还很大。</p>
+<p>换一个说法：“帮我把这几个设计稿做成页面，完成后请对网页截图，对比设计稿，要求像素一个都不要差”。这时候 Agent 做完不会轻易交差，它会截图，写工具对比截图和设计稿的像素差异，返工重做，直到像素真的一个都不差。</p>
+<p>大部分时候我们并不需要一个像素都不差，有些偏差可以接受。重点是让它知道验收标准是什么，并且手里有办法自己去验。</p>
+<p>三、越早验证，返工成本越低</p>
+<p>尽早验证在传统软件工程里是常识，是大量血泪教训换来的。只是现在 Vibe Coding 让生成代码的成本大幅降低，非专业人士越来越多，大家渐渐忘了写代码之前还有三道关：</p>
+<p>可行性分析：这个项目真的值得做吗？做出来会有人用吗？投入产出比合算吗？</p>
+<p>原型开发：先做基本的交互，用模拟数据低成本做出一个可运行的原型，快速验证方向对不对，不对马上调整。现在 Agent 做原型已经很强了，比如 Claude Design（或者本地版的 https://t.co/QVpnqsxzMD），做出来的东西和最终结果看起来没什么差别，成本低得多，速度也快。</p>
+<p>系统设计：技术选型、模块划分、数据结构、数据库设计、API Schema 这些。设计没做好，系统也能跑，但将来维护成本要高不少。Agent 能力虽然强，选的技术方案并不总是最好的。动手实现之前，先让它写一份技术方案文档，你大概看看：一方面帮你理解项目是怎么实现的，另一方面能及时纠正潜在问题，避免做完再返工。</p>
+<p>四、让 Agent 提供证据，降低你的验收成本</p>
+<p>人在 Loop 里是必不可少的，完全交给 AI，大概率只能收获 AI Slop。但人的验收能力是瓶颈，要确认的东西太多会很累。我最近用 Antigravity，跨 Workspace 每读一个文件都要我手工确认一遍，简直快崩溃了。</p>
+<p>所以要把人确认的成本降到最低：能快速判断结果对不对，快速指出哪里有问题。</p>
+<p>最简单的方式，是让 Agent 提供截图、录屏、可视化的 HTML 报告。Agent 在截图过程中自己也能发现一些问题，但截图最大的价值，是让人一眼就能看出问题。</p>
+<p>想象一下，你是老板，员工来汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，哪个更容易看？</p>
+<p>我现在最常用的几个做法：</p>
+<ul>
+<li>开发新功能，让它提供新功能的截图</li>
+<li>修 bug，让它提供修改前和修改后的截图对比</li>
+<li>让它自己模拟 API 响应数据，动态生成各种不同场景的截图，完全不需要服务端配合（虽然我还没搞明白它是怎么模拟的）</li>
+</ul>
+<p>五、代码审查聚焦于真正的问题</p>
+<p>Agent 生成代码的速度太快，瓶颈已经转移到了代码审查和验证上。代码审查不太可能完全靠人来做了，但人参与仍然有意义，只是方式要调整：</p>
+<ul>
+<li>PR 尽可能小。这样 Agent 审起来准确率更高，人也看得过来。</li>
+<li>让 Agent 审，但不全信它的结论。审查结果要分级，人只盯 P0、P1 级别的问题，尤其是安全和性能问题，人工甄别一下，必要时让 Agent 解读、在本地验证。</li>
+<li>细枝末节放过去。代码规范、最佳实践这类问题，不用太在意。</li>
+</ul>
+<p>最后</p>
+<p>这五条说的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成你能检查的东西。</p>
+<ul>
+<li>动手之前，告诉它什么叫做好了</li>
+<li>动手之前，先用原型和方案文档把方向验一遍</li>
+<li>做完之后，让它拿截图和对比来证明</li>
+<li>你自己的精力，只花在最要紧的问题上</li>
+</ul>
+<p><strong>Thread post, https://x.com/dotey/status/2124638072981643530</strong></p>
+<p>谢谢 yangyi 补充，不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要提供清晰的、统一的验证标准
+https://x.com/yangyi/status/2124636990826029214</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2124603209394078089">https://x.com/dotey/status/2124603209394078089</a></p>
+<p><strong>相关链接：</strong><a href="http://github.com/jimliu/open-artifact">http://github.com/jimliu/open-artifact</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他不建议依赖多个 Agent 互相挑错，而是先给清晰的验收标准和能自验的环境，尽早用原型和方案文档验方向，让 Agent 交截图对比，人只盯 P0、P1 问题。</em></p>
+<h2>中文改写</h2>
+<p>Agent 信誓旦旦说“做好了、验证完了”，上线后才发现根本没做好；回头找它，它认错态度很好，下次照旧。宝玉在长帖里说，很多人都被这样坑过。</p>
+<p>他认为问题出在验证方式上：Agent 不知道什么叫“做好了”，人也没有低成本的办法确认它真的做好了。他分享了自己用 Agent 做验证的五条经验。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_dotey_agent_verify_infographic"><img src="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg" alt="信息图：The Agent says “I&#x27;m verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）"><figcaption><a href="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>一、别指望几个 Agent 互相挑错</h2>
+<p>对抗式验证，就是让另一个甚至多个 Agent 检查结果，执行的 Agent 按反馈修改，再检查、再修改，直到完成。</p>
+<p>宝玉说，这听起来很好，实际上经常无法收敛。模型不够聪明时，大部分情况越改越糟，还浪费大量 Token。</p>
+<p>原因在于<strong>缺少统一的验收标准</strong>。负责检查的 Agent 不一定掌握完整上下文，也不知道准确的验收标准，于是自作主张提一堆意见；执行的 Agent 照单全收，结果越改越偏。</p>
+<p>他后来在回复里补充：并不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要给出清晰、统一的验证标准。</p>
+<h2>二、先说清验收标准，再给它一个能自己验的环境</h2>
+<p>他举了做页面的例子。只说“帮我把这几个设计稿做成页面”，Agent 通常交出一个差不多的结果，有时出入还很大。</p>
+<p>换成“做成页面后，对网页截图，和设计稿对比，要求像素一个都不差”，Agent 做完就不会轻易交差：它会截图，自己写工具比对截图和设计稿的像素差异，返工，直到真的一个像素都不差。</p>
+<p>宝玉也说明，大多数时候并不需要像素级一致，有些偏差可以接受。关键是<strong>让它知道标准是什么，并且手里有办法自己去验</strong>。</p>
+<h2>三、越早验证，返工越便宜</h2>
+<p>尽早验证在传统软件工程里是常识，是大量教训换来的。他认为，Vibe Coding 让生成代码的成本大幅下降，非专业的人越来越多，大家渐渐忘了写代码之前还有三道关：</p>
+<p><strong>可行性分析</strong>：这个项目值不值得做，做出来有没有人用，投入产出比合不合算。</p>
+<p><strong>原型开发</strong>：先用模拟数据低成本做出能跑的基本交互，快速验证方向，不对就马上调整。他说现在 Agent 做原型已经很强，比如 Claude Design，或者本地版的 open-artifact（http://github.com/jimliu/open-artifact），做出来的东西和最终成品看起来差别不大，成本低得多，速度也快。</p>
+<p><strong>系统设计</strong>：技术选型、模块划分、数据结构、数据库设计、API Schema。设计没做好，系统也能跑，但以后维护成本要高不少。Agent 选的技术方案并不总是最好的，所以他建议动手实现之前先让它写一份技术方案文档，人大致看一遍：一方面能理解项目怎么实现，另一方面能及时纠正潜在问题，免得做完再返工。</p>
+<h2>四、让 Agent 交证据，把人的验收成本压到最低</h2>
+<p>宝玉认为人必须留在循环里，完全交给 AI，大概率只会得到 AI Slop。可人的验收能力是瓶颈，要确认的东西一多就很累。他举了自己最近用 Antigravity 的经历：跨 Workspace 每读一个文件都要手动确认一次，快把他逼崩溃了。</p>
+<p>所以要让人能快速判断结果对不对、快速指出哪里有问题。最简单的办法是让 Agent 提供截图、录屏或可视化的 HTML 报告。Agent 截图时自己也能发现一些问题，但截图最大的价值是让人一眼看出问题。他打了个比方：员工汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，老板显然更容易看后者。</p>
+<p>他现在最常用的几种做法：</p>
+<ul>
+<li>开发新功能，让它提供新功能的截图；</li>
+<li>修 bug，让它提供修改前后的截图对比；</li>
+<li>让它自己模拟 API 响应数据，动态生成不同场景的截图，完全不需要服务端配合。他坦言自己还没搞明白它是怎么模拟的。</li>
+</ul>
+<h2>五、代码审查只盯真正要紧的问题</h2>
+<p>Agent 生成代码太快，瓶颈已经转移到审查和验证上。宝玉认为代码审查不太可能再完全靠人，但人参与仍有意义，方式要调整：</p>
+<ul>
+<li><strong>PR 尽量小</strong>。Agent 审起来准确率更高，人也看得过来。</li>
+<li><strong>让 Agent 审，但不全信它的结论</strong>。审查结果要分级，人只盯 P0、P1 级问题，尤其是安全和性能问题，人工甄别，必要时让 Agent 解释，并在本地验证。</li>
+<li><strong>细枝末节放过去</strong>。代码规范、最佳实践这类问题不必太在意。</li>
+</ul>
+<h2>把“做好了”变成能检查的东西</h2>
+<p>宝玉总结说，这五条讲的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成人能检查的东西。动手之前告诉它什么叫做好了；动手之前先用原型和方案文档把方向验一遍；做完之后让它拿截图和对比来证明；人的精力只花在最要紧的问题上。</p>
+
+<h2>原文</h2>
+<p><em>Agent 说“验证完了”，怎么才能真的信它？</em></p>
+<figure data-media-id="img_dotey_agent_verify_infographic"><img src="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg" alt="信息图：The Agent says “I&#x27;m verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）"><figcaption><a href="https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Agent 说“验证完了”，怎么才能真的信它？</p>
+<p>很多朋友都被 Agent 坑过：它信誓旦旦说做好了、验证完了，你信以为真，上线后发现压根没做好。被老板骂完回头找它，它认错态度很好，下次还是一样。</p>
+<p>问题出在我们让它验证的方式上：Agent 不知道什么叫“做好了”，你也没有低成本的办法确认它真的做好了。分享五条我在用 Agent 做验证时的经验。</p>
+<p>一、不要依赖对抗式验证</p>
+<p>对抗式验证就是让另一个甚至多个 Agent 来检查结果，执行的 Agent 根据反馈改进，再检查、再改进，直到完成为止。</p>
+<p>听起来很好，实际上经常无法收敛。尤其是不太聪明的模型，大部分时候是越改越糟，还浪费了很多 Token。</p>
+<p>原因是缺少统一的验收标准。负责检查的 Agent 并不一定知道完整的上下文，也不知道准确的验收标准，于是自作主张提一堆意见，执行的 Agent 再照单全收，结果就越改越偏。</p>
+<p>二、给出清晰的验收标准，再给一个能验收的环境</p>
+<p>举个例子，你把设计稿交给 Agent，说：“帮我把这几个设计稿做成页面”，通常它会给你一个差不多的结果，有时候出入还很大。</p>
+<p>换一个说法：“帮我把这几个设计稿做成页面，完成后请对网页截图，对比设计稿，要求像素一个都不要差”。这时候 Agent 做完不会轻易交差，它会截图，写工具对比截图和设计稿的像素差异，返工重做，直到像素真的一个都不差。</p>
+<p>大部分时候我们并不需要一个像素都不差，有些偏差可以接受。重点是让它知道验收标准是什么，并且手里有办法自己去验。</p>
+<p>三、越早验证，返工成本越低</p>
+<p>尽早验证在传统软件工程里是常识，是大量血泪教训换来的。只是现在 Vibe Coding 让生成代码的成本大幅降低，非专业人士越来越多，大家渐渐忘了写代码之前还有三道关：</p>
+<p>可行性分析：这个项目真的值得做吗？做出来会有人用吗？投入产出比合算吗？</p>
+<p>原型开发：先做基本的交互，用模拟数据低成本做出一个可运行的原型，快速验证方向对不对，不对马上调整。现在 Agent 做原型已经很强了，比如 Claude Design（或者本地版的 https://t.co/QVpnqsxzMD），做出来的东西和最终结果看起来没什么差别，成本低得多，速度也快。</p>
+<p>系统设计：技术选型、模块划分、数据结构、数据库设计、API Schema 这些。设计没做好，系统也能跑，但将来维护成本要高不少。Agent 能力虽然强，选的技术方案并不总是最好的。动手实现之前，先让它写一份技术方案文档，你大概看看：一方面帮你理解项目是怎么实现的，另一方面能及时纠正潜在问题，避免做完再返工。</p>
+<p>四、让 Agent 提供证据，降低你的验收成本</p>
+<p>人在 Loop 里是必不可少的，完全交给 AI，大概率只能收获 AI Slop。但人的验收能力是瓶颈，要确认的东西太多会很累。我最近用 Antigravity，跨 Workspace 每读一个文件都要我手工确认一遍，简直快崩溃了。</p>
+<p>所以要把人确认的成本降到最低：能快速判断结果对不对，快速指出哪里有问题。</p>
+<p>最简单的方式，是让 Agent 提供截图、录屏、可视化的 HTML 报告。Agent 在截图过程中自己也能发现一些问题，但截图最大的价值，是让人一眼就能看出问题。</p>
+<p>想象一下，你是老板，员工来汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，哪个更容易看？</p>
+<p>我现在最常用的几个做法：</p>
+<ul>
+<li>开发新功能，让它提供新功能的截图</li>
+<li>修 bug，让它提供修改前和修改后的截图对比</li>
+<li>让它自己模拟 API 响应数据，动态生成各种不同场景的截图，完全不需要服务端配合（虽然我还没搞明白它是怎么模拟的）</li>
+</ul>
+<p>五、代码审查聚焦于真正的问题</p>
+<p>Agent 生成代码的速度太快，瓶颈已经转移到了代码审查和验证上。代码审查不太可能完全靠人来做了，但人参与仍然有意义，只是方式要调整：</p>
+<ul>
+<li>PR 尽可能小。这样 Agent 审起来准确率更高，人也看得过来。</li>
+<li>让 Agent 审，但不全信它的结论。审查结果要分级，人只盯 P0、P1 级别的问题，尤其是安全和性能问题，人工甄别一下，必要时让 Agent 解读、在本地验证。</li>
+<li>细枝末节放过去。代码规范、最佳实践这类问题，不用太在意。</li>
+</ul>
+<p>最后</p>
+<p>这五条说的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成你能检查的东西。</p>
+<ul>
+<li>动手之前，告诉它什么叫做好了</li>
+<li>动手之前，先用原型和方案文档把方向验一遍</li>
+<li>做完之后，让它拿截图和对比来证明</li>
+<li>你自己的精力，只花在最要紧的问题上</li>
+</ul>
+<p><strong>Thread post, https://x.com/dotey/status/2124638072981643530</strong></p>
+<p>谢谢 yangyi 补充，不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要提供清晰的、统一的验证标准
+https://x.com/yangyi/status/2124636990826029214</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2124603209394078089">https://x.com/dotey/status/2124603209394078089</a></p>
+<p><strong>相关链接：</strong><a href="http://github.com/jimliu/open-artifact">http://github.com/jimliu/open-artifact</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Agent 说“验证完了”，怎么才能真的信它？", "url": "https://x.com/dotey/status/2124603209394078089", "lang": "zh", "html": "<h2>Agent 说“验证完了”，怎么才能真的信它？</h2>\n<figure data-media-id=\"img_dotey_agent_verify_infographic\"><img src=\"https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg\" alt=\"信息图：The Agent says “I&#x27;m verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Agent 说“验证完了”，怎么才能真的信它？</p>\n<p>很多朋友都被 Agent 坑过：它信誓旦旦说做好了、验证完了，你信以为真，上线后发现压根没做好。被老板骂完回头找它，它认错态度很好，下次还是一样。</p>\n<p>问题出在我们让它验证的方式上：Agent 不知道什么叫“做好了”，你也没有低成本的办法确认它真的做好了。分享五条我在用 Agent 做验证时的经验。</p>\n<p>一、不要依赖对抗式验证</p>\n<p>对抗式验证就是让另一个甚至多个 Agent 来检查结果，执行的 Agent 根据反馈改进，再检查、再改进，直到完成为止。</p>\n<p>听起来很好，实际上经常无法收敛。尤其是不太聪明的模型，大部分时候是越改越糟，还浪费了很多 Token。</p>\n<p>原因是缺少统一的验收标准。负责检查的 Agent 并不一定知道完整的上下文，也不知道准确的验收标准，于是自作主张提一堆意见，执行的 Agent 再照单全收，结果就越改越偏。</p>\n<p>二、给出清晰的验收标准，再给一个能验收的环境</p>\n<p>举个例子，你把设计稿交给 Agent，说：“帮我把这几个设计稿做成页面”，通常它会给你一个差不多的结果，有时候出入还很大。</p>\n<p>换一个说法：“帮我把这几个设计稿做成页面，完成后请对网页截图，对比设计稿，要求像素一个都不要差”。这时候 Agent 做完不会轻易交差，它会截图，写工具对比截图和设计稿的像素差异，返工重做，直到像素真的一个都不差。</p>\n<p>大部分时候我们并不需要一个像素都不差，有些偏差可以接受。重点是让它知道验收标准是什么，并且手里有办法自己去验。</p>\n<p>三、越早验证，返工成本越低</p>\n<p>尽早验证在传统软件工程里是常识，是大量血泪教训换来的。只是现在 Vibe Coding 让生成代码的成本大幅降低，非专业人士越来越多，大家渐渐忘了写代码之前还有三道关：</p>\n<p>可行性分析：这个项目真的值得做吗？做出来会有人用吗？投入产出比合算吗？</p>\n<p>原型开发：先做基本的交互，用模拟数据低成本做出一个可运行的原型，快速验证方向对不对，不对马上调整。现在 Agent 做原型已经很强了，比如 Claude Design（或者本地版的 https://t.co/QVpnqsxzMD），做出来的东西和最终结果看起来没什么差别，成本低得多，速度也快。</p>\n<p>系统设计：技术选型、模块划分、数据结构、数据库设计、API Schema 这些。设计没做好，系统也能跑，但将来维护成本要高不少。Agent 能力虽然强，选的技术方案并不总是最好的。动手实现之前，先让它写一份技术方案文档，你大概看看：一方面帮你理解项目是怎么实现的，另一方面能及时纠正潜在问题，避免做完再返工。</p>\n<p>四、让 Agent 提供证据，降低你的验收成本</p>\n<p>人在 Loop 里是必不可少的，完全交给 AI，大概率只能收获 AI Slop。但人的验收能力是瓶颈，要确认的东西太多会很累。我最近用 Antigravity，跨 Workspace 每读一个文件都要我手工确认一遍，简直快崩溃了。</p>\n<p>所以要把人确认的成本降到最低：能快速判断结果对不对，快速指出哪里有问题。</p>\n<p>最简单的方式，是让 Agent 提供截图、录屏、可视化的 HTML 报告。Agent 在截图过程中自己也能发现一些问题，但截图最大的价值，是让人一眼就能看出问题。</p>\n<p>想象一下，你是老板，员工来汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，哪个更容易看？</p>\n<p>我现在最常用的几个做法：</p>\n<ul>\n<li>开发新功能，让它提供新功能的截图</li>\n<li>修 bug，让它提供修改前和修改后的截图对比</li>\n<li>让它自己模拟 API 响应数据，动态生成各种不同场景的截图，完全不需要服务端配合（虽然我还没搞明白它是怎么模拟的）</li>\n</ul>\n<p>五、代码审查聚焦于真正的问题</p>\n<p>Agent 生成代码的速度太快，瓶颈已经转移到了代码审查和验证上。代码审查不太可能完全靠人来做了，但人参与仍然有意义，只是方式要调整：</p>\n<ul>\n<li>PR 尽可能小。这样 Agent 审起来准确率更高，人也看得过来。</li>\n<li>让 Agent 审，但不全信它的结论。审查结果要分级，人只盯 P0、P1 级别的问题，尤其是安全和性能问题，人工甄别一下，必要时让 Agent 解读、在本地验证。</li>\n<li>细枝末节放过去。代码规范、最佳实践这类问题，不用太在意。</li>\n</ul>\n<p>最后</p>\n<p>这五条说的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成你能检查的东西。</p>\n<ul>\n<li>动手之前，告诉它什么叫做好了</li>\n<li>动手之前，先用原型和方案文档把方向验一遍</li>\n<li>做完之后，让它拿截图和对比来证明</li>\n<li>你自己的精力，只花在最要紧的问题上</li>\n</ul>\n<p><strong>Thread post, https://x.com/dotey/status/2124638072981643530</strong></p>\n<p>谢谢 yangyi 补充，不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要提供清晰的、统一的验证标准\nhttps://x.com/yangyi/status/2124636990826029214</p>\n<p>原文链接：<a href=\"https://x.com/dotey/status/2124603209394078089\">https://x.com/dotey/status/2124603209394078089</a></p>\n<p>相关链接：<a href=\"http://github.com/jimliu/open-artifact\">http://github.com/jimliu/open-artifact</a></p>"}, "rewrite": {"title": "宝玉：Agent 说“验证完了”怎么才能信？先定验收标准，再让它拿截图证明", "markdown": "Agent 信誓旦旦说“做好了、验证完了”，上线后才发现根本没做好；回头找它，它认错态度很好，下次照旧。宝玉在长帖里说，很多人都被这样坑过。\n\n他认为问题出在验证方式上：Agent 不知道什么叫“做好了”，人也没有低成本的办法确认它真的做好了。他分享了自己用 Agent 做验证的五条经验。\n\n![信息图：The Agent says “I'm verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）](<https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg>)\n\n## 一、别指望几个 Agent 互相挑错\n\n对抗式验证，就是让另一个甚至多个 Agent 检查结果，执行的 Agent 按反馈修改，再检查、再修改，直到完成。\n\n宝玉说，这听起来很好，实际上经常无法收敛。模型不够聪明时，大部分情况越改越糟，还浪费大量 Token。\n\n原因在于**缺少统一的验收标准**。负责检查的 Agent 不一定掌握完整上下文，也不知道准确的验收标准，于是自作主张提一堆意见；执行的 Agent 照单全收，结果越改越偏。\n\n他后来在回复里补充：并不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要给出清晰、统一的验证标准。\n\n## 二、先说清验收标准，再给它一个能自己验的环境\n\n他举了做页面的例子。只说“帮我把这几个设计稿做成页面”，Agent 通常交出一个差不多的结果，有时出入还很大。\n\n换成“做成页面后，对网页截图，和设计稿对比，要求像素一个都不差”，Agent 做完就不会轻易交差：它会截图，自己写工具比对截图和设计稿的像素差异，返工，直到真的一个像素都不差。\n\n宝玉也说明，大多数时候并不需要像素级一致，有些偏差可以接受。关键是**让它知道标准是什么，并且手里有办法自己去验**。\n\n## 三、越早验证，返工越便宜\n\n尽早验证在传统软件工程里是常识，是大量教训换来的。他认为，Vibe Coding 让生成代码的成本大幅下降，非专业的人越来越多，大家渐渐忘了写代码之前还有三道关：\n\n**可行性分析**：这个项目值不值得做，做出来有没有人用，投入产出比合不合算。\n\n**原型开发**：先用模拟数据低成本做出能跑的基本交互，快速验证方向，不对就马上调整。他说现在 Agent 做原型已经很强，比如 Claude Design，或者本地版的 open-artifact（http://github.com/jimliu/open-artifact），做出来的东西和最终成品看起来差别不大，成本低得多，速度也快。\n\n**系统设计**：技术选型、模块划分、数据结构、数据库设计、API Schema。设计没做好，系统也能跑，但以后维护成本要高不少。Agent 选的技术方案并不总是最好的，所以他建议动手实现之前先让它写一份技术方案文档，人大致看一遍：一方面能理解项目怎么实现，另一方面能及时纠正潜在问题，免得做完再返工。\n\n## 四、让 Agent 交证据，把人的验收成本压到最低\n\n宝玉认为人必须留在循环里，完全交给 AI，大概率只会得到 AI Slop。可人的验收能力是瓶颈，要确认的东西一多就很累。他举了自己最近用 Antigravity 的经历：跨 Workspace 每读一个文件都要手动确认一次，快把他逼崩溃了。\n\n所以要让人能快速判断结果对不对、快速指出哪里有问题。最简单的办法是让 Agent 提供截图、录屏或可视化的 HTML 报告。Agent 截图时自己也能发现一些问题，但截图最大的价值是让人一眼看出问题。他打了个比方：员工汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，老板显然更容易看后者。\n\n他现在最常用的几种做法：\n\n- 开发新功能，让它提供新功能的截图；\n- 修 bug，让它提供修改前后的截图对比；\n- 让它自己模拟 API 响应数据，动态生成不同场景的截图，完全不需要服务端配合。他坦言自己还没搞明白它是怎么模拟的。\n\n## 五、代码审查只盯真正要紧的问题\n\nAgent 生成代码太快，瓶颈已经转移到审查和验证上。宝玉认为代码审查不太可能再完全靠人，但人参与仍有意义，方式要调整：\n\n- **PR 尽量小**。Agent 审起来准确率更高，人也看得过来。\n- **让 Agent 审，但不全信它的结论**。审查结果要分级，人只盯 P0、P1 级问题，尤其是安全和性能问题，人工甄别，必要时让 Agent 解释，并在本地验证。\n- **细枝末节放过去**。代码规范、最佳实践这类问题不必太在意。\n\n## 把“做好了”变成能检查的东西\n\n宝玉总结说，这五条讲的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成人能检查的东西。动手之前告诉它什么叫做好了；动手之前先用原型和方案文档把方向验一遍；做完之后让它拿截图和对比来证明；人的精力只花在最要紧的问题上。", "html": "<p>Agent 信誓旦旦说“做好了、验证完了”，上线后才发现根本没做好；回头找它，它认错态度很好，下次照旧。宝玉在长帖里说，很多人都被这样坑过。</p>\n<p>他认为问题出在验证方式上：Agent 不知道什么叫“做好了”，人也没有低成本的办法确认它真的做好了。他分享了自己用 Agent 做验证的五条经验。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_dotey_agent_verify_infographic\"><img src=\"https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg\" alt=\"信息图：The Agent says “I&#x27;m verified”, but how can you actually trust it? 5 Practical Tips（五条建议的英文图解）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXwbWz0XsAAQYvF.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>一、别指望几个 Agent 互相挑错</h2>\n<p>对抗式验证，就是让另一个甚至多个 Agent 检查结果，执行的 Agent 按反馈修改，再检查、再修改，直到完成。</p>\n<p>宝玉说，这听起来很好，实际上经常无法收敛。模型不够聪明时，大部分情况越改越糟，还浪费大量 Token。</p>\n<p>原因在于<strong>缺少统一的验收标准</strong>。负责检查的 Agent 不一定掌握完整上下文，也不知道准确的验收标准，于是自作主张提一堆意见；执行的 Agent 照单全收，结果越改越偏。</p>\n<p>他后来在回复里补充：并不是说让 Agent 帮忙验证没有价值，重点是不要过于依赖，并且要给出清晰、统一的验证标准。</p>\n<h2>二、先说清验收标准，再给它一个能自己验的环境</h2>\n<p>他举了做页面的例子。只说“帮我把这几个设计稿做成页面”，Agent 通常交出一个差不多的结果，有时出入还很大。</p>\n<p>换成“做成页面后，对网页截图，和设计稿对比，要求像素一个都不差”，Agent 做完就不会轻易交差：它会截图，自己写工具比对截图和设计稿的像素差异，返工，直到真的一个像素都不差。</p>\n<p>宝玉也说明，大多数时候并不需要像素级一致，有些偏差可以接受。关键是<strong>让它知道标准是什么，并且手里有办法自己去验</strong>。</p>\n<h2>三、越早验证，返工越便宜</h2>\n<p>尽早验证在传统软件工程里是常识，是大量教训换来的。他认为，Vibe Coding 让生成代码的成本大幅下降，非专业的人越来越多，大家渐渐忘了写代码之前还有三道关：</p>\n<p><strong>可行性分析</strong>：这个项目值不值得做，做出来有没有人用，投入产出比合不合算。</p>\n<p><strong>原型开发</strong>：先用模拟数据低成本做出能跑的基本交互，快速验证方向，不对就马上调整。他说现在 Agent 做原型已经很强，比如 Claude Design，或者本地版的 open-artifact（http://github.com/jimliu/open-artifact），做出来的东西和最终成品看起来差别不大，成本低得多，速度也快。</p>\n<p><strong>系统设计</strong>：技术选型、模块划分、数据结构、数据库设计、API Schema。设计没做好，系统也能跑，但以后维护成本要高不少。Agent 选的技术方案并不总是最好的，所以他建议动手实现之前先让它写一份技术方案文档，人大致看一遍：一方面能理解项目怎么实现，另一方面能及时纠正潜在问题，免得做完再返工。</p>\n<h2>四、让 Agent 交证据，把人的验收成本压到最低</h2>\n<p>宝玉认为人必须留在循环里，完全交给 AI，大概率只会得到 AI Slop。可人的验收能力是瓶颈，要确认的东西一多就很累。他举了自己最近用 Antigravity 的经历：跨 Workspace 每读一个文件都要手动确认一次，快把他逼崩溃了。</p>\n<p>所以要让人能快速判断结果对不对、快速指出哪里有问题。最简单的办法是让 Agent 提供截图、录屏或可视化的 HTML 报告。Agent 截图时自己也能发现一些问题，但截图最大的价值是让人一眼看出问题。他打了个比方：员工汇报工作，一页密密麻麻的 Word 文档和三页漂亮的 PPT，老板显然更容易看后者。</p>\n<p>他现在最常用的几种做法：</p>\n<ul>\n<li>开发新功能，让它提供新功能的截图；</li>\n<li>修 bug，让它提供修改前后的截图对比；</li>\n<li>让它自己模拟 API 响应数据，动态生成不同场景的截图，完全不需要服务端配合。他坦言自己还没搞明白它是怎么模拟的。</li>\n</ul>\n<h2>五、代码审查只盯真正要紧的问题</h2>\n<p>Agent 生成代码太快，瓶颈已经转移到审查和验证上。宝玉认为代码审查不太可能再完全靠人，但人参与仍有意义，方式要调整：</p>\n<ul>\n<li><strong>PR 尽量小</strong>。Agent 审起来准确率更高，人也看得过来。</li>\n<li><strong>让 Agent 审，但不全信它的结论</strong>。审查结果要分级，人只盯 P0、P1 级问题，尤其是安全和性能问题，人工甄别，必要时让 Agent 解释，并在本地验证。</li>\n<li><strong>细枝末节放过去</strong>。代码规范、最佳实践这类问题不必太在意。</li>\n</ul>\n<h2>把“做好了”变成能检查的东西</h2>\n<p>宝玉总结说，这五条讲的是同一件事：Agent 说的“做好了”不能直接当结论用，得让它变成人能检查的东西。动手之前告诉它什么叫做好了；动手之前先用原型和方案文档把方向验一遍；做完之后让它拿截图和对比来证明；人的精力只花在最要紧的问题上。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Jamin Ball：AI 把漏洞变成攻击只需片刻，企业赶工打补丁反而更常宕机</title>
+      <link>https://karuio.github.io/a/jaminball-security-armageddon</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/jaminball-security-armageddon</guid>
+      <pubDate>Fri, 20 Nov 2026 16:28:32 +0000</pubDate>
+      <author>Jamin Ball</author>
+      <description><![CDATA[<p><em>FAA 停飞、微软和摩根大通故障接连出现。他的直觉判断是：多数未必是网络攻击，而是各家为抢在 AI 生成的利用方式之前仓促打补丁；仓促补丁又会留下新漏洞。</em></p>
+<h2>中文改写</h2>
+<p>FAA 全国停飞（Jamin Ball 说这是 9/11 之后的第二次），微软宕机，美联航宕机，摩根大通银行系统故障，NSA 的涉密网络瘫痪。Jamin Ball 在 Clouded Judgement 专栏里列了这一串事件，问了一句：安全末日是不是已经来了？</p>
+<p>他的观察是，最近安全事件和宕机的数量急剧上升。很多宕机到底只是宕机，还是网络攻击的一部分，并不总是说得清。目前大多数被描述为与网络攻击无关，他说时间会给出答案。他引用了 Bridgewater 一份报告里的图表，认为它把眼下的局面讲得很清楚。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_jaminball_security_chart"><img src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" alt="图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release"><figcaption><a href="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>他的判断是：<strong>眼下这些事件未必都和网络攻击有关，但真正的安全末日已经不远了。</strong></p>
+<h2>从“发现漏洞”到“写出利用”，中间的时间差消失了</h2>
+<p>Ball 先解释了两个概念。漏洞是代码里的弱点；利用（exploit）是借这个弱点去做有害的事，比如窃取数据、偷凭证。他也坦白，自己对这两个词的用法未必完全精确，只是在文中按这个意思使用。</p>
+<p>过去，从发现漏洞到出现可用的利用方式，需要时间，有时永远等不到。把一个漏洞变成真正的攻击手段并不容易。他举了前几周 PHP 的安全问题：这个漏洞早就为人所知，但一直被认为无法利用。</p>
+<p>结果是，大量已知漏洞因为被认为无关紧要而没人处理；新漏洞被发现时，安全团队也知道利用方式要过一段时间才会出现，于是有时间认真做补丁、认真规划打补丁的节奏。</p>
+<p>AI 改变了这两点：</p>
+<ul>
+<li>AI 能更快地找到漏洞；</li>
+<li>AI 还能几乎立刻把漏洞变成可用的攻击手段。</li>
+</ul>
+<p>所以，<strong>企业必须赶着修补每一个被发现的漏洞</strong>。很可能漏洞一曝光，利用方式就已经有了，没打补丁的软件多跑一秒，就多暴露一秒。</p>
+<h2>赶工打补丁，本身就在制造宕机</h2>
+<p>打补丁并不是“换个修好的库”那么简单。替换一段代码或一个软件，可能引发连锁问题：下游系统出错，旧版本没清干净，结果新旧并存。对大机构、大型 IT 系统来说，补丁管理本来就耗时，很难既周全又不引入新 bug 或新的宕机。</p>
+<p>Ball 说，现在没人有时间周全了。大家的做法变成了“快速行动，打破常规”：宁可仓促推一个补丁、承受一些停机，也不想暴露在攻击之下。</p>
+<p>这就是他对眼下局面的解释：**大大小小的组织都在赶着修补所有已知漏洞，过程中更频繁地把自己的系统弄坏，于是宕机变多。**他强调自己可能是错的，这只是一个直觉判断。</p>
+<h2>宕机只是前奏</h2>
+<p>他更担心后面的事。这些仓促的补丁会引入新的薄弱点和漏洞，而攻击者利用已知漏洞的能力会越来越强。按他的说法，现在只是安全末日的“宕机阶段”，更多攻击还在后面。</p>
+<p>对做 IT 和安全的团队来说，Ball 这篇文章提示的风险在两头：不打补丁会暴露在快速生成的攻击之下，仓促打补丁又会带来宕机和新漏洞。补丁节奏、回归测试和版本清点，需要按“漏洞曝光即可能已有利用”的前提重新安排。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图；未核验其与具体段落的对应关系。</p><figure data-media-id="img_jaminball_security_cover"><img src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Security Armageddon</em></p>
+<figure data-media-id="img_jaminball_security_cover"><img src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_jaminball_security_chart"><img src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" alt="图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release"><figcaption><a href="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Security Armageddon
+From Clouded Judgement: Security Armageddon
+The amount of security incidents and outages has sky rocketed recently. On many of the outages, it’s not always clear if they were in fact just outages, or part of a cyber incident. For now, many of the outages are being described as non-cyber related. Time will tell. The chart below is a pretty clear articulation of the moment we’re in. The chart comes from a Bridgewater report you can find here</p>
+<p>FAA full ground stop (only second time after 9/11), Microsoft outage, United Airlines outage, JPMorgan banking failure, NSA classified network going down, etc etc. The list goes on. What’s happening? Is the security Armageddon here??
+For now, I don’t actually think these are all cyber related. BUT - we’re not far off from an actual security armageddon…
+Here’s what I think is happening. Historically, vulnerabilities were discovered, and then exploits from those vulnerabilities were discovered. But this took time. Sometimes infinite time. This is the difference - Think of a vulnerability as a weakness in code. An exploit is then using that weakness to take a harmful action (exfiltrate data, steal credentials, etc). And it wasn’t always easy to connect a vulnerability to an actual exploit. The PHP security issue the other week was the perfect example of this. The vulnerability has been known forever, but it was always thought an exploit wasn’t possible. I should add - I’m not sure if I’m using vulnerability / exploit perfectly, but I’ll use them in this context for this article.
+So in summary - there were plenty of known vulnerabilities that people didn’t do anything with because they were thought of as irrelevant. At the same time - when vulnerabilities were discovered, security teams know it would take time for an exploit to emerge. Which meant there was time to come up with a thoughtful patch, and a thoughtful patch plan.
+What’s happening now with AI:
+AI can find vulnerabilities much faster
+AI can then turn those vulnerabilities into workable exploits almost instantly
+What does this mean? It means companies have to RUSH to patch EVERY vulnerability that gets discovered. Odds are, by the time a vulnerability is discovered, an exploit is already available. And every second you have the non-patched software running you’re exposed.
+And it’s not easy to just “update with the patched library.” There are tons of cascading issues you can introduce by swapping out one piece of code / software for another. Downstream systems break, you don’t catch every version of the old software and are running duplicates, etc. Patch management, especially for larger orgs or bigger IT systems take time and are really hard to be done thoughtfully without introducing new bugs, or, outages.
+But no one has time to be thoughtful anymore. The mantra now is “move fast and break things” because you’d rather get a rushed patch out, suffer some downtime, then be vulnerable to an attack.
+Wrapping it all up - what I think is happening is every org, large and small, is rushing to patch all the known vulnerabilities, and in the process breaks their systems more frequently which causes outages. I could be wrong, this is just a hunch.
+I also think this is just a pre-cursor to the real issue…All of these rushed patches will introduce new weak spots and vulnerabilities. And the attackers will get better and better about exploiting known vulnerabilities. We’re only in the outages portion of the security Armageddon, but unfortunately I think more attacks are coming!</p>
+<p><strong>原文链接：</strong><a href="https://x.com/jaminball/status/2123815768068587743">https://x.com/jaminball/status/2123815768068587743</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>FAA 停飞、微软和摩根大通故障接连出现。他的直觉判断是：多数未必是网络攻击，而是各家为抢在 AI 生成的利用方式之前仓促打补丁；仓促补丁又会留下新漏洞。</em></p>
+<h2>中文改写</h2>
+<p>FAA 全国停飞（Jamin Ball 说这是 9/11 之后的第二次），微软宕机，美联航宕机，摩根大通银行系统故障，NSA 的涉密网络瘫痪。Jamin Ball 在 Clouded Judgement 专栏里列了这一串事件，问了一句：安全末日是不是已经来了？</p>
+<p>他的观察是，最近安全事件和宕机的数量急剧上升。很多宕机到底只是宕机，还是网络攻击的一部分，并不总是说得清。目前大多数被描述为与网络攻击无关，他说时间会给出答案。他引用了 Bridgewater 一份报告里的图表，认为它把眼下的局面讲得很清楚。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_jaminball_security_chart"><img src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" alt="图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release"><figcaption><a href="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>他的判断是：<strong>眼下这些事件未必都和网络攻击有关，但真正的安全末日已经不远了。</strong></p>
+<h2>从“发现漏洞”到“写出利用”，中间的时间差消失了</h2>
+<p>Ball 先解释了两个概念。漏洞是代码里的弱点；利用（exploit）是借这个弱点去做有害的事，比如窃取数据、偷凭证。他也坦白，自己对这两个词的用法未必完全精确，只是在文中按这个意思使用。</p>
+<p>过去，从发现漏洞到出现可用的利用方式，需要时间，有时永远等不到。把一个漏洞变成真正的攻击手段并不容易。他举了前几周 PHP 的安全问题：这个漏洞早就为人所知，但一直被认为无法利用。</p>
+<p>结果是，大量已知漏洞因为被认为无关紧要而没人处理；新漏洞被发现时，安全团队也知道利用方式要过一段时间才会出现，于是有时间认真做补丁、认真规划打补丁的节奏。</p>
+<p>AI 改变了这两点：</p>
+<ul>
+<li>AI 能更快地找到漏洞；</li>
+<li>AI 还能几乎立刻把漏洞变成可用的攻击手段。</li>
+</ul>
+<p>所以，<strong>企业必须赶着修补每一个被发现的漏洞</strong>。很可能漏洞一曝光，利用方式就已经有了，没打补丁的软件多跑一秒，就多暴露一秒。</p>
+<h2>赶工打补丁，本身就在制造宕机</h2>
+<p>打补丁并不是“换个修好的库”那么简单。替换一段代码或一个软件，可能引发连锁问题：下游系统出错，旧版本没清干净，结果新旧并存。对大机构、大型 IT 系统来说，补丁管理本来就耗时，很难既周全又不引入新 bug 或新的宕机。</p>
+<p>Ball 说，现在没人有时间周全了。大家的做法变成了“快速行动，打破常规”：宁可仓促推一个补丁、承受一些停机，也不想暴露在攻击之下。</p>
+<p>这就是他对眼下局面的解释：**大大小小的组织都在赶着修补所有已知漏洞，过程中更频繁地把自己的系统弄坏，于是宕机变多。**他强调自己可能是错的，这只是一个直觉判断。</p>
+<h2>宕机只是前奏</h2>
+<p>他更担心后面的事。这些仓促的补丁会引入新的薄弱点和漏洞，而攻击者利用已知漏洞的能力会越来越强。按他的说法，现在只是安全末日的“宕机阶段”，更多攻击还在后面。</p>
+<p>对做 IT 和安全的团队来说，Ball 这篇文章提示的风险在两头：不打补丁会暴露在快速生成的攻击之下，仓促打补丁又会带来宕机和新漏洞。补丁节奏、回归测试和版本清点，需要按“漏洞曝光即可能已有利用”的前提重新安排。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图；未核验其与具体段落的对应关系。</p><figure data-media-id="img_jaminball_security_cover"><img src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Security Armageddon</em></p>
+<figure data-media-id="img_jaminball_security_cover"><img src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_jaminball_security_chart"><img src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" alt="图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release"><figcaption><a href="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Security Armageddon
+From Clouded Judgement: Security Armageddon
+The amount of security incidents and outages has sky rocketed recently. On many of the outages, it’s not always clear if they were in fact just outages, or part of a cyber incident. For now, many of the outages are being described as non-cyber related. Time will tell. The chart below is a pretty clear articulation of the moment we’re in. The chart comes from a Bridgewater report you can find here</p>
+<p>FAA full ground stop (only second time after 9/11), Microsoft outage, United Airlines outage, JPMorgan banking failure, NSA classified network going down, etc etc. The list goes on. What’s happening? Is the security Armageddon here??
+For now, I don’t actually think these are all cyber related. BUT - we’re not far off from an actual security armageddon…
+Here’s what I think is happening. Historically, vulnerabilities were discovered, and then exploits from those vulnerabilities were discovered. But this took time. Sometimes infinite time. This is the difference - Think of a vulnerability as a weakness in code. An exploit is then using that weakness to take a harmful action (exfiltrate data, steal credentials, etc). And it wasn’t always easy to connect a vulnerability to an actual exploit. The PHP security issue the other week was the perfect example of this. The vulnerability has been known forever, but it was always thought an exploit wasn’t possible. I should add - I’m not sure if I’m using vulnerability / exploit perfectly, but I’ll use them in this context for this article.
+So in summary - there were plenty of known vulnerabilities that people didn’t do anything with because they were thought of as irrelevant. At the same time - when vulnerabilities were discovered, security teams know it would take time for an exploit to emerge. Which meant there was time to come up with a thoughtful patch, and a thoughtful patch plan.
+What’s happening now with AI:
+AI can find vulnerabilities much faster
+AI can then turn those vulnerabilities into workable exploits almost instantly
+What does this mean? It means companies have to RUSH to patch EVERY vulnerability that gets discovered. Odds are, by the time a vulnerability is discovered, an exploit is already available. And every second you have the non-patched software running you’re exposed.
+And it’s not easy to just “update with the patched library.” There are tons of cascading issues you can introduce by swapping out one piece of code / software for another. Downstream systems break, you don’t catch every version of the old software and are running duplicates, etc. Patch management, especially for larger orgs or bigger IT systems take time and are really hard to be done thoughtfully without introducing new bugs, or, outages.
+But no one has time to be thoughtful anymore. The mantra now is “move fast and break things” because you’d rather get a rushed patch out, suffer some downtime, then be vulnerable to an attack.
+Wrapping it all up - what I think is happening is every org, large and small, is rushing to patch all the known vulnerabilities, and in the process breaks their systems more frequently which causes outages. I could be wrong, this is just a hunch.
+I also think this is just a pre-cursor to the real issue…All of these rushed patches will introduce new weak spots and vulnerabilities. And the attackers will get better and better about exploiting known vulnerabilities. We’re only in the outages portion of the security Armageddon, but unfortunately I think more attacks are coming!</p>
+<p><strong>原文链接：</strong><a href="https://x.com/jaminball/status/2123815768068587743">https://x.com/jaminball/status/2123815768068587743</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Security Armageddon", "url": "https://x.com/jaminball/status/2123815768068587743", "lang": "en", "html": "<h2>Security Armageddon</h2>\n<figure data-media-id=\"img_jaminball_security_cover\"><img src=\"https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_jaminball_security_chart\"><img src=\"https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg\" alt=\"图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release\"><figcaption><a href=\"https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Security Armageddon\nFrom Clouded Judgement: Security Armageddon\nThe amount of security incidents and outages has sky rocketed recently. On many of the outages, it’s not always clear if they were in fact just outages, or part of a cyber incident. For now, many of the outages are being described as non-cyber related. Time will tell. The chart below is a pretty clear articulation of the moment we’re in. The chart comes from a Bridgewater report you can find here</p>\n<p>FAA full ground stop (only second time after 9/11), Microsoft outage, United Airlines outage, JPMorgan banking failure, NSA classified network going down, etc etc. The list goes on. What’s happening? Is the security Armageddon here??\nFor now, I don’t actually think these are all cyber related. BUT - we’re not far off from an actual security armageddon…\nHere’s what I think is happening. Historically, vulnerabilities were discovered, and then exploits from those vulnerabilities were discovered. But this took time. Sometimes infinite time. This is the difference - Think of a vulnerability as a weakness in code. An exploit is then using that weakness to take a harmful action (exfiltrate data, steal credentials, etc). And it wasn’t always easy to connect a vulnerability to an actual exploit. The PHP security issue the other week was the perfect example of this. The vulnerability has been known forever, but it was always thought an exploit wasn’t possible. I should add - I’m not sure if I’m using vulnerability / exploit perfectly, but I’ll use them in this context for this article.\nSo in summary - there were plenty of known vulnerabilities that people didn’t do anything with because they were thought of as irrelevant. At the same time - when vulnerabilities were discovered, security teams know it would take time for an exploit to emerge. Which meant there was time to come up with a thoughtful patch, and a thoughtful patch plan.\nWhat’s happening now with AI:\nAI can find vulnerabilities much faster\nAI can then turn those vulnerabilities into workable exploits almost instantly\nWhat does this mean? It means companies have to RUSH to patch EVERY vulnerability that gets discovered. Odds are, by the time a vulnerability is discovered, an exploit is already available. And every second you have the non-patched software running you’re exposed.\nAnd it’s not easy to just “update with the patched library.” There are tons of cascading issues you can introduce by swapping out one piece of code / software for another. Downstream systems break, you don’t catch every version of the old software and are running duplicates, etc. Patch management, especially for larger orgs or bigger IT systems take time and are really hard to be done thoughtfully without introducing new bugs, or, outages.\nBut no one has time to be thoughtful anymore. The mantra now is “move fast and break things” because you’d rather get a rushed patch out, suffer some downtime, then be vulnerable to an attack.\nWrapping it all up - what I think is happening is every org, large and small, is rushing to patch all the known vulnerabilities, and in the process breaks their systems more frequently which causes outages. I could be wrong, this is just a hunch.\nI also think this is just a pre-cursor to the real issue…All of these rushed patches will introduce new weak spots and vulnerabilities. And the attackers will get better and better about exploiting known vulnerabilities. We’re only in the outages portion of the security Armageddon, but unfortunately I think more attacks are coming!</p>\n<p>原文链接：<a href=\"https://x.com/jaminball/status/2123815768068587743\">https://x.com/jaminball/status/2123815768068587743</a></p>"}, "rewrite": {"title": "Jamin Ball：AI 把漏洞变成攻击只需片刻，企业赶工打补丁反而更常宕机", "markdown": "FAA 全国停飞（Jamin Ball 说这是 9/11 之后的第二次），微软宕机，美联航宕机，摩根大通银行系统故障，NSA 的涉密网络瘫痪。Jamin Ball 在 Clouded Judgement 专栏里列了这一串事件，问了一句：安全末日是不是已经来了？\n\n他的观察是，最近安全事件和宕机的数量急剧上升。很多宕机到底只是宕机，还是网络攻击的一部分，并不总是说得清。目前大多数被描述为与网络攻击无关，他说时间会给出答案。他引用了 Bridgewater 一份报告里的图表，认为它把眼下的局面讲得很清楚。\n\n![图表：Estimated Total Cyber Incidents \\(60dma, Ann\\) 与 Verified AI-Enabled Cyber Incidents \\(60dma, Ann\\)，标注 GLM 5.3 Weight Release](<https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg>)\n\n他的判断是：**眼下这些事件未必都和网络攻击有关，但真正的安全末日已经不远了。**\n\n## 从“发现漏洞”到“写出利用”，中间的时间差消失了\n\nBall 先解释了两个概念。漏洞是代码里的弱点；利用（exploit）是借这个弱点去做有害的事，比如窃取数据、偷凭证。他也坦白，自己对这两个词的用法未必完全精确，只是在文中按这个意思使用。\n\n过去，从发现漏洞到出现可用的利用方式，需要时间，有时永远等不到。把一个漏洞变成真正的攻击手段并不容易。他举了前几周 PHP 的安全问题：这个漏洞早就为人所知，但一直被认为无法利用。\n\n结果是，大量已知漏洞因为被认为无关紧要而没人处理；新漏洞被发现时，安全团队也知道利用方式要过一段时间才会出现，于是有时间认真做补丁、认真规划打补丁的节奏。\n\nAI 改变了这两点：\n\n- AI 能更快地找到漏洞；\n- AI 还能几乎立刻把漏洞变成可用的攻击手段。\n\n所以，**企业必须赶着修补每一个被发现的漏洞**。很可能漏洞一曝光，利用方式就已经有了，没打补丁的软件多跑一秒，就多暴露一秒。\n\n## 赶工打补丁，本身就在制造宕机\n\n打补丁并不是“换个修好的库”那么简单。替换一段代码或一个软件，可能引发连锁问题：下游系统出错，旧版本没清干净，结果新旧并存。对大机构、大型 IT 系统来说，补丁管理本来就耗时，很难既周全又不引入新 bug 或新的宕机。\n\nBall 说，现在没人有时间周全了。大家的做法变成了“快速行动，打破常规”：宁可仓促推一个补丁、承受一些停机，也不想暴露在攻击之下。\n\n这就是他对眼下局面的解释：**大大小小的组织都在赶着修补所有已知漏洞，过程中更频繁地把自己的系统弄坏，于是宕机变多。**他强调自己可能是错的，这只是一个直觉判断。\n\n## 宕机只是前奏\n\n他更担心后面的事。这些仓促的补丁会引入新的薄弱点和漏洞，而攻击者利用已知漏洞的能力会越来越强。按他的说法，现在只是安全末日的“宕机阶段”，更多攻击还在后面。\n\n对做 IT 和安全的团队来说，Ball 这篇文章提示的风险在两头：不打补丁会暴露在快速生成的攻击之下，仓促打补丁又会带来宕机和新漏洞。补丁节奏、回归测试和版本清点，需要按“漏洞曝光即可能已有利用”的前提重新安排。\n\n### 原文附带媒体\n\n原文封面图；未核验其与具体段落的对应关系。\n\n![原文封面图](<https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg>)", "html": "<p>FAA 全国停飞（Jamin Ball 说这是 9/11 之后的第二次），微软宕机，美联航宕机，摩根大通银行系统故障，NSA 的涉密网络瘫痪。Jamin Ball 在 Clouded Judgement 专栏里列了这一串事件，问了一句：安全末日是不是已经来了？</p>\n<p>他的观察是，最近安全事件和宕机的数量急剧上升。很多宕机到底只是宕机，还是网络攻击的一部分，并不总是说得清。目前大多数被描述为与网络攻击无关，他说时间会给出答案。他引用了 Bridgewater 一份报告里的图表，认为它把眼下的局面讲得很清楚。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_jaminball_security_chart\"><img src=\"https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg\" alt=\"图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release\"><figcaption><a href=\"https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>他的判断是：<strong>眼下这些事件未必都和网络攻击有关，但真正的安全末日已经不远了。</strong></p>\n<h2>从“发现漏洞”到“写出利用”，中间的时间差消失了</h2>\n<p>Ball 先解释了两个概念。漏洞是代码里的弱点；利用（exploit）是借这个弱点去做有害的事，比如窃取数据、偷凭证。他也坦白，自己对这两个词的用法未必完全精确，只是在文中按这个意思使用。</p>\n<p>过去，从发现漏洞到出现可用的利用方式，需要时间，有时永远等不到。把一个漏洞变成真正的攻击手段并不容易。他举了前几周 PHP 的安全问题：这个漏洞早就为人所知，但一直被认为无法利用。</p>\n<p>结果是，大量已知漏洞因为被认为无关紧要而没人处理；新漏洞被发现时，安全团队也知道利用方式要过一段时间才会出现，于是有时间认真做补丁、认真规划打补丁的节奏。</p>\n<p>AI 改变了这两点：</p>\n<ul>\n<li>AI 能更快地找到漏洞；</li>\n<li>AI 还能几乎立刻把漏洞变成可用的攻击手段。</li>\n</ul>\n<p>所以，<strong>企业必须赶着修补每一个被发现的漏洞</strong>。很可能漏洞一曝光，利用方式就已经有了，没打补丁的软件多跑一秒，就多暴露一秒。</p>\n<h2>赶工打补丁，本身就在制造宕机</h2>\n<p>打补丁并不是“换个修好的库”那么简单。替换一段代码或一个软件，可能引发连锁问题：下游系统出错，旧版本没清干净，结果新旧并存。对大机构、大型 IT 系统来说，补丁管理本来就耗时，很难既周全又不引入新 bug 或新的宕机。</p>\n<p>Ball 说，现在没人有时间周全了。大家的做法变成了“快速行动，打破常规”：宁可仓促推一个补丁、承受一些停机，也不想暴露在攻击之下。</p>\n<p>这就是他对眼下局面的解释：**大大小小的组织都在赶着修补所有已知漏洞，过程中更频繁地把自己的系统弄坏，于是宕机变多。**他强调自己可能是错的，这只是一个直觉判断。</p>\n<h2>宕机只是前奏</h2>\n<p>他更担心后面的事。这些仓促的补丁会引入新的薄弱点和漏洞，而攻击者利用已知漏洞的能力会越来越强。按他的说法，现在只是安全末日的“宕机阶段”，更多攻击还在后面。</p>\n<p>对做 IT 和安全的团队来说，Ball 这篇文章提示的风险在两头：不打补丁会暴露在快速生成的攻击之下，仓促打补丁又会带来宕机和新漏洞。补丁节奏、回归测试和版本清点，需要按“漏洞曝光即可能已有利用”的前提重新安排。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文封面图；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_jaminball_security_cover\"><img src=\"https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Eric Seufert 读 Spotify 论文：什么时候能只凭离线评测就上线？</title>
+      <link>https://karuio.github.io/a/seufert-spotify-offline-evals</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/seufert-spotify-offline-evals</guid>
+      <pubDate>Sun, 22 Nov 2026 15:12:02 +0000</pubDate>
+      <author>Eric Seufert</author>
+      <description><![CDATA[<p><em>Spotify 用联合正态假设给离线评测设上线、砍掉两道门，中间区域才跑 A/B 测试。Seufert 认为关系稳定和实验同质两条假设很强，效果分布极度厚尾时，最后多半还是全送 A/B。</em></p>
+<h2>中文改写</h2>
+<p>线上 A/B 测试又慢又贵：要占用机会成本和编排成本，做广告素材测试时还要实打实花钱。如果离线评测能可靠预测线上测试的结果，团队就可以只靠离线结果做决定，迭代更快，成本更低。Eric Seufert 说，数据团队越来越多地在琢磨怎么把大模型和其他生成式工具纳入测试体系，核心问题是：<strong>离线结果可靠到什么程度，才可以不跑 A/B 测试就直接行动？</strong></p>
+<p>他推荐了 Spotify 的一篇博客和配套论文，称之为很适合周末早上配咖啡读的材料，因为它正面回答了这个问题。</p>
+<h2>Spotify 的办法：用两道门把决策分成三段</h2>
+<p>按 Seufert 的概括，Spotify 团队给出了一个框架，用来判断线上效果能在多大程度上从离线测试预测出来。</p>
+<p>他们假设离线和线上的真实效果服从联合正态分布。基于这个假设，可以写出“给定观测到的离线评测效果，真实线上效果的条件概率分布”，再按选定的风险容忍度，在分布两端设两道决策门：</p>
+<ul>
+<li>落在一端，只凭离线评测就可以上线；</li>
+<li>落在另一端，只凭离线评测就可以砍掉；</li>
+<li>落在中间，仍需跑 A/B 测试。</li>
+</ul>
+<p>原文附的图对比了两种情况：离线和线上关系强时，两端可以直接决策的区域更宽；关系弱时，几乎所有情况都要走 A/B 测试。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_seufert_spotify_thresholds"><img src="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg" alt="Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）"><figcaption><a href="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>他的保留意见：假设太强</h2>
+<p>Seufert 认为，这个框架建立在几条很强的假设上，对用户群多样的复杂产品，这些假设不太可能成立。</p>
+<p>第一，离线效果和线上效果之间的关系要保持稳定。他说自己过去写过这个问题。</p>
+<p>第二，各类实验要足够同质。否则可能出现辛普森悖论：整体上看关系很强，拆到某一类实验里，关系很弱甚至不存在。</p>
+<p>这些假设可以持续审计和监控，但他担心，这样搭出来的系统可能比 A/B 测试编排更脆弱、更难管理。</p>
+<p>他还提到自己遇到过的情况：效果分布的峰度极高，一个改动就贡献了大部分价值。漏掉这个赢家的代价太大，决策门最后会被调成追求 100% 召回率，不管精确率如何。<strong>除非离线预测能有把握地排除这些罕见的赢家，否则所有东西最后还是要送去 A/B 测试。</strong></p>
+<h2>延伸材料</h2>
+<p>他强烈推荐把博客和更偏技术的论文都读一遍，两者都附在回复里：Spotify 工程博客《When Can You Ship on Offline Evals Alone?》，论文《When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems》（arXiv 2610.10142）。他还附上了自己参与的工作 DeCANT，一个用于广告素材预测试、按上下文条件化、基于注意力的多模态模型架构。</p>
+<p>打算用离线评测替代部分 A/B 测试的团队，可以先检查 Seufert 点出的三件事：离线和线上效果的关系是否稳定，是否在各类实验里分别成立，以及效果分布里是否存在少数决定大部分价值的赢家。最后一条如果成立，按 Seufert 的经验，大部分改动最后还是得跑 A/B 测试。</p>
+
+<h2>原文</h2>
+<p><em>Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes.</em></p>
+<figure data-media-id="img_seufert_spotify_thresholds"><img src="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg" alt="Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）"><figcaption><a href="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes. Online tests are slow, and they can be expensive to run, both in terms of opportunity / orchestration cost and actual money spent for things like creative testing. If an offline test can reliably predict the outcome of an online test, a team might prefer to rely only on that; it could iterate faster and at lower cost. But how can a team determine when an offline result is reliable enough to act on without running an A/B test?</p>
+<p>A great Saturday-Sunday morning coffee read from Spotify answers that question. In a blog post and accompanying paper, the team walks through a framework for establishing the predictability of online test effects from offline tests. They assume that true offline and online test effects are jointly normally distributed; based on that assumption, they construct a conditional probability distribution of the true online treatment effect given the observed offline eval treatment effect and construct decision gates at the tails for a chosen risk tolerance. The gates define regions in which a feature should be shipped or killed based on offline evals alone, and a middle area where an A/B test is needed.</p>
+<p>The framework rests on several strong assumptions that are unlikely to hold for complex products with diverse user bases. The first is the stability of the relationship between offline and online effects, which I've written about in the past. The second is the homogeneity of experiment types, which could mask a Simpson's paradox issue where a strong relationship in the aggregate obscures weak or nonexistent relationships within individual classes of experiments.</p>
+<p>These assumptions can be audited / monitored over time, but that might result with a system that is more fragile and cumbersome to manage than A/B test orchestration. A related issue I've encountered is that the distribution of effects can be so massively kurtotic that a single change accounts for most of the value. Missing that winner is so costly that the gate is ultimately tuned for 100% recall, regardless of precision. Unless offline predictions can confidently rule out those rare winners, everything goes to A/B test, anyway.</p>
+<p>I highly recommend reading both the blog post and the more technical paper. Both linked below.</p>
+<p><strong>Thread post, https://x.com/eric_seufert/status/2124521293936517243</strong></p>
+<p>When Can You Ship on Offline Evals Alone? https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone</p>
+<p>Accompanying paper: When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems https://arxiv.org/abs/2610.10142</p>
+<p>My own contribution: DeCANT, a model architecture for creative pre-testing:</p>
+<p>Introducing DeCANT, a context-conditioned, attention-based multimodal architecture for creative pre-testing https://mdm.co/introducing-decant-a-context-conditioned-attention-based-multimodal-architecture-for-creative-pre-testing/</p>
+<p><strong>原文链接：</strong><a href="https://x.com/eric_seufert/status/2124521291357082072">https://x.com/eric_seufert/status/2124521291357082072</a></p>
+<p><strong>相关链接：</strong><a href="https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone">https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Spotify 用联合正态假设给离线评测设上线、砍掉两道门，中间区域才跑 A/B 测试。Seufert 认为关系稳定和实验同质两条假设很强，效果分布极度厚尾时，最后多半还是全送 A/B。</em></p>
+<h2>中文改写</h2>
+<p>线上 A/B 测试又慢又贵：要占用机会成本和编排成本，做广告素材测试时还要实打实花钱。如果离线评测能可靠预测线上测试的结果，团队就可以只靠离线结果做决定，迭代更快，成本更低。Eric Seufert 说，数据团队越来越多地在琢磨怎么把大模型和其他生成式工具纳入测试体系，核心问题是：<strong>离线结果可靠到什么程度，才可以不跑 A/B 测试就直接行动？</strong></p>
+<p>他推荐了 Spotify 的一篇博客和配套论文，称之为很适合周末早上配咖啡读的材料，因为它正面回答了这个问题。</p>
+<h2>Spotify 的办法：用两道门把决策分成三段</h2>
+<p>按 Seufert 的概括，Spotify 团队给出了一个框架，用来判断线上效果能在多大程度上从离线测试预测出来。</p>
+<p>他们假设离线和线上的真实效果服从联合正态分布。基于这个假设，可以写出“给定观测到的离线评测效果，真实线上效果的条件概率分布”，再按选定的风险容忍度，在分布两端设两道决策门：</p>
+<ul>
+<li>落在一端，只凭离线评测就可以上线；</li>
+<li>落在另一端，只凭离线评测就可以砍掉；</li>
+<li>落在中间，仍需跑 A/B 测试。</li>
+</ul>
+<p>原文附的图对比了两种情况：离线和线上关系强时，两端可以直接决策的区域更宽；关系弱时，几乎所有情况都要走 A/B 测试。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_seufert_spotify_thresholds"><img src="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg" alt="Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）"><figcaption><a href="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>他的保留意见：假设太强</h2>
+<p>Seufert 认为，这个框架建立在几条很强的假设上，对用户群多样的复杂产品，这些假设不太可能成立。</p>
+<p>第一，离线效果和线上效果之间的关系要保持稳定。他说自己过去写过这个问题。</p>
+<p>第二，各类实验要足够同质。否则可能出现辛普森悖论：整体上看关系很强，拆到某一类实验里，关系很弱甚至不存在。</p>
+<p>这些假设可以持续审计和监控，但他担心，这样搭出来的系统可能比 A/B 测试编排更脆弱、更难管理。</p>
+<p>他还提到自己遇到过的情况：效果分布的峰度极高，一个改动就贡献了大部分价值。漏掉这个赢家的代价太大，决策门最后会被调成追求 100% 召回率，不管精确率如何。<strong>除非离线预测能有把握地排除这些罕见的赢家，否则所有东西最后还是要送去 A/B 测试。</strong></p>
+<h2>延伸材料</h2>
+<p>他强烈推荐把博客和更偏技术的论文都读一遍，两者都附在回复里：Spotify 工程博客《When Can You Ship on Offline Evals Alone?》，论文《When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems》（arXiv 2610.10142）。他还附上了自己参与的工作 DeCANT，一个用于广告素材预测试、按上下文条件化、基于注意力的多模态模型架构。</p>
+<p>打算用离线评测替代部分 A/B 测试的团队，可以先检查 Seufert 点出的三件事：离线和线上效果的关系是否稳定，是否在各类实验里分别成立，以及效果分布里是否存在少数决定大部分价值的赢家。最后一条如果成立，按 Seufert 的经验，大部分改动最后还是得跑 A/B 测试。</p>
+
+<h2>原文</h2>
+<p><em>Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes.</em></p>
+<figure data-media-id="img_seufert_spotify_thresholds"><img src="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg" alt="Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）"><figcaption><a href="https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes. Online tests are slow, and they can be expensive to run, both in terms of opportunity / orchestration cost and actual money spent for things like creative testing. If an offline test can reliably predict the outcome of an online test, a team might prefer to rely only on that; it could iterate faster and at lower cost. But how can a team determine when an offline result is reliable enough to act on without running an A/B test?</p>
+<p>A great Saturday-Sunday morning coffee read from Spotify answers that question. In a blog post and accompanying paper, the team walks through a framework for establishing the predictability of online test effects from offline tests. They assume that true offline and online test effects are jointly normally distributed; based on that assumption, they construct a conditional probability distribution of the true online treatment effect given the observed offline eval treatment effect and construct decision gates at the tails for a chosen risk tolerance. The gates define regions in which a feature should be shipped or killed based on offline evals alone, and a middle area where an A/B test is needed.</p>
+<p>The framework rests on several strong assumptions that are unlikely to hold for complex products with diverse user bases. The first is the stability of the relationship between offline and online effects, which I've written about in the past. The second is the homogeneity of experiment types, which could mask a Simpson's paradox issue where a strong relationship in the aggregate obscures weak or nonexistent relationships within individual classes of experiments.</p>
+<p>These assumptions can be audited / monitored over time, but that might result with a system that is more fragile and cumbersome to manage than A/B test orchestration. A related issue I've encountered is that the distribution of effects can be so massively kurtotic that a single change accounts for most of the value. Missing that winner is so costly that the gate is ultimately tuned for 100% recall, regardless of precision. Unless offline predictions can confidently rule out those rare winners, everything goes to A/B test, anyway.</p>
+<p>I highly recommend reading both the blog post and the more technical paper. Both linked below.</p>
+<p><strong>Thread post, https://x.com/eric_seufert/status/2124521293936517243</strong></p>
+<p>When Can You Ship on Offline Evals Alone? https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone</p>
+<p>Accompanying paper: When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems https://arxiv.org/abs/2610.10142</p>
+<p>My own contribution: DeCANT, a model architecture for creative pre-testing:</p>
+<p>Introducing DeCANT, a context-conditioned, attention-based multimodal architecture for creative pre-testing https://mdm.co/introducing-decant-a-context-conditioned-attention-based-multimodal-architecture-for-creative-pre-testing/</p>
+<p><strong>原文链接：</strong><a href="https://x.com/eric_seufert/status/2124521291357082072">https://x.com/eric_seufert/status/2124521291357082072</a></p>
+<p><strong>相关链接：</strong><a href="https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone">https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes.", "url": "https://x.com/eric_seufert/status/2124521291357082072", "lang": "en", "html": "<h2>Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes.</h2>\n<figure data-media-id=\"img_seufert_spotify_thresholds\"><img src=\"https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg\" alt=\"Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes. Online tests are slow, and they can be expensive to run, both in terms of opportunity / orchestration cost and actual money spent for things like creative testing. If an offline test can reliably predict the outcome of an online test, a team might prefer to rely only on that; it could iterate faster and at lower cost. But how can a team determine when an offline result is reliable enough to act on without running an A/B test?</p>\n<p>A great Saturday-Sunday morning coffee read from Spotify answers that question. In a blog post and accompanying paper, the team walks through a framework for establishing the predictability of online test effects from offline tests. They assume that true offline and online test effects are jointly normally distributed; based on that assumption, they construct a conditional probability distribution of the true online treatment effect given the observed offline eval treatment effect and construct decision gates at the tails for a chosen risk tolerance. The gates define regions in which a feature should be shipped or killed based on offline evals alone, and a middle area where an A/B test is needed.</p>\n<p>The framework rests on several strong assumptions that are unlikely to hold for complex products with diverse user bases. The first is the stability of the relationship between offline and online effects, which I've written about in the past. The second is the homogeneity of experiment types, which could mask a Simpson's paradox issue where a strong relationship in the aggregate obscures weak or nonexistent relationships within individual classes of experiments.</p>\n<p>These assumptions can be audited / monitored over time, but that might result with a system that is more fragile and cumbersome to manage than A/B test orchestration. A related issue I've encountered is that the distribution of effects can be so massively kurtotic that a single change accounts for most of the value. Missing that winner is so costly that the gate is ultimately tuned for 100% recall, regardless of precision. Unless offline predictions can confidently rule out those rare winners, everything goes to A/B test, anyway.</p>\n<p>I highly recommend reading both the blog post and the more technical paper. Both linked below.</p>\n<p><strong>Thread post, https://x.com/eric_seufert/status/2124521293936517243</strong></p>\n<p>When Can You Ship on Offline Evals Alone? https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone</p>\n<p>Accompanying paper: When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems https://arxiv.org/abs/2610.10142</p>\n<p>My own contribution: DeCANT, a model architecture for creative pre-testing:</p>\n<p>Introducing DeCANT, a context-conditioned, attention-based multimodal architecture for creative pre-testing https://mdm.co/introducing-decant-a-context-conditioned-attention-based-multimodal-architecture-for-creative-pre-testing/</p>\n<p>原文链接：<a href=\"https://x.com/eric_seufert/status/2124521291357082072\">https://x.com/eric_seufert/status/2124521291357082072</a></p>\n<p>相关链接：<a href=\"https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone\">https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone</a></p>"}, "rewrite": {"title": "Eric Seufert 读 Spotify 论文：什么时候能只凭离线评测就上线？", "markdown": "线上 A/B 测试又慢又贵：要占用机会成本和编排成本，做广告素材测试时还要实打实花钱。如果离线评测能可靠预测线上测试的结果，团队就可以只靠离线结果做决定，迭代更快，成本更低。Eric Seufert 说，数据团队越来越多地在琢磨怎么把大模型和其他生成式工具纳入测试体系，核心问题是：**离线结果可靠到什么程度，才可以不跑 A/B 测试就直接行动？**\n\n他推荐了 Spotify 的一篇博客和配套论文，称之为很适合周末早上配咖啡读的材料，因为它正面回答了这个问题。\n\n## Spotify 的办法：用两道门把决策分成三段\n\n按 Seufert 的概括，Spotify 团队给出了一个框架，用来判断线上效果能在多大程度上从离线测试预测出来。\n\n他们假设离线和线上的真实效果服从联合正态分布。基于这个假设，可以写出“给定观测到的离线评测效果，真实线上效果的条件概率分布”，再按选定的风险容忍度，在分布两端设两道决策门：\n\n- 落在一端，只凭离线评测就可以上线；\n- 落在另一端，只凭离线评测就可以砍掉；\n- 落在中间，仍需跑 A/B 测试。\n\n原文附的图对比了两种情况：离线和线上关系强时，两端可以直接决策的区域更宽；关系弱时，几乎所有情况都要走 A/B 测试。\n\n![Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）](<https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg>)\n\n## 他的保留意见：假设太强\n\nSeufert 认为，这个框架建立在几条很强的假设上，对用户群多样的复杂产品，这些假设不太可能成立。\n\n第一，离线效果和线上效果之间的关系要保持稳定。他说自己过去写过这个问题。\n\n第二，各类实验要足够同质。否则可能出现辛普森悖论：整体上看关系很强，拆到某一类实验里，关系很弱甚至不存在。\n\n这些假设可以持续审计和监控，但他担心，这样搭出来的系统可能比 A/B 测试编排更脆弱、更难管理。\n\n他还提到自己遇到过的情况：效果分布的峰度极高，一个改动就贡献了大部分价值。漏掉这个赢家的代价太大，决策门最后会被调成追求 100% 召回率，不管精确率如何。**除非离线预测能有把握地排除这些罕见的赢家，否则所有东西最后还是要送去 A/B 测试。**\n\n## 延伸材料\n\n他强烈推荐把博客和更偏技术的论文都读一遍，两者都附在回复里：Spotify 工程博客《When Can You Ship on Offline Evals Alone?》，论文《When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems》（arXiv 2610.10142）。他还附上了自己参与的工作 DeCANT，一个用于广告素材预测试、按上下文条件化、基于注意力的多模态模型架构。\n\n打算用离线评测替代部分 A/B 测试的团队，可以先检查 Seufert 点出的三件事：离线和线上效果的关系是否稳定，是否在各类实验里分别成立，以及效果分布里是否存在少数决定大部分价值的赢家。最后一条如果成立，按 Seufert 的经验，大部分改动最后还是得跑 A/B 测试。", "html": "<p>线上 A/B 测试又慢又贵：要占用机会成本和编排成本，做广告素材测试时还要实打实花钱。如果离线评测能可靠预测线上测试的结果，团队就可以只靠离线结果做决定，迭代更快，成本更低。Eric Seufert 说，数据团队越来越多地在琢磨怎么把大模型和其他生成式工具纳入测试体系，核心问题是：<strong>离线结果可靠到什么程度，才可以不跑 A/B 测试就直接行动？</strong></p>\n<p>他推荐了 Spotify 的一篇博客和配套论文，称之为很适合周末早上配咖啡读的材料，因为它正面回答了这个问题。</p>\n<h2>Spotify 的办法：用两道门把决策分成三段</h2>\n<p>按 Seufert 的概括，Spotify 团队给出了一个框架，用来判断线上效果能在多大程度上从离线测试预测出来。</p>\n<p>他们假设离线和线上的真实效果服从联合正态分布。基于这个假设，可以写出“给定观测到的离线评测效果，真实线上效果的条件概率分布”，再按选定的风险容忍度，在分布两端设两道决策门：</p>\n<ul>\n<li>落在一端，只凭离线评测就可以上线；</li>\n<li>落在另一端，只凭离线评测就可以砍掉；</li>\n<li>落在中间，仍需跑 A/B 测试。</li>\n</ul>\n<p>原文附的图对比了两种情况：离线和线上关系强时，两端可以直接决策的区域更宽；关系弱时，几乎所有情况都要走 A/B 测试。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_seufert_spotify_thresholds\"><img src=\"https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg\" alt=\"Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>他的保留意见：假设太强</h2>\n<p>Seufert 认为，这个框架建立在几条很强的假设上，对用户群多样的复杂产品，这些假设不太可能成立。</p>\n<p>第一，离线效果和线上效果之间的关系要保持稳定。他说自己过去写过这个问题。</p>\n<p>第二，各类实验要足够同质。否则可能出现辛普森悖论：整体上看关系很强，拆到某一类实验里，关系很弱甚至不存在。</p>\n<p>这些假设可以持续审计和监控，但他担心，这样搭出来的系统可能比 A/B 测试编排更脆弱、更难管理。</p>\n<p>他还提到自己遇到过的情况：效果分布的峰度极高，一个改动就贡献了大部分价值。漏掉这个赢家的代价太大，决策门最后会被调成追求 100% 召回率，不管精确率如何。<strong>除非离线预测能有把握地排除这些罕见的赢家，否则所有东西最后还是要送去 A/B 测试。</strong></p>\n<h2>延伸材料</h2>\n<p>他强烈推荐把博客和更偏技术的论文都读一遍，两者都附在回复里：Spotify 工程博客《When Can You Ship on Offline Evals Alone?》，论文《When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems》（arXiv 2610.10142）。他还附上了自己参与的工作 DeCANT，一个用于广告素材预测试、按上下文条件化、基于注意力的多模态模型架构。</p>\n<p>打算用离线评测替代部分 A/B 测试的团队，可以先检查 Seufert 点出的三件事：离线和线上效果的关系是否稳定，是否在各类实验里分别成立，以及效果分布里是否存在少数决定大部分价值的赢家。最后一条如果成立，按 Seufert 的经验，大部分改动最后还是得跑 A/B 测试。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Simon Taylor：OakNorth 抢在 Revolut 和 Nubank 前拿到美国国家银行牌照</title>
+      <link>https://karuio.github.io/a/sytaylor-oaknorth-us-bank-charter</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/sytaylor-oaknorth-us-bank-charter</guid>
+      <pubDate>Fri, 20 Nov 2026 14:34:56 +0000</pubDate>
+      <author>Simon Taylor</author>
+      <description><![CDATA[<p><em>这家英国数字银行通过收购密歇根一家单网点银行，等了 20 个月获批；它专做年收入 500 万到 1 亿美元的中型企业，美国业务已占新增贷款的 40%。</em></p>
+<h2>中文改写</h2>
+<p>英国数字银行 OakNorth 宣布，美联储和美国货币监理署（OCC）批准了它收购密歇根州的 Community Unity Bank。OakNorth 称，它将成为第一家持有美国国家银行牌照的外国数字银行。Simon Taylor 的标题是：OakNorth 抢在 Revolut 和 Nubank 前面拿到了美国银行牌照。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_sytaylor_oaknorth_card"><img src="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg" alt="图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）"><figcaption><a href="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>一家专做中型企业贷款的英国银行</h2>
+<p>美国读者对 OakNorth 不太熟。它 2015 年成立，贷款对象是年收入 500 万到 1 亿美元的企业。</p>
+<p>Taylor 列出的数字：</p>
+<ul>
+<li>11 年累计放贷 240 亿美元；</li>
+<li>2025 年税前利润 2.23 亿英镑，成本收入比（efficiency ratio）26%；</li>
+<li>美国业务占其新增贷款的 40%，2023 年以来向美国企业放贷 35 亿美元，单笔 500 万到 5000 万美元。</li>
+</ul>
+<p>拿到牌照后，它可以给这些客户加上支票账户、储蓄和支付服务，也能用存款为资产负债表融资。</p>
+<h2>赶上美国银行牌照热潮</h2>
+<p>这项批准正赶上一轮牌照申请热潮。Taylor 写道，2025 年 1 月以来，有近 50 家公司申请了新的美国银行牌照，其中一半以上申请的是信托牌照，主要是加密和稳定币公司。</p>
+<p>面向全球消费者的数字银行 Revolut 和 Nubank 都拿到了有条件批准，Wise 和 bunq 被拒。</p>
+<p>OakNorth 走的是一条更慢的路：2025 年 3 月同意收购一家只有一个网点的密歇根银行，等了 20 个月才获批。</p>
+<p>它瞄准的客户也不同。中型企业贷款历来是地区银行和社区银行的强项，数字银行大多没碰。Taylor 引用摩根大通的估算：这类企业占美国企业数量的 3%，却贡献了美国企业收入的 15% 到 20%。</p>
+<p>他最后说，作为英国人，看到这个消息很高兴。</p>
+<p>想看清美国银行牌照格局的读者，可以把 OakNorth 和 Revolut、Nubank 放在一起比：OakNorth 收购现成的小银行、等了 20 个月，切入数字银行很少覆盖的中型企业贷款；Revolut 和 Nubank 目前拿到的是有条件批准。</p>
+
+<h2>原文</h2>
+<p><em>BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter</em></p>
+<figure data-media-id="img_sytaylor_oaknorth_card"><img src="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg" alt="图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）"><figcaption><a href="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>🚨 BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter 🇬🇧</p>
+<p>British Bank @oaknorth announced today that the Fed and OCC have approved its purchase of Community Unity Bank in Michigan. It says it will be the first foreign digital bank to hold a US national bank charter.</p>
+<hr>
+<p>OakNorth is one of the lesser-known (especially to US readers) UK digital banks, founded in 2015, that lends to businesses with $5m to $100m in revenue.</p>
+<p>To date, it has lent $24bn over 11 years and made £223m in pre-tax profit in 2025, with a 26% efficiency ratio.</p>
+<p>And its progress in the US has been solid, accounting for 40% of its new lending, having lendt $3.5bn to American businesses since 2023, in loans of $5m to $50m.</p>
+<p>The charter lets it add checking, savings and payments for those same customers (and fund its balance sheet)</p>
+<hr>
+<p>This announcement lands in the middle of a charter boom.</p>
+<p>Close to 50 firms have applied for a new US bank charter since January 2025. More than half want trust charters, mainly crypto and stablecoin firms.</p>
+<p>Global consumer Noebanks Revolut and Nubank both hold conditional approvals. Wise and bunq were turned down.</p>
+<p>OakNorth took a slower route. It agreed to buy a one-branch Michigan bank in March 2025 and waited 20 months for approval.</p>
+<p>It's also chasing a different customer. Mid-market business lending is what regional and community banks historically did well, and the neobanks have mostly left it alone.</p>
+<p>JPMorgan estimates those firms are 3% of US businesses and 15-20% of US business revenue.</p>
+<p>As a Brit, this is great to see.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2123787178279051398">https://x.com/sytaylor/status/2123787178279051398</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>这家英国数字银行通过收购密歇根一家单网点银行，等了 20 个月获批；它专做年收入 500 万到 1 亿美元的中型企业，美国业务已占新增贷款的 40%。</em></p>
+<h2>中文改写</h2>
+<p>英国数字银行 OakNorth 宣布，美联储和美国货币监理署（OCC）批准了它收购密歇根州的 Community Unity Bank。OakNorth 称，它将成为第一家持有美国国家银行牌照的外国数字银行。Simon Taylor 的标题是：OakNorth 抢在 Revolut 和 Nubank 前面拿到了美国银行牌照。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_sytaylor_oaknorth_card"><img src="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg" alt="图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）"><figcaption><a href="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>一家专做中型企业贷款的英国银行</h2>
+<p>美国读者对 OakNorth 不太熟。它 2015 年成立，贷款对象是年收入 500 万到 1 亿美元的企业。</p>
+<p>Taylor 列出的数字：</p>
+<ul>
+<li>11 年累计放贷 240 亿美元；</li>
+<li>2025 年税前利润 2.23 亿英镑，成本收入比（efficiency ratio）26%；</li>
+<li>美国业务占其新增贷款的 40%，2023 年以来向美国企业放贷 35 亿美元，单笔 500 万到 5000 万美元。</li>
+</ul>
+<p>拿到牌照后，它可以给这些客户加上支票账户、储蓄和支付服务，也能用存款为资产负债表融资。</p>
+<h2>赶上美国银行牌照热潮</h2>
+<p>这项批准正赶上一轮牌照申请热潮。Taylor 写道，2025 年 1 月以来，有近 50 家公司申请了新的美国银行牌照，其中一半以上申请的是信托牌照，主要是加密和稳定币公司。</p>
+<p>面向全球消费者的数字银行 Revolut 和 Nubank 都拿到了有条件批准，Wise 和 bunq 被拒。</p>
+<p>OakNorth 走的是一条更慢的路：2025 年 3 月同意收购一家只有一个网点的密歇根银行，等了 20 个月才获批。</p>
+<p>它瞄准的客户也不同。中型企业贷款历来是地区银行和社区银行的强项，数字银行大多没碰。Taylor 引用摩根大通的估算：这类企业占美国企业数量的 3%，却贡献了美国企业收入的 15% 到 20%。</p>
+<p>他最后说，作为英国人，看到这个消息很高兴。</p>
+<p>想看清美国银行牌照格局的读者，可以把 OakNorth 和 Revolut、Nubank 放在一起比：OakNorth 收购现成的小银行、等了 20 个月，切入数字银行很少覆盖的中型企业贷款；Revolut 和 Nubank 目前拿到的是有条件批准。</p>
+
+<h2>原文</h2>
+<p><em>BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter</em></p>
+<figure data-media-id="img_sytaylor_oaknorth_card"><img src="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg" alt="图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）"><figcaption><a href="https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>🚨 BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter 🇬🇧</p>
+<p>British Bank @oaknorth announced today that the Fed and OCC have approved its purchase of Community Unity Bank in Michigan. It says it will be the first foreign digital bank to hold a US national bank charter.</p>
+<hr>
+<p>OakNorth is one of the lesser-known (especially to US readers) UK digital banks, founded in 2015, that lends to businesses with $5m to $100m in revenue.</p>
+<p>To date, it has lent $24bn over 11 years and made £223m in pre-tax profit in 2025, with a 26% efficiency ratio.</p>
+<p>And its progress in the US has been solid, accounting for 40% of its new lending, having lendt $3.5bn to American businesses since 2023, in loans of $5m to $50m.</p>
+<p>The charter lets it add checking, savings and payments for those same customers (and fund its balance sheet)</p>
+<hr>
+<p>This announcement lands in the middle of a charter boom.</p>
+<p>Close to 50 firms have applied for a new US bank charter since January 2025. More than half want trust charters, mainly crypto and stablecoin firms.</p>
+<p>Global consumer Noebanks Revolut and Nubank both hold conditional approvals. Wise and bunq were turned down.</p>
+<p>OakNorth took a slower route. It agreed to buy a one-branch Michigan bank in March 2025 and waited 20 months for approval.</p>
+<p>It's also chasing a different customer. Mid-market business lending is what regional and community banks historically did well, and the neobanks have mostly left it alone.</p>
+<p>JPMorgan estimates those firms are 3% of US businesses and 15-20% of US business revenue.</p>
+<p>As a Brit, this is great to see.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2123787178279051398">https://x.com/sytaylor/status/2123787178279051398</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter", "url": "https://x.com/sytaylor/status/2123787178279051398", "lang": "en", "html": "<h2>BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter</h2>\n<figure data-media-id=\"img_sytaylor_oaknorth_card\"><img src=\"https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg\" alt=\"图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>🚨 BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter 🇬🇧</p>\n<p>British Bank @oaknorth announced today that the Fed and OCC have approved its purchase of Community Unity Bank in Michigan. It says it will be the first foreign digital bank to hold a US national bank charter.</p>\n<hr>\n<p>OakNorth is one of the lesser-known (especially to US readers) UK digital banks, founded in 2015, that lends to businesses with $5m to $100m in revenue.</p>\n<p>To date, it has lent $24bn over 11 years and made £223m in pre-tax profit in 2025, with a 26% efficiency ratio.</p>\n<p>And its progress in the US has been solid, accounting for 40% of its new lending, having lendt $3.5bn to American businesses since 2023, in loans of $5m to $50m.</p>\n<p>The charter lets it add checking, savings and payments for those same customers (and fund its balance sheet)</p>\n<hr>\n<p>This announcement lands in the middle of a charter boom.</p>\n<p>Close to 50 firms have applied for a new US bank charter since January 2025. More than half want trust charters, mainly crypto and stablecoin firms.</p>\n<p>Global consumer Noebanks Revolut and Nubank both hold conditional approvals. Wise and bunq were turned down.</p>\n<p>OakNorth took a slower route. It agreed to buy a one-branch Michigan bank in March 2025 and waited 20 months for approval.</p>\n<p>It's also chasing a different customer. Mid-market business lending is what regional and community banks historically did well, and the neobanks have mostly left it alone.</p>\n<p>JPMorgan estimates those firms are 3% of US businesses and 15-20% of US business revenue.</p>\n<p>As a Brit, this is great to see.</p>\n<p>原文链接：<a href=\"https://x.com/sytaylor/status/2123787178279051398\">https://x.com/sytaylor/status/2123787178279051398</a></p>"}, "rewrite": {"title": "Simon Taylor：OakNorth 抢在 Revolut 和 Nubank 前拿到美国国家银行牌照", "markdown": "英国数字银行 OakNorth 宣布，美联储和美国货币监理署（OCC）批准了它收购密歇根州的 Community Unity Bank。OakNorth 称，它将成为第一家持有美国国家银行牌照的外国数字银行。Simon Taylor 的标题是：OakNorth 抢在 Revolut 和 Nubank 前面拿到了美国银行牌照。\n\n![图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）](<https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg>)\n\n## 一家专做中型企业贷款的英国银行\n\n美国读者对 OakNorth 不太熟。它 2015 年成立，贷款对象是年收入 500 万到 1 亿美元的企业。\n\nTaylor 列出的数字：\n\n- 11 年累计放贷 240 亿美元；\n- 2025 年税前利润 2.23 亿英镑，成本收入比（efficiency ratio）26%；\n- 美国业务占其新增贷款的 40%，2023 年以来向美国企业放贷 35 亿美元，单笔 500 万到 5000 万美元。\n\n拿到牌照后，它可以给这些客户加上支票账户、储蓄和支付服务，也能用存款为资产负债表融资。\n\n## 赶上美国银行牌照热潮\n\n这项批准正赶上一轮牌照申请热潮。Taylor 写道，2025 年 1 月以来，有近 50 家公司申请了新的美国银行牌照，其中一半以上申请的是信托牌照，主要是加密和稳定币公司。\n\n面向全球消费者的数字银行 Revolut 和 Nubank 都拿到了有条件批准，Wise 和 bunq 被拒。\n\nOakNorth 走的是一条更慢的路：2025 年 3 月同意收购一家只有一个网点的密歇根银行，等了 20 个月才获批。\n\n它瞄准的客户也不同。中型企业贷款历来是地区银行和社区银行的强项，数字银行大多没碰。Taylor 引用摩根大通的估算：这类企业占美国企业数量的 3%，却贡献了美国企业收入的 15% 到 20%。\n\n他最后说，作为英国人，看到这个消息很高兴。\n\n想看清美国银行牌照格局的读者，可以把 OakNorth 和 Revolut、Nubank 放在一起比：OakNorth 收购现成的小银行、等了 20 个月，切入数字银行很少覆盖的中型企业贷款；Revolut 和 Nubank 目前拿到的是有条件批准。", "html": "<p>英国数字银行 OakNorth 宣布，美联储和美国货币监理署（OCC）批准了它收购密歇根州的 Community Unity Bank。OakNorth 称，它将成为第一家持有美国国家银行牌照的外国数字银行。Simon Taylor 的标题是：OakNorth 抢在 Revolut 和 Nubank 前面拿到了美国银行牌照。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_sytaylor_oaknorth_card\"><img src=\"https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg\" alt=\"图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>一家专做中型企业贷款的英国银行</h2>\n<p>美国读者对 OakNorth 不太熟。它 2015 年成立，贷款对象是年收入 500 万到 1 亿美元的企业。</p>\n<p>Taylor 列出的数字：</p>\n<ul>\n<li>11 年累计放贷 240 亿美元；</li>\n<li>2025 年税前利润 2.23 亿英镑，成本收入比（efficiency ratio）26%；</li>\n<li>美国业务占其新增贷款的 40%，2023 年以来向美国企业放贷 35 亿美元，单笔 500 万到 5000 万美元。</li>\n</ul>\n<p>拿到牌照后，它可以给这些客户加上支票账户、储蓄和支付服务，也能用存款为资产负债表融资。</p>\n<h2>赶上美国银行牌照热潮</h2>\n<p>这项批准正赶上一轮牌照申请热潮。Taylor 写道，2025 年 1 月以来，有近 50 家公司申请了新的美国银行牌照，其中一半以上申请的是信托牌照，主要是加密和稳定币公司。</p>\n<p>面向全球消费者的数字银行 Revolut 和 Nubank 都拿到了有条件批准，Wise 和 bunq 被拒。</p>\n<p>OakNorth 走的是一条更慢的路：2025 年 3 月同意收购一家只有一个网点的密歇根银行，等了 20 个月才获批。</p>\n<p>它瞄准的客户也不同。中型企业贷款历来是地区银行和社区银行的强项，数字银行大多没碰。Taylor 引用摩根大通的估算：这类企业占美国企业数量的 3%，却贡献了美国企业收入的 15% 到 20%。</p>\n<p>他最后说，作为英国人，看到这个消息很高兴。</p>\n<p>想看清美国银行牌照格局的读者，可以把 OakNorth 和 Revolut、Nubank 放在一起比：OakNorth 收购现成的小银行、等了 20 个月，切入数字银行很少覆盖的中型企业贷款；Revolut 和 Nubank 目前拿到的是有条件批准。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>TheValueist 拆 SpaceX 芯片融资：标题写 320 亿，整个结构是 440 亿</title>
+      <link>https://karuio.github.io/a/thevalueist-spacex-chip-financing</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/thevalueist-spacex-chip-financing</guid>
+      <pubDate>Sun, 22 Nov 2026 05:00:01 +0000</pubDate>
+      <author>TheValueist</author>
+      <description><![CDATA[<p><em>他对照 8-K、KBRA 评级公告和定价报道，拆出约 400 亿美元 GPU 租赁的分档、收益率和残值风险归属：A-3 档 8.259%，比投资级指数宽约 231 个基点；A-1、D、E 档规模仍未公开。</em></p>
+<h2>中文改写</h2>
+<p>新闻标题说这是一笔 320 亿美元的债券发行。TheValueist 翻了 SpaceX 的申报文件和评级、定价材料后认为，文件讲的故事更精确，也更单薄：结构有文件记录，公开发行部分的定价有报道，而整个融资结构比这两个数字都大。</p>
+<h2>8-K 里写了什么：一份约 400 亿美元的融资租赁</h2>
+<p>SpaceX 2026 年 10 月 26 日提交的 8-K（第 8.01 项）披露，公司在 10 月 24 日签了一份有约束力的承诺函，与 Apollo Global Management 管理的一个实体做主融资租赁：</p>
+<ul>
+<li>出租方购买 GPU 机柜（pods）及相关设备，租给 SpaceX，用在 SpaceX 选定的数据中心；</li>
+<li>设备分批交付，每批有自己的租赁明细表，期限从起租日起约五年到五年零一个季度；</li>
+<li>租金按季预付：每期为该批融资成本的二十分之一，加上按固定年利率计算的未偿租赁余额利息，再加某些持续性成本和费用，固定利率在定价时确定；</li>
+<li>各明细表的本金支付合计预计约 400 亿美元；</li>
+<li>签署租赁需满足交割条件，预计 2026 年底前完成；明细表在设备交付时起算，预计交付在 2027 年上半年。</li>
+</ul>
+<p>8-K 没有写发行信托的名字、票据分级，也没有任何价格。</p>
+<h2>发行人是谁，结构怎么搭</h2>
+<p>KBRA 2026 年 11 月 16 日的初步评级公告点出了发行人：Saturn Funding Trust，一家新成立、破产隔离的特殊目的实体，是 WHCO Intermediate Holdings LP 间接全资持有的子公司。WHCO 是一家已有的第三方资产支持贷款机构，与 SpaceX 无关联。</p>
+<ul>
+<li>信托为 SpaceX 的算力业务融资购买英伟达 Vera Rubin NVL72 GPU 设备。</li>
+<li>租约是三净租约（triple-net），且为“无论如何都要付”（hell-or-high-water）条款，按季付款，用于完全摊还债务。无论设备状况如何，SpaceX 都要付租金。按彭博报道的投资者推介材料，SpaceX 不为设备残值提供担保：租期结束时芯片值多少钱，风险落在信托和投资者身上。</li>
+<li>资本结构从上到下是 A-1、A-2、A-3 三档优先级有担保票据，然后是 B 档次级有担保票据，再往下是 D 档和 E 档。</li>
+<li>KBRA 给约 272 亿美元的 A-2、A-3 档和 24 亿美元的 B 档初步评级 A-。</li>
+<li>KBRA 表示，评级主要由企业锚定方也就是 SpaceX 本身决定，并把杠杆率持续高于 3.5 倍列为降级敏感因素。</li>
+</ul>
+<p>EDGAR 上没有信托本身的申报。这是一个 144A 规则下的结构，发行备忘录不公开。</p>
+<h2>各档票据</h2>
+<ul>
+<li><strong>A-1 档</strong>：优先级有担保，是整个结构里记录最少的一块。它只出现在 KBRA 不公开全文的初步评级报告里；KBRA 的公告没提它，也没给它评级；Apollo 的定价公告完全没有分档明细；定价报道里也看不到它的规模、期限或价格。定价前的报道提到，整体方案包括一笔由高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，但这笔贷款是不是 A-1 档，没有公开信息。</li>
+<li><strong>A-2 档</strong>：约 44 亿美元优先级有担保票据，2031 年 4 月到期，定价收益率 7.66%，KBRA 初步评级 A-。</li>
+<li><strong>A-3 档</strong>：251.7 亿美元优先级有担保票据，2033 年 4 月到期，定价收益率 8.259%，KBRA 初步评级 A-。</li>
+<li><strong>B 档</strong>：25.64 亿美元次级有担保票据，2033 年 4 月到期，定价收益率 8.36%，KBRA 初步评级 A-。它排在 A 档之后、D 和 E 档之前，靠 D、E 档的次级保护以及一项单独的无担保差额回收分配获得支撑。</li>
+<li><strong>D 档和 E 档</strong>：结构最底层，私人持有，规模和定价未公开。它们和 A-1 档一起，构成 440 亿美元总额里三个公开发行档之外的约 119 亿美元。</li>
+</ul>
+<p>A-2、A-3 和 B 档是公开银团发行，A-1、D、E 档是私募。</p>
+<h2>定价：比投资级指数宽约 231 个基点</h2>
+<p>Apollo 和高盛 2026 年 11 月 20 日宣布，各档优先级和次级票据合计约 440 亿美元完成定价，超额认购并扩大了规模。贝莱德管理的基金和账户、高盛资产管理，以及 KKR 提供建议的资本账户做了锚定认购。高盛是唯一的结构安排方。</p>
+<p>440 亿美元是整个结构，包括私募的几档。周四新闻里的约 320 亿美元，是按报道分成三档公开银团发行的部分。</p>
+<p>按报道，约 260 亿美元在周四 A-3 档最后 60 亿美元推出之前就已有认购承诺。据彭博报道，这些票据有 CUSIP 代码，可以立即在合格机构投资者之间交易。TheValueist 认为，这个设计让它们进入公司债买家的视野，没有把它们留在私募市场。</p>
+<p>A-2 和 A-3 之间大约 60 个基点的差价，来自期限差异，与受偿顺序无关：两档都是优先级有担保，初步评级相同，但 A-2 在 2031 年 4 月到期，落在约 2032 年就陆续摊还完的租赁明细表之内；A-3 到 2033 年 4 月，超出了明细表期限。A-3 规模 251.7 亿美元，接近 A-2 的六倍，是必须由市场消化的那一档。B 档虽然是次级，在同样 2033 年到期的情况下，收益率只比 A-3 高约 10 个基点。</p>
+<p>A-3 的收益率对比当天美国投资级公司债平均收益率 5.95%，高出约 231 个基点。据彭博报道，这笔交易的定价比 SpaceX 自己 2026 年 6 月发行的债务宽约 100 个基点。</p>
+<p>报道中的整体方案还包括：高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，以及 SpaceX 的 70 亿美元租金预付款，对应约 473 亿美元的 GPU 及相关设备。报道称，贷款方坚持融资购买的芯片要留在地面数据中心，不能部署到轨道上；Apollo 的公告也把这次建设描述为地面设施。</p>
+<h2>落在什么样的资产负债表上</h2>
+<p>SpaceX 截至 2026 年 9 月 30 日季度的 10-Q 显示，资产负债表上已有约 388 亿美元债务和融资租赁，其中 129 亿美元是与 Valor Equity Partners 设备租赁相关的关联方债务，按售后回租失败处理入账。承诺函签于 2026 年 10 月 24 日，在这个季度结束之后，所以这些数字里还没有这笔租赁；它的会计处理要到年报里才首次出现。</p>
+<h2>已知和未知</h2>
+<p>TheValueist 的结论是：申报文件记录了这项承诺，约 400 亿美元本金，五年期、完全摊还的租赁明细表，KBRA 称这些义务是绝对且无条件的，前提是满足 8-K 列明的交割条件。报道给出了定价：优先级资金 7.66% 到 8.259%，次级 8.36%，都明显宽于投资级指数，也宽于 SpaceX 自己的收益率曲线。</p>
+<p>两边都还没披露的是：发行备忘录、各档票面利率，以及私募的 A-1、D、E 档规模。他认为，这个模板接下来要靠事实检验：会不会有第二个发行人照搬这个结构，利差又是多少。</p>
+<p>跟踪 AI 算力融资的投资者，可以把这笔交易的几个数字当作基准：A-3 比投资级指数宽约 231 个基点，比 SpaceX 自身债务宽约 100 个基点，残值风险由投资者承担。下一笔类似的 GPU 租赁证券化出来时，可以拿这几项直接对比。</p>
+
+<h2>原文</h2>
+<p><em>SPACEX&#x27;S CHIP FINANCING, AS FILED</em></p>
+<p>$SPCX $ANT $NVDA $MU $SNDK $LITE SPACEX'S CHIP FINANCING, AS FILED</p>
+<p>The headlines called it a $32 billion bond sale. The filings tell a more precise story, and a thinner one: the structure is documented, the syndicated pricing is reported, and the full stack is larger than either number.</p>
+<p>WHAT IS FILED: THE LEASE</p>
+<p>SpaceX's Form 8-K, filed October 26, 2026 (Item 8.01), discloses a binding commitment letter dated October 24, 2026 for a master finance lease with an entity managed by Apollo Global Management.</p>
+<p>• The lessor acquires graphics processing unit pods and related equipment and leases them to SpaceX for use at data centers SpaceX selects.
+• Equipment is delivered in tranches, each under its own lease schedule with a term of approximately five to five and one-quarter years from its commencement date.
+• Rent is payable quarterly in advance: one-twentieth of the financed cost of the tranche, plus a fixed rate per annum on the outstanding lease balance, plus certain ongoing costs and expenses. The fixed rate was set at pricing.
+• Aggregate principal payments under the schedules are expected to total approximately $40 billion.
+• Entry into the lease is subject to closing conditions and is expected to close before year-end 2026. Lease schedules commence on delivery, expected in the first half of 2027.</p>
+<p>The 8-K does not name the issuing trust, the note classes, or any price.</p>
+<p>THE ISSUER AND THE STACK</p>
+<p>KBRA's preliminary rating release, dated November 16, 2026, names the issuer: Saturn Funding Trust, a newly formed, bankruptcy-remote special purpose entity and an indirect wholly owned subsidiary of WHCO Intermediate Holdings LP, an existing third-party asset-backed lending entity unaffiliated with SpaceX.</p>
+<p>• The trust finances NVIDIA Vera Rubin NVL72 GPU equipment for SpaceX's computing operations.
+• The lease is triple-net and hell-or-high-water, with quarterly payments intended to fully amortize the debt. SpaceX owes the rent regardless of the condition of the equipment, and, per the deal's investor presentation as reported by Bloomberg, provides no guarantee of the equipment's residual value: the end-of-lease chip value risk sits with the trust and its investors.
+• The capital stack runs Class A-1, Class A-2 and Class A-3 senior secured notes, then Class B subordinated secured notes, then Classes D and E.
+• KBRA assigned preliminary A- ratings to approximately $27.2 billion of the Class A-2 and A-3 notes and $2.4 billion of the Class B notes.
+• KBRA states the ratings are driven primarily by the corporate anchor, SpaceX itself, and names leverage above 3.5x on a sustained basis as a downgrade sensitivity.</p>
+<p>No filing by the trust itself appears on EDGAR. This is a Rule 144A structure; the offering memorandum is not public.</p>
+<p>THE CLASSES</p>
+<p>• Class A-1: senior secured, and the least documented piece of the stack. It is named only in KBRA's preliminary rating report, whose full text is not public. KBRA's release never mentions it and assigns it no rating, the Apollo pricing release gives no class breakdown at all, and no size, maturity or price for it appears in the pricing coverage. Pre-pricing reports described a Goldman Sachs-led senior secured loan of $8.3 billion for syndication to banks as part of the wider package; whether that loan is the Class A-1 has not been published.
+• Class A-2: approximately $4.4 billion of senior secured notes due April 2031, priced at a 7.66% yield, preliminary A- from KBRA.
+• Class A-3: $25.17 billion of senior secured notes due April 2033, priced at an 8.259% yield, preliminary A- from KBRA.
+• Class B: $2.564 billion of subordinated secured notes due April 2033, priced at an 8.36% yield, preliminary A- from KBRA. It sits below the Class A notes and above Classes D and E, whose subordination, together with a separate allocation of unsecured deficiency recoveries, supports it.
+• Classes D and E: the bottom of the stack, privately held, their sizes and pricing not public. Together with Class A-1 they account for the roughly $11.9 billion of the $44 billion total that the three syndicated classes do not.</p>
+<p>The Class A-2, A-3 and B notes were the syndicated classes; Class A-1, D and E were placed privately.</p>
+<p>THE PRICING</p>
+<p>Apollo and Goldman Sachs announced on November 20, 2026 that approximately $44 billion of senior and subordinated notes had priced across all classes, oversubscribed and upsized, with funds and accounts managed by BlackRock, Goldman Sachs Asset Management and capital accounts advised by KKR as anchor commitments. Goldman Sachs was sole structuring agent.</p>
+<p>The $44 billion is the whole stack, including the privately placed classes. The publicly syndicated portion was the approximately $32 billion in Thursday's headlines, in three classes, as reported:</p>
+<p>Approximately $26 billion was committed before the final $6 billion of the Class A-3 was offered on Thursday. The notes carry CUSIPs and trade immediately among qualified institutional buyers, per Bloomberg reporting, which is the design choice that puts them in front of corporate bond buyers rather than leaving them in the private placement market. The roughly 60 basis points between the Class A-2 and the Class A-3 is maturity, not seniority: both are senior secured with the same preliminary rating, but the A-2 matures in April 2031, inside lease schedules that run off by about 2032, while the A-3 runs to April 2033, past them, and at $25.17 billion, nearly six times the size of the Class A-2, it was the tranche that had to clear the market. Class B, though subordinated, priced only about 10 basis points wide of the A-3 on the same 2033 maturity. The A-3 yield compares with a 5.95% average yield on US investment-grade corporate bonds the same day, a gap of about 231 basis points, and the deal priced about 100 basis points wide of SpaceX's own debt issued in June 2026, per Bloomberg reporting.</p>
+<p>Also reported as part of the wider package: an $8.3 billion senior secured loan led by Goldman Sachs for syndication to banks, and a $7 billion lease prepayment from SpaceX, against approximately $47.3 billion of GPUs and related equipment. Lenders were reported to have pressed for the financed chips to stay in terrestrial data centers rather than be deployed in orbit; the Apollo release describes the buildout as terrestrial.</p>
+<p>THE BALANCE SHEET IT LANDS ON</p>
+<p>SpaceX's Form 10-Q for the quarter ended September 30, 2026 shows debt and finance leases of approximately $38.8 billion already on the balance sheet, of which $12.9 billion is related-party debt from equipment leases with Valor Equity Partners, accounted for as a failed sale-leaseback. The commitment letter is dated October 24, 2026, after this quarter ended, so nothing of the lease sits in these figures; its accounting treatment first appears in the annual report.</p>
+<p>THE READ</p>
+<p>The filed record documents the commitment: about $40 billion of principal on five-year, fully amortizing lease schedules, obligations KBRA describes as absolute and unconditional, subject to the closing conditions the 8-K names. The reported record prices it: senior money at 7.66% to 8.259%, subordinated at 8.36%, all of it well wide of the investment-grade index and wide of SpaceX's own curve. What neither record yet shows is the offering memorandum, the per-class coupons, or the sizes of the privately placed A-1, D and E classes. The template question is now empirical: whether a second issuer copies the structure, and at what spread.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/TheValueist/status/2124367274543083889">https://x.com/TheValueist/status/2124367274543083889</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他对照 8-K、KBRA 评级公告和定价报道，拆出约 400 亿美元 GPU 租赁的分档、收益率和残值风险归属：A-3 档 8.259%，比投资级指数宽约 231 个基点；A-1、D、E 档规模仍未公开。</em></p>
+<h2>中文改写</h2>
+<p>新闻标题说这是一笔 320 亿美元的债券发行。TheValueist 翻了 SpaceX 的申报文件和评级、定价材料后认为，文件讲的故事更精确，也更单薄：结构有文件记录，公开发行部分的定价有报道，而整个融资结构比这两个数字都大。</p>
+<h2>8-K 里写了什么：一份约 400 亿美元的融资租赁</h2>
+<p>SpaceX 2026 年 10 月 26 日提交的 8-K（第 8.01 项）披露，公司在 10 月 24 日签了一份有约束力的承诺函，与 Apollo Global Management 管理的一个实体做主融资租赁：</p>
+<ul>
+<li>出租方购买 GPU 机柜（pods）及相关设备，租给 SpaceX，用在 SpaceX 选定的数据中心；</li>
+<li>设备分批交付，每批有自己的租赁明细表，期限从起租日起约五年到五年零一个季度；</li>
+<li>租金按季预付：每期为该批融资成本的二十分之一，加上按固定年利率计算的未偿租赁余额利息，再加某些持续性成本和费用，固定利率在定价时确定；</li>
+<li>各明细表的本金支付合计预计约 400 亿美元；</li>
+<li>签署租赁需满足交割条件，预计 2026 年底前完成；明细表在设备交付时起算，预计交付在 2027 年上半年。</li>
+</ul>
+<p>8-K 没有写发行信托的名字、票据分级，也没有任何价格。</p>
+<h2>发行人是谁，结构怎么搭</h2>
+<p>KBRA 2026 年 11 月 16 日的初步评级公告点出了发行人：Saturn Funding Trust，一家新成立、破产隔离的特殊目的实体，是 WHCO Intermediate Holdings LP 间接全资持有的子公司。WHCO 是一家已有的第三方资产支持贷款机构，与 SpaceX 无关联。</p>
+<ul>
+<li>信托为 SpaceX 的算力业务融资购买英伟达 Vera Rubin NVL72 GPU 设备。</li>
+<li>租约是三净租约（triple-net），且为“无论如何都要付”（hell-or-high-water）条款，按季付款，用于完全摊还债务。无论设备状况如何，SpaceX 都要付租金。按彭博报道的投资者推介材料，SpaceX 不为设备残值提供担保：租期结束时芯片值多少钱，风险落在信托和投资者身上。</li>
+<li>资本结构从上到下是 A-1、A-2、A-3 三档优先级有担保票据，然后是 B 档次级有担保票据，再往下是 D 档和 E 档。</li>
+<li>KBRA 给约 272 亿美元的 A-2、A-3 档和 24 亿美元的 B 档初步评级 A-。</li>
+<li>KBRA 表示，评级主要由企业锚定方也就是 SpaceX 本身决定，并把杠杆率持续高于 3.5 倍列为降级敏感因素。</li>
+</ul>
+<p>EDGAR 上没有信托本身的申报。这是一个 144A 规则下的结构，发行备忘录不公开。</p>
+<h2>各档票据</h2>
+<ul>
+<li><strong>A-1 档</strong>：优先级有担保，是整个结构里记录最少的一块。它只出现在 KBRA 不公开全文的初步评级报告里；KBRA 的公告没提它，也没给它评级；Apollo 的定价公告完全没有分档明细；定价报道里也看不到它的规模、期限或价格。定价前的报道提到，整体方案包括一笔由高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，但这笔贷款是不是 A-1 档，没有公开信息。</li>
+<li><strong>A-2 档</strong>：约 44 亿美元优先级有担保票据，2031 年 4 月到期，定价收益率 7.66%，KBRA 初步评级 A-。</li>
+<li><strong>A-3 档</strong>：251.7 亿美元优先级有担保票据，2033 年 4 月到期，定价收益率 8.259%，KBRA 初步评级 A-。</li>
+<li><strong>B 档</strong>：25.64 亿美元次级有担保票据，2033 年 4 月到期，定价收益率 8.36%，KBRA 初步评级 A-。它排在 A 档之后、D 和 E 档之前，靠 D、E 档的次级保护以及一项单独的无担保差额回收分配获得支撑。</li>
+<li><strong>D 档和 E 档</strong>：结构最底层，私人持有，规模和定价未公开。它们和 A-1 档一起，构成 440 亿美元总额里三个公开发行档之外的约 119 亿美元。</li>
+</ul>
+<p>A-2、A-3 和 B 档是公开银团发行，A-1、D、E 档是私募。</p>
+<h2>定价：比投资级指数宽约 231 个基点</h2>
+<p>Apollo 和高盛 2026 年 11 月 20 日宣布，各档优先级和次级票据合计约 440 亿美元完成定价，超额认购并扩大了规模。贝莱德管理的基金和账户、高盛资产管理，以及 KKR 提供建议的资本账户做了锚定认购。高盛是唯一的结构安排方。</p>
+<p>440 亿美元是整个结构，包括私募的几档。周四新闻里的约 320 亿美元，是按报道分成三档公开银团发行的部分。</p>
+<p>按报道，约 260 亿美元在周四 A-3 档最后 60 亿美元推出之前就已有认购承诺。据彭博报道，这些票据有 CUSIP 代码，可以立即在合格机构投资者之间交易。TheValueist 认为，这个设计让它们进入公司债买家的视野，没有把它们留在私募市场。</p>
+<p>A-2 和 A-3 之间大约 60 个基点的差价，来自期限差异，与受偿顺序无关：两档都是优先级有担保，初步评级相同，但 A-2 在 2031 年 4 月到期，落在约 2032 年就陆续摊还完的租赁明细表之内；A-3 到 2033 年 4 月，超出了明细表期限。A-3 规模 251.7 亿美元，接近 A-2 的六倍，是必须由市场消化的那一档。B 档虽然是次级，在同样 2033 年到期的情况下，收益率只比 A-3 高约 10 个基点。</p>
+<p>A-3 的收益率对比当天美国投资级公司债平均收益率 5.95%，高出约 231 个基点。据彭博报道，这笔交易的定价比 SpaceX 自己 2026 年 6 月发行的债务宽约 100 个基点。</p>
+<p>报道中的整体方案还包括：高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，以及 SpaceX 的 70 亿美元租金预付款，对应约 473 亿美元的 GPU 及相关设备。报道称，贷款方坚持融资购买的芯片要留在地面数据中心，不能部署到轨道上；Apollo 的公告也把这次建设描述为地面设施。</p>
+<h2>落在什么样的资产负债表上</h2>
+<p>SpaceX 截至 2026 年 9 月 30 日季度的 10-Q 显示，资产负债表上已有约 388 亿美元债务和融资租赁，其中 129 亿美元是与 Valor Equity Partners 设备租赁相关的关联方债务，按售后回租失败处理入账。承诺函签于 2026 年 10 月 24 日，在这个季度结束之后，所以这些数字里还没有这笔租赁；它的会计处理要到年报里才首次出现。</p>
+<h2>已知和未知</h2>
+<p>TheValueist 的结论是：申报文件记录了这项承诺，约 400 亿美元本金，五年期、完全摊还的租赁明细表，KBRA 称这些义务是绝对且无条件的，前提是满足 8-K 列明的交割条件。报道给出了定价：优先级资金 7.66% 到 8.259%，次级 8.36%，都明显宽于投资级指数，也宽于 SpaceX 自己的收益率曲线。</p>
+<p>两边都还没披露的是：发行备忘录、各档票面利率，以及私募的 A-1、D、E 档规模。他认为，这个模板接下来要靠事实检验：会不会有第二个发行人照搬这个结构，利差又是多少。</p>
+<p>跟踪 AI 算力融资的投资者，可以把这笔交易的几个数字当作基准：A-3 比投资级指数宽约 231 个基点，比 SpaceX 自身债务宽约 100 个基点，残值风险由投资者承担。下一笔类似的 GPU 租赁证券化出来时，可以拿这几项直接对比。</p>
+
+<h2>原文</h2>
+<p><em>SPACEX&#x27;S CHIP FINANCING, AS FILED</em></p>
+<p>$SPCX $ANT $NVDA $MU $SNDK $LITE SPACEX'S CHIP FINANCING, AS FILED</p>
+<p>The headlines called it a $32 billion bond sale. The filings tell a more precise story, and a thinner one: the structure is documented, the syndicated pricing is reported, and the full stack is larger than either number.</p>
+<p>WHAT IS FILED: THE LEASE</p>
+<p>SpaceX's Form 8-K, filed October 26, 2026 (Item 8.01), discloses a binding commitment letter dated October 24, 2026 for a master finance lease with an entity managed by Apollo Global Management.</p>
+<p>• The lessor acquires graphics processing unit pods and related equipment and leases them to SpaceX for use at data centers SpaceX selects.
+• Equipment is delivered in tranches, each under its own lease schedule with a term of approximately five to five and one-quarter years from its commencement date.
+• Rent is payable quarterly in advance: one-twentieth of the financed cost of the tranche, plus a fixed rate per annum on the outstanding lease balance, plus certain ongoing costs and expenses. The fixed rate was set at pricing.
+• Aggregate principal payments under the schedules are expected to total approximately $40 billion.
+• Entry into the lease is subject to closing conditions and is expected to close before year-end 2026. Lease schedules commence on delivery, expected in the first half of 2027.</p>
+<p>The 8-K does not name the issuing trust, the note classes, or any price.</p>
+<p>THE ISSUER AND THE STACK</p>
+<p>KBRA's preliminary rating release, dated November 16, 2026, names the issuer: Saturn Funding Trust, a newly formed, bankruptcy-remote special purpose entity and an indirect wholly owned subsidiary of WHCO Intermediate Holdings LP, an existing third-party asset-backed lending entity unaffiliated with SpaceX.</p>
+<p>• The trust finances NVIDIA Vera Rubin NVL72 GPU equipment for SpaceX's computing operations.
+• The lease is triple-net and hell-or-high-water, with quarterly payments intended to fully amortize the debt. SpaceX owes the rent regardless of the condition of the equipment, and, per the deal's investor presentation as reported by Bloomberg, provides no guarantee of the equipment's residual value: the end-of-lease chip value risk sits with the trust and its investors.
+• The capital stack runs Class A-1, Class A-2 and Class A-3 senior secured notes, then Class B subordinated secured notes, then Classes D and E.
+• KBRA assigned preliminary A- ratings to approximately $27.2 billion of the Class A-2 and A-3 notes and $2.4 billion of the Class B notes.
+• KBRA states the ratings are driven primarily by the corporate anchor, SpaceX itself, and names leverage above 3.5x on a sustained basis as a downgrade sensitivity.</p>
+<p>No filing by the trust itself appears on EDGAR. This is a Rule 144A structure; the offering memorandum is not public.</p>
+<p>THE CLASSES</p>
+<p>• Class A-1: senior secured, and the least documented piece of the stack. It is named only in KBRA's preliminary rating report, whose full text is not public. KBRA's release never mentions it and assigns it no rating, the Apollo pricing release gives no class breakdown at all, and no size, maturity or price for it appears in the pricing coverage. Pre-pricing reports described a Goldman Sachs-led senior secured loan of $8.3 billion for syndication to banks as part of the wider package; whether that loan is the Class A-1 has not been published.
+• Class A-2: approximately $4.4 billion of senior secured notes due April 2031, priced at a 7.66% yield, preliminary A- from KBRA.
+• Class A-3: $25.17 billion of senior secured notes due April 2033, priced at an 8.259% yield, preliminary A- from KBRA.
+• Class B: $2.564 billion of subordinated secured notes due April 2033, priced at an 8.36% yield, preliminary A- from KBRA. It sits below the Class A notes and above Classes D and E, whose subordination, together with a separate allocation of unsecured deficiency recoveries, supports it.
+• Classes D and E: the bottom of the stack, privately held, their sizes and pricing not public. Together with Class A-1 they account for the roughly $11.9 billion of the $44 billion total that the three syndicated classes do not.</p>
+<p>The Class A-2, A-3 and B notes were the syndicated classes; Class A-1, D and E were placed privately.</p>
+<p>THE PRICING</p>
+<p>Apollo and Goldman Sachs announced on November 20, 2026 that approximately $44 billion of senior and subordinated notes had priced across all classes, oversubscribed and upsized, with funds and accounts managed by BlackRock, Goldman Sachs Asset Management and capital accounts advised by KKR as anchor commitments. Goldman Sachs was sole structuring agent.</p>
+<p>The $44 billion is the whole stack, including the privately placed classes. The publicly syndicated portion was the approximately $32 billion in Thursday's headlines, in three classes, as reported:</p>
+<p>Approximately $26 billion was committed before the final $6 billion of the Class A-3 was offered on Thursday. The notes carry CUSIPs and trade immediately among qualified institutional buyers, per Bloomberg reporting, which is the design choice that puts them in front of corporate bond buyers rather than leaving them in the private placement market. The roughly 60 basis points between the Class A-2 and the Class A-3 is maturity, not seniority: both are senior secured with the same preliminary rating, but the A-2 matures in April 2031, inside lease schedules that run off by about 2032, while the A-3 runs to April 2033, past them, and at $25.17 billion, nearly six times the size of the Class A-2, it was the tranche that had to clear the market. Class B, though subordinated, priced only about 10 basis points wide of the A-3 on the same 2033 maturity. The A-3 yield compares with a 5.95% average yield on US investment-grade corporate bonds the same day, a gap of about 231 basis points, and the deal priced about 100 basis points wide of SpaceX's own debt issued in June 2026, per Bloomberg reporting.</p>
+<p>Also reported as part of the wider package: an $8.3 billion senior secured loan led by Goldman Sachs for syndication to banks, and a $7 billion lease prepayment from SpaceX, against approximately $47.3 billion of GPUs and related equipment. Lenders were reported to have pressed for the financed chips to stay in terrestrial data centers rather than be deployed in orbit; the Apollo release describes the buildout as terrestrial.</p>
+<p>THE BALANCE SHEET IT LANDS ON</p>
+<p>SpaceX's Form 10-Q for the quarter ended September 30, 2026 shows debt and finance leases of approximately $38.8 billion already on the balance sheet, of which $12.9 billion is related-party debt from equipment leases with Valor Equity Partners, accounted for as a failed sale-leaseback. The commitment letter is dated October 24, 2026, after this quarter ended, so nothing of the lease sits in these figures; its accounting treatment first appears in the annual report.</p>
+<p>THE READ</p>
+<p>The filed record documents the commitment: about $40 billion of principal on five-year, fully amortizing lease schedules, obligations KBRA describes as absolute and unconditional, subject to the closing conditions the 8-K names. The reported record prices it: senior money at 7.66% to 8.259%, subordinated at 8.36%, all of it well wide of the investment-grade index and wide of SpaceX's own curve. What neither record yet shows is the offering memorandum, the per-class coupons, or the sizes of the privately placed A-1, D and E classes. The template question is now empirical: whether a second issuer copies the structure, and at what spread.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/TheValueist/status/2124367274543083889">https://x.com/TheValueist/status/2124367274543083889</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "SPACEX'S CHIP FINANCING, AS FILED", "url": "https://x.com/TheValueist/status/2124367274543083889", "lang": "en", "html": "<h2>SPACEX&#x27;S CHIP FINANCING, AS FILED</h2>\n\n<p>$SPCX $ANT $NVDA $MU $SNDK $LITE SPACEX'S CHIP FINANCING, AS FILED</p>\n<p>The headlines called it a $32 billion bond sale. The filings tell a more precise story, and a thinner one: the structure is documented, the syndicated pricing is reported, and the full stack is larger than either number.</p>\n<p>WHAT IS FILED: THE LEASE</p>\n<p>SpaceX's Form 8-K, filed October 26, 2026 (Item 8.01), discloses a binding commitment letter dated October 24, 2026 for a master finance lease with an entity managed by Apollo Global Management.</p>\n<p>• The lessor acquires graphics processing unit pods and related equipment and leases them to SpaceX for use at data centers SpaceX selects.\n• Equipment is delivered in tranches, each under its own lease schedule with a term of approximately five to five and one-quarter years from its commencement date.\n• Rent is payable quarterly in advance: one-twentieth of the financed cost of the tranche, plus a fixed rate per annum on the outstanding lease balance, plus certain ongoing costs and expenses. The fixed rate was set at pricing.\n• Aggregate principal payments under the schedules are expected to total approximately $40 billion.\n• Entry into the lease is subject to closing conditions and is expected to close before year-end 2026. Lease schedules commence on delivery, expected in the first half of 2027.</p>\n<p>The 8-K does not name the issuing trust, the note classes, or any price.</p>\n<p>THE ISSUER AND THE STACK</p>\n<p>KBRA's preliminary rating release, dated November 16, 2026, names the issuer: Saturn Funding Trust, a newly formed, bankruptcy-remote special purpose entity and an indirect wholly owned subsidiary of WHCO Intermediate Holdings LP, an existing third-party asset-backed lending entity unaffiliated with SpaceX.</p>\n<p>• The trust finances NVIDIA Vera Rubin NVL72 GPU equipment for SpaceX's computing operations.\n• The lease is triple-net and hell-or-high-water, with quarterly payments intended to fully amortize the debt. SpaceX owes the rent regardless of the condition of the equipment, and, per the deal's investor presentation as reported by Bloomberg, provides no guarantee of the equipment's residual value: the end-of-lease chip value risk sits with the trust and its investors.\n• The capital stack runs Class A-1, Class A-2 and Class A-3 senior secured notes, then Class B subordinated secured notes, then Classes D and E.\n• KBRA assigned preliminary A- ratings to approximately $27.2 billion of the Class A-2 and A-3 notes and $2.4 billion of the Class B notes.\n• KBRA states the ratings are driven primarily by the corporate anchor, SpaceX itself, and names leverage above 3.5x on a sustained basis as a downgrade sensitivity.</p>\n<p>No filing by the trust itself appears on EDGAR. This is a Rule 144A structure; the offering memorandum is not public.</p>\n<p>THE CLASSES</p>\n<p>• Class A-1: senior secured, and the least documented piece of the stack. It is named only in KBRA's preliminary rating report, whose full text is not public. KBRA's release never mentions it and assigns it no rating, the Apollo pricing release gives no class breakdown at all, and no size, maturity or price for it appears in the pricing coverage. Pre-pricing reports described a Goldman Sachs-led senior secured loan of $8.3 billion for syndication to banks as part of the wider package; whether that loan is the Class A-1 has not been published.\n• Class A-2: approximately $4.4 billion of senior secured notes due April 2031, priced at a 7.66% yield, preliminary A- from KBRA.\n• Class A-3: $25.17 billion of senior secured notes due April 2033, priced at an 8.259% yield, preliminary A- from KBRA.\n• Class B: $2.564 billion of subordinated secured notes due April 2033, priced at an 8.36% yield, preliminary A- from KBRA. It sits below the Class A notes and above Classes D and E, whose subordination, together with a separate allocation of unsecured deficiency recoveries, supports it.\n• Classes D and E: the bottom of the stack, privately held, their sizes and pricing not public. Together with Class A-1 they account for the roughly $11.9 billion of the $44 billion total that the three syndicated classes do not.</p>\n<p>The Class A-2, A-3 and B notes were the syndicated classes; Class A-1, D and E were placed privately.</p>\n<p>THE PRICING</p>\n<p>Apollo and Goldman Sachs announced on November 20, 2026 that approximately $44 billion of senior and subordinated notes had priced across all classes, oversubscribed and upsized, with funds and accounts managed by BlackRock, Goldman Sachs Asset Management and capital accounts advised by KKR as anchor commitments. Goldman Sachs was sole structuring agent.</p>\n<p>The $44 billion is the whole stack, including the privately placed classes. The publicly syndicated portion was the approximately $32 billion in Thursday's headlines, in three classes, as reported:</p>\n<p>Approximately $26 billion was committed before the final $6 billion of the Class A-3 was offered on Thursday. The notes carry CUSIPs and trade immediately among qualified institutional buyers, per Bloomberg reporting, which is the design choice that puts them in front of corporate bond buyers rather than leaving them in the private placement market. The roughly 60 basis points between the Class A-2 and the Class A-3 is maturity, not seniority: both are senior secured with the same preliminary rating, but the A-2 matures in April 2031, inside lease schedules that run off by about 2032, while the A-3 runs to April 2033, past them, and at $25.17 billion, nearly six times the size of the Class A-2, it was the tranche that had to clear the market. Class B, though subordinated, priced only about 10 basis points wide of the A-3 on the same 2033 maturity. The A-3 yield compares with a 5.95% average yield on US investment-grade corporate bonds the same day, a gap of about 231 basis points, and the deal priced about 100 basis points wide of SpaceX's own debt issued in June 2026, per Bloomberg reporting.</p>\n<p>Also reported as part of the wider package: an $8.3 billion senior secured loan led by Goldman Sachs for syndication to banks, and a $7 billion lease prepayment from SpaceX, against approximately $47.3 billion of GPUs and related equipment. Lenders were reported to have pressed for the financed chips to stay in terrestrial data centers rather than be deployed in orbit; the Apollo release describes the buildout as terrestrial.</p>\n<p>THE BALANCE SHEET IT LANDS ON</p>\n<p>SpaceX's Form 10-Q for the quarter ended September 30, 2026 shows debt and finance leases of approximately $38.8 billion already on the balance sheet, of which $12.9 billion is related-party debt from equipment leases with Valor Equity Partners, accounted for as a failed sale-leaseback. The commitment letter is dated October 24, 2026, after this quarter ended, so nothing of the lease sits in these figures; its accounting treatment first appears in the annual report.</p>\n<p>THE READ</p>\n<p>The filed record documents the commitment: about $40 billion of principal on five-year, fully amortizing lease schedules, obligations KBRA describes as absolute and unconditional, subject to the closing conditions the 8-K names. The reported record prices it: senior money at 7.66% to 8.259%, subordinated at 8.36%, all of it well wide of the investment-grade index and wide of SpaceX's own curve. What neither record yet shows is the offering memorandum, the per-class coupons, or the sizes of the privately placed A-1, D and E classes. The template question is now empirical: whether a second issuer copies the structure, and at what spread.</p>\n<p>原文链接：<a href=\"https://x.com/TheValueist/status/2124367274543083889\">https://x.com/TheValueist/status/2124367274543083889</a></p>"}, "rewrite": {"title": "TheValueist 拆 SpaceX 芯片融资：标题写 320 亿，整个结构是 440 亿", "markdown": "新闻标题说这是一笔 320 亿美元的债券发行。TheValueist 翻了 SpaceX 的申报文件和评级、定价材料后认为，文件讲的故事更精确，也更单薄：结构有文件记录，公开发行部分的定价有报道，而整个融资结构比这两个数字都大。\n\n## 8-K 里写了什么：一份约 400 亿美元的融资租赁\n\nSpaceX 2026 年 10 月 26 日提交的 8-K（第 8.01 项）披露，公司在 10 月 24 日签了一份有约束力的承诺函，与 Apollo Global Management 管理的一个实体做主融资租赁：\n\n- 出租方购买 GPU 机柜（pods）及相关设备，租给 SpaceX，用在 SpaceX 选定的数据中心；\n- 设备分批交付，每批有自己的租赁明细表，期限从起租日起约五年到五年零一个季度；\n- 租金按季预付：每期为该批融资成本的二十分之一，加上按固定年利率计算的未偿租赁余额利息，再加某些持续性成本和费用，固定利率在定价时确定；\n- 各明细表的本金支付合计预计约 400 亿美元；\n- 签署租赁需满足交割条件，预计 2026 年底前完成；明细表在设备交付时起算，预计交付在 2027 年上半年。\n\n8-K 没有写发行信托的名字、票据分级，也没有任何价格。\n\n## 发行人是谁，结构怎么搭\n\nKBRA 2026 年 11 月 16 日的初步评级公告点出了发行人：Saturn Funding Trust，一家新成立、破产隔离的特殊目的实体，是 WHCO Intermediate Holdings LP 间接全资持有的子公司。WHCO 是一家已有的第三方资产支持贷款机构，与 SpaceX 无关联。\n\n- 信托为 SpaceX 的算力业务融资购买英伟达 Vera Rubin NVL72 GPU 设备。\n- 租约是三净租约（triple-net），且为“无论如何都要付”（hell-or-high-water）条款，按季付款，用于完全摊还债务。无论设备状况如何，SpaceX 都要付租金。按彭博报道的投资者推介材料，SpaceX 不为设备残值提供担保：租期结束时芯片值多少钱，风险落在信托和投资者身上。\n- 资本结构从上到下是 A-1、A-2、A-3 三档优先级有担保票据，然后是 B 档次级有担保票据，再往下是 D 档和 E 档。\n- KBRA 给约 272 亿美元的 A-2、A-3 档和 24 亿美元的 B 档初步评级 A-。\n- KBRA 表示，评级主要由企业锚定方也就是 SpaceX 本身决定，并把杠杆率持续高于 3.5 倍列为降级敏感因素。\n\nEDGAR 上没有信托本身的申报。这是一个 144A 规则下的结构，发行备忘录不公开。\n\n## 各档票据\n\n- **A-1 档**：优先级有担保，是整个结构里记录最少的一块。它只出现在 KBRA 不公开全文的初步评级报告里；KBRA 的公告没提它，也没给它评级；Apollo 的定价公告完全没有分档明细；定价报道里也看不到它的规模、期限或价格。定价前的报道提到，整体方案包括一笔由高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，但这笔贷款是不是 A-1 档，没有公开信息。\n- **A-2 档**：约 44 亿美元优先级有担保票据，2031 年 4 月到期，定价收益率 7.66%，KBRA 初步评级 A-。\n- **A-3 档**：251.7 亿美元优先级有担保票据，2033 年 4 月到期，定价收益率 8.259%，KBRA 初步评级 A-。\n- **B 档**：25.64 亿美元次级有担保票据，2033 年 4 月到期，定价收益率 8.36%，KBRA 初步评级 A-。它排在 A 档之后、D 和 E 档之前，靠 D、E 档的次级保护以及一项单独的无担保差额回收分配获得支撑。\n- **D 档和 E 档**：结构最底层，私人持有，规模和定价未公开。它们和 A-1 档一起，构成 440 亿美元总额里三个公开发行档之外的约 119 亿美元。\n\nA-2、A-3 和 B 档是公开银团发行，A-1、D、E 档是私募。\n\n## 定价：比投资级指数宽约 231 个基点\n\nApollo 和高盛 2026 年 11 月 20 日宣布，各档优先级和次级票据合计约 440 亿美元完成定价，超额认购并扩大了规模。贝莱德管理的基金和账户、高盛资产管理，以及 KKR 提供建议的资本账户做了锚定认购。高盛是唯一的结构安排方。\n\n440 亿美元是整个结构，包括私募的几档。周四新闻里的约 320 亿美元，是按报道分成三档公开银团发行的部分。\n\n按报道，约 260 亿美元在周四 A-3 档最后 60 亿美元推出之前就已有认购承诺。据彭博报道，这些票据有 CUSIP 代码，可以立即在合格机构投资者之间交易。TheValueist 认为，这个设计让它们进入公司债买家的视野，没有把它们留在私募市场。\n\nA-2 和 A-3 之间大约 60 个基点的差价，来自期限差异，与受偿顺序无关：两档都是优先级有担保，初步评级相同，但 A-2 在 2031 年 4 月到期，落在约 2032 年就陆续摊还完的租赁明细表之内；A-3 到 2033 年 4 月，超出了明细表期限。A-3 规模 251.7 亿美元，接近 A-2 的六倍，是必须由市场消化的那一档。B 档虽然是次级，在同样 2033 年到期的情况下，收益率只比 A-3 高约 10 个基点。\n\nA-3 的收益率对比当天美国投资级公司债平均收益率 5.95%，高出约 231 个基点。据彭博报道，这笔交易的定价比 SpaceX 自己 2026 年 6 月发行的债务宽约 100 个基点。\n\n报道中的整体方案还包括：高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，以及 SpaceX 的 70 亿美元租金预付款，对应约 473 亿美元的 GPU 及相关设备。报道称，贷款方坚持融资购买的芯片要留在地面数据中心，不能部署到轨道上；Apollo 的公告也把这次建设描述为地面设施。\n\n## 落在什么样的资产负债表上\n\nSpaceX 截至 2026 年 9 月 30 日季度的 10-Q 显示，资产负债表上已有约 388 亿美元债务和融资租赁，其中 129 亿美元是与 Valor Equity Partners 设备租赁相关的关联方债务，按售后回租失败处理入账。承诺函签于 2026 年 10 月 24 日，在这个季度结束之后，所以这些数字里还没有这笔租赁；它的会计处理要到年报里才首次出现。\n\n## 已知和未知\n\nTheValueist 的结论是：申报文件记录了这项承诺，约 400 亿美元本金，五年期、完全摊还的租赁明细表，KBRA 称这些义务是绝对且无条件的，前提是满足 8-K 列明的交割条件。报道给出了定价：优先级资金 7.66% 到 8.259%，次级 8.36%，都明显宽于投资级指数，也宽于 SpaceX 自己的收益率曲线。\n\n两边都还没披露的是：发行备忘录、各档票面利率，以及私募的 A-1、D、E 档规模。他认为，这个模板接下来要靠事实检验：会不会有第二个发行人照搬这个结构，利差又是多少。\n\n跟踪 AI 算力融资的投资者，可以把这笔交易的几个数字当作基准：A-3 比投资级指数宽约 231 个基点，比 SpaceX 自身债务宽约 100 个基点，残值风险由投资者承担。下一笔类似的 GPU 租赁证券化出来时，可以拿这几项直接对比。", "html": "<p>新闻标题说这是一笔 320 亿美元的债券发行。TheValueist 翻了 SpaceX 的申报文件和评级、定价材料后认为，文件讲的故事更精确，也更单薄：结构有文件记录，公开发行部分的定价有报道，而整个融资结构比这两个数字都大。</p>\n<h2>8-K 里写了什么：一份约 400 亿美元的融资租赁</h2>\n<p>SpaceX 2026 年 10 月 26 日提交的 8-K（第 8.01 项）披露，公司在 10 月 24 日签了一份有约束力的承诺函，与 Apollo Global Management 管理的一个实体做主融资租赁：</p>\n<ul>\n<li>出租方购买 GPU 机柜（pods）及相关设备，租给 SpaceX，用在 SpaceX 选定的数据中心；</li>\n<li>设备分批交付，每批有自己的租赁明细表，期限从起租日起约五年到五年零一个季度；</li>\n<li>租金按季预付：每期为该批融资成本的二十分之一，加上按固定年利率计算的未偿租赁余额利息，再加某些持续性成本和费用，固定利率在定价时确定；</li>\n<li>各明细表的本金支付合计预计约 400 亿美元；</li>\n<li>签署租赁需满足交割条件，预计 2026 年底前完成；明细表在设备交付时起算，预计交付在 2027 年上半年。</li>\n</ul>\n<p>8-K 没有写发行信托的名字、票据分级，也没有任何价格。</p>\n<h2>发行人是谁，结构怎么搭</h2>\n<p>KBRA 2026 年 11 月 16 日的初步评级公告点出了发行人：Saturn Funding Trust，一家新成立、破产隔离的特殊目的实体，是 WHCO Intermediate Holdings LP 间接全资持有的子公司。WHCO 是一家已有的第三方资产支持贷款机构，与 SpaceX 无关联。</p>\n<ul>\n<li>信托为 SpaceX 的算力业务融资购买英伟达 Vera Rubin NVL72 GPU 设备。</li>\n<li>租约是三净租约（triple-net），且为“无论如何都要付”（hell-or-high-water）条款，按季付款，用于完全摊还债务。无论设备状况如何，SpaceX 都要付租金。按彭博报道的投资者推介材料，SpaceX 不为设备残值提供担保：租期结束时芯片值多少钱，风险落在信托和投资者身上。</li>\n<li>资本结构从上到下是 A-1、A-2、A-3 三档优先级有担保票据，然后是 B 档次级有担保票据，再往下是 D 档和 E 档。</li>\n<li>KBRA 给约 272 亿美元的 A-2、A-3 档和 24 亿美元的 B 档初步评级 A-。</li>\n<li>KBRA 表示，评级主要由企业锚定方也就是 SpaceX 本身决定，并把杠杆率持续高于 3.5 倍列为降级敏感因素。</li>\n</ul>\n<p>EDGAR 上没有信托本身的申报。这是一个 144A 规则下的结构，发行备忘录不公开。</p>\n<h2>各档票据</h2>\n<ul>\n<li><strong>A-1 档</strong>：优先级有担保，是整个结构里记录最少的一块。它只出现在 KBRA 不公开全文的初步评级报告里；KBRA 的公告没提它，也没给它评级；Apollo 的定价公告完全没有分档明细；定价报道里也看不到它的规模、期限或价格。定价前的报道提到，整体方案包括一笔由高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，但这笔贷款是不是 A-1 档，没有公开信息。</li>\n<li><strong>A-2 档</strong>：约 44 亿美元优先级有担保票据，2031 年 4 月到期，定价收益率 7.66%，KBRA 初步评级 A-。</li>\n<li><strong>A-3 档</strong>：251.7 亿美元优先级有担保票据，2033 年 4 月到期，定价收益率 8.259%，KBRA 初步评级 A-。</li>\n<li><strong>B 档</strong>：25.64 亿美元次级有担保票据，2033 年 4 月到期，定价收益率 8.36%，KBRA 初步评级 A-。它排在 A 档之后、D 和 E 档之前，靠 D、E 档的次级保护以及一项单独的无担保差额回收分配获得支撑。</li>\n<li><strong>D 档和 E 档</strong>：结构最底层，私人持有，规模和定价未公开。它们和 A-1 档一起，构成 440 亿美元总额里三个公开发行档之外的约 119 亿美元。</li>\n</ul>\n<p>A-2、A-3 和 B 档是公开银团发行，A-1、D、E 档是私募。</p>\n<h2>定价：比投资级指数宽约 231 个基点</h2>\n<p>Apollo 和高盛 2026 年 11 月 20 日宣布，各档优先级和次级票据合计约 440 亿美元完成定价，超额认购并扩大了规模。贝莱德管理的基金和账户、高盛资产管理，以及 KKR 提供建议的资本账户做了锚定认购。高盛是唯一的结构安排方。</p>\n<p>440 亿美元是整个结构，包括私募的几档。周四新闻里的约 320 亿美元，是按报道分成三档公开银团发行的部分。</p>\n<p>按报道，约 260 亿美元在周四 A-3 档最后 60 亿美元推出之前就已有认购承诺。据彭博报道，这些票据有 CUSIP 代码，可以立即在合格机构投资者之间交易。TheValueist 认为，这个设计让它们进入公司债买家的视野，没有把它们留在私募市场。</p>\n<p>A-2 和 A-3 之间大约 60 个基点的差价，来自期限差异，与受偿顺序无关：两档都是优先级有担保，初步评级相同，但 A-2 在 2031 年 4 月到期，落在约 2032 年就陆续摊还完的租赁明细表之内；A-3 到 2033 年 4 月，超出了明细表期限。A-3 规模 251.7 亿美元，接近 A-2 的六倍，是必须由市场消化的那一档。B 档虽然是次级，在同样 2033 年到期的情况下，收益率只比 A-3 高约 10 个基点。</p>\n<p>A-3 的收益率对比当天美国投资级公司债平均收益率 5.95%，高出约 231 个基点。据彭博报道，这笔交易的定价比 SpaceX 自己 2026 年 6 月发行的债务宽约 100 个基点。</p>\n<p>报道中的整体方案还包括：高盛牵头、准备向银行银团化的 83 亿美元优先级有担保贷款，以及 SpaceX 的 70 亿美元租金预付款，对应约 473 亿美元的 GPU 及相关设备。报道称，贷款方坚持融资购买的芯片要留在地面数据中心，不能部署到轨道上；Apollo 的公告也把这次建设描述为地面设施。</p>\n<h2>落在什么样的资产负债表上</h2>\n<p>SpaceX 截至 2026 年 9 月 30 日季度的 10-Q 显示，资产负债表上已有约 388 亿美元债务和融资租赁，其中 129 亿美元是与 Valor Equity Partners 设备租赁相关的关联方债务，按售后回租失败处理入账。承诺函签于 2026 年 10 月 24 日，在这个季度结束之后，所以这些数字里还没有这笔租赁；它的会计处理要到年报里才首次出现。</p>\n<h2>已知和未知</h2>\n<p>TheValueist 的结论是：申报文件记录了这项承诺，约 400 亿美元本金，五年期、完全摊还的租赁明细表，KBRA 称这些义务是绝对且无条件的，前提是满足 8-K 列明的交割条件。报道给出了定价：优先级资金 7.66% 到 8.259%，次级 8.36%，都明显宽于投资级指数，也宽于 SpaceX 自己的收益率曲线。</p>\n<p>两边都还没披露的是：发行备忘录、各档票面利率，以及私募的 A-1、D、E 档规模。他认为，这个模板接下来要靠事实检验：会不会有第二个发行人照搬这个结构，利差又是多少。</p>\n<p>跟踪 AI 算力融资的投资者，可以把这笔交易的几个数字当作基准：A-3 比投资级指数宽约 231 个基点，比 SpaceX 自身债务宽约 100 个基点，残值风险由投资者承担。下一笔类似的 GPU 租赁证券化出来时，可以拿这几项直接对比。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Tomasz Tunguz：Anthropic 和 SpaceX 撞上同一堵“10 倍墙”</title>
+      <link>https://karuio.github.io/a/ttunguz-the-10x-wall</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/ttunguz-the-10x-wall</guid>
+      <pubDate>Fri, 20 Nov 2026 17:49:03 +0000</pubDate>
+      <author>Tomasz Tunguz</author>
+      <description><![CDATA[<p><em>两家市值、收入接近，远期市销率都是 9.5 倍，增速却是同行中位数的十倍。他认为万亿美元以上的公司都被 20 到 26 倍市盈率锚住，倍数扩张已结束，只能靠长出利润。</em></p>
+<h2>中文改写</h2>
+<p>Anthropic 和 SpaceX，史上最大的两笔 IPO，市值相差不到 15%，过去 12 个月收入相差不到 10%，按远期收入算的估值倍数都是 9.5 倍。Tomasz Tunguz 说它们看起来像一对双胞胎，而且都撞上了同一堵“10 倍墙”。</p>
+<h2>增速高出一截，倍数却一样</h2>
+<p>Tunguz 写道，SpaceX 的预期增速比 Anthropic 快 46%，市场给两家的倍数却同样是 9.5 倍。</p>
+<p>Tunguz 把它们放进 24 家大市值软件和基础设施公司里比：两家的估值倍数都在中间位置，增速却是中位数的大约十倍。</p>
+<p>按他的说法，两家的增长比历史上任何一家软件公司都快，公开市场却没有按远期收入倍数给它们定价，<strong>估值水平和增速 20% 的公司差不多，配不上 200% 以上的增速</strong>。</p>
+<p>原文配图显示，在 EV 超过 500 亿美元的科技和 SaaS 公司里，ANT 标注为 11.4 倍、增速 +288%，SPCX 为 11.0 倍、+272%，对照组中位数约 8.9 倍、增速约 27%。图里的倍数口径是 EV/未来 12 个月销售额，和正文的 9.5 倍数字不同，原文没有解释两者差异。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_10x_scatter"><img src="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg" alt="图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>万亿美元以上，没人能突破 10 倍</h2>
+<p>把范围扩大到万亿美元级的超大规模云厂商，上限很明显：<strong>企业价值超过 1 万亿美元后，没有一家公司的远期市销率明显高于 10 倍</strong>，不管增速是 16% 还是 466%。</p>
+<h2>真正的锚是市盈率</h2>
+<p>Tunguz 认为真正起作用的是市盈率。所有万亿美元级的超大规模云厂商，市盈率都挤在 20 到 26 倍这个窄区间里。以微软 41% 的净利率算，26 倍市盈率对应的远期市销率上限接近 10 倍；以 Meta 和谷歌的利润率算，20 倍市盈率对应的上限接近 5 倍。</p>
+<p>原文第二张图按过去 12 个月 EV/净利润（谷歌用远期市盈率）列出了各家的倍数：Palantir 94 倍、Shopify 76 倍、ServiceNow 67 倍、博通 40 倍、苹果 38 倍、微软 26 倍、亚马逊 22 倍、谷歌 20 倍、Meta 20 倍、英伟达 14 倍。图注说明 Anthropic 和 SpaceX 目前按 GAAP 口径仍在亏损。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_10x_pe"><img src="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png" alt="图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>只剩一条路：长进利润里</h2>
+<p>他的结论是，公开市场并没有在争论 Anthropic 和 SpaceX 谁的生意更好。到了万亿美元规模，估值倍数扩张已经结束，两只股票想继续复利增长，只能靠业务增长把利润做出来。</p>
+<p>对持有或打算买入这两只股票的投资者，Tunguz 的框架给了一个简单的检验：别指望倍数再往上走，回报要看收入能否转成利润，把 20 到 26 倍的市盈率撑住。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图；未核验其与具体段落的对应关系。</p><figure data-media-id="img_tunguz_10x_cover"><img src="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>The 10x Wall</em></p>
+<figure data-media-id="img_tunguz_10x_cover"><img src="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_10x_scatter"><img src="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg" alt="图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_10x_pe"><img src="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png" alt="图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>The 10x Wall
+The two largest IPOs in history look like twins.
+Anthropic &amp; SpaceX trade within 15% of each other's market cap, generate within 10% of the same trailing revenue, &amp; are valued on an identical forward multiple of 9.5x.</p>
+<p>Curiously, SpaceX is projected to grow 46% faster than Anthropic, yet the market pays the same 9.5x multiple for both.</p>
+<p>Across 24 mega-cap software &amp; infrastructure names, both trade in the middle of the pack with roughly ten times the median growth.
+Even though both are growing faster than any software company in history, public markets are not valuing them on forward revenue multiples. They are valued like companies growing 20%, not 200%+.
+Expand the lens to the trillion-dollar hyperscalers, &amp; the ceiling is unmistakable : above $1t of enterprise value, no company trades much above 10x forward sales, regardless of whether it grows 16% or 466%.</p>
+<p>P/E is the real anchor. Every trillion-dollar hyperscaler trades in a tight 20x to 26x earnings band. At Microsoft's 41% net margin, 26x earnings caps forward revenue near 10x ; at Meta &amp; Google's margins, 20x earnings caps it near 5x.</p>
+<p>Public markets are not debating whether Anthropic or SpaceX is the better business : at trillion-dollar scale, multiple expansion is over, &amp; the only way either stock compounds is by growing into the earnings.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2123836032840028271">https://x.com/ttunguz/status/2123836032840028271</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>两家市值、收入接近，远期市销率都是 9.5 倍，增速却是同行中位数的十倍。他认为万亿美元以上的公司都被 20 到 26 倍市盈率锚住，倍数扩张已结束，只能靠长出利润。</em></p>
+<h2>中文改写</h2>
+<p>Anthropic 和 SpaceX，史上最大的两笔 IPO，市值相差不到 15%，过去 12 个月收入相差不到 10%，按远期收入算的估值倍数都是 9.5 倍。Tomasz Tunguz 说它们看起来像一对双胞胎，而且都撞上了同一堵“10 倍墙”。</p>
+<h2>增速高出一截，倍数却一样</h2>
+<p>Tunguz 写道，SpaceX 的预期增速比 Anthropic 快 46%，市场给两家的倍数却同样是 9.5 倍。</p>
+<p>Tunguz 把它们放进 24 家大市值软件和基础设施公司里比：两家的估值倍数都在中间位置，增速却是中位数的大约十倍。</p>
+<p>按他的说法，两家的增长比历史上任何一家软件公司都快，公开市场却没有按远期收入倍数给它们定价，<strong>估值水平和增速 20% 的公司差不多，配不上 200% 以上的增速</strong>。</p>
+<p>原文配图显示，在 EV 超过 500 亿美元的科技和 SaaS 公司里，ANT 标注为 11.4 倍、增速 +288%，SPCX 为 11.0 倍、+272%，对照组中位数约 8.9 倍、增速约 27%。图里的倍数口径是 EV/未来 12 个月销售额，和正文的 9.5 倍数字不同，原文没有解释两者差异。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_10x_scatter"><img src="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg" alt="图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>万亿美元以上，没人能突破 10 倍</h2>
+<p>把范围扩大到万亿美元级的超大规模云厂商，上限很明显：<strong>企业价值超过 1 万亿美元后，没有一家公司的远期市销率明显高于 10 倍</strong>，不管增速是 16% 还是 466%。</p>
+<h2>真正的锚是市盈率</h2>
+<p>Tunguz 认为真正起作用的是市盈率。所有万亿美元级的超大规模云厂商，市盈率都挤在 20 到 26 倍这个窄区间里。以微软 41% 的净利率算，26 倍市盈率对应的远期市销率上限接近 10 倍；以 Meta 和谷歌的利润率算，20 倍市盈率对应的上限接近 5 倍。</p>
+<p>原文第二张图按过去 12 个月 EV/净利润（谷歌用远期市盈率）列出了各家的倍数：Palantir 94 倍、Shopify 76 倍、ServiceNow 67 倍、博通 40 倍、苹果 38 倍、微软 26 倍、亚马逊 22 倍、谷歌 20 倍、Meta 20 倍、英伟达 14 倍。图注说明 Anthropic 和 SpaceX 目前按 GAAP 口径仍在亏损。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_10x_pe"><img src="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png" alt="图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>只剩一条路：长进利润里</h2>
+<p>他的结论是，公开市场并没有在争论 Anthropic 和 SpaceX 谁的生意更好。到了万亿美元规模，估值倍数扩张已经结束，两只股票想继续复利增长，只能靠业务增长把利润做出来。</p>
+<p>对持有或打算买入这两只股票的投资者，Tunguz 的框架给了一个简单的检验：别指望倍数再往上走，回报要看收入能否转成利润，把 20 到 26 倍的市盈率撑住。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图；未核验其与具体段落的对应关系。</p><figure data-media-id="img_tunguz_10x_cover"><img src="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>The 10x Wall</em></p>
+<figure data-media-id="img_tunguz_10x_cover"><img src="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_10x_scatter"><img src="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg" alt="图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_10x_pe"><img src="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png" alt="图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）"><figcaption><a href="https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>The 10x Wall
+The two largest IPOs in history look like twins.
+Anthropic &amp; SpaceX trade within 15% of each other's market cap, generate within 10% of the same trailing revenue, &amp; are valued on an identical forward multiple of 9.5x.</p>
+<p>Curiously, SpaceX is projected to grow 46% faster than Anthropic, yet the market pays the same 9.5x multiple for both.</p>
+<p>Across 24 mega-cap software &amp; infrastructure names, both trade in the middle of the pack with roughly ten times the median growth.
+Even though both are growing faster than any software company in history, public markets are not valuing them on forward revenue multiples. They are valued like companies growing 20%, not 200%+.
+Expand the lens to the trillion-dollar hyperscalers, &amp; the ceiling is unmistakable : above $1t of enterprise value, no company trades much above 10x forward sales, regardless of whether it grows 16% or 466%.</p>
+<p>P/E is the real anchor. Every trillion-dollar hyperscaler trades in a tight 20x to 26x earnings band. At Microsoft's 41% net margin, 26x earnings caps forward revenue near 10x ; at Meta &amp; Google's margins, 20x earnings caps it near 5x.</p>
+<p>Public markets are not debating whether Anthropic or SpaceX is the better business : at trillion-dollar scale, multiple expansion is over, &amp; the only way either stock compounds is by growing into the earnings.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2123836032840028271">https://x.com/ttunguz/status/2123836032840028271</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "The 10x Wall", "url": "https://x.com/ttunguz/status/2123836032840028271", "lang": "en", "html": "<h2>The 10x Wall</h2>\n<figure data-media-id=\"img_tunguz_10x_cover\"><img src=\"https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_10x_scatter\"><img src=\"https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg\" alt=\"图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_10x_pe\"><img src=\"https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png\" alt=\"图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>The 10x Wall\nThe two largest IPOs in history look like twins.\nAnthropic &amp; SpaceX trade within 15% of each other's market cap, generate within 10% of the same trailing revenue, &amp; are valued on an identical forward multiple of 9.5x.</p>\n<p>Curiously, SpaceX is projected to grow 46% faster than Anthropic, yet the market pays the same 9.5x multiple for both.</p>\n<p>Across 24 mega-cap software &amp; infrastructure names, both trade in the middle of the pack with roughly ten times the median growth.\nEven though both are growing faster than any software company in history, public markets are not valuing them on forward revenue multiples. They are valued like companies growing 20%, not 200%+.\nExpand the lens to the trillion-dollar hyperscalers, &amp; the ceiling is unmistakable : above $1t of enterprise value, no company trades much above 10x forward sales, regardless of whether it grows 16% or 466%.</p>\n<p>P/E is the real anchor. Every trillion-dollar hyperscaler trades in a tight 20x to 26x earnings band. At Microsoft's 41% net margin, 26x earnings caps forward revenue near 10x ; at Meta &amp; Google's margins, 20x earnings caps it near 5x.</p>\n<p>Public markets are not debating whether Anthropic or SpaceX is the better business : at trillion-dollar scale, multiple expansion is over, &amp; the only way either stock compounds is by growing into the earnings.\nOriginally published on tomtunguz.com.</p>\n<p>原文链接：<a href=\"https://x.com/ttunguz/status/2123836032840028271\">https://x.com/ttunguz/status/2123836032840028271</a></p>"}, "rewrite": {"title": "Tomasz Tunguz：Anthropic 和 SpaceX 撞上同一堵“10 倍墙”", "markdown": "Anthropic 和 SpaceX，史上最大的两笔 IPO，市值相差不到 15%，过去 12 个月收入相差不到 10%，按远期收入算的估值倍数都是 9.5 倍。Tomasz Tunguz 说它们看起来像一对双胞胎，而且都撞上了同一堵“10 倍墙”。\n\n## 增速高出一截，倍数却一样\n\nTunguz 写道，SpaceX 的预期增速比 Anthropic 快 46%，市场给两家的倍数却同样是 9.5 倍。\n\nTunguz 把它们放进 24 家大市值软件和基础设施公司里比：两家的估值倍数都在中间位置，增速却是中位数的大约十倍。\n\n按他的说法，两家的增长比历史上任何一家软件公司都快，公开市场却没有按远期收入倍数给它们定价，**估值水平和增速 20% 的公司差不多，配不上 200% 以上的增速**。\n\n原文配图显示，在 EV 超过 500 亿美元的科技和 SaaS 公司里，ANT 标注为 11.4 倍、增速 +288%，SPCX 为 11.0 倍、+272%，对照组中位数约 8.9 倍、增速约 27%。图里的倍数口径是 EV/未来 12 个月销售额，和正文的 9.5 倍数字不同，原文没有解释两者差异。\n\n![图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）](<https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg>)\n\n## 万亿美元以上，没人能突破 10 倍\n\n把范围扩大到万亿美元级的超大规模云厂商，上限很明显：**企业价值超过 1 万亿美元后，没有一家公司的远期市销率明显高于 10 倍**，不管增速是 16% 还是 466%。\n\n## 真正的锚是市盈率\n\nTunguz 认为真正起作用的是市盈率。所有万亿美元级的超大规模云厂商，市盈率都挤在 20 到 26 倍这个窄区间里。以微软 41% 的净利率算，26 倍市盈率对应的远期市销率上限接近 10 倍；以 Meta 和谷歌的利润率算，20 倍市盈率对应的上限接近 5 倍。\n\n原文第二张图按过去 12 个月 EV/净利润（谷歌用远期市盈率）列出了各家的倍数：Palantir 94 倍、Shopify 76 倍、ServiceNow 67 倍、博通 40 倍、苹果 38 倍、微软 26 倍、亚马逊 22 倍、谷歌 20 倍、Meta 20 倍、英伟达 14 倍。图注说明 Anthropic 和 SpaceX 目前按 GAAP 口径仍在亏损。\n\n![图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）](<https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png>)\n\n## 只剩一条路：长进利润里\n\n他的结论是，公开市场并没有在争论 Anthropic 和 SpaceX 谁的生意更好。到了万亿美元规模，估值倍数扩张已经结束，两只股票想继续复利增长，只能靠业务增长把利润做出来。\n\n对持有或打算买入这两只股票的投资者，Tunguz 的框架给了一个简单的检验：别指望倍数再往上走，回报要看收入能否转成利润，把 20 到 26 倍的市盈率撑住。\n\n### 原文附带媒体\n\n原文封面图；未核验其与具体段落的对应关系。\n\n![原文封面图](<https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg>)", "html": "<p>Anthropic 和 SpaceX，史上最大的两笔 IPO，市值相差不到 15%，过去 12 个月收入相差不到 10%，按远期收入算的估值倍数都是 9.5 倍。Tomasz Tunguz 说它们看起来像一对双胞胎，而且都撞上了同一堵“10 倍墙”。</p>\n<h2>增速高出一截，倍数却一样</h2>\n<p>Tunguz 写道，SpaceX 的预期增速比 Anthropic 快 46%，市场给两家的倍数却同样是 9.5 倍。</p>\n<p>Tunguz 把它们放进 24 家大市值软件和基础设施公司里比：两家的估值倍数都在中间位置，增速却是中位数的大约十倍。</p>\n<p>按他的说法，两家的增长比历史上任何一家软件公司都快，公开市场却没有按远期收入倍数给它们定价，<strong>估值水平和增速 20% 的公司差不多，配不上 200% 以上的增速</strong>。</p>\n<p>原文配图显示，在 EV 超过 500 亿美元的科技和 SaaS 公司里，ANT 标注为 11.4 倍、增速 +288%，SPCX 为 11.0 倍、+272%，对照组中位数约 8.9 倍、增速约 27%。图里的倍数口径是 EV/未来 12 个月销售额，和正文的 9.5 倍数字不同，原文没有解释两者差异。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_10x_scatter\"><img src=\"https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg\" alt=\"图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>万亿美元以上，没人能突破 10 倍</h2>\n<p>把范围扩大到万亿美元级的超大规模云厂商，上限很明显：<strong>企业价值超过 1 万亿美元后，没有一家公司的远期市销率明显高于 10 倍</strong>，不管增速是 16% 还是 466%。</p>\n<h2>真正的锚是市盈率</h2>\n<p>Tunguz 认为真正起作用的是市盈率。所有万亿美元级的超大规模云厂商，市盈率都挤在 20 到 26 倍这个窄区间里。以微软 41% 的净利率算，26 倍市盈率对应的远期市销率上限接近 10 倍；以 Meta 和谷歌的利润率算，20 倍市盈率对应的上限接近 5 倍。</p>\n<p>原文第二张图按过去 12 个月 EV/净利润（谷歌用远期市盈率）列出了各家的倍数：Palantir 94 倍、Shopify 76 倍、ServiceNow 67 倍、博通 40 倍、苹果 38 倍、微软 26 倍、亚马逊 22 倍、谷歌 20 倍、Meta 20 倍、英伟达 14 倍。图注说明 Anthropic 和 SpaceX 目前按 GAAP 口径仍在亏损。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_10x_pe\"><img src=\"https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png\" alt=\"图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）\"><figcaption><a href=\"https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>只剩一条路：长进利润里</h2>\n<p>他的结论是，公开市场并没有在争论 Anthropic 和 SpaceX 谁的生意更好。到了万亿美元规模，估值倍数扩张已经结束，两只股票想继续复利增长，只能靠业务增长把利润做出来。</p>\n<p>对持有或打算买入这两只股票的投资者，Tunguz 的框架给了一个简单的检验：别指望倍数再往上走，回报要看收入能否转成利润，把 20 到 26 倍的市盈率撑住。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文封面图；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_tunguz_10x_cover\"><img src=\"https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
     <item>
       <title>Rush Doshi：民主党该保留众议院中国特别委员会，换成五项新任务</title>
       <link>https://karuio.github.io/a/doshi-repurpose-china-select-committee</link>

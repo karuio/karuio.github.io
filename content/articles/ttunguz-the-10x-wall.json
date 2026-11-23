@@ -1,0 +1,68 @@
+{
+  "id": "ttunguz-the-10x-wall",
+  "date": "2026-11-20",
+  "published_at": "2026-11-20T17:49:03+00:00",
+  "ingested_at": "2026-11-23T08:35:00+08:00",
+  "sector": "SaaS/云",
+  "source": {
+    "type": "x_article",
+    "url": "https://x.com/ttunguz/status/2123836032840028271",
+    "author": "Tomasz Tunguz",
+    "handle": "ttunguz",
+    "title_en": "The 10x Wall"
+  },
+  "title": "Tomasz Tunguz：Anthropic 和 SpaceX 撞上同一堵“10 倍墙”",
+  "dek": "两家市值、收入接近，远期市销率都是 9.5 倍，增速却是同行中位数的十倍。他认为万亿美元以上的公司都被 20 到 26 倍市盈率锚住，倍数扩张已结束，只能靠长出利润。",
+  "tags": [
+    "Anthropic",
+    "SpaceX",
+    "IPO",
+    "估值"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "The 10x Wall",
+    "text_md": "The 10x Wall\nThe two largest IPOs in history look like twins.\nAnthropic & SpaceX trade within 15% of each other's market cap, generate within 10% of the same trailing revenue, & are valued on an identical forward multiple of 9.5x.\n \nCuriously, SpaceX is projected to grow 46% faster than Anthropic, yet the market pays the same 9.5x multiple for both.\n \nAcross 24 mega-cap software & infrastructure names, both trade in the middle of the pack with roughly ten times the median growth.\nEven though both are growing faster than any software company in history, public markets are not valuing them on forward revenue multiples. They are valued like companies growing 20%, not 200%+.\nExpand the lens to the trillion-dollar hyperscalers, & the ceiling is unmistakable : above $1t of enterprise value, no company trades much above 10x forward sales, regardless of whether it grows 16% or 466%.\n \nP/E is the real anchor. Every trillion-dollar hyperscaler trades in a tight 20x to 26x earnings band. At Microsoft's 41% net margin, 26x earnings caps forward revenue near 10x ; at Meta & Google's margins, 20x earnings caps it near 5x.\n \nPublic markets are not debating whether Anthropic or SpaceX is the better business : at trillion-dollar scale, multiple expansion is over, & the only way either stock compounds is by growing into the earnings.\nOriginally published on tomtunguz.com.",
+    "media": [
+      {
+        "id": "img_tunguz_10x_cover",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXlhMzYbsAAj8OF.jpg",
+        "alt": "原文封面图"
+      },
+      {
+        "id": "img_tunguz_10x_scatter",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXlhMReasAAJ0V0.jpg",
+        "alt": "图表：The Two Largest IPOs Trade as the Same Stock（EV/NTM sales vs forward revenue growth，Theory Ventures）"
+      },
+      {
+        "id": "img_tunguz_10x_pe",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXlhMgSbIAAHQDi.png",
+        "alt": "图表：Trillion-Dollar Hyperscalers Trade in a Tight 20x–26x Earnings Band（Theory Ventures，2026-11-20）"
+      }
+    ]
+  },
+  "body_md": "Anthropic 和 SpaceX，史上最大的两笔 IPO，市值相差不到 15%，过去 12 个月收入相差不到 10%，按远期收入算的估值倍数都是 9.5 倍。Tomasz Tunguz 说它们看起来像一对双胞胎，而且都撞上了同一堵“10 倍墙”。\n\n## 增速高出一截，倍数却一样\n\nTunguz 写道，SpaceX 的预期增速比 Anthropic 快 46%，市场给两家的倍数却同样是 9.5 倍。\n\nTunguz 把它们放进 24 家大市值软件和基础设施公司里比：两家的估值倍数都在中间位置，增速却是中位数的大约十倍。\n\n按他的说法，两家的增长比历史上任何一家软件公司都快，公开市场却没有按远期收入倍数给它们定价，**估值水平和增速 20% 的公司差不多，配不上 200% 以上的增速**。\n\n原文配图显示，在 EV 超过 500 亿美元的科技和 SaaS 公司里，ANT 标注为 11.4 倍、增速 +288%，SPCX 为 11.0 倍、+272%，对照组中位数约 8.9 倍、增速约 27%。图里的倍数口径是 EV/未来 12 个月销售额，和正文的 9.5 倍数字不同，原文没有解释两者差异。\n\n## 万亿美元以上，没人能突破 10 倍\n\n把范围扩大到万亿美元级的超大规模云厂商，上限很明显：**企业价值超过 1 万亿美元后，没有一家公司的远期市销率明显高于 10 倍**，不管增速是 16% 还是 466%。\n\n## 真正的锚是市盈率\n\nTunguz 认为真正起作用的是市盈率。所有万亿美元级的超大规模云厂商，市盈率都挤在 20 到 26 倍这个窄区间里。以微软 41% 的净利率算，26 倍市盈率对应的远期市销率上限接近 10 倍；以 Meta 和谷歌的利润率算，20 倍市盈率对应的上限接近 5 倍。\n\n原文第二张图按过去 12 个月 EV/净利润（谷歌用远期市盈率）列出了各家的倍数：Palantir 94 倍、Shopify 76 倍、ServiceNow 67 倍、博通 40 倍、苹果 38 倍、微软 26 倍、亚马逊 22 倍、谷歌 20 倍、Meta 20 倍、英伟达 14 倍。图注说明 Anthropic 和 SpaceX 目前按 GAAP 口径仍在亏损。\n\n## 只剩一条路：长进利润里\n\n他的结论是，公开市场并没有在争论 Anthropic 和 SpaceX 谁的生意更好。到了万亿美元规模，估值倍数扩张已经结束，两只股票想继续复利增长，只能靠业务增长把利润做出来。\n\n对持有或打算买入这两只股票的投资者，Tunguz 的框架给了一个简单的检验：别指望倍数再往上走，回报要看收入能否转成利润，把 20 到 26 倍的市盈率撑住。",
+  "rewrite_media": [
+    {
+      "media_id": "img_tunguz_10x_cover",
+      "placement": "after_body",
+      "placement_note": "原文封面图；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    },
+    {
+      "media_id": "img_tunguz_10x_scatter",
+      "placement": "after_paragraph",
+      "after_md": "原文配图显示，在 EV 超过 500 亿美元的科技和 SaaS 公司里，ANT 标注为 11.4 倍、增速 +288%，SPCX 为 11.0 倍、+272%，对照组中位数约 8.9 倍、增速约 27%。图里的倍数口径是 EV/未来 12 个月销售额，和正文的 9.5 倍数字不同，原文没有解释两者差异。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_tunguz_10x_pe",
+      "placement": "after_paragraph",
+      "after_md": "原文第二张图按过去 12 个月 EV/净利润（谷歌用远期市盈率）列出了各家的倍数：Palantir 94 倍、Shopify 76 倍、ServiceNow 67 倍、博通 40 倍、苹果 38 倍、微软 26 倍、亚马逊 22 倍、谷歌 20 倍、Meta 20 倍、英伟达 14 倍。图注说明 Anthropic 和 SpaceX 目前按 GAAP 口径仍在亏损。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

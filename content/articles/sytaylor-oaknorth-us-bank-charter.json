@@ -1,0 +1,44 @@
+{
+  "id": "sytaylor-oaknorth-us-bank-charter",
+  "date": "2026-11-20",
+  "published_at": "2026-11-20T14:34:56+00:00",
+  "ingested_at": "2026-11-23T08:35:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2123787178279051398",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter"
+  },
+  "title": "Simon Taylor：OakNorth 抢在 Revolut 和 Nubank 前拿到美国国家银行牌照",
+  "dek": "这家英国数字银行通过收购密歇根一家单网点银行，等了 20 个月获批；它专做年收入 500 万到 1 亿美元的中型企业，美国业务已占新增贷款的 40%。",
+  "tags": [
+    "数字银行",
+    "美国银行牌照",
+    "中型企业贷款",
+    "OakNorth"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter",
+    "text_md": "🚨 BREAKING: OakNorth just beat Revolut and Nubank to a US bank charter 🇬🇧\n\nBritish Bank @oaknorth announced today that the Fed and OCC have approved its purchase of Community Unity Bank in Michigan. It says it will be the first foreign digital bank to hold a US national bank charter.\n\n---\n\nOakNorth is one of the lesser-known (especially to US readers) UK digital banks, founded in 2015, that lends to businesses with $5m to $100m in revenue.\n\nTo date, it has lent $24bn over 11 years and made £223m in pre-tax profit in 2025, with a 26% efficiency ratio.\n\nAnd its progress in the US has been solid, accounting for 40% of its new lending, having lendt $3.5bn to American businesses since 2023, in loans of $5m to $50m.\n\nThe charter lets it add checking, savings and payments for those same customers (and fund its balance sheet)\n\n---\n\nThis announcement lands in the middle of a charter boom.\n\nClose to 50 firms have applied for a new US bank charter since January 2025. More than half want trust charters, mainly crypto and stablecoin firms.\n\nGlobal consumer Noebanks Revolut and Nubank both hold conditional approvals. Wise and bunq were turned down.\n\nOakNorth took a slower route. It agreed to buy a one-branch Michigan bank in March 2025 and waited 20 months for approval.\n\nIt's also chasing a different customer. Mid-market business lending is what regional and community banks historically did well, and the neobanks have mostly left it alone.\n\nJPMorgan estimates those firms are 3% of US businesses and 15-20% of US business revenue.\n\nAs a Brit, this is great to see.",
+    "media": [
+      {
+        "id": "img_sytaylor_oaknorth_card",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXk1I1sbYAESSbP.jpg",
+        "alt": "图片：OakNorth wins a US bank charter. Ahead of Revolut and Nubank.（Brainfood）"
+      }
+    ]
+  },
+  "body_md": "英国数字银行 OakNorth 宣布，美联储和美国货币监理署（OCC）批准了它收购密歇根州的 Community Unity Bank。OakNorth 称，它将成为第一家持有美国国家银行牌照的外国数字银行。Simon Taylor 的标题是：OakNorth 抢在 Revolut 和 Nubank 前面拿到了美国银行牌照。\n\n## 一家专做中型企业贷款的英国银行\n\n美国读者对 OakNorth 不太熟。它 2015 年成立，贷款对象是年收入 500 万到 1 亿美元的企业。\n\nTaylor 列出的数字：\n\n- 11 年累计放贷 240 亿美元；\n- 2025 年税前利润 2.23 亿英镑，成本收入比（efficiency ratio）26%；\n- 美国业务占其新增贷款的 40%，2023 年以来向美国企业放贷 35 亿美元，单笔 500 万到 5000 万美元。\n\n拿到牌照后，它可以给这些客户加上支票账户、储蓄和支付服务，也能用存款为资产负债表融资。\n\n## 赶上美国银行牌照热潮\n\n这项批准正赶上一轮牌照申请热潮。Taylor 写道，2025 年 1 月以来，有近 50 家公司申请了新的美国银行牌照，其中一半以上申请的是信托牌照，主要是加密和稳定币公司。\n\n面向全球消费者的数字银行 Revolut 和 Nubank 都拿到了有条件批准，Wise 和 bunq 被拒。\n\nOakNorth 走的是一条更慢的路：2025 年 3 月同意收购一家只有一个网点的密歇根银行，等了 20 个月才获批。\n\n它瞄准的客户也不同。中型企业贷款历来是地区银行和社区银行的强项，数字银行大多没碰。Taylor 引用摩根大通的估算：这类企业占美国企业数量的 3%，却贡献了美国企业收入的 15% 到 20%。\n\n他最后说，作为英国人，看到这个消息很高兴。\n\n想看清美国银行牌照格局的读者，可以把 OakNorth 和 Revolut、Nubank 放在一起比：OakNorth 收购现成的小银行、等了 20 个月，切入数字银行很少覆盖的中型企业贷款；Revolut 和 Nubank 目前拿到的是有条件批准。",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_oaknorth_card",
+      "placement": "after_paragraph",
+      "after_md": "英国数字银行 OakNorth 宣布，美联储和美国货币监理署（OCC）批准了它收购密歇根州的 Community Unity Bank。OakNorth 称，它将成为第一家持有美国国家银行牌照的外国数字银行。Simon Taylor 的标题是：OakNorth 抢在 Revolut 和 Nubank 前面拿到了美国银行牌照。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

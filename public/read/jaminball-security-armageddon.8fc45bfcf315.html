@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>Jamin Ball：AI 把漏洞变成攻击只需片刻，企业赶工打补丁反而更常宕机 · 他山</title><meta name="robots" content="noindex"></head><body><article class="article-reader" data-article-id="jaminball-security-armageddon">
+<a class="article-back" href="/">← 返回选刊</a>
+<header class="article-header"><p class="article-kicker">SaaS/云 / X Article · @jaminball</p><h1>Jamin Ball：AI 把漏洞变成攻击只需片刻，企业赶工打补丁反而更常宕机</h1><p class="article-dek">FAA 停飞、微软和摩根大通故障接连出现。他的直觉判断是：多数未必是网络攻击，而是各家为抢在 AI 生成的利用方式之前仓促打补丁；仓促补丁又会留下新漏洞。</p><div class="article-meta"><time datetime="2026-11-23">本站收录 2026年11月23日 · 周一</time><span>原文发布 2026年11月20日 · 周五</span><span>原作者：Jamin Ball</span><span>中文改写：<a href="/about">他山</a></span><span>网络安全 · AI 安全 · 补丁管理 · 宕机</span></div></header>
+<nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="https://x.com/jaminball/status/2123815768068587743" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
+<section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose"><p>FAA 全国停飞（Jamin Ball 说这是 9/11 之后的第二次），微软宕机，美联航宕机，摩根大通银行系统故障，NSA 的涉密网络瘫痪。Jamin Ball 在 Clouded Judgement 专栏里列了这一串事件，问了一句：安全末日是不是已经来了？</p>
+<p>他的观察是，最近安全事件和宕机的数量急剧上升。很多宕机到底只是宕机，还是网络攻击的一部分，并不总是说得清。目前大多数被描述为与网络攻击无关，他说时间会给出答案。他引用了 Bridgewater 一份报告里的图表，认为它把眼下的局面讲得很清楚。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><div class="original-media">
+<figure class="media-figure" data-media-id="img_jaminball_security_chart"><div class="media-frame"><img src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" data-original-src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" alt="图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/jaminball/status/2123815768068587743" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div></section>
+<p>他的判断是：<strong>眼下这些事件未必都和网络攻击有关，但真正的安全末日已经不远了。</strong></p>
+<h2>从“发现漏洞”到“写出利用”，中间的时间差消失了</h2>
+<p>Ball 先解释了两个概念。漏洞是代码里的弱点；利用（exploit）是借这个弱点去做有害的事，比如窃取数据、偷凭证。他也坦白，自己对这两个词的用法未必完全精确，只是在文中按这个意思使用。</p>
+<p>过去，从发现漏洞到出现可用的利用方式，需要时间，有时永远等不到。把一个漏洞变成真正的攻击手段并不容易。他举了前几周 PHP 的安全问题：这个漏洞早就为人所知，但一直被认为无法利用。</p>
+<p>结果是，大量已知漏洞因为被认为无关紧要而没人处理；新漏洞被发现时，安全团队也知道利用方式要过一段时间才会出现，于是有时间认真做补丁、认真规划打补丁的节奏。</p>
+<p>AI 改变了这两点：</p>
+<ul>
+<li>AI 能更快地找到漏洞；</li>
+<li>AI 还能几乎立刻把漏洞变成可用的攻击手段。</li>
+</ul>
+<p>所以，<strong>企业必须赶着修补每一个被发现的漏洞</strong>。很可能漏洞一曝光，利用方式就已经有了，没打补丁的软件多跑一秒，就多暴露一秒。</p>
+<h2>赶工打补丁，本身就在制造宕机</h2>
+<p>打补丁并不是“换个修好的库”那么简单。替换一段代码或一个软件，可能引发连锁问题：下游系统出错，旧版本没清干净，结果新旧并存。对大机构、大型 IT 系统来说，补丁管理本来就耗时，很难既周全又不引入新 bug 或新的宕机。</p>
+<p>Ball 说，现在没人有时间周全了。大家的做法变成了“快速行动，打破常规”：宁可仓促推一个补丁、承受一些停机，也不想暴露在攻击之下。</p>
+<p>这就是他对眼下局面的解释：**大大小小的组织都在赶着修补所有已知漏洞，过程中更频繁地把自己的系统弄坏，于是宕机变多。**他强调自己可能是错的，这只是一个直觉判断。</p>
+<h2>宕机只是前奏</h2>
+<p>他更担心后面的事。这些仓促的补丁会引入新的薄弱点和漏洞，而攻击者利用已知漏洞的能力会越来越强。按他的说法，现在只是安全末日的“宕机阶段”，更多攻击还在后面。</p>
+<p>对做 IT 和安全的团队来说，Ball 这篇文章提示的风险在两头：不打补丁会暴露在快速生成的攻击之下，仓促打补丁又会带来宕机和新漏洞。补丁节奏、回归测试和版本清点，需要按“漏洞曝光即可能已有利用”的前提重新安排。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图；未核验其与具体段落的对应关系。</p><div class="original-media">
+<figure class="media-figure" data-media-id="img_jaminball_security_cover"><div class="media-frame"><img src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" data-original-src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" alt="原文封面图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/jaminball/status/2123815768068587743" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div></section></div></section>
+<section class="reader-panel" id="original" data-reader-panel="original" aria-label="原文">
+<h2 class="section-heading">原文</h2><h3 class="original-title">Security Armageddon</h3>
+<div class="original-media">
+<figure class="media-figure" data-media-id="img_jaminball_security_cover"><div class="media-frame"><img src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" data-original-src="https://pbs.twimg.com/media/HXhnmn6bQAA8IEw.jpg" alt="原文封面图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/jaminball/status/2123815768068587743" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+<figure class="media-figure" data-media-id="img_jaminball_security_chart"><div class="media-frame"><img src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" data-original-src="https://pbs.twimg.com/media/HXhnc8XbYAAW5Dl.jpg" alt="图表：Estimated Total Cyber Incidents (60dma, Ann) 与 Verified AI-Enabled Cyber Incidents (60dma, Ann)，标注 GLM 5.3 Weight Release" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/jaminball/status/2123815768068587743" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div>
+<div class="prose" lang="en"><p>Security Armageddon
+From Clouded Judgement: Security Armageddon
+The amount of security incidents and outages has sky rocketed recently. On many of the outages, it’s not always clear if they were in fact just outages, or part of a cyber incident. For now, many of the outages are being described as non-cyber related. Time will tell. The chart below is a pretty clear articulation of the moment we’re in. The chart comes from a Bridgewater report you can find here</p>
+<p>FAA full ground stop (only second time after 9/11), Microsoft outage, United Airlines outage, JPMorgan banking failure, NSA classified network going down, etc etc. The list goes on. What’s happening? Is the security Armageddon here??
+For now, I don’t actually think these are all cyber related. BUT - we’re not far off from an actual security armageddon…
+Here’s what I think is happening. Historically, vulnerabilities were discovered, and then exploits from those vulnerabilities were discovered. But this took time. Sometimes infinite time. This is the difference - Think of a vulnerability as a weakness in code. An exploit is then using that weakness to take a harmful action (exfiltrate data, steal credentials, etc). And it wasn’t always easy to connect a vulnerability to an actual exploit. The PHP security issue the other week was the perfect example of this. The vulnerability has been known forever, but it was always thought an exploit wasn’t possible. I should add - I’m not sure if I’m using vulnerability / exploit perfectly, but I’ll use them in this context for this article.
+So in summary - there were plenty of known vulnerabilities that people didn’t do anything with because they were thought of as irrelevant. At the same time - when vulnerabilities were discovered, security teams know it would take time for an exploit to emerge. Which meant there was time to come up with a thoughtful patch, and a thoughtful patch plan.
+What’s happening now with AI:
+AI can find vulnerabilities much faster
+AI can then turn those vulnerabilities into workable exploits almost instantly
+What does this mean? It means companies have to RUSH to patch EVERY vulnerability that gets discovered. Odds are, by the time a vulnerability is discovered, an exploit is already available. And every second you have the non-patched software running you’re exposed.
+And it’s not easy to just “update with the patched library.” There are tons of cascading issues you can introduce by swapping out one piece of code / software for another. Downstream systems break, you don’t catch every version of the old software and are running duplicates, etc. Patch management, especially for larger orgs or bigger IT systems take time and are really hard to be done thoughtfully without introducing new bugs, or, outages.
+But no one has time to be thoughtful anymore. The mantra now is “move fast and break things” because you’d rather get a rushed patch out, suffer some downtime, then be vulnerable to an attack.
+Wrapping it all up - what I think is happening is every org, large and small, is rushing to patch all the known vulnerabilities, and in the process breaks their systems more frequently which causes outages. I could be wrong, this is just a hunch.
+I also think this is just a pre-cursor to the real issue…All of these rushed patches will introduce new weak spots and vulnerabilities. And the attackers will get better and better about exploiting known vulnerabilities. We’re only in the outages portion of the security Armageddon, but unfortunately I think more attacks are coming!</p></div>
+</section>
+<footer class="source-box"><span>内容来自原作者；中文为忠实改写，非逐字翻译。作者主张与已核实事实分开书写。</span><div><a href="https://x.com/jaminball/status/2123815768068587743" target="_blank" rel="noopener noreferrer">打开原文 ↗</a></div></footer>
+</article></body></html>

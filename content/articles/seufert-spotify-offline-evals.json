@@ -1,0 +1,45 @@
+{
+  "id": "seufert-spotify-offline-evals",
+  "date": "2026-11-22",
+  "published_at": "2026-11-22T15:12:02+00:00",
+  "ingested_at": "2026-11-23T08:35:00+08:00",
+  "sector": "消费互联网/能源数据中心",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/eric_seufert/status/2124521291357082072",
+    "author": "Eric Seufert",
+    "handle": "eric_seufert",
+    "title_en": "Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes.",
+    "related_url": "https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone"
+  },
+  "title": "Eric Seufert 读 Spotify 论文：什么时候能只凭离线评测就上线？",
+  "dek": "Spotify 用联合正态假设给离线评测设上线、砍掉两道门，中间区域才跑 A/B 测试。Seufert 认为关系稳定和实验同质两条假设很强，效果分布极度厚尾时，最后多半还是全送 A/B。",
+  "tags": [
+    "A/B 测试",
+    "离线评测",
+    "实验方法",
+    "Spotify"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes.",
+    "text_md": "Data teams are increasingly grappling with how to incorporate LLMs and other generative tools into their testing regimes. Online tests are slow, and they can be expensive to run, both in terms of opportunity / orchestration cost and actual money spent for things like creative testing. If an offline test can reliably predict the outcome of an online test, a team might prefer to rely only on that; it could iterate faster and at lower cost. But how can a team determine when an offline result is reliable enough to act on without running an A/B test?\n\nA great Saturday-Sunday morning coffee read from Spotify answers that question. In a blog post and accompanying paper, the team walks through a framework for establishing the predictability of online test effects from offline tests. They assume that true offline and online test effects are jointly normally distributed; based on that assumption, they construct a conditional probability distribution of the true online treatment effect given the observed offline eval treatment effect and construct decision gates at the tails for a chosen risk tolerance. The gates define regions in which a feature should be shipped or killed based on offline evals alone, and a middle area where an A/B test is needed.\n\nThe framework rests on several strong assumptions that are unlikely to hold for complex products with diverse user bases. The first is the stability of the relationship between offline and online effects, which I've written about in the past. The second is the homogeneity of experiment types, which could mask a Simpson's paradox issue where a strong relationship in the aggregate obscures weak or nonexistent relationships within individual classes of experiments.\n\nThese assumptions can be audited / monitored over time, but that might result with a system that is more fragile and cumbersome to manage than A/B test orchestration. A related issue I've encountered is that the distribution of effects can be so massively kurtotic that a single change accounts for most of the value. Missing that winner is so costly that the gate is ultimately tuned for 100% recall, regardless of precision. Unless offline predictions can confidently rule out those rare winners, everything goes to A/B test, anyway.\n\nI highly recommend reading both the blog post and the more technical paper. Both linked below.\n\n**Thread post, https://x.com/eric_seufert/status/2124521293936517243**\n\nWhen Can You Ship on Offline Evals Alone? https://engineering.atspotify.com/2026/11/when-can-you-ship-on-offline-evals-alone\n\nAccompanying paper: When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems https://arxiv.org/abs/2610.10142\n\nMy own contribution: DeCANT, a model architecture for creative pre-testing: \n\nIntroducing DeCANT, a context-conditioned, attention-based multimodal architecture for creative pre-testing https://mdm.co/introducing-decant-a-context-conditioned-attention-based-multimodal-architecture-for-creative-pre-testing/",
+    "media": [
+      {
+        "id": "img_seufert_spotify_thresholds",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HXvQinxWMAAHrVA.jpg",
+        "alt": "Figure 3: Thresholds for the offline eval effects needed to bound the risk of harm in the online effect for different strengths of the offline/online correlation（Strong relationship / Weak relationship）"
+      }
+    ]
+  },
+  "body_md": "线上 A/B 测试又慢又贵：要占用机会成本和编排成本，做广告素材测试时还要实打实花钱。如果离线评测能可靠预测线上测试的结果，团队就可以只靠离线结果做决定，迭代更快，成本更低。Eric Seufert 说，数据团队越来越多地在琢磨怎么把大模型和其他生成式工具纳入测试体系，核心问题是：**离线结果可靠到什么程度，才可以不跑 A/B 测试就直接行动？**\n\n他推荐了 Spotify 的一篇博客和配套论文，称之为很适合周末早上配咖啡读的材料，因为它正面回答了这个问题。\n\n## Spotify 的办法：用两道门把决策分成三段\n\n按 Seufert 的概括，Spotify 团队给出了一个框架，用来判断线上效果能在多大程度上从离线测试预测出来。\n\n他们假设离线和线上的真实效果服从联合正态分布。基于这个假设，可以写出“给定观测到的离线评测效果，真实线上效果的条件概率分布”，再按选定的风险容忍度，在分布两端设两道决策门：\n\n- 落在一端，只凭离线评测就可以上线；\n- 落在另一端，只凭离线评测就可以砍掉；\n- 落在中间，仍需跑 A/B 测试。\n\n原文附的图对比了两种情况：离线和线上关系强时，两端可以直接决策的区域更宽；关系弱时，几乎所有情况都要走 A/B 测试。\n\n## 他的保留意见：假设太强\n\nSeufert 认为，这个框架建立在几条很强的假设上，对用户群多样的复杂产品，这些假设不太可能成立。\n\n第一，离线效果和线上效果之间的关系要保持稳定。他说自己过去写过这个问题。\n\n第二，各类实验要足够同质。否则可能出现辛普森悖论：整体上看关系很强，拆到某一类实验里，关系很弱甚至不存在。\n\n这些假设可以持续审计和监控，但他担心，这样搭出来的系统可能比 A/B 测试编排更脆弱、更难管理。\n\n他还提到自己遇到过的情况：效果分布的峰度极高，一个改动就贡献了大部分价值。漏掉这个赢家的代价太大，决策门最后会被调成追求 100% 召回率，不管精确率如何。**除非离线预测能有把握地排除这些罕见的赢家，否则所有东西最后还是要送去 A/B 测试。**\n\n## 延伸材料\n\n他强烈推荐把博客和更偏技术的论文都读一遍，两者都附在回复里：Spotify 工程博客《When Can You Ship on Offline Evals Alone?》，论文《When Can You Ship on Evals Alone? Trial-Level Surrogacy for Offline Evaluation of LLM Systems》（arXiv 2610.10142）。他还附上了自己参与的工作 DeCANT，一个用于广告素材预测试、按上下文条件化、基于注意力的多模态模型架构。\n\n打算用离线评测替代部分 A/B 测试的团队，可以先检查 Seufert 点出的三件事：离线和线上效果的关系是否稳定，是否在各类实验里分别成立，以及效果分布里是否存在少数决定大部分价值的赢家。最后一条如果成立，按 Seufert 的经验，大部分改动最后还是得跑 A/B 测试。",
+  "rewrite_media": [
+    {
+      "media_id": "img_seufert_spotify_thresholds",
+      "placement": "after_paragraph",
+      "after_md": "原文附的图对比了两种情况：离线和线上关系强时，两端可以直接决策的区域更宽；关系弱时，几乎所有情况都要走 A/B 测试。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

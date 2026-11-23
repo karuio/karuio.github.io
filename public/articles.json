@@ -1,5 +1,95 @@
 [
   {
+    "id": "dotey-agent-verification",
+    "date": "2026-11-22",
+    "title": "宝玉：Agent 说“验证完了”怎么才能信？先定验收标准，再让它拿截图证明",
+    "dek": "他不建议依赖多个 Agent 互相挑错，而是先给清晰的验收标准和能自验的环境，尽早用原型和方案文档验方向，让 Agent 交截图对比，人只盯 P0、P1 问题。",
+    "url": "/a/dotey-agent-verification",
+    "source_url": "https://x.com/dotey/status/2124603209394078089",
+    "tags": [
+      "AI 编程",
+      "AI 代理",
+      "验收",
+      "代码审查"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "jaminball-security-armageddon",
+    "date": "2026-11-20",
+    "title": "Jamin Ball：AI 把漏洞变成攻击只需片刻，企业赶工打补丁反而更常宕机",
+    "dek": "FAA 停飞、微软和摩根大通故障接连出现。他的直觉判断是：多数未必是网络攻击，而是各家为抢在 AI 生成的利用方式之前仓促打补丁；仓促补丁又会留下新漏洞。",
+    "url": "/a/jaminball-security-armageddon",
+    "source_url": "https://x.com/jaminball/status/2123815768068587743",
+    "tags": [
+      "网络安全",
+      "AI 安全",
+      "补丁管理",
+      "宕机"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
+    "id": "seufert-spotify-offline-evals",
+    "date": "2026-11-22",
+    "title": "Eric Seufert 读 Spotify 论文：什么时候能只凭离线评测就上线？",
+    "dek": "Spotify 用联合正态假设给离线评测设上线、砍掉两道门，中间区域才跑 A/B 测试。Seufert 认为关系稳定和实验同质两条假设很强，效果分布极度厚尾时，最后多半还是全送 A/B。",
+    "url": "/a/seufert-spotify-offline-evals",
+    "source_url": "https://x.com/eric_seufert/status/2124521291357082072",
+    "tags": [
+      "A/B 测试",
+      "离线评测",
+      "实验方法",
+      "Spotify"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
+    "id": "sytaylor-oaknorth-us-bank-charter",
+    "date": "2026-11-20",
+    "title": "Simon Taylor：OakNorth 抢在 Revolut 和 Nubank 前拿到美国国家银行牌照",
+    "dek": "这家英国数字银行通过收购密歇根一家单网点银行，等了 20 个月获批；它专做年收入 500 万到 1 亿美元的中型企业，美国业务已占新增贷款的 40%。",
+    "url": "/a/sytaylor-oaknorth-us-bank-charter",
+    "source_url": "https://x.com/sytaylor/status/2123787178279051398",
+    "tags": [
+      "数字银行",
+      "美国银行牌照",
+      "中型企业贷款",
+      "OakNorth"
+    ],
+    "sector": "金融科技"
+  },
+  {
+    "id": "thevalueist-spacex-chip-financing",
+    "date": "2026-11-22",
+    "title": "TheValueist 拆 SpaceX 芯片融资：标题写 320 亿，整个结构是 440 亿",
+    "dek": "他对照 8-K、KBRA 评级公告和定价报道，拆出约 400 亿美元 GPU 租赁的分档、收益率和残值风险归属：A-3 档 8.259%，比投资级指数宽约 231 个基点；A-1、D、E 档规模仍未公开。",
+    "url": "/a/thevalueist-spacex-chip-financing",
+    "source_url": "https://x.com/TheValueist/status/2124367274543083889",
+    "tags": [
+      "SpaceX",
+      "GPU 融资",
+      "资产证券化",
+      "AI 基础设施"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
+    "id": "ttunguz-the-10x-wall",
+    "date": "2026-11-20",
+    "title": "Tomasz Tunguz：Anthropic 和 SpaceX 撞上同一堵“10 倍墙”",
+    "dek": "两家市值、收入接近，远期市销率都是 9.5 倍，增速却是同行中位数的十倍。他认为万亿美元以上的公司都被 20 到 26 倍市盈率锚住，倍数扩张已结束，只能靠长出利润。",
+    "url": "/a/ttunguz-the-10x-wall",
+    "source_url": "https://x.com/ttunguz/status/2123836032840028271",
+    "tags": [
+      "Anthropic",
+      "SpaceX",
+      "IPO",
+      "估值"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
     "id": "doshi-repurpose-china-select-committee",
     "date": "2026-11-19",
     "title": "Rush Doshi：民主党该保留众议院中国特别委员会，换成五项新任务",
