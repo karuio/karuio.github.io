@@ -1,0 +1,56 @@
+{
+  "id": "thevalueist-nvda-options-positioning",
+  "date": "2026-11-23",
+  "published_at": "2026-11-23T13:25:22+00:00",
+  "ingested_at": "2026-11-24T08:30:00+08:00",
+  "sector": "消费互联网/能源数据中心",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/TheValueist/status/2124856837174370439",
+    "author": "TheValueist",
+    "handle": "TheValueist",
+    "title_en": "$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF"
+  },
+  "title": "TheValueist 拆英伟达期权仓位：236 亿美元空头 Delta 多是实值看跌，反弹越涨压力越小",
+  "dek": "按上周五未平仓量、136.68 美元盘前价测算，看跌 Delta 名义值 -490 亿美元，约 -390 亿美元在 157 美元以上行权价，看涨整体净多。他认为反弹越往上越轻松，但下方看跌保护只有约 20 亿美元，再跌缺少期权盘承接。",
+  "tags": [
+    "英伟达",
+    "期权",
+    "仓位",
+    "市场结构"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF",
+    "text_md": "$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF\n\nTHE SETUP\n\n• Friday's close was $125.53, 47.5% below the trailing 12-month closing high. Monday's premarket print in this data is $136.68, up $11.15, +8.9%, a headline-driven bounce into the open.\n• What follows is Bloomberg option expiration data: open interest as of Friday's close, delta notional by strike and expiry, measured at the $136.68 print. Open interest shows the size and the sign of the delta in the complex. It does not show who holds it.\n\nTHE SHORT DELTA IS IN THE PUTS\n\n• The put book alone carries -$49B of delta notional. About -$39B of it sits above 115% moneyness, strikes of roughly $157 and higher: deep in-the-money puts, not overhead call supply. The 130-150% band, strikes of about $178 to $205, is -$12.4B, and above 150% there is another -$15.6B, about -$28B in total above the $178 line.\n• It is concentrated in the near columns: the 1-month put column is -$10.3B and the 2-month column is -$10.7B, about -$21B between them.\n• In-the-money put delta is largely mechanical. With the strike above spot, delta runs near -1 per contract, and as spot rises toward those strikes the delta bleeds off on its own. A rally shrinks this overhang instead of running into it.\n\nTHE CALL BOOK IS NET LONG\n\n• The combined book, calls and puts together, totals -$23.6B. Calls alone are therefore net long about +$25.4B of delta (combined minus puts). There is no written call wall in these screens.\n• Above 130% moneyness, calls alone are net positive about +$11.3B: +$3.9B in the $178 to $205 band and +$7.4B above it. Calls alone are also positive in the near columns, +$5.8B in the 1-month column and +$3.8B in the 2-month column.\n• The band just overhead, 110-120% moneyness at strikes of about $150 to $164, is -$5.9B combined, and the split matters: that is puts at -$8.8B against calls at +$2.9B. It is put delta, not call supply.\n\nBELOW SPOT\n\n• Outright put protection below spot is thin. The put book below 90% moneyness totals only about -$2.0B.\n• The combined book below 90% moneyness is +$4.4B, but that is deep in-the-money call delta, not downside hedging. At strikes under 50% moneyness in the 1-month column, puts are just -$54M against about +$947M of calls. This book is not heavily hedged for a fresh leg down either.\n\nTHE READ\n\n• Net, the entire NVIDIA options complex is short about $23.6B of delta, and the centre of gravity is mechanical in-the-money put delta that decays as spot rises toward the strikes. Strength erodes the short-delta overhang rather than feeding a wall of written calls, because there is no wall in these screens.\n• The repricing is visible between this morning's two prints. The same open interest measured at the $134.94 premarket print was -$50.8B in puts and -$26B combined; at $136.68 it is -$49B in puts and -$23.6B combined. Open interest has not changed, because it is Friday's close; the delta is repricing as spot rises, so the bleed-off is already showing up in the screens.\n• It cuts both ways. With only about $2.0B of put delta below 90% moneyness, the options book is not positioned to cushion a renewed selloff. The positioning argues for a bounce that gets easier as it climbs, and a break lower that meets little options-book support.\n• What would change the read: the in-the-money put block above $178 being closed or rolled down, or real put buying appearing below spot. Until one of those prints, the bounce is working against a shrinking overhang, not a fixed ceiling.",
+    "media": [
+      {
+        "id": "img_thevalueist_nvda_combined",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png",
+        "alt": "彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026"
+      },
+      {
+        "id": "img_thevalueist_nvda_puts",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png",
+        "alt": "彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026"
+      }
+    ]
+  },
+  "body_md": "上周五英伟达收在 125.53 美元，比过去 12 个月的收盘最高点低 47.5%。周一盘前报到 136.68 美元，涨 11.15 美元，涨幅 8.9%，TheValueist 称之为消息驱动的开盘反弹。\n\n他用彭博的期权到期数据，把英伟达整个期权盘的仓位拆了一遍，结论是：**期权盘净空约 236 亿美元 Delta，但大头是深度实值看跌期权，股价越涨，这块压力越小**。\n\n## 数据口径\n\n数据是上周五收盘时的未平仓量，按行权价和到期日列出 Delta 名义值，按 136.68 美元这个价位测算。下文的 moneyness 指行权价相对这个价位的比例，比如 115% 约等于 157 美元。\n\n他特别说明：未平仓量能显示期权盘 Delta 的规模和方向，**看不出是谁持有**。\n\n这篇帖子发于 UTC 时间 11 月 23 日 13:25（北京时间 21:25）。大约半小时后，他又发帖转述英伟达董事会恢复黄仁勋总裁兼 CEO 职务的消息，所以文中的价格都是这条消息公布之前的盘前价。\n\n## 空头 Delta 集中在看跌期权\n\n- 看跌期权单独计算，Delta 名义值是 -490 亿美元。其中约 -390 亿美元落在 115% moneyness 以上，也就是行权价约 157 美元及更高。他强调，这些是深度实值的看跌期权，并非上方有人大量卖出看涨。\n- 130% 到 150% 区间（行权价约 178 到 205 美元）是 -124 亿美元，150% 以上还有 -156 亿美元，178 美元以上合计约 -280 亿美元。\n- 集中在近月：1 个月列 -103 亿美元，2 个月列 -107 亿美元，两列合计约 -210 亿美元。\n\n实值看跌的 Delta 基本是机械性的。行权价高于现价时，每张合约的 Delta 接近 -1；现价往行权价方向涨，Delta 会自己衰减。所以他认为，**上涨会让这块压力自行缩小，股价不会一头撞上去**。\n\n## 看涨期权整体是净多\n\n- 看涨和看跌合计是 -236 亿美元，减去看跌的 -490 亿美元，看涨单独约为 +254 亿美元 Delta。这些截图里没有卖出看涨堆出来的“墙”。\n- 130% moneyness 以上，看涨单独净多约 +113 亿美元：178 到 205 美元区间 +39 亿美元，再往上 +74 亿美元。近月同样为正，1 个月列 +58 亿美元，2 个月列 +38 亿美元。\n\n紧贴现价上方的 110% 到 120% 区间（行权价约 150 到 164 美元），合计是 -59 亿美元。他强调拆开看很关键：看跌 -88 亿美元，看涨 +29 亿美元，这一段压着的仍然是看跌期权的 Delta，并没有大量卖出的看涨。\n\n## 下方几乎没有保护\n\n现价下方的直接看跌保护很薄。90% moneyness 以下，看跌期权合计只有约 -20 亿美元。\n\n同一区间的合计数是 +44 亿美元，但那来自深度实值看涨的 Delta，算不上下行对冲。1 个月列里 50% 以下的行权价，看跌只有 -5400 万美元，看涨约 +9.47 亿美元。他的判断是，这个期权盘也没有为新一轮下跌做多少对冲。\n\n## 他的解读\n\n整个期权盘净空约 236 亿美元 Delta，重心在机械性的实值看跌上，股价往行权价方向涨时它会衰减。走强只会侵蚀这部分空头 Delta，截图里也没有一堵卖出看涨的墙在上面接着。\n\n重定价已经能在数据里看到。同一份未平仓量，按 134.94 美元的盘前价测算，看跌是 -508 亿美元，合计 -260 亿美元；按 136.68 美元测算，看跌 -490 亿美元，合计 -236 亿美元。未平仓量没有变，都是上周五收盘的数，变的是现价上涨带来的 Delta 重估。\n\n这件事有两面。90% moneyness 以下只有约 20 亿美元的看跌 Delta，期权盘没有能力缓冲再一轮抛售。他认为这种仓位意味着：**反弹越往上越轻松，一旦往下破位，期权盘几乎没有支撑**。\n\n什么会改变这个判断？178 美元以上那一大块实值看跌被平仓或向下展期，或者现价下方出现真正的看跌买盘。在这两件事发生之前，他认为反弹面对的是一块不断缩小的压力，并非一个固定的天花板。\n\n## 接下来盯什么\n\n跟踪英伟达的投资者，可以盯他列出的两个信号：178 美元以上的实值看跌头寸是平仓还是下移，现价下方有没有出现新的看跌买盘。同时记住这份数据的边界：它只说明仓位的规模和方向，看不出持有人是谁，也看不出这些头寸是对冲还是投机。",
+  "rewrite_media": [
+    {
+      "media_id": "img_thevalueist_nvda_combined",
+      "placement": "after_paragraph",
+      "after_md": "紧贴现价上方的 110% 到 120% 区间（行权价约 150 到 164 美元），合计是 -59 亿美元。他强调拆开看很关键：看跌 -88 亿美元，看涨 +29 亿美元，这一段压着的仍然是看跌期权的 Delta，并没有大量卖出的看涨。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_thevalueist_nvda_puts",
+      "placement": "after_paragraph",
+      "after_md": "实值看跌的 Delta 基本是机械性的。行权价高于现价时，每张合约的 Delta 接近 -1；现价往行权价方向涨，Delta 会自己衰减。所以他认为，**上涨会让这块压力自行缩小，股价不会一头撞上去**。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

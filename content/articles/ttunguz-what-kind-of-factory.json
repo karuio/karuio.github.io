@@ -1,0 +1,57 @@
+{
+  "id": "ttunguz-what-kind-of-factory",
+  "date": "2026-11-23",
+  "published_at": "2026-11-23T16:36:40+00:00",
+  "ingested_at": "2026-11-24T08:30:00+08:00",
+  "sector": "SaaS/云",
+  "source": {
+    "type": "x_article",
+    "url": "https://x.com/ttunguz/status/2124904980847157611",
+    "author": "Tomasz Tunguz",
+    "handle": "ttunguz",
+    "title_en": "What Kind of Factory Will You Build?",
+    "related_url": "https://tomtunguz.com/what-kind-of-factory-will-you-build/"
+  },
+  "title": "Tomasz Tunguz：每个部门都会有自己的 AI 工厂，跑的是同一个四步循环",
+  "dek": "Notion 和 LangChain 同一天发文，描述的都是上下文、代理、执行轨迹、整理者四步循环。他认为后两步才让系统每周变好，而工厂难建在运营，买模型解决不了。",
+  "tags": [
+    "AI 代理",
+    "软件工厂",
+    "知识管理",
+    "工作方式"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "What Kind of Factory Will You Build?",
+    "text_md": "What Kind of Factory Will You Build?\nBefore AI, we wrote software line by line. After AI, the best engineering teams stopped writing code & started building software factories : systems that write, test, & ship the code for them.\nSo why don't other teams build factories?\nThey are. On November 21, Notion published \"A New Shape for Work\" & LangChain published \"How to Build a Knowledge Factory\". One is a manifesto, the other a build guide. Both describe the exact same four-step loop applied to company knowledge : context, agent, trace, curator.\nThis is the plan for shipping a factory.\n \nNotion puts it bluntly :\n\"This structure is among the most valuable IP any modern organization can have, because it defines the limit of what is possible for agents to do within that company.\"\nLangChain frames the same loop from the other side :\n\"The goal isn't to document everything before agents can start working. It's to build a system where doing the work reveals what knowledge is missing, & resolving those gaps makes future work better.\"\nA software factory has four components. A shared context : the specs, docs & history an agent reads before it starts. An agent that runs the skills & specs to do the work. An execution trace that flags what shipped, what broke, & what it cost. A curator loop that reads the trace & rewrites the skills & specs for the next run.\nThe last two steps compound. A prompt with a document attached is a one-off. The trace turns the work into data. The curator turns the data into a better system. That is the difference between a factory that improves every week & a workflow that stays flat.\nThe loop is not a vendor's idea. It is what the work looks like once an agent does most of it. A knowledge factory has the same four parts as a code factory. The context is the docs. The agent is the answer. The trace is the wrong answer. The curator is the fix.\nOnce you see the loop, it generalizes everywhere. A marketing factory turns campaign performance into better copy. An online ads factory turns ROAS traces into new creative. A sales pitch factory turns call transcripts into sharper decks.\nSatya Nadella described the same shift at Microsoft Ignite :\n\"The new company looks like there's a founder. The founder has a token budget. Then the founder hires somebody. That person also comes in, & then they have a token budget, & they figure out how to add the tokens & the wages & then keep building.\"\nFactories are still rare because a factory is an operations project, not a model purchase. Someone has to own the context, write the specs, read the traces & run the curator on a cadence. This is the reinvention of work : defining & operating the factory for each team.\nDifferent departments, identical architecture. The question is no longer whether AI can do the work : it is what kind of factory you will build.\nOriginally published on tomtunguz.com.",
+    "media": [
+      {
+        "id": "img_tunguz_factory_cover",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg",
+        "alt": "原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）"
+      },
+      {
+        "id": "img_tunguz_factory_table",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png",
+        "alt": "图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）"
+      }
+    ]
+  },
+  "body_md": "11 月 21 日，Notion 发了《A New Shape for Work》，LangChain 发了《How to Build a Knowledge Factory》。一篇是宣言，一篇是搭建指南。Tomasz Tunguz 注意到，两篇讲的是同一个用在公司知识上的四步循环：上下文、代理、执行轨迹、整理者。\n\n他的判断是，软件团队已经在建的“工厂”，正在被搬到公司里的每一个部门。\n\n## 从一行行写代码，到搭一座工厂\n\nTunguz 写道，AI 出现之前，软件是一行一行写出来的。AI 出现之后，最好的工程团队不再自己写代码，转去搭**软件工厂**：一套替他们写代码、测试、发布的系统。\n\n那其他团队为什么不建工厂？他的回答是：它们正在建。Notion 和 LangChain 这两篇文章，就是给知识工作建工厂的方案。\n\n## Notion 和 LangChain 从两头说同一件事\n\nNotion 说得很直白：“这种结构是现代组织能拥有的最有价值的知识产权之一，因为它决定了代理在这家公司里能做到什么程度。”\n\nLangChain 从另一头讲同一个循环：“目标不是先把一切写成文档，代理才能开工。目标是搭一个系统，让做事的过程暴露出缺了哪些知识，补上这些缺口又让以后的工作做得更好。”\n\n## 一座工厂的四个部件\n\n按 Tunguz 的拆法，软件工厂由四部分组成：\n\n- **共享上下文**：代理开工前要读的规格说明、文档和历史记录。\n- **代理**：运行技能和规格说明，把活干完。\n- **执行轨迹**：记下交付了什么、坏了什么、花了多少钱。\n- **整理循环**：读执行轨迹，为下一轮改写技能和规格说明。\n\n后两步会产生复利。附上一份文档的提示词只能用一次。执行轨迹把工作变成数据，整理者再把数据变成更好的系统。Tunguz 认为，每周都在变好的工厂和一直原地踏步的工作流，差别就在这里。\n\n## 同一个循环，换一批数据\n\n他认为这个循环不是哪家厂商想出来的点子，代理承担大部分工作之后，工作本来就会长成这样。知识工厂和代码工厂部件完全相同：上下文是文档，代理负责给出答案，执行轨迹记下答错的地方，整理者负责修正。\n\n看懂这个循环，就会发现它到处适用。营销工厂把投放效果变成更好的文案；在线广告工厂把 ROAS（广告支出回报率）轨迹变成新的广告素材；销售工厂把通话记录变成更有力的演示稿。\n\n原文配图把四类工厂并排列出。软件工厂的上下文是代码仓库、设计规格和以往的 PR，产出是合并的代码、测试和部署，轨迹信号是构建失败、评审意见和事故。知识工厂的上下文是文档、工单和会议纪要，产出是答案、简报和整理好的操作手册，轨迹信号是哪个答案错了或从没被复用。营销工厂的上下文是品牌指南、ICP 和过往活动，产出是文案、素材和落地页，轨迹信号是各版本的打开率、CPA 和 ROAS。销售工厂的上下文是通话记录和赢单、丢单笔记，产出是演示稿、话术和跟进，轨迹信号是客户提出的异议和成交的单子。图注来源为 Notion、LangChain 和 Theory Ventures。\n\n他还引用了萨提亚·纳德拉在 Microsoft Ignite 上描述的同一种变化：“新公司的样子是，有一个创始人，创始人有一笔 token 预算。然后创始人招了一个人，这个人进来以后也有一笔 token 预算，他们要想清楚怎么把 token 和工资加在一起，然后继续建设。”\n\n## 工厂为什么还少见\n\nTunguz 的解释是，**工厂是一个运营项目，靠买模型解决不了**。得有人负责上下文、写规格说明、读执行轨迹，并按固定节奏跑整理循环。在他看来，这就是工作的重塑：为每个团队定义并运营它自己的工厂。\n\n部门不同，架构相同。他说，问题已经从“AI 能不能干这活”变成了“你要建一座什么样的工厂”。\n\n## 先盘点自己缺哪一环\n\n想在自己团队试一试的，可以按他的四个部件逐项对照：代理读的上下文有没有专人维护；每次运行有没有留下交付、失败和成本的记录；有没有人按固定节奏读这些记录，回头改技能和规格说明。按 Tunguz 的说法，缺了后两项，得到的只是一个附了文档的一次性提示词，工作流不会自己变好。",
+  "rewrite_media": [
+    {
+      "media_id": "img_tunguz_factory_cover",
+      "placement": "after_paragraph",
+      "after_md": "后两步会产生复利。附上一份文档的提示词只能用一次。执行轨迹把工作变成数据，整理者再把数据变成更好的系统。Tunguz 认为，每周都在变好的工厂和一直原地踏步的工作流，差别就在这里。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_tunguz_factory_table",
+      "placement": "after_paragraph",
+      "after_md": "原文配图把四类工厂并排列出。软件工厂的上下文是代码仓库、设计规格和以往的 PR，产出是合并的代码、测试和部署，轨迹信号是构建失败、评审意见和事故。知识工厂的上下文是文档、工单和会议纪要，产出是答案、简报和整理好的操作手册，轨迹信号是哪个答案错了或从没被复用。营销工厂的上下文是品牌指南、ICP 和过往活动，产出是文案、素材和落地页，轨迹信号是各版本的打开率、CPA 和 ROAS。销售工厂的上下文是通话记录和赢单、丢单笔记，产出是演示稿、话术和跟进，轨迹信号是客户提出的异议和成交的单子。图注来源为 Notion、LangChain 和 Theory Ventures。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

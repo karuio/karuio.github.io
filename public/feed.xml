@@ -5,8 +5,364 @@
     <link>https://karuio.github.io/</link>
     <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Nov 2026 00:17:38 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 00:09:30 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8%</title>
+      <link>https://karuio.github.io/a/dotey-qwen-self-rewriting-weights</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dotey-qwen-self-rewriting-weights</guid>
+      <pubDate>Mon, 23 Nov 2026 08:02:19 +0000</pubDate>
+      <author>宝玉</author>
+      <description><![CDATA[<p><em>模型复盘后发现病根是长推理复读，把 48 层一个参数统一调高 0.5，未答完率从 33.6% 降到 26.1%。宝玉提醒，每轮都从原版重来，只在 Qwen3.5 和数学题上验证，还不是递归自我进化。</em></p>
+<h2>中文改写</h2>
+<p>开源模型 Qwen3.5 27B 没有经过重新训练，自己查错、写 Python 改自己的权重，把数学题准确率从 57.2% 提到了 63.8%。宝玉介绍这篇论文时，先给了一个限定：<strong>这还不是“AI 无限自我进化”</strong>。</p>
+<p>论文由 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校的 11 位研究者（Jiajun Fan 等）完成，11 月 18 日发在 arXiv 上。</p>
+<h2>权重本来是定死的</h2>
+<p>平时大模型发布后，内部那 270 亿个权重数字就固定了。想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>
+<p>这次研究者禁掉了所有训练工具，只用单块 GPU 跑几个小时，让模型直接写 Python 修改自己的权重。论文作者说，据他们所知，模型“自己改自己”这还是第一次。</p>
+<h2>病根是复读，不是不会算</h2>
+<p>27B 先复盘自己的练习记录，发现问题不在计算能力：写完的题 96% 都是对的。毛病出在爱钻牛角尖，话没说完就超出长度上限。有一道数数题，原模型把 “I will write the response” 复读了 549 遍，直到卡死。</p>
+<p>找准病根后，它只做了一个改动：把内部 48 层里控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理时原地打转。</p>
+<p>结果是，在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点；那道卡死的题也算出了正确答案 110。改动直接写进权重，平时使用不需要额外提示词，也不增加计算量。</p>
+<h2>它还修好了一个“受损副本”</h2>
+<p>研究者把一个副本第 30 层某个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。</p>
+<p>模型只被告知“有数值坏了”，也看不到完好的原版。它逐层排查，找出一个最大值高达中位数 1397 倍的异常矩阵（正常矩阵不超过 162 倍），把超出中位数 15 倍的极端值全部压平。</p>
+<p>修完后，数学恢复到 33.0%，原版是 58.5%。整个修复过程只用了文字题，6 项看图测试却从 7.3% 恢复到 70.2%，达到原版（84.3%）的八成以上。</p>
+<h2>小模型做不了</h2>
+<p>同系列的小模型完全干不了这件事。2B 说自己“只是文本模型，改不了权重”，什么都没动；4B 和 9B 只会往权重里随机加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>
+<h2>两条限定</h2>
+<p>宝玉提醒，有两点要看清：</p>
+<ol>
+<li><strong>还不是递归自我进化。</strong> 8 轮实验每一轮都是从原版模型重新开始改，还没做到“改完的版本继续改自己”，作者把这列为下一步。网上说的“连续 8 轮只升不降”，实际是模型自己撤回了 5 次失败的改动，只提交了 3 次成功的改动。</li>
+<li><strong>测试范围有限。</strong> 目前只在 Qwen3.5 家族和数学题上验证过，论文刚发在 arXiv，还没有经过同行评审。</li>
+</ol>
+<p>论文地址：https://arxiv.org/abs/2611.21885 ，项目页：https://jiajunfan.com/projects/self-rewriting/ 。</p>
+<p>看到“AI 自我进化”这类说法时，可以拿这篇论文的边界去对照：单块 GPU、几小时、只在一个模型家族的数学题上验证，每轮都从原版重来，成功的改动也是在撤回失败改动之后筛出来的。在递归自改和跨任务验证出来之前，它更适合被理解为一种不重新训练也能修补模型缺陷的方法。</p>
+
+<h2>原文</h2>
+<p><em>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重</em></p>
+<p>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重，把数学题准确率从 57.2% 提到了 63.8%，但还不是“AI 无限自我进化”。</p>
+<p>这是 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校 11 位研究者（Jiajun Fan 等）11 月 18 日发在 arXiv 的论文。</p>
+<p>平时大模型发布后，内部那 270 亿个权重数字就定死了：想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>
+<p>这次研究者禁掉所有训练工具，只用单块 GPU 跑几小时，让模型直接写 Python 改自己的权重，据作者所知，模型“自己改自己”还是头一回。</p>
+<p>它是怎么把自己改好的？</p>
+<p>27B 先复盘练习记录，发现毛病不是不会算（写完的题 96% 都对），而是爱钻牛角尖、话没说完就超限。比如一道数数题，原模型把“I will write the response”硬生生复读了 549 遍直到卡死。</p>
+<p>找准病根后，它只做了一个很巧的改动：把内部 48 层控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理原地打转。结果在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点，上面那道卡死的题也顺利算出正确答案 110。改完后能力直接刻进权重，平时用不需额外提示词，也不增加计算量。</p>
+<p>它甚至修好了“受损副本”。研究者把副本第 30 层一个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。只被告知“有数值坏了”、不给看完好原版的前提下，模型逐层排查，揪出最大值高达中位数 1397 倍的异常矩阵（正常不超 162 倍），把超出中位数 15 倍的极端值统统压平。</p>
+<p>修完后数学恢复到 33.0%（原版 58.5%）；虽然全程只靠文字题修，6 项看图测试却从 7.3% 恢复到 70.2%，超过原版（84.3%）的八成。</p>
+<p>不过小模型完全干不了这活：同系列的 2B 说自己“只是文本模型改不了权重”，动都没动；4B、9B 只会往权重里乱加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>
+<p>最后需要注意的还不是“AI 无限自我进化”：</p>
+<ol>
+<li>
+<p>还不是“递归自我进化”：8 轮实验每次都是从原版模型重新开始改，还没做到“改完的版本继续改自己”（作者列为下一步）。网上说的“连续 8 轮只升不降”，其实是模型自己撤回了 5 次失败改动、只提交了 3 次成功改动。</p>
+</li>
+<li>
+<p>测试范围有限：目前只在 Qwen3.5 家族和数学题上验证过，且论文刚发在 arXiv，还没经过同行评审。</p>
+</li>
+</ol>
+<p>论文：https://arxiv.org/abs/2611.21885
+项目页：https://jiajunfan.com/projects/self-rewriting/</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2124775538648633370">https://x.com/dotey/status/2124775538648633370</a></p>
+<p><strong>相关链接：</strong><a href="https://arxiv.org/abs/2611.21885">https://arxiv.org/abs/2611.21885</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>模型复盘后发现病根是长推理复读，把 48 层一个参数统一调高 0.5，未答完率从 33.6% 降到 26.1%。宝玉提醒，每轮都从原版重来，只在 Qwen3.5 和数学题上验证，还不是递归自我进化。</em></p>
+<h2>中文改写</h2>
+<p>开源模型 Qwen3.5 27B 没有经过重新训练，自己查错、写 Python 改自己的权重，把数学题准确率从 57.2% 提到了 63.8%。宝玉介绍这篇论文时，先给了一个限定：<strong>这还不是“AI 无限自我进化”</strong>。</p>
+<p>论文由 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校的 11 位研究者（Jiajun Fan 等）完成，11 月 18 日发在 arXiv 上。</p>
+<h2>权重本来是定死的</h2>
+<p>平时大模型发布后，内部那 270 亿个权重数字就固定了。想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>
+<p>这次研究者禁掉了所有训练工具，只用单块 GPU 跑几个小时，让模型直接写 Python 修改自己的权重。论文作者说，据他们所知，模型“自己改自己”这还是第一次。</p>
+<h2>病根是复读，不是不会算</h2>
+<p>27B 先复盘自己的练习记录，发现问题不在计算能力：写完的题 96% 都是对的。毛病出在爱钻牛角尖，话没说完就超出长度上限。有一道数数题，原模型把 “I will write the response” 复读了 549 遍，直到卡死。</p>
+<p>找准病根后，它只做了一个改动：把内部 48 层里控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理时原地打转。</p>
+<p>结果是，在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点；那道卡死的题也算出了正确答案 110。改动直接写进权重，平时使用不需要额外提示词，也不增加计算量。</p>
+<h2>它还修好了一个“受损副本”</h2>
+<p>研究者把一个副本第 30 层某个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。</p>
+<p>模型只被告知“有数值坏了”，也看不到完好的原版。它逐层排查，找出一个最大值高达中位数 1397 倍的异常矩阵（正常矩阵不超过 162 倍），把超出中位数 15 倍的极端值全部压平。</p>
+<p>修完后，数学恢复到 33.0%，原版是 58.5%。整个修复过程只用了文字题，6 项看图测试却从 7.3% 恢复到 70.2%，达到原版（84.3%）的八成以上。</p>
+<h2>小模型做不了</h2>
+<p>同系列的小模型完全干不了这件事。2B 说自己“只是文本模型，改不了权重”，什么都没动；4B 和 9B 只会往权重里随机加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>
+<h2>两条限定</h2>
+<p>宝玉提醒，有两点要看清：</p>
+<ol>
+<li><strong>还不是递归自我进化。</strong> 8 轮实验每一轮都是从原版模型重新开始改，还没做到“改完的版本继续改自己”，作者把这列为下一步。网上说的“连续 8 轮只升不降”，实际是模型自己撤回了 5 次失败的改动，只提交了 3 次成功的改动。</li>
+<li><strong>测试范围有限。</strong> 目前只在 Qwen3.5 家族和数学题上验证过，论文刚发在 arXiv，还没有经过同行评审。</li>
+</ol>
+<p>论文地址：https://arxiv.org/abs/2611.21885 ，项目页：https://jiajunfan.com/projects/self-rewriting/ 。</p>
+<p>看到“AI 自我进化”这类说法时，可以拿这篇论文的边界去对照：单块 GPU、几小时、只在一个模型家族的数学题上验证，每轮都从原版重来，成功的改动也是在撤回失败改动之后筛出来的。在递归自改和跨任务验证出来之前，它更适合被理解为一种不重新训练也能修补模型缺陷的方法。</p>
+
+<h2>原文</h2>
+<p><em>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重</em></p>
+<p>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重，把数学题准确率从 57.2% 提到了 63.8%，但还不是“AI 无限自我进化”。</p>
+<p>这是 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校 11 位研究者（Jiajun Fan 等）11 月 18 日发在 arXiv 的论文。</p>
+<p>平时大模型发布后，内部那 270 亿个权重数字就定死了：想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>
+<p>这次研究者禁掉所有训练工具，只用单块 GPU 跑几小时，让模型直接写 Python 改自己的权重，据作者所知，模型“自己改自己”还是头一回。</p>
+<p>它是怎么把自己改好的？</p>
+<p>27B 先复盘练习记录，发现毛病不是不会算（写完的题 96% 都对），而是爱钻牛角尖、话没说完就超限。比如一道数数题，原模型把“I will write the response”硬生生复读了 549 遍直到卡死。</p>
+<p>找准病根后，它只做了一个很巧的改动：把内部 48 层控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理原地打转。结果在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点，上面那道卡死的题也顺利算出正确答案 110。改完后能力直接刻进权重，平时用不需额外提示词，也不增加计算量。</p>
+<p>它甚至修好了“受损副本”。研究者把副本第 30 层一个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。只被告知“有数值坏了”、不给看完好原版的前提下，模型逐层排查，揪出最大值高达中位数 1397 倍的异常矩阵（正常不超 162 倍），把超出中位数 15 倍的极端值统统压平。</p>
+<p>修完后数学恢复到 33.0%（原版 58.5%）；虽然全程只靠文字题修，6 项看图测试却从 7.3% 恢复到 70.2%，超过原版（84.3%）的八成。</p>
+<p>不过小模型完全干不了这活：同系列的 2B 说自己“只是文本模型改不了权重”，动都没动；4B、9B 只会往权重里乱加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>
+<p>最后需要注意的还不是“AI 无限自我进化”：</p>
+<ol>
+<li>
+<p>还不是“递归自我进化”：8 轮实验每次都是从原版模型重新开始改，还没做到“改完的版本继续改自己”（作者列为下一步）。网上说的“连续 8 轮只升不降”，其实是模型自己撤回了 5 次失败改动、只提交了 3 次成功改动。</p>
+</li>
+<li>
+<p>测试范围有限：目前只在 Qwen3.5 家族和数学题上验证过，且论文刚发在 arXiv，还没经过同行评审。</p>
+</li>
+</ol>
+<p>论文：https://arxiv.org/abs/2611.21885
+项目页：https://jiajunfan.com/projects/self-rewriting/</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2124775538648633370">https://x.com/dotey/status/2124775538648633370</a></p>
+<p><strong>相关链接：</strong><a href="https://arxiv.org/abs/2611.21885">https://arxiv.org/abs/2611.21885</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重", "url": "https://x.com/dotey/status/2124775538648633370", "lang": "zh", "html": "<h2>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重</h2>\n\n<p>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重，把数学题准确率从 57.2% 提到了 63.8%，但还不是“AI 无限自我进化”。</p>\n<p>这是 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校 11 位研究者（Jiajun Fan 等）11 月 18 日发在 arXiv 的论文。</p>\n<p>平时大模型发布后，内部那 270 亿个权重数字就定死了：想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>\n<p>这次研究者禁掉所有训练工具，只用单块 GPU 跑几小时，让模型直接写 Python 改自己的权重，据作者所知，模型“自己改自己”还是头一回。</p>\n<p>它是怎么把自己改好的？</p>\n<p>27B 先复盘练习记录，发现毛病不是不会算（写完的题 96% 都对），而是爱钻牛角尖、话没说完就超限。比如一道数数题，原模型把“I will write the response”硬生生复读了 549 遍直到卡死。</p>\n<p>找准病根后，它只做了一个很巧的改动：把内部 48 层控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理原地打转。结果在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点，上面那道卡死的题也顺利算出正确答案 110。改完后能力直接刻进权重，平时用不需额外提示词，也不增加计算量。</p>\n<p>它甚至修好了“受损副本”。研究者把副本第 30 层一个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。只被告知“有数值坏了”、不给看完好原版的前提下，模型逐层排查，揪出最大值高达中位数 1397 倍的异常矩阵（正常不超 162 倍），把超出中位数 15 倍的极端值统统压平。</p>\n<p>修完后数学恢复到 33.0%（原版 58.5%）；虽然全程只靠文字题修，6 项看图测试却从 7.3% 恢复到 70.2%，超过原版（84.3%）的八成。</p>\n<p>不过小模型完全干不了这活：同系列的 2B 说自己“只是文本模型改不了权重”，动都没动；4B、9B 只会往权重里乱加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>\n<p>最后需要注意的还不是“AI 无限自我进化”：</p>\n<ol>\n<li>\n<p>还不是“递归自我进化”：8 轮实验每次都是从原版模型重新开始改，还没做到“改完的版本继续改自己”（作者列为下一步）。网上说的“连续 8 轮只升不降”，其实是模型自己撤回了 5 次失败改动、只提交了 3 次成功改动。</p>\n</li>\n<li>\n<p>测试范围有限：目前只在 Qwen3.5 家族和数学题上验证过，且论文刚发在 arXiv，还没经过同行评审。</p>\n</li>\n</ol>\n<p>论文：https://arxiv.org/abs/2611.21885\n项目页：https://jiajunfan.com/projects/self-rewriting/</p>\n<p>原文链接：<a href=\"https://x.com/dotey/status/2124775538648633370\">https://x.com/dotey/status/2124775538648633370</a></p>\n<p>相关链接：<a href=\"https://arxiv.org/abs/2611.21885\">https://arxiv.org/abs/2611.21885</a></p>"}, "rewrite": {"title": "宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8%", "markdown": "开源模型 Qwen3.5 27B 没有经过重新训练，自己查错、写 Python 改自己的权重，把数学题准确率从 57.2% 提到了 63.8%。宝玉介绍这篇论文时，先给了一个限定：**这还不是“AI 无限自我进化”**。\n\n论文由 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校的 11 位研究者（Jiajun Fan 等）完成，11 月 18 日发在 arXiv 上。\n\n## 权重本来是定死的\n\n平时大模型发布后，内部那 270 亿个权重数字就固定了。想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。\n\n这次研究者禁掉了所有训练工具，只用单块 GPU 跑几个小时，让模型直接写 Python 修改自己的权重。论文作者说，据他们所知，模型“自己改自己”这还是第一次。\n\n## 病根是复读，不是不会算\n\n27B 先复盘自己的练习记录，发现问题不在计算能力：写完的题 96% 都是对的。毛病出在爱钻牛角尖，话没说完就超出长度上限。有一道数数题，原模型把 “I will write the response” 复读了 549 遍，直到卡死。\n\n找准病根后，它只做了一个改动：把内部 48 层里控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理时原地打转。\n\n结果是，在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点；那道卡死的题也算出了正确答案 110。改动直接写进权重，平时使用不需要额外提示词，也不增加计算量。\n\n## 它还修好了一个“受损副本”\n\n研究者把一个副本第 30 层某个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。\n\n模型只被告知“有数值坏了”，也看不到完好的原版。它逐层排查，找出一个最大值高达中位数 1397 倍的异常矩阵（正常矩阵不超过 162 倍），把超出中位数 15 倍的极端值全部压平。\n\n修完后，数学恢复到 33.0%，原版是 58.5%。整个修复过程只用了文字题，6 项看图测试却从 7.3% 恢复到 70.2%，达到原版（84.3%）的八成以上。\n\n## 小模型做不了\n\n同系列的小模型完全干不了这件事。2B 说自己“只是文本模型，改不了权重”，什么都没动；4B 和 9B 只会往权重里随机加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。\n\n## 两条限定\n\n宝玉提醒，有两点要看清：\n\n1. **还不是递归自我进化。** 8 轮实验每一轮都是从原版模型重新开始改，还没做到“改完的版本继续改自己”，作者把这列为下一步。网上说的“连续 8 轮只升不降”，实际是模型自己撤回了 5 次失败的改动，只提交了 3 次成功的改动。\n2. **测试范围有限。** 目前只在 Qwen3.5 家族和数学题上验证过，论文刚发在 arXiv，还没有经过同行评审。\n\n论文地址：https://arxiv.org/abs/2611.21885 ，项目页：https://jiajunfan.com/projects/self-rewriting/ 。\n\n看到“AI 自我进化”这类说法时，可以拿这篇论文的边界去对照：单块 GPU、几小时、只在一个模型家族的数学题上验证，每轮都从原版重来，成功的改动也是在撤回失败改动之后筛出来的。在递归自改和跨任务验证出来之前，它更适合被理解为一种不重新训练也能修补模型缺陷的方法。", "html": "<p>开源模型 Qwen3.5 27B 没有经过重新训练，自己查错、写 Python 改自己的权重，把数学题准确率从 57.2% 提到了 63.8%。宝玉介绍这篇论文时，先给了一个限定：<strong>这还不是“AI 无限自我进化”</strong>。</p>\n<p>论文由 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校的 11 位研究者（Jiajun Fan 等）完成，11 月 18 日发在 arXiv 上。</p>\n<h2>权重本来是定死的</h2>\n<p>平时大模型发布后，内部那 270 亿个权重数字就固定了。想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>\n<p>这次研究者禁掉了所有训练工具，只用单块 GPU 跑几个小时，让模型直接写 Python 修改自己的权重。论文作者说，据他们所知，模型“自己改自己”这还是第一次。</p>\n<h2>病根是复读，不是不会算</h2>\n<p>27B 先复盘自己的练习记录，发现问题不在计算能力：写完的题 96% 都是对的。毛病出在爱钻牛角尖，话没说完就超出长度上限。有一道数数题，原模型把 “I will write the response” 复读了 549 遍，直到卡死。</p>\n<p>找准病根后，它只做了一个改动：把内部 48 层里控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理时原地打转。</p>\n<p>结果是，在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点；那道卡死的题也算出了正确答案 110。改动直接写进权重，平时使用不需要额外提示词，也不增加计算量。</p>\n<h2>它还修好了一个“受损副本”</h2>\n<p>研究者把一个副本第 30 层某个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。</p>\n<p>模型只被告知“有数值坏了”，也看不到完好的原版。它逐层排查，找出一个最大值高达中位数 1397 倍的异常矩阵（正常矩阵不超过 162 倍），把超出中位数 15 倍的极端值全部压平。</p>\n<p>修完后，数学恢复到 33.0%，原版是 58.5%。整个修复过程只用了文字题，6 项看图测试却从 7.3% 恢复到 70.2%，达到原版（84.3%）的八成以上。</p>\n<h2>小模型做不了</h2>\n<p>同系列的小模型完全干不了这件事。2B 说自己“只是文本模型，改不了权重”，什么都没动；4B 和 9B 只会往权重里随机加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>\n<h2>两条限定</h2>\n<p>宝玉提醒，有两点要看清：</p>\n<ol>\n<li><strong>还不是递归自我进化。</strong> 8 轮实验每一轮都是从原版模型重新开始改，还没做到“改完的版本继续改自己”，作者把这列为下一步。网上说的“连续 8 轮只升不降”，实际是模型自己撤回了 5 次失败的改动，只提交了 3 次成功的改动。</li>\n<li><strong>测试范围有限。</strong> 目前只在 Qwen3.5 家族和数学题上验证过，论文刚发在 arXiv，还没有经过同行评审。</li>\n</ol>\n<p>论文地址：https://arxiv.org/abs/2611.21885 ，项目页：https://jiajunfan.com/projects/self-rewriting/ 。</p>\n<p>看到“AI 自我进化”这类说法时，可以拿这篇论文的边界去对照：单块 GPU、几小时、只在一个模型家族的数学题上验证，每轮都从原版重来，成功的改动也是在撤回失败改动之后筛出来的。在递归自改和跨任务验证出来之前，它更适合被理解为一种不重新训练也能修补模型缺陷的方法。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>TheValueist 拆英伟达期权仓位：236 亿美元空头 Delta 多是实值看跌，反弹越涨压力越小</title>
+      <link>https://karuio.github.io/a/thevalueist-nvda-options-positioning</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/thevalueist-nvda-options-positioning</guid>
+      <pubDate>Mon, 23 Nov 2026 13:25:22 +0000</pubDate>
+      <author>TheValueist</author>
+      <description><![CDATA[<p><em>按上周五未平仓量、136.68 美元盘前价测算，看跌 Delta 名义值 -490 亿美元，约 -390 亿美元在 157 美元以上行权价，看涨整体净多。他认为反弹越往上越轻松，但下方看跌保护只有约 20 亿美元，再跌缺少期权盘承接。</em></p>
+<h2>中文改写</h2>
+<p>上周五英伟达收在 125.53 美元，比过去 12 个月的收盘最高点低 47.5%。周一盘前报到 136.68 美元，涨 11.15 美元，涨幅 8.9%，TheValueist 称之为消息驱动的开盘反弹。</p>
+<p>他用彭博的期权到期数据，把英伟达整个期权盘的仓位拆了一遍，结论是：<strong>期权盘净空约 236 亿美元 Delta，但大头是深度实值看跌期权，股价越涨，这块压力越小</strong>。</p>
+<h2>数据口径</h2>
+<p>数据是上周五收盘时的未平仓量，按行权价和到期日列出 Delta 名义值，按 136.68 美元这个价位测算。下文的 moneyness 指行权价相对这个价位的比例，比如 115% 约等于 157 美元。</p>
+<p>他特别说明：未平仓量能显示期权盘 Delta 的规模和方向，<strong>看不出是谁持有</strong>。</p>
+<p>这篇帖子发于 UTC 时间 11 月 23 日 13:25（北京时间 21:25）。大约半小时后，他又发帖转述英伟达董事会恢复黄仁勋总裁兼 CEO 职务的消息，所以文中的价格都是这条消息公布之前的盘前价。</p>
+<h2>空头 Delta 集中在看跌期权</h2>
+<ul>
+<li>看跌期权单独计算，Delta 名义值是 -490 亿美元。其中约 -390 亿美元落在 115% moneyness 以上，也就是行权价约 157 美元及更高。他强调，这些是深度实值的看跌期权，并非上方有人大量卖出看涨。</li>
+<li>130% 到 150% 区间（行权价约 178 到 205 美元）是 -124 亿美元，150% 以上还有 -156 亿美元，178 美元以上合计约 -280 亿美元。</li>
+<li>集中在近月：1 个月列 -103 亿美元，2 个月列 -107 亿美元，两列合计约 -210 亿美元。</li>
+</ul>
+<p>实值看跌的 Delta 基本是机械性的。行权价高于现价时，每张合约的 Delta 接近 -1；现价往行权价方向涨，Delta 会自己衰减。所以他认为，<strong>上涨会让这块压力自行缩小，股价不会一头撞上去</strong>。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_thevalueist_nvda_puts"><img src="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>看涨期权整体是净多</h2>
+<ul>
+<li>看涨和看跌合计是 -236 亿美元，减去看跌的 -490 亿美元，看涨单独约为 +254 亿美元 Delta。这些截图里没有卖出看涨堆出来的“墙”。</li>
+<li>130% moneyness 以上，看涨单独净多约 +113 亿美元：178 到 205 美元区间 +39 亿美元，再往上 +74 亿美元。近月同样为正，1 个月列 +58 亿美元，2 个月列 +38 亿美元。</li>
+</ul>
+<p>紧贴现价上方的 110% 到 120% 区间（行权价约 150 到 164 美元），合计是 -59 亿美元。他强调拆开看很关键：看跌 -88 亿美元，看涨 +29 亿美元，这一段压着的仍然是看跌期权的 Delta，并没有大量卖出的看涨。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_thevalueist_nvda_combined"><img src="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>下方几乎没有保护</h2>
+<p>现价下方的直接看跌保护很薄。90% moneyness 以下，看跌期权合计只有约 -20 亿美元。</p>
+<p>同一区间的合计数是 +44 亿美元，但那来自深度实值看涨的 Delta，算不上下行对冲。1 个月列里 50% 以下的行权价，看跌只有 -5400 万美元，看涨约 +9.47 亿美元。他的判断是，这个期权盘也没有为新一轮下跌做多少对冲。</p>
+<h2>他的解读</h2>
+<p>整个期权盘净空约 236 亿美元 Delta，重心在机械性的实值看跌上，股价往行权价方向涨时它会衰减。走强只会侵蚀这部分空头 Delta，截图里也没有一堵卖出看涨的墙在上面接着。</p>
+<p>重定价已经能在数据里看到。同一份未平仓量，按 134.94 美元的盘前价测算，看跌是 -508 亿美元，合计 -260 亿美元；按 136.68 美元测算，看跌 -490 亿美元，合计 -236 亿美元。未平仓量没有变，都是上周五收盘的数，变的是现价上涨带来的 Delta 重估。</p>
+<p>这件事有两面。90% moneyness 以下只有约 20 亿美元的看跌 Delta，期权盘没有能力缓冲再一轮抛售。他认为这种仓位意味着：<strong>反弹越往上越轻松，一旦往下破位，期权盘几乎没有支撑</strong>。</p>
+<p>什么会改变这个判断？178 美元以上那一大块实值看跌被平仓或向下展期，或者现价下方出现真正的看跌买盘。在这两件事发生之前，他认为反弹面对的是一块不断缩小的压力，并非一个固定的天花板。</p>
+<h2>接下来盯什么</h2>
+<p>跟踪英伟达的投资者，可以盯他列出的两个信号：178 美元以上的实值看跌头寸是平仓还是下移，现价下方有没有出现新的看跌买盘。同时记住这份数据的边界：它只说明仓位的规模和方向，看不出持有人是谁，也看不出这些头寸是对冲还是投机。</p>
+
+<h2>原文</h2>
+<p><em>$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF</em></p>
+<figure data-media-id="img_thevalueist_nvda_combined"><img src="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_thevalueist_nvda_puts"><img src="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF</p>
+<p>THE SETUP</p>
+<p>• Friday's close was $125.53, 47.5% below the trailing 12-month closing high. Monday's premarket print in this data is $136.68, up $11.15, +8.9%, a headline-driven bounce into the open.
+• What follows is Bloomberg option expiration data: open interest as of Friday's close, delta notional by strike and expiry, measured at the $136.68 print. Open interest shows the size and the sign of the delta in the complex. It does not show who holds it.</p>
+<p>THE SHORT DELTA IS IN THE PUTS</p>
+<p>• The put book alone carries -$49B of delta notional. About -$39B of it sits above 115% moneyness, strikes of roughly $157 and higher: deep in-the-money puts, not overhead call supply. The 130-150% band, strikes of about $178 to $205, is -$12.4B, and above 150% there is another -$15.6B, about -$28B in total above the $178 line.
+• It is concentrated in the near columns: the 1-month put column is -$10.3B and the 2-month column is -$10.7B, about -$21B between them.
+• In-the-money put delta is largely mechanical. With the strike above spot, delta runs near -1 per contract, and as spot rises toward those strikes the delta bleeds off on its own. A rally shrinks this overhang instead of running into it.</p>
+<p>THE CALL BOOK IS NET LONG</p>
+<p>• The combined book, calls and puts together, totals -$23.6B. Calls alone are therefore net long about +$25.4B of delta (combined minus puts). There is no written call wall in these screens.
+• Above 130% moneyness, calls alone are net positive about +$11.3B: +$3.9B in the $178 to $205 band and +$7.4B above it. Calls alone are also positive in the near columns, +$5.8B in the 1-month column and +$3.8B in the 2-month column.
+• The band just overhead, 110-120% moneyness at strikes of about $150 to $164, is -$5.9B combined, and the split matters: that is puts at -$8.8B against calls at +$2.9B. It is put delta, not call supply.</p>
+<p>BELOW SPOT</p>
+<p>• Outright put protection below spot is thin. The put book below 90% moneyness totals only about -$2.0B.
+• The combined book below 90% moneyness is +$4.4B, but that is deep in-the-money call delta, not downside hedging. At strikes under 50% moneyness in the 1-month column, puts are just -$54M against about +$947M of calls. This book is not heavily hedged for a fresh leg down either.</p>
+<p>THE READ</p>
+<p>• Net, the entire NVIDIA options complex is short about $23.6B of delta, and the centre of gravity is mechanical in-the-money put delta that decays as spot rises toward the strikes. Strength erodes the short-delta overhang rather than feeding a wall of written calls, because there is no wall in these screens.
+• The repricing is visible between this morning's two prints. The same open interest measured at the $134.94 premarket print was -$50.8B in puts and -$26B combined; at $136.68 it is -$49B in puts and -$23.6B combined. Open interest has not changed, because it is Friday's close; the delta is repricing as spot rises, so the bleed-off is already showing up in the screens.
+• It cuts both ways. With only about $2.0B of put delta below 90% moneyness, the options book is not positioned to cushion a renewed selloff. The positioning argues for a bounce that gets easier as it climbs, and a break lower that meets little options-book support.
+• What would change the read: the in-the-money put block above $178 being closed or rolled down, or real put buying appearing below spot. Until one of those prints, the bounce is working against a shrinking overhang, not a fixed ceiling.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/TheValueist/status/2124856837174370439">https://x.com/TheValueist/status/2124856837174370439</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>按上周五未平仓量、136.68 美元盘前价测算，看跌 Delta 名义值 -490 亿美元，约 -390 亿美元在 157 美元以上行权价，看涨整体净多。他认为反弹越往上越轻松，但下方看跌保护只有约 20 亿美元，再跌缺少期权盘承接。</em></p>
+<h2>中文改写</h2>
+<p>上周五英伟达收在 125.53 美元，比过去 12 个月的收盘最高点低 47.5%。周一盘前报到 136.68 美元，涨 11.15 美元，涨幅 8.9%，TheValueist 称之为消息驱动的开盘反弹。</p>
+<p>他用彭博的期权到期数据，把英伟达整个期权盘的仓位拆了一遍，结论是：<strong>期权盘净空约 236 亿美元 Delta，但大头是深度实值看跌期权，股价越涨，这块压力越小</strong>。</p>
+<h2>数据口径</h2>
+<p>数据是上周五收盘时的未平仓量，按行权价和到期日列出 Delta 名义值，按 136.68 美元这个价位测算。下文的 moneyness 指行权价相对这个价位的比例，比如 115% 约等于 157 美元。</p>
+<p>他特别说明：未平仓量能显示期权盘 Delta 的规模和方向，<strong>看不出是谁持有</strong>。</p>
+<p>这篇帖子发于 UTC 时间 11 月 23 日 13:25（北京时间 21:25）。大约半小时后，他又发帖转述英伟达董事会恢复黄仁勋总裁兼 CEO 职务的消息，所以文中的价格都是这条消息公布之前的盘前价。</p>
+<h2>空头 Delta 集中在看跌期权</h2>
+<ul>
+<li>看跌期权单独计算，Delta 名义值是 -490 亿美元。其中约 -390 亿美元落在 115% moneyness 以上，也就是行权价约 157 美元及更高。他强调，这些是深度实值的看跌期权，并非上方有人大量卖出看涨。</li>
+<li>130% 到 150% 区间（行权价约 178 到 205 美元）是 -124 亿美元，150% 以上还有 -156 亿美元，178 美元以上合计约 -280 亿美元。</li>
+<li>集中在近月：1 个月列 -103 亿美元，2 个月列 -107 亿美元，两列合计约 -210 亿美元。</li>
+</ul>
+<p>实值看跌的 Delta 基本是机械性的。行权价高于现价时，每张合约的 Delta 接近 -1；现价往行权价方向涨，Delta 会自己衰减。所以他认为，<strong>上涨会让这块压力自行缩小，股价不会一头撞上去</strong>。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_thevalueist_nvda_puts"><img src="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>看涨期权整体是净多</h2>
+<ul>
+<li>看涨和看跌合计是 -236 亿美元，减去看跌的 -490 亿美元，看涨单独约为 +254 亿美元 Delta。这些截图里没有卖出看涨堆出来的“墙”。</li>
+<li>130% moneyness 以上，看涨单独净多约 +113 亿美元：178 到 205 美元区间 +39 亿美元，再往上 +74 亿美元。近月同样为正，1 个月列 +58 亿美元，2 个月列 +38 亿美元。</li>
+</ul>
+<p>紧贴现价上方的 110% 到 120% 区间（行权价约 150 到 164 美元），合计是 -59 亿美元。他强调拆开看很关键：看跌 -88 亿美元，看涨 +29 亿美元，这一段压着的仍然是看跌期权的 Delta，并没有大量卖出的看涨。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_thevalueist_nvda_combined"><img src="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>下方几乎没有保护</h2>
+<p>现价下方的直接看跌保护很薄。90% moneyness 以下，看跌期权合计只有约 -20 亿美元。</p>
+<p>同一区间的合计数是 +44 亿美元，但那来自深度实值看涨的 Delta，算不上下行对冲。1 个月列里 50% 以下的行权价，看跌只有 -5400 万美元，看涨约 +9.47 亿美元。他的判断是，这个期权盘也没有为新一轮下跌做多少对冲。</p>
+<h2>他的解读</h2>
+<p>整个期权盘净空约 236 亿美元 Delta，重心在机械性的实值看跌上，股价往行权价方向涨时它会衰减。走强只会侵蚀这部分空头 Delta，截图里也没有一堵卖出看涨的墙在上面接着。</p>
+<p>重定价已经能在数据里看到。同一份未平仓量，按 134.94 美元的盘前价测算，看跌是 -508 亿美元，合计 -260 亿美元；按 136.68 美元测算，看跌 -490 亿美元，合计 -236 亿美元。未平仓量没有变，都是上周五收盘的数，变的是现价上涨带来的 Delta 重估。</p>
+<p>这件事有两面。90% moneyness 以下只有约 20 亿美元的看跌 Delta，期权盘没有能力缓冲再一轮抛售。他认为这种仓位意味着：<strong>反弹越往上越轻松，一旦往下破位，期权盘几乎没有支撑</strong>。</p>
+<p>什么会改变这个判断？178 美元以上那一大块实值看跌被平仓或向下展期，或者现价下方出现真正的看跌买盘。在这两件事发生之前，他认为反弹面对的是一块不断缩小的压力，并非一个固定的天花板。</p>
+<h2>接下来盯什么</h2>
+<p>跟踪英伟达的投资者，可以盯他列出的两个信号：178 美元以上的实值看跌头寸是平仓还是下移，现价下方有没有出现新的看跌买盘。同时记住这份数据的边界：它只说明仓位的规模和方向，看不出持有人是谁，也看不出这些头寸是对冲还是投机。</p>
+
+<h2>原文</h2>
+<p><em>$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF</em></p>
+<figure data-media-id="img_thevalueist_nvda_combined"><img src="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_thevalueist_nvda_puts"><img src="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png" alt="彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026"><figcaption><a href="https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF</p>
+<p>THE SETUP</p>
+<p>• Friday's close was $125.53, 47.5% below the trailing 12-month closing high. Monday's premarket print in this data is $136.68, up $11.15, +8.9%, a headline-driven bounce into the open.
+• What follows is Bloomberg option expiration data: open interest as of Friday's close, delta notional by strike and expiry, measured at the $136.68 print. Open interest shows the size and the sign of the delta in the complex. It does not show who holds it.</p>
+<p>THE SHORT DELTA IS IN THE PUTS</p>
+<p>• The put book alone carries -$49B of delta notional. About -$39B of it sits above 115% moneyness, strikes of roughly $157 and higher: deep in-the-money puts, not overhead call supply. The 130-150% band, strikes of about $178 to $205, is -$12.4B, and above 150% there is another -$15.6B, about -$28B in total above the $178 line.
+• It is concentrated in the near columns: the 1-month put column is -$10.3B and the 2-month column is -$10.7B, about -$21B between them.
+• In-the-money put delta is largely mechanical. With the strike above spot, delta runs near -1 per contract, and as spot rises toward those strikes the delta bleeds off on its own. A rally shrinks this overhang instead of running into it.</p>
+<p>THE CALL BOOK IS NET LONG</p>
+<p>• The combined book, calls and puts together, totals -$23.6B. Calls alone are therefore net long about +$25.4B of delta (combined minus puts). There is no written call wall in these screens.
+• Above 130% moneyness, calls alone are net positive about +$11.3B: +$3.9B in the $178 to $205 band and +$7.4B above it. Calls alone are also positive in the near columns, +$5.8B in the 1-month column and +$3.8B in the 2-month column.
+• The band just overhead, 110-120% moneyness at strikes of about $150 to $164, is -$5.9B combined, and the split matters: that is puts at -$8.8B against calls at +$2.9B. It is put delta, not call supply.</p>
+<p>BELOW SPOT</p>
+<p>• Outright put protection below spot is thin. The put book below 90% moneyness totals only about -$2.0B.
+• The combined book below 90% moneyness is +$4.4B, but that is deep in-the-money call delta, not downside hedging. At strikes under 50% moneyness in the 1-month column, puts are just -$54M against about +$947M of calls. This book is not heavily hedged for a fresh leg down either.</p>
+<p>THE READ</p>
+<p>• Net, the entire NVIDIA options complex is short about $23.6B of delta, and the centre of gravity is mechanical in-the-money put delta that decays as spot rises toward the strikes. Strength erodes the short-delta overhang rather than feeding a wall of written calls, because there is no wall in these screens.
+• The repricing is visible between this morning's two prints. The same open interest measured at the $134.94 premarket print was -$50.8B in puts and -$26B combined; at $136.68 it is -$49B in puts and -$23.6B combined. Open interest has not changed, because it is Friday's close; the delta is repricing as spot rises, so the bleed-off is already showing up in the screens.
+• It cuts both ways. With only about $2.0B of put delta below 90% moneyness, the options book is not positioned to cushion a renewed selloff. The positioning argues for a bounce that gets easier as it climbs, and a break lower that meets little options-book support.
+• What would change the read: the in-the-money put block above $178 being closed or rolled down, or real put buying appearing below spot. Until one of those prints, the bounce is working against a shrinking overhang, not a fixed ceiling.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/TheValueist/status/2124856837174370439">https://x.com/TheValueist/status/2124856837174370439</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF", "url": "https://x.com/TheValueist/status/2124856837174370439", "lang": "en", "html": "<h2>$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF</h2>\n<figure data-media-id=\"img_thevalueist_nvda_combined\"><img src=\"https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png\" alt=\"彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_thevalueist_nvda_puts\"><img src=\"https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png\" alt=\"彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>$NVDA NVIDIA OPTIONS POSITIONING AFTER THE SELLOFF</p>\n<p>THE SETUP</p>\n<p>• Friday's close was $125.53, 47.5% below the trailing 12-month closing high. Monday's premarket print in this data is $136.68, up $11.15, +8.9%, a headline-driven bounce into the open.\n• What follows is Bloomberg option expiration data: open interest as of Friday's close, delta notional by strike and expiry, measured at the $136.68 print. Open interest shows the size and the sign of the delta in the complex. It does not show who holds it.</p>\n<p>THE SHORT DELTA IS IN THE PUTS</p>\n<p>• The put book alone carries -$49B of delta notional. About -$39B of it sits above 115% moneyness, strikes of roughly $157 and higher: deep in-the-money puts, not overhead call supply. The 130-150% band, strikes of about $178 to $205, is -$12.4B, and above 150% there is another -$15.6B, about -$28B in total above the $178 line.\n• It is concentrated in the near columns: the 1-month put column is -$10.3B and the 2-month column is -$10.7B, about -$21B between them.\n• In-the-money put delta is largely mechanical. With the strike above spot, delta runs near -1 per contract, and as spot rises toward those strikes the delta bleeds off on its own. A rally shrinks this overhang instead of running into it.</p>\n<p>THE CALL BOOK IS NET LONG</p>\n<p>• The combined book, calls and puts together, totals -$23.6B. Calls alone are therefore net long about +$25.4B of delta (combined minus puts). There is no written call wall in these screens.\n• Above 130% moneyness, calls alone are net positive about +$11.3B: +$3.9B in the $178 to $205 band and +$7.4B above it. Calls alone are also positive in the near columns, +$5.8B in the 1-month column and +$3.8B in the 2-month column.\n• The band just overhead, 110-120% moneyness at strikes of about $150 to $164, is -$5.9B combined, and the split matters: that is puts at -$8.8B against calls at +$2.9B. It is put delta, not call supply.</p>\n<p>BELOW SPOT</p>\n<p>• Outright put protection below spot is thin. The put book below 90% moneyness totals only about -$2.0B.\n• The combined book below 90% moneyness is +$4.4B, but that is deep in-the-money call delta, not downside hedging. At strikes under 50% moneyness in the 1-month column, puts are just -$54M against about +$947M of calls. This book is not heavily hedged for a fresh leg down either.</p>\n<p>THE READ</p>\n<p>• Net, the entire NVIDIA options complex is short about $23.6B of delta, and the centre of gravity is mechanical in-the-money put delta that decays as spot rises toward the strikes. Strength erodes the short-delta overhang rather than feeding a wall of written calls, because there is no wall in these screens.\n• The repricing is visible between this morning's two prints. The same open interest measured at the $134.94 premarket print was -$50.8B in puts and -$26B combined; at $136.68 it is -$49B in puts and -$23.6B combined. Open interest has not changed, because it is Friday's close; the delta is repricing as spot rises, so the bleed-off is already showing up in the screens.\n• It cuts both ways. With only about $2.0B of put delta below 90% moneyness, the options book is not positioned to cushion a renewed selloff. The positioning argues for a bounce that gets easier as it climbs, and a break lower that meets little options-book support.\n• What would change the read: the in-the-money put block above $178 being closed or rolled down, or real put buying appearing below spot. Until one of those prints, the bounce is working against a shrinking overhang, not a fixed ceiling.</p>\n<p>原文链接：<a href=\"https://x.com/TheValueist/status/2124856837174370439\">https://x.com/TheValueist/status/2124856837174370439</a></p>"}, "rewrite": {"title": "TheValueist 拆英伟达期权仓位：236 亿美元空头 Delta 多是实值看跌，反弹越涨压力越小", "markdown": "上周五英伟达收在 125.53 美元，比过去 12 个月的收盘最高点低 47.5%。周一盘前报到 136.68 美元，涨 11.15 美元，涨幅 8.9%，TheValueist 称之为消息驱动的开盘反弹。\n\n他用彭博的期权到期数据，把英伟达整个期权盘的仓位拆了一遍，结论是：**期权盘净空约 236 亿美元 Delta，但大头是深度实值看跌期权，股价越涨，这块压力越小**。\n\n## 数据口径\n\n数据是上周五收盘时的未平仓量，按行权价和到期日列出 Delta 名义值，按 136.68 美元这个价位测算。下文的 moneyness 指行权价相对这个价位的比例，比如 115% 约等于 157 美元。\n\n他特别说明：未平仓量能显示期权盘 Delta 的规模和方向，**看不出是谁持有**。\n\n这篇帖子发于 UTC 时间 11 月 23 日 13:25（北京时间 21:25）。大约半小时后，他又发帖转述英伟达董事会恢复黄仁勋总裁兼 CEO 职务的消息，所以文中的价格都是这条消息公布之前的盘前价。\n\n## 空头 Delta 集中在看跌期权\n\n- 看跌期权单独计算，Delta 名义值是 -490 亿美元。其中约 -390 亿美元落在 115% moneyness 以上，也就是行权价约 157 美元及更高。他强调，这些是深度实值的看跌期权，并非上方有人大量卖出看涨。\n- 130% 到 150% 区间（行权价约 178 到 205 美元）是 -124 亿美元，150% 以上还有 -156 亿美元，178 美元以上合计约 -280 亿美元。\n- 集中在近月：1 个月列 -103 亿美元，2 个月列 -107 亿美元，两列合计约 -210 亿美元。\n\n实值看跌的 Delta 基本是机械性的。行权价高于现价时，每张合约的 Delta 接近 -1；现价往行权价方向涨，Delta 会自己衰减。所以他认为，**上涨会让这块压力自行缩小，股价不会一头撞上去**。\n\n![彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026](<https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png>)\n\n## 看涨期权整体是净多\n\n- 看涨和看跌合计是 -236 亿美元，减去看跌的 -490 亿美元，看涨单独约为 +254 亿美元 Delta。这些截图里没有卖出看涨堆出来的“墙”。\n- 130% moneyness 以上，看涨单独净多约 +113 亿美元：178 到 205 美元区间 +39 亿美元，再往上 +74 亿美元。近月同样为正，1 个月列 +58 亿美元，2 个月列 +38 亿美元。\n\n紧贴现价上方的 110% 到 120% 区间（行权价约 150 到 164 美元），合计是 -59 亿美元。他强调拆开看很关键：看跌 -88 亿美元，看涨 +29 亿美元，这一段压着的仍然是看跌期权的 Delta，并没有大量卖出的看涨。\n\n![彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026](<https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png>)\n\n## 下方几乎没有保护\n\n现价下方的直接看跌保护很薄。90% moneyness 以下，看跌期权合计只有约 -20 亿美元。\n\n同一区间的合计数是 +44 亿美元，但那来自深度实值看涨的 Delta，算不上下行对冲。1 个月列里 50% 以下的行权价，看跌只有 -5400 万美元，看涨约 +9.47 亿美元。他的判断是，这个期权盘也没有为新一轮下跌做多少对冲。\n\n## 他的解读\n\n整个期权盘净空约 236 亿美元 Delta，重心在机械性的实值看跌上，股价往行权价方向涨时它会衰减。走强只会侵蚀这部分空头 Delta，截图里也没有一堵卖出看涨的墙在上面接着。\n\n重定价已经能在数据里看到。同一份未平仓量，按 134.94 美元的盘前价测算，看跌是 -508 亿美元，合计 -260 亿美元；按 136.68 美元测算，看跌 -490 亿美元，合计 -236 亿美元。未平仓量没有变，都是上周五收盘的数，变的是现价上涨带来的 Delta 重估。\n\n这件事有两面。90% moneyness 以下只有约 20 亿美元的看跌 Delta，期权盘没有能力缓冲再一轮抛售。他认为这种仓位意味着：**反弹越往上越轻松，一旦往下破位，期权盘几乎没有支撑**。\n\n什么会改变这个判断？178 美元以上那一大块实值看跌被平仓或向下展期，或者现价下方出现真正的看跌买盘。在这两件事发生之前，他认为反弹面对的是一块不断缩小的压力，并非一个固定的天花板。\n\n## 接下来盯什么\n\n跟踪英伟达的投资者，可以盯他列出的两个信号：178 美元以上的实值看跌头寸是平仓还是下移，现价下方有没有出现新的看跌买盘。同时记住这份数据的边界：它只说明仓位的规模和方向，看不出持有人是谁，也看不出这些头寸是对冲还是投机。", "html": "<p>上周五英伟达收在 125.53 美元，比过去 12 个月的收盘最高点低 47.5%。周一盘前报到 136.68 美元，涨 11.15 美元，涨幅 8.9%，TheValueist 称之为消息驱动的开盘反弹。</p>\n<p>他用彭博的期权到期数据，把英伟达整个期权盘的仓位拆了一遍，结论是：<strong>期权盘净空约 236 亿美元 Delta，但大头是深度实值看跌期权，股价越涨，这块压力越小</strong>。</p>\n<h2>数据口径</h2>\n<p>数据是上周五收盘时的未平仓量，按行权价和到期日列出 Delta 名义值，按 136.68 美元这个价位测算。下文的 moneyness 指行权价相对这个价位的比例，比如 115% 约等于 157 美元。</p>\n<p>他特别说明：未平仓量能显示期权盘 Delta 的规模和方向，<strong>看不出是谁持有</strong>。</p>\n<p>这篇帖子发于 UTC 时间 11 月 23 日 13:25（北京时间 21:25）。大约半小时后，他又发帖转述英伟达董事会恢复黄仁勋总裁兼 CEO 职务的消息，所以文中的价格都是这条消息公布之前的盘前价。</p>\n<h2>空头 Delta 集中在看跌期权</h2>\n<ul>\n<li>看跌期权单独计算，Delta 名义值是 -490 亿美元。其中约 -390 亿美元落在 115% moneyness 以上，也就是行权价约 157 美元及更高。他强调，这些是深度实值的看跌期权，并非上方有人大量卖出看涨。</li>\n<li>130% 到 150% 区间（行权价约 178 到 205 美元）是 -124 亿美元，150% 以上还有 -156 亿美元，178 美元以上合计约 -280 亿美元。</li>\n<li>集中在近月：1 个月列 -103 亿美元，2 个月列 -107 亿美元，两列合计约 -210 亿美元。</li>\n</ul>\n<p>实值看跌的 Delta 基本是机械性的。行权价高于现价时，每张合约的 Delta 接近 -1；现价往行权价方向涨，Delta 会自己衰减。所以他认为，<strong>上涨会让这块压力自行缩小，股价不会一头撞上去</strong>。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_thevalueist_nvda_puts\"><img src=\"https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png\" alt=\"彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，仅 Puts，Delta -49B USD，As Of 23-Nov-2026\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0BE99XsAA6OCi.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>看涨期权整体是净多</h2>\n<ul>\n<li>看涨和看跌合计是 -236 亿美元，减去看跌的 -490 亿美元，看涨单独约为 +254 亿美元 Delta。这些截图里没有卖出看涨堆出来的“墙”。</li>\n<li>130% moneyness 以上，看涨单独净多约 +113 亿美元：178 到 205 美元区间 +39 亿美元，再往上 +74 亿美元。近月同样为正，1 个月列 +58 亿美元，2 个月列 +38 亿美元。</li>\n</ul>\n<p>紧贴现价上方的 110% 到 120% 区间（行权价约 150 到 164 美元），合计是 -59 亿美元。他强调拆开看很关键：看跌 -88 亿美元，看涨 +29 亿美元，这一段压着的仍然是看跌期权的 Delta，并没有大量卖出的看涨。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_thevalueist_nvda_combined\"><img src=\"https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png\" alt=\"彭博 Option Expiration 截图：NVDA US Equity，Delta Notional，Calls 与 Puts 合计，Delta -23.6B USD，As Of 23-Nov-2026\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0BAwKWMAAJCnM.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>下方几乎没有保护</h2>\n<p>现价下方的直接看跌保护很薄。90% moneyness 以下，看跌期权合计只有约 -20 亿美元。</p>\n<p>同一区间的合计数是 +44 亿美元，但那来自深度实值看涨的 Delta，算不上下行对冲。1 个月列里 50% 以下的行权价，看跌只有 -5400 万美元，看涨约 +9.47 亿美元。他的判断是，这个期权盘也没有为新一轮下跌做多少对冲。</p>\n<h2>他的解读</h2>\n<p>整个期权盘净空约 236 亿美元 Delta，重心在机械性的实值看跌上，股价往行权价方向涨时它会衰减。走强只会侵蚀这部分空头 Delta，截图里也没有一堵卖出看涨的墙在上面接着。</p>\n<p>重定价已经能在数据里看到。同一份未平仓量，按 134.94 美元的盘前价测算，看跌是 -508 亿美元，合计 -260 亿美元；按 136.68 美元测算，看跌 -490 亿美元，合计 -236 亿美元。未平仓量没有变，都是上周五收盘的数，变的是现价上涨带来的 Delta 重估。</p>\n<p>这件事有两面。90% moneyness 以下只有约 20 亿美元的看跌 Delta，期权盘没有能力缓冲再一轮抛售。他认为这种仓位意味着：<strong>反弹越往上越轻松，一旦往下破位，期权盘几乎没有支撑</strong>。</p>\n<p>什么会改变这个判断？178 美元以上那一大块实值看跌被平仓或向下展期，或者现价下方出现真正的看跌买盘。在这两件事发生之前，他认为反弹面对的是一块不断缩小的压力，并非一个固定的天花板。</p>\n<h2>接下来盯什么</h2>\n<p>跟踪英伟达的投资者，可以盯他列出的两个信号：178 美元以上的实值看跌头寸是平仓还是下移，现价下方有没有出现新的看跌买盘。同时记住这份数据的边界：它只说明仓位的规模和方向，看不出持有人是谁，也看不出这些头寸是对冲还是投机。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Tomasz Tunguz：每个部门都会有自己的 AI 工厂，跑的是同一个四步循环</title>
+      <link>https://karuio.github.io/a/ttunguz-what-kind-of-factory</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/ttunguz-what-kind-of-factory</guid>
+      <pubDate>Mon, 23 Nov 2026 16:36:40 +0000</pubDate>
+      <author>Tomasz Tunguz</author>
+      <description><![CDATA[<p><em>Notion 和 LangChain 同一天发文，描述的都是上下文、代理、执行轨迹、整理者四步循环。他认为后两步才让系统每周变好，而工厂难建在运营，买模型解决不了。</em></p>
+<h2>中文改写</h2>
+<p>11 月 21 日，Notion 发了《A New Shape for Work》，LangChain 发了《How to Build a Knowledge Factory》。一篇是宣言，一篇是搭建指南。Tomasz Tunguz 注意到，两篇讲的是同一个用在公司知识上的四步循环：上下文、代理、执行轨迹、整理者。</p>
+<p>他的判断是，软件团队已经在建的“工厂”，正在被搬到公司里的每一个部门。</p>
+<h2>从一行行写代码，到搭一座工厂</h2>
+<p>Tunguz 写道，AI 出现之前，软件是一行一行写出来的。AI 出现之后，最好的工程团队不再自己写代码，转去搭<strong>软件工厂</strong>：一套替他们写代码、测试、发布的系统。</p>
+<p>那其他团队为什么不建工厂？他的回答是：它们正在建。Notion 和 LangChain 这两篇文章，就是给知识工作建工厂的方案。</p>
+<h2>Notion 和 LangChain 从两头说同一件事</h2>
+<p>Notion 说得很直白：“这种结构是现代组织能拥有的最有价值的知识产权之一，因为它决定了代理在这家公司里能做到什么程度。”</p>
+<p>LangChain 从另一头讲同一个循环：“目标不是先把一切写成文档，代理才能开工。目标是搭一个系统，让做事的过程暴露出缺了哪些知识，补上这些缺口又让以后的工作做得更好。”</p>
+<h2>一座工厂的四个部件</h2>
+<p>按 Tunguz 的拆法，软件工厂由四部分组成：</p>
+<ul>
+<li><strong>共享上下文</strong>：代理开工前要读的规格说明、文档和历史记录。</li>
+<li><strong>代理</strong>：运行技能和规格说明，把活干完。</li>
+<li><strong>执行轨迹</strong>：记下交付了什么、坏了什么、花了多少钱。</li>
+<li><strong>整理循环</strong>：读执行轨迹，为下一轮改写技能和规格说明。</li>
+</ul>
+<p>后两步会产生复利。附上一份文档的提示词只能用一次。执行轨迹把工作变成数据，整理者再把数据变成更好的系统。Tunguz 认为，每周都在变好的工厂和一直原地踏步的工作流，差别就在这里。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_factory_cover"><img src="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg" alt="原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>同一个循环，换一批数据</h2>
+<p>他认为这个循环不是哪家厂商想出来的点子，代理承担大部分工作之后，工作本来就会长成这样。知识工厂和代码工厂部件完全相同：上下文是文档，代理负责给出答案，执行轨迹记下答错的地方，整理者负责修正。</p>
+<p>看懂这个循环，就会发现它到处适用。营销工厂把投放效果变成更好的文案；在线广告工厂把 ROAS（广告支出回报率）轨迹变成新的广告素材；销售工厂把通话记录变成更有力的演示稿。</p>
+<p>原文配图把四类工厂并排列出。软件工厂的上下文是代码仓库、设计规格和以往的 PR，产出是合并的代码、测试和部署，轨迹信号是构建失败、评审意见和事故。知识工厂的上下文是文档、工单和会议纪要，产出是答案、简报和整理好的操作手册，轨迹信号是哪个答案错了或从没被复用。营销工厂的上下文是品牌指南、ICP 和过往活动，产出是文案、素材和落地页，轨迹信号是各版本的打开率、CPA 和 ROAS。销售工厂的上下文是通话记录和赢单、丢单笔记，产出是演示稿、话术和跟进，轨迹信号是客户提出的异议和成交的单子。图注来源为 Notion、LangChain 和 Theory Ventures。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_factory_table"><img src="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png" alt="图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>他还引用了萨提亚·纳德拉在 Microsoft Ignite 上描述的同一种变化：“新公司的样子是，有一个创始人，创始人有一笔 token 预算。然后创始人招了一个人，这个人进来以后也有一笔 token 预算，他们要想清楚怎么把 token 和工资加在一起，然后继续建设。”</p>
+<h2>工厂为什么还少见</h2>
+<p>Tunguz 的解释是，<strong>工厂是一个运营项目，靠买模型解决不了</strong>。得有人负责上下文、写规格说明、读执行轨迹，并按固定节奏跑整理循环。在他看来，这就是工作的重塑：为每个团队定义并运营它自己的工厂。</p>
+<p>部门不同，架构相同。他说，问题已经从“AI 能不能干这活”变成了“你要建一座什么样的工厂”。</p>
+<h2>先盘点自己缺哪一环</h2>
+<p>想在自己团队试一试的，可以按他的四个部件逐项对照：代理读的上下文有没有专人维护；每次运行有没有留下交付、失败和成本的记录；有没有人按固定节奏读这些记录，回头改技能和规格说明。按 Tunguz 的说法，缺了后两项，得到的只是一个附了文档的一次性提示词，工作流不会自己变好。</p>
+
+<h2>原文</h2>
+<p><em>What Kind of Factory Will You Build?</em></p>
+<figure data-media-id="img_tunguz_factory_cover"><img src="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg" alt="原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_factory_table"><img src="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png" alt="图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>What Kind of Factory Will You Build?
+Before AI, we wrote software line by line. After AI, the best engineering teams stopped writing code &amp; started building software factories : systems that write, test, &amp; ship the code for them.
+So why don't other teams build factories?
+They are. On November 21, Notion published "A New Shape for Work" &amp; LangChain published "How to Build a Knowledge Factory". One is a manifesto, the other a build guide. Both describe the exact same four-step loop applied to company knowledge : context, agent, trace, curator.
+This is the plan for shipping a factory.</p>
+<p>Notion puts it bluntly :
+"This structure is among the most valuable IP any modern organization can have, because it defines the limit of what is possible for agents to do within that company."
+LangChain frames the same loop from the other side :
+"The goal isn't to document everything before agents can start working. It's to build a system where doing the work reveals what knowledge is missing, &amp; resolving those gaps makes future work better."
+A software factory has four components. A shared context : the specs, docs &amp; history an agent reads before it starts. An agent that runs the skills &amp; specs to do the work. An execution trace that flags what shipped, what broke, &amp; what it cost. A curator loop that reads the trace &amp; rewrites the skills &amp; specs for the next run.
+The last two steps compound. A prompt with a document attached is a one-off. The trace turns the work into data. The curator turns the data into a better system. That is the difference between a factory that improves every week &amp; a workflow that stays flat.
+The loop is not a vendor's idea. It is what the work looks like once an agent does most of it. A knowledge factory has the same four parts as a code factory. The context is the docs. The agent is the answer. The trace is the wrong answer. The curator is the fix.
+Once you see the loop, it generalizes everywhere. A marketing factory turns campaign performance into better copy. An online ads factory turns ROAS traces into new creative. A sales pitch factory turns call transcripts into sharper decks.
+Satya Nadella described the same shift at Microsoft Ignite :
+"The new company looks like there's a founder. The founder has a token budget. Then the founder hires somebody. That person also comes in, &amp; then they have a token budget, &amp; they figure out how to add the tokens &amp; the wages &amp; then keep building."
+Factories are still rare because a factory is an operations project, not a model purchase. Someone has to own the context, write the specs, read the traces &amp; run the curator on a cadence. This is the reinvention of work : defining &amp; operating the factory for each team.
+Different departments, identical architecture. The question is no longer whether AI can do the work : it is what kind of factory you will build.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2124904980847157611">https://x.com/ttunguz/status/2124904980847157611</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/what-kind-of-factory-will-you-build/">https://tomtunguz.com/what-kind-of-factory-will-you-build/</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Notion 和 LangChain 同一天发文，描述的都是上下文、代理、执行轨迹、整理者四步循环。他认为后两步才让系统每周变好，而工厂难建在运营，买模型解决不了。</em></p>
+<h2>中文改写</h2>
+<p>11 月 21 日，Notion 发了《A New Shape for Work》，LangChain 发了《How to Build a Knowledge Factory》。一篇是宣言，一篇是搭建指南。Tomasz Tunguz 注意到，两篇讲的是同一个用在公司知识上的四步循环：上下文、代理、执行轨迹、整理者。</p>
+<p>他的判断是，软件团队已经在建的“工厂”，正在被搬到公司里的每一个部门。</p>
+<h2>从一行行写代码，到搭一座工厂</h2>
+<p>Tunguz 写道，AI 出现之前，软件是一行一行写出来的。AI 出现之后，最好的工程团队不再自己写代码，转去搭<strong>软件工厂</strong>：一套替他们写代码、测试、发布的系统。</p>
+<p>那其他团队为什么不建工厂？他的回答是：它们正在建。Notion 和 LangChain 这两篇文章，就是给知识工作建工厂的方案。</p>
+<h2>Notion 和 LangChain 从两头说同一件事</h2>
+<p>Notion 说得很直白：“这种结构是现代组织能拥有的最有价值的知识产权之一，因为它决定了代理在这家公司里能做到什么程度。”</p>
+<p>LangChain 从另一头讲同一个循环：“目标不是先把一切写成文档，代理才能开工。目标是搭一个系统，让做事的过程暴露出缺了哪些知识，补上这些缺口又让以后的工作做得更好。”</p>
+<h2>一座工厂的四个部件</h2>
+<p>按 Tunguz 的拆法，软件工厂由四部分组成：</p>
+<ul>
+<li><strong>共享上下文</strong>：代理开工前要读的规格说明、文档和历史记录。</li>
+<li><strong>代理</strong>：运行技能和规格说明，把活干完。</li>
+<li><strong>执行轨迹</strong>：记下交付了什么、坏了什么、花了多少钱。</li>
+<li><strong>整理循环</strong>：读执行轨迹，为下一轮改写技能和规格说明。</li>
+</ul>
+<p>后两步会产生复利。附上一份文档的提示词只能用一次。执行轨迹把工作变成数据，整理者再把数据变成更好的系统。Tunguz 认为，每周都在变好的工厂和一直原地踏步的工作流，差别就在这里。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_factory_cover"><img src="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg" alt="原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>同一个循环，换一批数据</h2>
+<p>他认为这个循环不是哪家厂商想出来的点子，代理承担大部分工作之后，工作本来就会长成这样。知识工厂和代码工厂部件完全相同：上下文是文档，代理负责给出答案，执行轨迹记下答错的地方，整理者负责修正。</p>
+<p>看懂这个循环，就会发现它到处适用。营销工厂把投放效果变成更好的文案；在线广告工厂把 ROAS（广告支出回报率）轨迹变成新的广告素材；销售工厂把通话记录变成更有力的演示稿。</p>
+<p>原文配图把四类工厂并排列出。软件工厂的上下文是代码仓库、设计规格和以往的 PR，产出是合并的代码、测试和部署，轨迹信号是构建失败、评审意见和事故。知识工厂的上下文是文档、工单和会议纪要，产出是答案、简报和整理好的操作手册，轨迹信号是哪个答案错了或从没被复用。营销工厂的上下文是品牌指南、ICP 和过往活动，产出是文案、素材和落地页，轨迹信号是各版本的打开率、CPA 和 ROAS。销售工厂的上下文是通话记录和赢单、丢单笔记，产出是演示稿、话术和跟进，轨迹信号是客户提出的异议和成交的单子。图注来源为 Notion、LangChain 和 Theory Ventures。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_factory_table"><img src="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png" alt="图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>他还引用了萨提亚·纳德拉在 Microsoft Ignite 上描述的同一种变化：“新公司的样子是，有一个创始人，创始人有一笔 token 预算。然后创始人招了一个人，这个人进来以后也有一笔 token 预算，他们要想清楚怎么把 token 和工资加在一起，然后继续建设。”</p>
+<h2>工厂为什么还少见</h2>
+<p>Tunguz 的解释是，<strong>工厂是一个运营项目，靠买模型解决不了</strong>。得有人负责上下文、写规格说明、读执行轨迹，并按固定节奏跑整理循环。在他看来，这就是工作的重塑：为每个团队定义并运营它自己的工厂。</p>
+<p>部门不同，架构相同。他说，问题已经从“AI 能不能干这活”变成了“你要建一座什么样的工厂”。</p>
+<h2>先盘点自己缺哪一环</h2>
+<p>想在自己团队试一试的，可以按他的四个部件逐项对照：代理读的上下文有没有专人维护；每次运行有没有留下交付、失败和成本的记录；有没有人按固定节奏读这些记录，回头改技能和规格说明。按 Tunguz 的说法，缺了后两项，得到的只是一个附了文档的一次性提示词，工作流不会自己变好。</p>
+
+<h2>原文</h2>
+<p><em>What Kind of Factory Will You Build?</em></p>
+<figure data-media-id="img_tunguz_factory_cover"><img src="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg" alt="原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_factory_table"><img src="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png" alt="图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>What Kind of Factory Will You Build?
+Before AI, we wrote software line by line. After AI, the best engineering teams stopped writing code &amp; started building software factories : systems that write, test, &amp; ship the code for them.
+So why don't other teams build factories?
+They are. On November 21, Notion published "A New Shape for Work" &amp; LangChain published "How to Build a Knowledge Factory". One is a manifesto, the other a build guide. Both describe the exact same four-step loop applied to company knowledge : context, agent, trace, curator.
+This is the plan for shipping a factory.</p>
+<p>Notion puts it bluntly :
+"This structure is among the most valuable IP any modern organization can have, because it defines the limit of what is possible for agents to do within that company."
+LangChain frames the same loop from the other side :
+"The goal isn't to document everything before agents can start working. It's to build a system where doing the work reveals what knowledge is missing, &amp; resolving those gaps makes future work better."
+A software factory has four components. A shared context : the specs, docs &amp; history an agent reads before it starts. An agent that runs the skills &amp; specs to do the work. An execution trace that flags what shipped, what broke, &amp; what it cost. A curator loop that reads the trace &amp; rewrites the skills &amp; specs for the next run.
+The last two steps compound. A prompt with a document attached is a one-off. The trace turns the work into data. The curator turns the data into a better system. That is the difference between a factory that improves every week &amp; a workflow that stays flat.
+The loop is not a vendor's idea. It is what the work looks like once an agent does most of it. A knowledge factory has the same four parts as a code factory. The context is the docs. The agent is the answer. The trace is the wrong answer. The curator is the fix.
+Once you see the loop, it generalizes everywhere. A marketing factory turns campaign performance into better copy. An online ads factory turns ROAS traces into new creative. A sales pitch factory turns call transcripts into sharper decks.
+Satya Nadella described the same shift at Microsoft Ignite :
+"The new company looks like there's a founder. The founder has a token budget. Then the founder hires somebody. That person also comes in, &amp; then they have a token budget, &amp; they figure out how to add the tokens &amp; the wages &amp; then keep building."
+Factories are still rare because a factory is an operations project, not a model purchase. Someone has to own the context, write the specs, read the traces &amp; run the curator on a cadence. This is the reinvention of work : defining &amp; operating the factory for each team.
+Different departments, identical architecture. The question is no longer whether AI can do the work : it is what kind of factory you will build.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2124904980847157611">https://x.com/ttunguz/status/2124904980847157611</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/what-kind-of-factory-will-you-build/">https://tomtunguz.com/what-kind-of-factory-will-you-build/</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "What Kind of Factory Will You Build?", "url": "https://x.com/ttunguz/status/2124904980847157611", "lang": "en", "html": "<h2>What Kind of Factory Will You Build?</h2>\n<figure data-media-id=\"img_tunguz_factory_cover\"><img src=\"https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg\" alt=\"原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_factory_table\"><img src=\"https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png\" alt=\"图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>What Kind of Factory Will You Build?\nBefore AI, we wrote software line by line. After AI, the best engineering teams stopped writing code &amp; started building software factories : systems that write, test, &amp; ship the code for them.\nSo why don't other teams build factories?\nThey are. On November 21, Notion published \"A New Shape for Work\" &amp; LangChain published \"How to Build a Knowledge Factory\". One is a manifesto, the other a build guide. Both describe the exact same four-step loop applied to company knowledge : context, agent, trace, curator.\nThis is the plan for shipping a factory.</p>\n<p>Notion puts it bluntly :\n\"This structure is among the most valuable IP any modern organization can have, because it defines the limit of what is possible for agents to do within that company.\"\nLangChain frames the same loop from the other side :\n\"The goal isn't to document everything before agents can start working. It's to build a system where doing the work reveals what knowledge is missing, &amp; resolving those gaps makes future work better.\"\nA software factory has four components. A shared context : the specs, docs &amp; history an agent reads before it starts. An agent that runs the skills &amp; specs to do the work. An execution trace that flags what shipped, what broke, &amp; what it cost. A curator loop that reads the trace &amp; rewrites the skills &amp; specs for the next run.\nThe last two steps compound. A prompt with a document attached is a one-off. The trace turns the work into data. The curator turns the data into a better system. That is the difference between a factory that improves every week &amp; a workflow that stays flat.\nThe loop is not a vendor's idea. It is what the work looks like once an agent does most of it. A knowledge factory has the same four parts as a code factory. The context is the docs. The agent is the answer. The trace is the wrong answer. The curator is the fix.\nOnce you see the loop, it generalizes everywhere. A marketing factory turns campaign performance into better copy. An online ads factory turns ROAS traces into new creative. A sales pitch factory turns call transcripts into sharper decks.\nSatya Nadella described the same shift at Microsoft Ignite :\n\"The new company looks like there's a founder. The founder has a token budget. Then the founder hires somebody. That person also comes in, &amp; then they have a token budget, &amp; they figure out how to add the tokens &amp; the wages &amp; then keep building.\"\nFactories are still rare because a factory is an operations project, not a model purchase. Someone has to own the context, write the specs, read the traces &amp; run the curator on a cadence. This is the reinvention of work : defining &amp; operating the factory for each team.\nDifferent departments, identical architecture. The question is no longer whether AI can do the work : it is what kind of factory you will build.\nOriginally published on tomtunguz.com.</p>\n<p>原文链接：<a href=\"https://x.com/ttunguz/status/2124904980847157611\">https://x.com/ttunguz/status/2124904980847157611</a></p>\n<p>相关链接：<a href=\"https://tomtunguz.com/what-kind-of-factory-will-you-build/\">https://tomtunguz.com/what-kind-of-factory-will-you-build/</a></p>"}, "rewrite": {"title": "Tomasz Tunguz：每个部门都会有自己的 AI 工厂，跑的是同一个四步循环", "markdown": "11 月 21 日，Notion 发了《A New Shape for Work》，LangChain 发了《How to Build a Knowledge Factory》。一篇是宣言，一篇是搭建指南。Tomasz Tunguz 注意到，两篇讲的是同一个用在公司知识上的四步循环：上下文、代理、执行轨迹、整理者。\n\n他的判断是，软件团队已经在建的“工厂”，正在被搬到公司里的每一个部门。\n\n## 从一行行写代码，到搭一座工厂\n\nTunguz 写道，AI 出现之前，软件是一行一行写出来的。AI 出现之后，最好的工程团队不再自己写代码，转去搭**软件工厂**：一套替他们写代码、测试、发布的系统。\n\n那其他团队为什么不建工厂？他的回答是：它们正在建。Notion 和 LangChain 这两篇文章，就是给知识工作建工厂的方案。\n\n## Notion 和 LangChain 从两头说同一件事\n\nNotion 说得很直白：“这种结构是现代组织能拥有的最有价值的知识产权之一，因为它决定了代理在这家公司里能做到什么程度。”\n\nLangChain 从另一头讲同一个循环：“目标不是先把一切写成文档，代理才能开工。目标是搭一个系统，让做事的过程暴露出缺了哪些知识，补上这些缺口又让以后的工作做得更好。”\n\n## 一座工厂的四个部件\n\n按 Tunguz 的拆法，软件工厂由四部分组成：\n\n- **共享上下文**：代理开工前要读的规格说明、文档和历史记录。\n- **代理**：运行技能和规格说明，把活干完。\n- **执行轨迹**：记下交付了什么、坏了什么、花了多少钱。\n- **整理循环**：读执行轨迹，为下一轮改写技能和规格说明。\n\n后两步会产生复利。附上一份文档的提示词只能用一次。执行轨迹把工作变成数据，整理者再把数据变成更好的系统。Tunguz 认为，每周都在变好的工厂和一直原地踏步的工作流，差别就在这里。\n\n![原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）](<https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg>)\n\n## 同一个循环，换一批数据\n\n他认为这个循环不是哪家厂商想出来的点子，代理承担大部分工作之后，工作本来就会长成这样。知识工厂和代码工厂部件完全相同：上下文是文档，代理负责给出答案，执行轨迹记下答错的地方，整理者负责修正。\n\n看懂这个循环，就会发现它到处适用。营销工厂把投放效果变成更好的文案；在线广告工厂把 ROAS（广告支出回报率）轨迹变成新的广告素材；销售工厂把通话记录变成更有力的演示稿。\n\n原文配图把四类工厂并排列出。软件工厂的上下文是代码仓库、设计规格和以往的 PR，产出是合并的代码、测试和部署，轨迹信号是构建失败、评审意见和事故。知识工厂的上下文是文档、工单和会议纪要，产出是答案、简报和整理好的操作手册，轨迹信号是哪个答案错了或从没被复用。营销工厂的上下文是品牌指南、ICP 和过往活动，产出是文案、素材和落地页，轨迹信号是各版本的打开率、CPA 和 ROAS。销售工厂的上下文是通话记录和赢单、丢单笔记，产出是演示稿、话术和跟进，轨迹信号是客户提出的异议和成交的单子。图注来源为 Notion、LangChain 和 Theory Ventures。\n\n![图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）](<https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png>)\n\n他还引用了萨提亚·纳德拉在 Microsoft Ignite 上描述的同一种变化：“新公司的样子是，有一个创始人，创始人有一笔 token 预算。然后创始人招了一个人，这个人进来以后也有一笔 token 预算，他们要想清楚怎么把 token 和工资加在一起，然后继续建设。”\n\n## 工厂为什么还少见\n\nTunguz 的解释是，**工厂是一个运营项目，靠买模型解决不了**。得有人负责上下文、写规格说明、读执行轨迹，并按固定节奏跑整理循环。在他看来，这就是工作的重塑：为每个团队定义并运营它自己的工厂。\n\n部门不同，架构相同。他说，问题已经从“AI 能不能干这活”变成了“你要建一座什么样的工厂”。\n\n## 先盘点自己缺哪一环\n\n想在自己团队试一试的，可以按他的四个部件逐项对照：代理读的上下文有没有专人维护；每次运行有没有留下交付、失败和成本的记录；有没有人按固定节奏读这些记录，回头改技能和规格说明。按 Tunguz 的说法，缺了后两项，得到的只是一个附了文档的一次性提示词，工作流不会自己变好。", "html": "<p>11 月 21 日，Notion 发了《A New Shape for Work》，LangChain 发了《How to Build a Knowledge Factory》。一篇是宣言，一篇是搭建指南。Tomasz Tunguz 注意到，两篇讲的是同一个用在公司知识上的四步循环：上下文、代理、执行轨迹、整理者。</p>\n<p>他的判断是，软件团队已经在建的“工厂”，正在被搬到公司里的每一个部门。</p>\n<h2>从一行行写代码，到搭一座工厂</h2>\n<p>Tunguz 写道，AI 出现之前，软件是一行一行写出来的。AI 出现之后，最好的工程团队不再自己写代码，转去搭<strong>软件工厂</strong>：一套替他们写代码、测试、发布的系统。</p>\n<p>那其他团队为什么不建工厂？他的回答是：它们正在建。Notion 和 LangChain 这两篇文章，就是给知识工作建工厂的方案。</p>\n<h2>Notion 和 LangChain 从两头说同一件事</h2>\n<p>Notion 说得很直白：“这种结构是现代组织能拥有的最有价值的知识产权之一，因为它决定了代理在这家公司里能做到什么程度。”</p>\n<p>LangChain 从另一头讲同一个循环：“目标不是先把一切写成文档，代理才能开工。目标是搭一个系统，让做事的过程暴露出缺了哪些知识，补上这些缺口又让以后的工作做得更好。”</p>\n<h2>一座工厂的四个部件</h2>\n<p>按 Tunguz 的拆法，软件工厂由四部分组成：</p>\n<ul>\n<li><strong>共享上下文</strong>：代理开工前要读的规格说明、文档和历史记录。</li>\n<li><strong>代理</strong>：运行技能和规格说明，把活干完。</li>\n<li><strong>执行轨迹</strong>：记下交付了什么、坏了什么、花了多少钱。</li>\n<li><strong>整理循环</strong>：读执行轨迹，为下一轮改写技能和规格说明。</li>\n</ul>\n<p>后两步会产生复利。附上一份文档的提示词只能用一次。执行轨迹把工作变成数据，整理者再把数据变成更好的系统。Tunguz 认为，每周都在变好的工厂和一直原地踏步的工作流，差别就在这里。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_factory_cover\"><img src=\"https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg\" alt=\"原文封面图：Every AI Factory Runs the Same Four-Step Loop（Context、Agent、Trace、Curator，Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0skrabwAAP6wq.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>同一个循环，换一批数据</h2>\n<p>他认为这个循环不是哪家厂商想出来的点子，代理承担大部分工作之后，工作本来就会长成这样。知识工厂和代码工厂部件完全相同：上下文是文档，代理负责给出答案，执行轨迹记下答错的地方，整理者负责修正。</p>\n<p>看懂这个循环，就会发现它到处适用。营销工厂把投放效果变成更好的文案；在线广告工厂把 ROAS（广告支出回报率）轨迹变成新的广告素材；销售工厂把通话记录变成更有力的演示稿。</p>\n<p>原文配图把四类工厂并排列出。软件工厂的上下文是代码仓库、设计规格和以往的 PR，产出是合并的代码、测试和部署，轨迹信号是构建失败、评审意见和事故。知识工厂的上下文是文档、工单和会议纪要，产出是答案、简报和整理好的操作手册，轨迹信号是哪个答案错了或从没被复用。营销工厂的上下文是品牌指南、ICP 和过往活动，产出是文案、素材和落地页，轨迹信号是各版本的打开率、CPA 和 ROAS。销售工厂的上下文是通话记录和赢单、丢单笔记，产出是演示稿、话术和跟进，轨迹信号是客户提出的异议和成交的单子。图注来源为 Notion、LangChain 和 Theory Ventures。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_factory_table\"><img src=\"https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png\" alt=\"图表：Every AI Factory Runs the Same Four-Step Loop，Software、Knowledge、Marketing、Sales Pitch 四类工厂的 Context、Output、Trace signal 对照（Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX0skQdaYAA9qv1.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>他还引用了萨提亚·纳德拉在 Microsoft Ignite 上描述的同一种变化：“新公司的样子是，有一个创始人，创始人有一笔 token 预算。然后创始人招了一个人，这个人进来以后也有一笔 token 预算，他们要想清楚怎么把 token 和工资加在一起，然后继续建设。”</p>\n<h2>工厂为什么还少见</h2>\n<p>Tunguz 的解释是，<strong>工厂是一个运营项目，靠买模型解决不了</strong>。得有人负责上下文、写规格说明、读执行轨迹，并按固定节奏跑整理循环。在他看来，这就是工作的重塑：为每个团队定义并运营它自己的工厂。</p>\n<p>部门不同，架构相同。他说，问题已经从“AI 能不能干这活”变成了“你要建一座什么样的工厂”。</p>\n<h2>先盘点自己缺哪一环</h2>\n<p>想在自己团队试一试的，可以按他的四个部件逐项对照：代理读的上下文有没有专人维护；每次运行有没有留下交付、失败和成本的记录；有没有人按固定节奏读这些记录，回头改技能和规格说明。按 Tunguz 的说法，缺了后两项，得到的只是一个附了文档的一次性提示词，工作流不会自己变好。</p>\n"}}]]></qiaomu:versions>
+    </item>
     <item>
       <title>宝玉：Agent 说“验证完了”怎么才能信？先定验收标准，再让它拿截图证明</title>
       <link>https://karuio.github.io/a/dotey-agent-verification</link>

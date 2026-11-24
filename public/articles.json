@@ -1,5 +1,50 @@
 [
   {
+    "id": "dotey-qwen-self-rewriting-weights",
+    "date": "2026-11-23",
+    "title": "宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8%",
+    "dek": "模型复盘后发现病根是长推理复读，把 48 层一个参数统一调高 0.5，未答完率从 33.6% 降到 26.1%。宝玉提醒，每轮都从原版重来，只在 Qwen3.5 和数学题上验证，还不是递归自我进化。",
+    "url": "/a/dotey-qwen-self-rewriting-weights",
+    "source_url": "https://x.com/dotey/status/2124775538648633370",
+    "tags": [
+      "大模型",
+      "自我改进",
+      "论文",
+      "Qwen"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "thevalueist-nvda-options-positioning",
+    "date": "2026-11-23",
+    "title": "TheValueist 拆英伟达期权仓位：236 亿美元空头 Delta 多是实值看跌，反弹越涨压力越小",
+    "dek": "按上周五未平仓量、136.68 美元盘前价测算，看跌 Delta 名义值 -490 亿美元，约 -390 亿美元在 157 美元以上行权价，看涨整体净多。他认为反弹越往上越轻松，但下方看跌保护只有约 20 亿美元，再跌缺少期权盘承接。",
+    "url": "/a/thevalueist-nvda-options-positioning",
+    "source_url": "https://x.com/TheValueist/status/2124856837174370439",
+    "tags": [
+      "英伟达",
+      "期权",
+      "仓位",
+      "市场结构"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
+    "id": "ttunguz-what-kind-of-factory",
+    "date": "2026-11-23",
+    "title": "Tomasz Tunguz：每个部门都会有自己的 AI 工厂，跑的是同一个四步循环",
+    "dek": "Notion 和 LangChain 同一天发文，描述的都是上下文、代理、执行轨迹、整理者四步循环。他认为后两步才让系统每周变好，而工厂难建在运营，买模型解决不了。",
+    "url": "/a/ttunguz-what-kind-of-factory",
+    "source_url": "https://x.com/ttunguz/status/2124904980847157611",
+    "tags": [
+      "AI 代理",
+      "软件工厂",
+      "知识管理",
+      "工作方式"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
     "id": "dotey-agent-verification",
     "date": "2026-11-22",
     "title": "宝玉：Agent 说“验证完了”怎么才能信？先定验收标准，再让它拿截图证明",
