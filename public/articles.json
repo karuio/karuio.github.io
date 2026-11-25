@@ -1,5 +1,69 @@
 [
   {
+    "id": "dotey-llamaindex-ocria",
+    "date": "2026-11-24",
+    "title": "宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权",
+    "dek": "40 亿参数的 OCRia-1 在自家 ParseBench 上 87.4 分、图表领先明显；810 万参数的 nano 在 CPU 上每秒 27.8 页但不处理图表。跑分均为 LlamaIndex 自测，尚无第三方复现。",
+    "url": "/a/dotey-llamaindex-ocria",
+    "source_url": "https://x.com/dotey/status/2125317908326744410",
+    "tags": [
+      "OCR",
+      "文档解析",
+      "开放权重",
+      "LlamaIndex",
+      "许可证"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "lennysan-atlassian-sherif-mansour",
+    "date": "2026-11-24",
+    "title": "Lenny 访谈 Atlassian 的 Sherif Mansour：PM 管的是决策速度，全员 AI 构建者团队一个月就散了",
+    "dek": "Atlassian 逆势招初级员工；PM 的头号任务是补齐客户、市场和业务三类上下文；不设 PM 和设计师的实验一个月后各回原岗，问题出在方向，不在产出速度。",
+    "url": "/a/lennysan-atlassian-sherif-mansour",
+    "source_url": "https://x.com/lennysan/status/2125018080837525695",
+    "tags": [
+      "产品管理",
+      "Atlassian",
+      "AI 原型",
+      "招聘",
+      "设计"
+    ],
+    "sector": "消费/产品"
+  },
+  {
+    "id": "setser-overcapacity-301-tariffs",
+    "date": "2026-11-24",
+    "title": "Brad Setser：用“产能过剩”301 对所有国家加税是个错误，中国对欧出口激增也怪不到美国头上",
+    "dek": "全球顺差集中在中国和芯片出口经济体，芯片顺差来自短缺；普遍加税会稀释对中国的关税差。他同时反对欧洲的“转移效应”说法，认为中国汽车出口激增源于自身产能和政策。",
+    "url": "/a/setser-overcapacity-301-tariffs",
+    "source_url": "https://x.com/Brad_Setser/status/2125366363506037192",
+    "tags": [
+      "关税",
+      "301 调查",
+      "中国产能过剩",
+      "贸易顺差",
+      "汽车出口"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "sytaylor-stripe-200b-tender",
+    "date": "2026-11-24",
+    "title": "Simon Taylor：Stripe 谈 2000 亿美元估值，四个 PayPal 的价钱",
+    "dek": "据《华尔街日报》，Stripe 在谈一笔估值超 2000 亿美元的员工股要约收购，比 2 月高 26%；2025 年支付量 1.9 万亿美元、增长 34%，PayPal 1.79 万亿美元、增长 7%。",
+    "url": "/a/sytaylor-stripe-200b-tender",
+    "source_url": "https://x.com/sytaylor/status/2125260847333228557",
+    "tags": [
+      "Stripe",
+      "估值",
+      "支付",
+      "PayPal",
+      "私募市场"
+    ],
+    "sector": "金融科技"
+  },
+  {
     "id": "dotey-qwen-self-rewriting-weights",
     "date": "2026-11-23",
     "title": "宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8%",

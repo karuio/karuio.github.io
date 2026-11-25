@@ -1,0 +1,32 @@
+{
+  "id": "lennysan-atlassian-sherif-mansour",
+  "date": "2026-11-24",
+  "published_at": "2026-11-24T00:06:06+00:00",
+  "ingested_at": "2026-11-25T08:30:00+08:00",
+  "sector": "消费/产品",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/lennysan/status/2125018080837525695",
+    "author": "Lenny Rachitsky",
+    "handle": "lennysan",
+    "title_en": "My biggest takeaways from @sherifmansour",
+    "related_url": "https://x.com/lennysan/status/2124880663149002996"
+  },
+  "title": "Lenny 访谈 Atlassian 的 Sherif Mansour：PM 管的是决策速度，全员 AI 构建者团队一个月就散了",
+  "dek": "Atlassian 逆势招初级员工；PM 的头号任务是补齐客户、市场和业务三类上下文；不设 PM 和设计师的实验一个月后各回原岗，问题出在方向，不在产出速度。",
+  "tags": [
+    "产品管理",
+    "Atlassian",
+    "AI 原型",
+    "招聘",
+    "设计"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "My biggest takeaways from @sherifmansour",
+    "text_md": "My biggest takeaways from @sherifmansour:\n\n1. Most companies have stopped hiring juniors because AI can do their work. Atlassian is doing the opposite. Juniors give companies an edge right now, because the hard part is getting your workforce to unlearn old ways of working. But juniors can’t spot AI slop, while seniors “can pick AI slop a mile away,” so the two complement each other.\n\n2. A PM’s primary job is to fill context gaps for their team. Sherif’s core belief is that a great PM prioritizes building a “shared brain” on the team across three types of context: customer, product/market, and the business. He tells PMs to “run away from your backlog” and instead focus on sharing all the available context with team members.\n\n3. PMs shouldn't ask, “Should I be coding?” Instead, ask what’s slowing your team’s decisions. Sherif says PMs don’t own decisions; they own “decision-making velocity.” So the best use of AI is to close whatever context gap is slowing the team down. If the vision is unclear, build a prototype. If the team doesn’t understand the market, have agents do the analysis.\n\n4. The three archetypes of PMs: the scientist, the general manager, and the artist. Scientists are hypothesis-driven and fit growth teams. General managers think in TAM, revenue, and profit. Artists start with a vision of the UX and work backward to the problem. Atlassian uses these archetypes in hiring and calibration. You can identify your archetype by how you answer “What’s your favorite product and what would you do to make it better?”\n\n5. Atlassian tried creating teams where everyone was an “AI builder.” Within a month, everyone had gone back to their old jobs. In the first few weeks, one PM told Sherif they’d “moved faster than ever before.” A month later: “Everyone’s gone back to doing their traditional jobs.” The team realized that their problem wasn’t throughput but direction.\n\n6. The roles aren’t merging. Everyone’s circle is just getting bigger. Sherif learned this in the Balsamiq era, when anyone at Atlassian could suddenly make a mockup, and it turned out PMs are “some of the worst solution designers in the world.” AI prototyping is the same story. It amplifies your weaknesses as much as your strengths, and the output is only as good as your knowledge of the craft.\n\n7. Artist PMs are becoming increasingly valuable. As software gets cheaper to build, more products end up with the same features, and the UX becomes one of the few ways to stand out. Taste matters more when everyone has access to the same intelligence. Sherif says design has never played a bigger role in driving Atlassian’s roadmap in his 17 years there.\n\n8. If you have an established product, bolting AI onto it is often the right move. “Don’t bolt on AI, reimagine the workflow” makes a catchy headline. But your customers already have their workflows in your product, and your job is to move them “from AI novice to AI native.”\n\n9. A visionary founder is on chapter 10 of the movie while you’re on chapter three. When a founder says something that sounds wrong, Sherif assumes they’ve thought about it far more than anyone else. In his experience, they’ve been right 99% of the time. He asks what led them there and tries “to get to chapter 10 as quickly as possible,” so he can bring the team along. If he still disagrees, he says so and asks one question: “Are you the decision-maker or am I?”",
+    "media": []
+  },
+  "body_md": "大多数公司已经不招初级员工了，因为 AI 能做他们的活。Atlassian 反着来，还在招。\n\n这是 Lenny Rachitsky 访谈 Atlassian 的 Sherif Mansour 后，列出的九条要点里的第一条。Sherif 在 Atlassian 干了 17 年，下面这些都是他的经验和判断。\n\n## 初级员工反而是优势\n\nSherif 的理由是：现在难的地方在于让整个团队放下旧的工作方式，初级员工没有这个包袱，所以眼下能给公司带来优势。但初级员工识别不出 AI 生成的劣质内容，资深员工则“隔一英里就能认出 AI 垃圾”，两者正好互补。\n\n## PM 的头号任务是补齐上下文\n\n他的核心信念是，好的 PM 要优先在团队里建一个“共享大脑”，覆盖三类上下文：客户、产品和市场、业务。他让 PM “从待办列表前逃开”，把精力放在把手上所有的上下文分享给团队成员。\n\n所以 PM 不该问“我要不要写代码”，该问的是：什么在拖慢团队做决定？Sherif 说，PM 不拥有决定权，他们拥有的是“**决策速度**”。AI 最好的用法，就是补上那个拖慢团队的上下文缺口：愿景不清楚，就做个原型；团队不了解市场，就让代理去做分析。\n\n## 三种 PM：科学家、总经理、艺术家\n\nSherif 把 PM 分成三种原型。科学家靠假设驱动，适合增长团队；总经理用 TAM（目标市场规模）、收入和利润来思考；艺术家从用户体验的愿景出发，倒推要解决的问题。\n\nAtlassian 在招聘和绩效校准时都会用这三种原型。想知道自己属于哪一类，可以看你怎么回答这个问题：“你最喜欢的产品是什么，你会怎么把它做得更好？”\n\n## 全员“AI 构建者”的实验，一个月就散了\n\nAtlassian 试过组建一种团队：不设 PM 和设计师，每个人都是“AI 构建者”。头几周，一位 PM 告诉 Sherif，他们“前所未有地快”。一个月后，这位 PM 说：“大家都回去做原来的工作了。”\n\n团队最后意识到，他们的问题出在方向上，跟产出速度无关。\n\n## 角色没有合并，每个人的圈子变大了\n\nSherif 在 Balsamiq 时代就学到了这一课。当时 Atlassian 里人人都能画原型图，结果发现 PM 是“世界上最差的解决方案设计者之一”。他认为 AI 做原型是同一个故事：它放大你的长处，也同样放大你的短处，产出的质量取决于你对这门手艺懂多少。\n\n## 艺术家型 PM 越来越值钱\n\n软件越来越便宜，越来越多产品会长着同样的功能，用户体验成了少数能拉开差距的地方。当所有人都能用上同样的智能，品味就更重要。Sherif 说，在 Atlassian 的 17 年里，设计对产品路线图的影响从没像现在这么大。\n\n## 老产品给 AI 打补丁，往往是对的\n\n“别给产品硬塞 AI，要重新设计工作流”是个好听的标题。但 Sherif 的看法是，客户的工作流已经长在你的产品里，你的任务是带他们“从 AI 新手变成 AI 原生”。所以对成熟产品来说，在现有产品上加 AI 往往是正确做法。\n\n## 创始人在看第十章，你还在第三章\n\n有远见的创始人说出一句听上去不对的话时，Sherif 默认对方想得比任何人都多。按他的经验，创始人 99% 的时候是对的。他会问对方是怎么得出这个结论的，争取“尽快读到第十章”，好把团队带上。如果还是不同意，他会直说，并且只问一个问题：“这件事是你拍板，还是我拍板？”\n\n## 对 PM 的一个具体建议\n\n如果你是 PM，正在纠结要不要学写代码，可以先换个问题：本周团队卡得最久的那个决定，缺的是哪一类上下文，客户、市场还是业务？缺愿景就做原型，缺市场认知就让代理跑分析。按 Sherif 的说法，这才是 AI 对 PM 最有用的地方。",
+  "rewrite_media": []
+}

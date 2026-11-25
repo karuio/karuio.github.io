@@ -5,8 +5,582 @@
     <link>https://karuio.github.io/</link>
     <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 24 Nov 2026 00:09:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 00:16:58 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权</title>
+      <link>https://karuio.github.io/a/dotey-llamaindex-ocria</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dotey-llamaindex-ocria</guid>
+      <pubDate>Tue, 24 Nov 2026 19:57:30 +0000</pubDate>
+      <author>宝玉</author>
+      <description><![CDATA[<p><em>40 亿参数的 OCRia-1 在自家 ParseBench 上 87.4 分、图表领先明显；810 万参数的 nano 在 CPU 上每秒 27.8 页但不处理图表。跑分均为 LlamaIndex 自测，尚无第三方复现。</em></p>
+<h2>中文改写</h2>
+<p>LlamaIndex 一个月里先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就接进了 LlamaParse 云服务。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>
+<p>宝玉把两款模型的博客、模型页和许可证整理成了一篇。两款的权重 11 月 23 日都放上了 Hugging Face：个人、研究和小公司可以免费用，<strong>年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权</strong>。</p>
+<h2>OCRia-1：图表和格式拉开差距</h2>
+<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 第一版上（文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 分高 12.1 分。</p>
+<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1 分。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9 分。</p>
+<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型；模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里排第一，算上商业 API 和前沿大模型排第七。</p>
+<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发时每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>
+<h2>OCRia-nano-1：七个小模型拼成的 CPU 版</h2>
+<p>nano 由七个小模型组成：一个找文字行，一个判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字），四个识别器分别认字，最后由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>
+<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。在同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。nano 单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>
+<p>它的短板也很明确。同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方没有单独公布 nano 的中文成绩。</p>
+<h2>怎么用</h2>
+<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>
+<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>
+<pre><code>pip install liteparse
+lit models pull ocria-nano
+lit parse doc.pdf --format markdown
+</code></pre>
+<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>
+<h2>商用门槛：200 万美元</h2>
+<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的。个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0 许可，不受这些限制。</p>
+<h2>跑分口径</h2>
+<p>宝玉特别注明：以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库出自别家，但分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>
+<h2>选哪款</h2>
+<p>文档里图表、复杂表格和公式多，选 OCRia-1，走 LlamaParse 或自备 NVIDIA 显卡；大批量的普通电子文档、只想在 CPU 上本地跑，可以先装 LiteParse 试 nano，但图表和扫描公式要另想办法。公司年营收或累计融资超过 200 万美元的，用于业务前先确认授权。</p>
+
+<h2>原文</h2>
+<p><em>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</em></p>
+<p>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</p>
+<p>LlamaIndex 先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就用到了 LlamaParse 云服务里。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>
+<p>两款的权重 11 月 23 日都放上了 Hugging Face。个人、研究和小公司可以免费用，年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权。</p>
+<p>【OCRia-1：表格、图表、格式】</p>
+<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 上（第一版，文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 高 12.1 分。</p>
+<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9。</p>
+<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型，模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里第一，算上商业 API 和前沿大模型排第七。</p>
+<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>
+<p>【OCRia-nano-1：CPU 上的日常款】</p>
+<p>nano 由七个小模型组成：找文字行、判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字）、四个识别器分别认字，再由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>
+<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>
+<p>同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方也没单独公布 nano 的中文成绩。</p>
+<p>【怎么用】</p>
+<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>
+<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>
+<p>pip install liteparse
+lit models pull ocria-nano
+lit parse doc.pdf --format markdown</p>
+<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>
+<p>【能不能商用】</p>
+<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的：个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0，不受这些限制。</p>
+<p>以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库是别家做的，分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>
+<p>OCRia-1 博客：https://www.llamaindex.ai/blog/parse-ocria-1
+OCRia-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-1
+OCRia-nano-1 博客：https://www.llamaindex.ai/blog/introducing-ocria-nano-1
+OCRia-nano-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-nano-1</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2125317908326744410">https://x.com/dotey/status/2125317908326744410</a></p>
+<p><strong>相关链接：</strong><a href="https://www.llamaindex.ai/blog/parse-ocria-1">https://www.llamaindex.ai/blog/parse-ocria-1</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>40 亿参数的 OCRia-1 在自家 ParseBench 上 87.4 分、图表领先明显；810 万参数的 nano 在 CPU 上每秒 27.8 页但不处理图表。跑分均为 LlamaIndex 自测，尚无第三方复现。</em></p>
+<h2>中文改写</h2>
+<p>LlamaIndex 一个月里先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就接进了 LlamaParse 云服务。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>
+<p>宝玉把两款模型的博客、模型页和许可证整理成了一篇。两款的权重 11 月 23 日都放上了 Hugging Face：个人、研究和小公司可以免费用，<strong>年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权</strong>。</p>
+<h2>OCRia-1：图表和格式拉开差距</h2>
+<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 第一版上（文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 分高 12.1 分。</p>
+<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1 分。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9 分。</p>
+<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型；模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里排第一，算上商业 API 和前沿大模型排第七。</p>
+<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发时每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>
+<h2>OCRia-nano-1：七个小模型拼成的 CPU 版</h2>
+<p>nano 由七个小模型组成：一个找文字行，一个判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字），四个识别器分别认字，最后由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>
+<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。在同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。nano 单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>
+<p>它的短板也很明确。同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方没有单独公布 nano 的中文成绩。</p>
+<h2>怎么用</h2>
+<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>
+<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>
+<pre><code>pip install liteparse
+lit models pull ocria-nano
+lit parse doc.pdf --format markdown
+</code></pre>
+<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>
+<h2>商用门槛：200 万美元</h2>
+<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的。个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0 许可，不受这些限制。</p>
+<h2>跑分口径</h2>
+<p>宝玉特别注明：以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库出自别家，但分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>
+<h2>选哪款</h2>
+<p>文档里图表、复杂表格和公式多，选 OCRia-1，走 LlamaParse 或自备 NVIDIA 显卡；大批量的普通电子文档、只想在 CPU 上本地跑，可以先装 LiteParse 试 nano，但图表和扫描公式要另想办法。公司年营收或累计融资超过 200 万美元的，用于业务前先确认授权。</p>
+
+<h2>原文</h2>
+<p><em>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</em></p>
+<p>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</p>
+<p>LlamaIndex 先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就用到了 LlamaParse 云服务里。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>
+<p>两款的权重 11 月 23 日都放上了 Hugging Face。个人、研究和小公司可以免费用，年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权。</p>
+<p>【OCRia-1：表格、图表、格式】</p>
+<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 上（第一版，文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 高 12.1 分。</p>
+<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9。</p>
+<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型，模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里第一，算上商业 API 和前沿大模型排第七。</p>
+<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>
+<p>【OCRia-nano-1：CPU 上的日常款】</p>
+<p>nano 由七个小模型组成：找文字行、判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字）、四个识别器分别认字，再由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>
+<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>
+<p>同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方也没单独公布 nano 的中文成绩。</p>
+<p>【怎么用】</p>
+<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>
+<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>
+<p>pip install liteparse
+lit models pull ocria-nano
+lit parse doc.pdf --format markdown</p>
+<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>
+<p>【能不能商用】</p>
+<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的：个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0，不受这些限制。</p>
+<p>以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库是别家做的，分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>
+<p>OCRia-1 博客：https://www.llamaindex.ai/blog/parse-ocria-1
+OCRia-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-1
+OCRia-nano-1 博客：https://www.llamaindex.ai/blog/introducing-ocria-nano-1
+OCRia-nano-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-nano-1</p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2125317908326744410">https://x.com/dotey/status/2125317908326744410</a></p>
+<p><strong>相关链接：</strong><a href="https://www.llamaindex.ai/blog/parse-ocria-1">https://www.llamaindex.ai/blog/parse-ocria-1</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权", "url": "https://x.com/dotey/status/2125317908326744410", "lang": "zh", "html": "<h2>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</h2>\n\n<p>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</p>\n<p>LlamaIndex 先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就用到了 LlamaParse 云服务里。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>\n<p>两款的权重 11 月 23 日都放上了 Hugging Face。个人、研究和小公司可以免费用，年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权。</p>\n<p>【OCRia-1：表格、图表、格式】</p>\n<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 上（第一版，文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 高 12.1 分。</p>\n<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9。</p>\n<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型，模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里第一，算上商业 API 和前沿大模型排第七。</p>\n<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>\n<p>【OCRia-nano-1：CPU 上的日常款】</p>\n<p>nano 由七个小模型组成：找文字行、判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字）、四个识别器分别认字，再由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>\n<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>\n<p>同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方也没单独公布 nano 的中文成绩。</p>\n<p>【怎么用】</p>\n<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>\n<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>\n<p>pip install liteparse\nlit models pull ocria-nano\nlit parse doc.pdf --format markdown</p>\n<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>\n<p>【能不能商用】</p>\n<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的：个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0，不受这些限制。</p>\n<p>以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库是别家做的，分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>\n<p>OCRia-1 博客：https://www.llamaindex.ai/blog/parse-ocria-1\nOCRia-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-1\nOCRia-nano-1 博客：https://www.llamaindex.ai/blog/introducing-ocria-nano-1\nOCRia-nano-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-nano-1</p>\n<p>原文链接：<a href=\"https://x.com/dotey/status/2125317908326744410\">https://x.com/dotey/status/2125317908326744410</a></p>\n<p>相关链接：<a href=\"https://www.llamaindex.ai/blog/parse-ocria-1\">https://www.llamaindex.ai/blog/parse-ocria-1</a></p>"}, "rewrite": {"title": "宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权", "markdown": "LlamaIndex 一个月里先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就接进了 LlamaParse 云服务。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。\n\n宝玉把两款模型的博客、模型页和许可证整理成了一篇。两款的权重 11 月 23 日都放上了 Hugging Face：个人、研究和小公司可以免费用，**年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权**。\n\n## OCRia-1：图表和格式拉开差距\n\nOCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 第一版上（文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 分高 12.1 分。\n\n差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1 分。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9 分。\n\n换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型；模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里排第一，算上商业 API 和前沿大模型排第七。\n\n速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发时每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。\n\n## OCRia-nano-1：七个小模型拼成的 CPU 版\n\nnano 由七个小模型组成：一个找文字行，一个判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字），四个识别器分别认字，最后由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。\n\n在 ParseBench-2 上，nano 总分 59.2，表格 59.5。在同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。nano 单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。\n\n它的短板也很明确。同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方没有单独公布 nano 的中文成绩。\n\n## 怎么用\n\nOCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。\n\nnano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：\n\n```\npip install liteparse\nlit models pull ocria-nano\nlit parse doc.pdf --format markdown\n```\n\n模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。\n\n## 商用门槛：200 万美元\n\n两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的。个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0 许可，不受这些限制。\n\n## 跑分口径\n\n宝玉特别注明：以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库出自别家，但分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。\n\n## 选哪款\n\n文档里图表、复杂表格和公式多，选 OCRia-1，走 LlamaParse 或自备 NVIDIA 显卡；大批量的普通电子文档、只想在 CPU 上本地跑，可以先装 LiteParse 试 nano，但图表和扫描公式要另想办法。公司年营收或累计融资超过 200 万美元的，用于业务前先确认授权。", "html": "<p>LlamaIndex 一个月里先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就接进了 LlamaParse 云服务。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>\n<p>宝玉把两款模型的博客、模型页和许可证整理成了一篇。两款的权重 11 月 23 日都放上了 Hugging Face：个人、研究和小公司可以免费用，<strong>年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权</strong>。</p>\n<h2>OCRia-1：图表和格式拉开差距</h2>\n<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 第一版上（文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 分高 12.1 分。</p>\n<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1 分。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9 分。</p>\n<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型；模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里排第一，算上商业 API 和前沿大模型排第七。</p>\n<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发时每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>\n<h2>OCRia-nano-1：七个小模型拼成的 CPU 版</h2>\n<p>nano 由七个小模型组成：一个找文字行，一个判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字），四个识别器分别认字，最后由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>\n<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。在同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。nano 单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>\n<p>它的短板也很明确。同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方没有单独公布 nano 的中文成绩。</p>\n<h2>怎么用</h2>\n<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>\n<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>\n<pre><code>pip install liteparse\nlit models pull ocria-nano\nlit parse doc.pdf --format markdown\n</code></pre>\n<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>\n<h2>商用门槛：200 万美元</h2>\n<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的。个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0 许可，不受这些限制。</p>\n<h2>跑分口径</h2>\n<p>宝玉特别注明：以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库出自别家，但分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>\n<h2>选哪款</h2>\n<p>文档里图表、复杂表格和公式多，选 OCRia-1，走 LlamaParse 或自备 NVIDIA 显卡；大批量的普通电子文档、只想在 CPU 上本地跑，可以先装 LiteParse 试 nano，但图表和扫描公式要另想办法。公司年营收或累计融资超过 200 万美元的，用于业务前先确认授权。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Lenny 访谈 Atlassian 的 Sherif Mansour：PM 管的是决策速度，全员 AI 构建者团队一个月就散了</title>
+      <link>https://karuio.github.io/a/lennysan-atlassian-sherif-mansour</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/lennysan-atlassian-sherif-mansour</guid>
+      <pubDate>Tue, 24 Nov 2026 00:06:06 +0000</pubDate>
+      <author>Lenny Rachitsky</author>
+      <description><![CDATA[<p><em>Atlassian 逆势招初级员工；PM 的头号任务是补齐客户、市场和业务三类上下文；不设 PM 和设计师的实验一个月后各回原岗，问题出在方向，不在产出速度。</em></p>
+<h2>中文改写</h2>
+<p>大多数公司已经不招初级员工了，因为 AI 能做他们的活。Atlassian 反着来，还在招。</p>
+<p>这是 Lenny Rachitsky 访谈 Atlassian 的 Sherif Mansour 后，列出的九条要点里的第一条。Sherif 在 Atlassian 干了 17 年，下面这些都是他的经验和判断。</p>
+<h2>初级员工反而是优势</h2>
+<p>Sherif 的理由是：现在难的地方在于让整个团队放下旧的工作方式，初级员工没有这个包袱，所以眼下能给公司带来优势。但初级员工识别不出 AI 生成的劣质内容，资深员工则“隔一英里就能认出 AI 垃圾”，两者正好互补。</p>
+<h2>PM 的头号任务是补齐上下文</h2>
+<p>他的核心信念是，好的 PM 要优先在团队里建一个“共享大脑”，覆盖三类上下文：客户、产品和市场、业务。他让 PM “从待办列表前逃开”，把精力放在把手上所有的上下文分享给团队成员。</p>
+<p>所以 PM 不该问“我要不要写代码”，该问的是：什么在拖慢团队做决定？Sherif 说，PM 不拥有决定权，他们拥有的是“<strong>决策速度</strong>”。AI 最好的用法，就是补上那个拖慢团队的上下文缺口：愿景不清楚，就做个原型；团队不了解市场，就让代理去做分析。</p>
+<h2>三种 PM：科学家、总经理、艺术家</h2>
+<p>Sherif 把 PM 分成三种原型。科学家靠假设驱动，适合增长团队；总经理用 TAM（目标市场规模）、收入和利润来思考；艺术家从用户体验的愿景出发，倒推要解决的问题。</p>
+<p>Atlassian 在招聘和绩效校准时都会用这三种原型。想知道自己属于哪一类，可以看你怎么回答这个问题：“你最喜欢的产品是什么，你会怎么把它做得更好？”</p>
+<h2>全员“AI 构建者”的实验，一个月就散了</h2>
+<p>Atlassian 试过组建一种团队：不设 PM 和设计师，每个人都是“AI 构建者”。头几周，一位 PM 告诉 Sherif，他们“前所未有地快”。一个月后，这位 PM 说：“大家都回去做原来的工作了。”</p>
+<p>团队最后意识到，他们的问题出在方向上，跟产出速度无关。</p>
+<h2>角色没有合并，每个人的圈子变大了</h2>
+<p>Sherif 在 Balsamiq 时代就学到了这一课。当时 Atlassian 里人人都能画原型图，结果发现 PM 是“世界上最差的解决方案设计者之一”。他认为 AI 做原型是同一个故事：它放大你的长处，也同样放大你的短处，产出的质量取决于你对这门手艺懂多少。</p>
+<h2>艺术家型 PM 越来越值钱</h2>
+<p>软件越来越便宜，越来越多产品会长着同样的功能，用户体验成了少数能拉开差距的地方。当所有人都能用上同样的智能，品味就更重要。Sherif 说，在 Atlassian 的 17 年里，设计对产品路线图的影响从没像现在这么大。</p>
+<h2>老产品给 AI 打补丁，往往是对的</h2>
+<p>“别给产品硬塞 AI，要重新设计工作流”是个好听的标题。但 Sherif 的看法是，客户的工作流已经长在你的产品里，你的任务是带他们“从 AI 新手变成 AI 原生”。所以对成熟产品来说，在现有产品上加 AI 往往是正确做法。</p>
+<h2>创始人在看第十章，你还在第三章</h2>
+<p>有远见的创始人说出一句听上去不对的话时，Sherif 默认对方想得比任何人都多。按他的经验，创始人 99% 的时候是对的。他会问对方是怎么得出这个结论的，争取“尽快读到第十章”，好把团队带上。如果还是不同意，他会直说，并且只问一个问题：“这件事是你拍板，还是我拍板？”</p>
+<h2>对 PM 的一个具体建议</h2>
+<p>如果你是 PM，正在纠结要不要学写代码，可以先换个问题：本周团队卡得最久的那个决定，缺的是哪一类上下文，客户、市场还是业务？缺愿景就做原型，缺市场认知就让代理跑分析。按 Sherif 的说法，这才是 AI 对 PM 最有用的地方。</p>
+
+<h2>原文</h2>
+<p><em>My biggest takeaways from @sherifmansour</em></p>
+<p>My biggest takeaways from @sherifmansour:</p>
+<ol>
+<li>
+<p>Most companies have stopped hiring juniors because AI can do their work. Atlassian is doing the opposite. Juniors give companies an edge right now, because the hard part is getting your workforce to unlearn old ways of working. But juniors can’t spot AI slop, while seniors “can pick AI slop a mile away,” so the two complement each other.</p>
+</li>
+<li>
+<p>A PM’s primary job is to fill context gaps for their team. Sherif’s core belief is that a great PM prioritizes building a “shared brain” on the team across three types of context: customer, product/market, and the business. He tells PMs to “run away from your backlog” and instead focus on sharing all the available context with team members.</p>
+</li>
+<li>
+<p>PMs shouldn't ask, “Should I be coding?” Instead, ask what’s slowing your team’s decisions. Sherif says PMs don’t own decisions; they own “decision-making velocity.” So the best use of AI is to close whatever context gap is slowing the team down. If the vision is unclear, build a prototype. If the team doesn’t understand the market, have agents do the analysis.</p>
+</li>
+<li>
+<p>The three archetypes of PMs: the scientist, the general manager, and the artist. Scientists are hypothesis-driven and fit growth teams. General managers think in TAM, revenue, and profit. Artists start with a vision of the UX and work backward to the problem. Atlassian uses these archetypes in hiring and calibration. You can identify your archetype by how you answer “What’s your favorite product and what would you do to make it better?”</p>
+</li>
+<li>
+<p>Atlassian tried creating teams where everyone was an “AI builder.” Within a month, everyone had gone back to their old jobs. In the first few weeks, one PM told Sherif they’d “moved faster than ever before.” A month later: “Everyone’s gone back to doing their traditional jobs.” The team realized that their problem wasn’t throughput but direction.</p>
+</li>
+<li>
+<p>The roles aren’t merging. Everyone’s circle is just getting bigger. Sherif learned this in the Balsamiq era, when anyone at Atlassian could suddenly make a mockup, and it turned out PMs are “some of the worst solution designers in the world.” AI prototyping is the same story. It amplifies your weaknesses as much as your strengths, and the output is only as good as your knowledge of the craft.</p>
+</li>
+<li>
+<p>Artist PMs are becoming increasingly valuable. As software gets cheaper to build, more products end up with the same features, and the UX becomes one of the few ways to stand out. Taste matters more when everyone has access to the same intelligence. Sherif says design has never played a bigger role in driving Atlassian’s roadmap in his 17 years there.</p>
+</li>
+<li>
+<p>If you have an established product, bolting AI onto it is often the right move. “Don’t bolt on AI, reimagine the workflow” makes a catchy headline. But your customers already have their workflows in your product, and your job is to move them “from AI novice to AI native.”</p>
+</li>
+<li>
+<p>A visionary founder is on chapter 10 of the movie while you’re on chapter three. When a founder says something that sounds wrong, Sherif assumes they’ve thought about it far more than anyone else. In his experience, they’ve been right 99% of the time. He asks what led them there and tries “to get to chapter 10 as quickly as possible,” so he can bring the team along. If he still disagrees, he says so and asks one question: “Are you the decision-maker or am I?”</p>
+</li>
+</ol>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2125018080837525695">https://x.com/lennysan/status/2125018080837525695</a></p>
+<p><strong>相关链接：</strong><a href="https://x.com/lennysan/status/2124880663149002996">https://x.com/lennysan/status/2124880663149002996</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Atlassian 逆势招初级员工；PM 的头号任务是补齐客户、市场和业务三类上下文；不设 PM 和设计师的实验一个月后各回原岗，问题出在方向，不在产出速度。</em></p>
+<h2>中文改写</h2>
+<p>大多数公司已经不招初级员工了，因为 AI 能做他们的活。Atlassian 反着来，还在招。</p>
+<p>这是 Lenny Rachitsky 访谈 Atlassian 的 Sherif Mansour 后，列出的九条要点里的第一条。Sherif 在 Atlassian 干了 17 年，下面这些都是他的经验和判断。</p>
+<h2>初级员工反而是优势</h2>
+<p>Sherif 的理由是：现在难的地方在于让整个团队放下旧的工作方式，初级员工没有这个包袱，所以眼下能给公司带来优势。但初级员工识别不出 AI 生成的劣质内容，资深员工则“隔一英里就能认出 AI 垃圾”，两者正好互补。</p>
+<h2>PM 的头号任务是补齐上下文</h2>
+<p>他的核心信念是，好的 PM 要优先在团队里建一个“共享大脑”，覆盖三类上下文：客户、产品和市场、业务。他让 PM “从待办列表前逃开”，把精力放在把手上所有的上下文分享给团队成员。</p>
+<p>所以 PM 不该问“我要不要写代码”，该问的是：什么在拖慢团队做决定？Sherif 说，PM 不拥有决定权，他们拥有的是“<strong>决策速度</strong>”。AI 最好的用法，就是补上那个拖慢团队的上下文缺口：愿景不清楚，就做个原型；团队不了解市场，就让代理去做分析。</p>
+<h2>三种 PM：科学家、总经理、艺术家</h2>
+<p>Sherif 把 PM 分成三种原型。科学家靠假设驱动，适合增长团队；总经理用 TAM（目标市场规模）、收入和利润来思考；艺术家从用户体验的愿景出发，倒推要解决的问题。</p>
+<p>Atlassian 在招聘和绩效校准时都会用这三种原型。想知道自己属于哪一类，可以看你怎么回答这个问题：“你最喜欢的产品是什么，你会怎么把它做得更好？”</p>
+<h2>全员“AI 构建者”的实验，一个月就散了</h2>
+<p>Atlassian 试过组建一种团队：不设 PM 和设计师，每个人都是“AI 构建者”。头几周，一位 PM 告诉 Sherif，他们“前所未有地快”。一个月后，这位 PM 说：“大家都回去做原来的工作了。”</p>
+<p>团队最后意识到，他们的问题出在方向上，跟产出速度无关。</p>
+<h2>角色没有合并，每个人的圈子变大了</h2>
+<p>Sherif 在 Balsamiq 时代就学到了这一课。当时 Atlassian 里人人都能画原型图，结果发现 PM 是“世界上最差的解决方案设计者之一”。他认为 AI 做原型是同一个故事：它放大你的长处，也同样放大你的短处，产出的质量取决于你对这门手艺懂多少。</p>
+<h2>艺术家型 PM 越来越值钱</h2>
+<p>软件越来越便宜，越来越多产品会长着同样的功能，用户体验成了少数能拉开差距的地方。当所有人都能用上同样的智能，品味就更重要。Sherif 说，在 Atlassian 的 17 年里，设计对产品路线图的影响从没像现在这么大。</p>
+<h2>老产品给 AI 打补丁，往往是对的</h2>
+<p>“别给产品硬塞 AI，要重新设计工作流”是个好听的标题。但 Sherif 的看法是，客户的工作流已经长在你的产品里，你的任务是带他们“从 AI 新手变成 AI 原生”。所以对成熟产品来说，在现有产品上加 AI 往往是正确做法。</p>
+<h2>创始人在看第十章，你还在第三章</h2>
+<p>有远见的创始人说出一句听上去不对的话时，Sherif 默认对方想得比任何人都多。按他的经验，创始人 99% 的时候是对的。他会问对方是怎么得出这个结论的，争取“尽快读到第十章”，好把团队带上。如果还是不同意，他会直说，并且只问一个问题：“这件事是你拍板，还是我拍板？”</p>
+<h2>对 PM 的一个具体建议</h2>
+<p>如果你是 PM，正在纠结要不要学写代码，可以先换个问题：本周团队卡得最久的那个决定，缺的是哪一类上下文，客户、市场还是业务？缺愿景就做原型，缺市场认知就让代理跑分析。按 Sherif 的说法，这才是 AI 对 PM 最有用的地方。</p>
+
+<h2>原文</h2>
+<p><em>My biggest takeaways from @sherifmansour</em></p>
+<p>My biggest takeaways from @sherifmansour:</p>
+<ol>
+<li>
+<p>Most companies have stopped hiring juniors because AI can do their work. Atlassian is doing the opposite. Juniors give companies an edge right now, because the hard part is getting your workforce to unlearn old ways of working. But juniors can’t spot AI slop, while seniors “can pick AI slop a mile away,” so the two complement each other.</p>
+</li>
+<li>
+<p>A PM’s primary job is to fill context gaps for their team. Sherif’s core belief is that a great PM prioritizes building a “shared brain” on the team across three types of context: customer, product/market, and the business. He tells PMs to “run away from your backlog” and instead focus on sharing all the available context with team members.</p>
+</li>
+<li>
+<p>PMs shouldn't ask, “Should I be coding?” Instead, ask what’s slowing your team’s decisions. Sherif says PMs don’t own decisions; they own “decision-making velocity.” So the best use of AI is to close whatever context gap is slowing the team down. If the vision is unclear, build a prototype. If the team doesn’t understand the market, have agents do the analysis.</p>
+</li>
+<li>
+<p>The three archetypes of PMs: the scientist, the general manager, and the artist. Scientists are hypothesis-driven and fit growth teams. General managers think in TAM, revenue, and profit. Artists start with a vision of the UX and work backward to the problem. Atlassian uses these archetypes in hiring and calibration. You can identify your archetype by how you answer “What’s your favorite product and what would you do to make it better?”</p>
+</li>
+<li>
+<p>Atlassian tried creating teams where everyone was an “AI builder.” Within a month, everyone had gone back to their old jobs. In the first few weeks, one PM told Sherif they’d “moved faster than ever before.” A month later: “Everyone’s gone back to doing their traditional jobs.” The team realized that their problem wasn’t throughput but direction.</p>
+</li>
+<li>
+<p>The roles aren’t merging. Everyone’s circle is just getting bigger. Sherif learned this in the Balsamiq era, when anyone at Atlassian could suddenly make a mockup, and it turned out PMs are “some of the worst solution designers in the world.” AI prototyping is the same story. It amplifies your weaknesses as much as your strengths, and the output is only as good as your knowledge of the craft.</p>
+</li>
+<li>
+<p>Artist PMs are becoming increasingly valuable. As software gets cheaper to build, more products end up with the same features, and the UX becomes one of the few ways to stand out. Taste matters more when everyone has access to the same intelligence. Sherif says design has never played a bigger role in driving Atlassian’s roadmap in his 17 years there.</p>
+</li>
+<li>
+<p>If you have an established product, bolting AI onto it is often the right move. “Don’t bolt on AI, reimagine the workflow” makes a catchy headline. But your customers already have their workflows in your product, and your job is to move them “from AI novice to AI native.”</p>
+</li>
+<li>
+<p>A visionary founder is on chapter 10 of the movie while you’re on chapter three. When a founder says something that sounds wrong, Sherif assumes they’ve thought about it far more than anyone else. In his experience, they’ve been right 99% of the time. He asks what led them there and tries “to get to chapter 10 as quickly as possible,” so he can bring the team along. If he still disagrees, he says so and asks one question: “Are you the decision-maker or am I?”</p>
+</li>
+</ol>
+<p><strong>原文链接：</strong><a href="https://x.com/lennysan/status/2125018080837525695">https://x.com/lennysan/status/2125018080837525695</a></p>
+<p><strong>相关链接：</strong><a href="https://x.com/lennysan/status/2124880663149002996">https://x.com/lennysan/status/2124880663149002996</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "My biggest takeaways from @sherifmansour", "url": "https://x.com/lennysan/status/2125018080837525695", "lang": "en", "html": "<h2>My biggest takeaways from @sherifmansour</h2>\n\n<p>My biggest takeaways from @sherifmansour:</p>\n<ol>\n<li>\n<p>Most companies have stopped hiring juniors because AI can do their work. Atlassian is doing the opposite. Juniors give companies an edge right now, because the hard part is getting your workforce to unlearn old ways of working. But juniors can’t spot AI slop, while seniors “can pick AI slop a mile away,” so the two complement each other.</p>\n</li>\n<li>\n<p>A PM’s primary job is to fill context gaps for their team. Sherif’s core belief is that a great PM prioritizes building a “shared brain” on the team across three types of context: customer, product/market, and the business. He tells PMs to “run away from your backlog” and instead focus on sharing all the available context with team members.</p>\n</li>\n<li>\n<p>PMs shouldn't ask, “Should I be coding?” Instead, ask what’s slowing your team’s decisions. Sherif says PMs don’t own decisions; they own “decision-making velocity.” So the best use of AI is to close whatever context gap is slowing the team down. If the vision is unclear, build a prototype. If the team doesn’t understand the market, have agents do the analysis.</p>\n</li>\n<li>\n<p>The three archetypes of PMs: the scientist, the general manager, and the artist. Scientists are hypothesis-driven and fit growth teams. General managers think in TAM, revenue, and profit. Artists start with a vision of the UX and work backward to the problem. Atlassian uses these archetypes in hiring and calibration. You can identify your archetype by how you answer “What’s your favorite product and what would you do to make it better?”</p>\n</li>\n<li>\n<p>Atlassian tried creating teams where everyone was an “AI builder.” Within a month, everyone had gone back to their old jobs. In the first few weeks, one PM told Sherif they’d “moved faster than ever before.” A month later: “Everyone’s gone back to doing their traditional jobs.” The team realized that their problem wasn’t throughput but direction.</p>\n</li>\n<li>\n<p>The roles aren’t merging. Everyone’s circle is just getting bigger. Sherif learned this in the Balsamiq era, when anyone at Atlassian could suddenly make a mockup, and it turned out PMs are “some of the worst solution designers in the world.” AI prototyping is the same story. It amplifies your weaknesses as much as your strengths, and the output is only as good as your knowledge of the craft.</p>\n</li>\n<li>\n<p>Artist PMs are becoming increasingly valuable. As software gets cheaper to build, more products end up with the same features, and the UX becomes one of the few ways to stand out. Taste matters more when everyone has access to the same intelligence. Sherif says design has never played a bigger role in driving Atlassian’s roadmap in his 17 years there.</p>\n</li>\n<li>\n<p>If you have an established product, bolting AI onto it is often the right move. “Don’t bolt on AI, reimagine the workflow” makes a catchy headline. But your customers already have their workflows in your product, and your job is to move them “from AI novice to AI native.”</p>\n</li>\n<li>\n<p>A visionary founder is on chapter 10 of the movie while you’re on chapter three. When a founder says something that sounds wrong, Sherif assumes they’ve thought about it far more than anyone else. In his experience, they’ve been right 99% of the time. He asks what led them there and tries “to get to chapter 10 as quickly as possible,” so he can bring the team along. If he still disagrees, he says so and asks one question: “Are you the decision-maker or am I?”</p>\n</li>\n</ol>\n<p>原文链接：<a href=\"https://x.com/lennysan/status/2125018080837525695\">https://x.com/lennysan/status/2125018080837525695</a></p>\n<p>相关链接：<a href=\"https://x.com/lennysan/status/2124880663149002996\">https://x.com/lennysan/status/2124880663149002996</a></p>"}, "rewrite": {"title": "Lenny 访谈 Atlassian 的 Sherif Mansour：PM 管的是决策速度，全员 AI 构建者团队一个月就散了", "markdown": "大多数公司已经不招初级员工了，因为 AI 能做他们的活。Atlassian 反着来，还在招。\n\n这是 Lenny Rachitsky 访谈 Atlassian 的 Sherif Mansour 后，列出的九条要点里的第一条。Sherif 在 Atlassian 干了 17 年，下面这些都是他的经验和判断。\n\n## 初级员工反而是优势\n\nSherif 的理由是：现在难的地方在于让整个团队放下旧的工作方式，初级员工没有这个包袱，所以眼下能给公司带来优势。但初级员工识别不出 AI 生成的劣质内容，资深员工则“隔一英里就能认出 AI 垃圾”，两者正好互补。\n\n## PM 的头号任务是补齐上下文\n\n他的核心信念是，好的 PM 要优先在团队里建一个“共享大脑”，覆盖三类上下文：客户、产品和市场、业务。他让 PM “从待办列表前逃开”，把精力放在把手上所有的上下文分享给团队成员。\n\n所以 PM 不该问“我要不要写代码”，该问的是：什么在拖慢团队做决定？Sherif 说，PM 不拥有决定权，他们拥有的是“**决策速度**”。AI 最好的用法，就是补上那个拖慢团队的上下文缺口：愿景不清楚，就做个原型；团队不了解市场，就让代理去做分析。\n\n## 三种 PM：科学家、总经理、艺术家\n\nSherif 把 PM 分成三种原型。科学家靠假设驱动，适合增长团队；总经理用 TAM（目标市场规模）、收入和利润来思考；艺术家从用户体验的愿景出发，倒推要解决的问题。\n\nAtlassian 在招聘和绩效校准时都会用这三种原型。想知道自己属于哪一类，可以看你怎么回答这个问题：“你最喜欢的产品是什么，你会怎么把它做得更好？”\n\n## 全员“AI 构建者”的实验，一个月就散了\n\nAtlassian 试过组建一种团队：不设 PM 和设计师，每个人都是“AI 构建者”。头几周，一位 PM 告诉 Sherif，他们“前所未有地快”。一个月后，这位 PM 说：“大家都回去做原来的工作了。”\n\n团队最后意识到，他们的问题出在方向上，跟产出速度无关。\n\n## 角色没有合并，每个人的圈子变大了\n\nSherif 在 Balsamiq 时代就学到了这一课。当时 Atlassian 里人人都能画原型图，结果发现 PM 是“世界上最差的解决方案设计者之一”。他认为 AI 做原型是同一个故事：它放大你的长处，也同样放大你的短处，产出的质量取决于你对这门手艺懂多少。\n\n## 艺术家型 PM 越来越值钱\n\n软件越来越便宜，越来越多产品会长着同样的功能，用户体验成了少数能拉开差距的地方。当所有人都能用上同样的智能，品味就更重要。Sherif 说，在 Atlassian 的 17 年里，设计对产品路线图的影响从没像现在这么大。\n\n## 老产品给 AI 打补丁，往往是对的\n\n“别给产品硬塞 AI，要重新设计工作流”是个好听的标题。但 Sherif 的看法是，客户的工作流已经长在你的产品里，你的任务是带他们“从 AI 新手变成 AI 原生”。所以对成熟产品来说，在现有产品上加 AI 往往是正确做法。\n\n## 创始人在看第十章，你还在第三章\n\n有远见的创始人说出一句听上去不对的话时，Sherif 默认对方想得比任何人都多。按他的经验，创始人 99% 的时候是对的。他会问对方是怎么得出这个结论的，争取“尽快读到第十章”，好把团队带上。如果还是不同意，他会直说，并且只问一个问题：“这件事是你拍板，还是我拍板？”\n\n## 对 PM 的一个具体建议\n\n如果你是 PM，正在纠结要不要学写代码，可以先换个问题：本周团队卡得最久的那个决定，缺的是哪一类上下文，客户、市场还是业务？缺愿景就做原型，缺市场认知就让代理跑分析。按 Sherif 的说法，这才是 AI 对 PM 最有用的地方。", "html": "<p>大多数公司已经不招初级员工了，因为 AI 能做他们的活。Atlassian 反着来，还在招。</p>\n<p>这是 Lenny Rachitsky 访谈 Atlassian 的 Sherif Mansour 后，列出的九条要点里的第一条。Sherif 在 Atlassian 干了 17 年，下面这些都是他的经验和判断。</p>\n<h2>初级员工反而是优势</h2>\n<p>Sherif 的理由是：现在难的地方在于让整个团队放下旧的工作方式，初级员工没有这个包袱，所以眼下能给公司带来优势。但初级员工识别不出 AI 生成的劣质内容，资深员工则“隔一英里就能认出 AI 垃圾”，两者正好互补。</p>\n<h2>PM 的头号任务是补齐上下文</h2>\n<p>他的核心信念是，好的 PM 要优先在团队里建一个“共享大脑”，覆盖三类上下文：客户、产品和市场、业务。他让 PM “从待办列表前逃开”，把精力放在把手上所有的上下文分享给团队成员。</p>\n<p>所以 PM 不该问“我要不要写代码”，该问的是：什么在拖慢团队做决定？Sherif 说，PM 不拥有决定权，他们拥有的是“<strong>决策速度</strong>”。AI 最好的用法，就是补上那个拖慢团队的上下文缺口：愿景不清楚，就做个原型；团队不了解市场，就让代理去做分析。</p>\n<h2>三种 PM：科学家、总经理、艺术家</h2>\n<p>Sherif 把 PM 分成三种原型。科学家靠假设驱动，适合增长团队；总经理用 TAM（目标市场规模）、收入和利润来思考；艺术家从用户体验的愿景出发，倒推要解决的问题。</p>\n<p>Atlassian 在招聘和绩效校准时都会用这三种原型。想知道自己属于哪一类，可以看你怎么回答这个问题：“你最喜欢的产品是什么，你会怎么把它做得更好？”</p>\n<h2>全员“AI 构建者”的实验，一个月就散了</h2>\n<p>Atlassian 试过组建一种团队：不设 PM 和设计师，每个人都是“AI 构建者”。头几周，一位 PM 告诉 Sherif，他们“前所未有地快”。一个月后，这位 PM 说：“大家都回去做原来的工作了。”</p>\n<p>团队最后意识到，他们的问题出在方向上，跟产出速度无关。</p>\n<h2>角色没有合并，每个人的圈子变大了</h2>\n<p>Sherif 在 Balsamiq 时代就学到了这一课。当时 Atlassian 里人人都能画原型图，结果发现 PM 是“世界上最差的解决方案设计者之一”。他认为 AI 做原型是同一个故事：它放大你的长处，也同样放大你的短处，产出的质量取决于你对这门手艺懂多少。</p>\n<h2>艺术家型 PM 越来越值钱</h2>\n<p>软件越来越便宜，越来越多产品会长着同样的功能，用户体验成了少数能拉开差距的地方。当所有人都能用上同样的智能，品味就更重要。Sherif 说，在 Atlassian 的 17 年里，设计对产品路线图的影响从没像现在这么大。</p>\n<h2>老产品给 AI 打补丁，往往是对的</h2>\n<p>“别给产品硬塞 AI，要重新设计工作流”是个好听的标题。但 Sherif 的看法是，客户的工作流已经长在你的产品里，你的任务是带他们“从 AI 新手变成 AI 原生”。所以对成熟产品来说，在现有产品上加 AI 往往是正确做法。</p>\n<h2>创始人在看第十章，你还在第三章</h2>\n<p>有远见的创始人说出一句听上去不对的话时，Sherif 默认对方想得比任何人都多。按他的经验，创始人 99% 的时候是对的。他会问对方是怎么得出这个结论的，争取“尽快读到第十章”，好把团队带上。如果还是不同意，他会直说，并且只问一个问题：“这件事是你拍板，还是我拍板？”</p>\n<h2>对 PM 的一个具体建议</h2>\n<p>如果你是 PM，正在纠结要不要学写代码，可以先换个问题：本周团队卡得最久的那个决定，缺的是哪一类上下文，客户、市场还是业务？缺愿景就做原型，缺市场认知就让代理跑分析。按 Sherif 的说法，这才是 AI 对 PM 最有用的地方。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Brad Setser：用“产能过剩”301 对所有国家加税是个错误，中国对欧出口激增也怪不到美国头上</title>
+      <link>https://karuio.github.io/a/setser-overcapacity-301-tariffs</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/setser-overcapacity-301-tariffs</guid>
+      <pubDate>Tue, 24 Nov 2026 23:10:03 +0000</pubDate>
+      <author>Brad Setser</author>
+      <description><![CDATA[<p><em>全球顺差集中在中国和芯片出口经济体，芯片顺差来自短缺；普遍加税会稀释对中国的关税差。他同时反对欧洲的“转移效应”说法，认为中国汽车出口激增源于自身产能和政策。</em></p>
+<h2>中文改写</h2>
+<p>据《华尔街日报》报道，特朗普政府准备动用针对“产能过剩”的 301 调查，把关税重新抬回此前依据 IEEPA（《国际紧急经济权力法》）征收时的水平，而且对象是所有国家，不只中国。</p>
+<p>Brad Setser 在一条 14 帖的串帖里说，这是一个<strong>严重的错误</strong>。</p>
+<h2>顺差在东亚，芯片顺差来自短缺</h2>
+<p>Setser 的出发点是一张贸易差额图：全球顺差眼下集中在中国和芯片出口经济体，日本和欧盟并没有大额顺差，加拿大和墨西哥也没有。按他的判断，对所有人一律加征，打错了对象。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_01"><img src="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>他接着说，全球顺差高度集中在东亚。芯片出口经济体顺差暴涨，原因是芯片短缺，相对于美国飙升的需求供不应求，跟芯片“产能过剩”扯不上关系。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_02"><img src="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>打击面太广，反而说不清中国的问题</h2>
+<p>Setser 认为，四处出击，而且理由常常很牵强，会让政府很难拿出一套前后一致的论证，说明中国存在系统性的产能过剩倾向。他举的例子是挪威：难道挪威有“三文鱼”产能过剩，而不是在鱼类生产上有比较优势？</p>
+<p>他认为针对中国的论证是站得住的：地方各自扶持本地龙头企业，彼此缺乏协调，再加上廉价的定向信贷，导致一个又一个行业的投资远超任何对国内外需求的合理估计；在中国政府重点扶持的行业，新产品涌入新市场，让其他地方不敢投资。</p>
+<p>可一旦对所有国家加税，把欧洲拉回 15%，把中国拉到 20% 以上再叠加原有关税，亚洲大部分经济体放在 15% 到 20% 之间，<strong>对中国的打击就被稀释了</strong>。他的理由是，按现在的汇率，中国更在乎的是自己和别国之间的关税差，而不是关税的绝对水平。</p>
+<h2>别跟着欧洲说“转移效应”</h2>
+<p>话锋一转，Setser 也提醒，不要附和欧洲常见的说法：美国对华关税把中国产品转移到了欧洲市场。这种说法贸易律师很容易提出，欧盟直到不久前的钢铁关税就是以此为依据，听起来也“像是真的”。但他认为，它把中国对欧出口激增的责任过多推给了美国，对中国自身的责任算得太少。</p>
+<p>转移效应的前提，是美国关税在压低美国进口上很有效。Setser 认为实际效果没那么大：汽车和家用耐用消费品上有一些影响，但净效果远小于美国从中国直接进口的降幅。</p>
+<p>在很多行业，美国消费者只是付了关税（所以才有关税收入），进口总量并没减少；在另一些行业，关税的主要作用是改变了最终组装地。他引用摩根士丹利的估算：即使加了关税，美国从中国进口的增加值总量也没怎么变，这就限制了可能被转移出去的规模。</p>
+<p>在有人追问是否属于转口时，他在串帖下方补充说，与其说是转口（违法，虽然也确实存在，属于关税欺诈），不如说关税惩罚的是最终组装地，而不是零部件和增加值的来源地。</p>
+<h2>汽车：没有贸易可转，产能本身太大</h2>
+<p>他认为在汽车这样的行业，没有任何说得通的理由，把中国对欧盟乃至全世界的出口激增归因于美国政策，而不是中国政策。他给了两条理由。</p>
+<p>第一，美国从 2018 年起就通过 301 条款对中国汽车加征关税，而且从来没从中国进口过多少汽车，本来就没有现成的贸易可以转移。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_03"><img src="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png" alt="第 11 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第二，中国汽车产能的规模太大。他写道，产能至少 5000 万辆，他怀疑更接近《华尔街日报》报道的 6000 万辆；今年中国国内需求又下降了大约 500 万辆。这样算下来，即使美国每年吸纳 100 万到 150 万辆，中国也还有大量产能可以出口到欧洲。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_04"><img src="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png" alt="第 12 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>该抱怨什么</h2>
+<p>Setser 承认，抱怨美国关税有正当理由，它们确实在影响欧洲，比如欧盟车企正在到美国投资以绕开关税。抱怨中国的一系列政策更有充分理由：进口替代政策、对重点行业的地方补贴加廉价信贷，以及被低估的汇率。</p>
+<p>所以在他看来，用中国出口激增来批评美国关税，在政治上和分析上都是错误。这轮激增主要源于中国自己的政策，而且早于特朗普的所有关税，他认为实际是从 2023 年开始的。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_05"><img src="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png" alt="第 14 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>怎么读这轮关税</h2>
+<p>如果你在跟踪 301 关税对中国和亚洲出口链的影响，按 Setser 的思路，可以盯两个数：中国和其他经济体之间的<strong>关税差</strong>有没有被拉平；中国出口量和进口量的差距是否还在扩大。前者决定关税对中国还有多大约束力，后者决定贸易摩擦的源头在哪里。以上判断都是 Setser 的观点，相关关税方案以官方最终公布为准。</p>
+
+<h2>原文</h2>
+<p><em>Overcapacity 301 tariffs on everyone are a profound mistake (thread)</em></p>
+<figure data-media-id="img_setser_301_01"><img src="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_02"><img src="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_03"><img src="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png" alt="第 11 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_04"><img src="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png" alt="第 12 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_05"><img src="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png" alt="第 14 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>It looks like the Trump administration is poised to use the overcapacity 301s to raise tariffs back to their "IEEPA" levels on everyone -- and not just on China.</p>
+<p>That is a profound mistake.  The global surplus right now is in China and the chip exporters -- and not in Japan and the EU (or for that matter Canada and Mexico)</p>
+<p>1/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125366780059385882</strong></p>
+<p>The global surplus right now is heavily concentrated in East Asia -- and the surge in the surplus of chip exporters is due to a chip shortage (relative to surging US demand) not chip "overcapacity" ...</p>
+<p>2/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125367389705408933</strong></p>
+<p>Going after everyone, often on flimsy grounds (Norway has "salmon" overcapacity &amp; not a comparative advantage in fish production?), makes it hard for the administration to make a coherent intellectual case that China has a systemic tendency towards overcapacity ....</p>
+<p>3/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125367790655684629</strong></p>
+<p>I think the case can be made for China -- uncoordinated regional support for local champions + cheap/ directed credit lead to investments that far exceed any reasonable estimate of demand (domestic and global) in sector after sector, and flood new markets in sectors targeted by the Chinese government in a way that deters investment elsewhere</p>
+<p>4/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125368116075245682</strong></p>
+<p>But going after everyone to get tariffs back up to 15% (Europe) and 20% plus legacy tariffs (China) and between 15-20% for most of Asia dilutes the impact of the tariffs on China (at current exchange rates China care more about the tariff differential than the absolute level)</p>
+<p>5/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125368948048679254</strong></p>
+<p>That said, I would be careful not to echo the standard European argument that US tariffs on China have diverted Chinese production in to the European market.   That is an easy argument for trade lawyers to make (it was the basis for the EU steel tariffs until recently) and "feels" true ... but it puts too much blame on the US for the surge in China's exports to the EU and not enough blame on China itself</p>
+<p>6/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369331802366393</strong></p>
+<p>The diversion argument assumes that the US tariffs have been more effective at reducing US imports than I think they have been</p>
+<p>(there is some effect on autos and household consumer durables, but the net effect is much smaller than the reduction in direct US imports from China)</p>
+<p>7/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369595997389066</strong></p>
+<p>Remember that in many sectors US consumers have just paid the tariff (hence the revenue) and not reduced total imports -- and in others the main effect of the tariff has been to change the location of final assembly</p>
+<p>8/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369820296135062</strong></p>
+<p>Morgan Stanley has estimated that the total value added the US imports from China hasn't changed much, even with the tariffs -- which reduces the extent of potential diversion</p>
+<p>9/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369994980872291</strong></p>
+<p>And in sectors like autos there is no plausible case that the surge in Chinese exports to the EU (and the world) is a function of US policies rather that Chinese policies</p>
+<p>10/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125370206906372299</strong></p>
+<p>For one, the US has tariffed Chinese autos since 2018 (via the 301) and never imported any cars to speak of from China, so there isn't any existing trade to divert</p>
+<p>11/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125370629171933546</strong></p>
+<p>And the scale of China's auto capacity (at least 50m cars, and I suspect more like the 60m reported by the WSJ) is so big and the fall in Chinese internal demand this year is so great (5m cars or so) that China would have tons of capacity to export to Europe even if the US was taking in 1 to 1.5m cars ...</p>
+<p>12/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125371009440133224</strong></p>
+<p>There are legitimate grounds to complain about the US tariffs, which are having an impact on Europe (EU auto firms are investing in the US to get around the tariffs) -- and very legitimate grounds to complain about a host of Chinese policies (import substitution policies, local subsidies + cheap credit to favored sectors, and undervalued currencies) ....</p>
+<p>13/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125371600971383185</strong></p>
+<p>So in my view it would be both a political and analytical mistake to criticize the US tariffs from a surge in Chinese exports that stems much more from China's own policies ... and that in fact predates all of Trump's tariffs  (it really started in 2023 in my view)</p>
+<p>14/14</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125373723167600926</strong></p>
+<p>here is the Journal's story on the coming "overcapacity" 301 tariffs</p>
+<p>https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2</p>
+<p><strong>Reply in thread, https://x.com/Brad_Setser/status/2125376498852852080</strong></p>
+<p>@QRDL not really transhipment (illegal) tho it happens (it is tariff fraud) so much as tariffs punish the location of final assembly not the source of the parts/ value add</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2125366363506037192">https://x.com/Brad_Setser/status/2125366363506037192</a></p>
+<p><strong>相关链接：</strong><a href="https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2">https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>全球顺差集中在中国和芯片出口经济体，芯片顺差来自短缺；普遍加税会稀释对中国的关税差。他同时反对欧洲的“转移效应”说法，认为中国汽车出口激增源于自身产能和政策。</em></p>
+<h2>中文改写</h2>
+<p>据《华尔街日报》报道，特朗普政府准备动用针对“产能过剩”的 301 调查，把关税重新抬回此前依据 IEEPA（《国际紧急经济权力法》）征收时的水平，而且对象是所有国家，不只中国。</p>
+<p>Brad Setser 在一条 14 帖的串帖里说，这是一个<strong>严重的错误</strong>。</p>
+<h2>顺差在东亚，芯片顺差来自短缺</h2>
+<p>Setser 的出发点是一张贸易差额图：全球顺差眼下集中在中国和芯片出口经济体，日本和欧盟并没有大额顺差，加拿大和墨西哥也没有。按他的判断，对所有人一律加征，打错了对象。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_01"><img src="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>他接着说，全球顺差高度集中在东亚。芯片出口经济体顺差暴涨，原因是芯片短缺，相对于美国飙升的需求供不应求，跟芯片“产能过剩”扯不上关系。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_02"><img src="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>打击面太广，反而说不清中国的问题</h2>
+<p>Setser 认为，四处出击，而且理由常常很牵强，会让政府很难拿出一套前后一致的论证，说明中国存在系统性的产能过剩倾向。他举的例子是挪威：难道挪威有“三文鱼”产能过剩，而不是在鱼类生产上有比较优势？</p>
+<p>他认为针对中国的论证是站得住的：地方各自扶持本地龙头企业，彼此缺乏协调，再加上廉价的定向信贷，导致一个又一个行业的投资远超任何对国内外需求的合理估计；在中国政府重点扶持的行业，新产品涌入新市场，让其他地方不敢投资。</p>
+<p>可一旦对所有国家加税，把欧洲拉回 15%，把中国拉到 20% 以上再叠加原有关税，亚洲大部分经济体放在 15% 到 20% 之间，<strong>对中国的打击就被稀释了</strong>。他的理由是，按现在的汇率，中国更在乎的是自己和别国之间的关税差，而不是关税的绝对水平。</p>
+<h2>别跟着欧洲说“转移效应”</h2>
+<p>话锋一转，Setser 也提醒，不要附和欧洲常见的说法：美国对华关税把中国产品转移到了欧洲市场。这种说法贸易律师很容易提出，欧盟直到不久前的钢铁关税就是以此为依据，听起来也“像是真的”。但他认为，它把中国对欧出口激增的责任过多推给了美国，对中国自身的责任算得太少。</p>
+<p>转移效应的前提，是美国关税在压低美国进口上很有效。Setser 认为实际效果没那么大：汽车和家用耐用消费品上有一些影响，但净效果远小于美国从中国直接进口的降幅。</p>
+<p>在很多行业，美国消费者只是付了关税（所以才有关税收入），进口总量并没减少；在另一些行业，关税的主要作用是改变了最终组装地。他引用摩根士丹利的估算：即使加了关税，美国从中国进口的增加值总量也没怎么变，这就限制了可能被转移出去的规模。</p>
+<p>在有人追问是否属于转口时，他在串帖下方补充说，与其说是转口（违法，虽然也确实存在，属于关税欺诈），不如说关税惩罚的是最终组装地，而不是零部件和增加值的来源地。</p>
+<h2>汽车：没有贸易可转，产能本身太大</h2>
+<p>他认为在汽车这样的行业，没有任何说得通的理由，把中国对欧盟乃至全世界的出口激增归因于美国政策，而不是中国政策。他给了两条理由。</p>
+<p>第一，美国从 2018 年起就通过 301 条款对中国汽车加征关税，而且从来没从中国进口过多少汽车，本来就没有现成的贸易可以转移。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_03"><img src="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png" alt="第 11 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第二，中国汽车产能的规模太大。他写道，产能至少 5000 万辆，他怀疑更接近《华尔街日报》报道的 6000 万辆；今年中国国内需求又下降了大约 500 万辆。这样算下来，即使美国每年吸纳 100 万到 150 万辆，中国也还有大量产能可以出口到欧洲。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_04"><img src="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png" alt="第 12 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>该抱怨什么</h2>
+<p>Setser 承认，抱怨美国关税有正当理由，它们确实在影响欧洲，比如欧盟车企正在到美国投资以绕开关税。抱怨中国的一系列政策更有充分理由：进口替代政策、对重点行业的地方补贴加廉价信贷，以及被低估的汇率。</p>
+<p>所以在他看来，用中国出口激增来批评美国关税，在政治上和分析上都是错误。这轮激增主要源于中国自己的政策，而且早于特朗普的所有关税，他认为实际是从 2023 年开始的。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_301_05"><img src="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png" alt="第 14 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>怎么读这轮关税</h2>
+<p>如果你在跟踪 301 关税对中国和亚洲出口链的影响，按 Setser 的思路，可以盯两个数：中国和其他经济体之间的<strong>关税差</strong>有没有被拉平；中国出口量和进口量的差距是否还在扩大。前者决定关税对中国还有多大约束力，后者决定贸易摩擦的源头在哪里。以上判断都是 Setser 的观点，相关关税方案以官方最终公布为准。</p>
+
+<h2>原文</h2>
+<p><em>Overcapacity 301 tariffs on everyone are a profound mistake (thread)</em></p>
+<figure data-media-id="img_setser_301_01"><img src="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png" alt="第 1 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_02"><img src="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png" alt="第 2 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_03"><img src="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png" alt="第 11 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_04"><img src="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png" alt="第 12 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_301_05"><img src="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png" alt="第 14 条帖子配图"><figcaption><a href="https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>It looks like the Trump administration is poised to use the overcapacity 301s to raise tariffs back to their "IEEPA" levels on everyone -- and not just on China.</p>
+<p>That is a profound mistake.  The global surplus right now is in China and the chip exporters -- and not in Japan and the EU (or for that matter Canada and Mexico)</p>
+<p>1/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125366780059385882</strong></p>
+<p>The global surplus right now is heavily concentrated in East Asia -- and the surge in the surplus of chip exporters is due to a chip shortage (relative to surging US demand) not chip "overcapacity" ...</p>
+<p>2/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125367389705408933</strong></p>
+<p>Going after everyone, often on flimsy grounds (Norway has "salmon" overcapacity &amp; not a comparative advantage in fish production?), makes it hard for the administration to make a coherent intellectual case that China has a systemic tendency towards overcapacity ....</p>
+<p>3/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125367790655684629</strong></p>
+<p>I think the case can be made for China -- uncoordinated regional support for local champions + cheap/ directed credit lead to investments that far exceed any reasonable estimate of demand (domestic and global) in sector after sector, and flood new markets in sectors targeted by the Chinese government in a way that deters investment elsewhere</p>
+<p>4/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125368116075245682</strong></p>
+<p>But going after everyone to get tariffs back up to 15% (Europe) and 20% plus legacy tariffs (China) and between 15-20% for most of Asia dilutes the impact of the tariffs on China (at current exchange rates China care more about the tariff differential than the absolute level)</p>
+<p>5/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125368948048679254</strong></p>
+<p>That said, I would be careful not to echo the standard European argument that US tariffs on China have diverted Chinese production in to the European market.   That is an easy argument for trade lawyers to make (it was the basis for the EU steel tariffs until recently) and "feels" true ... but it puts too much blame on the US for the surge in China's exports to the EU and not enough blame on China itself</p>
+<p>6/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369331802366393</strong></p>
+<p>The diversion argument assumes that the US tariffs have been more effective at reducing US imports than I think they have been</p>
+<p>(there is some effect on autos and household consumer durables, but the net effect is much smaller than the reduction in direct US imports from China)</p>
+<p>7/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369595997389066</strong></p>
+<p>Remember that in many sectors US consumers have just paid the tariff (hence the revenue) and not reduced total imports -- and in others the main effect of the tariff has been to change the location of final assembly</p>
+<p>8/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369820296135062</strong></p>
+<p>Morgan Stanley has estimated that the total value added the US imports from China hasn't changed much, even with the tariffs -- which reduces the extent of potential diversion</p>
+<p>9/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369994980872291</strong></p>
+<p>And in sectors like autos there is no plausible case that the surge in Chinese exports to the EU (and the world) is a function of US policies rather that Chinese policies</p>
+<p>10/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125370206906372299</strong></p>
+<p>For one, the US has tariffed Chinese autos since 2018 (via the 301) and never imported any cars to speak of from China, so there isn't any existing trade to divert</p>
+<p>11/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125370629171933546</strong></p>
+<p>And the scale of China's auto capacity (at least 50m cars, and I suspect more like the 60m reported by the WSJ) is so big and the fall in Chinese internal demand this year is so great (5m cars or so) that China would have tons of capacity to export to Europe even if the US was taking in 1 to 1.5m cars ...</p>
+<p>12/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125371009440133224</strong></p>
+<p>There are legitimate grounds to complain about the US tariffs, which are having an impact on Europe (EU auto firms are investing in the US to get around the tariffs) -- and very legitimate grounds to complain about a host of Chinese policies (import substitution policies, local subsidies + cheap credit to favored sectors, and undervalued currencies) ....</p>
+<p>13/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125371600971383185</strong></p>
+<p>So in my view it would be both a political and analytical mistake to criticize the US tariffs from a surge in Chinese exports that stems much more from China's own policies ... and that in fact predates all of Trump's tariffs  (it really started in 2023 in my view)</p>
+<p>14/14</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125373723167600926</strong></p>
+<p>here is the Journal's story on the coming "overcapacity" 301 tariffs</p>
+<p>https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2</p>
+<p><strong>Reply in thread, https://x.com/Brad_Setser/status/2125376498852852080</strong></p>
+<p>@QRDL not really transhipment (illegal) tho it happens (it is tariff fraud) so much as tariffs punish the location of final assembly not the source of the parts/ value add</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2125366363506037192">https://x.com/Brad_Setser/status/2125366363506037192</a></p>
+<p><strong>相关链接：</strong><a href="https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2">https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Overcapacity 301 tariffs on everyone are a profound mistake (thread)", "url": "https://x.com/Brad_Setser/status/2125366363506037192", "lang": "en", "html": "<h2>Overcapacity 301 tariffs on everyone are a profound mistake (thread)</h2>\n<figure data-media-id=\"img_setser_301_01\"><img src=\"https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png\" alt=\"第 1 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_301_02\"><img src=\"https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png\" alt=\"第 2 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_301_03\"><img src=\"https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png\" alt=\"第 11 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_301_04\"><img src=\"https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png\" alt=\"第 12 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_301_05\"><img src=\"https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png\" alt=\"第 14 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>It looks like the Trump administration is poised to use the overcapacity 301s to raise tariffs back to their \"IEEPA\" levels on everyone -- and not just on China.</p>\n<p>That is a profound mistake.  The global surplus right now is in China and the chip exporters -- and not in Japan and the EU (or for that matter Canada and Mexico)</p>\n<p>1/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125366780059385882</strong></p>\n<p>The global surplus right now is heavily concentrated in East Asia -- and the surge in the surplus of chip exporters is due to a chip shortage (relative to surging US demand) not chip \"overcapacity\" ...</p>\n<p>2/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125367389705408933</strong></p>\n<p>Going after everyone, often on flimsy grounds (Norway has \"salmon\" overcapacity &amp; not a comparative advantage in fish production?), makes it hard for the administration to make a coherent intellectual case that China has a systemic tendency towards overcapacity ....</p>\n<p>3/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125367790655684629</strong></p>\n<p>I think the case can be made for China -- uncoordinated regional support for local champions + cheap/ directed credit lead to investments that far exceed any reasonable estimate of demand (domestic and global) in sector after sector, and flood new markets in sectors targeted by the Chinese government in a way that deters investment elsewhere</p>\n<p>4/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125368116075245682</strong></p>\n<p>But going after everyone to get tariffs back up to 15% (Europe) and 20% plus legacy tariffs (China) and between 15-20% for most of Asia dilutes the impact of the tariffs on China (at current exchange rates China care more about the tariff differential than the absolute level)</p>\n<p>5/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125368948048679254</strong></p>\n<p>That said, I would be careful not to echo the standard European argument that US tariffs on China have diverted Chinese production in to the European market.   That is an easy argument for trade lawyers to make (it was the basis for the EU steel tariffs until recently) and \"feels\" true ... but it puts too much blame on the US for the surge in China's exports to the EU and not enough blame on China itself</p>\n<p>6/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369331802366393</strong></p>\n<p>The diversion argument assumes that the US tariffs have been more effective at reducing US imports than I think they have been</p>\n<p>(there is some effect on autos and household consumer durables, but the net effect is much smaller than the reduction in direct US imports from China)</p>\n<p>7/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369595997389066</strong></p>\n<p>Remember that in many sectors US consumers have just paid the tariff (hence the revenue) and not reduced total imports -- and in others the main effect of the tariff has been to change the location of final assembly</p>\n<p>8/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369820296135062</strong></p>\n<p>Morgan Stanley has estimated that the total value added the US imports from China hasn't changed much, even with the tariffs -- which reduces the extent of potential diversion</p>\n<p>9/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125369994980872291</strong></p>\n<p>And in sectors like autos there is no plausible case that the surge in Chinese exports to the EU (and the world) is a function of US policies rather that Chinese policies</p>\n<p>10/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125370206906372299</strong></p>\n<p>For one, the US has tariffed Chinese autos since 2018 (via the 301) and never imported any cars to speak of from China, so there isn't any existing trade to divert</p>\n<p>11/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125370629171933546</strong></p>\n<p>And the scale of China's auto capacity (at least 50m cars, and I suspect more like the 60m reported by the WSJ) is so big and the fall in Chinese internal demand this year is so great (5m cars or so) that China would have tons of capacity to export to Europe even if the US was taking in 1 to 1.5m cars ...</p>\n<p>12/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125371009440133224</strong></p>\n<p>There are legitimate grounds to complain about the US tariffs, which are having an impact on Europe (EU auto firms are investing in the US to get around the tariffs) -- and very legitimate grounds to complain about a host of Chinese policies (import substitution policies, local subsidies + cheap credit to favored sectors, and undervalued currencies) ....</p>\n<p>13/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125371600971383185</strong></p>\n<p>So in my view it would be both a political and analytical mistake to criticize the US tariffs from a surge in Chinese exports that stems much more from China's own policies ... and that in fact predates all of Trump's tariffs  (it really started in 2023 in my view)</p>\n<p>14/14</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125373723167600926</strong></p>\n<p>here is the Journal's story on the coming \"overcapacity\" 301 tariffs</p>\n<p>https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2</p>\n<p><strong>Reply in thread, https://x.com/Brad_Setser/status/2125376498852852080</strong></p>\n<p>@QRDL not really transhipment (illegal) tho it happens (it is tariff fraud) so much as tariffs punish the location of final assembly not the source of the parts/ value add</p>\n<p>原文链接：<a href=\"https://x.com/Brad_Setser/status/2125366363506037192\">https://x.com/Brad_Setser/status/2125366363506037192</a></p>\n<p>相关链接：<a href=\"https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2\">https://www.wsj.com/economy/trade/u-s-prepares-to-raise-tariffs-on-china-and-other-countries-37981740?mod=hp_trendingnow_article_pos2</a></p>"}, "rewrite": {"title": "Brad Setser：用“产能过剩”301 对所有国家加税是个错误，中国对欧出口激增也怪不到美国头上", "markdown": "据《华尔街日报》报道，特朗普政府准备动用针对“产能过剩”的 301 调查，把关税重新抬回此前依据 IEEPA（《国际紧急经济权力法》）征收时的水平，而且对象是所有国家，不只中国。\n\nBrad Setser 在一条 14 帖的串帖里说，这是一个**严重的错误**。\n\n## 顺差在东亚，芯片顺差来自短缺\n\nSetser 的出发点是一张贸易差额图：全球顺差眼下集中在中国和芯片出口经济体，日本和欧盟并没有大额顺差，加拿大和墨西哥也没有。按他的判断，对所有人一律加征，打错了对象。\n\n![第 1 条帖子配图](<https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png>)\n\n他接着说，全球顺差高度集中在东亚。芯片出口经济体顺差暴涨，原因是芯片短缺，相对于美国飙升的需求供不应求，跟芯片“产能过剩”扯不上关系。\n\n![第 2 条帖子配图](<https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png>)\n\n## 打击面太广，反而说不清中国的问题\n\nSetser 认为，四处出击，而且理由常常很牵强，会让政府很难拿出一套前后一致的论证，说明中国存在系统性的产能过剩倾向。他举的例子是挪威：难道挪威有“三文鱼”产能过剩，而不是在鱼类生产上有比较优势？\n\n他认为针对中国的论证是站得住的：地方各自扶持本地龙头企业，彼此缺乏协调，再加上廉价的定向信贷，导致一个又一个行业的投资远超任何对国内外需求的合理估计；在中国政府重点扶持的行业，新产品涌入新市场，让其他地方不敢投资。\n\n可一旦对所有国家加税，把欧洲拉回 15%，把中国拉到 20% 以上再叠加原有关税，亚洲大部分经济体放在 15% 到 20% 之间，**对中国的打击就被稀释了**。他的理由是，按现在的汇率，中国更在乎的是自己和别国之间的关税差，而不是关税的绝对水平。\n\n## 别跟着欧洲说“转移效应”\n\n话锋一转，Setser 也提醒，不要附和欧洲常见的说法：美国对华关税把中国产品转移到了欧洲市场。这种说法贸易律师很容易提出，欧盟直到不久前的钢铁关税就是以此为依据，听起来也“像是真的”。但他认为，它把中国对欧出口激增的责任过多推给了美国，对中国自身的责任算得太少。\n\n转移效应的前提，是美国关税在压低美国进口上很有效。Setser 认为实际效果没那么大：汽车和家用耐用消费品上有一些影响，但净效果远小于美国从中国直接进口的降幅。\n\n在很多行业，美国消费者只是付了关税（所以才有关税收入），进口总量并没减少；在另一些行业，关税的主要作用是改变了最终组装地。他引用摩根士丹利的估算：即使加了关税，美国从中国进口的增加值总量也没怎么变，这就限制了可能被转移出去的规模。\n\n在有人追问是否属于转口时，他在串帖下方补充说，与其说是转口（违法，虽然也确实存在，属于关税欺诈），不如说关税惩罚的是最终组装地，而不是零部件和增加值的来源地。\n\n## 汽车：没有贸易可转，产能本身太大\n\n他认为在汽车这样的行业，没有任何说得通的理由，把中国对欧盟乃至全世界的出口激增归因于美国政策，而不是中国政策。他给了两条理由。\n\n第一，美国从 2018 年起就通过 301 条款对中国汽车加征关税，而且从来没从中国进口过多少汽车，本来就没有现成的贸易可以转移。\n\n![第 11 条帖子配图](<https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png>)\n\n第二，中国汽车产能的规模太大。他写道，产能至少 5000 万辆，他怀疑更接近《华尔街日报》报道的 6000 万辆；今年中国国内需求又下降了大约 500 万辆。这样算下来，即使美国每年吸纳 100 万到 150 万辆，中国也还有大量产能可以出口到欧洲。\n\n![第 12 条帖子配图](<https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png>)\n\n## 该抱怨什么\n\nSetser 承认，抱怨美国关税有正当理由，它们确实在影响欧洲，比如欧盟车企正在到美国投资以绕开关税。抱怨中国的一系列政策更有充分理由：进口替代政策、对重点行业的地方补贴加廉价信贷，以及被低估的汇率。\n\n所以在他看来，用中国出口激增来批评美国关税，在政治上和分析上都是错误。这轮激增主要源于中国自己的政策，而且早于特朗普的所有关税，他认为实际是从 2023 年开始的。\n\n![第 14 条帖子配图](<https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png>)\n\n## 怎么读这轮关税\n\n如果你在跟踪 301 关税对中国和亚洲出口链的影响，按 Setser 的思路，可以盯两个数：中国和其他经济体之间的**关税差**有没有被拉平；中国出口量和进口量的差距是否还在扩大。前者决定关税对中国还有多大约束力，后者决定贸易摩擦的源头在哪里。以上判断都是 Setser 的观点，相关关税方案以官方最终公布为准。", "html": "<p>据《华尔街日报》报道，特朗普政府准备动用针对“产能过剩”的 301 调查，把关税重新抬回此前依据 IEEPA（《国际紧急经济权力法》）征收时的水平，而且对象是所有国家，不只中国。</p>\n<p>Brad Setser 在一条 14 帖的串帖里说，这是一个<strong>严重的错误</strong>。</p>\n<h2>顺差在东亚，芯片顺差来自短缺</h2>\n<p>Setser 的出发点是一张贸易差额图：全球顺差眼下集中在中国和芯片出口经济体，日本和欧盟并没有大额顺差，加拿大和墨西哥也没有。按他的判断，对所有人一律加征，打错了对象。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_301_01\"><img src=\"https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png\" alt=\"第 1 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7RaqsXQAAAzi5.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>他接着说，全球顺差高度集中在东亚。芯片出口经济体顺差暴涨，原因是芯片短缺，相对于美国飙升的需求供不应求，跟芯片“产能过剩”扯不上关系。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_301_02\"><img src=\"https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png\" alt=\"第 2 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7Rz0WXEAAsnxU.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>打击面太广，反而说不清中国的问题</h2>\n<p>Setser 认为，四处出击，而且理由常常很牵强，会让政府很难拿出一套前后一致的论证，说明中国存在系统性的产能过剩倾向。他举的例子是挪威：难道挪威有“三文鱼”产能过剩，而不是在鱼类生产上有比较优势？</p>\n<p>他认为针对中国的论证是站得住的：地方各自扶持本地龙头企业，彼此缺乏协调，再加上廉价的定向信贷，导致一个又一个行业的投资远超任何对国内外需求的合理估计；在中国政府重点扶持的行业，新产品涌入新市场，让其他地方不敢投资。</p>\n<p>可一旦对所有国家加税，把欧洲拉回 15%，把中国拉到 20% 以上再叠加原有关税，亚洲大部分经济体放在 15% 到 20% 之间，<strong>对中国的打击就被稀释了</strong>。他的理由是，按现在的汇率，中国更在乎的是自己和别国之间的关税差，而不是关税的绝对水平。</p>\n<h2>别跟着欧洲说“转移效应”</h2>\n<p>话锋一转，Setser 也提醒，不要附和欧洲常见的说法：美国对华关税把中国产品转移到了欧洲市场。这种说法贸易律师很容易提出，欧盟直到不久前的钢铁关税就是以此为依据，听起来也“像是真的”。但他认为，它把中国对欧出口激增的责任过多推给了美国，对中国自身的责任算得太少。</p>\n<p>转移效应的前提，是美国关税在压低美国进口上很有效。Setser 认为实际效果没那么大：汽车和家用耐用消费品上有一些影响，但净效果远小于美国从中国直接进口的降幅。</p>\n<p>在很多行业，美国消费者只是付了关税（所以才有关税收入），进口总量并没减少；在另一些行业，关税的主要作用是改变了最终组装地。他引用摩根士丹利的估算：即使加了关税，美国从中国进口的增加值总量也没怎么变，这就限制了可能被转移出去的规模。</p>\n<p>在有人追问是否属于转口时，他在串帖下方补充说，与其说是转口（违法，虽然也确实存在，属于关税欺诈），不如说关税惩罚的是最终组装地，而不是零部件和增加值的来源地。</p>\n<h2>汽车：没有贸易可转，产能本身太大</h2>\n<p>他认为在汽车这样的行业，没有任何说得通的理由，把中国对欧盟乃至全世界的出口激增归因于美国政策，而不是中国政策。他给了两条理由。</p>\n<p>第一，美国从 2018 年起就通过 301 条款对中国汽车加征关税，而且从来没从中国进口过多少汽车，本来就没有现成的贸易可以转移。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_301_03\"><img src=\"https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png\" alt=\"第 11 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7U7YpWEAEcHkJ.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>第二，中国汽车产能的规模太大。他写道，产能至少 5000 万辆，他怀疑更接近《华尔街日报》报道的 6000 万辆；今年中国国内需求又下降了大约 500 万辆。这样算下来，即使美国每年吸纳 100 万到 150 万辆，中国也还有大量产能可以出口到欧洲。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_301_04\"><img src=\"https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png\" alt=\"第 12 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7VTiqXUAA2L8n.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>该抱怨什么</h2>\n<p>Setser 承认，抱怨美国关税有正当理由，它们确实在影响欧洲，比如欧盟车企正在到美国投资以绕开关税。抱怨中国的一系列政策更有充分理由：进口替代政策、对重点行业的地方补贴加廉价信贷，以及被低估的汇率。</p>\n<p>所以在他看来，用中国出口激增来批评美国关税，在政治上和分析上都是错误。这轮激增主要源于中国自己的政策，而且早于特朗普的所有关税，他认为实际是从 2023 年开始的。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_301_05\"><img src=\"https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png\" alt=\"第 14 条帖子配图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX7WM22XYAAwB8S.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<h2>怎么读这轮关税</h2>\n<p>如果你在跟踪 301 关税对中国和亚洲出口链的影响，按 Setser 的思路，可以盯两个数：中国和其他经济体之间的<strong>关税差</strong>有没有被拉平；中国出口量和进口量的差距是否还在扩大。前者决定关税对中国还有多大约束力，后者决定贸易摩擦的源头在哪里。以上判断都是 Setser 的观点，相关关税方案以官方最终公布为准。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Simon Taylor：Stripe 谈 2000 亿美元估值，四个 PayPal 的价钱</title>
+      <link>https://karuio.github.io/a/sytaylor-stripe-200b-tender</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/sytaylor-stripe-200b-tender</guid>
+      <pubDate>Tue, 24 Nov 2026 16:10:46 +0000</pubDate>
+      <author>Simon Taylor</author>
+      <description><![CDATA[<p><em>据《华尔街日报》，Stripe 在谈一笔估值超 2000 亿美元的员工股要约收购，比 2 月高 26%；2025 年支付量 1.9 万亿美元、增长 34%，PayPal 1.79 万亿美元、增长 7%。</em></p>
+<h2>中文改写</h2>
+<p>据 Simon Taylor 转述的《华尔街日报》报道，Stripe 正在谈一笔要约收购，估值将超过 2000 亿美元。他算了一下，2000 亿美元比 PayPal、Block、Adyen 和 Fiserv 四家的市值加起来还多。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_sytaylor_stripe_card"><img src="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg" alt="图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）"><figcaption><a href="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>这笔交易的方式是现任和前任员工出售股份，现有投资者预计会买下其中一部分。交易可能在明年初完成，谈判还在进行，价格也可能变。</p>
+<h2>每年重新定一次价</h2>
+<p>Taylor 列出了 Stripe 2023 年以来每年的估值：</p>
+<ul>
+<li>2023 年：500 亿美元</li>
+<li>2024 年：650 亿美元</li>
+<li>2025 年：915 亿美元</li>
+<li>2026 年：1590 亿美元</li>
+<li>2027 年：2000 亿美元以上（谈判中）</li>
+</ul>
+<p>按 2000 亿美元算，估值比 2023 年的低点翻了两番。他还提到，Stripe 在上一封年度信里说过，它在估值上涨的同时减少了流通股数量。</p>
+<h2>涨幅在放缓，业务可能涨得比价格快</h2>
+<p>和今年 2 月那一轮相比，这次估值上涨 26%；去年那一步是 74%。</p>
+<p>Taylor 认为，在其他公司交不出这种高速增长的市场里，Stripe 的增长对投资者很有吸引力。2025 年，商家通过 Stripe 处理的支付总额是 1.9 万亿美元，增长 34%。今年第二季度，新在 Stripe 上开业的企业同比增长 86%。</p>
+<p>他的推算是，如果 2026 年的支付量像 2025 年那样增长，<strong>业务增速就会快过估值涨幅</strong>。</p>
+<h2>四个 PayPal</h2>
+<p>按现在的市值，Stripe 能买下四个 PayPal。可两家的规模差得没那么远：</p>
+<ul>
+<li>PayPal 2025 年处理了 1.79 万亿美元，接近 Stripe 的 1.9 万亿美元。</li>
+<li>PayPal 的支付量增长 7%，Stripe 增长 34%。</li>
+</ul>
+<p>据报道，Stripe 和 Advent 今年 7 月曾出价 530 亿美元收购整个 PayPal，8 月又放弃了。Taylor 写道，坦白说，PayPal 还没证明自己能独自扭转局面，他怀疑 PayPal 股东以后会不会后悔。</p>
+<h2>私募市场奖励增长，但增长未必一直持续</h2>
+<p>在他看来，眼下的私募市场明显在奖励增长；公开市场则在担心 AI 交易能否长期持续。Stripe 一直是这轮交易的受益者，所以这种增速有可能不会永远保持。</p>
+<p>他想起 2021 年线上业务的牛市：Stripe 估值当时冲到 950 亿美元，2023 年又跌到 500 亿美元。能涨回来，算不上灾难；但对一家股价不会每天变动的公司来说，这一段还是很显眼。</p>
+<h2>读这个估值要看什么</h2>
+<p>按 Taylor 的数字，这次估值的支撑主要是支付量的高增速。想判断 2000 亿美元贵不贵，可以把 2026 年全年支付量增速和 26% 的估值涨幅放在一起看：前者跑赢，估值就没有继续拉开；如果增速随 AI 交易降温，2021 到 2023 年那样的回撤就值得参考。交易本身还在谈判中，最终价格以正式公布为准。</p>
+
+<h2>原文</h2>
+<p><em>Woof. Stripe is in talks to be valued at $200B+</em></p>
+<figure data-media-id="img_sytaylor_stripe_card"><img src="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg" alt="图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）"><figcaption><a href="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Woof. Stripe is in talks to be valued at $200B+ 😳</p>
+<p>$200B is more than PayPal, Block, Adyen, and Fiserv are worth combined.</p>
+<p>The WSJ reports Stripe is negotiating a tender offer that would value it at more than $200B. Current and former employees sell shares, and existing investors are expected to buy some of them.</p>
+<p>The deal would likely close early next year. Talks are ongoing and the price could change.</p>
+<hr>
+<p>Stripe has repriced its shares every year since 2023:</p>
+<p>2023: $50B
+2024: $65B
+2025: $91.5B
+2026: $159B
+2027: $200B+ (in talks)</p>
+<p>At $200B it will have quadrupled from the 2023 low.</p>
+<p>And it said in its last annual letter its done that and reduced the number of shares outstanding.</p>
+<hr>
+<p>The step up from February would be 26%. Last year's step was 74%.</p>
+<p>Its growth is obviously attractive to investors in a market where others are not delivering on such rapid success.  Businesses on Stripe processed $1.9T in 2025, up 34%. In Q2 this year, new businesses launching on Stripe were up 86% YoY.</p>
+<p>If 2026 volume grows like 2025 did, the business is growing faster than the price.</p>
+<hr>
+<p>You could buy four PayPal's for the current market cap of Stripe.</p>
+<ul>
+<li>PayPal processed $1.79T in 2025, close to Stripe's $1.9T.</li>
+<li>PayPal's volume grew 7% and Stripe's grew 34%.</li>
+</ul>
+<p>Stripe and Advent reportedly bid $53B for all of PayPal in July, then walked away in August.</p>
+<p>Honestly, PayPal hasn't proven it can right the ship alone. I wonder if the shareholders will live to regret that?</p>
+<hr>
+<p>We're clearly in a market where private companies are rewarded for growth.</p>
+<p>We're also in one where the public market is nervous about the long-term sustainability of the AI trade. Given that Stripe has been such a beneficiary of that trade, there's a chance this growth rate doesn't last forever.</p>
+<p>I'm reminded of their valuation peaking during the 2021 bull market for online businesses at $95bn before dropping to $50bn in 2023.  Not a disaster by any means when you can recover. But also one that stands out when your stock price doesn't change day by day.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2125260847333228557">https://x.com/sytaylor/status/2125260847333228557</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>据《华尔街日报》，Stripe 在谈一笔估值超 2000 亿美元的员工股要约收购，比 2 月高 26%；2025 年支付量 1.9 万亿美元、增长 34%，PayPal 1.79 万亿美元、增长 7%。</em></p>
+<h2>中文改写</h2>
+<p>据 Simon Taylor 转述的《华尔街日报》报道，Stripe 正在谈一笔要约收购，估值将超过 2000 亿美元。他算了一下，2000 亿美元比 PayPal、Block、Adyen 和 Fiserv 四家的市值加起来还多。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_sytaylor_stripe_card"><img src="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg" alt="图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）"><figcaption><a href="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>这笔交易的方式是现任和前任员工出售股份，现有投资者预计会买下其中一部分。交易可能在明年初完成，谈判还在进行，价格也可能变。</p>
+<h2>每年重新定一次价</h2>
+<p>Taylor 列出了 Stripe 2023 年以来每年的估值：</p>
+<ul>
+<li>2023 年：500 亿美元</li>
+<li>2024 年：650 亿美元</li>
+<li>2025 年：915 亿美元</li>
+<li>2026 年：1590 亿美元</li>
+<li>2027 年：2000 亿美元以上（谈判中）</li>
+</ul>
+<p>按 2000 亿美元算，估值比 2023 年的低点翻了两番。他还提到，Stripe 在上一封年度信里说过，它在估值上涨的同时减少了流通股数量。</p>
+<h2>涨幅在放缓，业务可能涨得比价格快</h2>
+<p>和今年 2 月那一轮相比，这次估值上涨 26%；去年那一步是 74%。</p>
+<p>Taylor 认为，在其他公司交不出这种高速增长的市场里，Stripe 的增长对投资者很有吸引力。2025 年，商家通过 Stripe 处理的支付总额是 1.9 万亿美元，增长 34%。今年第二季度，新在 Stripe 上开业的企业同比增长 86%。</p>
+<p>他的推算是，如果 2026 年的支付量像 2025 年那样增长，<strong>业务增速就会快过估值涨幅</strong>。</p>
+<h2>四个 PayPal</h2>
+<p>按现在的市值，Stripe 能买下四个 PayPal。可两家的规模差得没那么远：</p>
+<ul>
+<li>PayPal 2025 年处理了 1.79 万亿美元，接近 Stripe 的 1.9 万亿美元。</li>
+<li>PayPal 的支付量增长 7%，Stripe 增长 34%。</li>
+</ul>
+<p>据报道，Stripe 和 Advent 今年 7 月曾出价 530 亿美元收购整个 PayPal，8 月又放弃了。Taylor 写道，坦白说，PayPal 还没证明自己能独自扭转局面，他怀疑 PayPal 股东以后会不会后悔。</p>
+<h2>私募市场奖励增长，但增长未必一直持续</h2>
+<p>在他看来，眼下的私募市场明显在奖励增长；公开市场则在担心 AI 交易能否长期持续。Stripe 一直是这轮交易的受益者，所以这种增速有可能不会永远保持。</p>
+<p>他想起 2021 年线上业务的牛市：Stripe 估值当时冲到 950 亿美元，2023 年又跌到 500 亿美元。能涨回来，算不上灾难；但对一家股价不会每天变动的公司来说，这一段还是很显眼。</p>
+<h2>读这个估值要看什么</h2>
+<p>按 Taylor 的数字，这次估值的支撑主要是支付量的高增速。想判断 2000 亿美元贵不贵，可以把 2026 年全年支付量增速和 26% 的估值涨幅放在一起看：前者跑赢，估值就没有继续拉开；如果增速随 AI 交易降温，2021 到 2023 年那样的回撤就值得参考。交易本身还在谈判中，最终价格以正式公布为准。</p>
+
+<h2>原文</h2>
+<p><em>Woof. Stripe is in talks to be valued at $200B+</em></p>
+<figure data-media-id="img_sytaylor_stripe_card"><img src="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg" alt="图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）"><figcaption><a href="https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Woof. Stripe is in talks to be valued at $200B+ 😳</p>
+<p>$200B is more than PayPal, Block, Adyen, and Fiserv are worth combined.</p>
+<p>The WSJ reports Stripe is negotiating a tender offer that would value it at more than $200B. Current and former employees sell shares, and existing investors are expected to buy some of them.</p>
+<p>The deal would likely close early next year. Talks are ongoing and the price could change.</p>
+<hr>
+<p>Stripe has repriced its shares every year since 2023:</p>
+<p>2023: $50B
+2024: $65B
+2025: $91.5B
+2026: $159B
+2027: $200B+ (in talks)</p>
+<p>At $200B it will have quadrupled from the 2023 low.</p>
+<p>And it said in its last annual letter its done that and reduced the number of shares outstanding.</p>
+<hr>
+<p>The step up from February would be 26%. Last year's step was 74%.</p>
+<p>Its growth is obviously attractive to investors in a market where others are not delivering on such rapid success.  Businesses on Stripe processed $1.9T in 2025, up 34%. In Q2 this year, new businesses launching on Stripe were up 86% YoY.</p>
+<p>If 2026 volume grows like 2025 did, the business is growing faster than the price.</p>
+<hr>
+<p>You could buy four PayPal's for the current market cap of Stripe.</p>
+<ul>
+<li>PayPal processed $1.79T in 2025, close to Stripe's $1.9T.</li>
+<li>PayPal's volume grew 7% and Stripe's grew 34%.</li>
+</ul>
+<p>Stripe and Advent reportedly bid $53B for all of PayPal in July, then walked away in August.</p>
+<p>Honestly, PayPal hasn't proven it can right the ship alone. I wonder if the shareholders will live to regret that?</p>
+<hr>
+<p>We're clearly in a market where private companies are rewarded for growth.</p>
+<p>We're also in one where the public market is nervous about the long-term sustainability of the AI trade. Given that Stripe has been such a beneficiary of that trade, there's a chance this growth rate doesn't last forever.</p>
+<p>I'm reminded of their valuation peaking during the 2021 bull market for online businesses at $95bn before dropping to $50bn in 2023.  Not a disaster by any means when you can recover. But also one that stands out when your stock price doesn't change day by day.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2125260847333228557">https://x.com/sytaylor/status/2125260847333228557</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Woof. Stripe is in talks to be valued at $200B+", "url": "https://x.com/sytaylor/status/2125260847333228557", "lang": "en", "html": "<h2>Woof. Stripe is in talks to be valued at $200B+</h2>\n<figure data-media-id=\"img_sytaylor_stripe_card\"><img src=\"https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg\" alt=\"图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Woof. Stripe is in talks to be valued at $200B+ 😳</p>\n<p>$200B is more than PayPal, Block, Adyen, and Fiserv are worth combined.</p>\n<p>The WSJ reports Stripe is negotiating a tender offer that would value it at more than $200B. Current and former employees sell shares, and existing investors are expected to buy some of them.</p>\n<p>The deal would likely close early next year. Talks are ongoing and the price could change.</p>\n<hr>\n<p>Stripe has repriced its shares every year since 2023:</p>\n<p>2023: $50B\n2024: $65B\n2025: $91.5B\n2026: $159B\n2027: $200B+ (in talks)</p>\n<p>At $200B it will have quadrupled from the 2023 low.</p>\n<p>And it said in its last annual letter its done that and reduced the number of shares outstanding.</p>\n<hr>\n<p>The step up from February would be 26%. Last year's step was 74%.</p>\n<p>Its growth is obviously attractive to investors in a market where others are not delivering on such rapid success.  Businesses on Stripe processed $1.9T in 2025, up 34%. In Q2 this year, new businesses launching on Stripe were up 86% YoY.</p>\n<p>If 2026 volume grows like 2025 did, the business is growing faster than the price.</p>\n<hr>\n<p>You could buy four PayPal's for the current market cap of Stripe.</p>\n<ul>\n<li>PayPal processed $1.79T in 2025, close to Stripe's $1.9T.</li>\n<li>PayPal's volume grew 7% and Stripe's grew 34%.</li>\n</ul>\n<p>Stripe and Advent reportedly bid $53B for all of PayPal in July, then walked away in August.</p>\n<p>Honestly, PayPal hasn't proven it can right the ship alone. I wonder if the shareholders will live to regret that?</p>\n<hr>\n<p>We're clearly in a market where private companies are rewarded for growth.</p>\n<p>We're also in one where the public market is nervous about the long-term sustainability of the AI trade. Given that Stripe has been such a beneficiary of that trade, there's a chance this growth rate doesn't last forever.</p>\n<p>I'm reminded of their valuation peaking during the 2021 bull market for online businesses at $95bn before dropping to $50bn in 2023.  Not a disaster by any means when you can recover. But also one that stands out when your stock price doesn't change day by day.</p>\n<p>原文链接：<a href=\"https://x.com/sytaylor/status/2125260847333228557\">https://x.com/sytaylor/status/2125260847333228557</a></p>"}, "rewrite": {"title": "Simon Taylor：Stripe 谈 2000 亿美元估值，四个 PayPal 的价钱", "markdown": "据 Simon Taylor 转述的《华尔街日报》报道，Stripe 正在谈一笔要约收购，估值将超过 2000 亿美元。他算了一下，2000 亿美元比 PayPal、Block、Adyen 和 Fiserv 四家的市值加起来还多。\n\n![图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）](<https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg>)\n\n这笔交易的方式是现任和前任员工出售股份，现有投资者预计会买下其中一部分。交易可能在明年初完成，谈判还在进行，价格也可能变。\n\n## 每年重新定一次价\n\nTaylor 列出了 Stripe 2023 年以来每年的估值：\n\n- 2023 年：500 亿美元\n- 2024 年：650 亿美元\n- 2025 年：915 亿美元\n- 2026 年：1590 亿美元\n- 2027 年：2000 亿美元以上（谈判中）\n\n按 2000 亿美元算，估值比 2023 年的低点翻了两番。他还提到，Stripe 在上一封年度信里说过，它在估值上涨的同时减少了流通股数量。\n\n## 涨幅在放缓，业务可能涨得比价格快\n\n和今年 2 月那一轮相比，这次估值上涨 26%；去年那一步是 74%。\n\nTaylor 认为，在其他公司交不出这种高速增长的市场里，Stripe 的增长对投资者很有吸引力。2025 年，商家通过 Stripe 处理的支付总额是 1.9 万亿美元，增长 34%。今年第二季度，新在 Stripe 上开业的企业同比增长 86%。\n\n他的推算是，如果 2026 年的支付量像 2025 年那样增长，**业务增速就会快过估值涨幅**。\n\n## 四个 PayPal\n\n按现在的市值，Stripe 能买下四个 PayPal。可两家的规模差得没那么远：\n\n- PayPal 2025 年处理了 1.79 万亿美元，接近 Stripe 的 1.9 万亿美元。\n- PayPal 的支付量增长 7%，Stripe 增长 34%。\n\n据报道，Stripe 和 Advent 今年 7 月曾出价 530 亿美元收购整个 PayPal，8 月又放弃了。Taylor 写道，坦白说，PayPal 还没证明自己能独自扭转局面，他怀疑 PayPal 股东以后会不会后悔。\n\n## 私募市场奖励增长，但增长未必一直持续\n\n在他看来，眼下的私募市场明显在奖励增长；公开市场则在担心 AI 交易能否长期持续。Stripe 一直是这轮交易的受益者，所以这种增速有可能不会永远保持。\n\n他想起 2021 年线上业务的牛市：Stripe 估值当时冲到 950 亿美元，2023 年又跌到 500 亿美元。能涨回来，算不上灾难；但对一家股价不会每天变动的公司来说，这一段还是很显眼。\n\n## 读这个估值要看什么\n\n按 Taylor 的数字，这次估值的支撑主要是支付量的高增速。想判断 2000 亿美元贵不贵，可以把 2026 年全年支付量增速和 26% 的估值涨幅放在一起看：前者跑赢，估值就没有继续拉开；如果增速随 AI 交易降温，2021 到 2023 年那样的回撤就值得参考。交易本身还在谈判中，最终价格以正式公布为准。", "html": "<p>据 Simon Taylor 转述的《华尔街日报》报道，Stripe 正在谈一笔要约收购，估值将超过 2000 亿美元。他算了一下，2000 亿美元比 PayPal、Block、Adyen 和 Fiserv 四家的市值加起来还多。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_sytaylor_stripe_card\"><img src=\"https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg\" alt=\"图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>这笔交易的方式是现任和前任员工出售股份，现有投资者预计会买下其中一部分。交易可能在明年初完成，谈判还在进行，价格也可能变。</p>\n<h2>每年重新定一次价</h2>\n<p>Taylor 列出了 Stripe 2023 年以来每年的估值：</p>\n<ul>\n<li>2023 年：500 亿美元</li>\n<li>2024 年：650 亿美元</li>\n<li>2025 年：915 亿美元</li>\n<li>2026 年：1590 亿美元</li>\n<li>2027 年：2000 亿美元以上（谈判中）</li>\n</ul>\n<p>按 2000 亿美元算，估值比 2023 年的低点翻了两番。他还提到，Stripe 在上一封年度信里说过，它在估值上涨的同时减少了流通股数量。</p>\n<h2>涨幅在放缓，业务可能涨得比价格快</h2>\n<p>和今年 2 月那一轮相比，这次估值上涨 26%；去年那一步是 74%。</p>\n<p>Taylor 认为，在其他公司交不出这种高速增长的市场里，Stripe 的增长对投资者很有吸引力。2025 年，商家通过 Stripe 处理的支付总额是 1.9 万亿美元，增长 34%。今年第二季度，新在 Stripe 上开业的企业同比增长 86%。</p>\n<p>他的推算是，如果 2026 年的支付量像 2025 年那样增长，<strong>业务增速就会快过估值涨幅</strong>。</p>\n<h2>四个 PayPal</h2>\n<p>按现在的市值，Stripe 能买下四个 PayPal。可两家的规模差得没那么远：</p>\n<ul>\n<li>PayPal 2025 年处理了 1.79 万亿美元，接近 Stripe 的 1.9 万亿美元。</li>\n<li>PayPal 的支付量增长 7%，Stripe 增长 34%。</li>\n</ul>\n<p>据报道，Stripe 和 Advent 今年 7 月曾出价 530 亿美元收购整个 PayPal，8 月又放弃了。Taylor 写道，坦白说，PayPal 还没证明自己能独自扭转局面，他怀疑 PayPal 股东以后会不会后悔。</p>\n<h2>私募市场奖励增长，但增长未必一直持续</h2>\n<p>在他看来，眼下的私募市场明显在奖励增长；公开市场则在担心 AI 交易能否长期持续。Stripe 一直是这轮交易的受益者，所以这种增速有可能不会永远保持。</p>\n<p>他想起 2021 年线上业务的牛市：Stripe 估值当时冲到 950 亿美元，2023 年又跌到 500 亿美元。能涨回来，算不上灾难；但对一家股价不会每天变动的公司来说，这一段还是很显眼。</p>\n<h2>读这个估值要看什么</h2>\n<p>按 Taylor 的数字，这次估值的支撑主要是支付量的高增速。想判断 2000 亿美元贵不贵，可以把 2026 年全年支付量增速和 26% 的估值涨幅放在一起看：前者跑赢，估值就没有继续拉开；如果增速随 AI 交易降温，2021 到 2023 年那样的回撤就值得参考。交易本身还在谈判中，最终价格以正式公布为准。</p>\n"}}]]></qiaomu:versions>
+    </item>
     <item>
       <title>宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8%</title>
       <link>https://karuio.github.io/a/dotey-qwen-self-rewriting-weights</link>

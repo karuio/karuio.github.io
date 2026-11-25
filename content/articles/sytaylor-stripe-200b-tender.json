@@ -1,0 +1,45 @@
+{
+  "id": "sytaylor-stripe-200b-tender",
+  "date": "2026-11-24",
+  "published_at": "2026-11-24T16:10:46+00:00",
+  "ingested_at": "2026-11-25T08:30:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2125260847333228557",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "Woof. Stripe is in talks to be valued at $200B+"
+  },
+  "title": "Simon Taylor：Stripe 谈 2000 亿美元估值，四个 PayPal 的价钱",
+  "dek": "据《华尔街日报》，Stripe 在谈一笔估值超 2000 亿美元的员工股要约收购，比 2 月高 26%；2025 年支付量 1.9 万亿美元、增长 34%，PayPal 1.79 万亿美元、增长 7%。",
+  "tags": [
+    "Stripe",
+    "估值",
+    "支付",
+    "PayPal",
+    "私募市场"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Woof. Stripe is in talks to be valued at $200B+",
+    "text_md": "Woof. Stripe is in talks to be valued at $200B+ 😳 \n\n$200B is more than PayPal, Block, Adyen, and Fiserv are worth combined.\n\nThe WSJ reports Stripe is negotiating a tender offer that would value it at more than $200B. Current and former employees sell shares, and existing investors are expected to buy some of them.\n\nThe deal would likely close early next year. Talks are ongoing and the price could change.\n\n---\n\nStripe has repriced its shares every year since 2023:\n\n2023: $50B\n2024: $65B\n2025: $91.5B\n2026: $159B\n2027: $200B+ (in talks)\n\nAt $200B it will have quadrupled from the 2023 low.\n\nAnd it said in its last annual letter its done that and reduced the number of shares outstanding.\n\n---\n\nThe step up from February would be 26%. Last year's step was 74%.\n\nIts growth is obviously attractive to investors in a market where others are not delivering on such rapid success.  Businesses on Stripe processed $1.9T in 2025, up 34%. In Q2 this year, new businesses launching on Stripe were up 86% YoY.\n\nIf 2026 volume grows like 2025 did, the business is growing faster than the price.\n\n---\n\nYou could buy four PayPal's for the current market cap of Stripe.\n\n- PayPal processed $1.79T in 2025, close to Stripe's $1.9T.\n- PayPal's volume grew 7% and Stripe's grew 34%.\n\nStripe and Advent reportedly bid $53B for all of PayPal in July, then walked away in August.\n\nHonestly, PayPal hasn't proven it can right the ship alone. I wonder if the shareholders will live to regret that?\n\n---\n\nWe're clearly in a market where private companies are rewarded for growth.\n\nWe're also in one where the public market is nervous about the long-term sustainability of the AI trade. Given that Stripe has been such a beneficiary of that trade, there's a chance this growth rate doesn't last forever.\n\nI'm reminded of their valuation peaking during the 2021 bull market for online businesses at $95bn before dropping to $50bn in 2023.  Not a disaster by any means when you can recover. But also one that stands out when your stock price doesn't change day by day.",
+    "media": [
+      {
+        "id": "img_sytaylor_stripe_card",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX5xal3WUAA8a6Z.jpg",
+        "alt": "图片：Stripe set to top $200bn. Valuation in reported share sale talks（Brainfood，来源：The Wall Street Journal，2026 年 11 月 24 日）"
+      }
+    ]
+  },
+  "body_md": "据 Simon Taylor 转述的《华尔街日报》报道，Stripe 正在谈一笔要约收购，估值将超过 2000 亿美元。他算了一下，2000 亿美元比 PayPal、Block、Adyen 和 Fiserv 四家的市值加起来还多。\n\n这笔交易的方式是现任和前任员工出售股份，现有投资者预计会买下其中一部分。交易可能在明年初完成，谈判还在进行，价格也可能变。\n\n## 每年重新定一次价\n\nTaylor 列出了 Stripe 2023 年以来每年的估值：\n\n- 2023 年：500 亿美元\n- 2024 年：650 亿美元\n- 2025 年：915 亿美元\n- 2026 年：1590 亿美元\n- 2027 年：2000 亿美元以上（谈判中）\n\n按 2000 亿美元算，估值比 2023 年的低点翻了两番。他还提到，Stripe 在上一封年度信里说过，它在估值上涨的同时减少了流通股数量。\n\n## 涨幅在放缓，业务可能涨得比价格快\n\n和今年 2 月那一轮相比，这次估值上涨 26%；去年那一步是 74%。\n\nTaylor 认为，在其他公司交不出这种高速增长的市场里，Stripe 的增长对投资者很有吸引力。2025 年，商家通过 Stripe 处理的支付总额是 1.9 万亿美元，增长 34%。今年第二季度，新在 Stripe 上开业的企业同比增长 86%。\n\n他的推算是，如果 2026 年的支付量像 2025 年那样增长，**业务增速就会快过估值涨幅**。\n\n## 四个 PayPal\n\n按现在的市值，Stripe 能买下四个 PayPal。可两家的规模差得没那么远：\n\n- PayPal 2025 年处理了 1.79 万亿美元，接近 Stripe 的 1.9 万亿美元。\n- PayPal 的支付量增长 7%，Stripe 增长 34%。\n\n据报道，Stripe 和 Advent 今年 7 月曾出价 530 亿美元收购整个 PayPal，8 月又放弃了。Taylor 写道，坦白说，PayPal 还没证明自己能独自扭转局面，他怀疑 PayPal 股东以后会不会后悔。\n\n## 私募市场奖励增长，但增长未必一直持续\n\n在他看来，眼下的私募市场明显在奖励增长；公开市场则在担心 AI 交易能否长期持续。Stripe 一直是这轮交易的受益者，所以这种增速有可能不会永远保持。\n\n他想起 2021 年线上业务的牛市：Stripe 估值当时冲到 950 亿美元，2023 年又跌到 500 亿美元。能涨回来，算不上灾难；但对一家股价不会每天变动的公司来说，这一段还是很显眼。\n\n## 读这个估值要看什么\n\n按 Taylor 的数字，这次估值的支撑主要是支付量的高增速。想判断 2000 亿美元贵不贵，可以把 2026 年全年支付量增速和 26% 的估值涨幅放在一起看：前者跑赢，估值就没有继续拉开；如果增速随 AI 交易降温，2021 到 2023 年那样的回撤就值得参考。交易本身还在谈判中，最终价格以正式公布为准。",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_stripe_card",
+      "placement": "after_paragraph",
+      "after_md": "据 Simon Taylor 转述的《华尔街日报》报道，Stripe 正在谈一笔要约收购，估值将超过 2000 亿美元。他算了一下，2000 亿美元比 PayPal、Block、Adyen 和 Fiserv 四家的市值加起来还多。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

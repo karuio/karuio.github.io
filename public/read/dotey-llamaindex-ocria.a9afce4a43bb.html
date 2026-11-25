@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权 · 他山</title><meta name="robots" content="noindex"></head><body><article class="article-reader" data-article-id="dotey-llamaindex-ocria">
+<a class="article-back" href="/">← 返回选刊</a>
+<header class="article-header"><p class="article-kicker">AI / X · @dotey / 长帖</p><h1>宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权</h1><p class="article-dek">40 亿参数的 OCRia-1 在自家 ParseBench 上 87.4 分、图表领先明显；810 万参数的 nano 在 CPU 上每秒 27.8 页但不处理图表。跑分均为 LlamaIndex 自测，尚无第三方复现。</p><div class="article-meta"><time datetime="2026-11-25">本站收录 2026年11月25日 · 周三</time><span>原文发布 2026年11月24日 · 周二</span><span>原作者：宝玉</span><span>中文改写：<a href="/about">他山</a></span><span>OCR · 文档解析 · 开放权重 · LlamaIndex · 许可证</span></div></header>
+<nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="https://x.com/dotey/status/2125317908326744410" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
+<section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose"><p>LlamaIndex 一个月里先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就接进了 LlamaParse 云服务。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>
+<p>宝玉把两款模型的博客、模型页和许可证整理成了一篇。两款的权重 11 月 23 日都放上了 Hugging Face：个人、研究和小公司可以免费用，<strong>年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权</strong>。</p>
+<h2>OCRia-1：图表和格式拉开差距</h2>
+<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 第一版上（文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 分高 12.1 分。</p>
+<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1 分。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9 分。</p>
+<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型；模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里排第一，算上商业 API 和前沿大模型排第七。</p>
+<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发时每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>
+<h2>OCRia-nano-1：七个小模型拼成的 CPU 版</h2>
+<p>nano 由七个小模型组成：一个找文字行，一个判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字），四个识别器分别认字，最后由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>
+<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。在同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。nano 单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>
+<p>它的短板也很明确。同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方没有单独公布 nano 的中文成绩。</p>
+<h2>怎么用</h2>
+<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>
+<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>
+<pre><code>pip install liteparse
+lit models pull ocria-nano
+lit parse doc.pdf --format markdown
+</code></pre>
+<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>
+<h2>商用门槛：200 万美元</h2>
+<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的。个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0 许可，不受这些限制。</p>
+<h2>跑分口径</h2>
+<p>宝玉特别注明：以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库出自别家，但分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>
+<h2>选哪款</h2>
+<p>文档里图表、复杂表格和公式多，选 OCRia-1，走 LlamaParse 或自备 NVIDIA 显卡；大批量的普通电子文档、只想在 CPU 上本地跑，可以先装 LiteParse 试 nano，但图表和扫描公式要另想办法。公司年营收或累计融资超过 200 万美元的，用于业务前先确认授权。</p>
+</div></section>
+<section class="reader-panel" id="original" data-reader-panel="original" aria-label="原文">
+<h2 class="section-heading">原文</h2><h3 class="original-title">LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</h3>
+
+<div class="prose" lang="zh"><p>LlamaIndex 公开两款文档解析模型：40 亿参数的 OCRia-1 用 GPU 跑复杂表格和图表，810 万参数的 nano 用 CPU 跑日常文档，营收或融资超 200 万美元的公司商用要买授权</p>
+<p>LlamaIndex 先后发了两款把 PDF 和扫描件转成 Markdown 的模型。10 月 22 日发的 OCRia-1 有 40 亿参数，要用 GPU，专门对付复杂表格、图表和公式，当天就用到了 LlamaParse 云服务里。11 月 23 日发的 OCRia-nano-1 只有 810 万参数，在普通 CPU 上跑，负责大量日常文档。</p>
+<p>两款的权重 11 月 23 日都放上了 Hugging Face。个人、研究和小公司可以免费用，年营收或累计融资超过 200 万美元的公司拿来做业务，要找 LlamaIndex 另买授权。</p>
+<p>【OCRia-1：表格、图表、格式】</p>
+<p>OCRia-1 基于阿里的 Qwen3.5-4B，用约 10 万页文档做了监督微调和强化学习。在 LlamaIndex 自家的 ParseBench 上（第一版，文字、格式、表格、图表四项平均），它得 87.4 分，比第二名 LightOnOCR-3-4B 的 75.3 高 12.1 分。</p>
+<p>差距最大的是图表。它会把柱状图、折线图读成一张数据表，每个数字放在对应的系列和标签下，这一项 85.1 分，第二名 66.1。上标、下标、删除线、勾选框这些格式也会保留，公式写成 LaTeX，手写公式也能认，格式这一项 83.4 分，第二名 67.9。</p>
+<p>换到三个外部机构做的基准，它在表格上还是第一，但领先不多：olmOCR-bench 表格 92.9 对 92.1，PulseBench-Tab 84.1 对 82.4，fr-bench-pdf2md 的长表格 83.2 对 80.6。博客的对比只列了 35B 以下的模型，模型页补上了 350 亿参数的 Infinity-Parser2-Pro，olmOCR-bench 总分 83.5 对 83.2，基本打平。在新版 ParseBench-2 的完整排行榜上，它在开放权重模型里第一，算上商业 API 和前沿大模型排第七。</p>
+<p>速度要看在哪跑。LlamaParse 用的是量化加推测解码的优化版，一张 B200 显卡上单个请求每秒解码约 4700 个 Token，64 个请求并发每秒处理 10.2 页。Hugging Face 上放的是没优化的原始权重，约 10GB，用标准 vLLM 跑大约慢 9 倍。</p>
+<p>【OCRia-nano-1：CPU 上的日常款】</p>
+<p>nano 由七个小模型组成：找文字行、判断文字类型（拉丁字母、中日韩、阿拉伯和希伯来文，以及约 17 种其他文字）、四个识别器分别认字，再由一个 427 万参数的表格和版面模型还原结构。电子版 PDF 自带文字的部分直接读，只有扫描件和图片里的字才动用识别。</p>
+<p>在 ParseBench-2 上，nano 总分 59.2，表格 59.5。同一台 16 核机器上，Datalab 家的两款同类 CPU 工具 Indra 是 55.1、Marker 是 52.5，LiteParse 原来默认的 Tesseract 配置是 48.7。单核平均每页 426 毫秒，16 核并行每秒 27.8 页，是 Tesseract 配置的 2 倍。</p>
+<p>同一基准上 OCRia-1 在 LlamaParse 里是 87.0 分，nano 大约是它的三分之二。nano 没有图表模型，图表原样留成图片，这一项只有 3.1 分；扫描件里的公式也认不出来。官方也没单独公布 nano 的中文成绩。</p>
+<p>【怎么用】</p>
+<p>OCRia-1 最省事的用法是 LlamaParse，按页扣积分，每月送 1 万积分。LlamaIndex 说换上 OCRia-1 后价格不变，但没说它对应哪一档。想自己部署，要有 NVIDIA 显卡，用 vLLM 或 Transformers 加载。</p>
+<p>nano 跑在 LlamaIndex 的开源本地解析工具 LiteParse 里：</p>
+<p>pip install liteparse
+lit models pull ocria-nano
+lit parse doc.pdf --format markdown</p>
+<p>模型加运行库一共下载 60 到 75MB，拉下来以后 LiteParse 默认就改用它。也支持 Node.js 和浏览器。</p>
+<p>【能不能商用】</p>
+<p>两款权重的许可证条款一样，都是 LlamaIndex 在 Open RAIL-M 基础上改的：个人使用、研究、评测免费；上一年营收和累计融资都不超过 200 万美元的组织，可以免费商用。超过任一门槛，或者拿它做跟 LlamaParse 竞争的文档解析服务（不论公司大小），都要买授权。许可证还禁止用它们的输出训练类似的模型。LiteParse 本身是 Apache 2.0，不受这些限制。</p>
+<p>以上跑分都是 LlamaIndex 自己测的，ParseBench 也是 LlamaIndex 做的基准；三个外部基准的题库是别家做的，分数也是 LlamaIndex 自己跑、自己整理的，还没有第三方复现。nano 的博客开头说它比 Tesseract 快“2 到 5 倍以上”，技术报告里对 Tesseract 的数字是吞吐 2 倍、单页平均约 1.8 倍。</p>
+<p>OCRia-1 博客：https://www.llamaindex.ai/blog/parse-ocria-1
+OCRia-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-1
+OCRia-nano-1 博客：https://www.llamaindex.ai/blog/introducing-ocria-nano-1
+OCRia-nano-1 模型与许可证：https://huggingface.co/llamaindex/OCRia-nano-1</p></div>
+</section>
+<footer class="source-box"><span>内容来自原作者；中文为忠实改写，非逐字翻译。作者主张与已核实事实分开书写。</span><div><a href="https://x.com/dotey/status/2125317908326744410" target="_blank" rel="noopener noreferrer">打开原文 ↗</a><a href="https://www.llamaindex.ai/blog/parse-ocria-1" target="_blank" rel="noopener noreferrer">相关链接 ↗</a></div></footer>
+</article></body></html>
