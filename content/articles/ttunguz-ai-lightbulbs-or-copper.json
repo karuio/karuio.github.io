@@ -1,0 +1,82 @@
+{
+  "id": "ttunguz-ai-lightbulbs-or-copper",
+  "date": "2026-11-25",
+  "published_at": "2026-11-25T18:03:29+00:00",
+  "ingested_at": "2026-11-26T08:30:00+08:00",
+  "sector": "SaaS/云",
+  "source": {
+    "type": "x_article",
+    "url": "https://x.com/ttunguz/status/2125651601478369366",
+    "author": "Tomasz Tunguz",
+    "handle": "ttunguz",
+    "title_en": "Will AI Deflate Like Lightbulbs or Compound Like Copper?",
+    "related_url": "https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/"
+  },
+  "title": "Tomasz Tunguz：AI 会像灯泡一样通缩，还是像铜一样越卖越多？",
+  "dek": "Ramp 上 token 用量涨 11.1 倍、支出只涨 4.7 倍，Anthropic 的 S-1 却显示收入涨 13.6 倍。他用需求价格弹性比较两边证据，并列出 2027 年要看的四个数。",
+  "tags": [
+    "杰文斯悖论",
+    "价格弹性",
+    "AI token",
+    "GPU 租金",
+    "Anthropic"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Will AI Deflate Like Lightbulbs or Compound Like Copper?",
+    "text_md": "Will AI Deflate Like Lightbulbs or Compound Like Copper?\n\nThe mantra of the era is Jevons Paradox. The cheaper a commodity is, the more we use of it.\nBut what happened to the revenue from that higher use? Mass production can crush costs like lightbulbs, keeping revenue flat as a % of GDP while volume rises 25,000x. Or total dollars can grow, like copper.\nWhat is the price elasticity of demand for AI?\nLet's go to the grocery store : if a 50% cut on the price of bread gets you to buy twice as many loaves, your grocery bill stays flat, an elasticity of 1 ; if you only buy 25% more, your bill shrinks, an elasticity of 0.5.\n \nSo far, GPUs look more like copper than lightbulbs : neocloud GPU rents rose 48% over the past year, & CoreWeave repriced 30% to 50% when leases renew.\n \nBoth Ramp & OpenRouter show high price elasticity of demand : a 1% price drop drives 4.3% more tokens on Ramp & 6.8% on OpenRouter, as volume ran 11.1x against 4.7x spending on Ramp & 50x against 21x on OpenRouter.,,\nAnthropic's S-1 is the counterpoint : revenue grew 13.6x to $16.3b in the first half of 2026 on 900% net revenue retention, & when Opus 4.5 cut cost per task in November 2025, quarterly sales growth jumped from 48% to 132%, implying a price elasticity of demand well above 1.0.\n \nMore efficient inference cuts the bill inside the lab : shrinking models, reusing past answers & sending easy questions to smaller models. Each trick lowers the cost of a token faster than GPU rents rise.\nWe're watching these numbers in 2027 :\nSpending against volume : does the 2.4x wedge narrow toward parity like oil & copper, or widen toward lighting?\nGPU rents against blended token prices : do the two meet as new clusters come online, or keep squeezing lab margins?\nFrontier gross margins : does cheaper serving hold labs above 40% while token prices keep falling?\nGross profit against signed compute bills : do dollars compound fast enough to cover them?\nConsumption looks unbounded. How much deflation hits commodity AI tokens is still up for debate. So far, the closest parallel is CPUs : commodity chips deflated while each new frontier generation expanded the dollar market.\nOriginally published on tomtunguz.com.",
+    "media": [
+      {
+        "id": "img_tunguz_copper_cover",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg",
+        "alt": "原文封面图"
+      },
+      {
+        "id": "img_tunguz_copper_jevons",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg",
+        "alt": "图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）"
+      },
+      {
+        "id": "img_tunguz_copper_ramp",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg",
+        "alt": "图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）"
+      },
+      {
+        "id": "img_tunguz_copper_elasticity",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg",
+        "alt": "图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）"
+      }
+    ]
+  },
+  "body_md": "这个时代的口头禅是杰文斯悖论：一样东西越便宜，人们用得越多。\n\nTomasz Tunguz 接着问：用量上去以后，收入怎么样了？大规模生产可以像灯泡那样把成本压下去，用量涨了 25,000 倍，照明支出占 GDP 的比例却没变；也可能像铜那样，总金额跟着一起涨。\n\n所以真正的问题是：**AI 的需求价格弹性有多大？**\n\n## 弹性等于 1，账单就不变\n\n他用买面包打比方：面包降价 50%，如果你因此多买一倍，账单不变，弹性就是 1；如果只多买 25%，账单变小，弹性就是 0.5。\n\n原文配图把各种技术和大宗商品放在同一张对数坐标图上，横轴是用量增长倍数，纵轴是支出增长倍数。按图中标注：石油（1900 到 2000 年）用量约 190 倍、支出约 190 倍；铜（1900 到 2000 年）约 26 倍和 15 倍；云计算约 600 倍和 60 倍；美国电力 1,300 倍和 43 倍；硅晶体管（1990 到 2010 年）约 10,000 倍和 6 倍；照明用量 25,000 倍，占 GDP 的份额约为 1 倍。AI token 三个点是：Ramp 同比用量 11 倍、支出 4.7 倍，OpenRouter 同比 50 倍和 21 倍，Ramp 自 2025 年 1 月以来 85 倍和 29 倍。图的标题是：每种商品在用量上都符合杰文斯悖论，在美元上符合的很少。\n\n## 算力成本这一端，GPU 像铜\n\n到目前为止，GPU 更像铜，不像灯泡。新云厂商的 GPU 租金过去一年涨了 48%，CoreWeave 在租约续签时重新定价，上调 30% 到 50%。\n\n第二张图是 Ramp 企业客户的数据，共 97 个观测周（2025 年 1 月 12 日到 2026 年 11 月 15 日），以第一周为 100：token 用量涨到 84.8 倍，AI 支出涨到 28.8 倍，综合价格降到 0.46 倍。图注补充，按同比口径（截至 2026 年 11 月 15 日那一周），用量 11.1 倍，支出 4.7 倍，综合价格 0.57 倍；用量和支出之间的差距隐含的价格指数是 0.34 倍，Ramp 自己给出的综合价格是 0.46 倍，图中标出了这处出入，没有取平均。样本是 3 万多家企业。\n\n## token 需求弹性很高\n\nRamp 和 OpenRouter 的数据都显示需求价格弹性很高：**价格每降 1%，Ramp 上的 token 用量增加 4.3%，OpenRouter 上增加 6.8%**。Ramp 上用量涨了 11.1 倍，支出涨了 4.7 倍；OpenRouter 上用量涨了 50 倍，支出涨了 21 倍。\n\nTunguz 在脚注里说明，这两组数据都有偏差：企业信用卡数据看不到企业直签和云市场渠道，而 Anthropic 将近一半的收入走的是这些渠道；综合价格里混着标价下调和改用更便宜模型这两种效应；缓存 token 最多便宜 90%。\n\n## Anthropic 的 S-1 是另一面证据\n\nAnthropic 的 S-1 是反方向的例子：2026 年上半年收入增长 13.6 倍，达到 163 亿美元，净收入留存率 900%。2025 年 11 月 Opus 4.5 降低了每个任务的成本，之后季度销售增速从 48% 跳到 132%。\n\n他认为这意味着需求价格弹性远高于 1.0。\n\n第三张图把弹性放在一起比：OpenRouter 同比 6.75（价格约降 44%，用量 50 倍）；Ramp 同比 4.28（价格约降 43%，用量 11.1 倍）；云计算（2010 到 2025 年）2.78；美国电力（20 世纪）2.11；Ramp 四周口径（2026 年 11 月）2.09；JPM/Ramp 四周口径（2026 年 10 月）1.38；硅晶体管（1990 到 2010 年）1.18；照明（1700 到 2000 年）1.00；铜 0.40、石油 0.20，图注说两者弹性低是因为实物供给稀缺。图注还写道，所有 AI token 指标都超过 1.0，两个同比窗口是照明的 4.3 到 6.8 倍，也远高于云计算和电力。\n\n## 实验室内部的成本在降\n\n更高效的推理在实验室内部压低账单：把模型做小、复用以前的回答、把简单问题交给更小的模型。Tunguz 写道，每一招降低 token 成本的速度，都比 GPU 租金上涨得快。\n\n## 2027 年要看的四个数\n\n1. **支出对用量**：现在 2.4 倍的差距，是会像石油和铜那样收窄到持平，还是像照明那样越拉越大？\n2. **GPU 租金对综合 token 价格**：新集群上线后两者会不会碰头，还是继续挤压实验室的利润？\n3. **前沿实验室毛利率**：token 价格持续下跌，更便宜的推理能不能让实验室毛利率保持在 40% 以上？\n4. **毛利润对已签的算力账单**：美元增长得够不够快，能不能覆盖这些账单？\n\n在他看来，用量似乎没有上限，商品化 AI token 会通缩到什么程度还没有定论。到目前为止最接近的类比是 CPU：通用芯片一路通缩，每一代新的前沿产品又把美元市场做大。想判断 AI 更像灯泡还是铜，可以按上面四个数逐季对照。",
+  "rewrite_media": [
+    {
+      "media_id": "img_tunguz_copper_jevons",
+      "placement": "after_paragraph",
+      "after_md": "他用买面包打比方：面包降价 50%，如果你因此多买一倍，账单不变，弹性就是 1；如果只多买 25%，账单变小，弹性就是 0.5。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_tunguz_copper_ramp",
+      "placement": "after_paragraph",
+      "after_md": "到目前为止，GPU 更像铜，不像灯泡。新云厂商的 GPU 租金过去一年涨了 48%，CoreWeave 在租约续签时重新定价，上调 30% 到 50%。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_tunguz_copper_elasticity",
+      "placement": "after_paragraph",
+      "after_md": "他认为这意味着需求价格弹性远高于 1.0。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_tunguz_copper_cover",
+      "placement": "after_body",
+      "placement_note": "原文封面图，画面与正文第三张价格弹性图相同；未核验其与具体段落的对应关系。",
+      "evidence": "source_metadata_only"
+    }
+  ]
+}

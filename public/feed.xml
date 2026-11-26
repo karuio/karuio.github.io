@@ -5,8 +5,462 @@
     <link>https://karuio.github.io/</link>
     <description>他山之石，可以攻玉 · 研究员 X 长文中文改写</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Nov 2026 00:16:58 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 00:13:54 +0000</lastBuildDate>
     <atom:link href="https://karuio.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>宝玉整理：Axios 称 Anthropic 想把决策权交给超级智能，Dario 发长文否认</title>
+      <link>https://karuio.github.io/a/dotey-dario-axios-ai-control</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/dotey-dario-axios-ai-control</guid>
+      <pubDate>Wed, 25 Nov 2026 22:29:50 +0000</pubDate>
+      <author>宝玉</author>
+      <description><![CDATA[<p><em>Axios 援引匿名人士和 Dario 旧作，称 Anthropic 内部认为人类应把部分决策交给超级智能。Dario 回应说治理必须留给民主程序，并列出任务自动化要设限的四处。</em></p>
+<h2>中文改写</h2>
+<p>Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。宝玉把报道和 Dario 的回应整理成了一篇长帖。</p>
+<h2>Axios 报道了什么</h2>
+<p>Axios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。</p>
+<p>Axios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。</p>
+<p>报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。</p>
+<p>Anthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。</p>
+<h2>Dario 把问题拆成两件事</h2>
+<p>第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，<strong>把治理交给 AI 是“糟糕的主意”</strong>。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。</p>
+<p>Dario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。</p>
+<p>第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限：</p>
+<ol>
+<li>让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。</li>
+<li>端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。</li>
+<li>用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。</li>
+<li>有些事人就是想自己做，哪怕 AI 做得更好。</li>
+</ol>
+<p>第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。</p>
+<h2>“别家和我没区别”</h2>
+<p>Dario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。</p>
+<p>Dario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。</p>
+<p>Dario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。</p>
+<h2>哪些说法还没有证实</h2>
+<p>宝玉在帖子末尾提醒：Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。读这场争论时，可以把 Axios 的匿名信源、Dario 的自述和招股书里的书面表述分开看。</p>
+
+<h2>原文</h2>
+<p><em>Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”</em></p>
+<p>Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”</p>
+<p>Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。</p>
+<p>【Axios 报道了什么】</p>
+<p>Axios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。</p>
+<p>Axios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。</p>
+<p>报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。</p>
+<p>Anthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。</p>
+<p>【Dario 的回应】</p>
+<p>Dario 把问题拆成两件事。</p>
+<p>第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，把治理交给 AI 是“糟糕的主意”。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。</p>
+<p>Dario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。</p>
+<p>第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限。</p>
+<p>一是让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。二是端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。三是用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。四是有些事人就是想自己做，哪怕 AI 做得更好。</p>
+<p>第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。</p>
+<p>【“别家和我没区别”】</p>
+<p>Dario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。</p>
+<p>Dario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。</p>
+<p>Dario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。</p>
+<p>Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。</p>
+<p>Axios 报道：https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will</p>
+<p><strong>Quoted post: https://x.com/darioamodei/status/2125656399392690605</strong></p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2125718634190508388">https://x.com/dotey/status/2125718634190508388</a></p>
+<p><strong>相关链接：</strong><a href="https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will">https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Axios 援引匿名人士和 Dario 旧作，称 Anthropic 内部认为人类应把部分决策交给超级智能。Dario 回应说治理必须留给民主程序，并列出任务自动化要设限的四处。</em></p>
+<h2>中文改写</h2>
+<p>Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。宝玉把报道和 Dario 的回应整理成了一篇长帖。</p>
+<h2>Axios 报道了什么</h2>
+<p>Axios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。</p>
+<p>Axios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。</p>
+<p>报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。</p>
+<p>Anthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。</p>
+<h2>Dario 把问题拆成两件事</h2>
+<p>第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，<strong>把治理交给 AI 是“糟糕的主意”</strong>。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。</p>
+<p>Dario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。</p>
+<p>第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限：</p>
+<ol>
+<li>让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。</li>
+<li>端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。</li>
+<li>用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。</li>
+<li>有些事人就是想自己做，哪怕 AI 做得更好。</li>
+</ol>
+<p>第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。</p>
+<h2>“别家和我没区别”</h2>
+<p>Dario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。</p>
+<p>Dario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。</p>
+<p>Dario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。</p>
+<h2>哪些说法还没有证实</h2>
+<p>宝玉在帖子末尾提醒：Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。读这场争论时，可以把 Axios 的匿名信源、Dario 的自述和招股书里的书面表述分开看。</p>
+
+<h2>原文</h2>
+<p><em>Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”</em></p>
+<p>Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”</p>
+<p>Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。</p>
+<p>【Axios 报道了什么】</p>
+<p>Axios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。</p>
+<p>Axios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。</p>
+<p>报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。</p>
+<p>Anthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。</p>
+<p>【Dario 的回应】</p>
+<p>Dario 把问题拆成两件事。</p>
+<p>第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，把治理交给 AI 是“糟糕的主意”。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。</p>
+<p>Dario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。</p>
+<p>第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限。</p>
+<p>一是让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。二是端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。三是用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。四是有些事人就是想自己做，哪怕 AI 做得更好。</p>
+<p>第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。</p>
+<p>【“别家和我没区别”】</p>
+<p>Dario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。</p>
+<p>Dario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。</p>
+<p>Dario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。</p>
+<p>Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。</p>
+<p>Axios 报道：https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will</p>
+<p><strong>Quoted post: https://x.com/darioamodei/status/2125656399392690605</strong></p>
+<p><strong>原文链接：</strong><a href="https://x.com/dotey/status/2125718634190508388">https://x.com/dotey/status/2125718634190508388</a></p>
+<p><strong>相关链接：</strong><a href="https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will">https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”", "url": "https://x.com/dotey/status/2125718634190508388", "lang": "zh", "html": "<h2>Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”</h2>\n\n<p>Axios 称 Anthropic 内部认为该把部分决策权交给超级智能，Dario 发长文否认：把治理交给 AI 是“糟糕的主意”</p>\n<p>Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。</p>\n<p>【Axios 报道了什么】</p>\n<p>Axios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。</p>\n<p>Axios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。</p>\n<p>报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。</p>\n<p>Anthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。</p>\n<p>【Dario 的回应】</p>\n<p>Dario 把问题拆成两件事。</p>\n<p>第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，把治理交给 AI 是“糟糕的主意”。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。</p>\n<p>Dario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。</p>\n<p>第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限。</p>\n<p>一是让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。二是端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。三是用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。四是有些事人就是想自己做，哪怕 AI 做得更好。</p>\n<p>第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。</p>\n<p>【“别家和我没区别”】</p>\n<p>Dario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。</p>\n<p>Dario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。</p>\n<p>Dario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。</p>\n<p>Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。</p>\n<p>Axios 报道：https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will</p>\n<p><strong>Quoted post: https://x.com/darioamodei/status/2125656399392690605</strong></p>\n<p>原文链接：<a href=\"https://x.com/dotey/status/2125718634190508388\">https://x.com/dotey/status/2125718634190508388</a></p>\n<p>相关链接：<a href=\"https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will\">https://www.axios.com/2026/11/25/anthropic-ai-human-control-debate-free-will</a></p>"}, "rewrite": {"title": "宝玉整理：Axios 称 Anthropic 想把决策权交给超级智能，Dario 发长文否认", "markdown": "Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。宝玉把报道和 Dario 的回应整理成了一篇长帖。\n\n## Axios 报道了什么\n\nAxios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。\n\nAxios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。\n\n报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。\n\nAnthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。\n\n## Dario 把问题拆成两件事\n\n第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，**把治理交给 AI 是“糟糕的主意”**。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。\n\nDario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。\n\n第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限：\n\n1. 让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。\n2. 端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。\n3. 用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。\n4. 有些事人就是想自己做，哪怕 AI 做得更好。\n\n第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。\n\n## “别家和我没区别”\n\nDario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。\n\nDario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。\n\nDario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。\n\n## 哪些说法还没有证实\n\n宝玉在帖子末尾提醒：Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。读这场争论时，可以把 Axios 的匿名信源、Dario 的自述和招股书里的书面表述分开看。", "html": "<p>Anthropic CEO Dario Amodei 11 月 25 日在 X 上发长文，否认自己主张“把人类自由意志交给 AI”，说这种说法“荒谬”。他回应的是 Axios 当天早上的独家报道，标题是“竞争对手 AI 领袖反对 Anthropic 把人类主导权交给 AI 的愿景”。宝玉把报道和 Dario 的回应整理成了一篇长帖。</p>\n<h2>Axios 报道了什么</h2>\n<p>Axios 援引不具名的知情人说，Anthropic 内部有一种常见看法：AI 迟早强大到人类应该把一部分决策权交给超级智能，而且很多时候这样做是对的。批评者认为，这会一步步滑向放弃自由意志。</p>\n<p>Axios 拿 Dario 过去的话做佐证。2024 年的长文《慈爱的机器》（Machines of Loving Grace）设想过一种经济，由 AI 按“AI 系统认为值得奖励人类的东西”给人分配资源。2026 年 2 月接受 CBS 采访时，Dario 说对手可能先用上全自主武器，所以这种武器“有一天可能是保卫民主所需要的”。Axios 还提到一张在诉讼中曝光的旧幻灯片，把 Anthropic 的愿景写成“由盒子里的神统治的乌托邦”。</p>\n<p>报道里的“对手”有三位。OpenAI CEO Sam Altman 11 月 4 日发推说“人永远应该掌控未来”，并反对让人沦为去做“AI 系统认为值得奖励人类的事”，引号里这句和《慈爱的机器》原文一字不差。Meta 首席 AI 官 Alexandr Wang 11 月 22 日发文说，不应该接受把社会“移交”给 AI。OpenAI 的 Dean Ball 在 OpenAI 官网发文，把这种看法叫作“沉默的共识”：人类把公司和政府交给机器，自己像坐在豪车后座、管不了方向的乘客。Axios 说，这几位都没有点名 Anthropic。</p>\n<p>Anthropic 发言人对 Axios 说，Dario 在很多公开场合都主张人类掌控 AI，公司也训练 Claude 不去破坏人类监督。</p>\n<h2>Dario 把问题拆成两件事</h2>\n<p>第一件是谁来治理社会。Dario 说，AI 必须由合法的民主程序来管，<strong>把治理交给 AI 是“糟糕的主意”</strong>。他拿专制作类比：几千年来，主张专制的人都说专制决策更快、更果断，就算真是这样，也不该为了效率或安全牺牲合法性和自决权，这套道理同样适用于 AI。</p>\n<p>Dario 列了自己的文章和访谈作证。《慈爱的机器》有一节讲用 AI 帮公民凝聚共识、找到妥协；今年 1 月的《技术的青春期》有一整节讲反对 AI 驱动的暴政，还警告 AI 公司自己夺权；9 月接受 CBS 采访时，Dario 说愿意让几个民主选举的政府对 AI 进行某种联合监督。</p>\n<p>第二件是具体任务交给 AI 做到什么程度，比如开车、设计抗癌药、从头到尾写软件。Dario 说这方面他的看法有好有坏：很多时候值得做，能救很多命，但有四处要设限：</p>\n<ol>\n<li>让 AI 自己造下一代 AI，也就是“递归自我改进”，进步可能快到人类管不住。</li>\n<li>端到端自动化可能造成严重失业，有些部署应该放慢甚至暂停。</li>\n<li>用 AI 做安全对齐研究要小心，因为不一定能信任 AI 交出的成果。</li>\n<li>有些事人就是想自己做，哪怕 AI 做得更好。</li>\n</ol>\n<p>第一条 Dario 引用的是 Anthropic 11 月 2 日更新的上市招股书。招股书写道，公司预计无法安全地让 Claude 在没有人类有效监督和理解的情况下，完全自主地设计和构建下一代前沿模型。同一份文件也写了，按内部估计，未来的模型可能“很快”达到公司安全政策里“AI 带来大幅加速”的门槛。</p>\n<h2>“别家和我没区别”</h2>\n<p>Dario 说，在哪些任务该自动化这件事上，其他 AI 公司和他看法差不多：各家都在发布越来越能自动干活的模型，也都说自己懂风险、有防护。</p>\n<p>Dario 说，拿自主武器那句话说他和别家不同“相当荒谬”。今年 2 月，Anthropic 拒绝五角大楼取消“不用于全自主武器、不用于大规模监控美国人”这两条限制，被国防部长 Hegseth 列为供应链风险。Dario 说他冒着公司前途和法律制裁的风险坚持了下来，“没有别的 AI 公司这么做”。</p>\n<p>Dario 最后说，一些 AI CEO 在做“凭感觉的商业和政治定位”，反复喊“人类掌控与能动性”“AI 只该是工具”这类口号，产品上却没有任何不同，也没认真想过口号背后的难题。Dario 没点名，Axios 报道里喊这类口号的正是 Altman 和 Wang。</p>\n<h2>哪些说法还没有证实</h2>\n<p>宝玉在帖子末尾提醒：Axios 关于 Anthropic 内部看法的说法全部来自不具名人士，Dario 的长文只谈他本人的立场，没有回应这一点。“没有别的公司拒绝自主武器”是 Dario 自己的说法。读这场争论时，可以把 Axios 的匿名信源、Dario 的自述和招股书里的书面表述分开看。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Brad Setser：人民币不是浮动汇率，结汇数据暴露了升值压力</title>
+      <link>https://karuio.github.io/a/setser-china-fx-settlement-pressure</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/setser-china-fx-settlement-pressure</guid>
+      <pubDate>Wed, 25 Nov 2026 10:41:17 +0000</pubDate>
+      <author>Brad Setser</author>
+      <description><![CDATA[<p><em>人民银行外汇储备增幅不大，结汇规模却创下新高。他认为结汇仍是干预变量，中国实行的是“固定但可调整”的汇率加关闭的金融账户，眼下升值压力明显。</em></p>
+<h2>中文改写</h2>
+<p>Michael Pettis 转引了财新的一段话：对人民币进一步升值的预期，促使企业把更多外汇收入换成人民币，形成一个反馈循环；一旦市场情绪转向，这个循环也可能反过来。</p>
+<p>Brad Setser 引用这条帖子，写了一条 5 帖的串帖。他说关键在于：<strong>中国并不是浮动汇率，汇率也不是由市场决定的</strong>。按他的描述，中国现行的制度更像是“固定但可调整”的汇率，外加关闭的金融账户。他还在括号里给 IMF 留了一句“study the 60!”（去研究一下 60 年代）。他说，眼下人民币面临很强的升值压力。</p>
+<h2>预期本身在推升压力</h2>
+<p>他接着解释，升值压力有一部分来自对升值的预期。只要大家预期人民币还会涨，出口商就有动力把外汇换成人民币，哪怕利差对持有美元更有利。压力有多大，从结汇这类指标上一眼就能看出来。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_fx_settlement_12m"><img src="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png" alt="图表：Settlement v the PBOC, trailing 12m sums, USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>图中是结汇和人民银行外汇资产变化的 12 个月滚动和（单位：十亿美元，起点是 2001 年 12 月）。2008 年前后，两条线基本同步，峰值都在 6000 亿美元左右；到 2026 年，结汇曲线升到 6000 亿美元以上，人民银行的柱子只在零线上方不远。</p>
+<h2>银行被要求高息揽美元</h2>
+<p>Setser 说，这股压力也体现在境内外汇存款的增长上，Joe Gagnon 也指出过这一点。他引用路透社的报道：境内银行被要求用高利率争取美元存款，以抑制结汇。</p>
+<h2>外汇储备和结汇为什么对不上</h2>
+<p>Gagnon 关于主权财富基金的研究，在 Setser 看来说明了一件事：必须弄清楚，为什么人民银行资产负债表上的外汇储备增幅不大，而结汇规模很大。前者看起来像浮动汇率，后者则像一个有管理的汇率，而且眼下正以升值方向缓慢爬行。</p>
+<h2>结汇仍然像一个干预变量</h2>
+<p>Setser 写道，结汇历来是一个干预变量：它包括人民银行，而用人民币买入外汇会形成敞口头寸。结汇到现在仍然表现得像干预变量：人民币升值时上升，因为要靠买入外汇控制升值节奏；人民币面临贬值压力时下降。</p>
+<p>眼下，Setser 认为升值压力仍然很明显，证据就是串帖里的这几张图。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_fx_cumulative"><img src="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png" alt="图表：Cumulative flows: fx settlement v monthly change in the PBOC&#x27;s foreign assets (reported in CNY); USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第二张图是累计流量：外汇结汇对比人民银行外汇资产（以人民币计）的月度变化，单位十亿美元，起点 2000 年 12 月。2014 年前三条线几乎重合，峰值约 3.7 万亿美元；到 2026 年 8 月，结汇（即期）累计升到约 3.8 万亿美元，经远期调整后接近 4 万亿美元，人民银行一线停在 3 万亿美元左右。</p>
+<h2>IMF 的分歧</h2>
+<p>有人在串帖下问，IMF 在这件事上有什么关系。Setser 回复说，这不只是中美之间的问题，很多人仍然看 IMF 在这些问题上的立场；他自己和 IMF 的部分人员也正有一些争论。</p>
+<p>如果要判断人民币汇率的实际干预力度，按 Setser 的思路，比起只看人民银行公布的外汇储备，结汇数据和境内外汇存款更能说明问题。以上是 Setser 的判断，图中数值按图目测，具体以原图为准。</p>
+
+<h2>原文</h2>
+<p><em>China doesn&#x27;t float (thread)</em></p>
+<figure data-media-id="img_setser_fx_settlement_12m"><img src="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png" alt="图表：Settlement v the PBOC, trailing 12m sums, USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_fx_cumulative"><img src="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png" alt="图表：Cumulative flows: fx settlement v monthly change in the PBOC&#x27;s foreign assets (reported in CNY); USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>This is a key point -- China doesn't float, or have a market determined exchange rate.   Its current regime is more like a fixed but adjustable exchange rate with a closed financial account (memo to the IMF, study the 60!) ... and right now there is strong appreciation pressure.</p>
+<p>1/</p>
+<p><strong>Quoted post, https://x.com/michaelxpettis/status/2125536201687900374</strong></p>
+<p>Caixin: "Expectations of further appreciation have encouraged companies to convert more of their foreign currency earnings into yuan, creating a feedback loop that could reverse if market sentiment shifts."
+https://www.caixinglobal.com/2026-11-24/analysis-trade-surplus-capital-inflows-drive-yuans-rise-102508327.html?rkey=pAgjKe3ecjLgzOlntW1lHvFL%2FE7ci4pKt4sBvPciPwpV%2BFPClV8Ezg%3D%3D&amp;cxg=web&amp;Sfrom=twitter</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125540844081930639</strong></p>
+<p>The appreciation pressure is in part a function of expectations of appreciation -- that gives the incentive for exporters to convert even if the rate differential favors the dollar.   The scale of the pressure is obvious in measures like settlemment</p>
+<p>2/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125541585056153813</strong></p>
+<p>It also shows up, as Joe Gagnon noted, in measures like onshore fx deposit growth -- Reuters highlighted how onshore banks have been told to bid for dollars (with high rates) to discourage settlement</p>
+<p>3/</p>
+<p>https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125542174963966119</strong></p>
+<p>Gagnon's work on sovereign wealth funds illustrates why it is important to figure out the reasons for the current gap between the rise in fx reserves on the PBOC's balance sheet (modest, consistent with a floating exchange rate) and fx settlement (large, consistent with a managed exchange rate with a strengthening crawl right now)</p>
+<p>4/</p>
+<p>https://www.piie.com/blogs/realtime-economics/2026/policy-driven-trade-imbalances-case-sovereign-wealth-funds</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125542681501675700</strong></p>
+<p>Settlement historically has been an intervention variable (it includes the PBOC, and fx purchases with CNY generate an open position) and it has acted like it is still an intervention variable -- rising during periods of CNY appreciation (buying to control pace of appreciation) and falling when the CNY faces depreciation pressure.</p>
+<p>Right now there is still clear appreciation pressure (see the charts in the thread)</p>
+<p>5/5</p>
+<p><strong>Reply in thread, https://x.com/Brad_Setser/status/2125696294979027152</strong></p>
+<p>@Rasit98 this isn't just a US/China issue and many folks still look to the IMF on these questions</p>
+<p>and of course i am in a bit of a debate with parts of the  IMF as well ...</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2125540320850989066">https://x.com/Brad_Setser/status/2125540320850989066</a></p>
+<p><strong>相关链接：</strong><a href="https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/">https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>人民银行外汇储备增幅不大，结汇规模却创下新高。他认为结汇仍是干预变量，中国实行的是“固定但可调整”的汇率加关闭的金融账户，眼下升值压力明显。</em></p>
+<h2>中文改写</h2>
+<p>Michael Pettis 转引了财新的一段话：对人民币进一步升值的预期，促使企业把更多外汇收入换成人民币，形成一个反馈循环；一旦市场情绪转向，这个循环也可能反过来。</p>
+<p>Brad Setser 引用这条帖子，写了一条 5 帖的串帖。他说关键在于：<strong>中国并不是浮动汇率，汇率也不是由市场决定的</strong>。按他的描述，中国现行的制度更像是“固定但可调整”的汇率，外加关闭的金融账户。他还在括号里给 IMF 留了一句“study the 60!”（去研究一下 60 年代）。他说，眼下人民币面临很强的升值压力。</p>
+<h2>预期本身在推升压力</h2>
+<p>他接着解释，升值压力有一部分来自对升值的预期。只要大家预期人民币还会涨，出口商就有动力把外汇换成人民币，哪怕利差对持有美元更有利。压力有多大，从结汇这类指标上一眼就能看出来。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_fx_settlement_12m"><img src="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png" alt="图表：Settlement v the PBOC, trailing 12m sums, USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>图中是结汇和人民银行外汇资产变化的 12 个月滚动和（单位：十亿美元，起点是 2001 年 12 月）。2008 年前后，两条线基本同步，峰值都在 6000 亿美元左右；到 2026 年，结汇曲线升到 6000 亿美元以上，人民银行的柱子只在零线上方不远。</p>
+<h2>银行被要求高息揽美元</h2>
+<p>Setser 说，这股压力也体现在境内外汇存款的增长上，Joe Gagnon 也指出过这一点。他引用路透社的报道：境内银行被要求用高利率争取美元存款，以抑制结汇。</p>
+<h2>外汇储备和结汇为什么对不上</h2>
+<p>Gagnon 关于主权财富基金的研究，在 Setser 看来说明了一件事：必须弄清楚，为什么人民银行资产负债表上的外汇储备增幅不大，而结汇规模很大。前者看起来像浮动汇率，后者则像一个有管理的汇率，而且眼下正以升值方向缓慢爬行。</p>
+<h2>结汇仍然像一个干预变量</h2>
+<p>Setser 写道，结汇历来是一个干预变量：它包括人民银行，而用人民币买入外汇会形成敞口头寸。结汇到现在仍然表现得像干预变量：人民币升值时上升，因为要靠买入外汇控制升值节奏；人民币面临贬值压力时下降。</p>
+<p>眼下，Setser 认为升值压力仍然很明显，证据就是串帖里的这几张图。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_setser_fx_cumulative"><img src="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png" alt="图表：Cumulative flows: fx settlement v monthly change in the PBOC&#x27;s foreign assets (reported in CNY); USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第二张图是累计流量：外汇结汇对比人民银行外汇资产（以人民币计）的月度变化，单位十亿美元，起点 2000 年 12 月。2014 年前三条线几乎重合，峰值约 3.7 万亿美元；到 2026 年 8 月，结汇（即期）累计升到约 3.8 万亿美元，经远期调整后接近 4 万亿美元，人民银行一线停在 3 万亿美元左右。</p>
+<h2>IMF 的分歧</h2>
+<p>有人在串帖下问，IMF 在这件事上有什么关系。Setser 回复说，这不只是中美之间的问题，很多人仍然看 IMF 在这些问题上的立场；他自己和 IMF 的部分人员也正有一些争论。</p>
+<p>如果要判断人民币汇率的实际干预力度，按 Setser 的思路，比起只看人民银行公布的外汇储备，结汇数据和境内外汇存款更能说明问题。以上是 Setser 的判断，图中数值按图目测，具体以原图为准。</p>
+
+<h2>原文</h2>
+<p><em>China doesn&#x27;t float (thread)</em></p>
+<figure data-media-id="img_setser_fx_settlement_12m"><img src="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png" alt="图表：Settlement v the PBOC, trailing 12m sums, USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_setser_fx_cumulative"><img src="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png" alt="图表：Cumulative flows: fx settlement v monthly change in the PBOC&#x27;s foreign assets (reported in CNY); USD billion"><figcaption><a href="https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png">打开原始媒体 ↗</a></figcaption></figure>
+<p>This is a key point -- China doesn't float, or have a market determined exchange rate.   Its current regime is more like a fixed but adjustable exchange rate with a closed financial account (memo to the IMF, study the 60!) ... and right now there is strong appreciation pressure.</p>
+<p>1/</p>
+<p><strong>Quoted post, https://x.com/michaelxpettis/status/2125536201687900374</strong></p>
+<p>Caixin: "Expectations of further appreciation have encouraged companies to convert more of their foreign currency earnings into yuan, creating a feedback loop that could reverse if market sentiment shifts."
+https://www.caixinglobal.com/2026-11-24/analysis-trade-surplus-capital-inflows-drive-yuans-rise-102508327.html?rkey=pAgjKe3ecjLgzOlntW1lHvFL%2FE7ci4pKt4sBvPciPwpV%2BFPClV8Ezg%3D%3D&amp;cxg=web&amp;Sfrom=twitter</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125540844081930639</strong></p>
+<p>The appreciation pressure is in part a function of expectations of appreciation -- that gives the incentive for exporters to convert even if the rate differential favors the dollar.   The scale of the pressure is obvious in measures like settlemment</p>
+<p>2/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125541585056153813</strong></p>
+<p>It also shows up, as Joe Gagnon noted, in measures like onshore fx deposit growth -- Reuters highlighted how onshore banks have been told to bid for dollars (with high rates) to discourage settlement</p>
+<p>3/</p>
+<p>https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125542174963966119</strong></p>
+<p>Gagnon's work on sovereign wealth funds illustrates why it is important to figure out the reasons for the current gap between the rise in fx reserves on the PBOC's balance sheet (modest, consistent with a floating exchange rate) and fx settlement (large, consistent with a managed exchange rate with a strengthening crawl right now)</p>
+<p>4/</p>
+<p>https://www.piie.com/blogs/realtime-economics/2026/policy-driven-trade-imbalances-case-sovereign-wealth-funds</p>
+<p><strong>Thread post, https://x.com/Brad_Setser/status/2125542681501675700</strong></p>
+<p>Settlement historically has been an intervention variable (it includes the PBOC, and fx purchases with CNY generate an open position) and it has acted like it is still an intervention variable -- rising during periods of CNY appreciation (buying to control pace of appreciation) and falling when the CNY faces depreciation pressure.</p>
+<p>Right now there is still clear appreciation pressure (see the charts in the thread)</p>
+<p>5/5</p>
+<p><strong>Reply in thread, https://x.com/Brad_Setser/status/2125696294979027152</strong></p>
+<p>@Rasit98 this isn't just a US/China issue and many folks still look to the IMF on these questions</p>
+<p>and of course i am in a bit of a debate with parts of the  IMF as well ...</p>
+<p><strong>原文链接：</strong><a href="https://x.com/Brad_Setser/status/2125540320850989066">https://x.com/Brad_Setser/status/2125540320850989066</a></p>
+<p><strong>相关链接：</strong><a href="https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/">https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "China doesn't float (thread)", "url": "https://x.com/Brad_Setser/status/2125540320850989066", "lang": "en", "html": "<h2>China doesn&#x27;t float (thread)</h2>\n<figure data-media-id=\"img_setser_fx_settlement_12m\"><img src=\"https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png\" alt=\"图表：Settlement v the PBOC, trailing 12m sums, USD billion\"><figcaption><a href=\"https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_setser_fx_cumulative\"><img src=\"https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png\" alt=\"图表：Cumulative flows: fx settlement v monthly change in the PBOC&#x27;s foreign assets (reported in CNY); USD billion\"><figcaption><a href=\"https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png\">打开原始媒体 ↗</a></figcaption></figure>\n<p>This is a key point -- China doesn't float, or have a market determined exchange rate.   Its current regime is more like a fixed but adjustable exchange rate with a closed financial account (memo to the IMF, study the 60!) ... and right now there is strong appreciation pressure.</p>\n<p>1/</p>\n<p><strong>Quoted post, https://x.com/michaelxpettis/status/2125536201687900374</strong></p>\n<p>Caixin: \"Expectations of further appreciation have encouraged companies to convert more of their foreign currency earnings into yuan, creating a feedback loop that could reverse if market sentiment shifts.\"\nhttps://www.caixinglobal.com/2026-11-24/analysis-trade-surplus-capital-inflows-drive-yuans-rise-102508327.html?rkey=pAgjKe3ecjLgzOlntW1lHvFL%2FE7ci4pKt4sBvPciPwpV%2BFPClV8Ezg%3D%3D&amp;cxg=web&amp;Sfrom=twitter</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125540844081930639</strong></p>\n<p>The appreciation pressure is in part a function of expectations of appreciation -- that gives the incentive for exporters to convert even if the rate differential favors the dollar.   The scale of the pressure is obvious in measures like settlemment</p>\n<p>2/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125541585056153813</strong></p>\n<p>It also shows up, as Joe Gagnon noted, in measures like onshore fx deposit growth -- Reuters highlighted how onshore banks have been told to bid for dollars (with high rates) to discourage settlement</p>\n<p>3/</p>\n<p>https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125542174963966119</strong></p>\n<p>Gagnon's work on sovereign wealth funds illustrates why it is important to figure out the reasons for the current gap between the rise in fx reserves on the PBOC's balance sheet (modest, consistent with a floating exchange rate) and fx settlement (large, consistent with a managed exchange rate with a strengthening crawl right now)</p>\n<p>4/</p>\n<p>https://www.piie.com/blogs/realtime-economics/2026/policy-driven-trade-imbalances-case-sovereign-wealth-funds</p>\n<p><strong>Thread post, https://x.com/Brad_Setser/status/2125542681501675700</strong></p>\n<p>Settlement historically has been an intervention variable (it includes the PBOC, and fx purchases with CNY generate an open position) and it has acted like it is still an intervention variable -- rising during periods of CNY appreciation (buying to control pace of appreciation) and falling when the CNY faces depreciation pressure.</p>\n<p>Right now there is still clear appreciation pressure (see the charts in the thread)</p>\n<p>5/5</p>\n<p><strong>Reply in thread, https://x.com/Brad_Setser/status/2125696294979027152</strong></p>\n<p>@Rasit98 this isn't just a US/China issue and many folks still look to the IMF on these questions</p>\n<p>and of course i am in a bit of a debate with parts of the  IMF as well ...</p>\n<p>原文链接：<a href=\"https://x.com/Brad_Setser/status/2125540320850989066\">https://x.com/Brad_Setser/status/2125540320850989066</a></p>\n<p>相关链接：<a href=\"https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/\">https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/</a></p>"}, "rewrite": {"title": "Brad Setser：人民币不是浮动汇率，结汇数据暴露了升值压力", "markdown": "Michael Pettis 转引了财新的一段话：对人民币进一步升值的预期，促使企业把更多外汇收入换成人民币，形成一个反馈循环；一旦市场情绪转向，这个循环也可能反过来。\n\nBrad Setser 引用这条帖子，写了一条 5 帖的串帖。他说关键在于：**中国并不是浮动汇率，汇率也不是由市场决定的**。按他的描述，中国现行的制度更像是“固定但可调整”的汇率，外加关闭的金融账户。他还在括号里给 IMF 留了一句“study the 60!”（去研究一下 60 年代）。他说，眼下人民币面临很强的升值压力。\n\n## 预期本身在推升压力\n\n他接着解释，升值压力有一部分来自对升值的预期。只要大家预期人民币还会涨，出口商就有动力把外汇换成人民币，哪怕利差对持有美元更有利。压力有多大，从结汇这类指标上一眼就能看出来。\n\n![图表：Settlement v the PBOC, trailing 12m sums, USD billion](<https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png>)\n\n图中是结汇和人民银行外汇资产变化的 12 个月滚动和（单位：十亿美元，起点是 2001 年 12 月）。2008 年前后，两条线基本同步，峰值都在 6000 亿美元左右；到 2026 年，结汇曲线升到 6000 亿美元以上，人民银行的柱子只在零线上方不远。\n\n## 银行被要求高息揽美元\n\nSetser 说，这股压力也体现在境内外汇存款的增长上，Joe Gagnon 也指出过这一点。他引用路透社的报道：境内银行被要求用高利率争取美元存款，以抑制结汇。\n\n## 外汇储备和结汇为什么对不上\n\nGagnon 关于主权财富基金的研究，在 Setser 看来说明了一件事：必须弄清楚，为什么人民银行资产负债表上的外汇储备增幅不大，而结汇规模很大。前者看起来像浮动汇率，后者则像一个有管理的汇率，而且眼下正以升值方向缓慢爬行。\n\n## 结汇仍然像一个干预变量\n\nSetser 写道，结汇历来是一个干预变量：它包括人民银行，而用人民币买入外汇会形成敞口头寸。结汇到现在仍然表现得像干预变量：人民币升值时上升，因为要靠买入外汇控制升值节奏；人民币面临贬值压力时下降。\n\n眼下，Setser 认为升值压力仍然很明显，证据就是串帖里的这几张图。\n\n![图表：Cumulative flows: fx settlement v monthly change in the PBOC's foreign assets \\(reported in CNY\\); USD billion](<https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png>)\n\n第二张图是累计流量：外汇结汇对比人民银行外汇资产（以人民币计）的月度变化，单位十亿美元，起点 2000 年 12 月。2014 年前三条线几乎重合，峰值约 3.7 万亿美元；到 2026 年 8 月，结汇（即期）累计升到约 3.8 万亿美元，经远期调整后接近 4 万亿美元，人民银行一线停在 3 万亿美元左右。\n\n## IMF 的分歧\n\n有人在串帖下问，IMF 在这件事上有什么关系。Setser 回复说，这不只是中美之间的问题，很多人仍然看 IMF 在这些问题上的立场；他自己和 IMF 的部分人员也正有一些争论。\n\n如果要判断人民币汇率的实际干预力度，按 Setser 的思路，比起只看人民银行公布的外汇储备，结汇数据和境内外汇存款更能说明问题。以上是 Setser 的判断，图中数值按图目测，具体以原图为准。", "html": "<p>Michael Pettis 转引了财新的一段话：对人民币进一步升值的预期，促使企业把更多外汇收入换成人民币，形成一个反馈循环；一旦市场情绪转向，这个循环也可能反过来。</p>\n<p>Brad Setser 引用这条帖子，写了一条 5 帖的串帖。他说关键在于：<strong>中国并不是浮动汇率，汇率也不是由市场决定的</strong>。按他的描述，中国现行的制度更像是“固定但可调整”的汇率，外加关闭的金融账户。他还在括号里给 IMF 留了一句“study the 60!”（去研究一下 60 年代）。他说，眼下人民币面临很强的升值压力。</p>\n<h2>预期本身在推升压力</h2>\n<p>他接着解释，升值压力有一部分来自对升值的预期。只要大家预期人民币还会涨，出口商就有动力把外汇换成人民币，哪怕利差对持有美元更有利。压力有多大，从结汇这类指标上一眼就能看出来。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_fx_settlement_12m\"><img src=\"https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png\" alt=\"图表：Settlement v the PBOC, trailing 12m sums, USD billion\"><figcaption><a href=\"https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>图中是结汇和人民银行外汇资产变化的 12 个月滚动和（单位：十亿美元，起点是 2001 年 12 月）。2008 年前后，两条线基本同步，峰值都在 6000 亿美元左右；到 2026 年，结汇曲线升到 6000 亿美元以上，人民银行的柱子只在零线上方不远。</p>\n<h2>银行被要求高息揽美元</h2>\n<p>Setser 说，这股压力也体现在境内外汇存款的增长上，Joe Gagnon 也指出过这一点。他引用路透社的报道：境内银行被要求用高利率争取美元存款，以抑制结汇。</p>\n<h2>外汇储备和结汇为什么对不上</h2>\n<p>Gagnon 关于主权财富基金的研究，在 Setser 看来说明了一件事：必须弄清楚，为什么人民银行资产负债表上的外汇储备增幅不大，而结汇规模很大。前者看起来像浮动汇率，后者则像一个有管理的汇率，而且眼下正以升值方向缓慢爬行。</p>\n<h2>结汇仍然像一个干预变量</h2>\n<p>Setser 写道，结汇历来是一个干预变量：它包括人民银行，而用人民币买入外汇会形成敞口头寸。结汇到现在仍然表现得像干预变量：人民币升值时上升，因为要靠买入外汇控制升值节奏；人民币面临贬值压力时下降。</p>\n<p>眼下，Setser 认为升值压力仍然很明显，证据就是串帖里的这几张图。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_setser_fx_cumulative\"><img src=\"https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png\" alt=\"图表：Cumulative flows: fx settlement v monthly change in the PBOC&#x27;s foreign assets (reported in CNY); USD billion\"><figcaption><a href=\"https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>第二张图是累计流量：外汇结汇对比人民银行外汇资产（以人民币计）的月度变化，单位十亿美元，起点 2000 年 12 月。2014 年前三条线几乎重合，峰值约 3.7 万亿美元；到 2026 年 8 月，结汇（即期）累计升到约 3.8 万亿美元，经远期调整后接近 4 万亿美元，人民银行一线停在 3 万亿美元左右。</p>\n<h2>IMF 的分歧</h2>\n<p>有人在串帖下问，IMF 在这件事上有什么关系。Setser 回复说，这不只是中美之间的问题，很多人仍然看 IMF 在这些问题上的立场；他自己和 IMF 的部分人员也正有一些争论。</p>\n<p>如果要判断人民币汇率的实际干预力度，按 Setser 的思路，比起只看人民银行公布的外汇储备，结汇数据和境内外汇存款更能说明问题。以上是 Setser 的判断，图中数值按图目测，具体以原图为准。</p>\n"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Simon Taylor：黄仁勋回归之后，英伟达成了“大而不能倒”的国家冠军</title>
+      <link>https://karuio.github.io/a/sytaylor-nvidia-too-big-to-fail</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/sytaylor-nvidia-too-big-to-fail</guid>
+      <pubDate>Wed, 25 Nov 2026 09:42:08 +0000</pubDate>
+      <author>Simon Taylor</author>
+      <description><![CDATA[<p><em>他把英伟达比作“算力界的房利美”，又说政府介入更像对待洛克希德·马丁：英伟达受保护，它的客户和放贷方却没有担保，而公司的决策从此都成了国家利益。</em></p>
+<h2>中文改写</h2>
+<p>Simon Taylor 开头一句：特朗普说是他把黄仁勋请了回来，实际情况是，<strong>英伟达已经大到不能倒了</strong>。</p>
+<h2>白宫要他回来，国会还要答案</h2>
+<p>Taylor 写道，白宫希望黄仁勋回来，但两党议员仍然想要一个说法。英伟达承认收到了来自政府高层的意见。独立调查还在继续，公司同时新设了一个国家安全与出口管制委员会。</p>
+<p>华盛顿内部也在争论美国怎样赢下 AI 竞赛。一派主张收紧芯片管制，不让中国拿到；另一派主张让世界上更多人基于美国技术来构建。Taylor 提到，有报道称黄仁勋支持美国开放权重模型，这帮他在特朗普和万斯那里加了分。</p>
+<p>两种路线都说自己是在维护国家安全，落到英伟达头上，却可能是截然不同的指令。在他看来，不管哪个党、哪一派执政，<strong>英伟达的前途现在都是国家利益问题</strong>。</p>
+<h2>“算力界的房利美”</h2>
+<p>今年 8 月，Taylor 把英伟达称作“算力界的房利美”。他说这个类比现在有点过于贴切了，让人想起 2008 年。</p>
+<p>英伟达的投资、采购承诺和担保，帮客户筹到钱来买它的芯片。卖设备的公司，同时也在帮这笔信贷成立。</p>
+<h2>信用市场并不买账</h2>
+<p>与此同时，信用市场对这次回归没那么兴奋。黄仁勋回归带动了一轮上涨，甲骨文的违约保险价格却再创新高。</p>
+<p>英伟达也表示，今后对融资承诺会更挑剔。Taylor 认为，面对外界对信用质量的担忧，这是合理的反应。</p>
+<p>结果可能是：<strong>英伟达重要到不能倒，它的一些客户却风险高到不能再借钱给他们</strong>。</p>
+<h2>更像洛克希德·马丁</h2>
+<p>Taylor 认为，政府这次介入更接近华盛顿和洛克希德·马丁这类战略军工承包商的关系。英伟达正在变成国家冠军企业，它的持续成功关系到美国的战略。这让华盛顿有理由在需要讨论纳税人救助之前就先出手。</p>
+<p>华盛顿可以希望美国 AI 赢，同时允许某个数据中心开发商、某只私募信贷基金或某个过度举债的借款人亏钱。他强调，这里没有一揽子的纳税人担保。保护到哪里为止、哪家新云厂商可能倒下，还得由市场去摸清。</p>
+<h2>国家冠军的另一面</h2>
+<p>这笔交易还有另一面。一旦你的持续成功成了国家目标，你的决策就成了国家利益：芯片给谁，哪些国家能拿到基础设施，谁来管公司，为了让建设继续推进愿意承担多大风险。</p>
+<p>Taylor 最后写道，推崇“创始人模式”的那群人，把他们的创始人盼回来了；只是现在的创始人模式，附带一个国家安全委员会。</p>
+<p>按他的框架，跟踪英伟达生态的人可以把两件事分开看：英伟达本身受到的政策保护，和下游数据中心开发商、私募信贷、新云厂商的信用风险，后者没有担保。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原帖附带约 23 秒视频，封面标题为“Nvidia is too big to fail”，画面为 CNBC 2026 年 11 月 23 日节目截图；本站未观看视频，未核验其与具体段落的对应关系。</p><figure data-media-id="vid_sytaylor_nvidia_tbtf"><video controls playsinline preload="none" src="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4" poster="https://pbs.twimg.com/amplify_video_thumb/2125525323286478848/img/M5-9830Njn1u229z.jpg"></video><figcaption><a href="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Trump says he brought Jensen Huang back. In reality, Nvidia just became too big to fail.</em></p>
+<figure data-media-id="vid_sytaylor_nvidia_tbtf"><video controls playsinline preload="none" src="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4" poster="https://pbs.twimg.com/amplify_video_thumb/2125525323286478848/img/M5-9830Njn1u229z.jpg"></video><figcaption><a href="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4">打开原始媒体 ↗</a></figcaption></figure>
+<p>Trump says he brought Jensen Huang back.</p>
+<p>In reality, Nvidia just became too big to fail.</p>
+<p>The White House wanted him back. Yet lawmakers in both parties still want answers.</p>
+<hr>
+<p>Nvidia acknowledged input from senior levels of government. The independent investigation continues, alongside a new national security and export control committee.</p>
+<p>Washington is also fighting over how America wins the AI race. One argument favors tighter chip restrictions to deny China access. Another favors getting more of the world building on American technology. Reporting suggests Jensen’s support for American open-weight models helped his case with Trump and Vance.</p>
+<p>Both approaches claim to defend national security. They can produce very different instructions for Nvidia.</p>
+<p>Whichever party (or faction) governs, Nvidia’s future is now a matter of national interest.</p>
+<hr>
+<p>In August, I called Nvidia the Fannie Mae for compute.</p>
+<p>The analogy is getting a little too literal (and is giving major 2008 vibes).</p>
+<p>Its investments, purchase commitments, and guarantees help customers raise money to buy its chips. The company selling the equipment also helps make the credit work.</p>
+<hr>
+<p>Meanwhile, the credit market appears less impressed by the comeback tour.</p>
+<p>Oracle’s default insurance reached another record despite the rally around Jensen’s return.</p>
+<p>Nvidia says it will be more selective about future financing commitments too.</p>
+<p>That seems like a sensible response to concerns about credit quality.</p>
+<p>Nvidia can become too important to let fail while some of its customers become too risky to finance.</p>
+<hr>
+<p>The government intervention looks closer to Washington’s relationship with a strategic defense contractor like Lockheed Martin.</p>
+<p>Nvidia is becoming a national champion whose continued success matters to American strategy. That gives Washington a reason to intervene before there’s a taxpayer rescue to discuss.</p>
+<p>Washington can want American AI to win and still allow a data center developer, a private credit fund or an overextended borrower to lose money.</p>
+<p>There’s no blanket taxpayer guarantee here. Markets still have to work out where the protection ends and which neocloud might fail.</p>
+<hr>
+<p>Nvidia’s national champion bargain has another side.</p>
+<p>Once your continued success becomes a national objective, your decisions become matters of national interest. Who gets the chips. Which countries get the infrastructure. Who runs the company. How much risk it takes to keep the buildout going.</p>
+<p>The founder-mode crowd got its founder back.</p>
+<p>Founder mode now comes with a national security committee.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2125525435211558938">https://x.com/sytaylor/status/2125525435211558938</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>他把英伟达比作“算力界的房利美”，又说政府介入更像对待洛克希德·马丁：英伟达受保护，它的客户和放贷方却没有担保，而公司的决策从此都成了国家利益。</em></p>
+<h2>中文改写</h2>
+<p>Simon Taylor 开头一句：特朗普说是他把黄仁勋请了回来，实际情况是，<strong>英伟达已经大到不能倒了</strong>。</p>
+<h2>白宫要他回来，国会还要答案</h2>
+<p>Taylor 写道，白宫希望黄仁勋回来，但两党议员仍然想要一个说法。英伟达承认收到了来自政府高层的意见。独立调查还在继续，公司同时新设了一个国家安全与出口管制委员会。</p>
+<p>华盛顿内部也在争论美国怎样赢下 AI 竞赛。一派主张收紧芯片管制，不让中国拿到；另一派主张让世界上更多人基于美国技术来构建。Taylor 提到，有报道称黄仁勋支持美国开放权重模型，这帮他在特朗普和万斯那里加了分。</p>
+<p>两种路线都说自己是在维护国家安全，落到英伟达头上，却可能是截然不同的指令。在他看来，不管哪个党、哪一派执政，<strong>英伟达的前途现在都是国家利益问题</strong>。</p>
+<h2>“算力界的房利美”</h2>
+<p>今年 8 月，Taylor 把英伟达称作“算力界的房利美”。他说这个类比现在有点过于贴切了，让人想起 2008 年。</p>
+<p>英伟达的投资、采购承诺和担保，帮客户筹到钱来买它的芯片。卖设备的公司，同时也在帮这笔信贷成立。</p>
+<h2>信用市场并不买账</h2>
+<p>与此同时，信用市场对这次回归没那么兴奋。黄仁勋回归带动了一轮上涨，甲骨文的违约保险价格却再创新高。</p>
+<p>英伟达也表示，今后对融资承诺会更挑剔。Taylor 认为，面对外界对信用质量的担忧，这是合理的反应。</p>
+<p>结果可能是：<strong>英伟达重要到不能倒，它的一些客户却风险高到不能再借钱给他们</strong>。</p>
+<h2>更像洛克希德·马丁</h2>
+<p>Taylor 认为，政府这次介入更接近华盛顿和洛克希德·马丁这类战略军工承包商的关系。英伟达正在变成国家冠军企业，它的持续成功关系到美国的战略。这让华盛顿有理由在需要讨论纳税人救助之前就先出手。</p>
+<p>华盛顿可以希望美国 AI 赢，同时允许某个数据中心开发商、某只私募信贷基金或某个过度举债的借款人亏钱。他强调，这里没有一揽子的纳税人担保。保护到哪里为止、哪家新云厂商可能倒下，还得由市场去摸清。</p>
+<h2>国家冠军的另一面</h2>
+<p>这笔交易还有另一面。一旦你的持续成功成了国家目标，你的决策就成了国家利益：芯片给谁，哪些国家能拿到基础设施，谁来管公司，为了让建设继续推进愿意承担多大风险。</p>
+<p>Taylor 最后写道，推崇“创始人模式”的那群人，把他们的创始人盼回来了；只是现在的创始人模式，附带一个国家安全委员会。</p>
+<p>按他的框架，跟踪英伟达生态的人可以把两件事分开看：英伟达本身受到的政策保护，和下游数据中心开发商、私募信贷、新云厂商的信用风险，后者没有担保。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原帖附带约 23 秒视频，封面标题为“Nvidia is too big to fail”，画面为 CNBC 2026 年 11 月 23 日节目截图；本站未观看视频，未核验其与具体段落的对应关系。</p><figure data-media-id="vid_sytaylor_nvidia_tbtf"><video controls playsinline preload="none" src="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4" poster="https://pbs.twimg.com/amplify_video_thumb/2125525323286478848/img/M5-9830Njn1u229z.jpg"></video><figcaption><a href="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Trump says he brought Jensen Huang back. In reality, Nvidia just became too big to fail.</em></p>
+<figure data-media-id="vid_sytaylor_nvidia_tbtf"><video controls playsinline preload="none" src="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4" poster="https://pbs.twimg.com/amplify_video_thumb/2125525323286478848/img/M5-9830Njn1u229z.jpg"></video><figcaption><a href="https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4">打开原始媒体 ↗</a></figcaption></figure>
+<p>Trump says he brought Jensen Huang back.</p>
+<p>In reality, Nvidia just became too big to fail.</p>
+<p>The White House wanted him back. Yet lawmakers in both parties still want answers.</p>
+<hr>
+<p>Nvidia acknowledged input from senior levels of government. The independent investigation continues, alongside a new national security and export control committee.</p>
+<p>Washington is also fighting over how America wins the AI race. One argument favors tighter chip restrictions to deny China access. Another favors getting more of the world building on American technology. Reporting suggests Jensen’s support for American open-weight models helped his case with Trump and Vance.</p>
+<p>Both approaches claim to defend national security. They can produce very different instructions for Nvidia.</p>
+<p>Whichever party (or faction) governs, Nvidia’s future is now a matter of national interest.</p>
+<hr>
+<p>In August, I called Nvidia the Fannie Mae for compute.</p>
+<p>The analogy is getting a little too literal (and is giving major 2008 vibes).</p>
+<p>Its investments, purchase commitments, and guarantees help customers raise money to buy its chips. The company selling the equipment also helps make the credit work.</p>
+<hr>
+<p>Meanwhile, the credit market appears less impressed by the comeback tour.</p>
+<p>Oracle’s default insurance reached another record despite the rally around Jensen’s return.</p>
+<p>Nvidia says it will be more selective about future financing commitments too.</p>
+<p>That seems like a sensible response to concerns about credit quality.</p>
+<p>Nvidia can become too important to let fail while some of its customers become too risky to finance.</p>
+<hr>
+<p>The government intervention looks closer to Washington’s relationship with a strategic defense contractor like Lockheed Martin.</p>
+<p>Nvidia is becoming a national champion whose continued success matters to American strategy. That gives Washington a reason to intervene before there’s a taxpayer rescue to discuss.</p>
+<p>Washington can want American AI to win and still allow a data center developer, a private credit fund or an overextended borrower to lose money.</p>
+<p>There’s no blanket taxpayer guarantee here. Markets still have to work out where the protection ends and which neocloud might fail.</p>
+<hr>
+<p>Nvidia’s national champion bargain has another side.</p>
+<p>Once your continued success becomes a national objective, your decisions become matters of national interest. Who gets the chips. Which countries get the infrastructure. Who runs the company. How much risk it takes to keep the buildout going.</p>
+<p>The founder-mode crowd got its founder back.</p>
+<p>Founder mode now comes with a national security committee.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/sytaylor/status/2125525435211558938">https://x.com/sytaylor/status/2125525435211558938</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Trump says he brought Jensen Huang back. In reality, Nvidia just became too big to fail.", "url": "https://x.com/sytaylor/status/2125525435211558938", "lang": "en", "html": "<h2>Trump says he brought Jensen Huang back. In reality, Nvidia just became too big to fail.</h2>\n<figure data-media-id=\"vid_sytaylor_nvidia_tbtf\"><video controls playsinline preload=\"none\" src=\"https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4\" poster=\"https://pbs.twimg.com/amplify_video_thumb/2125525323286478848/img/M5-9830Njn1u229z.jpg\"></video><figcaption><a href=\"https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Trump says he brought Jensen Huang back.</p>\n<p>In reality, Nvidia just became too big to fail.</p>\n<p>The White House wanted him back. Yet lawmakers in both parties still want answers.</p>\n<hr>\n<p>Nvidia acknowledged input from senior levels of government. The independent investigation continues, alongside a new national security and export control committee.</p>\n<p>Washington is also fighting over how America wins the AI race. One argument favors tighter chip restrictions to deny China access. Another favors getting more of the world building on American technology. Reporting suggests Jensen’s support for American open-weight models helped his case with Trump and Vance.</p>\n<p>Both approaches claim to defend national security. They can produce very different instructions for Nvidia.</p>\n<p>Whichever party (or faction) governs, Nvidia’s future is now a matter of national interest.</p>\n<hr>\n<p>In August, I called Nvidia the Fannie Mae for compute.</p>\n<p>The analogy is getting a little too literal (and is giving major 2008 vibes).</p>\n<p>Its investments, purchase commitments, and guarantees help customers raise money to buy its chips. The company selling the equipment also helps make the credit work.</p>\n<hr>\n<p>Meanwhile, the credit market appears less impressed by the comeback tour.</p>\n<p>Oracle’s default insurance reached another record despite the rally around Jensen’s return.</p>\n<p>Nvidia says it will be more selective about future financing commitments too.</p>\n<p>That seems like a sensible response to concerns about credit quality.</p>\n<p>Nvidia can become too important to let fail while some of its customers become too risky to finance.</p>\n<hr>\n<p>The government intervention looks closer to Washington’s relationship with a strategic defense contractor like Lockheed Martin.</p>\n<p>Nvidia is becoming a national champion whose continued success matters to American strategy. That gives Washington a reason to intervene before there’s a taxpayer rescue to discuss.</p>\n<p>Washington can want American AI to win and still allow a data center developer, a private credit fund or an overextended borrower to lose money.</p>\n<p>There’s no blanket taxpayer guarantee here. Markets still have to work out where the protection ends and which neocloud might fail.</p>\n<hr>\n<p>Nvidia’s national champion bargain has another side.</p>\n<p>Once your continued success becomes a national objective, your decisions become matters of national interest. Who gets the chips. Which countries get the infrastructure. Who runs the company. How much risk it takes to keep the buildout going.</p>\n<p>The founder-mode crowd got its founder back.</p>\n<p>Founder mode now comes with a national security committee.</p>\n<p>原文链接：<a href=\"https://x.com/sytaylor/status/2125525435211558938\">https://x.com/sytaylor/status/2125525435211558938</a></p>"}, "rewrite": {"title": "Simon Taylor：黄仁勋回归之后，英伟达成了“大而不能倒”的国家冠军", "markdown": "Simon Taylor 开头一句：特朗普说是他把黄仁勋请了回来，实际情况是，**英伟达已经大到不能倒了**。\n\n## 白宫要他回来，国会还要答案\n\nTaylor 写道，白宫希望黄仁勋回来，但两党议员仍然想要一个说法。英伟达承认收到了来自政府高层的意见。独立调查还在继续，公司同时新设了一个国家安全与出口管制委员会。\n\n华盛顿内部也在争论美国怎样赢下 AI 竞赛。一派主张收紧芯片管制，不让中国拿到；另一派主张让世界上更多人基于美国技术来构建。Taylor 提到，有报道称黄仁勋支持美国开放权重模型，这帮他在特朗普和万斯那里加了分。\n\n两种路线都说自己是在维护国家安全，落到英伟达头上，却可能是截然不同的指令。在他看来，不管哪个党、哪一派执政，**英伟达的前途现在都是国家利益问题**。\n\n## “算力界的房利美”\n\n今年 8 月，Taylor 把英伟达称作“算力界的房利美”。他说这个类比现在有点过于贴切了，让人想起 2008 年。\n\n英伟达的投资、采购承诺和担保，帮客户筹到钱来买它的芯片。卖设备的公司，同时也在帮这笔信贷成立。\n\n## 信用市场并不买账\n\n与此同时，信用市场对这次回归没那么兴奋。黄仁勋回归带动了一轮上涨，甲骨文的违约保险价格却再创新高。\n\n英伟达也表示，今后对融资承诺会更挑剔。Taylor 认为，面对外界对信用质量的担忧，这是合理的反应。\n\n结果可能是：**英伟达重要到不能倒，它的一些客户却风险高到不能再借钱给他们**。\n\n## 更像洛克希德·马丁\n\nTaylor 认为，政府这次介入更接近华盛顿和洛克希德·马丁这类战略军工承包商的关系。英伟达正在变成国家冠军企业，它的持续成功关系到美国的战略。这让华盛顿有理由在需要讨论纳税人救助之前就先出手。\n\n华盛顿可以希望美国 AI 赢，同时允许某个数据中心开发商、某只私募信贷基金或某个过度举债的借款人亏钱。他强调，这里没有一揽子的纳税人担保。保护到哪里为止、哪家新云厂商可能倒下，还得由市场去摸清。\n\n## 国家冠军的另一面\n\n这笔交易还有另一面。一旦你的持续成功成了国家目标，你的决策就成了国家利益：芯片给谁，哪些国家能拿到基础设施，谁来管公司，为了让建设继续推进愿意承担多大风险。\n\nTaylor 最后写道，推崇“创始人模式”的那群人，把他们的创始人盼回来了；只是现在的创始人模式，附带一个国家安全委员会。\n\n按他的框架，跟踪英伟达生态的人可以把两件事分开看：英伟达本身受到的政策保护，和下游数据中心开发商、私募信贷、新云厂商的信用风险，后者没有担保。\n\n### 原文附带媒体\n\n原帖附带约 23 秒视频，封面标题为“Nvidia is too big to fail”，画面为 CNBC 2026 年 11 月 23 日节目截图；本站未观看视频，未核验其与具体段落的对应关系。\n\n[观看原视频](<https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4>)", "html": "<p>Simon Taylor 开头一句：特朗普说是他把黄仁勋请了回来，实际情况是，<strong>英伟达已经大到不能倒了</strong>。</p>\n<h2>白宫要他回来，国会还要答案</h2>\n<p>Taylor 写道，白宫希望黄仁勋回来，但两党议员仍然想要一个说法。英伟达承认收到了来自政府高层的意见。独立调查还在继续，公司同时新设了一个国家安全与出口管制委员会。</p>\n<p>华盛顿内部也在争论美国怎样赢下 AI 竞赛。一派主张收紧芯片管制，不让中国拿到；另一派主张让世界上更多人基于美国技术来构建。Taylor 提到，有报道称黄仁勋支持美国开放权重模型，这帮他在特朗普和万斯那里加了分。</p>\n<p>两种路线都说自己是在维护国家安全，落到英伟达头上，却可能是截然不同的指令。在他看来，不管哪个党、哪一派执政，<strong>英伟达的前途现在都是国家利益问题</strong>。</p>\n<h2>“算力界的房利美”</h2>\n<p>今年 8 月，Taylor 把英伟达称作“算力界的房利美”。他说这个类比现在有点过于贴切了，让人想起 2008 年。</p>\n<p>英伟达的投资、采购承诺和担保，帮客户筹到钱来买它的芯片。卖设备的公司，同时也在帮这笔信贷成立。</p>\n<h2>信用市场并不买账</h2>\n<p>与此同时，信用市场对这次回归没那么兴奋。黄仁勋回归带动了一轮上涨，甲骨文的违约保险价格却再创新高。</p>\n<p>英伟达也表示，今后对融资承诺会更挑剔。Taylor 认为，面对外界对信用质量的担忧，这是合理的反应。</p>\n<p>结果可能是：<strong>英伟达重要到不能倒，它的一些客户却风险高到不能再借钱给他们</strong>。</p>\n<h2>更像洛克希德·马丁</h2>\n<p>Taylor 认为，政府这次介入更接近华盛顿和洛克希德·马丁这类战略军工承包商的关系。英伟达正在变成国家冠军企业，它的持续成功关系到美国的战略。这让华盛顿有理由在需要讨论纳税人救助之前就先出手。</p>\n<p>华盛顿可以希望美国 AI 赢，同时允许某个数据中心开发商、某只私募信贷基金或某个过度举债的借款人亏钱。他强调，这里没有一揽子的纳税人担保。保护到哪里为止、哪家新云厂商可能倒下，还得由市场去摸清。</p>\n<h2>国家冠军的另一面</h2>\n<p>这笔交易还有另一面。一旦你的持续成功成了国家目标，你的决策就成了国家利益：芯片给谁，哪些国家能拿到基础设施，谁来管公司，为了让建设继续推进愿意承担多大风险。</p>\n<p>Taylor 最后写道，推崇“创始人模式”的那群人，把他们的创始人盼回来了；只是现在的创始人模式，附带一个国家安全委员会。</p>\n<p>按他的框架，跟踪英伟达生态的人可以把两件事分开看：英伟达本身受到的政策保护，和下游数据中心开发商、私募信贷、新云厂商的信用风险，后者没有担保。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原帖附带约 23 秒视频，封面标题为“Nvidia is too big to fail”，画面为 CNBC 2026 年 11 月 23 日节目截图；本站未观看视频，未核验其与具体段落的对应关系。</p><figure data-media-id=\"vid_sytaylor_nvidia_tbtf\"><video controls playsinline preload=\"none\" src=\"https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4\" poster=\"https://pbs.twimg.com/amplify_video_thumb/2125525323286478848/img/M5-9830Njn1u229z.jpg\"></video><figcaption><a href=\"https://video.twimg.com/amplify_video/2125525323286478848/vid/avc1/1280x720/KSOBGTgqhfxV29Za.mp4\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
+    <item>
+      <title>Tomasz Tunguz：AI 会像灯泡一样通缩，还是像铜一样越卖越多？</title>
+      <link>https://karuio.github.io/a/ttunguz-ai-lightbulbs-or-copper</link>
+      <guid isPermaLink="true">https://karuio.github.io/a/ttunguz-ai-lightbulbs-or-copper</guid>
+      <pubDate>Wed, 25 Nov 2026 18:03:29 +0000</pubDate>
+      <author>Tomasz Tunguz</author>
+      <description><![CDATA[<p><em>Ramp 上 token 用量涨 11.1 倍、支出只涨 4.7 倍，Anthropic 的 S-1 却显示收入涨 13.6 倍。他用需求价格弹性比较两边证据，并列出 2027 年要看的四个数。</em></p>
+<h2>中文改写</h2>
+<p>这个时代的口头禅是杰文斯悖论：一样东西越便宜，人们用得越多。</p>
+<p>Tomasz Tunguz 接着问：用量上去以后，收入怎么样了？大规模生产可以像灯泡那样把成本压下去，用量涨了 25,000 倍，照明支出占 GDP 的比例却没变；也可能像铜那样，总金额跟着一起涨。</p>
+<p>所以真正的问题是：<strong>AI 的需求价格弹性有多大？</strong></p>
+<h2>弹性等于 1，账单就不变</h2>
+<p>他用买面包打比方：面包降价 50%，如果你因此多买一倍，账单不变，弹性就是 1；如果只多买 25%，账单变小，弹性就是 0.5。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_copper_jevons"><img src="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg" alt="图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>原文配图把各种技术和大宗商品放在同一张对数坐标图上，横轴是用量增长倍数，纵轴是支出增长倍数。按图中标注：石油（1900 到 2000 年）用量约 190 倍、支出约 190 倍；铜（1900 到 2000 年）约 26 倍和 15 倍；云计算约 600 倍和 60 倍；美国电力 1,300 倍和 43 倍；硅晶体管（1990 到 2010 年）约 10,000 倍和 6 倍；照明用量 25,000 倍，占 GDP 的份额约为 1 倍。AI token 三个点是：Ramp 同比用量 11 倍、支出 4.7 倍，OpenRouter 同比 50 倍和 21 倍，Ramp 自 2025 年 1 月以来 85 倍和 29 倍。图的标题是：每种商品在用量上都符合杰文斯悖论，在美元上符合的很少。</p>
+<h2>算力成本这一端，GPU 像铜</h2>
+<p>到目前为止，GPU 更像铜，不像灯泡。新云厂商的 GPU 租金过去一年涨了 48%，CoreWeave 在租约续签时重新定价，上调 30% 到 50%。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_copper_ramp"><img src="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg" alt="图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第二张图是 Ramp 企业客户的数据，共 97 个观测周（2025 年 1 月 12 日到 2026 年 11 月 15 日），以第一周为 100：token 用量涨到 84.8 倍，AI 支出涨到 28.8 倍，综合价格降到 0.46 倍。图注补充，按同比口径（截至 2026 年 11 月 15 日那一周），用量 11.1 倍，支出 4.7 倍，综合价格 0.57 倍；用量和支出之间的差距隐含的价格指数是 0.34 倍，Ramp 自己给出的综合价格是 0.46 倍，图中标出了这处出入，没有取平均。样本是 3 万多家企业。</p>
+<h2>token 需求弹性很高</h2>
+<p>Ramp 和 OpenRouter 的数据都显示需求价格弹性很高：<strong>价格每降 1%，Ramp 上的 token 用量增加 4.3%，OpenRouter 上增加 6.8%</strong>。Ramp 上用量涨了 11.1 倍，支出涨了 4.7 倍；OpenRouter 上用量涨了 50 倍，支出涨了 21 倍。</p>
+<p>Tunguz 在脚注里说明，这两组数据都有偏差：企业信用卡数据看不到企业直签和云市场渠道，而 Anthropic 将近一半的收入走的是这些渠道；综合价格里混着标价下调和改用更便宜模型这两种效应；缓存 token 最多便宜 90%。</p>
+<h2>Anthropic 的 S-1 是另一面证据</h2>
+<p>Anthropic 的 S-1 是反方向的例子：2026 年上半年收入增长 13.6 倍，达到 163 亿美元，净收入留存率 900%。2025 年 11 月 Opus 4.5 降低了每个任务的成本，之后季度销售增速从 48% 跳到 132%。</p>
+<p>他认为这意味着需求价格弹性远高于 1.0。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_copper_elasticity"><img src="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg" alt="图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第三张图把弹性放在一起比：OpenRouter 同比 6.75（价格约降 44%，用量 50 倍）；Ramp 同比 4.28（价格约降 43%，用量 11.1 倍）；云计算（2010 到 2025 年）2.78；美国电力（20 世纪）2.11；Ramp 四周口径（2026 年 11 月）2.09；JPM/Ramp 四周口径（2026 年 10 月）1.38；硅晶体管（1990 到 2010 年）1.18；照明（1700 到 2000 年）1.00；铜 0.40、石油 0.20，图注说两者弹性低是因为实物供给稀缺。图注还写道，所有 AI token 指标都超过 1.0，两个同比窗口是照明的 4.3 到 6.8 倍，也远高于云计算和电力。</p>
+<h2>实验室内部的成本在降</h2>
+<p>更高效的推理在实验室内部压低账单：把模型做小、复用以前的回答、把简单问题交给更小的模型。Tunguz 写道，每一招降低 token 成本的速度，都比 GPU 租金上涨得快。</p>
+<h2>2027 年要看的四个数</h2>
+<ol>
+<li><strong>支出对用量</strong>：现在 2.4 倍的差距，是会像石油和铜那样收窄到持平，还是像照明那样越拉越大？</li>
+<li><strong>GPU 租金对综合 token 价格</strong>：新集群上线后两者会不会碰头，还是继续挤压实验室的利润？</li>
+<li><strong>前沿实验室毛利率</strong>：token 价格持续下跌，更便宜的推理能不能让实验室毛利率保持在 40% 以上？</li>
+<li><strong>毛利润对已签的算力账单</strong>：美元增长得够不够快，能不能覆盖这些账单？</li>
+</ol>
+<p>在他看来，用量似乎没有上限，商品化 AI token 会通缩到什么程度还没有定论。到目前为止最接近的类比是 CPU：通用芯片一路通缩，每一代新的前沿产品又把美元市场做大。想判断 AI 更像灯泡还是铜，可以按上面四个数逐季对照。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图，画面与正文第三张价格弹性图相同；未核验其与具体段落的对应关系。</p><figure data-media-id="img_tunguz_copper_cover"><img src="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Will AI Deflate Like Lightbulbs or Compound Like Copper?</em></p>
+<figure data-media-id="img_tunguz_copper_cover"><img src="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_copper_jevons"><img src="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg" alt="图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_copper_ramp"><img src="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg" alt="图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_copper_elasticity"><img src="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg" alt="图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Will AI Deflate Like Lightbulbs or Compound Like Copper?</p>
+<p>The mantra of the era is Jevons Paradox. The cheaper a commodity is, the more we use of it.
+But what happened to the revenue from that higher use? Mass production can crush costs like lightbulbs, keeping revenue flat as a % of GDP while volume rises 25,000x. Or total dollars can grow, like copper.
+What is the price elasticity of demand for AI?
+Let's go to the grocery store : if a 50% cut on the price of bread gets you to buy twice as many loaves, your grocery bill stays flat, an elasticity of 1 ; if you only buy 25% more, your bill shrinks, an elasticity of 0.5.</p>
+<p>So far, GPUs look more like copper than lightbulbs : neocloud GPU rents rose 48% over the past year, &amp; CoreWeave repriced 30% to 50% when leases renew.</p>
+<p>Both Ramp &amp; OpenRouter show high price elasticity of demand : a 1% price drop drives 4.3% more tokens on Ramp &amp; 6.8% on OpenRouter, as volume ran 11.1x against 4.7x spending on Ramp &amp; 50x against 21x on OpenRouter.,,
+Anthropic's S-1 is the counterpoint : revenue grew 13.6x to $16.3b in the first half of 2026 on 900% net revenue retention, &amp; when Opus 4.5 cut cost per task in November 2025, quarterly sales growth jumped from 48% to 132%, implying a price elasticity of demand well above 1.0.</p>
+<p>More efficient inference cuts the bill inside the lab : shrinking models, reusing past answers &amp; sending easy questions to smaller models. Each trick lowers the cost of a token faster than GPU rents rise.
+We're watching these numbers in 2027 :
+Spending against volume : does the 2.4x wedge narrow toward parity like oil &amp; copper, or widen toward lighting?
+GPU rents against blended token prices : do the two meet as new clusters come online, or keep squeezing lab margins?
+Frontier gross margins : does cheaper serving hold labs above 40% while token prices keep falling?
+Gross profit against signed compute bills : do dollars compound fast enough to cover them?
+Consumption looks unbounded. How much deflation hits commodity AI tokens is still up for debate. So far, the closest parallel is CPUs : commodity chips deflated while each new frontier generation expanded the dollar market.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2125651601478369366">https://x.com/ttunguz/status/2125651601478369366</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/">https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/</a></p>]]></description>
+      <content:encoded><![CDATA[<p><em>Ramp 上 token 用量涨 11.1 倍、支出只涨 4.7 倍，Anthropic 的 S-1 却显示收入涨 13.6 倍。他用需求价格弹性比较两边证据，并列出 2027 年要看的四个数。</em></p>
+<h2>中文改写</h2>
+<p>这个时代的口头禅是杰文斯悖论：一样东西越便宜，人们用得越多。</p>
+<p>Tomasz Tunguz 接着问：用量上去以后，收入怎么样了？大规模生产可以像灯泡那样把成本压下去，用量涨了 25,000 倍，照明支出占 GDP 的比例却没变；也可能像铜那样，总金额跟着一起涨。</p>
+<p>所以真正的问题是：<strong>AI 的需求价格弹性有多大？</strong></p>
+<h2>弹性等于 1，账单就不变</h2>
+<p>他用买面包打比方：面包降价 50%，如果你因此多买一倍，账单不变，弹性就是 1；如果只多买 25%，账单变小，弹性就是 0.5。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_copper_jevons"><img src="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg" alt="图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>原文配图把各种技术和大宗商品放在同一张对数坐标图上，横轴是用量增长倍数，纵轴是支出增长倍数。按图中标注：石油（1900 到 2000 年）用量约 190 倍、支出约 190 倍；铜（1900 到 2000 年）约 26 倍和 15 倍；云计算约 600 倍和 60 倍；美国电力 1,300 倍和 43 倍；硅晶体管（1990 到 2010 年）约 10,000 倍和 6 倍；照明用量 25,000 倍，占 GDP 的份额约为 1 倍。AI token 三个点是：Ramp 同比用量 11 倍、支出 4.7 倍，OpenRouter 同比 50 倍和 21 倍，Ramp 自 2025 年 1 月以来 85 倍和 29 倍。图的标题是：每种商品在用量上都符合杰文斯悖论，在美元上符合的很少。</p>
+<h2>算力成本这一端，GPU 像铜</h2>
+<p>到目前为止，GPU 更像铜，不像灯泡。新云厂商的 GPU 租金过去一年涨了 48%，CoreWeave 在租约续签时重新定价，上调 30% 到 50%。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_copper_ramp"><img src="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg" alt="图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第二张图是 Ramp 企业客户的数据，共 97 个观测周（2025 年 1 月 12 日到 2026 年 11 月 15 日），以第一周为 100：token 用量涨到 84.8 倍，AI 支出涨到 28.8 倍，综合价格降到 0.46 倍。图注补充，按同比口径（截至 2026 年 11 月 15 日那一周），用量 11.1 倍，支出 4.7 倍，综合价格 0.57 倍；用量和支出之间的差距隐含的价格指数是 0.34 倍，Ramp 自己给出的综合价格是 0.46 倍，图中标出了这处出入，没有取平均。样本是 3 万多家企业。</p>
+<h2>token 需求弹性很高</h2>
+<p>Ramp 和 OpenRouter 的数据都显示需求价格弹性很高：<strong>价格每降 1%，Ramp 上的 token 用量增加 4.3%，OpenRouter 上增加 6.8%</strong>。Ramp 上用量涨了 11.1 倍，支出涨了 4.7 倍；OpenRouter 上用量涨了 50 倍，支出涨了 21 倍。</p>
+<p>Tunguz 在脚注里说明，这两组数据都有偏差：企业信用卡数据看不到企业直签和云市场渠道，而 Anthropic 将近一半的收入走的是这些渠道；综合价格里混着标价下调和改用更便宜模型这两种效应；缓存 token 最多便宜 90%。</p>
+<h2>Anthropic 的 S-1 是另一面证据</h2>
+<p>Anthropic 的 S-1 是反方向的例子：2026 年上半年收入增长 13.6 倍，达到 163 亿美元，净收入留存率 900%。2025 年 11 月 Opus 4.5 降低了每个任务的成本，之后季度销售增速从 48% 跳到 132%。</p>
+<p>他认为这意味着需求价格弹性远高于 1.0。</p>
+<section class="rewrite-source-media" aria-label="原文媒体"><figure data-media-id="img_tunguz_copper_elasticity"><img src="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg" alt="图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<p>第三张图把弹性放在一起比：OpenRouter 同比 6.75（价格约降 44%，用量 50 倍）；Ramp 同比 4.28（价格约降 43%，用量 11.1 倍）；云计算（2010 到 2025 年）2.78；美国电力（20 世纪）2.11；Ramp 四周口径（2026 年 11 月）2.09；JPM/Ramp 四周口径（2026 年 10 月）1.38；硅晶体管（1990 到 2010 年）1.18；照明（1700 到 2000 年）1.00；铜 0.40、石油 0.20，图注说两者弹性低是因为实物供给稀缺。图注还写道，所有 AI token 指标都超过 1.0，两个同比窗口是照明的 4.3 到 6.8 倍，也远高于云计算和电力。</p>
+<h2>实验室内部的成本在降</h2>
+<p>更高效的推理在实验室内部压低账单：把模型做小、复用以前的回答、把简单问题交给更小的模型。Tunguz 写道，每一招降低 token 成本的速度，都比 GPU 租金上涨得快。</p>
+<h2>2027 年要看的四个数</h2>
+<ol>
+<li><strong>支出对用量</strong>：现在 2.4 倍的差距，是会像石油和铜那样收窄到持平，还是像照明那样越拉越大？</li>
+<li><strong>GPU 租金对综合 token 价格</strong>：新集群上线后两者会不会碰头，还是继续挤压实验室的利润？</li>
+<li><strong>前沿实验室毛利率</strong>：token 价格持续下跌，更便宜的推理能不能让实验室毛利率保持在 40% 以上？</li>
+<li><strong>毛利润对已签的算力账单</strong>：美元增长得够不够快，能不能覆盖这些账单？</li>
+</ol>
+<p>在他看来，用量似乎没有上限，商品化 AI token 会通缩到什么程度还没有定论。到目前为止最接近的类比是 CPU：通用芯片一路通缩，每一代新的前沿产品又把美元市场做大。想判断 AI 更像灯泡还是铜，可以按上面四个数逐季对照。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文封面图，画面与正文第三张价格弹性图相同；未核验其与具体段落的对应关系。</p><figure data-media-id="img_tunguz_copper_cover"><img src="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg">打开原始媒体 ↗</a></figcaption></figure></section>
+<h2>原文</h2>
+<p><em>Will AI Deflate Like Lightbulbs or Compound Like Copper?</em></p>
+<figure data-media-id="img_tunguz_copper_cover"><img src="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg" alt="原文封面图"><figcaption><a href="https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_copper_jevons"><img src="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg" alt="图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_copper_ramp"><img src="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg" alt="图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）"><figcaption><a href="https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<figure data-media-id="img_tunguz_copper_elasticity"><img src="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg" alt="图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）"><figcaption><a href="https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg">打开原始媒体 ↗</a></figcaption></figure>
+<p>Will AI Deflate Like Lightbulbs or Compound Like Copper?</p>
+<p>The mantra of the era is Jevons Paradox. The cheaper a commodity is, the more we use of it.
+But what happened to the revenue from that higher use? Mass production can crush costs like lightbulbs, keeping revenue flat as a % of GDP while volume rises 25,000x. Or total dollars can grow, like copper.
+What is the price elasticity of demand for AI?
+Let's go to the grocery store : if a 50% cut on the price of bread gets you to buy twice as many loaves, your grocery bill stays flat, an elasticity of 1 ; if you only buy 25% more, your bill shrinks, an elasticity of 0.5.</p>
+<p>So far, GPUs look more like copper than lightbulbs : neocloud GPU rents rose 48% over the past year, &amp; CoreWeave repriced 30% to 50% when leases renew.</p>
+<p>Both Ramp &amp; OpenRouter show high price elasticity of demand : a 1% price drop drives 4.3% more tokens on Ramp &amp; 6.8% on OpenRouter, as volume ran 11.1x against 4.7x spending on Ramp &amp; 50x against 21x on OpenRouter.,,
+Anthropic's S-1 is the counterpoint : revenue grew 13.6x to $16.3b in the first half of 2026 on 900% net revenue retention, &amp; when Opus 4.5 cut cost per task in November 2025, quarterly sales growth jumped from 48% to 132%, implying a price elasticity of demand well above 1.0.</p>
+<p>More efficient inference cuts the bill inside the lab : shrinking models, reusing past answers &amp; sending easy questions to smaller models. Each trick lowers the cost of a token faster than GPU rents rise.
+We're watching these numbers in 2027 :
+Spending against volume : does the 2.4x wedge narrow toward parity like oil &amp; copper, or widen toward lighting?
+GPU rents against blended token prices : do the two meet as new clusters come online, or keep squeezing lab margins?
+Frontier gross margins : does cheaper serving hold labs above 40% while token prices keep falling?
+Gross profit against signed compute bills : do dollars compound fast enough to cover them?
+Consumption looks unbounded. How much deflation hits commodity AI tokens is still up for debate. So far, the closest parallel is CPUs : commodity chips deflated while each new frontier generation expanded the dollar market.
+Originally published on tomtunguz.com.</p>
+<p><strong>原文链接：</strong><a href="https://x.com/ttunguz/status/2125651601478369366">https://x.com/ttunguz/status/2125651601478369366</a></p>
+<p><strong>相关链接：</strong><a href="https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/">https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/</a></p>]]></content:encoded>
+      <qiaomu:versions><![CDATA[{"version": 1, "original": {"title": "Will AI Deflate Like Lightbulbs or Compound Like Copper?", "url": "https://x.com/ttunguz/status/2125651601478369366", "lang": "en", "html": "<h2>Will AI Deflate Like Lightbulbs or Compound Like Copper?</h2>\n<figure data-media-id=\"img_tunguz_copper_cover\"><img src=\"https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_copper_jevons\"><img src=\"https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg\" alt=\"图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_copper_ramp\"><img src=\"https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg\" alt=\"图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<figure data-media-id=\"img_tunguz_copper_elasticity\"><img src=\"https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg\" alt=\"图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg\">打开原始媒体 ↗</a></figcaption></figure>\n<p>Will AI Deflate Like Lightbulbs or Compound Like Copper?</p>\n<p>The mantra of the era is Jevons Paradox. The cheaper a commodity is, the more we use of it.\nBut what happened to the revenue from that higher use? Mass production can crush costs like lightbulbs, keeping revenue flat as a % of GDP while volume rises 25,000x. Or total dollars can grow, like copper.\nWhat is the price elasticity of demand for AI?\nLet's go to the grocery store : if a 50% cut on the price of bread gets you to buy twice as many loaves, your grocery bill stays flat, an elasticity of 1 ; if you only buy 25% more, your bill shrinks, an elasticity of 0.5.</p>\n<p>So far, GPUs look more like copper than lightbulbs : neocloud GPU rents rose 48% over the past year, &amp; CoreWeave repriced 30% to 50% when leases renew.</p>\n<p>Both Ramp &amp; OpenRouter show high price elasticity of demand : a 1% price drop drives 4.3% more tokens on Ramp &amp; 6.8% on OpenRouter, as volume ran 11.1x against 4.7x spending on Ramp &amp; 50x against 21x on OpenRouter.,,\nAnthropic's S-1 is the counterpoint : revenue grew 13.6x to $16.3b in the first half of 2026 on 900% net revenue retention, &amp; when Opus 4.5 cut cost per task in November 2025, quarterly sales growth jumped from 48% to 132%, implying a price elasticity of demand well above 1.0.</p>\n<p>More efficient inference cuts the bill inside the lab : shrinking models, reusing past answers &amp; sending easy questions to smaller models. Each trick lowers the cost of a token faster than GPU rents rise.\nWe're watching these numbers in 2027 :\nSpending against volume : does the 2.4x wedge narrow toward parity like oil &amp; copper, or widen toward lighting?\nGPU rents against blended token prices : do the two meet as new clusters come online, or keep squeezing lab margins?\nFrontier gross margins : does cheaper serving hold labs above 40% while token prices keep falling?\nGross profit against signed compute bills : do dollars compound fast enough to cover them?\nConsumption looks unbounded. How much deflation hits commodity AI tokens is still up for debate. So far, the closest parallel is CPUs : commodity chips deflated while each new frontier generation expanded the dollar market.\nOriginally published on tomtunguz.com.</p>\n<p>原文链接：<a href=\"https://x.com/ttunguz/status/2125651601478369366\">https://x.com/ttunguz/status/2125651601478369366</a></p>\n<p>相关链接：<a href=\"https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/\">https://tomtunguz.com/jevons-works-on-tokens-not-on-dollars/</a></p>"}, "rewrite": {"title": "Tomasz Tunguz：AI 会像灯泡一样通缩，还是像铜一样越卖越多？", "markdown": "这个时代的口头禅是杰文斯悖论：一样东西越便宜，人们用得越多。\n\nTomasz Tunguz 接着问：用量上去以后，收入怎么样了？大规模生产可以像灯泡那样把成本压下去，用量涨了 25,000 倍，照明支出占 GDP 的比例却没变；也可能像铜那样，总金额跟着一起涨。\n\n所以真正的问题是：**AI 的需求价格弹性有多大？**\n\n## 弹性等于 1，账单就不变\n\n他用买面包打比方：面包降价 50%，如果你因此多买一倍，账单不变，弹性就是 1；如果只多买 25%，账单变小，弹性就是 0.5。\n\n![图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）](<https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg>)\n\n原文配图把各种技术和大宗商品放在同一张对数坐标图上，横轴是用量增长倍数，纵轴是支出增长倍数。按图中标注：石油（1900 到 2000 年）用量约 190 倍、支出约 190 倍；铜（1900 到 2000 年）约 26 倍和 15 倍；云计算约 600 倍和 60 倍；美国电力 1,300 倍和 43 倍；硅晶体管（1990 到 2010 年）约 10,000 倍和 6 倍；照明用量 25,000 倍，占 GDP 的份额约为 1 倍。AI token 三个点是：Ramp 同比用量 11 倍、支出 4.7 倍，OpenRouter 同比 50 倍和 21 倍，Ramp 自 2025 年 1 月以来 85 倍和 29 倍。图的标题是：每种商品在用量上都符合杰文斯悖论，在美元上符合的很少。\n\n## 算力成本这一端，GPU 像铜\n\n到目前为止，GPU 更像铜，不像灯泡。新云厂商的 GPU 租金过去一年涨了 48%，CoreWeave 在租约续签时重新定价，上调 30% 到 50%。\n\n![图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）](<https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg>)\n\n第二张图是 Ramp 企业客户的数据，共 97 个观测周（2025 年 1 月 12 日到 2026 年 11 月 15 日），以第一周为 100：token 用量涨到 84.8 倍，AI 支出涨到 28.8 倍，综合价格降到 0.46 倍。图注补充，按同比口径（截至 2026 年 11 月 15 日那一周），用量 11.1 倍，支出 4.7 倍，综合价格 0.57 倍；用量和支出之间的差距隐含的价格指数是 0.34 倍，Ramp 自己给出的综合价格是 0.46 倍，图中标出了这处出入，没有取平均。样本是 3 万多家企业。\n\n## token 需求弹性很高\n\nRamp 和 OpenRouter 的数据都显示需求价格弹性很高：**价格每降 1%，Ramp 上的 token 用量增加 4.3%，OpenRouter 上增加 6.8%**。Ramp 上用量涨了 11.1 倍，支出涨了 4.7 倍；OpenRouter 上用量涨了 50 倍，支出涨了 21 倍。\n\nTunguz 在脚注里说明，这两组数据都有偏差：企业信用卡数据看不到企业直签和云市场渠道，而 Anthropic 将近一半的收入走的是这些渠道；综合价格里混着标价下调和改用更便宜模型这两种效应；缓存 token 最多便宜 90%。\n\n## Anthropic 的 S-1 是另一面证据\n\nAnthropic 的 S-1 是反方向的例子：2026 年上半年收入增长 13.6 倍，达到 163 亿美元，净收入留存率 900%。2025 年 11 月 Opus 4.5 降低了每个任务的成本，之后季度销售增速从 48% 跳到 132%。\n\n他认为这意味着需求价格弹性远高于 1.0。\n\n![图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）](<https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg>)\n\n第三张图把弹性放在一起比：OpenRouter 同比 6.75（价格约降 44%，用量 50 倍）；Ramp 同比 4.28（价格约降 43%，用量 11.1 倍）；云计算（2010 到 2025 年）2.78；美国电力（20 世纪）2.11；Ramp 四周口径（2026 年 11 月）2.09；JPM/Ramp 四周口径（2026 年 10 月）1.38；硅晶体管（1990 到 2010 年）1.18；照明（1700 到 2000 年）1.00；铜 0.40、石油 0.20，图注说两者弹性低是因为实物供给稀缺。图注还写道，所有 AI token 指标都超过 1.0，两个同比窗口是照明的 4.3 到 6.8 倍，也远高于云计算和电力。\n\n## 实验室内部的成本在降\n\n更高效的推理在实验室内部压低账单：把模型做小、复用以前的回答、把简单问题交给更小的模型。Tunguz 写道，每一招降低 token 成本的速度，都比 GPU 租金上涨得快。\n\n## 2027 年要看的四个数\n\n1. **支出对用量**：现在 2.4 倍的差距，是会像石油和铜那样收窄到持平，还是像照明那样越拉越大？\n2. **GPU 租金对综合 token 价格**：新集群上线后两者会不会碰头，还是继续挤压实验室的利润？\n3. **前沿实验室毛利率**：token 价格持续下跌，更便宜的推理能不能让实验室毛利率保持在 40% 以上？\n4. **毛利润对已签的算力账单**：美元增长得够不够快，能不能覆盖这些账单？\n\n在他看来，用量似乎没有上限，商品化 AI token 会通缩到什么程度还没有定论。到目前为止最接近的类比是 CPU：通用芯片一路通缩，每一代新的前沿产品又把美元市场做大。想判断 AI 更像灯泡还是铜，可以按上面四个数逐季对照。\n\n### 原文附带媒体\n\n原文封面图，画面与正文第三张价格弹性图相同；未核验其与具体段落的对应关系。\n\n![原文封面图](<https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg>)", "html": "<p>这个时代的口头禅是杰文斯悖论：一样东西越便宜，人们用得越多。</p>\n<p>Tomasz Tunguz 接着问：用量上去以后，收入怎么样了？大规模生产可以像灯泡那样把成本压下去，用量涨了 25,000 倍，照明支出占 GDP 的比例却没变；也可能像铜那样，总金额跟着一起涨。</p>\n<p>所以真正的问题是：<strong>AI 的需求价格弹性有多大？</strong></p>\n<h2>弹性等于 1，账单就不变</h2>\n<p>他用买面包打比方：面包降价 50%，如果你因此多买一倍，账单不变，弹性就是 1；如果只多买 25%，账单变小，弹性就是 0.5。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_copper_jevons\"><img src=\"https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg\" alt=\"图表：Every Commodity Follows Jevons on Volume : Few Follow It on Dollars（Theory Ventures，2026 年 11 月）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_UjueaUAAgNnM.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>原文配图把各种技术和大宗商品放在同一张对数坐标图上，横轴是用量增长倍数，纵轴是支出增长倍数。按图中标注：石油（1900 到 2000 年）用量约 190 倍、支出约 190 倍；铜（1900 到 2000 年）约 26 倍和 15 倍；云计算约 600 倍和 60 倍；美国电力 1,300 倍和 43 倍；硅晶体管（1990 到 2010 年）约 10,000 倍和 6 倍；照明用量 25,000 倍，占 GDP 的份额约为 1 倍。AI token 三个点是：Ramp 同比用量 11 倍、支出 4.7 倍，OpenRouter 同比 50 倍和 21 倍，Ramp 自 2025 年 1 月以来 85 倍和 29 倍。图的标题是：每种商品在用量上都符合杰文斯悖论，在美元上符合的很少。</p>\n<h2>算力成本这一端，GPU 像铜</h2>\n<p>到目前为止，GPU 更像铜，不像灯泡。新云厂商的 GPU 租金过去一年涨了 48%，CoreWeave 在租约续签时重新定价，上调 30% 到 50%。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_copper_ramp\"><img src=\"https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg\" alt=\"图表：Token volume ran 85x, AI spend ran 29x, price fell to 0.46x（Ramp AI Index，Theory Ventures）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_Uj5VaMAATEli.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>第二张图是 Ramp 企业客户的数据，共 97 个观测周（2025 年 1 月 12 日到 2026 年 11 月 15 日），以第一周为 100：token 用量涨到 84.8 倍，AI 支出涨到 28.8 倍，综合价格降到 0.46 倍。图注补充，按同比口径（截至 2026 年 11 月 15 日那一周），用量 11.1 倍，支出 4.7 倍，综合价格 0.57 倍；用量和支出之间的差距隐含的价格指数是 0.34 倍，Ramp 自己给出的综合价格是 0.46 倍，图中标出了这处出入，没有取平均。样本是 3 万多家企业。</p>\n<h2>token 需求弹性很高</h2>\n<p>Ramp 和 OpenRouter 的数据都显示需求价格弹性很高：<strong>价格每降 1%，Ramp 上的 token 用量增加 4.3%，OpenRouter 上增加 6.8%</strong>。Ramp 上用量涨了 11.1 倍，支出涨了 4.7 倍；OpenRouter 上用量涨了 50 倍，支出涨了 21 倍。</p>\n<p>Tunguz 在脚注里说明，这两组数据都有偏差：企业信用卡数据看不到企业直签和云市场渠道，而 Anthropic 将近一半的收入走的是这些渠道；综合价格里混着标价下调和改用更便宜模型这两种效应；缓存 token 最多便宜 90%。</p>\n<h2>Anthropic 的 S-1 是另一面证据</h2>\n<p>Anthropic 的 S-1 是反方向的例子：2026 年上半年收入增长 13.6 倍，达到 163 亿美元，净收入留存率 900%。2025 年 11 月 Opus 4.5 降低了每个任务的成本，之后季度销售增速从 48% 跳到 132%。</p>\n<p>他认为这意味着需求价格弹性远高于 1.0。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文媒体\"><figure data-media-id=\"img_tunguz_copper_elasticity\"><img src=\"https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg\" alt=\"图表：AI Token Demand Is Far More Elastic Than Lighting or Electricity（Theory Ventures，2026 年 11 月）\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_UkE6aYAA8WVl.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>\n<p>第三张图把弹性放在一起比：OpenRouter 同比 6.75（价格约降 44%，用量 50 倍）；Ramp 同比 4.28（价格约降 43%，用量 11.1 倍）；云计算（2010 到 2025 年）2.78；美国电力（20 世纪）2.11；Ramp 四周口径（2026 年 11 月）2.09；JPM/Ramp 四周口径（2026 年 10 月）1.38；硅晶体管（1990 到 2010 年）1.18；照明（1700 到 2000 年）1.00；铜 0.40、石油 0.20，图注说两者弹性低是因为实物供给稀缺。图注还写道，所有 AI token 指标都超过 1.0，两个同比窗口是照明的 4.3 到 6.8 倍，也远高于云计算和电力。</p>\n<h2>实验室内部的成本在降</h2>\n<p>更高效的推理在实验室内部压低账单：把模型做小、复用以前的回答、把简单问题交给更小的模型。Tunguz 写道，每一招降低 token 成本的速度，都比 GPU 租金上涨得快。</p>\n<h2>2027 年要看的四个数</h2>\n<ol>\n<li><strong>支出对用量</strong>：现在 2.4 倍的差距，是会像石油和铜那样收窄到持平，还是像照明那样越拉越大？</li>\n<li><strong>GPU 租金对综合 token 价格</strong>：新集群上线后两者会不会碰头，还是继续挤压实验室的利润？</li>\n<li><strong>前沿实验室毛利率</strong>：token 价格持续下跌，更便宜的推理能不能让实验室毛利率保持在 40% 以上？</li>\n<li><strong>毛利润对已签的算力账单</strong>：美元增长得够不够快，能不能覆盖这些账单？</li>\n</ol>\n<p>在他看来，用量似乎没有上限，商品化 AI token 会通缩到什么程度还没有定论。到目前为止最接近的类比是 CPU：通用芯片一路通缩，每一代新的前沿产品又把美元市场做大。想判断 AI 更像灯泡还是铜，可以按上面四个数逐季对照。</p>\n<section class=\"rewrite-source-media\" aria-label=\"原文附带媒体\"><h3 class=\"source-media-heading\">原文附带媒体</h3><p class=\"completeness-note\">原文封面图，画面与正文第三张价格弹性图相同；未核验其与具体段落的对应关系。</p><figure data-media-id=\"img_tunguz_copper_cover\"><img src=\"https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg\" alt=\"原文封面图\"><figcaption><a href=\"https://pbs.twimg.com/media/HX_UkZzbAAEjimf.jpg\">打开原始媒体 ↗</a></figcaption></figure></section>"}}]]></qiaomu:versions>
+    </item>
     <item>
       <title>宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权</title>
       <link>https://karuio.github.io/a/dotey-llamaindex-ocria</link>

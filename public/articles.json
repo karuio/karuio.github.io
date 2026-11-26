@@ -1,5 +1,69 @@
 [
   {
+    "id": "dotey-dario-axios-ai-control",
+    "date": "2026-11-25",
+    "title": "宝玉整理：Axios 称 Anthropic 想把决策权交给超级智能，Dario 发长文否认",
+    "dek": "Axios 援引匿名人士和 Dario 旧作，称 Anthropic 内部认为人类应把部分决策交给超级智能。Dario 回应说治理必须留给民主程序，并列出任务自动化要设限的四处。",
+    "url": "/a/dotey-dario-axios-ai-control",
+    "source_url": "https://x.com/dotey/status/2125718634190508388",
+    "tags": [
+      "Anthropic",
+      "Dario Amodei",
+      "AI 治理",
+      "Axios",
+      "自主武器"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "setser-china-fx-settlement-pressure",
+    "date": "2026-11-25",
+    "title": "Brad Setser：人民币不是浮动汇率，结汇数据暴露了升值压力",
+    "dek": "人民银行外汇储备增幅不大，结汇规模却创下新高。他认为结汇仍是干预变量，中国实行的是“固定但可调整”的汇率加关闭的金融账户，眼下升值压力明显。",
+    "url": "/a/setser-china-fx-settlement-pressure",
+    "source_url": "https://x.com/Brad_Setser/status/2125540320850989066",
+    "tags": [
+      "人民币汇率",
+      "结汇",
+      "人民银行",
+      "外汇储备",
+      "IMF"
+    ],
+    "sector": "投资/宏观"
+  },
+  {
+    "id": "sytaylor-nvidia-too-big-to-fail",
+    "date": "2026-11-25",
+    "title": "Simon Taylor：黄仁勋回归之后，英伟达成了“大而不能倒”的国家冠军",
+    "dek": "他把英伟达比作“算力界的房利美”，又说政府介入更像对待洛克希德·马丁：英伟达受保护，它的客户和放贷方却没有担保，而公司的决策从此都成了国家利益。",
+    "url": "/a/sytaylor-nvidia-too-big-to-fail",
+    "source_url": "https://x.com/sytaylor/status/2125525435211558938",
+    "tags": [
+      "英伟达",
+      "黄仁勋",
+      "国家冠军",
+      "AI 信贷",
+      "新云"
+    ],
+    "sector": "金融科技"
+  },
+  {
+    "id": "ttunguz-ai-lightbulbs-or-copper",
+    "date": "2026-11-25",
+    "title": "Tomasz Tunguz：AI 会像灯泡一样通缩，还是像铜一样越卖越多？",
+    "dek": "Ramp 上 token 用量涨 11.1 倍、支出只涨 4.7 倍，Anthropic 的 S-1 却显示收入涨 13.6 倍。他用需求价格弹性比较两边证据，并列出 2027 年要看的四个数。",
+    "url": "/a/ttunguz-ai-lightbulbs-or-copper",
+    "source_url": "https://x.com/ttunguz/status/2125651601478369366",
+    "tags": [
+      "杰文斯悖论",
+      "价格弹性",
+      "AI token",
+      "GPU 租金",
+      "Anthropic"
+    ],
+    "sector": "SaaS/云"
+  },
+  {
     "id": "dotey-llamaindex-ocria",
     "date": "2026-11-24",
     "title": "宝玉整理：LlamaIndex 开放 OCRia-1 和 nano 两款文档解析模型权重，营收或融资超 200 万美元商用要授权",

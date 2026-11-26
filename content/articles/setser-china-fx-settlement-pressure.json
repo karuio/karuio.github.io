@@ -1,0 +1,58 @@
+{
+  "id": "setser-china-fx-settlement-pressure",
+  "date": "2026-11-25",
+  "published_at": "2026-11-25T10:41:17+00:00",
+  "ingested_at": "2026-11-26T08:30:00+08:00",
+  "sector": "投资/宏观",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/Brad_Setser/status/2125540320850989066",
+    "author": "Brad Setser",
+    "handle": "Brad_Setser",
+    "title_en": "This is a key point -- China doesn't float, or have a market determined exchange rate.",
+    "related_url": "https://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/"
+  },
+  "title": "Brad Setser：人民币不是浮动汇率，结汇数据暴露了升值压力",
+  "dek": "人民银行外汇储备增幅不大，结汇规模却创下新高。他认为结汇仍是干预变量，中国实行的是“固定但可调整”的汇率加关闭的金融账户，眼下升值压力明显。",
+  "tags": [
+    "人民币汇率",
+    "结汇",
+    "人民银行",
+    "外汇储备",
+    "IMF"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "China doesn't float (thread)",
+    "text_md": "This is a key point -- China doesn't float, or have a market determined exchange rate.   Its current regime is more like a fixed but adjustable exchange rate with a closed financial account (memo to the IMF, study the 60!) ... and right now there is strong appreciation pressure.\n\n1/\n\n**Quoted post, https://x.com/michaelxpettis/status/2125536201687900374**\n\nCaixin: \"Expectations of further appreciation have encouraged companies to convert more of their foreign currency earnings into yuan, creating a feedback loop that could reverse if market sentiment shifts.\"\nhttps://www.caixinglobal.com/2026-11-24/analysis-trade-surplus-capital-inflows-drive-yuans-rise-102508327.html?rkey=pAgjKe3ecjLgzOlntW1lHvFL%2FE7ci4pKt4sBvPciPwpV%2BFPClV8Ezg%3D%3D&cxg=web&Sfrom=twitter\n\n**Thread post, https://x.com/Brad_Setser/status/2125540844081930639**\n\nThe appreciation pressure is in part a function of expectations of appreciation -- that gives the incentive for exporters to convert even if the rate differential favors the dollar.   The scale of the pressure is obvious in measures like settlemment\n\n2/\n\n**Thread post, https://x.com/Brad_Setser/status/2125541585056153813**\n\nIt also shows up, as Joe Gagnon noted, in measures like onshore fx deposit growth -- Reuters highlighted how onshore banks have been told to bid for dollars (with high rates) to discourage settlement\n\n3/\n\nhttps://www.reuters.com/business/finance/chinese-banks-boost-dollar-deposit-rates-sources-say-beijing-seeks-smooth-yuan-2026-11-09/\n\n**Thread post, https://x.com/Brad_Setser/status/2125542174963966119**\n\nGagnon's work on sovereign wealth funds illustrates why it is important to figure out the reasons for the current gap between the rise in fx reserves on the PBOC's balance sheet (modest, consistent with a floating exchange rate) and fx settlement (large, consistent with a managed exchange rate with a strengthening crawl right now)\n\n4/\n\nhttps://www.piie.com/blogs/realtime-economics/2026/policy-driven-trade-imbalances-case-sovereign-wealth-funds\n\n**Thread post, https://x.com/Brad_Setser/status/2125542681501675700**\n\nSettlement historically has been an intervention variable (it includes the PBOC, and fx purchases with CNY generate an open position) and it has acted like it is still an intervention variable -- rising during periods of CNY appreciation (buying to control pace of appreciation) and falling when the CNY faces depreciation pressure.\n\nRight now there is still clear appreciation pressure (see the charts in the thread)\n\n5/5\n\n**Reply in thread, https://x.com/Brad_Setser/status/2125696294979027152**\n\n@Rasit98 this isn't just a US/China issue and many folks still look to the IMF on these questions \n\nand of course i am in a bit of a debate with parts of the  IMF as well ...",
+    "media": [
+      {
+        "id": "img_setser_fx_settlement_12m",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX9wHcYWwAA5bZH.png",
+        "alt": "图表：Settlement v the PBOC, trailing 12m sums, USD billion"
+      },
+      {
+        "id": "img_setser_fx_cumulative",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HX9xxbUWgAE7qM7.png",
+        "alt": "图表：Cumulative flows: fx settlement v monthly change in the PBOC's foreign assets (reported in CNY); USD billion"
+      }
+    ]
+  },
+  "body_md": "Michael Pettis 转引了财新的一段话：对人民币进一步升值的预期，促使企业把更多外汇收入换成人民币，形成一个反馈循环；一旦市场情绪转向，这个循环也可能反过来。\n\nBrad Setser 引用这条帖子，写了一条 5 帖的串帖。他说关键在于：**中国并不是浮动汇率，汇率也不是由市场决定的**。按他的描述，中国现行的制度更像是“固定但可调整”的汇率，外加关闭的金融账户。他还在括号里给 IMF 留了一句“study the 60!”（去研究一下 60 年代）。他说，眼下人民币面临很强的升值压力。\n\n## 预期本身在推升压力\n\n他接着解释，升值压力有一部分来自对升值的预期。只要大家预期人民币还会涨，出口商就有动力把外汇换成人民币，哪怕利差对持有美元更有利。压力有多大，从结汇这类指标上一眼就能看出来。\n\n图中是结汇和人民银行外汇资产变化的 12 个月滚动和（单位：十亿美元，起点是 2001 年 12 月）。2008 年前后，两条线基本同步，峰值都在 6000 亿美元左右；到 2026 年，结汇曲线升到 6000 亿美元以上，人民银行的柱子只在零线上方不远。\n\n## 银行被要求高息揽美元\n\nSetser 说，这股压力也体现在境内外汇存款的增长上，Joe Gagnon 也指出过这一点。他引用路透社的报道：境内银行被要求用高利率争取美元存款，以抑制结汇。\n\n## 外汇储备和结汇为什么对不上\n\nGagnon 关于主权财富基金的研究，在 Setser 看来说明了一件事：必须弄清楚，为什么人民银行资产负债表上的外汇储备增幅不大，而结汇规模很大。前者看起来像浮动汇率，后者则像一个有管理的汇率，而且眼下正以升值方向缓慢爬行。\n\n## 结汇仍然像一个干预变量\n\nSetser 写道，结汇历来是一个干预变量：它包括人民银行，而用人民币买入外汇会形成敞口头寸。结汇到现在仍然表现得像干预变量：人民币升值时上升，因为要靠买入外汇控制升值节奏；人民币面临贬值压力时下降。\n\n眼下，Setser 认为升值压力仍然很明显，证据就是串帖里的这几张图。\n\n第二张图是累计流量：外汇结汇对比人民银行外汇资产（以人民币计）的月度变化，单位十亿美元，起点 2000 年 12 月。2014 年前三条线几乎重合，峰值约 3.7 万亿美元；到 2026 年 8 月，结汇（即期）累计升到约 3.8 万亿美元，经远期调整后接近 4 万亿美元，人民银行一线停在 3 万亿美元左右。\n\n## IMF 的分歧\n\n有人在串帖下问，IMF 在这件事上有什么关系。Setser 回复说，这不只是中美之间的问题，很多人仍然看 IMF 在这些问题上的立场；他自己和 IMF 的部分人员也正有一些争论。\n\n如果要判断人民币汇率的实际干预力度，按 Setser 的思路，比起只看人民银行公布的外汇储备，结汇数据和境内外汇存款更能说明问题。以上是 Setser 的判断，图中数值按图目测，具体以原图为准。",
+  "rewrite_media": [
+    {
+      "media_id": "img_setser_fx_settlement_12m",
+      "placement": "after_paragraph",
+      "after_md": "他接着解释，升值压力有一部分来自对升值的预期。只要大家预期人民币还会涨，出口商就有动力把外汇换成人民币，哪怕利差对持有美元更有利。压力有多大，从结汇这类指标上一眼就能看出来。",
+      "evidence": "source_position_verified"
+    },
+    {
+      "media_id": "img_setser_fx_cumulative",
+      "placement": "after_paragraph",
+      "after_md": "眼下，Setser 认为升值压力仍然很明显，证据就是串帖里的这几张图。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}
