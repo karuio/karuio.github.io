@@ -1,5 +1,52 @@
 [
   {
+    "id": "karpathy-usa-civ-map",
+    "date": "2026-11-26",
+    "title": "Karpathy 让 Claude 把美国真实数据做成《文明》式地图：31 个数据源、7 小时、4.5 万行代码",
+    "dek": "他用 Claude Code 桌面版和 Opus 5.5，把人口普查、经济、能源、灾害等公开数据对齐到 25 公里六边形网格，再翻译成《文明》的游戏语言，作品已部署在 karpathy.ai/usaciv。",
+    "url": "/a/karpathy-usa-civ-map",
+    "source_url": "https://x.com/karpathy/status/2125779541952246039",
+    "tags": [
+      "Claude Code",
+      "AI 编程",
+      "公开数据",
+      "可视化"
+    ],
+    "sector": "AI"
+  },
+  {
+    "id": "sytaylor-meta-muse-amazon-talks",
+    "date": "2026-11-26",
+    "title": "Simon Taylor：亚马逊和 Meta 谈解封 Muse，商家已放行，银行仍是最难的一关",
+    "dek": "据 Fortune，两家在谈让 Meta 的个人 AI 代理 Muse 重新接入亚马逊，焦点是商品搜索质量和 686 亿美元的广告生意；沃尔玛、Shopify 和英国 14 家零售商已直连，多数大银行仍拦截外部代理。",
+    "url": "/a/sytaylor-meta-muse-amazon-talks",
+    "source_url": "https://x.com/sytaylor/status/2125891852670787925",
+    "tags": [
+      "Agent 支付",
+      "Meta",
+      "亚马逊",
+      "开放银行",
+      "Plaid"
+    ],
+    "sector": "金融科技"
+  },
+  {
+    "id": "thevalueist-earthquakes-equity-markets",
+    "date": "2026-11-26",
+    "title": "TheValueist 用地震学读股市：11 月 20 日是主震还是前震，看 VIX 能否收破 35.89",
+    "dek": "他梳理 25 年经济物理学研究：幂律、余震衰减和自激发站得住，提前预测崩盘的记录站不住。结合 2006 年以来 11 次 VIX 35 事件的回测，他的基本情景是数周到数月高波动、6 到 12 个月向上；VIX 收盘超过 35.89 则改判为前震。",
+    "url": "/a/thevalueist-earthquakes-equity-markets",
+    "source_url": "https://x.com/TheValueist/status/2125946677563437484",
+    "tags": [
+      "VIX",
+      "市场结构",
+      "经济物理学",
+      "风险管理",
+      "AI 信贷"
+    ],
+    "sector": "消费互联网/能源数据中心"
+  },
+  {
     "id": "dotey-dario-axios-ai-control",
     "date": "2026-11-25",
     "title": "宝玉整理：Axios 称 Anthropic 想把决策权交给超级智能，Dario 发长文否认",

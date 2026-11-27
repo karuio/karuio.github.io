@@ -1,0 +1,45 @@
+{
+  "id": "sytaylor-meta-muse-amazon-talks",
+  "date": "2026-11-26",
+  "published_at": "2026-11-26T09:58:09+00:00",
+  "ingested_at": "2026-11-27T08:40:00+08:00",
+  "sector": "金融科技",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/sytaylor/status/2125891852670787925",
+    "author": "Simon Taylor",
+    "handle": "sytaylor",
+    "title_en": "Amazon and Meta are in talks to end the block on the personal agent Muse"
+  },
+  "title": "Simon Taylor：亚马逊和 Meta 谈解封 Muse，商家已放行，银行仍是最难的一关",
+  "dek": "据 Fortune，两家在谈让 Meta 的个人 AI 代理 Muse 重新接入亚马逊，焦点是商品搜索质量和 686 亿美元的广告生意；沃尔玛、Shopify 和英国 14 家零售商已直连，多数大银行仍拦截外部代理。",
+  "tags": [
+    "Agent 支付",
+    "Meta",
+    "亚马逊",
+    "开放银行",
+    "Plaid"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "Amazon and Meta are in talks to end the block on the personal agent Muse",
+    "text_md": "Amazon and Meta are in talks to end the block on the personal agent Muse\n\nFortune reported on Wednesday that the two are discussing a deal to connect Meta's personal AI agent to Amazon's store. Amazon blocked Muse in September. Both CEOs would need to sign off.\n\nThe talks are focused on two issues:\n\n- Search results. Amazon worries about the quality of the products Muse would show\n- Ads. An agent could skip the sponsored listings, and ads are a $68.6B business for Amazon\n\nAndy Jassy said last week that Amazon hasn't ruled out letting outside agents in if there is \"a fair exchange of value\"\n\n(Sounds a lot like - either display my ad or pay me what I would have made?)\n\n---\n\nAmazon is now looking like an outlier with a lot of merchants integrating directly.\n\n- Walmart put its Black Friday deals in Muse on Tuesday through its own Agent Gateway. You sign in at Walmart, set a spending limit and pay with the card saved in your Walmart account\n\n- Muse launched in the UK this week with 14 partners, including Sainsbury's, Argos, M&S, Currys and ASOS\n\n- Shopify switched on Shop Pay checkout for Muse across its stores in September\n\nI said on a stage last night that Meta has the relationships to smooth over the vast majority of these blocks on the merchant side. And they're likely willing to pay to make it worth it for the merchants.\n\nWhich in the short term means users of Muse get a better experience than other agents.\n\n---\n\nThe banks might be harder to convince.\n\nJPMorgan, Citi and Bank of America block outside agents from customer accounts. So do HSBC, Barclays and Lloyds.\n\nBut did you notice what OpenAI did with Chase?\n\nTo add a Chase card to ChatGPT Wallet, you approve the connection inside the Chase app. You tell your bank \"this is my agent and I delegated to it\", and you say it with your official log in.\n\n---\n\nI can see all banks wanting to do that. Maybe it even becomes some sort of standard.\n\nPlaid already gives agents like Muse read-only access to bank data. I feel like Plaid should abstract this step too.\n\nBut some banks will want to control it.",
+    "media": [
+      {
+        "id": "img_sytaylor_muse_amazon_card",
+        "type": "image",
+        "url": "https://pbs.twimg.com/media/HYCvWf8WYAA1yLf.jpg",
+        "alt": "图片：Amazon may let Muse back in. Meta and Amazon are in talks（Brainfood）"
+      }
+    ]
+  },
+  "body_md": "亚马逊 9 月封掉了 Meta 的个人 AI 代理 Muse。Simon Taylor 引用 Fortune 周三的报道说，两家现在正在谈一笔交易，让 Muse 重新接入亚马逊商城，这需要两位 CEO 都点头。\n\n## 谈判卡在搜索和广告\n\n据报道，谈判集中在两件事上：\n\n- 搜索结果。亚马逊担心 Muse 展示的商品质量。\n- 广告。代理可以跳过付费推广位，而广告是亚马逊一门 686 亿美元的生意。\n\n亚马逊 CEO Andy Jassy 上周说，如果有“公平的价值交换”，亚马逊不排除让外部代理进来。Taylor 在括号里问了一句：这听起来是不是很像“要么展示我的广告，要么把我本来能赚的钱付给我”？\n\n## 商家纷纷直连，亚马逊成了少数派\n\n在他看来，很多商家已经直接接入 Muse，亚马逊反倒像个例外：\n\n- 沃尔玛周二通过自己的 Agent Gateway 把黑五优惠放进了 Muse。用户在沃尔玛登录，设定消费上限，再用沃尔玛账户里保存的卡付款。\n- Muse 本周在英国上线，有 14 家合作伙伴，包括 Sainsbury's、Argos、M&S、Currys 和 ASOS。\n- Shopify 9 月为旗下店铺开通了 Muse 的 Shop Pay 结账。\n\nTaylor 说，他昨晚在台上讲过：**商家这一侧的大部分封锁，Meta 都有关系去疏通**，而且它很可能愿意掏钱，让商家觉得划算。短期来看，这意味着 Muse 用户的体验会好过其他代理。\n\n## 银行这一关更难过\n\n摩根大通、花旗和美国银行都禁止外部代理访问客户账户，汇丰、巴克莱和劳埃德也一样。\n\n他提醒大家看 OpenAI 和 Chase 的做法。要把 Chase 的卡加进 ChatGPT Wallet，用户得在 Chase 自己的 App 里批准这次连接。相当于用户用自己的正式登录告诉银行：“这是我的代理，我授权给它了。”\n\nTaylor 认为所有银行都会想这么做，也许这甚至会变成某种标准。Plaid 已经给 Muse 这类代理提供只读的银行数据访问，他觉得 Plaid 也应该把这一步授权抽象成通用环节。但他也预计，一些银行会想把这一步攥在自己手里。\n\n## 接下来看什么\n\n按 Taylor 的梳理，代理购物的阻力分在两头：零售商担心广告收入，银行担心账户控制权。跟踪这件事，可以看亚马逊和 Meta 的谈判能否谈成、条件里有没有广告补偿，以及银行端会不会普遍采用 Chase 这种在银行 App 内授权代理的做法。亚马逊与 Meta 目前仍在谈判，结果以正式公告为准。",
+  "rewrite_media": [
+    {
+      "media_id": "img_sytaylor_muse_amazon_card",
+      "placement": "after_paragraph",
+      "after_md": "亚马逊 9 月封掉了 Meta 的个人 AI 代理 Muse。Simon Taylor 引用 Fortune 周三的报道说，两家现在正在谈一笔交易，让 Muse 重新接入亚马逊商城，这需要两位 CEO 都点头。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}

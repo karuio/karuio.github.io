@@ -1,0 +1,45 @@
+{
+  "id": "karpathy-usa-civ-map",
+  "date": "2026-11-26",
+  "published_at": "2026-11-26T02:31:52+00:00",
+  "ingested_at": "2026-11-27T08:40:00+08:00",
+  "sector": "AI",
+  "source": {
+    "type": "x_post",
+    "url": "https://x.com/karpathy/status/2125779541952246039",
+    "author": "Andrej Karpathy",
+    "handle": "karpathy",
+    "title_en": "I asked Claude to populate a Civilization-style game map with real data from the US.",
+    "related_url": "https://karpathy.ai/usaciv/"
+  },
+  "title": "Karpathy 让 Claude 把美国真实数据做成《文明》式地图：31 个数据源、7 小时、4.5 万行代码",
+  "dek": "他用 Claude Code 桌面版和 Opus 5.5，把人口普查、经济、能源、灾害等公开数据对齐到 25 公里六边形网格，再翻译成《文明》的游戏语言，作品已部署在 karpathy.ai/usaciv。",
+  "tags": [
+    "Claude Code",
+    "AI 编程",
+    "公开数据",
+    "可视化"
+  ],
+  "original": {
+    "lang": "en",
+    "title": "I asked Claude to populate a Civilization-style game map with real data from the US.",
+    "text_md": "I asked Claude to populate a Civilization-style game map with real data from the US. Opus 5.5 downloaded and parse a ton of public data and 7 hours and 45K lines of code later... it works :)\n\n- 31 real data sources including Census, BEA, BLS, EIA, NOAA, USGS, DoD, NPS, FAA, FEMA, CDC...\n- Real elevation, land cover, GDP, jobs, power plants, mines, ports, airports, bases, parks, universities, freight flows, disasters; all reconciled onto one 25 km hex grid.\n- The data is converted into Civilization language, e.g. Gold yield is GDP. A city's districts are its real industry specializations: San Jose gets a Campus, Detroit is \"Motor city\". Its citizens are its real workforce: 1 in 4 San Jose workers are engineers, coders or scientists, against 1 in 14 nationally. Wonders are chosen by published rules, such as national parks by visitor numbers and universities by R&D spending, etc etc.\n- 19 lenses (income, degrees, faith, disasters…), a City View for 524 metros, and nine advisors plus an Explorer. The Explorer turns any column for any of 3,100+ counties into a table and scatter plot, linked to the map.\n- Claude decided to skip a few states and territories sry\n- Built using Claude Code desktop app, Opus 5.5 on medium and turning on ultracode.\n\nIt's deployed here: https://t.co/QMhmafXMj5 and the \"?\" has the source link too. I don't exactly know where I was going with this but it's really fun to browse and play with. Possibly it can be expanded or built into a game. I only have half of my weekly Claude quote left though so someone else will have to take over :D. Claude also made a trailer:",
+    "media": [
+      {
+        "id": "vid_karpathy_usaciv_trailer",
+        "type": "video",
+        "url": "https://video.twimg.com/amplify_video/2125775560517570561/vid/avc1/1280x720/yACmfVI05_1cfkBl.mp4",
+        "poster": "https://pbs.twimg.com/amplify_video_thumb/2125775560517570561/img/GDE8h47dSgwy5uSy.jpg"
+      }
+    ]
+  },
+  "body_md": "Andrej Karpathy 让 Claude 把一张《文明》风格的游戏地图填满美国的真实数据。他写道，Opus 5.5 下载并解析了大量公开数据，跑了 7 个小时，写出 4.5 万行代码，最后真的跑通了。\n\n## 31 个公开数据源，对齐到一张六边形网格\n\n按他的列举，项目用了 31 个真实数据源，包括美国人口普查局（Census）、经济分析局（BEA）、劳工统计局（BLS）、能源信息署（EIA）、NOAA、USGS、国防部（DoD）、国家公园管理局（NPS）、联邦航空管理局（FAA）、FEMA、CDC 等。\n\n这些数据覆盖真实的海拔、土地覆盖、GDP、就业、发电厂、矿山、港口、机场、军事基地、公园、大学、货运流向和灾害，全部对齐到同一张 25 公里的六边形网格上。\n\n## 把统计数据翻译成游戏语言\n\n数据被换成了《文明》的说法。金币产出就是 GDP。城市的“区域”对应它真实的产业专长：圣何塞有一个学院区（Campus），底特律是“汽车城”（Motor city）。\n\n城市的市民就是它真实的劳动力构成：**圣何塞每 4 个劳动者里就有 1 个是工程师、程序员或科学家，全国平均是 14 个里有 1 个。**\n\n奇观按公开的规则挑选，比如国家公园看游客人数，大学看研发支出，等等。\n\n## 地图上能看什么\n\n- 19 种视图图层，比如收入、学历、信仰、灾害。\n- 覆盖 524 个都市区的城市视图（City View）。\n- 9 位顾问，外加一个探索器（Explorer）。探索器能把 3100 多个县的任意一列数据做成表格和散点图，并和地图联动。\n\n他也写明了缺陷：Claude 自己决定跳过了几个州和领地，他为此顺口道了个歉。\n\n整个项目是在 Claude Code 桌面应用里完成的，模型是 Opus 5.5，档位选 medium，同时打开了 ultracode。\n\n## 作品已上线，后续需要别人接手\n\n项目部署在 [karpathy.ai/usaciv](https://karpathy.ai/usaciv/)，页面上的“?”里有源代码链接。\n\nKarpathy 说，自己也不太清楚要拿它做什么，只是浏览和把玩起来很有意思，也许可以继续扩展，或者做成一个真正的游戏。不过他这周的 Claude 额度只剩一半了，所以得有别人来接手。\n\nClaude 还为项目做了一段预告片，附在帖子末尾。\n\n想看编程 Agent 处理多源公开数据能做到什么程度，可以直接打开这张地图，再点“?”去看源代码。它是一次个人实验，作者自己也指出漏掉了几个州和领地，数据口径以源代码为准。",
+  "rewrite_media": [
+    {
+      "media_id": "vid_karpathy_usaciv_trailer",
+      "placement": "after_paragraph",
+      "after_md": "Claude 还为项目做了一段预告片，附在帖子末尾。",
+      "evidence": "source_position_verified"
+    }
+  ]
+}
