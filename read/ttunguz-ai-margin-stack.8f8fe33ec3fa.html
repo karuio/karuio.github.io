@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>Tomasz Tunguz 拆 AI 价值链的毛利：按他的口径，应用层拿 40%，电厂只拿 3% · 他山</title><meta name="robots" content="noindex"></head><body><article class="article-reader" data-article-id="ttunguz-ai-margin-stack">
+<a class="article-back" href="/">← 返回选刊</a>
+<header class="article-header"><p class="article-kicker">SaaS/云 / X Article · @ttunguz</p><h1>Tomasz Tunguz 拆 AI 价值链的毛利：按他的口径，应用层拿 40%，电厂只拿 3%</h1><p class="article-dek">他把电厂、数据中心、neocloud、推理和应用五层统一换算成每瓦每年的美元，再看算力涨价时谁能把成本传下去。</p><div class="article-meta"><time datetime="2026-11-12">本站收录 2026年11月12日 · 周四</time><span>原文发布 2026年11月11日 · 周三</span><span>原作者：Tomasz Tunguz</span><span>中文改写：<a href="/about">他山</a></span><span>AI 价值链 · 算力定价 · neocloud</span></div></header>
+<nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
+<section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose"><p>AI 价值链里，谁拿走的毛利最多？Tomasz Tunguz 在一篇 X Article 里说，现在上市公司的披露已经多到可以顺着美元，从电厂一路追到 agent。</p>
+<h2>五层链条，换成同一个单位</h2>
+<p>他把链条分成五层：</p>
+<ol>
+<li><strong>电厂</strong>：发电。</li>
+<li><strong>数据中心运营商</strong>：盖楼、接电，提供一个空壳机房。</li>
+<li><strong>Neocloud</strong>：买 GPU 并负责运维。</li>
+<li><strong>推理服务商</strong>：跑支撑 AI 的软件。</li>
+<li><strong>AI 应用</strong>：把软件卖给客户。</li>
+</ol>
+<p>麻烦在于每一层的计价单位都不同。电力公司卖千瓦时，neocloud 按 GPU 小时出租（一块 GPU 用一个小时），应用按完成的任务收费。他把每一步都折算成“每瓦每年多少美元”（$/w/yr），整条链就能放在一把尺子上比较。</p>
+<h2>毛利池怎么切</h2>
+<p>他画了一张从左到右的瀑布图。在应用层毛利率 40% 的假设下，整个毛利池的分配是：</p>
+<ul>
+<li>电力：3%</li>
+<li>数据中心：5%</li>
+<li>Neocloud：28%（未扣 GPU 折旧）</li>
+<li>推理：24%</li>
+<li>应用：40%</li>
+</ul>
+<p>这组比例依赖“应用毛利率 40%”这个前提，neocloud 那一格还没扣掉 GPU 折旧。站在电厂和机房那一端，拿到的份额很薄；钱主要沉在 GPU 运营、推理和应用三层。</p>
+<h2>推论一：算力涨价，考验谁有定价权</h2>
+<p>他认为算力价格正在上涨，从 Anthropic 到 CoreWeave 都是如此。他引用的证据有两条。Anthropic 的 S-1/A 文件披露，短期突发算力价格达到每 GPU 小时 13 美元。CoreWeave CEO Michael Intrator 在三季度业绩电话会上确认了合同价格的变化，原话是：“我们在以每年每兆瓦超过 4000 万美元的价格出售容量，而四年期、五年期合同里新基础设施的定价正在走向每兆瓦 2000 万到 2500 万美元。”</p>
+<p>每兆瓦每年 2000 万到 2500 万美元，折算下来就是每瓦每年 20 到 25 美元。Tunguz 指出，这比 CoreWeave 目前整体机队混合下来的每瓦每年 9 美元高出一倍多。</p>
+<p>成本涨了，接下来看应用能不能向终端用户多收钱。如果应用足够有效、能涨价，更高的算力成本就会一路传下去；如果不能，neocloud、推理服务商和应用三方就是在一个固定大小的池子里互相争抢。</p>
+<h2>推论二：ROI 决定应用的定价权</h2>
+<p>他说，一个能帮客户省 30% 的 AI，和一个能省 70% 的 AI，定价权不在一个级别。小模型、微调和模型路由这些手段有助于守住毛利。和 SaaS 时代不同，他认为不同垂直软件市场能撑起的毛利池会有明显差别。</p>
+<h2>推论三：垂直整合已经在吃掉相邻层的毛利</h2>
+<p>整条链上的公司都在吞并相邻环节，把隔壁的毛利收进来。他举了两家：</p>
+<ul>
+<li>CoreWeave 收购了 Weights &amp; Biases（10.3 亿美元）、OpenPipe、Marimo 和 Monolith AI（1.85 亿美元），向上走进训练、评测和企业工作流。</li>
+<li>Nebius 在 2026 年花了超过 10 亿美元，收购了搜索、模型优化、冷启动扩容和编排四个方向的四家公司，搭它的 Token Factory。</li>
+</ul>
+<p>同时拥有好几层的整合型厂商，能吸收价格波动；单层独立经营的供应商，会先被挤压。</p>
+<h2>读这张图的方式</h2>
+<p>Tunguz 的结论是，AI 的每一层都在变，市场力量从一层移到另一层时，看懂这种转移，就能知道哪里竞争最激烈、并购会集中在哪里。</p>
+<p>对关注这条链的人，可以盯两个具体数字：一是新签多年期算力合同的每兆瓦价格，能不能持续高于存量机队；二是应用层能否在涨价后维持接近 40% 的毛利率。前者决定 neocloud 的议价空间，后者决定成本能不能传到终端用户。文中的比例、价格和收购金额均来自作者引述的披露，本站未逐项复核。原文同时发布在 tomtunguz.com。</p>
+<section class="rewrite-source-media" aria-label="原文附带媒体"><h3 class="source-media-heading">原文附带媒体</h3><p class="completeness-note">原文附带媒体；未核验其与具体段落的对应关系。</p><div class="original-media">
+<figure class="media-figure" data-media-id="img_tunguz_cover"><div class="media-frame"><img src="https://pbs.twimg.com/media/HW3dhaMakAAgS8l.jpg" data-original-src="https://pbs.twimg.com/media/HW3dhaMakAAgS8l.jpg" alt="原文封面图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+<figure class="media-figure" data-media-id="img_tunguz_01"><div class="media-frame"><img src="https://pbs.twimg.com/media/HW3dhIoawAAudKg.jpg" data-original-src="https://pbs.twimg.com/media/HW3dhIoawAAudKg.jpg" alt="原文配图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+<figure class="media-figure" data-media-id="img_tunguz_02"><div class="media-frame"><img src="https://pbs.twimg.com/media/HW3dhQobMAASVyv.jpg" data-original-src="https://pbs.twimg.com/media/HW3dhQobMAASVyv.jpg" alt="原文配图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div></section></div></section>
+<section class="reader-panel" id="original" data-reader-panel="original" aria-label="原文">
+<h2 class="section-heading">原文</h2><h3 class="original-title">Who Captures the Most Margin in AI?</h3>
+<div class="original-media">
+<figure class="media-figure" data-media-id="img_tunguz_cover"><div class="media-frame"><img src="https://pbs.twimg.com/media/HW3dhaMakAAgS8l.jpg" data-original-src="https://pbs.twimg.com/media/HW3dhaMakAAgS8l.jpg" alt="原文封面图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+<figure class="media-figure" data-media-id="img_tunguz_01"><div class="media-frame"><img src="https://pbs.twimg.com/media/HW3dhIoawAAudKg.jpg" data-original-src="https://pbs.twimg.com/media/HW3dhIoawAAudKg.jpg" alt="原文配图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+<figure class="media-figure" data-media-id="img_tunguz_02"><div class="media-frame"><img src="https://pbs.twimg.com/media/HW3dhQobMAASVyv.jpg" data-original-src="https://pbs.twimg.com/media/HW3dhQobMAASVyv.jpg" alt="原文配图" loading="lazy" decoding="async" referrerpolicy="no-referrer"><p class="media-error" role="status" hidden>媒体未能载入，请通过下方原文链接查看。</p></div><figcaption><span>原帖图片</span><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">无法显示？去原文查看 ↗</a></figcaption></figure>
+</div>
+<div class="prose" lang="en"><p>Who captures the most margin in the AI value chain? Public filings now let us trace the dollars from the power plant to the agent.</p>
+<p>Five layers make up the chain :
+Power plant : produces the electricity.
+Data center operator : builds the building, connects the power &amp; provides a shell.
+Neocloud : buys the GPUs &amp; manages them.
+Inference vendor : runs the software to power AI.
+AI application : sells software to a customer.
+Each layer bills in a different unit : utilities sell kilowatt-hours, neoclouds rent GPU-hours (an hour of a GPU's time) &amp; applications price completed tasks. Normalizing every step to dollars per watt per year ($/w/yr) puts the whole stack on one scale.
+Here is the waterfall :</p>
+<p>At a 40% application gross margin, the total gross profit pool divides from left to right as :
+Power : 3%
+Data center : 5%
+Neocloud : 28% (before GPU depreciation)
+Inference : 24%
+Application : 40%
+Three implications follow from the chain :</p>
+<ol>
+<li>Rising compute prices will test who holds pricing power. From Anthropic to CoreWeave, compute prices are climbing. Anthropic's Form S-1/A discloses short-term burst compute reaching $13 per GPU-hour. On CoreWeave's Q3 earnings call, CEO Michael Intrator confirmed the shift in contract rates :
+"Selling capacity at more than $40m per megawatt annually while pricing for new infrastructure on four &amp; five year contracts is moving to $20m to $25m per megawatt."
+At $20m to $25m per megawatt ($20 to $25/w/yr), new multi-year compute contracts price at more than double CoreWeave's $9/w/yr blended fleet today. If the application can charge the end user more because of its effectiveness, higher compute costs cascade through. Otherwise, neoclouds, inference providers &amp; applications fight over a fixed pool.</li>
+<li>Different applications will command varying pricing power as a function of their ROI. An AI that saves 30% does not command the same pricing power as one that saves 70%. Techniques like small models, fine-tuning &amp; routing will help sustain margins. Unlike the SaaS era, different vertical software markets will support varying gross profit pools.</li>
+<li>Vertical integration is already consolidating margin. Companies across the stack are absorbing neighboring layers to capture adjacent margin. CoreWeave acquired Weights &amp; Biases ($1.03b), OpenPipe, Marimo &amp; Monolith AI ($185m) to move up into training, evaluation &amp; enterprise workflows. Nebius has spent more than $1b in 2026 acquiring four companies across search, model optimization, cold-start scaling &amp; orchestration to build its Token Factory. Owning multiple layers lets an integrated provider absorb price swings that squeeze standalone vendors.
+No layer in AI is static. As market power shifts from one layer to the next, though, understanding these shifts will explain where competition is fiercest &amp; where M&amp;A will concentrate.
+Originally published on tomtunguz.com.</li>
+</ol></div>
+</section>
+<footer class="source-box"><span>内容来自原作者；中文为忠实改写，非逐字翻译。作者主张与已核实事实分开书写。</span><div><a href="https://x.com/ttunguz/status/2120596768350241012" target="_blank" rel="noopener noreferrer">打开原文 ↗</a><a href="https://tomtunguz.com/who-captures-the-most-margin-in-ai/" target="_blank" rel="noopener noreferrer">相关链接 ↗</a></div></footer>
+</article></body></html>

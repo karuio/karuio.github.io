@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8% · 他山</title><meta name="robots" content="noindex"></head><body><article class="article-reader" data-article-id="dotey-qwen-self-rewriting-weights">
+<a class="article-back" href="/">← 返回选刊</a>
+<header class="article-header"><p class="article-kicker">AI / X · @dotey / 长帖</p><h1>宝玉介绍论文：Qwen3.5 27B 不重新训练，自己写代码改权重，数学准确率从 57.2% 到 63.8%</h1><p class="article-dek">模型复盘后发现病根是长推理复读，把 48 层一个参数统一调高 0.5，未答完率从 33.6% 降到 26.1%。宝玉提醒，每轮都从原版重来，只在 Qwen3.5 和数学题上验证，还不是递归自我进化。</p><div class="article-meta"><time datetime="2026-11-24">本站收录 2026年11月24日 · 周二</time><span>原文发布 2026年11月23日 · 周一</span><span>原作者：宝玉</span><span>中文改写：<a href="/about">他山</a></span><span>大模型 · 自我改进 · 论文 · Qwen</span></div></header>
+<nav class="reader-tabs" aria-label="文章版本与来源"><div data-tabs><a href="#rewrite" id="tab-rewrite" data-view="rewrite">中文改写</a><a href="#original" id="tab-original" data-view="original">原文</a></div><a class="reader-source" href="https://x.com/dotey/status/2124775538648633370" target="_blank" rel="noopener noreferrer">原文链接 ↗</a><div class="reading-position" hidden><progress max="100" value="0" aria-label="当前版本阅读进度"></progress><span data-reading-percent aria-hidden="true">0%</span></div></nav>
+<section class="reader-panel" id="rewrite" data-reader-panel="rewrite" aria-label="中文改写"><h2 class="section-heading">中文改写</h2><div class="prose"><p>开源模型 Qwen3.5 27B 没有经过重新训练，自己查错、写 Python 改自己的权重，把数学题准确率从 57.2% 提到了 63.8%。宝玉介绍这篇论文时，先给了一个限定：<strong>这还不是“AI 无限自我进化”</strong>。</p>
+<p>论文由 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校的 11 位研究者（Jiajun Fan 等）完成，11 月 18 日发在 arXiv 上。</p>
+<h2>权重本来是定死的</h2>
+<p>平时大模型发布后，内部那 270 亿个权重数字就固定了。想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>
+<p>这次研究者禁掉了所有训练工具，只用单块 GPU 跑几个小时，让模型直接写 Python 修改自己的权重。论文作者说，据他们所知，模型“自己改自己”这还是第一次。</p>
+<h2>病根是复读，不是不会算</h2>
+<p>27B 先复盘自己的练习记录，发现问题不在计算能力：写完的题 96% 都是对的。毛病出在爱钻牛角尖，话没说完就超出长度上限。有一道数数题，原模型把 “I will write the response” 复读了 549 遍，直到卡死。</p>
+<p>找准病根后，它只做了一个改动：把内部 48 层里控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理时原地打转。</p>
+<p>结果是，在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点；那道卡死的题也算出了正确答案 110。改动直接写进权重，平时使用不需要额外提示词，也不增加计算量。</p>
+<h2>它还修好了一个“受损副本”</h2>
+<p>研究者把一个副本第 30 层某个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。</p>
+<p>模型只被告知“有数值坏了”，也看不到完好的原版。它逐层排查，找出一个最大值高达中位数 1397 倍的异常矩阵（正常矩阵不超过 162 倍），把超出中位数 15 倍的极端值全部压平。</p>
+<p>修完后，数学恢复到 33.0%，原版是 58.5%。整个修复过程只用了文字题，6 项看图测试却从 7.3% 恢复到 70.2%，达到原版（84.3%）的八成以上。</p>
+<h2>小模型做不了</h2>
+<p>同系列的小模型完全干不了这件事。2B 说自己“只是文本模型，改不了权重”，什么都没动；4B 和 9B 只会往权重里随机加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>
+<h2>两条限定</h2>
+<p>宝玉提醒，有两点要看清：</p>
+<ol>
+<li><strong>还不是递归自我进化。</strong> 8 轮实验每一轮都是从原版模型重新开始改，还没做到“改完的版本继续改自己”，作者把这列为下一步。网上说的“连续 8 轮只升不降”，实际是模型自己撤回了 5 次失败的改动，只提交了 3 次成功的改动。</li>
+<li><strong>测试范围有限。</strong> 目前只在 Qwen3.5 家族和数学题上验证过，论文刚发在 arXiv，还没有经过同行评审。</li>
+</ol>
+<p>论文地址：https://arxiv.org/abs/2611.21885 ，项目页：https://jiajunfan.com/projects/self-rewriting/ 。</p>
+<p>看到“AI 自我进化”这类说法时，可以拿这篇论文的边界去对照：单块 GPU、几小时、只在一个模型家族的数学题上验证，每轮都从原版重来，成功的改动也是在撤回失败改动之后筛出来的。在递归自改和跨任务验证出来之前，它更适合被理解为一种不重新训练也能修补模型缺陷的方法。</p>
+</div></section>
+<section class="reader-panel" id="original" data-reader-panel="original" aria-label="原文">
+<h2 class="section-heading">原文</h2><h3 class="original-title">不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重</h3>
+
+<div class="prose" lang="zh"><p>不经重新训练，开源模型 Qwen3.5 27B 自己查错、写代码修改自身权重，把数学题准确率从 57.2% 提到了 63.8%，但还不是“AI 无限自我进化”。</p>
+<p>这是 UIUC、CMU、普林斯顿、斯坦福、耶鲁等校 11 位研究者（Jiajun Fan 等）11 月 18 日发在 arXiv 的论文。</p>
+<p>平时大模型发布后，内部那 270 亿个权重数字就定死了：想变强，要么砸算力重新训练，要么提问时多塞提示词、多给思考时间临时凑合，对话一结束就打回原形。</p>
+<p>这次研究者禁掉所有训练工具，只用单块 GPU 跑几小时，让模型直接写 Python 改自己的权重，据作者所知，模型“自己改自己”还是头一回。</p>
+<p>它是怎么把自己改好的？</p>
+<p>27B 先复盘练习记录，发现毛病不是不会算（写完的题 96% 都对），而是爱钻牛角尖、话没说完就超限。比如一道数数题，原模型把“I will write the response”硬生生复读了 549 遍直到卡死。</p>
+<p>找准病根后，它只做了一个很巧的改动：把内部 48 层控制“旧信息消退快慢”的参数统一调高 0.5，减少长推理原地打转。结果在 490 道没见过的新数学题上，未答完率从 33.6% 降到 26.1%，准确率提升 6.6 个百分点，上面那道卡死的题也顺利算出正确答案 110。改完后能力直接刻进权重，平时用不需额外提示词，也不增加计算量。</p>
+<p>它甚至修好了“受损副本”。研究者把副本第 30 层一个矩阵的 8 行换成 200 倍幅度的随机噪声，副本直接瘫痪，数学题 0 分。只被告知“有数值坏了”、不给看完好原版的前提下，模型逐层排查，揪出最大值高达中位数 1397 倍的异常矩阵（正常不超 162 倍），把超出中位数 15 倍的极端值统统压平。</p>
+<p>修完后数学恢复到 33.0%（原版 58.5%）；虽然全程只靠文字题修，6 项看图测试却从 7.3% 恢复到 70.2%，超过原版（84.3%）的八成。</p>
+<p>不过小模型完全干不了这活：同系列的 2B 说自己“只是文本模型改不了权重”，动都没动；4B、9B 只会往权重里乱加噪声碰运气，9B 直接把自己从 47.5% 改成了 0 分。</p>
+<p>最后需要注意的还不是“AI 无限自我进化”：</p>
+<ol>
+<li>
+<p>还不是“递归自我进化”：8 轮实验每次都是从原版模型重新开始改，还没做到“改完的版本继续改自己”（作者列为下一步）。网上说的“连续 8 轮只升不降”，其实是模型自己撤回了 5 次失败改动、只提交了 3 次成功改动。</p>
+</li>
+<li>
+<p>测试范围有限：目前只在 Qwen3.5 家族和数学题上验证过，且论文刚发在 arXiv，还没经过同行评审。</p>
+</li>
+</ol>
+<p>论文：https://arxiv.org/abs/2611.21885
+项目页：https://jiajunfan.com/projects/self-rewriting/</p></div>
+</section>
+<footer class="source-box"><span>内容来自原作者；中文为忠实改写，非逐字翻译。作者主张与已核实事实分开书写。</span><div><a href="https://x.com/dotey/status/2124775538648633370" target="_blank" rel="noopener noreferrer">打开原文 ↗</a><a href="https://arxiv.org/abs/2611.21885" target="_blank" rel="noopener noreferrer">相关链接 ↗</a></div></footer>
+</article></body></html>
